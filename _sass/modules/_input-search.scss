@@ -1,0 +1,65 @@
+
+
+form[role="search"] {
+  display: flex;
+  max-width: auto;
+
+  padding: 1rem 1rem;
+  transition: .7s;
+  border-radius: .125rem;
+  box-shadow: 0 1px 2px 1px rgba(#000,.1);
+  background: #f5f5f5;
+
+  &:focus-within,
+  &:hover {
+    background: #fff;
+    box-shadow: 0 1px 4px 1px rgba(#000,.3);
+
+  }
+
+  input[type="search"] {
+    border-right: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-indent: .5rem;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+
+    &:focus {
+      z-index: 99;
+    }
+  }
+
+  label {
+    @extend .hidden;
+  }
+
+  button {
+    display: block;
+    position: relative;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $color-border-gray;
+    border-left: none;
+    height: 2.25rem;
+    width: 2.25rem;
+    background: #fff;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: .125rem;
+      right: .125rem;
+      width: 2rem;
+      height: 2rem;
+      background-image: url("data:image/svg+xml,%0A%3Csvg height='100px' width='100px' fill='%23000000' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Ctitle%3ESearch v1.6%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg fill-rule='nonzero' fill='%23000000'%3E%3Cpath d='M60.5135241,54.8566699 L69.8284271,64.1715729 L64.1715729,69.8284271 L54.8566699,60.5135241 C52.2773129,62.0909066 49.2448215,63 46,63 C36.6111593,63 29,55.3888407 29,46 C29,36.6111593 36.6111593,29 46,29 C55.3888407,29 63,36.6111593 63,46 C63,49.2448215 62.0909066,52.2773129 60.5135241,54.8566699 L60.5135241,54.8566699 Z M46,55.5 C51.2467051,55.5 55.5,51.2467051 55.5,46 C55.5,40.7532949 51.2467051,36.5 46,36.5 C40.7532949,36.5 36.5,40.7532949 36.5,46 C36.5,51.2467051 40.7532949,55.5 46,55.5 Z'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

@@ -1,0 +1,192 @@
+form {
+  position: relative;
+
+  ul,
+  li {
+    padding: 0;
+    margin: 0;
+    display: block;
+    list-style-type: none;
+  }
+  ul {
+    border-top: 1px solid $color-border-gray;
+  }
+  li {
+    display: flex;
+    border-top: none;
+    border-bottom: 1px solid lighten($color-border-gray,10);
+  }
+}
+
+fieldset {
+  border: none;
+  padding: 0 0 .5rem 0;
+  margin: 0rem 0 calc(2rem + 3px) 0;
+  border-radius: 2px;
+  background: #fff;
+  display: grid;
+  box-shadow: 0 1px 2px 1px rgba(#000, .05);
+
+}
+
+legend {
+  font-weight: bold;
+  margin: 0 0 0 0;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+  float: left;
+  background: #fff;
+  position: relative;
+  @include clearfix;
+  border-bottom: 1px dotted $color-border-gray;
+}
+
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="file"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+input[type="password"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none; // Remove iOS webkit styles
+  border-radius: 0; // Remove iOS webkit styles
+  margin-bottom: .5rem;
+  font-size: 1rem;
+  padding: .5rem;
+  border: 1px solid $color-border-gray;
+  border-radius: 2px;
+  display: block;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin: 0 0 .5rem 0;
+  span {
+    font-size: .75rem;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    font-weight: normal;
+    background: darken($color-gray-xtra-light,8);
+    padding: 0 .5rem;
+    border-radius: .125rem;
+  }
+}
+
+
+input[type=checkbox],
+input[type=radio] {
+  @extend .hidden;
+  + label {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding: 1.5rem 2rem 1.5rem 4rem;
+    margin: 0;
+    color: $color-gray-xtra-dark;
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1rem;
+    background-position: 10% center;
+    transition: background .8s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
+    @include ripple;
+  }
+
+  &:checked + label {
+    color: #000;
+  }
+  &:focus-visible + label {
+    color: $color-brand-primary;
+    z-index: 9;
+    @extend .focused;
+  }
+  &:active + label {
+    @extend .active;
+  }
+}
+
+.select-container {
+  margin-bottom: 4rem;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0rem;
+    height: .125rem;
+    width: 0%;
+    margin-left: 50%;
+    background: $color-focus;
+    transition: .3s;
+    z-index: 99;
+  }
+  &:focus-within,
+  &:hover {
+    &:after {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  resize: none;
+}
+
+input[type="file"] {
+  @extend .hidden;
+  + label {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 2rem 1rem 4rem;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: $color-button-primary;
+    @include ripple($color-button-primary, $color-button-hover);
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 2rem;
+      width: 3rem;
+      top: .5rem;
+      left: 1rem;
+      background-image: url("data:image/svg+xml,%0A%3Csvg height='100px' width='100px' fill='white' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 100 100' enable-background='new 0 0 100 100' xml:space='preserve'%3E%3Cpath d='M88.879,63.641c0.152-0.953,0.254-1.921,0.254-2.916c0-7.937-5.055-14.675-12.112-17.224 c-2.952-12.916-14.504-22.555-28.314-22.555c-13.496,0-24.839,9.203-28.104,21.675C11.776,43.941,5,51.531,5,60.725 c0,10.123,8.207,18.328,18.329,18.328h22.312V58.22H34.866L50.657,41.78L66.449,58.22H55.673v20.833H87.2 c4.308,0,7.8-3.49,7.8-7.799C95,67.523,92.379,64.409,88.879,63.641z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &:hover {
+      background-color: $color-button-hover;
+    }
+  }
+  &:focus-visible {
+    + label {
+      background-color: $color-button-hover;
+    }
+  }
+}
+
+.hint {
+  margin: 0 0 1rem 0;
+  padding: 0rem;
+  color: $color-gray-dark;
+  display: block;
+  border-radius: 2px;
+}
+
+i {
+  background-color: #AA0000;
+}

@@ -1,0 +1,33 @@
+<button id="showModal"
+        aria-haspopup="dialog">
+  Open dialog
+</button>
+
+<dialog role="dialog"
+        id="modal"
+        tabindex="-1"
+        aria-modal="true"
+        aria-labelledby="modal-title">
+  <button type="reset"
+          id="closeModal">
+    <span class="hidden">Close</span>
+  </button>
+  <section>
+    <h2 id="modal-title" class="h-bravo">
+      Things you should know
+    </h2>
+    <h3>Keyboard</h3>
+    <ul>
+      <li>Keyboard focus should not leave the modal.</li>
+      <li>The escape key should close the modal.</li>
+    </ul>
+    <h3>Screenreader</h3>
+    <ul>
+      <li>The launch button should indicate a popup.</li>
+      <li>The modal's title is announced on launch.</li>
+    </ul>
+    <button type="submit">
+      Continue
+    </button>
+  </section>
+</dialog>

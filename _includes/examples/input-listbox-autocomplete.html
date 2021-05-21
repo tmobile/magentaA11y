@@ -1,0 +1,23 @@
+<label for="listbox-input"
+       id="example-label">
+  Choose your favorite NATO letter
+</label>
+<div role="combobox"
+     aria-expanded="false"
+     aria-owns="listbox-input"
+     aria-haspopup="listbox"
+     id="example-combobox">
+
+  <input type="text"
+         aria-autocomplete="list"
+         aria-controls="input-listbox"
+         id="input-listbox">
+
+</div>
+<ul aria-labelledby="example-label"
+    role="listbox"
+    id="example-listbox">
+    <li role="option">Alpha</li>
+    <li role="option">Bravo</li>
+    <li role="option">Charlie</li>
+</ul>

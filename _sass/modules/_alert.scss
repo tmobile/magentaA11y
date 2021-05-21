@@ -1,0 +1,15 @@
+[role="alert"] {
+  background: $color-alert;
+  padding: 1rem;
+  border-radius: 2px;
+  font-weight: bold;
+  margin: 1rem 0;
+
+  &.inert {
+    display: none;
+  }
+
+  &.visible {
+    display: block;
+  }
+}

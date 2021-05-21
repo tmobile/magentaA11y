@@ -1,0 +1,48 @@
+
+.success-criteria-entry {
+  @include break($break-large) {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 2rem;
+  }
+
+  @include break($break-max) {
+    grid-template-columns: 2fr 3fr;
+    column-gap: 2rem;
+  }
+}
+
+
+step-number {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  line-height: 2rem;
+  border-radius: 1.5rem;
+  margin-top: -.125rem;
+  margin-left: -.25rem;
+
+  @include break($break-small) {
+    margin-left: -1rem;
+  }
+
+  @include break($break-max + 16px) {
+    margin-left: -3rem;
+    margin-right: .75rem;
+  }
+}
+
+.test-instructions {
+  background: #fff;
+  border-radius: 2px;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 5px 1px rgba(#000,.1);
+  @include break($break-small) {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+}

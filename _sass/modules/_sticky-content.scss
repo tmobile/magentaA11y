@@ -1,0 +1,22 @@
+.vertical-spacer {
+  height: 100vh;
+  padding: 2rem;
+  margin: 1rem 0;
+  text-align: center;
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGElEQVQYlWNgYGCQwoKxgqGgcJA5h3yFAAs8BRWVSwooAAAAAElFTkSuQmCC);
+
+}
+
+.sticky {
+  position: sticky;
+  background: #fff;
+  padding: 1rem 0 1rem 1rem;
+  bottom: 0 !important;
+  border-radius: 2px;
+  box-shadow: 0 0 3px 1px rgba(#000, .1);
+
+  * {
+    margin: 0 1rem 0 0 !important;
+    display: inline-block;
+  }
+}

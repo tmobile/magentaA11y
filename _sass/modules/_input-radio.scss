@@ -1,0 +1,51 @@
+
+input[type="radio"] {
+  + label {
+    padding-left: 4rem;
+    &:before {
+      content: '';
+      display: block;
+      width: calc(2rem - 2px);
+      height: calc(2rem - 2px);
+      border: 2px solid $color-gray-dark;
+      border-radius: 100%;
+      position: absolute;
+      left: 1.125rem;
+      top: 1rem;
+      background: #f2f2f2;
+      transition: .4s;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 100%;
+      width: 1.5rem;
+      height: 1.5rem;
+      left: calc(1.5rem - 1px);
+      top: calc(1.5rem - 3px);
+      background: $color-gray-light;
+      transition: .4s;
+    }
+  }
+  &:checked {
+    + label {
+      &:before {
+        border-color: $color-brand-primary;
+      }
+      &:after {
+        content: '';
+        background: $color-brand-primary;
+      }
+    }
+  }
+  + label:hover:before,
+  &:focus + label:before {
+    background: none;
+    box-shadow: 0 0 0rem .5rem rgba($color-focus,.2);
+  }
+  &:active + label:before {
+    box-shadow: 0 0 0rem .75rem rgba($color-focus,.4);
+  }
+}

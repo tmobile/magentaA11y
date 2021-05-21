@@ -1,0 +1,19 @@
+footer {
+  @extend .container;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  nav {
+    a {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: $color-gray-dark;
+
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<article>
+  <div class="container center-text">
+    <h1 class="h-alpha">
+      {{ page.title | escape }}
+    </h1>
+    {{ content }}
+  </div>
+  <div class="container">
+    <form>
+      <div class="success-criteria-maker">
+        <div class="checklist-container">
+          {% assign ordered_pages = site.checklist-web | sort: "title" | sort: "order" %}
+
+          {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
+          {% for category in site.web-categories-order %}
+            <details class="checklist-details" open>
+              <summary id="{{ category | escape }}-category-title">
+                <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
+              </summary>
+              <div role="group" aria-labelledby="{{ category | escape }}-category-title">
+                <ul>
+                  {% for page in ordered_pages %}
+                  {% include checklist-loop.html %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </details>
+          {% endfor %}
+        </div>
+        {% include criteria-textarea.html %}
+      </div>
+    </form>
+  </div>
+</article>

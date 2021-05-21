@@ -1,0 +1,51 @@
+nav {
+  display: block;
+  margin: 2rem auto 2rem auto;
+  padding-bottom: 1rem;
+  text-align: center;
+
+  ul {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin: 0px auto;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      margin: 0 3px .5rem 0;
+      padding: 0;
+      position: relative;
+    }
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    padding: 1rem .5rem .5rem .5rem;
+    margin-bottom: -1px;
+    text-decoration: none;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      left: 0rem;
+      width: 100%;
+      height: 3px;
+      background: #000;
+    }
+    &[aria-current="page"],
+    &.current {
+      &:after {
+        content: '';
+        height: 5px;
+      }
+    }
+    &:hover,
+    &:focus {
+      text-decoration: none ;
+    }
+  }
+}

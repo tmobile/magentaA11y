@@ -1,0 +1,113 @@
+html {
+  font-size: 16px;
+}
+
+body,html {
+  margin: 0rem 0 3rem 0;
+  padding: 0;
+  height: 100%;
+  background: $color-gray-xtra-light;
+  scroll-behavior: smooth;
+}
+
+
+hr {
+  display: block;
+  margin-top: 20px;
+  margin-top: 2vw;
+  margin-bottom: 20px;
+  margin-bottom: 2vw;
+
+}
+/* #Clearing  */
+
+/* Self Clearing Goodness */
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+/* Use clearfix class on parent to clear nested columns, 
+or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+.clearfix:after {
+  clear: both; }
+.clearfix {
+  zoom: 1; }
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.desktop-hide {
+  display: none !important;
+}
+
+* {
+  box-sizing: border-box;
+  @include focus;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+
+}
+
+.break {
+  word-break:break-all;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+ol li ol li {
+  list-style-type: lower-alpha;
+}
+
+ol li ol li ol li {
+  list-style-type: lower-roman;
+}
+
+
+
+
+a {
+  color: #000;
+  @include focus;
+}
+

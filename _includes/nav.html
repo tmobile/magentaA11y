@@ -1,0 +1,24 @@
+<nav id="nav" aria-label="Site menu">
+  <ul>
+    <li>
+      <a
+        {% if page.url== "/" %} aria-current="page" {% endif %}
+        href="{{ site.baseurl }}/"> {{ site.title | escape }}
+      </a>
+    </li>
+    <li>
+      <a
+        {% if page.url== "/web/" %} aria-current="page" {% endif %}
+        {% if page.url contains "web" %} class="current" {% endif %}
+        href="{{ site.baseurl }}/web/">Web
+      </a>
+    </li>
+    <li>
+      <a
+        {% if page.url== "/native/" %} aria-current="page" {% endif %}
+        {% if page.url contains "native" %} class="current" {% endif %}
+        href="{{ site.baseurl }}/native/">Native
+      </a>
+    </li>
+  </ul>
+</nav>

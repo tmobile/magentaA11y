@@ -1,0 +1,108 @@
+
+.success-criteria-maker {
+  position: relative;
+  display: grid;
+  grid-column-gap: 2rem;
+
+  @include break($break-mid) {
+    grid-template-columns: minmax(320px, 2fr) 3fr;
+  }
+
+  .checklist-container {
+    position: relative;
+  }
+  .criteria-container {
+    margin-bottom: calc(2rem + 3px);
+  }
+
+  .textarea-container {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0rem;
+    border-top: 1px solid lighten($color-border-gray,3);
+    z-index: 0;
+    box-shadow: 0 0 5px 1px rgba(#000, .1);
+
+    textarea {
+      height: calc(100vh - 7rem);
+      padding: 1rem;
+      border-top: none;
+      border-radius: 0;
+      margin-bottom: 0;
+      color: $color-text-color;
+    }
+  }
+}
+
+
+.checklist-landmark {
+  padding: 0rem 1rem 0rem 0;
+  margin: 0 0 0 0;
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  font-weight: bold;
+}
+
+
+.checklist-link {
+  display: block;
+  position: relative;
+  width: 5rem;
+  background: lighten($color-gray-xtra-light,3);
+  text-align: center;
+  font-size: 3rem;
+  line-height: 4rem;
+  margin: 0;
+  border-left: 1px solid lighten($color-border-gray,10);
+  text-decoration: none;
+  border-radius: 0 2px 2px 0;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 0 0 0.25rem transparent;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg height='100px' width='100px' fill='%23777' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' x='0px' y='0px'%3E%3Ctitle%3EArtboard 38%3C/title%3E%3Cg data-name='Layer 79'%3E%3Cpath d='M12,11a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V12A1,1,0,0,0,12,11Z'%3E%3C/path%3E%3Ccircle cx='12' cy='9' r='1'%3E%3C/circle%3E%3Cpath d='M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    transition: .2s;
+  }
+  &:hover,
+  &:focus {
+    background-color: #fff;
+    z-index: 9;
+    &:before {
+      box-shadow: 0 0 0rem .5rem rgba($color-focus,.2);
+      background-image: url("data:image/svg+xml,%3Csvg height='100px' width='100px' fill='%23000' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' x='0px' y='0px'%3E%3Ctitle%3EArtboard 38%3C/title%3E%3Cg data-name='Layer 79'%3E%3Cpath d='M12,11a1,1,0,0,0-1,1v4a1,1,0,0,0,2,0V12A1,1,0,0,0,12,11Z'%3E%3C/path%3E%3Ccircle cx='12' cy='9' r='1'%3E%3C/circle%3E%3Cpath d='M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    }
+  }
+}
+
+label[for="criteria-area"] {
+  margin: 0;
+  background: #fff;
+  padding: 1.5rem 1rem;
+  line-height: 1rem;
+  box-shadow: 0 0 5px 1px rgba(#000, .0625);
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  z-index: 99;
+}
+
+.textarea-controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 1rem 1rem 1rem 1rem;
+  border-top: 1px solid $color-border-gray;
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+}
+
+

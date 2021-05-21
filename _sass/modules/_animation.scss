@@ -1,0 +1,32 @@
+@keyframes bounce {
+  0% { transform: scale(1); }
+  25% { transform: scale(.9); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes dissolve {
+  0% { background-color: green; }
+  50% { background-color: darkgreen; }
+  100% { background-color: green; }
+}
+
+.animation {
+  background-color: green;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: bold;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2px;
+  margin-bottom: 0rem;
+  animation: bounce 2s linear infinite both;
+}
+
+@media (prefers-reduced-motion) {
+  .animation {
+    animation-name: dissolve;
+  }
+}

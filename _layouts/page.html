@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article>
+  <div class="container post-content narrow">
+    {% if page.url != '/about/' and page.url != '/code-of-conduct/' %}
+      <h1 class="h-alpha">{{ page.title | escape }}</h1>
+    {% endif %}
+
+    {{ content }}
+  </div>
+</article>

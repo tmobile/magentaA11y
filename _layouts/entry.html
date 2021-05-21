@@ -1,0 +1,130 @@
+---
+layout: default
+---
+<article>
+  <div class="container">
+    <h1 class="h-alpha">
+      {{ page.title | escape }}
+    </h1>
+  </div>
+  <div class="success-criteria-entry container">
+
+    <div class="success-criteria" itemscope itemtype="http://schema.org/HowTo">
+
+      <h2 class="h-bravo" itemprop="name">
+        How to test
+        {% assign firstLetter = page.title | downcase | slice: 0 %}
+        {% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u' %}
+        an
+        {% else %}
+        a
+        {% endif %}
+        {{ page.title | escape | downcase }}
+      </h2>
+
+      <div class="test-instructions">
+        <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+          <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
+          <h3 class="h-charlie" itemprop="name">
+            <step-number>1</step-number> Keyboard actions
+          </h3>
+          <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+            <table itemprop="text">
+              <thead>
+              <tr>
+                <th scope="col">When I use</th>
+                <th scope="col">I see</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for action in page.keyboard %}
+              <tr>
+                <th scope="row">{{ action[0] | capitalize }}</th>
+                <td>{{ action[1] | escape }}</td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+          <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step2" />
+          <h3 class="h-charlie" itemprop="name">
+            <step-number>2</step-number> Mobile gestures
+          </h3>
+          <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+            <table itemprop="text">
+              <thead>
+              <tr>
+                <th scope="col">When I use</th>
+                <th scope="col">I hear</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for gesture in page.mobile %}
+              <tr>
+                <th scope="row">{{ gesture[0] | capitalize  }}</th>
+                <td>{{ gesture[1] | escape }}</td>
+              </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="step3" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+          <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step3" />
+          <h3 class="h-charlie" itemprop="name">
+            <step-number>3</step-number> Screenreader output
+          </h3>
+          <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+            <table itemprop="text">
+              <thead>
+              <tr>
+                <th scope="col">Reads</th>
+                <th scope="col">I hear</th>
+              </tr>
+              </thead>
+              <tbody>
+              {% for requirement in page.screenreader %}
+                <tr>
+                  <th scope="row">{{ requirement[0] | capitalize  }}</th>
+                  <td>{{ requirement[1] | escape }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="post-content">
+      {% for video in site.video-demos limit:1 %}
+        {% assign path = page.id | replace: page.slug , ""  | prepend: '/assets/media/video' | append: video.directory | append: page.slug | append: ".mp4"  %}
+        {% assign file_exists = site.static_files | where: "path", path  %}
+        {% if file_exists.size != 0 %}
+          <h2 class="h-bravo">
+            Video examples
+          </h2>
+        {% endif %}
+      {% endfor %}
+
+      <media-gallery>
+        {% for video in site.video-demos %}
+          {% assign path = page.id | replace: page.slug , ""  | prepend: '/assets/media/video' | append: video.directory | append: page.slug | append: ".mp4"  %}
+          {% assign file_exists = site.static_files | where: "path", path  %}
+          {% if file_exists.size != 0 %}
+            {% include video-player.html filename = path title = video.title %}
+          {% endif %}
+        {% endfor %}
+      </media-gallery>
+
+      {{ content }}
+    </div>
+
+  </div>
+
+</article>

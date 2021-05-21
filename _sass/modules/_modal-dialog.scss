@@ -1,0 +1,76 @@
+dialog {
+  // display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  margin: 6rem auto;
+  width: 100%;
+  max-width: 640px;
+  border-radius: .25rem;
+  background-color: #fff;
+  box-shadow: 0 0 100px 50px rgba(#000,.2);
+  outline: none;
+  border: none;
+
+  &:focus {
+  }
+
+  &[open] {
+    display: block;
+  }
+
+  // &::backdrop {
+  //   background: rgba(#000,.8);
+  // }
+
+  section {
+    position: relative;
+    padding: 2rem;
+    z-index: -1;
+    background-color: #fff;
+    transform: translateZ(0);
+  }
+
+  [type="reset"] {
+    display: block;
+    background-color: #000;
+    position: absolute;
+    padding: 0;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 4rem;
+    background-image: url("data:image/svg+xml,%0A%3Csvg height='100px' width='100px' fill='white' xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 100 100' x='0px' y='0px'%3E%3Ctitle%3E35%3C/title%3E%3Cpath d='M93.24268,6.75732a6.00078,6.00078,0,0,0-8.48536,0L50,41.51465,15.24268,6.75732a6.00006,6.00006,0,0,0-8.48536,8.48536L41.51465,50,6.75732,84.75732a6.00006,6.00006,0,0,0,8.48536,8.48536L50,58.48535,84.75732,93.24268a6.00006,6.00006,0,0,0,8.48536-8.48536L58.48535,50,93.24268,15.24268A5.99989,5.99989,0,0,0,93.24268,6.75732Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include focus;
+    &:before {
+      display: none;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      background: rgba(#000, .7);
+    }
+  }
+}
+
+
+/* Polyfill for Dialog on FF, Safari etc */
+.no-dialog dialog {
+  display: none;
+}
+
+.no-dialog dialog[open] {
+  display: block;
+}

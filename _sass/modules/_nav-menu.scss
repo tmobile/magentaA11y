@@ -1,0 +1,79 @@
+nav.menu {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+  margin-bottom: 3rem;
+  background: #fff;
+  border-radius: 2px;
+  padding-bottom: 0;
+  box-shadow: 0 1px 2px 1px rgba(#000,.1), 0 30px 18px -18px rgba(#000,0);
+  //border: 1px solid $color-border-gray;
+
+
+  .home {
+    display: block;
+    font-weight: bold;
+    padding: 1.5rem;
+    text-align: left;
+    text-decoration: none;
+    box-shadow: 0 1px 2px 1px rgba(#000,0), 0 30px 18px -18px rgba(#000,0);
+    transition: .3s;
+    &:hover,
+    &:focus {
+      box-shadow: 0 1px 2px 1px rgba(#000,.2), 0 30px 18px -18px rgba(#000,0);
+    }
+    &:after {
+      display: none !important;
+    }
+
+  }
+  .expander-toggle {
+    width: auto;
+    padding-left: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    border-left: 1px solid $color-border-gray;
+    border-bottom: 0 !important;
+    margin: 0;
+    @include ripple(#fff, #eee, center, center);
+    box-shadow: 0 1px 2px 1px rgba(#000,0), 0 30px 18px -18px rgba(#000,0);
+    transition: .3s;
+    border-radius: 0 2px 2px 0;
+    outline: none;
+    @include focus;
+
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: 0 1px 2px 1px rgba(#000,.2), 0 30px 18px -18px rgba(#000,0);
+    }
+
+    &[aria-expanded="true"] {
+    }
+  }
+  ul.expander-content {
+    grid-column: span 2;
+    margin: 0;
+    padding: 0;
+    border: none;
+    li {
+      display: block;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid $color-border-gray;
+      a {
+        text-align: left;
+        padding: 1rem 1.5rem;
+        display: block;
+        margin: 0;
+        &:after {
+          display: none !important;
+        }
+      }
+      button {
+        margin: 1rem 1.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article>
+  <div class="container post-content narrow">
+    <h1 class="h-alpha">
+      {{ page.title | escape }}
+    </h1>
+    {{ content }}
+
+    <ul>
+      {% for page in site.demos %}
+      <li><a href="{{ site.baseurl }}{{ page.url }}"> {{ page.title}}</a> </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
+
+</article>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main id="content">
+    {{ content }}
+    </main>
+
+    {%- include footer.html -%}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/scripts/index.js"></script>
+    <script>
+
+      $("input[type='checkbox']").change(function() {
+          var arr = [];
+          arr.push([ '#a11y - {{ page.url | replace: '/', '' | capitalize }} Accessibility Acceptance Criteria' ]);
+          $("input[type='checkbox']:checked").each(function(){
+              var $this = $(this);
+              // arr.push([ $this.data('title'), $this.data('success-criteria'), $this.data('keyboard-support'), ]);
+              arr.push([ $this.data('success-criteria') ]);
+          });
+          var textarea = document.getElementById("criteria-area");
+          textarea.value = arr.join("\n");
+          console.log(arr);
+      });
+
+      $("#copy").click(function(){
+          $("#criteria-area").select();
+          document.execCommand('copy');
+      });
+    </script>
+  </body>
+</html>

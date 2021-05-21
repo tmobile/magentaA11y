@@ -1,0 +1,14 @@
+<div class="skip-links container narrow">
+  <a href="#nav">Skip to navigation</a>
+  <a href="#content">Skip to main content</a>
+  <a href="#footer">Skip to site Map</a>
+</div>
+
+<header class="container">
+  {%- assign default_paths = site.pages | map: "path" -%}
+  {%- assign page_paths = site.header_pages | default: default_paths -%}
+
+  {%- if page_paths -%}
+    {%- include nav.html -%}
+  {%- endif -%}
+</header>

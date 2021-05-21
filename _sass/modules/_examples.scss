@@ -1,0 +1,30 @@
+example,
+[class^="example"],
+[id^="example"] {
+  display: block;
+  padding: 2rem;
+  background: $color-example;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+
+  fieldset {
+    margin-bottom: 0;
+  }
+
+  nav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  details {
+    margin-bottom: 0;
+  }
+
+  figure {
+    margin-bottom: 1rem;
+  }
+
+  .expander-group {
+    margin-bottom: 0;
+  }
+}

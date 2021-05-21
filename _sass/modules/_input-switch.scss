@@ -1,0 +1,77 @@
+input[role="switch"] {
+  + label {
+    padding-left: 6rem;
+    &:before {
+      content: 'off';
+      color: $color-gray-xtra-dark;
+      text-align: right;
+      font-size: 14px;
+      line-height: 2rem;
+      font-weight: normal;
+      display: block;
+      width: 2.5rem;
+      padding: 0 .75rem 0 .75rem;
+      height: 2rem;
+      position: absolute;
+      left: 1.25rem;
+      top: 1rem;
+      background: $color-gray-light;
+      border-radius: 1rem;
+      transition: .4s;
+      border: none;
+      box-shadow: none;
+      speak: none;
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 2rem;
+      position: absolute;
+      left: 1.25rem;
+      top: 1rem;
+      background: #fff;
+      transition: .4s;
+      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px 2px $color-gray-light;
+    }
+  }
+
+  &:checked + label {
+    &:before {
+      background: $color-green;
+      content: 'on';
+      color: #fff;
+      text-align: left;
+      text-shadow: 0 0 3px rgba($color-green-dark,.4);
+    }
+    &:after {
+      content: '';
+      left: 3.25rem;
+      background: #fff;
+      box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px 2px  $color-green;
+    }
+  }
+
+  + label:hover:before,
+  &:focus + label:before {
+    background: lighten($color-focus, 30);
+    color: darken($color-focus, 0);
+    box-shadow: none;
+  }
+  + label:hover:after,
+  &:focus + label:after {
+    box-shadow: 0 0 0rem .5rem rgba($color-focus,.2), inset 0 0px 0px 2px rgba($color-focus,.375);
+  }
+
+  &:active {
+    color: $color-brand-primary;
+    + label {
+      &:after {
+        background: #fff;
+        box-shadow: 0 0 0rem .75rem rgba($color-focus,.4);
+        border: 0;
+      }
+    }
+  }
+}
