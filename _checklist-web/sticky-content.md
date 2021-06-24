@@ -44,7 +44,7 @@ It uses only CSS (no JavaScript) to float content as desired.
 
 ### Group
 
-- Must appears in logical page order within the page.
+- Must appear in logical page order within the page.
 - Do not place it at the actual end or beginning of the DOM
 
 
