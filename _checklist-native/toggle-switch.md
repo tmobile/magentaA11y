@@ -30,12 +30,13 @@ screenreader:
 
 - Switch or Toggle Button - A switch is a visual toggle between two mutually exclusive states — on and off
 - You should use a native switch when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
-- A toggle should never do anything but toggle on or off.  It should never automatically navigate the user to another field or screen
+- A toggle should just toggle on or off.  It can add related content to the screen.  Toggling on or off should not automatically navigate the user to another field or screen, which would be a change of context
 
 ### Name
 
 - Name describes purpose while focus is in/on the control
 - Best practice is to not include "button" in the name
+- Name should match the visible label, if any
 
 - **iOS Tips**
 	- Set a label in Interface Builder in the Identity Inspector
@@ -50,7 +51,7 @@ screenreader:
 	- `android:text` XML attribute
 	- Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label
 	- `contentDescription` overrides `android:text`  
-	- Use `labelFor` attribute to connect the visible label to the control
+	- Use `labelFor` attribute to associate the visible label with the control
 
 ### Role
 
