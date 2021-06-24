@@ -10,7 +10,7 @@ keyboard:
     Toggles the expander.
   enter: |
     Toggles the expander.
-          
+
 mobile:
   swipe: |
     Focus moves to the element, expresses its state (expanded/collapsed)

@@ -20,7 +20,7 @@ keyboard:
     Changes the grid of dates to the previous/next year.
   home/end: |
     Moves focus to the first/last day of the current week.   
-           
+
 mobile:
     swipe: |
         Focus moves through elements, expresses its state

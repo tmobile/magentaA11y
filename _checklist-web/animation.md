@@ -22,7 +22,7 @@ screenreader:
     n/a
   state: |
     n/a
-        
+
 mobile:
   swipe: |
     Description of the animation

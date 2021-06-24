@@ -9,7 +9,7 @@ keyboard:
     Focus moves directly to the main content area
   tab: |
     Links and buttons within the main area are focusable
-      
+
 mobile:
   swipe: |
     Focus moves within main area

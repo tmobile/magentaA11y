@@ -18,12 +18,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: A11yEngineer
+title: Magenta A11y
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Accessibility acceptance success criteria testing checklist.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tmobile.github.io/a11yEngineer" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/a11yEngineer" # the subpath of your site, e.g. /blog
+url: "https://tmobile.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:
 google_analytics:
@@ -31,7 +31,7 @@ google_analytics:
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+- jekyll-feed
 collections:
   checklist-web:
     output: true

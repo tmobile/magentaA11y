@@ -9,13 +9,13 @@ keyboard:
     Focus moves directly to the footer
   tab: |
     Links and buttons within the footer are focusable
-    
+
 mobile:
   swipe: |
     Focus moves within footer.
   doubletap: |
     This typically activates most elements.
-    
+
 screenreader:
   name:  |
     Discoverable by screen reader as footer or contentinfo landmark

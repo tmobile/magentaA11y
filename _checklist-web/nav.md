@@ -9,7 +9,7 @@ keyboard:
     Focus moves directly to the nav element
   tab: |
     Focus moves to Links and buttons within the nav
-        
+
 mobile:
   swipe: |
       Focus moves within the nav

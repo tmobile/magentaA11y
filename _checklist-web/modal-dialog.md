@@ -36,7 +36,7 @@ screenreader:
 
 Browser support for `<dialog>` is still incomplete. 
 
-Some browsers require additional scripting. This simple example [may not work correctly in all browsers](https://caniuse.com/?search=dialog).
+Some browsers require additional scripting. This simple example works in Chrome, but [may not work correctly in all browsers](https://caniuse.com/?search=dialog) such as Safari and Firefox.
 
 {% highlight html %}
 {% include /examples/modal-dialog.html %}

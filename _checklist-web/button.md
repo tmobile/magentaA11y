@@ -11,7 +11,7 @@ keyboard:
     Activates the button.
   enter: |
     Activates the button.
-    
+
 screenreader:
   name:  |
     Purpose is clear
@@ -21,22 +21,12 @@ screenreader:
     Indicates it has popup for modals, listbox, or menus
   state: |
     Expresses its state if applicable (pressed, expanded, disabled)
-          
+
 mobile:
   swipe: |
     Focus moves to the element, expresses its state
   doubletap: |
     Activates the button
-
-media:
-  ios/button.mp4: |
-    iOS Voiceover Safari
-  android/button.mp4: |
-    Android Talkback Chrome
-  jaws/button.mp4: |
-    JAWS Chrome
-  nvda/button.mp4: |
-    Windows NVDA Firefox
 
 ---
 

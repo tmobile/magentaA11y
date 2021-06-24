@@ -9,7 +9,7 @@ keyboard:
     Focus visibly moves to the checkbox
   spacebar: |
     Toggles the checkbox between states
-      
+
 mobile:
   swipe: |
     Focus moves to the element, expresses its state

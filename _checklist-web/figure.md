@@ -10,7 +10,7 @@ keyboard:
     Activates controls
   spacebar: |
     Activates controls
-      
+
 mobile:
   swipe: |
     Focus visibly moves to each control

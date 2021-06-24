@@ -1,6 +1,7 @@
 ---
 
 layout: home
+title: Accessibility checklist
 
 ---
 

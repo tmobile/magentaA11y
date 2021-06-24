@@ -1,12 +1,12 @@
-# About a11yEngineer
+# About T-a11y
 
-a11yEngineer is a tool built to simplify the process of accessibility testing. 
+T-a11y (or Tally) is a tool built to simplify the process of accessibility testing. 
 
 We wanted to build an intuitive way for product teams to define "done" in a way that ensures accessible experiences work for everyone.
 
 It uses Jekyll with a custom theme as a CMS and relies on markdown for entry creation.
 
-## Using a11yEngineer
+## Using T-a11y
 
 Product owners, designers, developers or testers can use the checklist builder to collect testing instructions for web or native app components.
 
@@ -31,4 +31,4 @@ Here are some ways to contribute:
 - Fix a typo or edit for consistent language.
 
 ## License
-a11yEngineer is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
+T-ally is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.

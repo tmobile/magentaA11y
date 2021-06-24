@@ -57,7 +57,7 @@ screenreader:
 - May have `role="alert"` if serving as an input error message
 
 ### Group
-- Use `aria-describedby="hint-id` to associate an input with a hint.
+- Use `aria-describedby="hint-id"` to associate an input with a hint.
 
 ### Focus
 - Hints should not receive focus

@@ -34,9 +34,14 @@ Many companies have crossed the threshold to a majority of visits being from mob
 
 ## 3. Test with the desktop screenreader
 
+- Not having all three screen readers available doesn't meean you can't test for accessibility.
+- Most of the accessibility defects you're likely to encounter will show up in any screen reader.
+
 ### Screenreader browser pairings
+
 - PC
   - JAWS + Chrome
   - NVDA + Chrome 
 - Mac
   - Voiceover + Safari
+  

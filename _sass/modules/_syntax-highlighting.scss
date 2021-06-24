@@ -30,6 +30,9 @@ pre {
 .highlight {
   background: #fff;
 
+  @include break($break-large) {
+    max-width: 682px;
+  }
   .highlighter-rouge & {
     background: $color-example;
   }

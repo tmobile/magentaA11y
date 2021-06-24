@@ -18,30 +18,6 @@ form {
   }
 }
 
-fieldset {
-  border: none;
-  padding: 0 0 .5rem 0;
-  margin: 0rem 0 calc(2rem + 3px) 0;
-  border-radius: 2px;
-  background: #fff;
-  display: grid;
-  box-shadow: 0 1px 2px 1px rgba(#000, .05);
-
-}
-
-legend {
-  font-weight: bold;
-  margin: 0 0 0 0;
-  padding: 1.5rem 1rem 1.5rem 1rem;
-  width: 100%;
-  font-size: 1.25rem;
-  float: left;
-  background: #fff;
-  position: relative;
-  @include clearfix;
-  border-bottom: 1px dotted $color-border-gray;
-}
-
 textarea,
 input[type="text"],
 input[type="search"],
@@ -77,6 +53,44 @@ label {
     padding: 0 .5rem;
     border-radius: .125rem;
   }
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0rem 0 calc(2rem + 3px) 0;
+  border-radius: 2px;
+  background: #fff;
+  display: grid;
+  box-shadow: 0 1px 2px 1px rgba(#000, .05);
+
+  input,
+  textarea {
+    margin: 0 1rem 1rem 1rem;
+    border: 1px solid $color-border-gray;
+    display: block;
+
+    &:last-of-type {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  label {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+
+legend {
+  font-weight: bold;
+  margin: 0 0 0 0;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+  float: left;
+  background: #fff;
+  position: relative;
+  @include clearfix;
+  border-bottom: 1px dotted $color-border-gray;
 }
 
 
@@ -139,8 +153,6 @@ input[type=radio] {
 
 textarea {
   display: block;
-  width: 100%;
-  border: none;
   font-size: 1rem;
   resize: none;
 }

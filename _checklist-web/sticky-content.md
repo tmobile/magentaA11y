@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Sticky content"
+title:  "Sticky element"
 categories: main
 
 keyboard:
@@ -25,7 +25,10 @@ screenreader:
 ## Code examples
 
 ### Place the element in logical DOM order
-This semantic HTML appears in logical order in the page.
+
+This semantic HTML appears in logical order in the page. 
+
+It uses only CSS (no JavaScript) to float content as desired.
 
 {% highlight html %}
 {% include /examples/sticky-content.html %}

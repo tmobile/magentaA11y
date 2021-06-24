@@ -1,12 +1,12 @@
 ---
 layout: entry
-title:  "Web page HTML"
+title:  "Basic web page"
 categories: html
 order: 0
 
 keyboard:
   tab: |
-    Enters the page and focuses only interactive elements
+    Enters the page and visibly focuses only interactive elements
   zoom: |
     Content zooms up to 200%
 
@@ -49,7 +49,7 @@ If the URL changes, your page needs a title unique to that page in the experienc
 
 {% highlight html %}
 <head>
-  <title>Page title - Site name</title>
+  <title>Page title</title>
 </head>
 {% endhighlight %}
 
@@ -64,7 +64,15 @@ If the URL changes, your page needs a title unique to that page in the experienc
 {% endhighlight %}
 
 ### Structure your page with landmarks
-This semantic HTML contains all accessibility features by default.
+
+Landmarks give structure to the page for the screenreader user to be able to navigate the page by major sections.
+
+Each page should include:
+
+- [Header](/checklist-web/header/)
+- [Nav](/checklist-web/nav/)
+- [Main](/checklist-web/footer/)
+- [Footer](/checklist-web/footer/)
 
 {% highlight html %}
 <header>
@@ -80,33 +88,3 @@ This semantic HTML contains all accessibility features by default.
   <!--  Site map and legal info -->
 </footer>
 {% endhighlight %}
-
-### Avoid custom elements
-This custom main element requires extra attributes.
-
-{% highlight html %}
-<div role="main"> 
-  <h1>About our company</h1>
-  <p>The main content of the page belongs here.</p>
-</div>
-{% endhighlight %}
-
-#a11y - Web Accessibility Acceptance Criteria
-
-How to test a web page html
-
-Keyboard actions
-- Tab: Enters the page and focuses only interactive elements
-- Cntrl +/-: Zooms in/out of the page
-
-Mobile screenreader gestures
-- Swipe: Focus moves within page
-- Pinch: Page zooms in/out
-
-Screenreader output
-- Name: The web page has a unique title
-- Role: n/a
-- Group: Contains discoverable landmarks: header, nav, main and footer landmarks
-- State: n/a
-
-Full information: https://www.a11yengineer.com/checklist-web/html/

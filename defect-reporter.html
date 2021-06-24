@@ -1,0 +1,113 @@
+---
+permalink: /defect-reporter.html
+layout: default
+---
+
+<div class="container">
+  <h1 class="h-alpha">Defect reporter</h1>
+
+  <p>Use this tool to generate a markdown or CSV defect report</p>
+
+  <div class="success-criteria-maker">
+    <div class="checklist-container">
+    <form>
+      <fieldset>
+        <legend>
+          Description
+        </legend>
+
+        <label for="uri">URI</label>
+        <input type="text" id="uri">
+
+        <label for="screenshot">Screenshot</label>
+        <input type="text" id="screenshot">
+
+        <label for="whats-wrong">What's wrong</label>
+        <textarea id="whats-wrong"></textarea>
+
+        <label for="problem">Why it's a problem</label>
+        <textarea id="problem"></textarea>
+
+        <label for="fix">How to fix it</label>
+        <textarea id="fix"></textarea>
+
+
+      </fieldset>
+
+      <h2 class="h-bravo">Reproduce with</h2>
+
+      <fieldset>
+        <legend>Platform</legend>
+        <input type="checkbox" id="ios" name="screenreader">
+        <label for="ios">iOS</label>
+
+        <input type="checkbox" id="android" name="screenreader">
+        <label for="android">Android</label>
+
+        <input type="checkbox" id="windows" name="screenreader">
+        <label for="windows">Windows</label>
+
+        <input type="checkbox" id="macos" name="screenreader">
+        <label for="macos">MacOS</label>
+      </fieldset>
+
+
+      <fieldset>
+        <legend>Assisitve technology</legend>
+        <input type="checkbox" id="keyboard" name="screenreader">
+        <label for="keyboard">Keyboard</label>
+
+
+        <input type="checkbox" id="voiceover" name="screenreader">
+        <label for="voiceover">Voiceover</label>
+
+        <input type="checkbox" id="talkback" name="screenreader">
+        <label for="talkback">Talback</label>
+
+        <input type="checkbox" id="nvda" name="screenreader">
+        <label for="nvda">NVDA</label>
+
+        <input type="checkbox" id="jaws" name="screenreader">
+        <label for="jaws">JAWS</label>
+      </fieldset>
+
+      <h2 class="h-bravo">Validation test</h2>
+
+
+      {% assign ordered_pages = site.checklist-web | sort: "title" | sort: "order" %}
+      {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
+      {% for category in site.web-categories-order %}
+      <details class="checklist-details" open>
+        <summary id="{{ category | escape }}-category-title">
+          <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
+        </summary>
+        <div role="group" aria-labelledby="{{ category | escape }}-category-title">
+          <ul>
+            {% for page in ordered_pages %}
+            {% include checklist-loop.html %}
+            {% endfor %}
+          </ul>
+        </div>
+      </details>
+      {% endfor %}
+    </form>
+  </div>
+  <div class="criteria-container">
+    <label for="criteria-area" class="h-charlie">
+      Full defect
+    </label>
+    <div class="textarea-container">
+      <textarea id="criteria-area"></textarea>
+      <div class="textarea-controls">
+        <div>
+          <button id="copy" class="button-alpha" type="button">
+            Copy
+          </button>
+          <!--<input type="checkbox" role="switch" id="markdown">-->
+          <!--<label for="markdown">Show Markdown</label>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

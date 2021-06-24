@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
   {%- include head.html -%}
 
   <body>
@@ -16,7 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/assets/scripts/index.js"></script>
     <script>
-
       $("input[type='checkbox']").change(function() {
           var arr = [];
           arr.push([ '#a11y - {{ page.url | replace: '/', '' | capitalize }} Accessibility Acceptance Criteria' ]);

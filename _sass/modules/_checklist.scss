@@ -25,8 +25,9 @@
 
     textarea {
       height: calc(100vh - 7rem);
-      padding: 1rem;
-      border-top: none;
+      width: 100%;
+      padding: 2rem;
+      border: none;
       border-radius: 0;
       margin-bottom: 0;
       color: $color-text-color;

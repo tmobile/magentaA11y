@@ -2,15 +2,14 @@
 layout: entry
 title:  "Header / banner"
 categories: header html
-order: 1
+order: 2
 
 keyboard:
   skip-links: |
     Focus moves directly to the header
   tab: |
     Links and buttons within the header are focusable
-    
-     
+
 mobile:
   swipe: |
     Focus moves within the dialog and doesn't enter the rest of the page.

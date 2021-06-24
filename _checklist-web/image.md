@@ -8,11 +8,11 @@ keyboard:
     Nothing, images should not be focusable unless they are part of a control
   arrow-keys: |
     The alt text of the image
-      
+
 mobile:
   swipe: |
       The screenreader reads the alt text
-      
+
 screenreader:
   name:  |
     The content of the image should be clear

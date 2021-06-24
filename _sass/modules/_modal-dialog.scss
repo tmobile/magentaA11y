@@ -47,7 +47,13 @@ dialog {
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: center center;
+    border: 1px solid transparent; // This is only here to solve for a Chrome bug that keeps the button from showing focus
     @include focus;
+
+    &:focus {
+      border: 1px solid transparent;// This is only here to solve for a Chrome bug that keeps the button from showing focus
+    }
+
     &:before {
       display: none;
     }
