@@ -34,7 +34,7 @@ nav {
       left: 0rem;
       width: 100%;
       height: 3px;
-      background: #000;
+      background: $color-brand-primary;
     }
     &[aria-current="page"],
     &.current {

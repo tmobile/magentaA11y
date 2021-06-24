@@ -1,12 +1,12 @@
-# About T-a11y
+# About Magenta A11y
 
-T-a11y (or Tally) is a tool built to simplify the process of accessibility testing. 
+Magenta A11y is a tool built to simplify the process of accessibility testing. 
 
 We wanted to build an intuitive way for product teams to define "done" in a way that ensures accessible experiences work for everyone.
 
 It uses Jekyll with a custom theme as a CMS and relies on markdown for entry creation.
 
-## Using T-a11y
+## Using Magenta A11y
 
 Product owners, designers, developers or testers can use the checklist builder to collect testing instructions for web or native app components.
 
@@ -30,5 +30,12 @@ Here are some ways to contribute:
 - Add an entry for a component that is not included.
 - Fix a typo or edit for consistent language.
 
+## Local installation instructions
+
+Magenta A11y is just Github Pages site running Jekyll. Follow Github's instructions for installing locally.
+
+- [Clone the open source repo from T-Mobile](https://github.com/tmobile/a11yEngineer)
+- [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
+
 ## License
-T-ally is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
+Magenta A11y is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
