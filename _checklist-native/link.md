@@ -45,8 +45,7 @@ screenreader:
 
 - Ensure links appear in the Local Context Menu and Rotor  
   
-- **iOS  
-  **
+- **iOS**
   - Use TextView with `UIAccessibilityTraitLink`
   - Announces as "link"
 - **Android**  
@@ -72,7 +71,7 @@ screenreader:
 
 - Only manage focus when needed. Primarily, let the device manage default focus.  
   
- **iOS**
+- **iOS**
   - `accessibilityElementIsFocused`  
 	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
 	- `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
