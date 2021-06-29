@@ -29,7 +29,7 @@ github_username:
 google_analytics:
   $ANALYTICS_ACCT
 # Build settings
-theme: minima
+theme: jekyll-theme-minimal
 plugins:
 - jekyll-feed
 collections:
