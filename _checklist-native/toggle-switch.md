@@ -34,10 +34,12 @@ screenreader:
 - You should use a native switch when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
 - A toggle should just toggle on or off.  It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context
 
+
 ### Name
 
 - Name describes purpose while focus is on the control (or on the whole table row)
 - Best practice is to not include "button" in the name
+- Name should match the visible label, if any
 
 - **iOS Tips**
 	- Set a label in Interface Builder in the Identity Inspector
