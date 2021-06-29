@@ -78,7 +78,7 @@ screenreader:
 	- Only the container class is an accessible element `isAccessibilityElement=true` and announces all elements in one announcement  This makes child elements no longer accessible by screen reader 
 - **Android Tips**
 	- ViewGroup
-	- Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
+	- Set the container objects `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
 
 ### State
 
@@ -91,7 +91,7 @@ screenreader:
 	- on/off:  `isOn` or `setOn`   
 	- Announcement: dimmed, on/off, "double tap to toggle setting" 
         
-- **Android*
+- **Android**
 	- Active: `android:enabled=true`
 	- Disabled: `android:enabled=false`
 	- on/off: `isChecked`, `setChecked`
