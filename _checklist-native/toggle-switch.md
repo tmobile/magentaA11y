@@ -4,14 +4,16 @@ title:  "Toggle switch"
 categories: controls
 
 keyboard:
-  tab: |
+  tab or arrow keys: |
     Focus visibly moves to the switch
-  spacebar: |
-    Toggles the switch between states
+ spacebar: |
+    Activates on iOS and Android
+ enter: |
+    Activates on Android
       
 mobile:
   swipe: |
-    Focus moves to the element, expresses its state
+    Focus moves to the element, expresses its name, role, state
   doubletap: |
     Element toggles between states
 
@@ -30,11 +32,12 @@ screenreader:
 
 - Switch or Toggle Button - A switch is a visual toggle between two mutually exclusive states — on and off
 - You should use a native switch when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
-- A toggle should just toggle on or off.  It can add related content to the screen.  Toggling on or off should not automatically navigate the user to another field or screen, which would be a change of context
+- A toggle should just toggle on or off.  It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context
+
 
 ### Name
 
-- Name describes purpose while focus is in/on the control
+- Name describes purpose while focus is on the control (or on the whole table row)
 - Best practice is to not include "button" in the name
 - Name should match the visible label, if any
 
@@ -43,15 +46,15 @@ screenreader:
 	- Group visible text label and the control in the same view container: `accessibilityFrameInContainerSpace`
 	- `setTitle( )` method
 	- If no visible label, use `accessibilityLabel` on control
-	- `Hint` is used only if the results of interacting with it are not obvious from the control's label
-	- Match visible label, if any
+	- `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label
+	- Match visible label
 	- To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector or use `isAccessibilityElement=false`
-	- If hiding visible label, use accessibilityLabel on control
+	- If hiding visible label from screen reader, use `accessibilityLabel` on control
 - **Android Tips**  
 	- `android:text` XML attribute
 	- Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label
 	- `contentDescription` overrides `android:text`  
-	- Use `labelFor` attribute to associate the visible label with the control
+	- Use `labelFor` attribute to associate the visible label with the control (Best practice)
 
 ### Role
 
@@ -62,14 +65,14 @@ screenreader:
 	- "double tap to toggle setting" is expected announcement
 - **Android Tips**
 	- Standard RadioButton with RadioGroup when applicable
-	- "double tap to activate" is expected announcement
+	- "double tap to activate" or "double tap to toggle" is expected announcement
 
 ### Groupings
 
-- Group visible label with switch (if label is visible)
+- Group visible label with switch (label and switch can be grouped together in a tableview/row/blade - one swipe)
 
 - **iOS Tips**
-	- `accessibilityFrame
+	- `accessibilityFrame`
 	- `accessibilityFrameInContainerSpace`
 	- GroupView
 	- Only the container class is an accessible element `isAccessibilityElement=true` and announces all elements in one announcement  This makes child elements no longer accessible by screen reader 
@@ -79,19 +82,19 @@ screenreader:
 
 ### State
 
-- States can be selected, dimmed/disabled, on/off
+- States can be selected, dimmed/disabled, on/off, checked/unchecked
 
-- **iOS Tips**  
+- **iOS**  
 	- Active: `isEnabled property`
 	- Disabled: `UIAccessibilityTraitNotEnabled`
 	- disabled/dimmed
 	- on/off:  `isOn` or `setOn`   
 	- Announcement: dimmed, on/off, "double tap to toggle setting" 
         
-- **Android Tips**
+- **Android*
 	- Active: `android:enabled=true`
 	- Disabled: `android:enabled=false`
-	- on/off: `isChecked`, `setChecked`, toggle
+	- on/off: `isChecked`, `setChecked`
 	- Announcement: disabled, on/off, "double tap to activate" or "double tap to toggle"
 
 ### Focus
@@ -99,18 +102,18 @@ screenreader:
 - Only manage focus when needed. Primarily, let the device manage default focus order  
 - Consider how focus should be managed between child elements and their parent views or containers
 
-- **iOS Tips**
+- **iOS**
 	- `accessibilityElementIsFocused`  
 	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
 	- `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
 	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
 	- To move screen reader focus to newly revealed content: `UIAccessibilityLayoutChangedNotification`
 	- To NOT move focus, but dynamically announce new content: `UIAccessibilityAnnouncementNotification`
-- **Android Tips**
+- **Android**
 	- `importantForAccessibility` makes the element visible to the Accessibility API
 	- `android:focusable`
 	- `android=clickable`
-	- Implement an `onClick( )` event handler for keyboard, not `onTouch( )`
+	- Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
 	- `nextFocusDown`
 	- `nextFocusUp`
 	- `nextFocusRight`

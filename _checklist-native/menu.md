@@ -4,97 +4,113 @@ title:  "Menu"
 categories: controls
 
 keyboard:
-  tab: |
-    Focus moves to buttons within the menu on iOS
-  arrow keys: |
-    Focus moves to buttons within the menu on iOS
-          
+  tab or arrow keys: |
+    Focus visibly moves, confined within the menu
+  escape: |
+    The menu closes and returns focus to the button that launched it
+  space: |
+    Any buttons or links are activated on iOS and Android
+  enter: |
+    Any buttons or links are activated on Android
+
 mobile:
   swipe: |
     Focus moves, confined within the menu
   doubletap: |
-    Activates most elements
-
+    This typically activates most elements
+  group: |
+    n/a
+    
 screenreader:
   name:  |
-    Name describes the purpose of the control (opens menu or closes menu)
+    Purpose of menu is clear
   role:  |
-    Identifies itself as a button or menu button
-  group: |
-    Visible label, if any, is grouped with the menu button in a single swipe
+    May identify itself as a menu, sidebar or panel. Confining the user within the menu communicates the context to the screen reader user that there is a menu or modal present
   state: |
-    State options: disabled/dimmed, expands/collapses, if opens/closes is not in name
+    When open, other content is inert. Expands/collapses, closes/opens states are typically announced for a menu, sidebar or panel
 ---
 
 ## Developer notes
 
 
 - A menu is a container for a list of items
+- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Options to close the menu for the screen reader user:  An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item.  Two/three finger swipe.  A close button.
+- Tapping outside the modal to close can not be the only option for screen reader users
 
 ### Name
 
 - Name describes the purpose of the control (Ex: opens menu or closes menu), with additional label description if needed
-- **iOS Options**
-  - Set a label in Interface Builder in the Identity Inspector
-  - setTitle( ) method
-  - If no visible text label, use accessibilityLabel  
-  - Hint is used only if the results of interacting with it are not obvious from the control's label.
-- **Android Options**  
-  - android:text XML attribute
-  - Optional: use contentDescription for a more descriptive name, depending on type of view and for elements without a visible label.
-  - contentDescription overrides android:text  
+**iOS Tips**
+    -   Set a label in Interface Builder in the Identity Inspector
+    -   Group visible text label and the control in the same view container: `accessibilityFrameInContainerSpace`
+    -   `setTitle( ) method`
+    -   If no visible label, use `accessibilityLabel` on control
+    -   `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label
+    -   Match visible label
+    -   To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector
+    -   If hiding visible label from screen reader, use `accessibilityLabel` on control
+-   **Android Tips**  
+    -   `android:text` XML attribute
+    -   Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
+    -   `contentDescription` overrides `android:text`          
+    -   Use `labelFor` attribute to associate the visible label with the control  
 
 ### Role
+
+-  Required: Screen reader user is confined inside a menu, communicating a modal is present 
 
 - **iOS**
   - UIMenu
 - **Android**
-  - android.view.Menu  
+  - `android.view.Menu`  
 
 
 ### Groupings
 
-Group visible label, if any, is grouped with the menu button in a single swipe  
+- Visible label, if any, is grouped with the menu button in a single swipe  
   
-- **iOS**
-  - accessibilityFrame
-  - accessibilityFrameInContainerSpace
+-- **iOS**
+  - `accessibilityFrame`
+  - `accessibilityFrameInContainerSpace`
   - GroupView
-  - Only the container class is an accessible element
 - **Android**
   - ViewGroup
-  - Set the container object's android:screenReaderFocusable attribute to true, and each inner object's android:focusable attribute to false. In doing so, accessibility services can present the inner elements' content descriptions/names, one after the other, in a single announcement.
 
 ### State
 
 - **Expandable menus**
-  - Values are the future state - "expands"/"collapses"
+  - State must be announced- expands/collapses, opens/closes. Add logic and announcement to the programmatic name for the state
   - If "opens" or "closes" is not included in the name, the expands/collapses state must be announced
-- **iOS**
-  - UIControlState, UIAccessibilityTraitEnabled  
-  - Disabled: UIAccessibilityTraitNotEnabled. Announced as "dimmed"
-- **Android**
-  - Active: android:enabled=true  
-  - Disabled: android:enabled=false. Announced as: "disabled"
-
+ **iOS**
+  - Active: `isEnabled property`
+  - Disabled: `UIAccessibilityTraitNotEnabled`. Announcement: dimmed  
+- **Android**  
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`. Announcement: disabled
+  
 ### Focus
 
-Screen reader focus  **must**  be confined within the menu, which can include the button that opened it. Focus can remain on the button or moved to the first item in the menu. Swipe to navigate within the menu.  
+Screen reader focus  **must**  be confined within the menu, which can include the button that opened it
+Focus can remain on the menu button or move to the first item in the menu. 
 
-- **iOS Options**
-  - accessibilityElementIsFocused  
-  - isAccessibilityElement - Yes, if the element can respond to user input
-  - To move screen reader focus to newly revealed content: UIAccessibilityLayoutChangedNotification
-  - To NOT move focus, but announce new content: UIAccessibilityAnnouncementNotification
-- **Android Options**
-  - android:focusable=true
-  - android=clickable=true
-  - Implement an onClick( ) event handler for keyboard, not onTouch( )
-  - nextFocusDown
-  - nextFocusUp
-  - nextFocusRight
-  - nextFocusLeft
-  - accessibilityTraversalBefore (or after)
-  - To move screen reader focus to newly revealed content: Type_View_Focused
-  - To NOT move focus, but announce new content: accessibilityLiveRegion
-  - To hide controls: Important_For _Accessibility_NO
+ **iOS**
+	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
+  - `accessibilityElementIsFocused`  
+	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
+	- `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
+	- To move screen reader focus to newly revealed content: `UIAccessibilityLayoutChangedNotification`
+	- To NOT move focus, but dynamically announce new content: `UIAccessibilityAnnouncementNotification`
+- **Android**
+	- `importantForAccessibility` makes the element visible to the Accessibility API
+	- `android:focusable`
+	- `android=clickable`
+	- Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+	- `nextFocusDown`
+	- `nextFocusUp`
+	- `nextFocusRight`
+	- `nextFocusLeft`
+	- `accessibilityTraversalBefore` (or after)
+	- To move screen reader focus to newly revealed content: `Type_View_Focused`
+	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+	- To hide controls: `Important_For_Accessibility_false`
