@@ -6,7 +6,7 @@ categories: form
 keyboard:
   tab: |
     Focus moves visibly to the input
-  enter: |
+  enter or spacebar: |
     If the focus is on the button, expands the listbox and places focus on the currently selected option in the list. 
     If focus is in the listbox, collapses the listbox and keeps the currently selected option as the button label.
   arrow-keys: |
