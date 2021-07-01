@@ -68,7 +68,21 @@ nav.menu {
         display: block;
         margin: 0;
         &:after {
-          display: none !important;
+          display: none;
+
+        }
+        &:hover,
+        &:focus {
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: .5rem !important;
+            height: 100%;
+            background: #000;
+          }
         }
       }
       button {
