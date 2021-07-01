@@ -41,7 +41,7 @@ screenreader:
 ### Name
 
 - Name describes the purpose of the control (Ex: opens menu or closes menu), with additional label description if needed
-**iOS Tips**
+-   **iOS Tips**
     -   Set a label in Interface Builder in the Identity Inspector
     -   Group visible text label and the control in the same view container: `accessibilityFrameInContainerSpace`
     -   `setTitle( ) method`
@@ -70,7 +70,7 @@ screenreader:
 
 - Visible label, if any, is grouped with the menu button in a single swipe  
   
--- **iOS**
+- **iOS**
   - `accessibilityFrame`
   - `accessibilityFrameInContainerSpace`
   - GroupView
@@ -82,7 +82,7 @@ screenreader:
 - **Expandable menus**
   - State must be announced- expands/collapses, opens/closes. Add logic and announcement to the programmatic name for the state
   - If "opens" or "closes" is not included in the name, the expands/collapses state must be announced
- **iOS**
+- **iOS**
   - Active: `isEnabled property`
   - Disabled: `UIAccessibilityTraitNotEnabled`. Announcement: dimmed  
 - **Android**  
@@ -91,26 +91,26 @@ screenreader:
   
 ### Focus
 
-Screen reader focus  **must**  be confined within the menu, which can include the button that opened it
-Focus can remain on the menu button or move to the first item in the menu. 
+- Screen reader focus  **must**  be confined within the menu, which can include the button that opened it
+- Focus can remain on the menu button or move to the first item in the menu. 
 
- **iOS**
-	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
+- **iOS**
+  - `accessibilityViewIsModal` contains the screen reader focus inside the Modal
   - `accessibilityElementIsFocused`  
-	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
-	- `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
-	- To move screen reader focus to newly revealed content: `UIAccessibilityLayoutChangedNotification`
-	- To NOT move focus, but dynamically announce new content: `UIAccessibilityAnnouncementNotification`
+  - `isAccessibilityElement` makes the element visible or not to the Accessibility API
+  - `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
+  - To move screen reader focus to newly revealed content: `UIAccessibilityLayoutChangedNotification`
+  - To NOT move focus, but dynamically announce new content: `UIAccessibilityAnnouncementNotification`
 - **Android**
-	- `importantForAccessibility` makes the element visible to the Accessibility API
-	- `android:focusable`
-	- `android=clickable`
-	- Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
-	- `nextFocusDown`
-	- `nextFocusUp`
-	- `nextFocusRight`
-	- `nextFocusLeft`
-	- `accessibilityTraversalBefore` (or after)
-	- To move screen reader focus to newly revealed content: `Type_View_Focused`
-	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
-	- To hide controls: `Important_For_Accessibility_false`
+  - `importantForAccessibility` makes the element visible to the Accessibility API
+  - `android:focusable`
+  - `android=clickable`
+  - Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+  - `nextFocusDown`
+  - `nextFocusUp`
+  - `nextFocusRight`
+  - `nextFocusLeft`
+  - `accessibilityTraversalBefore` (or after)
+  - To move screen reader focus to newly revealed content: `Type_View_Focused`
+  - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+  - To hide controls: `Important_For_Accessibility_false`
