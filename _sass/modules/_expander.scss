@@ -18,6 +18,16 @@
     background-color: #fff;
     @include ripple;
 
+    &.subnav {
+      position: absolute;
+      right: -1.5rem;
+      top: -1rem;
+      min-width: 4rem;
+      height: 100%;
+      max-height: 4.5rem;
+      border-left: none;
+    }
+
     &:before {
       content: '';
       display: block;
@@ -64,6 +74,10 @@
 
     &.visible {
       display: block;
+    }
+
+    .expander-content {
+      background: $color-gray-xtra-light;
     }
   }
 }

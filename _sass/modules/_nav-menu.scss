@@ -64,11 +64,25 @@ nav.menu {
       border-top: 1px solid $color-border-gray;
       a {
         text-align: left;
-        padding: 1rem 1.5rem;
+        padding: 1.5rem;
         display: block;
         margin: 0;
         &:after {
-          display: none !important;
+          display: none;
+
+        }
+        &:hover,
+        &:focus {
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: .5rem !important;
+            height: 100%;
+            background: #000;
+          }
         }
       }
       button {
