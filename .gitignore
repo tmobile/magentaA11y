@@ -3,6 +3,7 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+CNAME
 Icon[
 ]
 .DS_Store
