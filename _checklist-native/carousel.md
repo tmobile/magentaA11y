@@ -3,8 +3,8 @@ layout: entry
 title:  "Carousel"
 categories: controls
 
- keyboard:
-  tab or arrow keys: |
+keyboard:
+ tab or arrow keys: |
     Focus visibly moves to the next item
  spacebar: |
     Activates interactive slide on iOS and Android
