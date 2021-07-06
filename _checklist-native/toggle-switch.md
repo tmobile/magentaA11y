@@ -10,7 +10,7 @@ keyboard:
     Activates on iOS and Android
   enter: |
     Activates on Android
-      
+
 mobile:
   swipe: |
     Focus moves to the element, expresses its name, role, state
