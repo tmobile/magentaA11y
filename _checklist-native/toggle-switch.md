@@ -4,7 +4,7 @@ title:  "Toggle switch"
 categories: controls
 
 keyboard:
-  tab or arrow keys: |
+ tab or arrow keys: |
     Focus visibly moves to the switch
  spacebar: |
     Activates on iOS and Android
