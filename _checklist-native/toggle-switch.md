@@ -6,11 +6,11 @@ categories: controls
 keyboard:
   tab or arrow keys: |
     Focus visibly moves to the switch
- spacebar: |
+  spacebar: |
     Activates on iOS and Android
- enter: |
+  enter: |
     Activates on Android
-      
+
 mobile:
   swipe: |
     Focus moves to the element, expresses its name, role, state
@@ -25,7 +25,7 @@ screenreader:
   group: |
     Visible label is grouped or associated with the switch in a single swipe
   state: |
-    Express its state: disabled/dimmed, On/Off
+    Express its state (disabled/dimmed, on/off)
 ---
 
 ## Developer Notes
@@ -103,7 +103,7 @@ screenreader:
 - Consider how focus should be managed between child elements and their parent views or containers
 
 - **iOS**
-	- `accessibilityElementIsFocused`  
+	- `accessibilityElementIsFocused` 
 	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
 	- `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
 	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
