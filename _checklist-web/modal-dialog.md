@@ -50,6 +50,8 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 ## Developer notes
 
+- The `aria-haspopup` attribute has very low support across screen readers. It is recommended to not use this attribute on modal windows and dialog boxes.
+
 ### Name
 - The modal window has a descriptive value from either:
   - `aria-label="Modal title"` or
