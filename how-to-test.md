@@ -21,10 +21,11 @@ It is crucial to test with the keyboard first, without the screenreader activate
 
 ### Browsers
 - Any major browser (Chrome, Safari, Firefox) is acceptable for keyboard testing.
+- Note: In Safari, you'll have to activate tab in Preferences » Advanced » Press Tab
 
 ## 2. Test with the mobile screenreader
 
-Many companies have crossed the threshold to a majority of visits being from mobile devices.
+Many websites have crossed the threshold to a majority of visits being from mobile devices.
 
 ### Screenreader browser pairings
 - iOS
@@ -34,14 +35,14 @@ Many companies have crossed the threshold to a majority of visits being from mob
 
 ## 3. Test with the desktop screenreader
 
-- Not having all three screen readers available doesn't meean you can't test for accessibility.
+- Not having all three screen readers available doesn't mean you can't test for accessibility.
 - Most of the accessibility defects you're likely to encounter will show up in any screen reader.
 
 ### Screenreader browser pairings
 
 - PC
-  - JAWS + Chrome
   - NVDA + Chrome 
+  - JAWS + Chrome
 - Mac
   - Voiceover + Safari
   
