@@ -29,7 +29,7 @@ screenreader:
   name:  |
     Purpose is clear
   role:  |
-    Identifies itself as a listbox
+    Identifies itself as a menu/submenu or listbox
   group: |
     Label is read with the input
   state: |
