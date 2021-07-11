@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Toggle switch"
+description: "How to code and test an accessible toggle switch for Web"
 categories: form
 
 keyboard:

@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Expander accordion"
+description: "How to code and test accessible expander buttons"
 categories: main
 
 keyboard:

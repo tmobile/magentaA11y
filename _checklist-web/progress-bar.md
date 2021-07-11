@@ -1,6 +1,8 @@
 ---
 layout: entry
 title:  "Progress bar"
+description: "How to code and test an accessible progress bar for Web"
+
 categories: main form
 order: 0
 

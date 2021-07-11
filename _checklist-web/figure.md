@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Figure: map, chart, table"
+description: "How to test accessible figures, maps, charts and tables for the Web"
 categories: main
 
 keyboard:

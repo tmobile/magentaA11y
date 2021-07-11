@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Modal Dialog"
+description: "How to code and test an accessible modal dialog popup for Web"
 categories: main
 
 keyboard:

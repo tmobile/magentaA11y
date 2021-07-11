@@ -1,6 +1,8 @@
 ---
 layout: entry
 title:  "Listbox select dropdown"
+description: "How to code and test an accessible listbox select dropdown for the Web"
+
 categories: form
 
 keyboard:

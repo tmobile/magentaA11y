@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Animation"
+description: "How to test accessible animations for the Web"
 categories: main
 
 keyboard:

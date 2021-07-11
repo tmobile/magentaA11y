@@ -1,6 +1,8 @@
 ---
 layout: entry
 title:  "Tooltip"
+description: "How to code and test an accessible tooltip for Web"
+
 categories: main
 
 keyboard:
@@ -38,7 +40,7 @@ screenreader:
 
 ### Tooltips are extremely difficult to implement. 
 
-The specific WAI-ARIA guidance isn't clear, so it's impossible to create success criteria.
+The specific WAI-ARIA guidance isn't clear and screen reader implementation will vary, so it's impossible to create success criteria.
 
 ### Tooltips are often indicative of poor UX design. 
 

@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Link"
+description: "How to code and test accessible links for the Web"
 categories: nav main
 order: 1
 

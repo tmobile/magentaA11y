@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Sticky element"
+description: "How to code and test an accessible sticky menu element for Web"
 categories: main
 
 keyboard:

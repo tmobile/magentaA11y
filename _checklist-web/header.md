@@ -2,6 +2,7 @@
 layout: entry
 title:  "Header / banner"
 categories: header html
+description: "How to code and test an accessible header for websites"
 order: 2
 
 keyboard:

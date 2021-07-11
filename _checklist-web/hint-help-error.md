@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Hint, help, or error"
+description: "How to code and test accessible Hint, help, or error messages for the Web"
 categories: form
 
 keyboard:
