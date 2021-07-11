@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Footer / contentinfo"
+description: "How to test an accessible footer for the Web"
 categories: html footer
 order: 9
 

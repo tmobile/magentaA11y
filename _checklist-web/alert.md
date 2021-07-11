@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Alert"
+description: "How to code accessible alerts for web pages"
 categories: main form
 
 keyboard:

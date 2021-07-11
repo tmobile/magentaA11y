@@ -1,6 +1,8 @@
 ---
 layout: entry
 title:  "Star rating"
+description: "How to code and test an accessible star rating for Web"
+
 categories: form
 
 keyboard:

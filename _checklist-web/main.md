@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Main landmark"
+description: "How to code and test an accessible main landmark for Web"
 categories: html main
 order: 3
 

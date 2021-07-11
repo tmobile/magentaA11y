@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Button"
+description: "How to code and test accessible buttons for the Web"
 categories: nav form
 order: 1
 

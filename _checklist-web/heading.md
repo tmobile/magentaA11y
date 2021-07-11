@@ -2,6 +2,7 @@
 layout: entry
 title:  "Heading: h1, h2, h3"
 categories: main
+description: "How to code and test accessible headings for websites"
 
 keyboard:
   tab: |

@@ -1,6 +1,8 @@
 ---
 layout: entry
 title:  "Search input"
+description: "How to code and test an accessible search input for Web"
+
 categories: nav header
 
 keyboard:

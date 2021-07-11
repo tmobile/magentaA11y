@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Date picker dialog"
+description: "How to test an accessible date picker for the Web"
 categories: form
 
 keyboard:

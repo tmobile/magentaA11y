@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Image: jpg, gif, png, svg"
+description: "How to code and test accessible images the Web"
 categories: main
 
 keyboard:

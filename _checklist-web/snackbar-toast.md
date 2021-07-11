@@ -1,6 +1,8 @@
 ---
 layout: entry
 title:  "Toast Snackbar"
+description: "How to code and test an snackbar or toast for Web"
+
 categories: main form
 
 keyboard:
