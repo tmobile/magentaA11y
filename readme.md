@@ -47,4 +47,5 @@ A11yEngineer is just Github Pages site running Jekyll. Follow Github's instructi
 - [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
 
 ## License
-Magenta A11y is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
+
+A11yEngineer is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
