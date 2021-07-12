@@ -30,7 +30,7 @@ screenreader:
 ---
 ## Developer notes
 
-### Start simple: validate your code
+### Validate your code
 
 Use the [HTML validator](https://validator.w3.org/nu/) as the foundation for ensuring your page works for everyone.
 
@@ -38,7 +38,7 @@ Use the [HTML validator](https://validator.w3.org/nu/) as the foundation for ens
 
 ### Declare a language
 
-This affects how the screenreader pronunciation..
+This affects the screenreader pronunciation.
 
 {% highlight html %}
 <html lang="en">
@@ -47,7 +47,7 @@ This affects how the screenreader pronunciation..
 
 ### Give your page a unique title
 
-If the URL changes, your page needs a title unique to that page in the experience.
+If the URL changes, your page needs title unique to that page.
 
 {% highlight html %}
 <head>
@@ -56,6 +56,8 @@ If the URL changes, your page needs a title unique to that page in the experienc
 {% endhighlight %}
 
 ### Ensure users can zoom in
+
+People with low vision need the ability to enlarge the page on mobile and desktop.
 
 {% highlight html %}
 <head>
