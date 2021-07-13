@@ -40,6 +40,20 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+### Required input
+
+{% highlight html %}
+{% include /examples/input-text-required.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-required.html %}
+</example>
+{:/}
+
+
+
 ## Developer notes
 
 ### Name

@@ -55,6 +55,11 @@ label {
   }
 }
 
+input[required],
+input[aria-required='true'] {
+
+}
+
 fieldset {
   border: none;
   padding: 0;
