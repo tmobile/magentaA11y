@@ -37,16 +37,19 @@ Let people choose if they're subjected to video content.
 
 ### Autoplay can be very disruptive or hurt people
 
-- For people using a screen reader it unexpectedly interferes with their ability to control their machine  
+- For people using a screen reader, it unexpectedly interferes with their ability to hear/control their machine  
 - For people with cognitive differences, it can make it impossible to focus to focus
 - For people with light sensitivity or vestibular disorders, some video content can cause illness
 
-### But, c'mon… is it ever okay?
+### Is it ever okay?
 
-- Just because a video contains controls to stop the video doesn't mean it's okay to autoplay
 - Media with audio should absolutely **never** autoplay
-- Silent video can autoplay, but must stop after 5 seconds and feature accessible controls
+- Just because a video contains controls to stop the video doesn't mean it's okay to autoplay
 - [Use case: When is it okay for video to autoplay?](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- Silent video can autoplay under these conditions:
+  - It must stop after 5 seconds 
+  - The video features accessible controls
+  - Autoplay is disabled when device reduce motion settings are activated
 
 ## Code examples
 
