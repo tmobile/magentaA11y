@@ -63,8 +63,9 @@ screenreader:
 - Transcripts should be HTML based (not a PDF)
 
 ### State
-- Video should almost never autoplay
+- Videos with should almost never autoplay
 - Media with audio should absolutely **never** autoplay
+- [Use case: When is it okay for video to autoplay](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 - Controls should identify their state (pressed, checked, selected, etc)
 
 ### Focus
