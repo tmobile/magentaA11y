@@ -38,7 +38,7 @@ Let people choose if they're subjected to video content.
 ### Autoplay can be very disruptive or hurt people
 
 - For people using a screen reader, it unexpectedly interferes with their ability to hear/control their machine  
-- For people with cognitive differences, it can make it impossible to focus to focus
+- For people with cognitive differences, it can make it impossible to focus
 - For people with light sensitivity or vestibular disorders, some video content can cause illness
 
 ### Is it ever okay?
