@@ -8,7 +8,6 @@ $color-gray-xtra-dark: #333;
 $color-gray-dark: #676767;
 $color-border-gray: #ccc;
 $color-focus: #3F82F8;
-$color-alert: #ffcc33;
 
 $color-text-color: #323234;
 
@@ -17,6 +16,8 @@ $color-example: #eef;
 $color-gold: #ffcc33;
 $color-green: #76D671;
 $color-green-dark: #078A14;
+
+$color-alert: $color-gold;
 
 
 // WCAG 2.2 specifies states should meet min contrast requirements

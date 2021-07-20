@@ -1,0 +1,59 @@
+.bar-chart {
+  display: block;
+  padding: 1rem;
+  background: #fff;
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0 0 4px 1px rgba(#000, .1);
+  grid-template-rows: auto 300px;
+  @include break($break-mid) {
+    padding: 2rem;
+    grid-column-gap: 2rem;
+  }
+
+  dt {
+    grid-column: span 3;
+    height: 1rem;
+  }
+
+  dd {
+    display: grid;
+    color: #fff;
+    text-align: center;
+    height: attr(data-value px);
+    align-self: end;
+    grid-template-rows: auto 3rem;
+    background: $color-gray-dark;
+    border-radius: .25rem;
+
+    .value {
+      display: block;
+      grid-row: 1;
+      font-weight: bold;
+      border-radius: .25rem .25rem 0 0 ;
+      padding: 1rem;
+      font-size: 1rem;
+      @include break($break-mid) {
+        font-size: 1.5rem;
+      }
+
+    }
+    .date {
+      display: block;
+      grid-row: 2;
+      padding: 1rem 0;
+      color: #fff;
+      text-align: center;
+      border-radius: 0 0 .25rem .25rem;
+      background: $color-gray-xtra-dark;
+    }
+  }
+}
+
+@for $i from 1 through 100 {
+  .percentage-#{$i} {
+    $value: ($i * 1%);
+    height: $value;
+  }
+}

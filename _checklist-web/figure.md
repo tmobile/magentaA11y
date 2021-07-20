@@ -31,6 +31,19 @@ screenreader:
 
 ## Code examples
 
+### Consider making simple charts from semantic markup
+
+{% highlight html %}
+{% include /examples/figure-bar-chart.html %}
+{% endhighlight %}
+
+
+{::nomarkdown}
+<example>
+{% include /examples/figure-bar-chart.html %}
+</example>
+{:/}
+
 ### Provide alternative ways to consume visual content
 
 If there is one primary message for an image chart, describe it in the alt attribute.
@@ -49,7 +62,9 @@ If you have a figure that can't be described by alt text, place the content in a
 {% endhighlight %}
 
 {::nomarkdown}
+<example>
 {% include /examples/pie-chart-image.html %}
+</example>
 {:/}
 
 ### Provide alternative interactions with dynamic figures
