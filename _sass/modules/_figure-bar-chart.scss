@@ -7,6 +7,10 @@
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: 0 0 4px 1px rgba(#000, .1);
   grid-template-rows: auto 300px;
+  @include break($break-mid) {
+    padding: 2rem;
+    grid-column-gap: 2rem;
+  }
 
   dt {
     grid-column: span 3;
@@ -30,6 +34,10 @@
       border-radius: .25rem .25rem 0 0 ;
       padding: 1rem;
       font-size: 1rem;
+      @include break($break-mid) {
+        font-size: 1.5rem;
+      }
+
     }
     .date {
       display: block;
