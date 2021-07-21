@@ -33,6 +33,17 @@ $("#show-password").on('change', function() {
     }
 });
 
+
+$(".interactive").mousedown(function() {
+    if ($(this).find('input[type="checkbox"]').is(':checked') ) {
+        $(this).find('input[type="checkbox"]').prop('checked', false);
+        $(this).removeClass('checked');
+    } else {
+        $(this).find('input[type="checkbox"]').prop('checked', true);
+        $(this).addClass('checked');
+    }
+});
+
 // Dialog support
 var isDialogSupported = true;
 if (!window.HTMLDialogElement) {

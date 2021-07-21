@@ -42,7 +42,6 @@ This semantic HTML contains all accessibility features by default.
 <example>
 {% include /examples/input-checkbox.html %}
 </example>
-
 {:/}
 
 ### When you can't use semantic HTML
@@ -54,6 +53,23 @@ This custom checkbox requires extra attributes and event listeners.
   Alpha
 </div>
 {% endhighlight %}
+
+
+### Speciality checkboxes
+
+Sometimes a design may call for a card type checkbox. 
+- Its core should still be a semantic checkbox input
+- Use `aria-describedby` to read extra content _after_ the the name, role and state
+
+{% highlight html %}
+{% include /examples/input-checkbox-card.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-checkbox-card.html %}
+</example>
+{:/}
 
 ## Developer notes
 
