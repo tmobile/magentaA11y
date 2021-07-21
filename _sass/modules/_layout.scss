@@ -39,45 +39,6 @@ main {
   }
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1rem;
-  margin: 0;
-  padding: 0;
-
-  .card {
-    margin: 0;
-    list-style-type: none;
-
-    a {
-      display: block;
-      margin: 0px auto;
-      max-width: 280px;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: bold;
-      text-decoration: none;
-      background: #fff;
-      border-radius: 2px;
-      border-bottom: 3px solid $color-brand-primary;
-      box-shadow: 0 1px 4px 1px rgba(#000,.1);
-      
-      svg {
-        display: block;
-        margin: 0px auto;
-      }
-
-      span {
-        display: block;
-        font-size: 1rem;
-        font-weight: normal;
-      }
-    }
-  }
-}
-
 .post-content {
   margin-bottom: 2rem;
 }
