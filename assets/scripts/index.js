@@ -35,7 +35,7 @@ $("#show-password").on('change', function() {
 
 
 $(".interactive").mouseup(function() {
-    if ($(this).find('input[type="checkbox"]').is(':checked') && $(this).find('input[type="checkbox"]').not(':focus') ) {
+    if ($(this).find('input[type="checkbox"]').is(':checked') && !$(this).find('input[type="checkbox"]').is(':focus') ) {
         $(this).find('input[type="checkbox"]').prop('checked', false);
         $(this).removeClass('checked');
     } else {
