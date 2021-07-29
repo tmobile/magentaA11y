@@ -6,8 +6,10 @@ description: "How to code and test accessible headings for websites"
 
 keyboard:
   tab: |
-    Nothing, headings should not be focusable 
-      
+    Nothing, headings should not be focusable
+  arrow-keys: |
+    Browses headings (when using screen reader)
+          
 mobile:
   swipe: |
       The screenreader reads the heading and its level
@@ -23,6 +25,11 @@ screenreader:
     n/a
 
 ---
+
+## Headings are not focusable with the tab key
+
+- When people use a screen reader, the arrow keys are used to browse non-focusable content
+- The tab key only focuses interactive elements (ex: buttons, links or inputs)
 
 ## Code examples
 
@@ -62,5 +69,5 @@ This custom header requires extra attributes.
       - It should be rare that `<h4>` and beyond is required.
 
 ### Focus
-- Headings (probably) should not receive focus
-
+- Headings should not receive focus
+- Arrow keys will browse headings (not the tab key)
