@@ -58,7 +58,7 @@ if ( $('dialog').length ) {
         } else {
             modal.setAttribute("open", "");
         }
-        //   Focus first input when dialog opens
+        // Focus the dialog itself on open
         modal.focus();
     };
 
