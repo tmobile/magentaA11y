@@ -1,0 +1,41 @@
+input.stepper {
+  position: relative;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 1rem;
+  border: none;
+  padding: .2rem;
+  width: 8.5rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 288 576' style='enable-background:new 0 0 288 576;' xml:space='preserve'%3E%3Cpath d='M142.92,557.04c-41.08,0-74.39-33.31-74.39-74.39s33.31-74.39,74.39-74.39s74.39,33.31,74.39,74.39 S184,557.04,142.92,557.04z M153.81,536.46V428.84h-21.77v107.61H153.81z'/%3E%3Cpath d='M142.92,167.74c-41.08,0-74.39-33.31-74.39-74.39s33.31-74.39,74.39-74.39s74.39,33.31,74.39,74.39 S184,167.74,142.92,167.74z M132.03,39.54v42.92H89.11v21.77h42.92v42.92h21.77v-42.92h42.92V82.47h-42.92V39.54H132.03z'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 8rem;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+    position: absolute;
+    top: -2.5rem;
+    left: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    transform: rotate(90deg);
+    transition: .4s;
+  }
+  &::-webkit-inner-spin-button:hover,
+  &::-webkit-inner-spin-button:active {
+    opacity: 1;
+  }
+}
+
+
+
+/* Override browser form filling */
+input:-webkit-autofill {
+  background: black;
+  color: red;
+}
