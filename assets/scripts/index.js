@@ -15,6 +15,7 @@ $( ".expander-toggle" ).click(function() {
         $(this).attr('aria-expanded', 'false').next(".expander-content" ).removeClass('visible').attr('aria-hidden', 'true');
     }
 });
+
 $('input[inputmode="numeric"]').on('input',function(e) {
     this.value=this.value.replace(/[^\d]/,'');
 });
@@ -86,3 +87,20 @@ if ( $('dialog').length ) {
         }
     });
 }
+
+$("input[type='number']").change(function(){
+    var maxValue = parseInt($(this).attr('max'));
+    var minValue = parseInt($(this).attr('min'));
+    var enteredValue = parseInt($(this).val());
+
+    if($.isNumeric(enteredValue)) {
+        var enteredValue = parseInt($(this).val());
+        if (enteredValue > maxValue) {
+            $(this).val(maxValue);
+        } else if (enteredValue < minValue) {
+            $(this).val(minValue);
+        }
+    } else {
+        $(this).val(minValue);
+    }
+});
