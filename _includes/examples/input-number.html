@@ -1,11 +1,13 @@
-<label for="pin">
-  Pin number
+<label for="lines">
+  Add a line
 </label>
-<input type="text"
-       id="pin"
-       aria-describedby="hint"
-       inputmode="numeric"
-       pattern="[0-9]*">
-<div id="hint" class="hint">
-  The pin number will expire after 1 hour
+<input  type="number"
+        class="stepper"
+        value="1"
+        id="lines"
+        min="1"
+        max="10"
+        aria-describedby="number-hint">
+<div class="hint" id="number-hint">
+  Maximum 10
 </div>
