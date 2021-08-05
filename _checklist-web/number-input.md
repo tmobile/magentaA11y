@@ -46,21 +46,9 @@ The `type="number"` input is intended for **integers** and includes features we 
 </example>
 {:/}
 
-### Speciality stepper integer input
-
-This stepper uses a fieldset to group all controls together.
-
-{% highlight html %}
-{% include /examples/input-number-stepper.html %}
-{% endhighlight %}
-
-{::nomarkdown}
-<example>
-{% include /examples/input-number-stepper.html %}
-</example>
-{:/}
-
 ## Developer notes
+
+- [Stepper/counter input example](/checklist-web/stepper-input/)
 
 ### Name
 - Include `for="input-id` in each `<label>` label to associate it with the input

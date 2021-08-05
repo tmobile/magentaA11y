@@ -1,39 +1,41 @@
 .stepper {
   display: grid;
   width: auto;
-  grid-template-columns: 3rem 3rem 3rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: .5rem;
   padding: 1rem;
+  background: #fff;
+  max-width: 12rem;
+
+  label {
+    grid-column: 1 / span 3;
+  }
 
   .minus {
     grid-column: 1 / span 1;
-    grid-row: 1;
+    grid-row: 2;
 
   }
   .plus {
     grid-column: 3 / span 1;
-    grid-row: 1;
+    grid-row: 2;
   }
 
-  input[name="stepper-input"] {
+  select[name="stepper-input"] {
     height: 3rem;
     width: 3rem;
+    background: none;
     border: none;
     line-height: 3rem;
     font-size: 1.5rem;
     text-align: center;
+    text-align-last: center;
     padding: 0;
     margin: 0;
     grid-column: 2 / span 1;
-    grid-row: 1;
-
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+    grid-row: 2;
+    &:focus {
+      @extend .focused;
     }
-
-    /* Firefox */
-    -moz-appearance: textfield;
   }
-
 }

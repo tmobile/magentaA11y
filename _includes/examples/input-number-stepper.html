@@ -1,72 +1,31 @@
-<fieldset>
-  <legend>
-    Number of cowbells
-  </legend>
-  <div class="stepper">
-    <div aria-live="assertive" aria-atomic="true" role="status">
-      <label for="cowbells" class="hidden">
-        Cowbells
-      </label>
-      <input type="text"
-             id="cowbells"
-             name="stepper-input"
-             value="1"
-             min="1"
-             max="11"
-             maxlength="2"
-             size="2"
-             inputmode="numeric">
-    </div>
-    <button class="minus">
-      <span class="hidden">
-        Less cowbell
-      </span>
-    </button>
-    <button class="plus">
-      <span class="hidden">
-        More cowbell
-      </span>
-    </button>
+<div class="stepper">
+  <label for="cowbell">
+    How much cowbell?
+  </label>
+  <select id="cowbell"
+          name="stepper-input"
+          min="1"
+          max="11">
+    <option label="1" selected>1</option>
+    <option label="2">2</option>
+    <option label="3">3</option>
+    <option label="4">4</option>
+    <option label="5">5</option>
+    <option label="6">6</option>
+    <option label="7">7</option>
+    <option label="8">8</option>
+    <option label="9">9</option>
+    <option label="10">10</option>
+    <option label="11">11</option>
+  </select>
+  <div class="button minus" aria-hidden="true">
+    <span class="hidden">
+      Less cowbell
+    </span>
   </div>
-</fieldset>
-
-<div>Test with a select</div>
-
-<fieldset>
-  <legend>
-    Number of cowbells
-  </legend>
-  <div class="stepper">
-    <div aria-live="assertive" aria-atomic="true" role="status">
-      <label for="cowbellsSelect" class="hidden">
-        Cowbells
-      </label>
-      <select id="cowbellsSelect"
-              name="stepper-input"
-              min="1"
-              max="11">
-        <option label="1" selected>1</option>
-        <option label="2">2</option>
-        <option label="3">3</option>
-        <option label="4">4</option>
-        <option label="5">5</option>
-        <option label="6">6</option>
-        <option label="7">7</option>
-        <option label="8">8</option>
-        <option label="9">9</option>
-        <option label="10">10</option>
-        <option label="11">11</option>
-      </select>
-    </div>
-    <div class="button minus" aria-hidden="true">
-      <span class="hidden">
-        Less cowbell
-      </span>
-    </div>
-    <div class="button plus" aria-hidden="true">
-      <span class="hidden">
-        More cowbell
-      </span>
-    </div>
+  <div class="button plus" aria-hidden="true">
+    <span class="hidden">
+      More cowbell
+    </span>
   </div>
-</fieldset>
+</div>
