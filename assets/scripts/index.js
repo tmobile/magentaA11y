@@ -94,7 +94,10 @@ $(".minus").click(function(){
     var val = parseInt(inpt.val());
     if ( val < 1 ) inpt.val(val=1);
     if ( val == min ) return;
-    inpt.val(val-1);
+    setTimeout(function(){
+        inpt.val(val-1);
+    }, 1000);
+
 });
 
 $(".plus").click(function(){
@@ -103,7 +106,9 @@ $(".plus").click(function(){
     var val = parseInt(inpt.val());
     if ( val < 1 ) inpt.val(val=1);
     if ( val == max ) return;
-    inpt.val(val+1);
+    setTimeout(function(){
+        inpt.val(val+1);
+    }, 1000);
 });
 
 
