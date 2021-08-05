@@ -2,33 +2,30 @@
   <legend>
     Number of cowbells
   </legend>
-
   <div class="stepper">
     <div aria-live="assertive" aria-atomic="true">
-
-      <input  type="number"
-              id="cowbells"
-              aria-label="Cowbells"
-              name="stepper-input"
-              value="1"
-              min="1"
-              max="11"
-              maxlength="2"
-              size="2"
-              inputmode="numeric"
-              aria-describedby="number-hint">
+      <label for="cowbells" class="hidden">
+        Cowbells
+      </label>
+      <input type="number"
+             id="cowbells"
+             name="stepper-input"
+             value="1"
+             min="1"
+             max="11"
+             maxlength="2"
+             size="2"
+             inputmode="numeric">
     </div>
-
     <button class="minus">
-    <span class="hidden">
-      Less cowbell
-    </span>
+      <span class="hidden">
+        Less cowbell
+      </span>
     </button>
     <button class="plus">
-    <span class="hidden">
-      More cowbell
-    </span>
+      <span class="hidden">
+        More cowbell
+      </span>
     </button>
-
   </div>
 </fieldset>

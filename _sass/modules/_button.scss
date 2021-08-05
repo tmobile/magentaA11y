@@ -68,13 +68,43 @@ button {
   &.minus {
     width: 3rem;
     height: 3rem;
-    border-radius: .25rem;
+    border-radius: 1.5rem;
     padding: 0;
   }
   &.plus {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: .5rem;
+      left: .5rem;
+      width: 2rem;
+      height: 2remrem;
 
+      border: 1px solid red;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' fill='white viewBox='0 0 288 288' xml:space='preserve'%3E%3Cpolygon points='116.12,6.2 116.12,116.12 6.2,116.12 6.2,171.88 116.12,171.88 116.12,281.8 171.88,281.8 171.88,171.88 281.8,171.88 281.8,116.12 171.88,116.12 171.88,6.2 '/%3E%3Crect x='314.2' y='116.12' width='275.61' height='55.76'/%3E%3C/svg%3E%0A");
+
+
+
+      background-position: center center;
+      opacity: .25;
+      transition: .45s;
+      transform: rotate(270deg);
+    }
   }
   &.minus {
+    &:before {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      width: 1rem;
+      height: 1rem;
+      opacity: .25;
+      transition: .45s;
+      transform: rotate(270deg);
+    }
 
   }
 
