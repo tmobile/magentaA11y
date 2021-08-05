@@ -47,7 +47,7 @@ Phone, credit card, pin etc. are not integers.
 
 ### For integers
 
-Only use the `type="number"` for true sequential numbers. This fancy stepper and uses no additional controls.
+Only use the `type="number"` for true sequential numbers.
 
 {% highlight html %}
 {% include /examples/input-number.html %}
@@ -56,6 +56,20 @@ Only use the `type="number"` for true sequential numbers. This fancy stepper and
 {::nomarkdown}
 <example>
 {% include /examples/input-number.html %}
+</example>
+{:/}
+
+### Speciality stepper integer input
+
+This stepper uses a fieldset to group all controls together.
+
+{% highlight html %}
+{% include /examples/input-number-stepper.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-number-stepper.html %}
 </example>
 {:/}
 

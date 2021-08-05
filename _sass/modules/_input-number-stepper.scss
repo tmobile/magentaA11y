@@ -1,0 +1,40 @@
+.stepper {
+  display: grid;
+  width: auto;
+  grid-template-columns: 3rem 3rem 3rem;
+  padding: 1rem;
+
+  .minus {
+    grid-column: 1 / span 1;
+    grid-row: 1;
+
+  }
+  .plus {
+    grid-column: 3 / span 1;
+    grid-row: 1;
+
+  }
+
+  input[type="number"] {
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    grid-column: 2 / span 1;
+    grid-row: 1;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    -moz-appearance: textfield;
+  }
+
+}

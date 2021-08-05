@@ -63,5 +63,20 @@ button {
       background: $color-gray-light;
     }
   }
+
+  &.plus,
+  &.minus {
+    width: 3rem;
+    height: 3rem;
+    border-radius: .25rem;
+    padding: 0;
+  }
+  &.plus {
+
+  }
+  &.minus {
+
+  }
+
 }
 
