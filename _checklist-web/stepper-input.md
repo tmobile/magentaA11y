@@ -43,8 +43,6 @@ screenreader:
 
 ### Speciality stepper integer input
 
-This stepper uses a fieldset to group all controls together.
-
 {% highlight html %}
 {% include /examples/input-number-stepper.html %}
 {% endhighlight %}
