@@ -29,11 +29,12 @@ screenreader:
 
 Use `type=text` with `inputmode="numeric"` with an input pattern and JS to filter out non-numeric characters.
 
-### Don't use `type="number"` for non-integers
+### Don't use `type="number"`
 
-The `type="number"` input is intended for **integers** and includes features we _don't_ want (like stepper/scroll functionality) that is a nuisance to everyone. 
+The `type="number"` input is intended for **integers** and includes features we _don't_ want (like stepper/scroll functionality) that is a nuisance to everyone 
 
-Phone, credit card, pin etc. are not integers.
+- Phone, credit card, pin etc. are not integers
+- NVDA doesn't fully support `type="number"` inputs at this time
 
 {% highlight html %}
 {% include /examples/input-text-number.html %}
@@ -42,24 +43,12 @@ Phone, credit card, pin etc. are not integers.
 {::nomarkdown}
 <example>
 {% include /examples/input-text-number.html %}
-</example>
-{:/}
-
-### For integers
-
-Only use the `type="number"` for true sequential numbers. This fancy stepper and uses no additional controls.
-
-{% highlight html %}
-{% include /examples/input-number.html %}
-{% endhighlight %}
-
-{::nomarkdown}
-<example>
-{% include /examples/input-number.html %}
 </example>
 {:/}
 
 ## Developer notes
+
+- [Stepper/counter input example](/checklist-web/stepper-input/)
 
 ### Name
 - Include `for="input-id` in each `<label>` label to associate it with the input

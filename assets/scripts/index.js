@@ -88,6 +88,26 @@ if ( $('dialog').length ) {
     });
 }
 
+$(".minus").click(function(){
+    var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
+    var min = $(this).parents(".stepper").find("[name=stepper-input]").attr('min');
+    var val = parseInt(inpt.val());
+    if ( val < 1 ) inpt.val(val=1);
+    if ( val == min ) return;
+    inpt.val(val-1);
+});
+
+$(".plus").click(function(){
+    var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
+    var max = $(this).parents(".stepper").find("[name=stepper-input]").attr('max');
+    var val = parseInt(inpt.val());
+    if ( val < 1 ) inpt.val(val=1);
+    if ( val == max ) return;
+    inpt.val(val+1);
+});
+
+
+
 $("input[type='number']").change(function(){
     var maxValue = parseInt($(this).attr('max'));
     var minValue = parseInt($(this).attr('min'));
