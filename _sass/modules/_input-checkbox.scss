@@ -1,4 +1,5 @@
 
+
 input[type="checkbox"] {
   + label {
     padding-left: 4rem;
@@ -7,13 +8,29 @@ input[type="checkbox"] {
       display: block;
       width: calc(2rem - 2px);
       height: calc(2rem - 2px);
-      box-shadow: inset 0 0 0px 4px $color-gray-dark;
+      border: 2px solid $color-gray-dark;
       border-radius: .25rem;
       position: absolute;
       left: 1.125rem;
-      line-height: 2rem;
       top: 1rem;
       background: #f2f2f2;
+      transition: .2s;
+    }
+
+    &:after {
+      content: '';
+      color: #fff;
+      display: block;
+      position: absolute;
+      border-radius: .125rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      left: calc(1.5rem - 1px);
+      top: calc(1.5rem - 3px);
+      font-size: 0rem;
+      line-height: 1.5rem;
+      font-weight: normal;
+      background: $color-gray-light;
       transition: .2s;
     }
   }
@@ -21,21 +38,23 @@ input[type="checkbox"] {
     + label {
       &:before {
         border-color: $color-brand-primary;
+      }
+      &:after {
         content: '\2713';
-        box-shadow: inset 0 0 0px 4px $color-brand-primary;
-        color: $color-brand-primary;
-        font-size: 1.875rem;
+        font-size: 2.25rem;
         text-align: center;
-        background: #fff;
+        background: $color-brand-primary;
       }
     }
   }
   + label:hover:before,
   &:focus + label:before {
     background: none;
-    box-shadow: inset 0 0 0px 4px $color-brand-primary, 0 0 0rem .5rem rgba($color-focus,.2);
+    box-shadow: 0 0 0rem .5rem rgba($color-focus,.2);
+    border-color: $color-brand-primary;
   }
   &:active + label:before {
-    box-shadow: inset 0 0 0px 4px $color-brand-primary, 0 0 0rem .75rem rgba($color-focus,.4);
+    box-shadow: 0 0 0rem .75rem rgba($color-focus,.4);
+    border-color: $color-brand-primary;
   }
 }
