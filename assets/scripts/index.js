@@ -20,7 +20,6 @@ $('input[inputmode="numeric"]').on('input',function(e) {
     this.value=this.value.replace(/[^\d]/,'');
 });
 
-
 // Trigger alert
 $("#show-alert").click(function() {
     $('[role="alert"]').toggleClass('visible')
@@ -105,8 +104,8 @@ $(".plus").click(function(){
     inpt.val(val+1);
 });
 
-$("[name='expanderList']").on('change', function() {
-    $("[name='expanderList']").not(this).prop('checked', false);
+$("[name='checkboxRadioGroup']").on('change', function() {
+    $("[name='checkboxRadioGroup']").not(this).prop('checked', false);
     $(this).prop('checked', true);
 });
 

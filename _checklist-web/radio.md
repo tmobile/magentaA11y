@@ -47,7 +47,7 @@ This semantic HTML contains all accessibility features by default.
 
 ## Speciality use cases
 
-### Radio with interactive hints
+### Radio with interactive elements
 
 When a UI calls for interactive elements inbetween radio buttons, this can be very difficult.
 - Radio button focus order is not what you think it is.
