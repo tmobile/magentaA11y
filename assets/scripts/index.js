@@ -106,6 +106,10 @@ $(".plus").click(function(){
     inpt.val(val+1);
 });
 
+$("[name='expanderList']").on('change', function() {
+    $("[name='expanderList']").not(this).prop('checked', false);
+    $(this).prop('checked', true);
+});
 
 
 $("input[type='number']").change(function(){

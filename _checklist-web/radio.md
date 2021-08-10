@@ -45,6 +45,26 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+## Speciality use cases
+
+### Radio with interactive hints
+
+When a UI calls for interactive elements inbetween radio buttons, this can be very difficult.
+- Radio button focus order is not what you think it is.
+- When nothing is selected, tab order moves through as expected. 
+- However, as soon as a radio button is selected, the selected radio input receives focus first from the group. 
+- We developed a hack for this kind of situation to be used very carefully.
+  
+{% highlight html %}
+{% include /examples/input-checkbox-radio.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-checkbox-radio.html %}
+</example>
+{:/}
+
 ### When you can't use semantic HTML
 
 This custom button requires extra scripting work for roving tabindex and event listeners.

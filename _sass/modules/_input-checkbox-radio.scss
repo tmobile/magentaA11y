@@ -1,0 +1,28 @@
+.checkbox-radio-group.expander-group {
+  display: grid;
+  grid-template-columns: 1fr 4rem;
+  legend {
+    grid-column: span 2;
+  }
+  label {
+    border-bottom: 1px solid $color-border-gray;
+  }
+  .expander-toggle {
+    border-bottom: 1px solid $color-border-gray;
+
+  }
+  .expander-content {
+    grid-column: span 2;
+    border-bottom: 1px solid $color-gray-light;
+
+  }
+}
+
+.checkbox-radio-group {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+  legend {
+    grid-column: span 2;
+  }
+
+}
