@@ -16,16 +16,15 @@ input[type="checkbox"] {
       background: #f2f2f2;
       transition: .2s;
     }
-
-
   }
   &:checked {
     + label {
       &:before {
         border-color: $color-brand-primary;
         content: '\2713';
-        box-shadow: inset 0 0 0px 4px $color-gray-xtra-dark;
-        font-size: 2rem;
+        box-shadow: inset 0 0 0px 4px $color-brand-primary;
+        color: $color-brand-primary;
+        font-size: 1.875rem;
         text-align: center;
         background: #fff;
       }
