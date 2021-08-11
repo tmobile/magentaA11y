@@ -28,7 +28,7 @@ screenreader:
   group: |
     When closed, focus returns to the launch button
   state: |
-    When open, other content is inert
+    When open, content behind the modal is inert
 ---
 
 ## Code examples
