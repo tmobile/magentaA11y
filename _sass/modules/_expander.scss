@@ -57,7 +57,7 @@
     }
 
     &[aria-expanded="true"] {
-      border-bottom: 1px dotted $color-border-gray;
+      border-bottom: 1px solid $color-border-gray;
       &:before {
         transform: rotate(180deg);
         background-position: center center;

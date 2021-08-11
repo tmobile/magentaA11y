@@ -20,7 +20,6 @@ $('input[inputmode="numeric"]').on('input',function(e) {
     this.value=this.value.replace(/[^\d]/,'');
 });
 
-
 // Trigger alert
 $("#show-alert").click(function() {
     $('[role="alert"]').toggleClass('visible')
@@ -34,13 +33,12 @@ $("#show-password").on('change', function() {
     }
 });
 
-
 $(".interactive").mouseup(function() {
-    if ($(this).find('input[type="checkbox"]').is(':checked')) {
-        $(this).find('input[type="checkbox"]').prop('checked', false);
+    if ($(this).find('input[type="checkbox"]').is(':checked') && !($(this).find('input[type="checkbox"]').is(":focus")) ) {
+        $(this).find('input[type="checkbox"]').trigger('click');
         $(this).removeClass('checked');
     } else {
-        $(this).find('input[type="checkbox"]').prop('checked', true);
+        $(this).find('input[type="checkbox"]').trigger('click');
         $(this).addClass('checked');
     }
 });
@@ -106,6 +104,10 @@ $(".plus").click(function(){
     inpt.val(val+1);
 });
 
+$("[name='checkboxRadioGroup']").on('change', function() {
+    $("[name='checkboxRadioGroup']").not(this).prop('checked', false);
+    $(this).prop('checked', true);
+});
 
 
 $("input[type='number']").change(function(){
