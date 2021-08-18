@@ -43,10 +43,13 @@ main {
   display: grid;
   min-height: 50vh;
   margin-bottom: 3rem;
-  background: $color-gray;
+  background-color: $color-gray;
   padding-top: 2rem;
   padding-bottom: 2rem;
   align-items: end;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  color: #fff !important;
 }
 
 
