@@ -1,0 +1,296 @@
+---
+layout: default
+---
+<article>
+  <div class="container billboard">
+    <h1 class="h-alpha">{{ page.title | escape }}</h1>
+    <p class="h-bravo">
+      {{ page.description | escape }}
+    </p>
+    <div>
+      <p>
+        Got a favorite screen reader? We want to know your favorite.
+      </p>
+      <a href="#favorites" class="button">
+        Take the survey
+      </a>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <h2 class="h-bravo">
+      Broad categories of disabilities
+    </h2>
+  </div>
+
+  <div class="container section group-4">
+    <div>
+      <h3 class="h-charlie">
+        Vision
+      </h3>
+      <p>
+        People who are blind or low vision use the internet using a screen reader.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="h-charlie">
+        Motor
+      </h3>
+      <p>
+        Not everyone uses a mouse or taps their screen 
+      </p>
+    </div>
+
+    <div>
+      <h3 class="h-charlie">
+        Hearing
+      </h3>
+      <p>
+        Some people rely on captions or transcripts to consume audio or video.
+      </p>
+    </div>
+
+    <div>
+      <h3 class="h-charlie">
+        Cognitive
+      </h3>
+      <p>
+        There is a wide range of cognitive differences that can be accommodated by design and code.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="container section narrow">
+    <h2 class="h-bravo">
+      Screen readers
+    </h2>
+    <p>
+      Screen readers are applications that speak the contents of the screen for people who are blind or low vision.
+      People who have other disabilities like dyslexia may also use a screen reader.
+    </p>
+
+
+    <table class="comparison">
+      <caption class="h-charlie">
+        Screen reader and browser pairings
+      </caption>
+      <thead>
+        <th scope="col">
+          Platform
+        </th>
+        <th scope="col">
+          Screenreader
+        </th>
+        <th scope="col">
+          Browser
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <img src="/a11yEngineer/assets/images/icons/logo-apple.svg"
+                 role="img"
+                 alt="Apple"
+                 class="icon">
+            iOS
+          </th>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-apple.svg"
+                 role="img"
+                 alt="Apple"
+                 class="icon">
+            Voiceover
+          </td>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-safari.svg"
+                 role="img"
+                 alt="Apple"
+                 class="icon">
+            Safari
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <img src="/a11yEngineer/assets/images/icons/logo-android.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            Android
+          </th>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-talkback.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            Talkback
+          </td>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-chrome.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            Chrome
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <img src="/a11yEngineer/assets/images/icons/logo-windows.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            Windows
+          </th>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-jaws.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            JAWS
+          </td>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-chrome.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            Chrome
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <img src="/a11yEngineer/assets/images/icons/logo-windows.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            Windows
+          </th>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-nvda.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            NVDA
+          </td>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-chrome.svg"
+                 role="img"
+                 alt=""
+                 class="icon">
+            Chrome
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <img src="/a11yEngineer/assets/images/icons/logo-apple.svg"
+                 role="img"
+                 alt="Apple"
+                 class="icon">
+            MacOS
+          </th>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-apple.svg"
+                 role="img"
+                 alt="Apple"
+                 class="icon">
+            Voiceover
+          </td>
+          <td>
+            <img src="/a11yEngineer/assets/images/icons/logo-safari.svg"
+                 role="img"
+                 alt
+                 class="icon">
+            Safari
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    Screen readers allow people to consume the content in different ways.
+    They may choose to read line by line, or they can skip by links or headings.
+
+  </div>
+
+  <div class="container narrow">
+    <h2 class="h-bravo">
+      Frequent questions
+    </h2>
+
+    <details>
+      <summary>
+        Are all projects in scope?
+      </summary>
+      Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible.
+      This includes customer and employee facing applications.
+    </details>
+
+    <details>
+      <summary>
+        Who does this really affect?
+      </summary>
+      Over 1/4 of the US population has a disability that requires assistive technology or accommodation.
+    </details>
+
+    <details>
+      <summary>
+        How do we test our products?
+      </summary>
+     <ol>
+       <li>Test with the keyboard only</li>
+       <li>
+         Test with the mobile screenreader
+       </li>
+       <li>
+         Test with the desktop screenreader
+       </li>
+     </ol>
+    </details>
+
+
+  </div>
+
+  <div class="container narrow">
+    <h2 id="favorites" class="h-bravo">
+      Survey: Which is your favorite screen reader
+    </h2>
+
+    <form aria-labelledby="signup">
+      <fieldset>
+        <legend>
+          Choose your favorite screen reader
+        </legend>
+
+        <input type="radio" name="nato" id="alphaRadio" checked>
+        <label for="alphaRadio">VoiceOver for iOS</label>
+
+        <input type="radio" name="nato" id="bravoRadio">
+        <label for="bravoRadio">Talkback for Android</label>
+
+        <input type="radio" name="nato" id="charlieRadio">
+        <label for="charlieRadio">NVDA for Windows</label>
+
+        <input type="radio" name="nato" id="deltaRadio">
+        <label for="deltaRadio">JAWS for Windows</label>
+
+        <input type="radio" name="nato" id="echoRadio">
+        <label for="echoRadio">VoiceOver for MacOS</label>
+
+      </fieldset>
+
+      <div role="alert" class="alert inert">
+        Your vote has been recorded
+      </div>
+
+      <button type="button" id="show-alert">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+
+
+
+</article>
+

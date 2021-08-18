@@ -30,15 +30,54 @@ main {
 
 
 .section {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-
-  @include break($break-small) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid $color-border-gray;
 }
 
 .post-content {
   margin-bottom: 2rem;
+}
+
+.billboard {
+  display: grid;
+  min-height: 50vh;
+  margin-bottom: 3rem;
+  background: $color-gray;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+.group-2 {
+  display: grid;
+  @include break($break-mid) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+}
+
+.group-3 {
+  display: grid;
+  @include break($break-mid) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+}
+
+.group-4 {
+  display: grid;
+  @include break($break-mid) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2rem;
+  }
+}
+
+.group-2-1 {
+  display: grid;
+  @include break($break-mid) {
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 2rem;
+  }
 }

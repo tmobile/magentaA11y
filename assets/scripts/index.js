@@ -22,7 +22,7 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 
 // Trigger alert
 $("#show-alert").click(function() {
-    $('[role="alert"]').toggleClass('visible')
+    $('[role="alert"]').addClass('visible')
 });
 
 $("#show-password").on('change', function() {
