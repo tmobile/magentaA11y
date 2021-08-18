@@ -19,10 +19,6 @@ hr {
   margin-bottom: 2vw;
 
 }
-/* #Clearing  */
-
-/* Self Clearing Goodness */
-.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
 
 /* Use clearfix class on parent to clear nested columns, 
 or wrap each row of columns in a <div class="row"> */

@@ -2,11 +2,13 @@
 layout: default
 ---
 <article>
-  <div class="container billboard">
-    <h1 class="h-alpha">{{ page.title | escape }}</h1>
-    <p class="h-bravo">
-      {{ page.description | escape }}
-    </p>
+  <div class="container billboard group-2-1">
+    <div>
+      <h1 class="h-alpha">{{ page.title | escape }}</h1>
+      <p class="h-bravo subhead">
+        This basic web page demonstrates how a screen reader consumes page structure, images, forms and interactive elements.
+      </p>
+    </div>
     <div>
       <p>
         Got a favorite screen reader? We want to know your favorite.
@@ -90,7 +92,7 @@ layout: default
 
 
     <table class="comparison">
-      <caption>
+      <caption class="center-text">
         Screen reader and browser pairings
       </caption>
       <thead>
@@ -228,7 +230,7 @@ layout: default
 
   </div>
 
-  <div class="container narrow">
+  <div class="container section narrow">
     <h2 class="h-bravo">
       Common questions
     </h2>
