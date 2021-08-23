@@ -26,18 +26,23 @@
     position: relative;
     height: 3rem;
     text-indent: 1rem;
-    //width: 1.5rem;
     overflow: visible;
     background: none;
     margin: 0px;
     padding: 0;
     border: none;
     line-height: 3rem;
-    font-size: 1.25rem;
+    font-size: 2rem;
+    font-weight: bold;
     text-align: center;
     grid-column: 2 / span 1;
     grid-row: 2;
     justify-self: stretch;
+
+    &[data-selected='10'],
+    &[data-selected='11'] {
+      text-indent: .325rem;
+    }
 
     &:focus {
       outline: .25rem solid rgba($color-focus, .5);

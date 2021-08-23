@@ -2,7 +2,9 @@
   <label for="cowbell">
     How much cowbell?
   </label>
-  <select id="cowbell"
+  <select onchange="this.dataset.selected = this.value;"
+          data-selected="1"
+          id="cowbell"
           name="stepper-input"
           min="1"
           max="11">
