@@ -25,7 +25,7 @@
     display: inline;
     position: relative;
     height: 3rem;
-    text-indent: 1rem;
+    text-indent: .875rem;
     overflow: visible;
     background: none;
     margin: 0px;
@@ -38,10 +38,12 @@
     grid-column: 2 / span 1;
     grid-row: 2;
     justify-self: stretch;
+    font-family: monospace;
+    transition: 0s;
 
     &[data-selected='10'],
     &[data-selected='11'] {
-      text-indent: .325rem;
+      text-indent: .25rem;
     }
 
     &:focus {
