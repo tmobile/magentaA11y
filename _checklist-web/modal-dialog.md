@@ -7,14 +7,14 @@ categories: main
 keyboard:
   tab: |
     Focus visibly moves only within the dialog, starting with the dialog element itself on launch
-  arrow-keys: |
-    Screen reader browses only within the dialog
   escape: |
     The dialog closes and returns focus to the button that launched it
   space: |
     Any buttons are activated
   enter: |
     Any buttons or links are activated
+  arrow-keys: |
+    Screen reader browses only within the dialog
 
 mobile:
   swipe: |
@@ -67,7 +67,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 - Upon closing, focus should return to the element that launched the dialog
 
 ### State
-- Use `aria-modal="true"` to indicate content beneath the modal is inert.
+- Use `aria-modal="true"` to indicate content beneath the modal is inert and that the screen reader should not browse outside the dialog.
 
 ### Focus
 - Focus must be visible
