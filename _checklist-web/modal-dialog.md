@@ -67,7 +67,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 - Upon closing, focus should return to the element that launched the dialog
 
 ### State
-- Use `aria-modal="true"` to indicate content beneath the modal is inert.
+- Use `aria-modal="true"` to indicate content beneath the modal is inert and that the screen reader should not browse outside the dialog.
 
 ### Focus
 - Focus must be visible
