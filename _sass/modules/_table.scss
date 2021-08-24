@@ -11,13 +11,24 @@ table {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 
+  thead {
+    border-bottom: 3px solid #000;
+
+    &:first-of-type {
+      [scope='row'] {
+        border-top: none;
+      }
+
+    }
+  }
+
   th {
     @include regular;
     border-top: 1px solid $color-border-gray;
     margin: 0;
     padding: .6rem 1rem .4rem 1px;
-    text-align: left;
     vertical-align: top;
+    font-weight: bold;
     &:first-of-type {
       width: 8rem !important;
     }
@@ -29,7 +40,6 @@ table {
 
     &[scope='col'] {
       border-top: none;
-      border-bottom: 2px solid #000;
       font-weight: bold;
     }
   }
@@ -54,5 +64,49 @@ table {
   }
   p {
     padding: 0;
+  }
+
+  &.comparison {
+    position: relative;
+    text-align: center;
+    tr {
+      @include break(0,$break-small) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    thead {
+      @include break(0,$break-small) {
+        position: sticky;
+        top: -1px;
+        background: $color-gray-xtra-light;
+        margin: 0;
+        box-shadow: 0 10px 10px -10px rgba(#000, .25);
+      }
+      th:first-of-type {
+        @include break(0,$break-small) {
+          @include hidden;
+        }
+      }
+
+    }
+    th:first-of-type {
+      width: auto !important;
+      @include break(0,$break-small) {
+        border-top: 2px solid #000;
+      }
+
+    }
+
+    [scope=row] {
+      @include break(0,$break-small) {
+        display: block;
+        width: auto !important;
+        grid-column: 1/-1;
+        font-size: 1.25rem;
+      }
+    }
+
   }
 }

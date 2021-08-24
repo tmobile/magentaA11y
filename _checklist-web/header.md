@@ -28,6 +28,11 @@ screenreader:
     n/a
 ---
 
+## Developer notes
+
+- There should only be a one singular header/banner element on the page. 
+- Typically contains site title and primary navigation.
+
 ## Code examples
 
 ### Use semantic HTML
