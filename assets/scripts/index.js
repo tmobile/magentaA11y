@@ -91,38 +91,26 @@ $(".minus").click(function(){
     var min = $(this).parents(".stepper").find("[name=stepper-input]").attr('min');
     var val = parseInt(inpt.val());
     if ( val < 1 ) inpt.val(val=1);
+    if ( val < 1 ) inpt.attr('data-selected', '1');
     if ( val == min ) return;
     inpt.val(val-1);
+    inpt.attr('data-selected', val-1);
 });
 
 $(".plus").click(function(){
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var max = $(this).parents(".stepper").find("[name=stepper-input]").attr('max');
     var val = parseInt(inpt.val());
-    if ( val < 1 ) inpt.val(val=1);
     if ( val == max ) return;
     inpt.val(val+1);
+    inpt.attr('data-selected', val+1);
+});
+
+$("[name='stepper-input']").on('change', function() {
+    $(this).attr('data-selected', $(this).val);
 });
 
 $("[name='checkboxRadioGroup']").on('change', function() {
     $("[name='checkboxRadioGroup']").not(this).prop('checked', false);
     $(this).prop('checked', true);
-});
-
-
-$("input[type='number']").change(function(){
-    var maxValue = parseInt($(this).attr('max'));
-    var minValue = parseInt($(this).attr('min'));
-    var enteredValue = parseInt($(this).val());
-
-    if($.isNumeric(enteredValue)) {
-        var enteredValue = parseInt($(this).val());
-        if (enteredValue > maxValue) {
-            $(this).val(maxValue);
-        } else if (enteredValue < minValue) {
-            $(this).val(minValue);
-        }
-    } else {
-        $(this).val(minValue);
-    }
 });
