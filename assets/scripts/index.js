@@ -86,6 +86,11 @@ if ( $('dialog').length ) {
     });
 }
 
+$("[name='stepper-input']").on('change', function() {
+    var val = parseInt($(this).val());
+    $(this).attr('data-selected', val);
+});
+
 $(".minus").click(function(){
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var min = $(this).parents(".stepper").find("[name=stepper-input]").attr('min');
@@ -106,9 +111,6 @@ $(".plus").click(function(){
     inpt.attr('data-selected', val+1);
 });
 
-$("[name='stepper-input']").on('change', function() {
-    $(this).attr('data-selected', $(this).val);
-});
 
 $("[name='checkboxRadioGroup']").on('change', function() {
     $("[name='checkboxRadioGroup']").not(this).prop('checked', false);
