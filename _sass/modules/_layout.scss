@@ -84,3 +84,28 @@ main {
     grid-column-gap: 2rem;
   }
 }
+
+.lowlight {
+  background: rgba(#000, .5);
+  padding: 2rem;
+}
+
+.display-list {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  border-top: 1px solid $color-border-gray;
+  padding-top: 1rem;
+  align-items: center;
+
+  &:first-of-type {
+    border-top: none;
+  }
+  @include break($break-mid) {
+    display: block;
+    border: none;
+
+  }
+
+}

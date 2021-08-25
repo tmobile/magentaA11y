@@ -2,21 +2,24 @@
 layout: default
 ---
 <article>
-  <div class="container billboard group-2-1" style="background: url('{{ site.baseurl }}/assets/images/backgrounds/assistive-technology-bg.png')">
-    <div>
-      <h1 class="h-alpha">{{ page.title | escape }}</h1>
-      <p class="h-bravo subhead">
-        This basic web page demonstrates how a screen reader consumes headings, forms and interactive elements.
-      </p>
+  <div class="billboard" style="background: url('{{ site.baseurl }}/assets/images/backgrounds/assistive-technology-bg.png')">
+    <div class="container group-2-1">
+      <div>
+        <h1 class="h-alpha">{{ page.title | escape }}</h1>
+        <p class="h-bravo subhead">
+          This basic web page demonstrates how a screen reader consumes headings, forms and interactive elements.
+        </p>
+      </div>
+      <div class="lowlight center-text">
+        <h2 class="h-delta">
+          We want to know your favorite screen reader.
+        </h2>
+        <a href="#favorites" class="button">
+          Screen reader survey
+        </a>
+      </div>
     </div>
-    <div>
-      <p>
-        We want to know your favorite screen reader.
-      </p>
-      <a href="#favorites" class="button">
-        Screen reader survey
-      </a>
-    </div>
+
   </div>
 
 
@@ -27,7 +30,7 @@ layout: default
   </div>
 
   <div class="container section group-4">
-    <div>
+    <div class="display-list">
       <h3 class="h-charlie center-text">
         <img src="{{ site.baseurl }}/assets/images/icons/icon-pointer.svg"
              role="img"
@@ -42,7 +45,7 @@ layout: default
     </div>
 
 
-    <div>
+    <div class="display-list">
       <h3 class="h-charlie center-text">
         <img src="{{ site.baseurl }}/assets/images/icons/icon-vision.svg"
              role="img"
@@ -55,7 +58,7 @@ layout: default
       </p>
     </div>
 
-    <div>
+    <div class="display-list">
       <h3 class="h-charlie center-text">
         <img src="{{ site.baseurl }}/assets/images/icons/icon-hearing.svg"
              role="img"
@@ -68,7 +71,7 @@ layout: default
       </p>
     </div>
 
-    <div>
+    <div class="display-list">
       <h3 class="h-charlie center-text">
         <img src="{{ site.baseurl }}/assets/images/icons/icon-brain.svg"
              role="img"
