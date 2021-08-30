@@ -21,13 +21,11 @@ layout: default
               <summary id="{{ category | escape }}-category-title">
                 <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
               </summary>
-              <div role="group" aria-labelledby="{{ category | escape }}-category-title">
-                <ul>
+                <ul role="group" aria-labelledby="{{ category | escape }}-category-title">
                   {% for page in ordered_pages %}
                   {% include checklist-loop.html %}
                   {% endfor %}
                 </ul>
-              </div>
             </details>
           {% endfor %}
         </div>

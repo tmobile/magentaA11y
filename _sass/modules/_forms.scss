@@ -11,10 +11,24 @@ form {
   ul {
     border-top: 1px solid $color-border-gray;
   }
+
   li {
-    display: flex;
     border-top: none;
     border-bottom: 1px solid lighten($color-border-gray,10);
+
+    &.input-checkbox-item,
+    &.input-radio-item {
+      padding: 0;
+    }
+    &.input-textarea-item  {
+      padding: 1rem 1rem .25rem 1rem;
+    }
+    &.input-text-item {
+      padding: 1rem 1rem .25rem 1rem;
+    }
+    &.flex-item { // Used for inputs + CTA on same line
+      display: flex;
+    }
   }
 }
 
@@ -29,14 +43,14 @@ input[type="number"],
 input[type="password"],
 input[type="button"],
 input[type="submit"] {
+  display: block;
   -webkit-appearance: none; // Remove iOS webkit styles
   border-radius: 0; // Remove iOS webkit styles
-  margin-bottom: .5rem;
+  margin: 0  0 .75rem 0;
   font-size: 1rem;
   padding: .5rem;
   border: 1px solid $color-border-gray;
   border-radius: 2px;
-  display: block;
   -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
 }
 
@@ -54,6 +68,10 @@ label {
     padding: 0 .5rem;
     border-radius: .125rem;
   }
+}
+
+input[type="text"]{
+  width: calc(100%);
 }
 
 input[required],
@@ -158,9 +176,10 @@ input[type=radio] {
 }
 
 textarea {
-  display: block;
+  display: inline-block;
   font-size: 1rem;
   resize: none;
+  width: calc(100%);
 }
 
 input[type="file"] {
