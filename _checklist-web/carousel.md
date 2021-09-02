@@ -34,7 +34,7 @@ Think carefully before you use a carousel or slideshow wizard.
 
 ### Carousels are often a poor design choice
 
-- As a general rule, carousels should be avoided for critical functionality unless there is a strong business case.
+- As a general rule, [carousels should be avoided](https://shouldiuseacarousel.com/) for critical functionality unless there is a strong business case.
 - People must be highly motivated to engage with a carousel beyond the first slide.
 - A good business case might be a multi-step lead form, but this should always be A/B tested against a traditional scrolling form.
 
