@@ -90,6 +90,11 @@
   transition: .2s;
 }
 
+.inert,
+[inert] {
+  display: none;
+}
+
 @mixin focus {
   &:active {
     @extend .active;
