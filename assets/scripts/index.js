@@ -136,6 +136,5 @@ $(".previous").click(function(){
         if ($(this).hasClass('in-slide')) {
             $('.slide.visible').addClass('test').focus();
         }
-
     }
 });
