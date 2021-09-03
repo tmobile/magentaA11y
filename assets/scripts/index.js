@@ -136,6 +136,5 @@ $(".previous").click(function(){
         if (! $(this).closest('.carousel-nav').length ) {
             $('.slide.visible').focus();
         }
-
     }
 });
