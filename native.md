@@ -1,5 +1,5 @@
 ---
 layout: checklist-native
-title: Native App Accessibility Checklist
+title: Native app accessibility checklist
 permalink: /native/
 ---
