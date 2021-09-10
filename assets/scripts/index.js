@@ -116,3 +116,25 @@ $("[name='checkboxRadioGroup']").on('change', function() {
     $("[name='checkboxRadioGroup']").not(this).prop('checked', false);
     $(this).prop('checked', true);
 });
+
+
+// Look at all slides
+// If next is clicked, hide current, show next
+// If back is clicked, hide current, show previous
+
+$(".next").click(function(){
+    if ($('.slide.visible').next('.slide').length) {
+        $('.slide.visible').removeClass('visible').addClass('inert').next('.slide').removeClass('inert').addClass('visible');
+        if (! $(this).closest('.carousel-nav').length ) {
+            $('.slide.visible').focus();
+        }
+    }
+});
+$(".previous").click(function(){
+    if ($('.slide.visible').prev('.slide').length) {
+        $('.slide.visible').removeClass('visible').addClass('inert').prev('.slide').removeClass('inert').addClass('visible');
+        if (! $(this).closest('.carousel-nav').length ) {
+            $('.slide.visible').focus();
+        }
+    }
+});

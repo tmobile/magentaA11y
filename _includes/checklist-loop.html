@@ -14,7 +14,7 @@ How to test {% assign firstLetter = page.title | downcase | slice: 0 %}{% if fir
 
 Full information: {{ page.url | absolute_url | replace: '.html', '/' }}
 {% endcapture %}
-<li>
+<li class="input-checkbox-item flex-item">
   <input type="checkbox" id="{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}" data-success-criteria="
 {{ all | strip | lstrip }}
 ">
@@ -22,9 +22,9 @@ Full information: {{ page.url | absolute_url | replace: '.html', '/' }}
     {{ page.title | escape }}
   </label>
   <a class="checklist-link" href="{{ page.url | relative_url }}">
-  <span class="hidden">
-  {{ page.title | escape }}
-  </span>
+    <span class="hidden">
+    {{ page.title | escape }}
+    </span>
   </a>
 </li>
 {% endif %}
