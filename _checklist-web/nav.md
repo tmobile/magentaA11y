@@ -54,8 +54,6 @@ Use semantic elements where possible.
 {% include /examples/nav-menu.html %}
 {:/}
 
-
-
 ### When you can't use semantic HTML
 
 This custom navigation requires extra attributes.
@@ -116,7 +114,7 @@ When there is more than one navigation element, they should have a name.
 ### Role
 
 - Identifies itself as navigation
-- **DO NOT** add menu or option roles with arrow key event listeners unless you're building an actual application like Gmail.
+- **DO NOT** add 'menu' or 'option' roles with arrow key event listeners unless you're building an actual application like Gmail.
 
 ### Focus
 

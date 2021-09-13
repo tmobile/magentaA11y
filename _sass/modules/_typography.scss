@@ -9,9 +9,15 @@
 .wf-active {
   visibility: visible;
 }
+
+@font-face {
+  font-family: 'teleneo';
+  src: url('/a11yEngineer/assets/fonts/TeleNeoVariable-Upright.woff2') format('truetype');
+}
+
 $sans:   "arial";
 $serif:   "monospace";
-$display: "arial";
+$display: $sans;
 
 
 @mixin light {
@@ -46,6 +52,7 @@ $display: "arial";
   font-family: $display, sans-serif;
   font-weight: 700;
   font-style: bold;
+  font-variation-settings: "wght" 700;
 }
 @mixin bold-italic {
   font-family: $display, sans-serif;
@@ -140,6 +147,11 @@ p {
 
 strong {
   @include bold;
+}
+
+label {
+  @include bold;
+
 }
 
 
