@@ -8,10 +8,10 @@ details {
 
   summary {
     font-weight: bold;
-    @include bold;
+    @include headline;
     padding: 1.5rem 2rem 1.5rem 1rem !important;
     margin: calc(-1rem);
-    line-height: 1;
+    line-height: .875;
     font-size: 1.25rem;
     cursor: pointer;
     position: relative;
@@ -29,7 +29,7 @@ details {
       content: '';
       display: block;
       position: absolute;
-      top: 1.125rem;
+      top: 1rem;
       right: 1rem;
       width: 2rem;
       height: 2rem;
