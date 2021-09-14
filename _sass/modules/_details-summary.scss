@@ -8,6 +8,7 @@ details {
 
   summary {
     font-weight: bold;
+    @include bold;
     padding: 1.5rem 2rem 1.5rem 1rem !important;
     margin: calc(-1rem);
     line-height: 1;
@@ -16,6 +17,7 @@ details {
     position: relative;
     display: block; // necessary to control ::marker
     z-index: 9;
+
 
     @include ripple;
 

@@ -106,6 +106,7 @@ fieldset {
 
 legend {
   font-weight: bold;
+  @include headline;
   margin: 0 0 0 0;
   padding: 1.5rem 1rem 1.5rem 1rem;
   width: 100%;
@@ -123,15 +124,15 @@ input[type=radio] {
   @extend .hidden;
   + label {
     display: block;
+    padding: 1.5rem 2rem 1.325rem 4rem;
+    line-height: 1.25rem;
     width: 100%;
     background: #fff;
-    padding: 1.5rem 2rem 1.5rem 4rem;
     margin: 0;
     color: $color-gray-xtra-dark;
     position: relative;
     font-weight: bold;
     cursor: pointer;
-    line-height: 1rem;
     background-position: 10% center;
     transition: background .8s;
     -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect

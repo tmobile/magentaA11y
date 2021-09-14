@@ -9,6 +9,7 @@ button {
   line-height: 1rem;
   font-size: 1rem;
   font-weight: bold;
+  @include bold;
   border-radius: 2px;
   color: #fff;
   transition: text-indent .7s;

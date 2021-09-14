@@ -12,50 +12,68 @@
 
 @font-face {
   font-family: 'teleneo';
-  src: url('/a11yEngineer/assets/fonts/TeleNeoVariable-Upright.woff2') format('truetype');
+  src: url('/a11yEngineer/assets/fonts/teleneo-regular.woff2') format('truetype');
 }
 
-$sans:   "arial";
-$serif:   "monospace";
-$display: $sans;
+@font-face {
+  font-family: 'teleneo-bold';
+  src: url('/a11yEngineer/assets/fonts/teleneo-bold.woff2') format('truetype');
+}
+
+@font-face {
+  font-family: 'teleneo-medium';
+  src: url('/a11yEngineer/assets/fonts/teleneo-medium.woff2') format('truetype');
+}
+
+@font-face {
+  font-family: 'teleneo-xtra-bold';
+  src: url('/a11yEngineer/assets/fonts/teleneo-bold.woff2') format('truetype');
+}
+
+@font-face {
+  font-family: 'teleneo-xtra-bold';
+  src: url('/a11yEngineer/assets/fonts/teleneo-extrabold.woff2') format('truetype');
+}
+
+
+
+$sans:      "teleneo-medium";
+$sans-bold: "teleneo-bold";
+$serif:     "monospace";
+$display:   "teleneo-xtra-bold";
 
 
 @mixin light {
-  font-family: $display, sans-serif;
+  font-family: $sans, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 @mixin light-italic {
-  font-family: $display, sans-serif;
+  font-family: $sans, sans-serif;
   font-weight: 200;
   font-style: italic;
 }
 
 @mixin regular {
-  font-family: $display, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: $sans, sans-serif;
 }
 @mixin italic {
-  font-family: $display, sans-serif;
+  font-family: $sans, sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
 @mixin medium {
-  font-family: $display, sans-serif;
+  font-family: $sans-bold, sans-serif;
   font-weight: 500;
   font-style: bold;
 }
 
 @mixin bold {
-  font-family: $display, sans-serif;
-  font-weight: 700;
-  font-style: bold;
-  font-variation-settings: "wght" 700;
+  font-family: $sans-bold, sans-serif;
 }
 @mixin bold-italic {
-  font-family: $display, sans-serif;
+  font-family: $sans-bold, sans-serif;
   font-weight: 700;
   font-style: italic;
 }
@@ -83,13 +101,14 @@ body,
 html {
   font-family: $sans, sans-serif;
   color: $color-text-color;
-  @include light;
+  @include regular;
 
 }
 .h-alpha,
 .post-content h1 {
   margin: 0 0 2rem 0;
   font-size: 2rem;
+  @include headline;
   @include break($break-small) {
     font-size: clamp(2rem, 3vw, 4rem);
   }
@@ -98,11 +117,22 @@ html {
 .post-content h2 {
   font-size: 1.5rem;
   margin: 0 0 1rem 0;
+  @include bold;
 }
+
+.post-content h2 {
+  @include bold;
+  margin: 2rem 0 1rem 0;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
 .h-charlie,
 .post-content h3 {
   font-size: 1.25rem;
   margin: 0rem 0 1rem 0;
+  @include headline;
 }
 
 .post-content h3 {
@@ -132,7 +162,7 @@ a {
 
 p {
   font-size: 1rem;
-  @include light;
+  @include regular;
   line-height: 1.625rem;
   padding: 0 0 1rem 0;
   margin: 0;
@@ -150,7 +180,7 @@ strong {
 }
 
 label {
-  @include bold;
+  @include headline;
 
 }
 

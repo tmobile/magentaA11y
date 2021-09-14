@@ -57,6 +57,7 @@
       text-decoration: none;
       border-radius: 2px;
       border-bottom: 3px solid $color-brand-primary;
+      @include headline;
 
       svg {
         display: block;
@@ -67,6 +68,7 @@
         display: block;
         font-size: 1rem;
         font-weight: normal;
+        @include regular;
       }
     }
   }
