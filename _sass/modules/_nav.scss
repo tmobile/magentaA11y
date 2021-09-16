@@ -1,6 +1,6 @@
 nav {
   display: grid;
-  margin: 4rem auto 2rem auto;
+  margin: 0rem auto 2rem auto;
   text-align: center;
   position: relative;
   border-radius: 2px;
@@ -20,7 +20,7 @@ nav {
     li {
       list-style: none;
       display: block;
-      margin: 0 3px .5rem 0;
+      margin: 0;
       padding: 0;
     }
   }
@@ -29,7 +29,7 @@ nav {
   button.expander-toggle {
     display: block;
     text-align: center;
-    padding: 1.5rem 1rem 1.5rem 1rem;
+    padding: 1.5rem .5rem 1.5rem .5rem;
     margin-bottom: -1px;
     text-decoration: none;
     position: relative;
@@ -37,6 +37,10 @@ nav {
     line-height: 1rem;
     border: none;
     @include regular;
+    @include break($break-mid) {
+      padding: 1.5rem 1rem 1.5rem 1rem;
+
+    }
 
     &:after {
       content: '';
