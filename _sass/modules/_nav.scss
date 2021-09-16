@@ -70,11 +70,19 @@ nav {
     box-shadow: none !important;
     padding: 0 !important;
     button.expander-toggle {
-      padding-right: 4rem;
       font-family: $sans, sans-serif;
       font-size: 1rem;
       line-height: 1rem;
       background: transparent;
+      &:before {
+        display: none;
+      }
+      @include break(321px) {
+        padding-right: 4rem;
+        &:before {
+          display: block;
+        }
+      }
     }
     ul.expander-content {
       position: absolute;
