@@ -6,6 +6,12 @@ footer {
   margin-bottom: 3rem;
 
   nav {
+    ul {
+      display: block;
+      li {
+        display: inline-block;
+      }
+    }
     a {
       text-decoration: underline;
       text-underline-offset: 4px;

@@ -6,12 +6,10 @@ nav {
   border-radius: 2px;
   padding-bottom: 0;
   z-index: 999;
-  max-width: $break-small;
 
   ul {
     display: flex;
     justify-content: center;
-
     position: relative;
     padding: 0;
     margin: 1em auto 0 auto;
