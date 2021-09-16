@@ -1,9 +1,9 @@
-<nav id="nav" aria-label="Site menu">
+<nav id="nav" class="container narrow" aria-label="Site menu">
   <ul>
     <li>
-      <a
+      <a class="home"
         {% if page.url== "/" %} aria-current="page" {% endif %}
-        href="{{ site.baseurl }}/"> {{ site.title | escape }}
+        href="{{ site.baseurl }}/">Magenta&nbsp;A11y
       </a>
     </li>
     <li>
@@ -20,5 +20,27 @@
         href="{{ site.baseurl }}/native/">Native
       </a>
     </li>
+    <li class="expander-group">
+      <button
+        {% unless page.url contains "web" or unless page.url contains "native" %} aria-current="page" {% endif %}
+        class="expander-toggle" aria-expanded="false">
+        More
+      </button>
+      <ul class="expander-content">
+        <li>
+          <a href="{{ site.baseurl }}/how-to/">How to test</a>
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/demos/">Demos</a>
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/about/">About</a>
+        </li>
+        <li>
+          <a href="{{ site.baseurl }}/code-of-conduct/">Code of Conduct</a>
+        </li>
+      </ul>
+    </li>
+
   </ul>
 </nav>

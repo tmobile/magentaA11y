@@ -155,5 +155,15 @@ button {
       }
     }
   }
+
+  &.inline {
+    padding: 1rem;
+    background: none;
+    color: $color-text-color;
+    &:before {
+      display: none;
+    }
+  }
+
 }
 

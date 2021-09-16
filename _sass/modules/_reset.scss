@@ -6,8 +6,11 @@ body,html {
   margin: 0rem 0 3rem 0;
   padding: 0;
   height: 100%;
-  background: $color-gray-xtra-light;
   scroll-behavior: smooth;
+  background-color: $color-gray-xtra-light;
+  @include linear-gradient(#fff,$color-gray-xtra-light );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 

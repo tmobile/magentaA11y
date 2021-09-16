@@ -1,36 +1,45 @@
-<nav class="menu expander-group">
-  <a class="home" href="/">
-    Home
-  </a>
-  <button type="button"
-          class="menu expander-toggle"
-          aria-expanded="false"
-          aria-haspopup="true">
-    Menu
-  </button>
-  <ul class="expander-content">
+<nav class="menu">
+  <ul>
     <li>
-      <a href="/about/">About</a>
+      <a class="home" href="/">
+        Home
+      </a>
+    </li>
+    <li class="expander-group">
       <button type="button"
-              class="subnav expander-toggle"
+              class="menu expander-toggle"
               aria-expanded="false"
               aria-haspopup="true">
-        <span class="hidden">About</span>
+        Menu
       </button>
-      <ul class="expander-content">
-          <li>
-            <a href="/history/">Our history</a>
-          </li>
-          <li>
-            <a href="/values/">Our values</a>
-          </li>
-        </ul>
-    </li>
-    <li>
-      <a href="/contact">Contact</a>
-    </li>
-    <li>
-      <button>Sign in</button>
+
+      <ul class="subnav expander-content">
+        <li>
+          <a href="/about/">About</a>
+          <button type="button"
+                  class="subnav expander-toggle"
+                  aria-expanded="false"
+                  aria-haspopup="true">
+            <span class="hidden">About</span>
+          </button>
+
+          <ul class="expander-content">
+            <li>
+              <a href="/history/">Our history</a>
+            </li>
+            <li>
+              <a href="/values/">Our values</a>
+            </li>
+          </ul>
+
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+        <li>
+          <button>Sign in</button>
+        </li>
+      </ul>
     </li>
   </ul>
 </nav>

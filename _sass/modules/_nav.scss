@@ -1,51 +1,141 @@
 nav {
-  display: block;
-  margin: 2rem auto 2rem auto;
-  padding-bottom: 1rem;
+  display: grid;
+  margin: 4rem auto 2rem auto;
   text-align: center;
+  position: relative;
+  border-radius: 2px;
+  padding-bottom: 0;
+  z-index: 999;
+  max-width: $break-small;
 
   ul {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+
     position: relative;
     padding: 0;
-    margin: 0px auto;
+    margin: 1em auto 0 auto;
+    width: 100%;
 
     li {
       list-style: none;
-      display: inline-block;
+      display: block;
       margin: 0 3px .5rem 0;
       padding: 0;
-      position: relative;
     }
   }
 
-  a {
+
+  a,
+  button.expander-toggle {
     display: block;
     text-align: center;
-    padding: 1rem .5rem .5rem .5rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
     margin-bottom: -1px;
     text-decoration: none;
     position: relative;
+    font-size: 1rem;
+    line-height: 1rem;
+    border: none;
+    @include regular;
+
     &:after {
       content: '';
       display: block;
       position: absolute;
-      bottom: -3px;
-      left: 0rem;
-      width: 100%;
-      height: 3px;
+      bottom: -.25rem;
+      left: 5%;
+      width: 90%;
+      height: .25rem;
       background: $color-brand-primary;
     }
     &[aria-current="page"],
     &.current {
+      @include headline;
       &:after {
         content: '';
-        height: 5px;
+        height: .5rem;
       }
     }
     &:hover,
     &:focus {
       text-decoration: none ;
+    }
+  }
+
+  .expander-group {
+    box-shadow: none !important;
+    padding: 0 !important;
+    button.expander-toggle {
+      padding-right: 4rem;
+      font-family: $sans, sans-serif;
+      font-size: 1rem;
+      line-height: 1rem;
+      background: transparent;
+    }
+    ul.expander-content {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 4.25rem;
+      margin: 0;
+      padding: 0 !important;
+      border: none;
+      box-shadow: 0 1px 2px 1px rgba(#000,.2), 0 30px 18px -18px rgba(#000,0);
+
+      li {
+        display: block;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border-top: 1px solid $color-border-gray;
+        a {
+          text-align: left;
+          padding: 1.5rem;
+          display: block;
+          margin: 0;
+          &:after {
+            display: none;
+          }
+          &:hover,
+          &:focus {
+            &:after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: .5rem !important;
+              height: 100%;
+              background: #000;
+            }
+          }
+        }
+        button.subnav {
+          margin: 0 ;
+          width: 4rem ;
+          padding: 1rem ;
+          top: 0 ;
+          line-height: 1rem;
+          right: 0 ;
+          border: 1px solid $color-border-gray;
+          border-right: none;
+          max-height: 4.125rem;
+          border-radius: 0;
+          &:after {
+            display: none;
+          }
+        }
+        ul.expander-content {
+          position: relative;
+          z-index: 99;
+          top: 0;
+          li {
+            display: flex !important;
+            z-index: 99;
+          }
+        }
+      }
     }
   }
 }
