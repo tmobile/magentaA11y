@@ -30,7 +30,10 @@ screenreader:
 ## Code examples
 
 ### Use semantic HTML
-This semantic HTML contains all accessibility features by default. 
+
+- This semantic HTML contains all accessibility features by default. 
+- Placing the show password checkbox ahead of the password input increases discoverability for screen reader users.
+  - CSS pseudo elements are used in the checkbox label to express its state on focus of the password input.
 
 {% highlight html %}
 {% include /examples/input-password.html %}
@@ -47,11 +50,12 @@ This semantic HTML contains all accessibility features by default.
 ### Name
 - Include `for="input-id` in each `<label>` label to associate it with the input
 - Use `aria-label="Input name"` as a last resort if a `<label>` can't be used
-- Don't hide the label on focus
 
 ### Role
 - Identifies as some kind of secure input
 
+### State
+- The show password checkbox should indicate its state on focus
 
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input
