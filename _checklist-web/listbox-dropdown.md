@@ -13,7 +13,6 @@ keyboard:
     If focus is in the listbox, collapses the listbox and keeps the currently selected option as the button label.
   arrow-keys: |
     Moves focus to and selects the next option. 
-    If the listbox is collapsed, also expands the list.
   escape: |
     If the listbox is displayed, collapses the listbox and moves focus to the button.
   home: |

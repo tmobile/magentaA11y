@@ -11,11 +11,12 @@
     border-radius: 2px;
     padding: 1.5rem 1rem;
     font-size: 1.25rem;
-    line-height: 1;
+    line-height: .875rem;
     position: relative;
     transition: .2s;
     text-align: left;
     background-color: #fff;
+    @include headline;
     @include ripple;
 
     &.subnav {
@@ -32,7 +33,7 @@
       content: '';
       display: block;
       position: absolute;
-      top: 1.125rem;
+      top: 1rem;
       right: 1rem;
       width: 2rem;
       height: 2rem;

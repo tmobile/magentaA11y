@@ -8,12 +8,11 @@ categories: form
 keyboard:
   tab: |
     Focus moves visibly to the select
-  spacebar: |
+  enter or spacebar: |
     If select is focused, expands the select and places focus on the currently selected option in the list. 
     If focus is in the options, collapses the select and keeps the currently selected option.
   arrow-keys: |
     Moves focus to and selects the next option. 
-    If the listbox is collapsed, also expands the list.
   escape: |
     If the select is displayed, collapses the select and moves focus to the button.
   home: |
