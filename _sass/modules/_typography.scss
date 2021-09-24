@@ -12,27 +12,27 @@
 
 @font-face {
   font-family: 'teleneo';
-  src: url('/a11yEngineer/assets/fonts/teleneo-regular.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/teleneo-regular.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-bold';
-  src: url('/a11yEngineer/assets/fonts/teleneo-bold.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/teleneo-bold.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-medium';
-  src: url('/a11yEngineer/assets/fonts/teleneo-medium.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/teleneo-medium.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-xtra-bold';
-  src: url('/a11yEngineer/assets/fonts/teleneo-bold.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/teleneo-bold.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-xtra-bold';
-  src: url('/a11yEngineer/assets/fonts/teleneo-extrabold.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/teleneo-extrabold.woff2') format('truetype');
 }
 
 

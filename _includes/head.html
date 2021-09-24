@@ -2,13 +2,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta environment="{{ jekyll.environment }}">
   <title>{{ page.title }}
     {% if page.collection == "checklist-web" %} - Web accessibility checklist {% endif %}
     {% if page.collection == "checklist-native" %} - Native app accessibility checklist {% endif %}
     - A11yEngineer
   </title>
   {% seo title=false description=false %}
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+  {% if jekyll.environment == "production" %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+  {% else %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+  {% endif %}
+
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
