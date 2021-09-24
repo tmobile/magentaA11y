@@ -100,7 +100,7 @@ $display:   "teleneo-xtra-bold";
 body,
 html {
   font-family: $sans, sans-serif;
-  color: $color-text-color;
+  color: $color-text;
   @include regular;
 
 }
@@ -171,7 +171,7 @@ p {
 
 .post-content {
   a {
-    color: $color-text-color;
+    color: $color-text;
     &:hover {
       text-decoration: none;
     }

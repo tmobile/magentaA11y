@@ -70,7 +70,8 @@ label {
   }
 }
 
-input[type="text"]{
+input[type="text"],
+input[type="password"]{
   width: calc(100%);
 }
 

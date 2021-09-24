@@ -45,8 +45,8 @@ nav {
       display: block;
       position: absolute;
       bottom: -.25rem;
-      left: 10%;
-      width:80%;
+      left: 0%;
+      width: 100%;
       height: .25rem;
       background: $color-brand-primary;
     }
@@ -76,7 +76,7 @@ nav {
         display: none;
       }
       @include break(321px) {
-        padding-right: 4rem;
+        padding-right: 3.25rem;
         &:before {
           display: block;
         }

@@ -55,8 +55,8 @@
       font-size: clamp(2rem, 3vw, 3rem);
       font-weight: bold;
       text-decoration: none;
-      border-radius: 2px;
-      border-bottom: 3px solid $color-brand-primary;
+      border-radius: 0px;
+      border-bottom: .25rem solid $color-brand-primary;
       @include headline;
 
       svg {
