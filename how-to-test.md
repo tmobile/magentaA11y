@@ -51,7 +51,7 @@ You can expect differences to include:
     - Arrow keys will only interact with the interactive element in focus
 - Will only read ~120 characters at at time.
 - Will read clickable when it detects a click event listener on an element, even when it's not clickable. 
-- Will read a button with aria-haspopup="true" as "menu submenu"
+- Will read a button with `aria-haspopup="true"` as "menu submenu"
 
 ### VoiceOver
 
