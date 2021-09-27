@@ -54,7 +54,7 @@ table {
       border: 1px solid #ccc;
       border-radius: 3px;
       font-weight: normal;
-      background-color: $color-gray-xtra-light;
+      background-color: #fff;
     }
   }
   caption {
@@ -80,7 +80,7 @@ table {
       @include break(0,$break-small) {
         position: sticky;
         top: -1px;
-        background: $color-gray-xtra-light;
+        background: #fff;
         margin: 0;
         box-shadow: 0 10px 10px -10px rgba(#000, .25);
       }
@@ -89,7 +89,6 @@ table {
           @include hidden;
         }
       }
-
     }
     th:first-of-type {
       width: auto !important;

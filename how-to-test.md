@@ -27,22 +27,40 @@ It is crucial to test with the keyboard first, without the screenreader activate
 
 Many websites have crossed the threshold to a majority of visits being from mobile devices.
 
-### Screenreader browser pairings
-- iOS
-  - Voiceover + Safari
-- Android
-  - Talkback + Chrome
-
 ## 3. Test with the desktop screenreader
 
 - Not having all three screen readers available doesn't mean you can't test for accessibility.
-- Most of the accessibility defects you're likely to encounter will show up in any screen reader.
-
-### Screenreader browser pairings
-
-- PC
-  - NVDA + Chrome 
-  - JAWS + Chrome
-- Mac
-  - Voiceover + Safari
+- Most of the major accessibility defects you're likely to encounter will show up in any screen reader.
   
+{::nomarkdown}
+{% include /examples/table-screen-reader-browser-pairing.html %}
+{:/}
+
+## Screen reader quirks
+
+Screen readers all offer a slightly different experience. 
+
+You can expect differences to include:
+
+### NVDA 
+
+- Has 2 modes with different keyboard shortcuts.
+  - Browse (Red focus indicator)
+    - Arrow keys will browse from element to element
+  - Focus (Blue focus indicator)
+    - Arrow keys will only interact with the interactive element in focus
+- Will only read ~120 characters at at time.
+- Will read clickable when it detects a click event listener on an element, even when it's not clickable. 
+- Will read a button with `aria-haspopup="true"` as "menu submenu"
+
+### VoiceOver
+
+- Will say "dimmed" instead of "disabled"
+
+### JAWS
+
+- Has 2 modes with different keyboard shortcuts
+    - Browse 
+      - Arrow keys will browse from element to element
+    - Forms 
+      - Arrow keys will only interact with the interactive element in focus
