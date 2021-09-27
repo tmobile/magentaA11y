@@ -36,31 +36,30 @@ Many websites have crossed the threshold to a majority of visits being from mobi
 {% include /examples/table-screen-reader-browser-pairing.html %}
 {:/}
 
-## Screen reader quirks
+## Functional differences
 
-Screen readers all offer a slightly different experience. 
-
-You can expect differences to include:
+Screen readers all offer a slightly different experience.
 
 ### NVDA 
 
-- Has 2 modes with different keyboard shortcuts.
+- NVDA has 2 modes with different keyboard shortcuts.
   - Browse (Red focus indicator)
     - Arrow keys will browse from element to element
   - Focus (Blue focus indicator)
     - Arrow keys will only interact with the interactive element in focus
-- Will only read ~120 characters at at time.
-- Will read clickable when it detects a click event listener on an element, even when it's not clickable. 
+- Only reads ~120 characters at at time
+- Read "clickable" when it detects a click event listener on an element, even when it's not clickable
 - Will read a button with `aria-haspopup="true"` as "menu submenu"
 
 ### VoiceOver
 
-- Will say "dimmed" instead of "disabled"
+- Voiceover will say "dimmed" instead of "disabled"
 
 ### JAWS
 
-- Has 2 modes with different keyboard shortcuts
-    - Browse 
-      - Arrow keys will browse from element to element
-    - Forms 
-      - Arrow keys will only interact with the interactive element in focus
+- JAWS has 2 modes with different keyboard shortcuts
+  - Browse 
+    - Arrow keys will browse from element to element
+  - Forms 
+    - Arrow keys will only interact with the interactive element in focus
+- Can fake click events on elements, meaning it may work with the screen reader but not just the keyboard
