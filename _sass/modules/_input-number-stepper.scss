@@ -25,7 +25,7 @@
     display: inline;
     position: relative;
     height: 3rem;
-    text-indent: .875rem;
+    //text-indent: .875rem;
     overflow: visible;
     background: none;
     margin: 0px;
@@ -43,7 +43,7 @@
 
     &[data-selected='10'],
     &[data-selected='11'] {
-      text-indent: .25rem;
+      //text-indent: .25rem;
     }
     &:focus {
       outline: .25rem solid rgba($color-focus, .5);
