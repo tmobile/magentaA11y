@@ -45,7 +45,10 @@ A11yEngineer is just Github Pages site running Jekyll. Follow Github's instructi
 
 - [Clone the open source repo from T-Mobile](https://github.com/tmobile/a11yEngineer)
 - [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
-
+- Helpful links for installing Jekyll with Ruby 3.0
+  - [Install Ruby 3.0 · macOS Big Sur or Catalina for Intel or Apple Silicon](https://mac.install.guide/ruby/3.html)
+  - [Install Ruby 3.0 · macOS Big Sur or Catalina with Homebew for Intel or Apple Silicon](https://mac.install.guide/ruby/13.html)
+  - Note: Ruby 3.0 will need webrick
 ## License
 
 A11yEngineer is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.

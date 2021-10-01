@@ -1,0 +1,160 @@
+---
+layout: default
+---
+<article>
+  <div class="billboard" style="background: url('{{ site.baseurl }}/assets/images/backgrounds/assistive-technology-bg.png')">
+    <div class="container group-2-1">
+      <div>
+        <div class="h-alpha">{{ page.title | escape }}</div>
+        <p class="h-bravo subhead">
+          This basic web page demonstrates how a page can work perfectly for someone using a mouse, but be completely inaccessible.
+        </p>
+      </div>
+      <div class="lowlight center-text">
+        <div class="h-delta">
+          We want to know your favorite screen reader.
+        </div>
+        <a tabindex="-1" href="#favorites" class="button">
+          Screen reader survey
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="h-bravo center-text">
+      Broad categories of disabilities
+    </div>
+  </div>
+
+  <div class="container section group-4">
+    <div class="display-list">
+      <div class="h-charlie center-text">
+        <img src="{{ site.baseurl }}/assets/images/icons/icon-pointer.svg"
+             role="img"
+             class="icon icon-large">
+        Motor
+      </div>
+      <p>
+        Not everyone uses a mouse or taps their screen.
+        Some people exclusively use a keyboard or custom switch input devices.
+      </p>
+    </div>
+
+    <div class="display-list">
+      <div class="h-charlie center-text">
+        <img src="{{ site.baseurl }}/assets/images/icons/icon-vision.svg"
+             role="img"
+             class="icon icon-large">
+        Vision
+      </div>
+      <p>
+        People who are blind or low vision use the internet using a screen reader or extreme zoom tools.
+      </p>
+    </div>
+
+    <div class="display-list">
+      <div class="h-charlie center-text">
+        <img src="{{ site.baseurl }}/assets/images/icons/icon-hearing.svg"
+             role="img"
+             class="icon icon-large">
+        Hearing
+      </div>
+      <p>
+        Some people rely on captions or transcripts to consume audio or video.
+      </p>
+    </div>
+
+    <div class="display-list">
+      <div class="h-charlie center-text">
+        <img src="{{ site.baseurl }}/assets/images/icons/icon-brain.svg"
+             role="img"
+             class="icon icon-large">
+        Cognitive
+      </div>
+      <p>
+        There is a wide range of cognitive differences that can be accommodated by design and code.
+      </p>
+    </div>
+  </div>
+
+  <div class="container section narrow">
+    <div class="h-bravo">
+      Common questions
+    </div>
+
+    <div class="expander-group">
+      <div class="button expander-toggle" aria-expanded="false">
+        Are all projects in scope?
+      </div>
+      <div class="expander-content">
+        Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible.
+        This includes customer and employee facing applications.
+      </div>
+    </div>
+
+    <div class="expander-group">
+      <div class="button expander-toggle" aria-expanded="false">
+          Who does this really affect?
+      </div>
+      <div class="expander-content">
+        Over 1/4 of the US population has a disability that requires assistive technology or accommodation.
+      </div>
+    </div>
+
+    <div class="expander-group">
+      <div class="button expander-toggle" aria-expanded="false">
+        How do we test our products?
+      </div>
+      <div class="expander-content">
+        <ol>
+          <li>Test with the keyboard only</li>
+          <li>
+            Test with the mobile screenreader
+          </li>
+          <li>
+            Test with the desktop screenreader
+          </li>
+        </ol>
+      </div>  
+    </div>
+  </div>
+
+  <div class="container narrow">
+    <div id="favorites" class="h-bravo">
+      Survey: Which is your favorite screen reader
+    </div>
+
+    <form>
+      <div class="fieldset">
+        <div class="legend h-charlie">
+          Choose your favorite screen reader
+        </div>
+
+        <input type="radio" name="nato" id="alphaRadio" checked>
+        <label>VoiceOver for iOS</label>
+
+        <input type="radio" name="nato" id="bravoRadio">
+        <label>Talkback for Android</label>
+
+        <input type="radio" name="nato" id="charlieRadio">
+        <label>NVDA for Windows</label>
+
+        <input type="radio" name="nato" id="deltaRadio">
+        <label>JAWS for Windows</label>
+
+        <input type="radio" name="nato" id="echoRadio">
+        <label>VoiceOver for MacOS</label>
+      </div>
+
+      <div role="alert" class="alert inert">
+        Your vote has been recorded
+      </div>
+
+      <div type="button" class="button" id="show-alert">
+        Submit
+      </div>
+    </form>
+  </div>
+</article>
+
