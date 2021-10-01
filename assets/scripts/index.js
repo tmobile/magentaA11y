@@ -16,6 +16,8 @@ $( ".expander-toggle" ).click(function() {
     }
 });
 
+
+
 $('input[inputmode="numeric"]').on('input',function(e) {
     this.value=this.value.replace(/[^\d]/,'');
 });

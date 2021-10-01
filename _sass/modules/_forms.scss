@@ -80,7 +80,8 @@ input[aria-required='true'] {
 
 }
 
-fieldset {
+fieldset,
+.fieldset  {
   border: none;
   padding: 0;
   margin: 0rem 0 calc(2rem + 3px) 0;
@@ -105,7 +106,8 @@ fieldset {
   }
 }
 
-legend {
+legend,
+.legend  {
   font-weight: bold;
   @include headline;
   margin: 0 0 0 0;
