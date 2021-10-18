@@ -33,6 +33,35 @@ screenreader:
     When open, content behind the modal is inert
 ---
 
+## Required attributes
+
+### Launch button
+- Should be a button, not a link
+- Upon closing, focus should return to the button that launched the dialog
+- **Do not**  use`aria-haspopup`. This attribute has very low and support and unpredictable output across screen readers. 
+
+### Name
+- The modal window has a logical descriptive name from either:
+  - `aria-label="Modal title"` or
+  - `aria-labelledby="heading-id"` pointing to an `<h2>` as a title    
+
+### Role
+- Use `role="dialog"` so the screen reader can identify this as a dialog or modal
+
+### Group
+- Upon closing, focus should return to the button that launched the dialog
+
+### State
+- Use `aria-modal="true"` to indicate content beneath the modal is inert and that the screen reader should not browse outside the dialog.
+
+### Focus
+- use `tabindex="-1"` to make the modal itself targetable for focus
+- Focus must be visible
+- Upon closing, focus should return to the button that launched the dialog
+
+### Documentation
+- [Browser Support](https://caniuse.com/?search=dialog)
+
 ## Code examples
 
 ### Use semantic HTML where possible
@@ -50,30 +79,4 @@ Some browsers require additional scripting. This simple example works in Chrome,
 {% include /examples/modal-dialog.html %}
 </example>
 {:/}
-
-## Developer notes
-
-- The `aria-haspopup` attribute has very low support across screen readers. It is recommended to not use this attribute on modal windows and dialog boxes.
-
-### Name
-- The modal window has a descriptive value from either:
-  - `aria-label="Modal title"` or
-  - `aria-labelledby="heading-id"` pointing to an `<h2>` as a title    
-
-### Role
-- For custom elements, use `role="dialog"`
-
-### Group
-- Upon closing, focus should return to the element that launched the dialog
-
-### State
-- Use `aria-modal="true"` to indicate content beneath the modal is inert and that the screen reader should not browse outside the dialog.
-
-### Focus
-- Focus must be visible
-- Upon closing, focus should return to the element that launched the dialog
-
-### Documentation
-- [Browser Support](https://caniuse.com/?search=dialog)
-
 
