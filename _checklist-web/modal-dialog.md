@@ -55,8 +55,7 @@ screenreader:
 - Use `aria-modal="true"` to indicate content beneath the modal is inert and that the screen reader should not browse outside the dialog.
 
 ### Focus
-- use `tabindex="-1"` to make the modal itself targetable for focus
-- Focus must be visible
+- Use `tabindex="-1"` to make the modal itself targetable for focus
 - Upon closing, focus should return to the button that launched the dialog
 
 ### Documentation
