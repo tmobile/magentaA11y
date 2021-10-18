@@ -53,7 +53,9 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 ## Developer notes
 
-- The `aria-haspopup` attribute has very low support across screen readers. It is recommended to not use this attribute on modal windows and dialog boxes.
+### Launch button
+- Upon closing, focus should return to the button that launched the dialog
+- The `aria-haspopup` attribute has very low support across screen readers. It is recommended to not use this attribute on the launch button for modal windows and dialog boxes.
 
 ### Name
 - The modal window has a descriptive value from either:
@@ -71,7 +73,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 ### Focus
 - Focus must be visible
-- Upon closing, focus should return to the element that launched the dialog
+- Upon closing, focus should return to the button that launched the dialog
 
 ### Documentation
 - [Browser Support](https://caniuse.com/?search=dialog)
