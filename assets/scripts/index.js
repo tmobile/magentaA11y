@@ -16,15 +16,17 @@ $( ".expander-toggle" ).click(function() {
     }
 });
 
-
-
 $('input[inputmode="numeric"]').on('input',function(e) {
     this.value=this.value.replace(/[^\d]/,'');
 });
 
 // Trigger alert
 $("#show-alert").click(function() {
-    $('[role="alert"]').addClass('visible')
+    if($('[role="alert"]').hasClass('visible')) {
+        $('[role="alert"]').removeClass('visible').empty();
+    } else {
+        $('[role="alert"]').addClass('visible').append('The correct answer is Charlie ');
+    }
 });
 
 $("#show-password").on('change', function() {
