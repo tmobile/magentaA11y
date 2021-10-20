@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: MagentaA11y
+title: A11yEngineer
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Accessibility acceptance success criteria testing checklist.
