@@ -46,6 +46,18 @@ The `type="number"` input is intended for **integers** and includes features we 
 </example>
 {:/}
 
+### Disabled number input
+
+{% highlight html %}
+{% include /examples/input-text-number-disabled.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-number-disabled.html %}
+</example>
+{:/}
+
 ## Developer notes
 
 - [Stepper/counter input example](/checklist-web/stepper-input/)
