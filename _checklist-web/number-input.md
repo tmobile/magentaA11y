@@ -48,6 +48,8 @@ The `type="number"` input is intended for **integers** and includes features we 
 
 ### Disabled number input
 
+- Disabled inputs should not be focusable
+
 {% highlight html %}
 {% include /examples/input-text-number-disabled.html %}
 {% endhighlight %}
