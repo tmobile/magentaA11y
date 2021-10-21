@@ -52,7 +52,17 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+### Disabled input
 
+{% highlight html %}
+{% include /examples/input-text-disabled.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-disabled.html %}
+</example>
+{:/}
 
 ## Developer notes
 
