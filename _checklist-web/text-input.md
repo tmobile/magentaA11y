@@ -6,7 +6,7 @@ categories: form
 
 keyboard:
   tab: |
-    Focus moves visibly to the input
+    Focus moves visibly to the input unless it's disabled.
       
 mobile:
   swipe: |
