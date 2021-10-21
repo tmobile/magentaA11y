@@ -54,6 +54,8 @@ This semantic HTML contains all accessibility features by default.
 
 ### Disabled input
 
+- Disabled inputs should not be focusable
+
 {% highlight html %}
 {% include /examples/input-text-disabled.html %}
 {% endhighlight %}
