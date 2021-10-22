@@ -23,9 +23,9 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 // Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
-        $('[role="alert"]').removeClass('visible').empty().attr( 'inert' );
+        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
     } else {
-        $('[role="alert"]').addClass('visible').append('The correct answer is Bravo').removeAttr( 'inert' );
+        $('[role="alert"]').removeClass('inert').addClass('visible').append('The correct answer is Bravo');
     }
 });
 
