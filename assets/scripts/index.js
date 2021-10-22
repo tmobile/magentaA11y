@@ -23,15 +23,12 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 // Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
-        $('[role="alert"]').removeClass('visible');
-        $('[role="alert"]').addClass('inert');
-        $('[role="alert"]').empty();
+        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
     } else {
-        $('[role="alert"]').removeClass('inert');
-        $('[role="alert"]').addClass('visible');
+        $('[role="alert"]').removeClass('inert').addClass('visible');
         setTimeout(function(){
             $('[role="alert"]').append('The correct answer is Bravo');
-        }, 500);
+        }, 25);
     }
 });
 
