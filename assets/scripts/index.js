@@ -23,9 +23,12 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 // Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
-        $('[role="alert"]').removeClass('visible').empty();
+        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
     } else {
-        $('[role="alert"]').addClass('visible').append('The correct answer is Charlie ');
+        $('[role="alert"]').removeClass('inert').addClass('visible');
+        setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
+            $('[role="alert"]').append('The correct answer is Bravo');
+        }, 25);
     }
 });
 
