@@ -23,13 +23,9 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 // Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
-        $('[role="alert"]').removeClass('visible').empty();
+        $('[role="alert"]').removeClass('visible').empty().attr( 'inert' );
     } else {
-        $('[role="alert"]').addClass('visible').append('');
-        
-        var div = document.getElementById('alert');
-        div.innerHTML += 'The correct answer is Charlie ';
-
+        $('[role="alert"]').addClass('visible').append('The correct answer is Bravo').removeAttr( 'inert' );
     }
 });
 
