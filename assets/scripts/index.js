@@ -29,7 +29,9 @@ $("#show-alert").click(function() {
     } else {
         $('[role="alert"]').removeClass('inert');
         $('[role="alert"]').addClass('visible');
-        $('[role="alert"]').append('The correct answer is Bravo');
+        setTimeout(function(){
+            $('[role="alert"]').append('The correct answer is Bravo');
+        }, 500);
     }
 });
 
