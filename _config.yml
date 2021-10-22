@@ -30,6 +30,8 @@ google_analytics:
   $ANALYTICS_ACCT
 # Build settings
 theme: minima
+plugins:
+- jekyll-feed
 collections:
   checklist-web:
     output: true
