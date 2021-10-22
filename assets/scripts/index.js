@@ -26,7 +26,7 @@ $("#show-alert").click(function() {
         $('[role="alert"]').removeClass('visible').addClass('inert').empty();
     } else {
         $('[role="alert"]').removeClass('inert').addClass('visible');
-        setTimeout(function(){
+        setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
             $('[role="alert"]').append('The correct answer is Bravo');
         }, 25);
     }
