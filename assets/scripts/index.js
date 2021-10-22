@@ -25,7 +25,7 @@ $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
         $('[role="alert"]').removeClass('visible').empty();
     } else {
-        $('[role="alert"]').addClass('visible').append('The correct answer is Charlie ');
+        $('[id="favorite-error"]').addClass('visible').after('<div id="alert" role="alert">The correct answer is Charlie</div>');
     }
 });
 
