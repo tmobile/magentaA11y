@@ -30,11 +30,11 @@ screenreader:
 
 ### Use semantic HTML
 
-This is one example of an accessible carousel wizard.
-- It is not the only way to build a carousel, but it meets all the critieria:
-  - The group has a name
-  - New slides titles are announced
-  - Arrow keys advance the slides
+This is one example of a dynamic content region. It is similar to the carousel example.
+
+- It is not the only way to build a dynamic region, but it meets all the critieria:
+  - New content is announced
+  - Focus is placed at the top of the content
 
 {% highlight html %}
 {% include /examples/aria-live.html %}
