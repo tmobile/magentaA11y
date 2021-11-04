@@ -148,13 +148,13 @@ $(".carousel  .previous").click(function(){
 $(".simp .next").click(function(){
     if ($('.slide.visible').next('.slide').length) {
         $('.slide.visible').removeClass('visible').addClass('inert').next('.slide').removeClass('inert').addClass('visible');
-        // $('#dynamic-app-container').focus(); // place focus back to top of app container
+        $('#dynamic-app-container').focus(); // place focus back to top of app container
     }
 });
 $(".simp  .previous").click(function(){
     if ($('.slide.visible').prev('.slide').length) {
         $('.slide.visible').removeClass('visible').addClass('inert').prev('.slide').removeClass('inert').addClass('visible');
-        // $('#dynamic-app-container').focus(); // place focus back to top of app container
+        $('#dynamic-app-container').focus(); // place focus back to top of app container
     }
 });
 
