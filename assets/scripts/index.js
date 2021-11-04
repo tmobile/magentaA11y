@@ -133,7 +133,6 @@ $(".next").click(function(){
     if ($('.slide.visible').next('.slide').length) {
         $('.slide.visible').removeClass('visible').addClass('inert').next('.slide').removeClass('inert').addClass('visible');
         if (! $(this).closest('.carousel-nav').length ) {
-            $('.slide.visible').focus();
         }
     }
 });
@@ -141,7 +140,6 @@ $(".previous").click(function(){
     if ($('.slide.visible').prev('.slide').length) {
         $('.slide.visible').removeClass('visible').addClass('inert').prev('.slide').removeClass('inert').addClass('visible');
         if (! $(this).closest('.carousel-nav').length ) {
-            $('.slide.visible').focus();
         }
     }
 });
