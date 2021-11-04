@@ -7,28 +7,37 @@ order: 2
 
 keyboard:
   tab: |
-    Focus dynamically begins at top of new content or top of page
+    Focus starts at top of new content or top of page
+  arrow-keys: |
+    Screen reader browsing and focus starts at top of new content or top of page
 
 mobile:
   swipe: |
-      Focus moves within the carousel
-  doubletap: |
-      This typically activates most elements
+    Focus starts at top of new content or top of page
 
 screenreader:
   name:  |
-    New content is announced
+    New content is announced or indicated 
   role:  |
     None
   group: |
-    None
+    Browsing and focus starts at top of new content or top of page
   state: |
     n/a
 ---
 
-## Code examples
+## How does aria-live work?
 
-### Use semantic HTML
+- The screenreader expects content **within** an `aria-live="polite"` attribute to change
+- By default, only the content that has changed will be read
+- To force the screenreader to read contents that did not change within the element, add `aria-atomic="true"`
+- Rarely should you use `aria-live="assertive"`. It will override every other message from the screenreader
+
+## About alerts
+
+- An element using `role="alert"` has `aria-live="assertive"` by default
+
+## Code example
 
 This is one example of a dynamic content region. It is similar to the carousel example.
 
