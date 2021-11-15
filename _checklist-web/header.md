@@ -40,10 +40,13 @@ screenreader:
 This semantic HTML contains all accessibility features by default.
 
 {% highlight html %}
-<header tabindex="-1" id="example-header">
-  <a href="/">Website name</a>
-</header>
+{% include /examples/header.html %}
 {% endhighlight %}
+
+{::nomarkdown}
+{% include /examples/header.html %}
+{:/}
+
 
 ### When you can't use semantic HTML
 

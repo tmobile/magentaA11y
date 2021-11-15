@@ -82,6 +82,11 @@ nav {
         }
       }
     }
+    .expander-toggle {
+      &[aria-expanded="true"] {
+        border-bottom: none;
+      }
+    }
     ul.expander-content {
       position: absolute;
       width: 100%;
