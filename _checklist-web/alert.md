@@ -24,22 +24,30 @@ screenreader:
 
 ---
 
+## Notes
+
+- Use alerts sparingly. 
+- The alert will be read by the screen reader when it becomes visible / appears in the DOM.
+- If an alert is present on page load, it won't be read automatically
+
 ## Code examples
 
-Use alerts sparingly. The alert will be read by the screen reader when it becomes visible / appears in the DOM.
-
 {% highlight html %}
-{% include /examples/alert.html %}
+{% include /examples/hint-error.html %}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/alert.html %}
+{% include /examples/hint-error.html %}
 </example>
 {:/}
 
 
 ## Developer notes
+
+- Screenreaders do not implement alerts uniformly and must be tested
+  - JAWS and VoiceOver are more generous than NVDA in triggering alert messages
+  - Just because an alert pattern works in one screenreader doesn't mean it will work in all three
 
 ### Name
 - Inner text describes alert
