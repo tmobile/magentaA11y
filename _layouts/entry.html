@@ -23,6 +23,17 @@ layout: default
       </h2>
 
       <div class="test-instructions">
+
+        <fieldset>
+          <legend>
+            Choose your story style
+          </legend>
+          <input type="radio" id="table" name="criteria">
+          <label for="table">Simple instructions</label>
+          <input type="radio" id="gherkin" name="criteria">
+          <label for="gherkin">Gherkin</label>
+        </fieldset>
+
         <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
           <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
           <h3 class="h-charlie" itemprop="name">
@@ -97,6 +108,78 @@ layout: default
             </table>
           </div>
         </div>
+
+        <h2 class="h-bravo">
+          Pickle time
+        </h2>
+        <p itemprop="name">
+          Given that I am on a page with a {{ page.title }}
+        </h3>
+        
+        <h4 class="h-charlie">
+          Keyboard for desktop or mobile
+        </h4>
+        <ul>
+          <li>
+            When {{page.gherkin-keyboard.when}}
+            <ul>
+              <li>
+                I see {{page.gherkin-keyboard.see}}
+              </li>    
+            </ul>
+          </li>
+          <li>
+            Then when {{page.gherkin-keyboard.then}}
+            <ul>
+              <li>
+                I see {{page.gherkin-keyboard.then-see}}
+              </li>    
+            </ul>
+          </li>
+        </ul>
+        <h4 class="h-charlie">
+          Desktop screenreader
+        </h4>
+        <ul>
+          <li>
+            When {{page.gherkin-screenreader.when}}
+            <ul>
+              {% for requirement in page.gherkin-screenreader-output %}
+                <li>I hear {{ requirement[1] | escape }}</td>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            Then when {{page.gherkin-screenreader.then}}
+            <ul>
+              <li>
+                I hear {{page.gherkin-screenreader.then-hear}}
+              </li>    
+            </ul>
+          </li>
+        </ul>
+
+        <h4 class="h-charlie">
+          Mobile screenreader
+        </h4>
+        <ul>
+          <li>
+            When {{page.gherkin-mobile.when}}
+            <ul>
+              {% for requirement in page.gherkin-screenreader-output %}
+                <li>I hear {{ requirement[1] | escape }}</td>
+              {% endfor %}
+            </ul>
+          </li>
+          <li>
+            Then when {{page.gherkin-mobile.then}}
+            <ul>
+              <li>
+                I hear {{page.gherkin-mobile.then-hear}}
+              </li>    
+            </ul>
+          </li>
+        </ul>
 
 
       </div>
