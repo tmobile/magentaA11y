@@ -40,19 +40,18 @@ step-number {
   border-radius: 2px;
   margin-bottom: 3rem;
   box-shadow: 0 0 5px 1px rgba(#000,.1);
+  padding: 1rem;
+  @include break($break-small) {
+    padding: 0rem 2rem 1rem 2rem;
+  }
 }
 
 .step-by-step {
-  padding: 1rem;
-  @include break($break-small) {
-    padding: 2rem 2rem 1rem 2rem;
-  }
+  margin-top: 2rem;
 }
 .gherkin {
+  margin-top: 2rem;
   display: none;
-  @include break($break-small) {
-    padding: 2rem 2rem 1rem 2rem;
-  }
 }
 
 input[type=radio]#gherkin:checked {
