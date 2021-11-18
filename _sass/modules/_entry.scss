@@ -12,7 +12,6 @@
   }
 }
 
-
 step-number {
   display: inline-block;
   height: 2rem;
@@ -39,10 +38,30 @@ step-number {
 .test-instructions {
   background: #fff;
   border-radius: 2px;
-  padding: 1rem;
   margin-bottom: 3rem;
   box-shadow: 0 0 5px 1px rgba(#000,.1);
+}
+
+.step-by-step {
+  padding: 1rem;
   @include break($break-small) {
     padding: 2rem 2rem 1rem 2rem;
+  }
+}
+.gherkin {
+  display: none;
+  @include break($break-small) {
+    padding: 2rem 2rem 1rem 2rem;
+  }
+}
+
+input[type=radio]#gherkin:checked {
+  + label {   
+    + .step-by-step {
+      display: none;
+      + .gherkin {
+        display: block;
+      }
+    }  
   }
 }

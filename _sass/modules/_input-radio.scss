@@ -49,4 +49,11 @@ input[type="checkbox"].radio {
   &:active + label:before {
     box-shadow: 0 0 0rem .75rem rgba($color-focus,.4);
   }
+
+  &.horizontal {
+    + label {
+      display: inline-block;
+      width: auto;
+    }
+  }
 }

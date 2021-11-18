@@ -27,6 +27,40 @@ screenreader:
   state: |
     Expresses its state (checked/unchecked, disabled)
 
+
+gherkin-keyboard: 
+  when:  |
+    I press the tab key to move focus to a checkbox
+  see: |
+    focus is strongly visually indicated
+  then:  |
+    I press the spacebar to activate the checkbox
+  then-see: |
+    the state is changed
+gherkin-screenreader:
+  when:  |
+    I use a desktop screenreader AND use the the keyboard to focus on a checkbox
+  then:  |
+    I press the spacebar to activate the checkbox
+  then-hear: |
+    the state is changed
+gherkin-mobile:
+  when:  |
+    I use a mobile screenreader AND swipe to focus on a checkbox
+  then:  |
+    I doubletap with the checkbox in focus
+  then-hear: |
+    the state is changed
+gherkin-screenreader-output:
+  name:  |
+    its name/label
+  role:  |
+    its role of checkbox
+  state: |
+    its state: checked or unchecked
+  group: |
+    its group name if applicable
+
 ---
 
 ## Code examples
