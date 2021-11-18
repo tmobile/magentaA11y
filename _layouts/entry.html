@@ -34,7 +34,7 @@ layout: default
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">
-              <step-number>1 </step-number>Keyboard test for desktop and mobile
+              <step-number>1 </step-number>Keyboard for desktop and mobile
             </h3>
             <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
               <table itemprop="text">
@@ -59,7 +59,7 @@ layout: default
           <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step2" />
             <h3 class="h-charlie" itemprop="name">
-              <step-number>2 </step-number>Mobile screenreader test
+              <step-number>2 </step-number>Mobile screenreader gestures
             </h3>
             <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
               <table itemprop="text">
@@ -109,7 +109,7 @@ layout: default
        
         {% if page.gherkin-keyboard.when and page.gherkin-keyboard.when != "" %}
           <div class="gherkin">
-            <p itemprop="name">
+            <p class="" itemprop="name">
               <strong>Given that</strong> I am on a page with a {{ page.title }}
             </p>
             
