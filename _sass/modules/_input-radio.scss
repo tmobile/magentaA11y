@@ -60,7 +60,12 @@ input[type="checkbox"].radio {
   &.tabs {
     @extend .horizontal;
     + label {
-      padding-left: 2rem;
+      @include ripple(#fff, #eee, center, center);
+      padding: 1rem;
+      @include break($break-max){
+        padding: 1.5rem 1.5rem;
+
+      }
       &:after,
       &:before {
         display: none;      
