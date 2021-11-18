@@ -24,9 +24,9 @@ layout: default
 
       <div class="test-instructions">
         {% if page.gherkin-keyboard.when and page.gherkin-keyboard.when != "" %}
-          <input type="radio" class="tabs" id="table" name="criteria" checked>
+          <input type="radio" aria-label="Show step by step instructions" class="tabs" id="table" name="criteria" checked>
           <label for="table">Step by step</label>
-          <input type="radio" class="tabs" id="gherkin" name="criteria">
+          <input type="radio" aria-label="Show gherkin story instructions" class="tabs" id="gherkin" name="criteria">
           <label for="gherkin">Gherkin story</label>
         {% endif %}
 
