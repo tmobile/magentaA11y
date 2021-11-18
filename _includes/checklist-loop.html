@@ -6,7 +6,7 @@ How to test {% assign firstLetter = page.title | downcase | slice: 0 %}{% if fir
 {% for action in page.keyboard %}- {{ action[0] | capitalize }}: {{ action[1] | escape }}{% endfor %}
 2. Test mobile screenreader
 {% for gesture in page.mobile %}- {{ gesture[0] | capitalize }}: {{ gesture[1] | escape }}{% endfor %}
-3. Listen to screenreader output on desktop and mobile
+3. Listen to screenreader output on all devices
 {% for output in page.screenreader %}- {{ output[0] | capitalize }}: {{ output[1] | escape }}{% endfor %}
 {% endcapture %}
 {% capture all %}
