@@ -32,7 +32,7 @@ step-number {
 
   @include break($break-max + 16px) {
     margin-left: -3rem;
-    margin-right: .75rem;
+    margin-right: 1rem;
   }
 }
 
@@ -43,15 +43,17 @@ step-number {
   box-shadow: 0 0 5px 1px rgba(#000,.1);
   padding: .5rem;
   @include break($break-small) {
-    padding: .5rem 2rem 1rem 2rem;
+    padding: 0rem 2rem 1rem 2rem;
   }
 }
 
 .step-by-step {
   padding-top: 2rem;
+  border-top: .25rem solid $color-brand-primary;
 }
 .gherkin {
   padding-top: 2rem;
+  border-top: .25rem solid $color-brand-primary;
   display: none;
 }
 
