@@ -51,19 +51,19 @@ gherkin-screenreader:
 
 gherkin-mobile:
   when:  |
-    I use a mobile screenreader AND swipe to focus on a checkbox
+    I use a mobile screenreader AND swipe to focus on a radio input
   then:  |
-    I doubletap with the checkbox in focus
+    I doubletap with the radio in focus
   then-hear: |
-    its state: checked or unchecked
+    the state is changed to selected or checked
 
 gherkin-screenreader-output:
   name:  |
     its name/label
   role:  |
-    its role of checkbox
+    its role of radio
   state: |
-    its state: checked or unchecked
+    its state: selected or checked
   group: |
     its group name if applicable
 
