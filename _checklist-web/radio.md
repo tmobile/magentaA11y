@@ -26,6 +26,48 @@ screenreader:
       Each option has a label and all options are part of a named group.
   state: |
       Expresses its state (selected, checked, disabled)
+
+gherkin-keyboard: 
+  when:  |
+    I press the tab key to move focus to a radio group
+  see: |
+    focus is strongly visually indicated
+  then:  |
+    I press the spacebar to activate the checkbox
+  then-see: |
+    the state is changed
+  then:  |
+    I use the arrow keys to focus radio inputs
+  then-see: |
+    the state is changed
+
+gherkin-screenreader:
+  when:  |
+    I use a desktop screenreader
+  then:  |
+    I press the spacebar to activate the checkbox
+  then-hear: |
+    the state is changed to selected or checked
+
+gherkin-mobile:
+  when:  |
+    I use a mobile screenreader AND swipe to focus on a checkbox
+  then:  |
+    I doubletap with the checkbox in focus
+  then-hear: |
+    its state: checked or unchecked
+
+gherkin-screenreader-output:
+  name:  |
+    its name/label
+  role:  |
+    its role of checkbox
+  state: |
+    its state: checked or unchecked
+  group: |
+    its group name if applicable
+
+
 ---
 
 

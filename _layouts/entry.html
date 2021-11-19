@@ -144,7 +144,7 @@ layout: default
               </h3>
               <ul>
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                  <strong>When</strong> {{page.gherkin-screenreader.when}}
+                  <strong>When</strong> I use a desktop screenreader <strong>and</strong> {{page.gherkin-keyboard.when}}
                   <ul>
                     {% for requirement in page.gherkin-screenreader-output %}
                       <li>I hear {{ requirement[1] | escape }}</td>
@@ -152,7 +152,7 @@ layout: default
                   </ul>
                 </li>
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                  <strong>Then</strong> when {{page.gherkin-screenreader.then}}
+                  <strong>Then</strong> when {{page.gherkin-keyboard.then}}
                   <ul>
                     <li>
                       I hear {{page.gherkin-screenreader.then-hear}}

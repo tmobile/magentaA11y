@@ -39,11 +39,11 @@ gherkin-keyboard:
 
 gherkin-screenreader:
   when:  |
-    I use a desktop screenreader AND use the the keyboard to focus on a checkbox
+    I use a desktop screenreader
   then:  |
     I press the spacebar to activate the checkbox
   then-hear: |
-    the state is changed
+    its state: checked or unchecked
 
 gherkin-mobile:
   when:  |
@@ -51,7 +51,7 @@ gherkin-mobile:
   then:  |
     I doubletap with the checkbox in focus
   then-hear: |
-    the state is changed
+    its state: checked or unchecked
 
 gherkin-screenreader-output:
   name:  |
