@@ -5,61 +5,53 @@ categories: form
 
 keyboard:
   tab: |
-      Focus visibly moves to the checked radio input in the group. If a radio button is not checked, focus moves to the first radio button in the group.
+    Focus visibly moves to the checked radio input in the group. If a radio button is not checked, focus moves to the first radio button in the group.
   spacebar: |
-      If the radio button with focus is not checked, changes the state to checked.  Otherwise, does nothing.
+    If the radio button with focus is not checked, changes the state to checked.  Otherwise, does nothing.
   arrow-keys: |
-      Moves focus to and checks the previous or next radio button in the group
+    Moves focus to and checks the previous or next radio button in the group
         
 mobile:
   swipe: |
-      Focus moves to the element, expresses its state
+    Focus moves to the element, expresses its state
   doubletap: |
-      If the radio button with focus is not checked, changes the state to checked. Otherwise, does nothing.
+    If the radio button with focus is not checked, changes the state to checked. Otherwise, does nothing.
 
 screenreader:
   name:  |
-      Input label and purpose is clear
+    Input label and purpose is clear
   role:  |
-      Identifies itself as a radio option
+    Identifies itself as a radio option
   group: |
-      Each option has a label and all options are part of a named group.
+    Each option has a label and all options are part of a named group.
   state: |
-      Expresses its state (selected, checked, disabled)
+    Expresses its state (selected, checked, disabled)
 
 gherkin-keyboard: 
-  when:  |
-    I press the tab key to move focus to a radio group
-  see: |
-    focus is strongly visually indicated
-  then:  |
-    I press the spacebar to activate the checkbox
-  then-see: |
-    the state is changed
-  then:  |
-    I use the arrow keys to focus radio inputs
-  then-see: |
-    the state is changed
-
-gherkin-screenreader:
-  when:  |
-    I use a desktop screenreader
-  then:  |
-    I press the spacebar to activate the checkbox
-  then-hear: |
-    the state is changed to selected or checked
+  - when:  |
+      the tab key to move focus to a radio group
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the spacebar to activate the radio input
+    result: |
+      the state is changed
+  - then:  |
+      the arrow keys to focus radio inputs
+    result: |
+      the state is changed
 
 gherkin-mobile:
-  when:  |
-    I use a mobile screenreader AND swipe to focus on a radio input
-  then:  |
-    I doubletap with the radio in focus
-  then-hear: |
-    the state is changed to selected or checked
+  - when:  |
+      swipe to focus on a radio input
+  - then:  |
+      doubletap with the radio in focus
+    result: |
+      the state is changed to selected or checked
 
 gherkin-screenreader-output:
   name:  |
-    its name/label
+    its label and purpose is clear
   role:  |
     its role of radio
   state: |

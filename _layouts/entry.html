@@ -106,7 +106,74 @@ layout: default
             </div>
           </div>
         </div>
-       
+
+        <h3 class="h-charlie">
+          Gherkin keyboard
+        </h3>
+        <ul>
+          {% for action in page.gherkin-keyboard limit:1 %}
+              <li>WHEN I use {{ action.when }} 
+              I SEE {{ action.result }}
+              </li>
+          {% endfor %}
+          {% for action in page.gherkin-keyboard offset:1 %}
+            <li>THEN when I use {{ action.then }} 
+              I SEE {{ action.result }}
+              </li>
+          {% endfor %}
+        </ul>
+
+        <h3 class="h-charlie">
+          Gherkin screenreader
+        </h3>
+        <ul>
+          {% for action in page.gherkin-keyboard limit:1 %}
+              <li>WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+              AND 
+              {% for action in page.gherkin-keyboard limit:1 %}
+                I use {{ action.when }} 
+                <ul>
+                  {% for requirement in page.gherkin-screenreader-output %}
+                    <li>I hear {{ requirement[1] | escape }}</td>
+                  {% endfor %}
+                </ul>
+              {% endfor %}  
+              </li>
+          {% endfor %}
+
+          {% for action in page.gherkin-keyboard offset:1 %}
+            <li>THEN when I use {{ action.then }} 
+              I HEAR {{ action.result }}
+              </li>
+          {% endfor %}
+        </ul>
+
+        <h3 class="h-charlie">
+          Gherkin mobile
+        </h3>
+        <ul>
+          {% for action in page.gherkin-mobile limit:1 %}
+              <li>WHEN I use a mobile screenreader (Talkback, VoiceOver) 
+              AND 
+              {% for action in page.gherkin-mobile limit:1 %}
+                I use {{ action.when }} 
+                <ul>
+                  {% for requirement in page.gherkin-screenreader-output %}
+                    <li>I hear {{ requirement[1] | escape }}</td>
+                  {% endfor %}
+                </ul>
+              {% endfor %}  
+              </li>
+          {% endfor %}
+
+
+          {% for action in page.gherkin-mobile offset:1 %}
+            <li>THEN when I {{ action.then }} 
+              I HEAR {{ action.result }}
+              </li>
+          {% endfor %}
+        </ul>
+
         {% if page.gherkin-keyboard.when and page.gherkin-keyboard.when != "" %}
           <div class="gherkin">
             <p class="" itemprop="name">
