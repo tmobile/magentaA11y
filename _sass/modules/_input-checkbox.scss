@@ -13,7 +13,7 @@ input[type="checkbox"] {
       position: absolute;
       left: 1.125rem;
       top: 1rem;
-      background: #f2f2f2;
+      background-color: #f2f2f2;
       transition: .2s;
     }
 
@@ -30,7 +30,7 @@ input[type="checkbox"] {
       font-size: 0rem;
       line-height: 1.5rem;
       font-weight: normal;
-      background: $color-gray-light;
+      background-color: $color-gray-light;
       transition: .2s;
     }
   }
@@ -43,13 +43,13 @@ input[type="checkbox"] {
         content: '\2713';
         font-size: 1.9rem;
         text-align: center;
-        background: $color-brand-primary;
+        background-color: $color-brand-primary;
       }
     }
   }
   + label:hover:before,
   &:focus + label:before {
-    background: none;
+    background-color: none;
     box-shadow: 0 0 0rem .5rem rgba($color-focus,.2);
     border-color: $color-brand-primary;
   }
