@@ -3,8 +3,6 @@ input[role="switch"] {
     padding-left: 6rem;
     &:before {
       content: '';
-      text-align: right;
-      font-weight: normal;
       display: block;
       width: 2.5rem;
       padding: 0 .75rem 0 .75rem;
