@@ -23,7 +23,7 @@ layout: default
       </h2>
 
       <div class="test-instructions">
-        {% if page.gherkin-keyboard.when and page.gherkin-keyboard.when != "" %}
+        {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
           <input type="radio" aria-label="Show step by step instructions" class="tabs" id="table" name="criteria" checked>
           <label for="table">Step by step</label>
           <input type="radio" aria-label="Show gherkin story instructions" class="tabs" id="gherkin" name="criteria">
@@ -107,156 +107,101 @@ layout: default
           </div>
         </div>
 
-        <h3 class="h-charlie">
-          Gherkin keyboard
-        </h3>
-        <ul>
-          {% for action in page.gherkin-keyboard limit:1 %}
-              <li>WHEN I use {{ action.when }} 
-              I SEE {{ action.result }}
-              </li>
-          {% endfor %}
-          {% for action in page.gherkin-keyboard offset:1 %}
-            <li>THEN when I use {{ action.then }} 
-              I SEE {{ action.result }}
-              </li>
-          {% endfor %}
-        </ul>
-
-        <h3 class="h-charlie">
-          Gherkin screenreader
-        </h3>
-        <ul>
-          {% for action in page.gherkin-keyboard limit:1 %}
-              <li>WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
-              AND 
-              {% for action in page.gherkin-keyboard limit:1 %}
-                I use {{ action.when }} 
-                <ul>
-                  {% for requirement in page.gherkin-screenreader-output %}
-                    <li>I hear {{ requirement[1] | escape }}</td>
-                  {% endfor %}
-                </ul>
-              {% endfor %}  
-              </li>
-          {% endfor %}
-
-          {% for action in page.gherkin-keyboard offset:1 %}
-            <li>THEN when I use {{ action.then }} 
-              I HEAR {{ action.result }}
-              </li>
-          {% endfor %}
-        </ul>
-
-        <h3 class="h-charlie">
-          Gherkin mobile
-        </h3>
-        <ul>
-          {% for action in page.gherkin-mobile limit:1 %}
-              <li>WHEN I use a mobile screenreader (Talkback, VoiceOver) 
-              AND 
-              {% for action in page.gherkin-mobile limit:1 %}
-                I use {{ action.when }} 
-                <ul>
-                  {% for requirement in page.gherkin-screenreader-output %}
-                    <li>I hear {{ requirement[1] | escape }}</td>
-                  {% endfor %}
-                </ul>
-              {% endfor %}  
-              </li>
-          {% endfor %}
-
-
-          {% for action in page.gherkin-mobile offset:1 %}
-            <li>THEN when I {{ action.then }} 
-              I HEAR {{ action.result }}
-              </li>
-          {% endfor %}
-        </ul>
-
-        {% if page.gherkin-keyboard.when and page.gherkin-keyboard.when != "" %}
+        {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
           <div class="gherkin">
+
+
             <p class="" itemprop="name">
               <strong>Given that</strong> I am on a page with a {{ page.title }}
             </p>
-            
+
             <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
               <h3 class="h-charlie" itemprop="name">
                 <step-number>1 </step-number>Keyboard for desktop or mobile
               </h3>
-                <ul>
-                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>When</strong> {{page.gherkin-keyboard.when}}
-                    <ul>
-                      <li>
-                        I see {{page.gherkin-keyboard.see}}
-                      </li>    
-                    </ul>
-                  </li>
-                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>Then</strong> when {{page.gherkin-keyboard.then}}
-                    <ul>
-                      <li>
-                        I see {{page.gherkin-keyboard.then-see}}
-                      </li>    
-                    </ul>
-                  </li>
-                </ul>
 
-            </div>
-            
-            <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
-              <h3 class="h-charlie">
-                <step-number>2 </step-number>Desktop screenreader
-              </h3>
               <ul>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                  <strong>When</strong> I use a desktop screenreader <strong>and</strong> {{page.gherkin-keyboard.when}}
-                  <ul>
-                    {% for requirement in page.gherkin-screenreader-output %}
-                      <li>I hear {{ requirement[1] | escape }}</td>
-                    {% endfor %}
-                  </ul>
-                </li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                  <strong>Then</strong> when {{page.gherkin-keyboard.then}}
-                  <ul>
-                    <li>
-                      I hear {{page.gherkin-screenreader.then-hear}}
-                    </li>    
-                  </ul>
-                </li>
+                {% for action in page.gherkin-keyboard limit:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    WHEN I use {{ action.when }} 
+                    I SEE {{ action.result }}
+                  </li>
+                {% endfor %}
+                {% for action in page.gherkin-keyboard offset:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    THEN when I use {{ action.then }} 
+                    I SEE {{ action.result }}
+                    </li>
+                {% endfor %}
               </ul>
             </div>
             
+
+
+            <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+              <h3 class="h-charlie">
+                <step-number>2</step-number>
+                Desktop screenreader
+              </h3>
+              <ul>
+                {% for action in page.gherkin-keyboard limit:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+                    AND 
+                    {% for action in page.gherkin-keyboard limit:1 %}
+                      I use {{ action.when }} 
+                      <ul>
+                        {% for requirement in page.gherkin-screenreader-output %}
+                          <li>I hear {{ requirement[1] | escape }}</td>
+                        {% endfor %}
+                      </ul>
+                    {% endfor %}  
+                  </li>
+                {% endfor %}
+
+                {% for action in page.gherkin-keyboard offset:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    THEN when I use {{ action.then }} 
+                    I HEAR {{ action.result }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+
             <div id="step3" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
 
               <h3 class="h-charlie">
                 <step-number>3 </step-number>Mobile screenreader
               </h3>
               <ul>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                  <strong>When</strong> {{page.gherkin-mobile.when}}
-                  <ul>
-                    {% for requirement in page.gherkin-screenreader-output %}
-                      <li>I hear {{ requirement[1] | escape }}</td>
-                    {% endfor %}
-                  </ul>
-                </li>
-                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                  <strong>Then</strong> when {{page.gherkin-mobile.then}}
-                  <ul>
-                    <li>
-                      I hear {{page.gherkin-mobile.then-hear}}
-                    </li>    
-                  </ul>
-                </li>
+                {% for action in page.gherkin-mobile limit:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    WHEN I use a mobile screenreader (Talkback, VoiceOver) 
+                    AND 
+                    {% for action in page.gherkin-mobile limit:1 %}
+                      I use {{ action.when }} 
+                      <ul>
+                        {% for requirement in page.gherkin-screenreader-output %}
+                          <li>I hear {{ requirement[1] | escape }}</td>
+                        {% endfor %}
+                      </ul>
+                    {% endfor %}  
+                  </li>
+                {% endfor %}
+                {% for action in page.gherkin-mobile offset:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    THEN when I {{ action.then }} 
+                    I HEAR {{ action.result }}
+                    </li>
+                {% endfor %}
               </ul>
             </div>
           </div>
         {% endif %}
       </div>
     </div>
+
+
     <div class="post-content">
       {% for video in site.video-demos limit:1 %}
         {% assign path = page.id | replace: page.slug , ""  | prepend: '/assets/media/video' | append: video.directory | append: page.slug | append: ".mp4"  %}

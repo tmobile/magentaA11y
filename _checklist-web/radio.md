@@ -47,7 +47,7 @@ gherkin-mobile:
   - then:  |
       doubletap with the radio in focus
     result: |
-      the state is changed to selected or checked
+      the state is changed
 
 gherkin-screenreader-output:
   name:  |
@@ -55,7 +55,7 @@ gherkin-screenreader-output:
   role:  |
     its role of radio
   state: |
-    its state: selected or checked
+    its state: selected/unselected, checked/unchecked, disabled/dimmed
   group: |
     its group name if applicable
 
