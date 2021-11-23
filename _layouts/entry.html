@@ -24,24 +24,24 @@ layout: default
 
       <div class="test-instructions">
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
-          <input type="radio" aria-label="Show step by step instructions" class="tabs" id="table" name="criteria" checked>
-          <label for="table">Step by step</label>
+          <input type="radio" aria-label="Show condensed instructions" class="tabs" id="condensed" name="criteria" checked>
+          <label for="condensed">Condensed</label>
           <input type="radio" aria-label="Show gherkin story instructions" class="tabs" id="gherkin" name="criteria">
-          <label for="gherkin">Gherkin story</label>
+          <label for="gherkin">Gherkin</label>
         {% endif %}
 
         <div class="step-by-step">
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">
-              <step-number>1 </step-number>Keyboard for mobile &amp; desktop
+              <step-number>1 </step-number>Keyboard only &amp; screenreader
             </h3>
             <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
               <table itemprop="text">
                 <thead>
                 <tr>
                   <th scope="col">When I use</th>
-                  <th scope="col">I see</th>
+                  <th scope="col">I see/hear</th>
                 </tr>
                 </thead>
                 <tbody>
