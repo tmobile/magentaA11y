@@ -1,7 +1,9 @@
 
 input[type="radio"],
-input[type="checkbox"].radio {
-  + label {
+input[type="checkbox"].radio,
+.radio {
+  + label,
+  + .label {
     padding-left: 4rem;
     &:before {
       content: '';

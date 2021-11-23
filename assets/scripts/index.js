@@ -21,13 +21,25 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 });
 
 // Trigger alert
+$("#submit-response").click(function() {
+    if($('[role="alert"]').hasClass('visible')) {
+        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
+    } else {
+        $('[role="alert"]').removeClass('inert').addClass('visible');
+        setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
+            $('[role="alert"]').append('Your answer has been submitted');
+        }, 25);
+    }
+});
+
+// Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
         $('[role="alert"]').removeClass('visible').addClass('inert').empty();
     } else {
         $('[role="alert"]').removeClass('inert').addClass('visible');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('[role="alert"]').append('The correct answer is Bravo');
+            $('[role="alert"]').append('The correct answer is Charlie');
         }, 25);
     }
 });
