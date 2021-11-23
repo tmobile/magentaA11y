@@ -21,13 +21,25 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 });
 
 // Trigger alert
+$("#submit-response").click(function() {
+    if($('[role="alert"]').hasClass('visible')) {
+        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
+    } else {
+        $('[role="alert"]').removeClass('inert').addClass('visible');
+        setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
+            $('[role="alert"]').append('Your answer has been submitted');
+        }, 25);
+    }
+});
+
+// Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
         $('[role="alert"]').removeClass('visible').addClass('inert').empty();
     } else {
         $('[role="alert"]').removeClass('inert').addClass('visible');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('[role="alert"]').append('The correct answer is Bravo');
+            $('[role="alert"]').append('The correct answer is Charlie');
         }, 25);
     }
 });
@@ -123,6 +135,13 @@ $("[name='checkboxRadioGroup']").on('change', function() {
     $("[name='checkboxRadioGroup']").not(this).prop('checked', false);
     $(this).prop('checked', true);
 });
+
+// Make inaccessible radio inputs look like they're working
+$(".fake-radio").click(function() {
+    $(".fake-radio").not(this).removeClass('checked');
+    $(this).addClass('checked');
+});
+
 
 
 // Look at all slides
