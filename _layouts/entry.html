@@ -34,7 +34,7 @@ layout: default
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">
-              <step-number>1 </step-number>Keyboard for desktop &amp; mobile
+              <step-number>1 </step-number>Keyboard for mobile &amp; desktop
             </h3>
             <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
               <table itemprop="text">
@@ -117,20 +117,20 @@ layout: default
 
             <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
               <h3 class="h-charlie" itemprop="name">
-                <step-number>1 </step-number>Keyboard for desktop or mobile
+                <step-number>1 </step-number>Keyboard for mobile &amp; desktop
               </h3>
 
               <ul>
                 {% for action in page.gherkin-keyboard limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    WHEN I use {{ action.when }} 
-                    I SEE {{ action.result }}
+                    <strong>WHEN</strong> I use {{ action.when }} 
+                    <strong>I SEE</strong> {{ action.result }}
                   </li>
                 {% endfor %}
                 {% for action in page.gherkin-keyboard offset:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    THEN when I use {{ action.then }} 
-                    I SEE {{ action.result }}
+                    <strong>THEN</strong> when I use {{ action.then }} 
+                    <strong>I SEE</strong> {{ action.result }}
                     </li>
                 {% endfor %}
               </ul>
@@ -146,13 +146,13 @@ layout: default
               <ul>
                 {% for action in page.gherkin-keyboard limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
-                    AND 
+                    <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+                    <strong>AND</strong>  
                     {% for action in page.gherkin-keyboard limit:1 %}
                       I use {{ action.when }} 
                       <ul>
                         {% for requirement in page.gherkin-screenreader-output %}
-                          <li>I hear {{ requirement[1] | escape }}</td>
+                          <li><strong>I HEAR</strong> {{ requirement[1] | escape }}</td>
                         {% endfor %}
                       </ul>
                     {% endfor %}  
@@ -161,8 +161,8 @@ layout: default
 
                 {% for action in page.gherkin-keyboard offset:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    THEN when I use {{ action.then }} 
-                    I HEAR {{ action.result }}
+                    <strong>THEN</strong> when I use {{ action.then }} 
+                    <strong>I HEAR</strong> {{ action.result }}
                   </li>
                 {% endfor %}
               </ul>
@@ -176,13 +176,13 @@ layout: default
               <ul>
                 {% for action in page.gherkin-mobile limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    WHEN I use a mobile screenreader (Talkback, VoiceOver) 
-                    AND 
+                    <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
+                    <strong>AND</strong> 
                     {% for action in page.gherkin-mobile limit:1 %}
                       I use {{ action.when }} 
                       <ul>
                         {% for requirement in page.gherkin-screenreader-output %}
-                          <li>I hear {{ requirement[1] | escape }}</td>
+                          <li><strong>I HEAR</strong> {{ requirement[1] | escape }}</td>
                         {% endfor %}
                       </ul>
                     {% endfor %}  
@@ -190,8 +190,8 @@ layout: default
                 {% endfor %}
                 {% for action in page.gherkin-mobile offset:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    THEN when I {{ action.then }} 
-                    I HEAR {{ action.result }}
+                    <strong>THEN</strong> when I {{ action.then }} 
+                    <strong>I HEAR</strong> {{ action.result }}
                     </li>
                 {% endfor %}
               </ul>
