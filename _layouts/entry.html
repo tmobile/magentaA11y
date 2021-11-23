@@ -109,8 +109,6 @@ layout: default
 
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
           <div class="gherkin">
-
-
             <p class="" itemprop="name">
               <strong>Given that</strong> I am on a page with a {{ page.title }}
             </p>
@@ -120,7 +118,7 @@ layout: default
                 <step-number>1 </step-number>Keyboard for mobile &amp; desktop
               </h3>
 
-              <ul>
+              <ul class="gherkin-list">
                 {% for action in page.gherkin-keyboard limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                     <strong>WHEN</strong> I use {{ action.when }} 
@@ -143,7 +141,7 @@ layout: default
                 <step-number>2</step-number>
                 Desktop screenreader
               </h3>
-              <ul>
+              <ul class="gherkin-list">
                 {% for action in page.gherkin-keyboard limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                     <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
@@ -173,7 +171,7 @@ layout: default
               <h3 class="h-charlie">
                 <step-number>3 </step-number>Mobile screenreader
               </h3>
-              <ul>
+              <ul class="gherkin-list">
                 {% for action in page.gherkin-mobile limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                     <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
