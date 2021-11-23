@@ -24,7 +24,7 @@ screenreader:
 ---
 ## Code examples
 
-### Adding a hint
+### Adding hint/help text
 
 {% highlight html %}
 {% include /examples/input-text.html %}
