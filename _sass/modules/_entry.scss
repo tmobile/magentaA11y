@@ -12,7 +12,6 @@
   }
 }
 
-
 step-number {
   display: inline-block;
   height: 2rem;
@@ -25,6 +24,7 @@ step-number {
   border-radius: 1.5rem;
   margin-top: -.125rem;
   margin-left: -.25rem;
+  margin-right: .5rem;
 
   @include break($break-small) {
     margin-left: -1rem;
@@ -32,17 +32,41 @@ step-number {
 
   @include break($break-max + 16px) {
     margin-left: -3rem;
-    margin-right: .75rem;
+    margin-right: 1rem;
   }
 }
 
 .test-instructions {
   background: #fff;
   border-radius: 2px;
-  padding: 1rem;
   margin-bottom: 3rem;
   box-shadow: 0 0 5px 1px rgba(#000,.1);
+  padding: .5rem;
   @include break($break-small) {
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 0rem 2rem 1rem 2rem;
   }
+}
+
+.step-by-step {
+  padding-top: 2rem;
+}
+.gherkin {
+  padding-top: 2rem;
+  display: none;
+}
+
+input[type=radio]#gherkin:checked {
+  + label {   
+    + .step-by-step {
+      display: none;
+      + .gherkin {
+        display: block;
+      }
+    }  
+  }
+}
+
+.gherkin-list {
+  border-top: 3px solid #000;
+  padding-top: 1rem;
 }

@@ -49,4 +49,44 @@ input[type="checkbox"].radio {
   &:active + label:before {
     box-shadow: 0 0 0rem .75rem rgba($color-focus,.4);
   }
+
+  &.horizontal {
+    + label {
+      display: inline-block;
+      width: auto;
+    }
+  }
+
+  &.tabs {
+    @extend .horizontal;
+    + label {
+      @include ripple(#fff, #eee, center, center);
+      padding: 1rem;
+      @include break($break-max){
+        padding: 1.75rem 1rem 1.25rem;
+      }
+      &:after,
+      &:before {
+        display: none;      
+      }
+      &:after {
+        display: block;
+        width: calc(100% + .325rem);
+        height: .25rem;
+        border-radius: 0;
+        background: $color-brand-primary;
+        bottom: 0;
+        left: 0;
+        top: auto;
+      }
+    }
+    &:checked + label {
+      &:after {
+        height: .5rem;
+        background: $color-brand-primary;
+      }
+
+    }
+  }
+
 }

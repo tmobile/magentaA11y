@@ -23,84 +23,183 @@ layout: default
       </h2>
 
       <div class="test-instructions">
-        <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
-          <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
-          <h3 class="h-charlie" itemprop="name">
-            <step-number>1</step-number> Keyboard actions
-          </h3>
-          <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-            <table itemprop="text">
-              <thead>
-              <tr>
-                <th scope="col">When I use</th>
-                <th scope="col">I see</th>
-              </tr>
-              </thead>
-              <tbody>
-              {% for action in page.keyboard %}
-              <tr>
-                <th scope="row">{{ action[0] | capitalize }}</th>
-                <td>{{ action[1] | escape }}</td>
-              </tr>
-              {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
+          <input type="radio" aria-label="Show condensed instructions" class="tabs" id="condensed" name="criteria" checked>
+          <label for="condensed">Condensed</label>
+          <input type="radio" aria-label="Show gherkin story instructions" class="tabs" id="gherkin" name="criteria">
+          <label for="gherkin">Gherkin</label>
+        {% endif %}
 
-        <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
-          <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step2" />
-          <h3 class="h-charlie" itemprop="name">
-            <step-number>2</step-number> Mobile screenreader gestures
-          </h3>
-          <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-            <table itemprop="text">
-              <thead>
-              <tr>
-                <th scope="col">When I use</th>
-                <th scope="col">I hear</th>
-              </tr>
-              </thead>
-              <tbody>
-              {% for gesture in page.mobile %}
-              <tr>
-                <th scope="row">{{ gesture[0] | capitalize  }}</th>
-                <td>{{ gesture[1] | escape }}</td>
-              </tr>
-              {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div id="step3" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
-          <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step3" />
-          <h3 class="h-charlie" itemprop="name">
-            <step-number>3</step-number> Screenreader output
-          </h3>
-          <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-            <table itemprop="text">
-              <thead>
-              <tr>
-                <th scope="col">Reads</th>
-                <th scope="col">I hear</th>
-              </tr>
-              </thead>
-              <tbody>
-              {% for requirement in page.screenreader %}
+        <div class="step-by-step">
+          <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+            <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
+            <h3 class="h-charlie" itemprop="name">
+              <step-number>1 </step-number>Keyboard only &amp; screenreader
+            </h3>
+            <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+              <table itemprop="text">
+                <thead>
                 <tr>
-                  <th scope="row">{{ requirement[0] | capitalize  }}</th>
-                  <td>{{ requirement[1] | escape }}</td>
+                  <th scope="col">When I use</th>
+                  <th scope="col">I see/hear</th>
                 </tr>
-              {% endfor %}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                {% for action in page.keyboard %}
+                <tr>
+                  <th scope="row">{{ action[0] | capitalize }}</th>
+                  <td>{{ action[1] | escape }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+  
+          <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+            <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step2" />
+            <h3 class="h-charlie" itemprop="name">
+              <step-number>2 </step-number>Mobile screenreader gestures
+            </h3>
+            <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+              <table itemprop="text">
+                <thead>
+                <tr>
+                  <th scope="col">When I use</th>
+                  <th scope="col">I hear</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for gesture in page.mobile %}
+                <tr>
+                  <th scope="row">{{ gesture[0] | capitalize  }}</th>
+                  <td>{{ gesture[1] | escape }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+  
+          <div id="step3" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+            <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step3" />
+            <h3 class="h-charlie" itemprop="name">
+              <step-number>3 </step-number>Screenreader output for all devices
+            </h3>
+            <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+              <table itemprop="text">
+                <thead>
+                <tr>
+                  <th scope="col">Reads</th>
+                  <th scope="col">I hear</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for requirement in page.screenreader %}
+                  <tr>
+                    <th scope="row">{{ requirement[0] | capitalize  }}</th>
+                    <td>{{ requirement[1] | escape }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
+        {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
+          <div class="gherkin">
+            <p class="" itemprop="name">
+              <strong>Given that</strong> I am on a page with a {{ page.title }}
+            </p>
 
+            <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+              <h3 class="h-charlie" itemprop="name">
+                <step-number>1 </step-number>Keyboard for mobile &amp; desktop
+              </h3>
+
+              <ul class="gherkin-list">
+                {% for action in page.gherkin-keyboard limit:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    <strong>WHEN</strong> I use {{ action.when }} 
+                    <strong>I SEE</strong> {{ action.result }}
+                  </li>
+                {% endfor %}
+                {% for action in page.gherkin-keyboard offset:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    <strong>THEN</strong> when I use {{ action.then }} 
+                    <strong>I SEE</strong> {{ action.result }}
+                    </li>
+                {% endfor %}
+              </ul>
+            </div>
+            
+
+
+            <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+              <h3 class="h-charlie">
+                <step-number>2</step-number>
+                Desktop screenreader
+              </h3>
+              <ul class="gherkin-list">
+                {% for action in page.gherkin-keyboard limit:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+                    <strong>AND</strong>  
+                    {% for action in page.gherkin-keyboard limit:1 %}
+                      I use {{ action.when }} 
+                      <ul>
+                        {% for requirement in page.gherkin-screenreader-output %}
+                          <li><strong>I HEAR</strong> {{ requirement[1] | escape }}</td>
+                        {% endfor %}
+                      </ul>
+                    {% endfor %}  
+                  </li>
+                {% endfor %}
+
+                {% for action in page.gherkin-keyboard offset:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    <strong>THEN</strong> when I use {{ action.then }} 
+                    <strong>I HEAR</strong> {{ action.result }}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div id="step3" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+
+              <h3 class="h-charlie">
+                <step-number>3 </step-number>Mobile screenreader
+              </h3>
+              <ul class="gherkin-list">
+                {% for action in page.gherkin-mobile limit:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
+                    <strong>AND</strong> 
+                    {% for action in page.gherkin-mobile limit:1 %}
+                      I use {{ action.when }} 
+                      <ul>
+                        {% for requirement in page.gherkin-screenreader-output %}
+                          <li><strong>I HEAR</strong> {{ requirement[1] | escape }}</td>
+                        {% endfor %}
+                      </ul>
+                    {% endfor %}  
+                  </li>
+                {% endfor %}
+                {% for action in page.gherkin-mobile offset:1 %}
+                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                    <strong>THEN</strong> when I {{ action.then }} 
+                    <strong>I HEAR</strong> {{ action.result }}
+                    </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
+
+
     <div class="post-content">
       {% for video in site.video-demos limit:1 %}
         {% assign path = page.id | replace: page.slug , ""  | prepend: '/assets/media/video' | append: video.directory | append: page.slug | append: ".mp4"  %}

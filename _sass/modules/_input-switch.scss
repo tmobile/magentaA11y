@@ -2,12 +2,7 @@ input[role="switch"] {
   + label {
     padding-left: 6rem;
     &:before {
-      content: 'off';
-      color: $color-gray-xtra-dark;
-      text-align: right;
-      font-size: 14px;
-      line-height: 2rem;
-      font-weight: normal;
+      content: '';
       display: block;
       width: 2.5rem;
       padding: 0 .75rem 0 .75rem;
@@ -15,12 +10,17 @@ input[role="switch"] {
       position: absolute;
       left: 1.25rem;
       top: 1rem;
-      background: $color-gray-light;
       border-radius: 1rem;
-      transition: .4s;
+      transition: box-shadow .4s, background-color .4s;
       border: none;
       box-shadow: none;
       speak: none;
+      background-color: $color-gray-light;
+      background-size: 1.75rem 1.75rem;
+      background-position: 85% center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 22 16' style='enable-background:new 0 0 22 16;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%234D4D4D;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M4.52,12.41c-0.47-0.29-0.83-0.71-1.08-1.25c-0.25-0.54-0.38-1.18-0.38-1.9s0.13-1.36,0.38-1.9 C3.68,6.81,4.05,6.39,4.52,6.1C4.99,5.8,5.54,5.65,6.18,5.65S7.36,5.8,7.84,6.1c0.47,0.29,0.83,0.71,1.08,1.25 C9.17,7.89,9.3,8.53,9.3,9.25s-0.13,1.36-0.38,1.9c-0.25,0.54-0.61,0.96-1.08,1.25c-0.47,0.29-1.02,0.44-1.66,0.44 S4.99,12.7,4.52,12.41z M7.47,9.25c0-1.3-0.43-1.95-1.29-1.95c-0.86,0-1.29,0.65-1.29,1.95s0.43,1.95,1.29,1.95 C7.04,11.2,7.47,10.55,7.47,9.25z'/%3E%3Cpath class='st0' d='M14.26,3.29v1.46c-0.2-0.03-0.39-0.04-0.59-0.04c-0.36,0-0.62,0.07-0.76,0.22c-0.14,0.14-0.21,0.35-0.21,0.62 v0.34h1.43v1.54H12.7v5.21h-1.79V7.42H9.92V5.88h0.99V5.45c0-0.75,0.2-1.32,0.61-1.71c0.41-0.39,0.98-0.59,1.73-0.59 C13.64,3.15,13.98,3.2,14.26,3.29z'/%3E%3Cpath class='st0' d='M18.95,3.29v1.46c-0.2-0.03-0.39-0.04-0.59-0.04c-0.36,0-0.62,0.07-0.76,0.22c-0.14,0.14-0.21,0.35-0.21,0.62 v0.34h1.43v1.54h-1.43v5.21H15.6V7.42H14.6V5.88h0.99V5.45c0-0.75,0.2-1.32,0.61-1.71c0.41-0.39,0.98-0.59,1.73-0.59 C18.33,3.15,18.66,3.2,18.95,3.29z'/%3E%3C/g%3E%3C/svg%3E%0A");
+
     }
     &:after {
       content: '';
@@ -31,45 +31,54 @@ input[role="switch"] {
       position: absolute;
       left: 1.25rem;
       top: 1rem;
-      background: #fff;
+      background-color: #fff;
       transition: .4s;
       box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px 2px $color-gray-light;
     }
   }
 
+  + label:hover:before,
+  &:focus + label:before {
+    background-color: rgba($color-focus, .4);
+    color: darken($color-focus, 0);
+    box-shadow: none;
+    
+  }
+  + label:hover:after,
+  &:focus + label:after {
+    box-shadow: 0 0 0rem .5rem rgba($color-green,.4), inset 0 0px 0px 2px rgba($color-focus, .4);
+  }
+
   &:checked + label {
     &:before {
-      background: $color-green;
-      content: 'on';
+      content: '';
       color: #fff;
       text-align: left;
       text-shadow: 0 0 3px rgba($color-green-dark,.4);
+      background-color: $color-green;
+      background-repeat: no-repeat;
+      background-position: 15% center;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 22 16' style='enable-background:new 0 0 22 16;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M5.93,11.16c-0.47-0.29-0.83-0.71-1.08-1.25C4.59,9.36,4.46,8.73,4.46,8s0.13-1.36,0.38-1.9 c0.25-0.54,0.61-0.96,1.08-1.25C6.4,4.55,6.95,4.4,7.58,4.4s1.19,0.15,1.66,0.44c0.47,0.29,0.83,0.71,1.08,1.25 c0.25,0.54,0.38,1.18,0.38,1.9s-0.13,1.36-0.38,1.9c-0.25,0.54-0.61,0.96-1.08,1.25c-0.47,0.29-1.02,0.44-1.66,0.44 S6.4,11.45,5.93,11.16z M8.87,8c0-1.3-0.43-1.95-1.29-1.95C6.73,6.05,6.3,6.7,6.3,8s0.43,1.95,1.29,1.95C8.44,9.95,8.87,9.3,8.87,8 z'/%3E%3Cpath class='st0' d='M17.54,6.91v4.47h-1.8V7.13c0-0.72-0.29-1.08-0.88-1.08c-0.35,0-0.62,0.12-0.83,0.37 C13.81,6.67,13.7,7,13.7,7.41v3.96H11.9V4.63h1.69v0.83h0.08c0.18-0.34,0.42-0.6,0.73-0.78c0.31-0.18,0.67-0.27,1.07-0.27 C16.85,4.4,17.54,5.24,17.54,6.91z'/%3E%3C/g%3E%3C/svg%3E");
+
     }
     &:after {
       content: '';
       left: 3.25rem;
-      background: #fff;
+      background-color: #fff;
       box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px 2px  $color-green;
     }
   }
-
-  + label:hover:before,
-  &:focus + label:before {
-    background: lighten($color-focus, 30);
-    color: darken($color-focus, 0);
-    box-shadow: none;
-  }
-  + label:hover:after,
-  &:focus + label:after {
-    box-shadow: 0 0 0rem .5rem rgba($color-focus,.2), inset 0 0px 0px 2px rgba($color-focus,.375);
+  &:checked:hover + label:after,
+  &:checked:focus + label:after, {
+    box-shadow: 0 0 0rem .5rem rgba($color-green,.4), inset 0 0px 0px 2px rgba($color-green, 1);
   }
 
   &:active {
     color: $color-brand-primary;
     + label {
       &:after {
-        background: #fff;
-        box-shadow: 0 0 0rem .75rem rgba($color-focus,.4);
+        background-color: #fff;
+        box-shadow: 0 0 0rem .75rem rgba($color-green,.4), inset 0 0px 0px 2px  $color-green;
         border: 0;
       }
     }
