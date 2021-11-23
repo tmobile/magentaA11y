@@ -136,6 +136,13 @@ $("[name='checkboxRadioGroup']").on('change', function() {
     $(this).prop('checked', true);
 });
 
+// Make inaccessible radio inputs look like they're working
+$(".fake-radio").click(function() {
+    $(".fake-radio").not(this).removeClass('checked');
+    $(this).addClass('checked');
+});
+
+
 
 // Look at all slides
 // If next is clicked, hide current, show next
