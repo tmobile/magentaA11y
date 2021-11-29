@@ -29,8 +29,10 @@ screenreader:
 ## Notes
 
 - Use alerts sparingly. 
-- The alert will be read by the screen reader when it becomes visible / appears in the DOM.
 - If an alert is present on page load, it won't be read automatically
+  - If an element is present on page load, it is not technically an alert
+- The alert will be read by the screen reader when it becomes visible / appears in the DOM
+
 
 ## Code examples
 
@@ -52,11 +54,11 @@ screenreader:
   - Just because an alert pattern works in one screenreader doesn't mean it will work in all three
 
 ### Name
-- Inner text describes alert
+- Inner text describes alert when it appears on screen
 
 ### Role
-- Use `role="alert"` 
+- Use `role="alert"` for elements injected into the page
 
 ### Focus
-- Focus does change when the alert appears
+- Focus does move to the element when the alert appears
 
