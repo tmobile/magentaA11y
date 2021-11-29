@@ -28,6 +28,8 @@ screenreader:
 
 ## Notes
 
+Alerts are dynamic content that is injected into the page when it changes and a person using a screenreader needs to know that some state of the application has changed.
+
 - Use alerts sparingly. 
 - If an alert is present on page load, it won't be read automatically
   - If an element is present on page load, it is not technically an alert
