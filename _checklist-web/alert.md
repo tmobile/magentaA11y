@@ -5,8 +5,10 @@ description: "How to code accessible alerts for web pages"
 categories: main form
 
 keyboard:
-  keyboard: |
-    Focus does not move to the alert when it appears
+  tab: |
+    Focus does not automatically move to the alert
+  arrow: |
+    Browses the element like any other content
 
 mobile:
   swipe: |
