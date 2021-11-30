@@ -29,6 +29,17 @@ Many websites have crossed the threshold to a majority of visits being from mobi
 
 ## 3. Test with the desktop screenreader
 
+### About the tab key
+
+The tab key is not the only key the screenreaders use to browse content. Before you test, learn the difference between **interactive elements that should receive focus** with the tab key and **content that should not**.
+
+- Arrow keys browse content for reading
+- The tab key focuses interactive controls
+
+Screenreaders can also consume content automatically, starting reading at the top with no keyboard interaction
+
+### Screenreaders are all slightly different
+
 - Not having all three screen readers available doesn't mean you can't test for accessibility.
 - Most of the major accessibility defects you're likely to encounter will show up in any screen reader.
   
