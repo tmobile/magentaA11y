@@ -49,14 +49,13 @@ step-number {
 
 .step-by-step {
   padding-top: 2rem;
-
-  td {
-  }
 }
 .gherkin {
   padding-top: 2rem;
   display: none;
 }
+
+
 
 input[type=radio]#gherkin:checked {
   + label {   
