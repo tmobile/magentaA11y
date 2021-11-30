@@ -15,19 +15,38 @@ keyboard:
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies as a button
+    It identifies its role of button
   group: |
-    Indicates it has popup for modals, listbox, or menus
+    It indicates if it has popup for listbox or menus
   state: |
-    Expresses its state if applicable (pressed, expanded, disabled)
+    It expresses its state if applicable (pressed, expanded, disabled)
 
 mobile:
   swipe: |
     Focus moves to the element, expresses its state
   doubletap: |
     Activates the button
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a button
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the spacebar and/or enter key to activate the button
+    result: |
+      the intended action occurs
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a button
+  - then:  |
+      doubletap with the button in focus
+    result: |
+      the intended action occurs
+
 
 ---
 
