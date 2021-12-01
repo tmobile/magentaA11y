@@ -5,7 +5,7 @@ categories: form
 
 keyboard:
   tab: |
-    Focus visibly moves to the checked radio input in the group. If a radio button is not checked, focus moves to the first radio button in the group.
+    Focus visibly moves to the checked radio button in the group. If a radio button is not checked, focus moves to the first radio button in the group.
   spacebar: |
     If the radio button with focus is not checked, changes the state to checked.  Otherwise, does nothing.
   arrow-keys: |
@@ -19,45 +19,35 @@ mobile:
 
 screenreader:
   name:  |
-    Input label and purpose is clear
+    Its label and purpose is clear
   role:  |
-    Identifies itself as a radio option
+    It identifies itself as a radio option
   group: |
-    Each option has a label and all options are part of a named group.
+    Each option has an associated label and the radio group name
   state: |
-    Expresses its state (selected, checked, disabled)
+    It expresses its state (selected, checked, disabled)
 
 gherkin-keyboard: 
   - when:  |
       the tab key to move focus to a radio group
     result: |
-      focus is strongly visually indicated
+      focus is strongly visually indicated on the first unselected option or the selected option
   - then:  |
-      the spacebar to activate the radio input
+      the spacebar to activate the radio button
     result: |
-      the state is changed
+      the radio button with focus change state to selected.
   - then:  |
-      the arrow keys to focus radio inputs
+      the arrow keys to focus radio button
     result: |
       the state is changed
 
 gherkin-mobile:
   - when:  |
-      swipe to focus on a radio input
+      swipe to focus on a radio button
   - then:  |
       doubletap with the radio in focus
     result: |
       the state is changed
-
-gherkin-screenreader-output:
-  name:  |
-    its label and purpose is clear
-  role:  |
-    its role of radio
-  state: |
-    its state: selected/unselected, checked/unchecked, disabled/dimmed
-  group: |
-    its group name if applicable
 
 
 ---

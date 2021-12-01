@@ -55,6 +55,8 @@ step-number {
   display: none;
 }
 
+
+
 input[type=radio]#gherkin:checked {
   + label {   
     + .step-by-step {

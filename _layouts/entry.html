@@ -149,8 +149,11 @@ layout: default
                     {% for action in page.gherkin-keyboard limit:1 %}
                       I use {{ action.when }} 
                       <ul>
-                        {% for requirement in page.gherkin-screenreader-output %}
-                          <li><strong>I HEAR</strong> {{ requirement[1] | escape }}</td>
+                        {% for requirement in page.screenreader %}
+                          <li>
+                            <strong>I HEAR</strong>
+                            <span class="lowercase">{{ requirement[1] | escape }}</span>
+                          </li>
                         {% endfor %}
                       </ul>
                     {% endfor %}  
@@ -160,7 +163,8 @@ layout: default
                 {% for action in page.gherkin-keyboard offset:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                     <strong>THEN</strong> when I use {{ action.then }} 
-                    <strong>I HEAR</strong> {{ action.result }}
+                    <strong>I HEAR</strong> 
+                    <span class="lowercase">{{ action.result }}</span>
                   </li>
                 {% endfor %}
               </ul>
@@ -179,8 +183,11 @@ layout: default
                     {% for action in page.gherkin-mobile limit:1 %}
                       I use {{ action.when }} 
                       <ul>
-                        {% for requirement in page.gherkin-screenreader-output %}
-                          <li><strong>I HEAR</strong> {{ requirement[1] | escape }}</td>
+                        {% for requirement in page.screenreader %}
+                          <li>
+                            <strong>I HEAR</strong>
+                            <span class="lowercase">{{ requirement[1] | escape }}</span>
+                          </li>
                         {% endfor %}
                       </ul>
                     {% endfor %}  
@@ -189,8 +196,8 @@ layout: default
                 {% for action in page.gherkin-mobile offset:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                     <strong>THEN</strong> when I {{ action.then }} 
-                    <strong>I HEAR</strong> {{ action.result }}
-                    </li>
+                    <strong>I HEAR</strong> <span class="lowercase">{{ action.result }}</span>
+                  </li>
                 {% endfor %}
               </ul>
             </div>

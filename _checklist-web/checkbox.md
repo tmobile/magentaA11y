@@ -19,13 +19,13 @@ mobile:
 
 screenreader:
   name:  |
-    Input label and purpose is clear
+    Its label and purpose is clear
   role:  |
-    Identifies itself as a checkbox
+    It identifies its role of checkbox
   group: |
     Each option has an associated label, related checkboxes should include a group name
   state: |
-    Expresses its state (checked/unchecked, disabled)
+    It expresses its state (checked/unchecked, disabled)
 
 gherkin-keyboard: 
   - when:  |
@@ -44,16 +44,6 @@ gherkin-mobile:
       doubletap with the checkbox in focus
     result: |
       the state is changed
-
-gherkin-screenreader-output:
-  name:  |
-    its label and purpose is clear
-  role:  |
-    its role of checkbox
-  state: |
-    its state: checked/unchecked, disabled/dimmed
-  group: |
-    its group name if applicable
 
 ---
 
