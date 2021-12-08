@@ -51,22 +51,58 @@ Screenreaders can also consume content automatically, starting reading at the to
 
 Screen readers all offer a slightly different experience.
 
-### NVDA 
+### NVDA
+
+<details>
+  <summary>
+    NVDA screenreader shortcuts
+  </summary>
+  {% include /examples/table-screen-reader-keyboard-shortcuts-nvda.html %}
+  <p>Use the screenreader to list useful elements: headings, links and landmarks.</p>
+  {% include /examples/table-screen-reader-keyboard-shortcuts-nvda-test.html %}
+</details>
 
 - NVDA has 2 modes with different keyboard shortcuts.
   - Browse (Red focus indicator)
     - Arrow keys will browse from element to element
   - Focus (Blue focus indicator)
     - Arrow keys will only interact with the interactive element in focus
+
+#### NVDA differences
+
 - Only reads ~120 characters at at time
-- Read "clickable" when it detects a click event listener on an element, even when it's not clickable
+- Reads "clickable" when it detects a click event listener on an element, even when it's not clickable
 - Will read a button with `aria-haspopup="true"` as "menu submenu"
+- Any element in focus like a dialog or section will be read in its entirety
 
 ### VoiceOver
+
+<details>
+  <summary>
+    VoiceOver screenreader shortcuts
+  </summary>
+  {% include /examples/table-screen-reader-keyboard-shortcuts-voiceover.html %}
+  <p>Use the screenreader to list useful elements: headings, links and landmarks.</p>
+  {% include /examples/table-screen-reader-keyboard-shortcuts-voiceover-test.html %}
+</details>
+
+- Pairs with Safari
+- Does not have multiple modes like NVDA or JAWS
+
+#### VoiceOver quirks
 
 - Voiceover will say "dimmed" instead of "disabled"
 
 ### JAWS
+
+<details>
+  <summary>
+    JAWS screenreader shortcuts
+  </summary>
+  {% include /examples/table-screen-reader-keyboard-shortcuts-jaws.html %}
+  <p>Use the screenreader to list useful elements: headings, links and landmarks.</p>
+  {% include /examples/table-screen-reader-keyboard-shortcuts-jaws-test.html %}
+</details>
 
 - JAWS has 2 modes with different keyboard shortcuts
   - Browse 
