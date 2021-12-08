@@ -10,11 +10,10 @@
   </title>
   {% seo title=false description=false %}
   {% if jekyll.environment == "production" %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css?{{site.time | date: '%s'}}">
   {% else %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main-dev.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main-dev.css?{{site.time | date: '%s'}}">
   {% endif %}
-
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
