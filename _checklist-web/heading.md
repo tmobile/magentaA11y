@@ -9,21 +9,28 @@ keyboard:
     Nothing, headings should not be focusable
   arrow-keys: |
     Browses headings (when using screen reader)
-          
+  
 mobile:
   swipe: |
-      The screenreader reads the heading and its level
+    The screenreader reads the heading and its level
 
 screenreader:
   name:  |
     The heading's purpose and level should be clear
   role:  |
-    Identifies itself as a heading and its level
+    It identifies itself as a heading and its level
   group: |
-    Headings are logically ordered, starting with a single h1, sections titled by h2, and subsections with h3
-  state: |
-    n/a
+    It is logically ordered, starting with a single h1, sections titled by h2, and subsections with h3
 
+gherkin-keyboard: 
+  - when:  |
+      the arrow key to browse to a heading
+    result: |
+      the heading comes into view
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a heading
 ---
 
 ## Headings are not focusable with the tab key

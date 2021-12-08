@@ -10,7 +10,7 @@ keyboard:
     Focus visibly moves to the link.
   enter: |
     Activates the link.
-          
+
 mobile:
   swipe: |
     Focus moves to the element
@@ -19,13 +19,27 @@ mobile:
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies itself as a link
-  group: |
-    n/a
-  state: |
-    n/a
+    It identifies itself as a link
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a link
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the enter key to activate the link
+    result: |
+      my browser goes somewhere
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a link
+  - then:  |
+      doubletap with the link in focus
+    result: |
+      my browser goes somewhere
 ---
 
 ## Code examples
