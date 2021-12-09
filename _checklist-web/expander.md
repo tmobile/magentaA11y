@@ -20,13 +20,30 @@ mobile:
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies as a button or details
-  group: |
-    n/a
+    It identifies its role of a button or details
   state: |
-    Expresses its state (expanded/collapsed)
+    It expresses its state (expanded/collapsed)
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to an expander
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the spacebar and/or enter key to activate the expander
+    result: |
+      the hidden content is revealed
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a button
+  - then:  |
+      doubletap with the button in focus
+    result: |
+      the intended action occurs
+
 ---
 
 

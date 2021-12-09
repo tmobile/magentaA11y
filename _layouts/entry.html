@@ -194,10 +194,12 @@ layout: default
                   </li>
                 {% endfor %}
                 {% for action in page.gherkin-mobile offset:1 %}
-                  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>THEN</strong> when I {{ action.then }} 
-                    <strong>I HEAR</strong> <span class="lowercase">{{ action.result }}</span>
-                  </li>
+                  {% if action and action != "" %} 
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                      <strong>THEN</strong> when I {{ action.then }} 
+                      <strong>I HEAR</strong> <span class="lowercase">{{ action.result }}</span>
+                    </li>
+                  {% endif %}
                 {% endfor %}
               </ul>
             </div>
