@@ -181,7 +181,7 @@ layout: default
                     <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
                     <strong>AND</strong> 
                     {% for action in page.gherkin-mobile limit:1 %}
-                      I use {{ action.when }} 
+                      I {{ action.when }} 
                       <ul>
                         {% for requirement in page.screenreader %}
                           <li>

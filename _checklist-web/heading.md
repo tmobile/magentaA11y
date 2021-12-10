@@ -44,10 +44,20 @@ gherkin-mobile:
 This semantic HTML contains all accessibility features by default.
 
 {% highlight html %}
-<h1>
-  About our company
-</h1>
+<h1>My favorite taco recipe</h1>
+  <h2>Ingredients</h2>
+  
+  <h2>Steps</h2>
+
+    <h3>Preparing the protein</h3>
+    <h3>Preparing the vegetables</h3>
+    <h3>Assembly and plating</h3>
+  
+  <h2>Nutrition information</h2>
+  
+  <h2>Related receipes`</h2>
 {% endhighlight %}
+
 
 ### When you can't use semantic HTML
 
@@ -74,6 +84,8 @@ This custom header requires extra attributes.
   - Title major sections with `<h2>`
     - Subsections with `<h3>`
       - It should be rare that `<h4>` and beyond is required.
+
+
 
 ### Focus
 - Headings should not receive focus

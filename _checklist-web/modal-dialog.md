@@ -26,11 +26,49 @@ screenreader:
   name:  |
     The dialog describes its purpose or title on launch
   role:  |
-    Identifies itself as a modal or dialog
+    It dentifies itself as a modal or dialog
   group: |
     When closed, focus returns to the launch button
   state: |
-    When open, content behind the modal is inert
+    When open, content behind the modal remains inert
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to the launch button
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the spacebar and/or enter key to activate the button
+    result: |
+      the dialog opens
+  - then:  |
+      the tab key or arrow keys
+    result: |
+      focus stays trapped in the modal dialog
+  - then:  |
+      the escape key
+    result: |
+      focus returns to the launch button
+  - then:  |
+      the tab key to move focus to the dismiss/close button <strong>AND THEN</strong> use the spacebar or enter key to activate the dismiss/close button
+    result: |
+      focus returns to the launch button
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus to the launch button
+  - then:  |
+      doubletap with the button in focus
+    result: |
+      the dialog opens
+  - then:  |
+      swipe within the modal dialog
+    result: |
+      focus stays trapped in the modal dialog
+  - then:  |
+      swipe to move focus to the dismis/close button <strong>AND THEN</strong> double tap on the close button
+    result: |
+      focus returns to the launch button
 ---
 
 ## Required attributes
