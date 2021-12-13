@@ -1,0 +1,38 @@
+body {
+  max-width: calc(100vw - 320px);
+}
+
+details.test-case-wrapper {
+  width: 320px;
+  height: 100vh;
+  overflow: scroll;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 0 5px 1px rgba(#000000, .2);
+  z-index: 9999;
+  margin-bottom: 0 !important;
+
+  step-number {
+    margin-left: 0;
+    margin-right: .5rem;
+  }
+    
+  details {
+    margin-bottom: 0 !important;
+    summary {
+      margin-bottom: -1rem;
+    }
+
+    &[open] {
+      margin-bottom: 1rem;
+      summary {
+        margin-bottom: 1rem;
+
+      }
+    }
+
+  }
+
+}
+
