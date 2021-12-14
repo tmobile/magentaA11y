@@ -1,16 +1,132 @@
-<details open class="test-case-wrapper">
+<details id="test-case-wrapper" class="test-case-wrapper">
   <summary>
     What to test on this page
   </summary>
 
-  <details>
+  <details class="acceptance-criteria" id="nav-details">
     <summary>
       Navigation
     </summary>
-    Test instructions for the Nav go here
+    <div class="">
+      <p class="" itemprop="name">
+        <strong>Given that</strong> I am on a page with a Navigation menu
+      </p>
+
+      <div id="step1" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+        <h3 class="h-charlie" itemprop="name">
+          <step-number>1 </step-number>Keyboard for mobile &amp; desktop
+        </h3>
+
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use the tab key to move focus to a interactive element in the navigation
+
+              <strong>I SEE</strong> focus is strongly visually indicated
+
+            </li>
+          
+          
+        </ul>
+      </div>
+      
+
+
+      <div id="step2" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+        <h3 class="h-charlie">
+          <step-number>2</step-number>
+          Desktop screenreader
+        </h3>
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+              <strong>AND</strong>  
+              
+                I use the tab key to move focus to a interactive element in the navigation
+
+                <ul>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">the role AND if there are multiple navigations present (Ex: Main navigation, Site map, Category menu) the name of the navigation
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It is discoverable as navigation landmark using screenreader shortcuts
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">The navigation is read along with the interactive links and buttons when focused
+</span>
+                    </li>
+                  
+                </ul>
+                
+            </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div id="step3" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+
+        <h3 class="h-charlie">
+          <step-number>3 </step-number>Mobile screenreader
+        </h3>
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
+              <strong>AND</strong> 
+              
+                I swipe to focus on a link or button
+
+                <ul>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">the role AND if there are multiple navigations present (Ex: Main navigation, Site map, Category menu) the name of the navigation
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It is discoverable as navigation landmark using screenreader shortcuts
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">The navigation is read along with the interactive links and buttons when focused
+</span>
+                    </li>
+                  
+                </ul>
+                
+            </li>
+          
+          
+             
+              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+                <strong>THEN</strong> when I doubletap with the link or button in focus
+
+                <strong>I HEAR</strong> <span class="lowercase">my browser goes somewhere or does something
+</span>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
   </details>
 
-  <details>
+  <details class="acceptance-criteria" id="link-details">
     <summary>
       Link
     </summary>
@@ -139,14 +255,111 @@
 
   </details>
 
-  <details>
+  <details class="acceptance-criteria" id="img-details">
     <summary>
       Image
     </summary>
-    Test instructions for the element go here
+    <div class="">
+      <p class="" itemprop="name">
+        <strong>Given that</strong> I am on a page with a Image: jpg, gif, png, svg
+      </p>
+
+      <div id="step1" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+        <h3 class="h-charlie" itemprop="name">
+          <step-number>1 </step-number>Keyboard for mobile &amp; desktop
+        </h3>
+
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use the arrow key to browse to an image
+
+              <strong>I SEE</strong> the image comes into view
+
+            </li>
+          
+          
+        </ul>
+      </div>
+      
+
+
+      <div id="step2" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+        <h3 class="h-charlie">
+          <step-number>2</step-number>
+          Desktop screenreader
+        </h3>
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+              <strong>AND</strong>  
+              
+                I use the arrow key to browse to an image
+
+                <ul>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">The content of the image alt text is clear
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It dentifies its role as an image or graphic
+</span>
+                    </li>
+                  
+                </ul>
+                
+            </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div id="step3" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+
+        <h3 class="h-charlie">
+          <step-number>3 </step-number>Mobile screenreader
+        </h3>
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
+              <strong>AND</strong> 
+              
+                I swipe to focus on an image
+
+                <ul>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">The content of the image alt text is clear
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It dentifies its role as an image or graphic
+</span>
+                    </li>
+                  
+                </ul>
+                
+            </li>
+          
+          
+        </ul>
+      </div>
+    </div>
+
+
   </details>
 
-  <details>
+  <details class="acceptance-criteria" id="expander-details">
     <summary>
       Accordion expander
     </summary>
@@ -286,7 +499,7 @@
 
   </details>
 
-  <details>
+  <details class="acceptance-criteria" id="radio-details">
     <summary>
       Radio input
     </summary>
