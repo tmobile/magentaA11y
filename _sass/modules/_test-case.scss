@@ -1,0 +1,67 @@
+// add styles to the body when the outermost <details> is [open]
+body.test-case-open {
+  max-width: calc(100vw - 420px);
+
+  .test-case-flag {
+    display: block !important;
+  }
+
+  * {
+  }
+
+}
+
+details.test-case-wrapper {
+  width: 420px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 0 5px 1px rgba(#000000, .2);
+  z-index: 9999;
+  margin-bottom: 0 !important;
+
+  &[open] {
+    height: 100vh;
+    overflow: scroll;
+  }
+
+
+  step-number {
+    margin-left: 0;
+    margin-right: .5rem;
+  }
+    
+  details {
+    margin-bottom: 0 !important;
+    summary {
+      margin-bottom: -1rem;
+    }
+
+    &[open] {
+      margin-bottom: 1rem;
+      summary {
+        margin-bottom: 1rem;
+      }
+    }
+
+  }
+
+}
+
+.test-case-flag {
+  background: red;
+  padding: .5rem;
+  color: #fff;
+  border-radius: .25rem;
+  display: none;
+  width: 80px;
+  margin: 1rem;
+  font-size: 14px;
+  position: absolute !important;
+  z-index: 99999;
+  text-align: center;
+  &:after,
+  &:before {
+    display: none;
+  }
+}

@@ -177,3 +177,33 @@ $(".simp  .previous").click(function(){
     }
 });
 
+$("#test-case-wrapper").on('toggle', function() {
+    $("body").toggleClass('test-case-open');
+
+    $('img').after('<button tabindex="-1" id="img" class="test-case-flag">Image</button>');
+
+    $("a").after('<button tabindex="-1" id="link" class="test-case-flag">Link</button>');
+
+    $("nav").after('<button tabindex="-1" id="nav" class="test-case-flag">Navigation</button>');
+    
+    $("form").after('<button tabindex="-1" id="form" class="test-case-flag">Form</button>');
+
+    $(".expander-toggle").after('<button tabindex="-1" id="expander" class="test-case-flag">Expander</button>');
+
+    $(".fake-radio").first().after('<button tabindex="-1" id="radio" class="test-case-flag">Radio input</button>').css("position", "relative");;
+    
+    $(".test-case-flag").click(function() {
+        // Close all details
+        $(".acceptance-criteria").removeAttr("open");  
+        // Get the id
+    
+        var id = $(this).attr('id');
+        // Find the corresponding details
+        // open the details
+        $('#' + id + '-details').prop('open', true);
+    
+    });
+    
+
+});
+
