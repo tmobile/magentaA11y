@@ -64,7 +64,7 @@ This semantic HTML contains all accessibility features by default.
 
 ### Don't put interactive elements inside the label
 
-Even though this is valid HTML, it creates unpredictable results with screenreaders. A more reliable method os to put the link outside the label and reference it with `aria-describedby="hint-id"`
+Even though this is valid HTML, it creates unpredictable results with screenreaders. A (currently) reliable method is to keep interactive elements outside the label and reference it with `aria-describedby="hint-id"`
 
 {% highlight html %}
 {% include /examples/input-checkbox-legal.html %}
