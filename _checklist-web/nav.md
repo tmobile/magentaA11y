@@ -19,13 +19,26 @@ mobile:
 
 screenreader:
   name:  |
-    Can have a heading or label if there are multiple navigation elements
+    the role AND if there are multiple navigations present (Ex: Main navigation, Site map, Category menu) the name of the navigation
   role:  |
-    Discoverable by screen reader as navigation landmark
+    It is discoverable as navigation landmark using screenreader shortcuts
   group: |
-    n/a
-  state: |
-    n/a
+    The navigation is read along with the interactive links and buttons when focused
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a interactive element in the navigation
+    result: |
+      focus is strongly visually indicated
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a link or button
+  - then:  |
+      doubletap with the link or button in focus
+    result: |
+      my browser goes somewhere or does something
+
 ---
 
 ## Code examples

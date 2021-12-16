@@ -62,6 +62,22 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+### Don't put interactive elements inside the label
+
+Even though this is valid HTML, it creates unpredictable results with screenreaders. A (currently) reliable method is to keep interactive elements outside the label and reference it with `aria-describedby="hint-id"`
+
+{% highlight html %}
+{% include /examples/input-checkbox-legal.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-checkbox-legal.html %}
+</example>
+{:/}
+
+
+
 ### When you can't use semantic HTML
 
 This custom checkbox requires extra attributes and event listeners.

@@ -16,13 +16,20 @@ mobile:
 
 screenreader:
   name:  |
-    The content of the image should be clear
+    The content of the image alt text is clear
   role:  |
-    Identifies itself as an image
-  group: |
-    n/a
-  state: |
-    n/a      
+    It dentifies its role as an image or graphic
+
+gherkin-keyboard: 
+  - when:  |
+      the arrow key to browse to an image
+    result: |
+      the image comes into view
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on an image
+
 ---
 
 ## Code examples
