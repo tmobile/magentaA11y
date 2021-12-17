@@ -14,50 +14,46 @@ table {
   text-align: left;
   thead {
     border-bottom: 3px solid #000;
+    th {
+      @include headline;
+      margin: 0;
+      padding: .6rem 1rem .4rem 1px;
+      vertical-align: top;
+      font-weight: bold;
+      line-height: 1.25;
+      
+      &:first-of-type {
+        width: 7rem !important;
+      }
 
-    &:first-of-type {
-      [scope='row'] {
+      &[scope='col'] {
         border-top: none;
+        @include headline;
       }
     }
   }
-
-  th {
-    @include headline;
-    // border-top: 1px solid $color-border-gray;
-    margin: 0;
-    padding: .6rem 1rem .4rem 1px;
-    vertical-align: top;
-    font-weight: bold;
-    
-    &:first-of-type {
-      width: 7rem !important;
-    }
-
-    &[scope='row'] {
+  tbody {
+    td,
+    th {
+      padding: .6rem 1rem .4rem 1px;
+      line-height: 1.25;
       border-top: 1px solid $color-border-gray;
-      font-weight: bold;
+      strong {
+        display: inline-block;
+        padding: 0px 7px;
+        font-size: 12px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-weight: normal;
+        background-color: #fff;
+      }
+      &[scope='row'] {
+        @include headline;
+      }
     }
 
-    &[scope='col'] {
-      border-top: none;
-      font-weight: bold;
-    }
   }
-
-  td {
-    padding: .6rem 1rem .4rem 1px;
-    border-top: 1px solid $color-border-gray;
-    strong {
-      display: inline-block;
-      padding: 0px 7px;
-      font-size: 12px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      font-weight: normal;
-      background-color: #fff;
-    }
-  }
+  
   caption {
     font-weight: bold;
     text-align: left;
@@ -129,7 +125,6 @@ table {
     [scope=row] {
       @include break($break-small) {
         text-align: left;
-        display: block;
       }
     }
   }
