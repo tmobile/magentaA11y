@@ -40,6 +40,13 @@ Optional: The table is wrapped in a `<figure>` to indicate author and source.
 </example>
 {:/}
 
+{::nomarkdown}
+<example>
+{% include /examples/table-screen-reader-browser-pairing.html %}
+</example>
+{:/}
+
+
 ### When you can't use semantic HTML
 
 If it's required to display tabular data without using a `<table>` element, attributes will have to added.
@@ -76,7 +83,7 @@ If it's required to display tabular data without using a `<table>` element, attr
 Don't use tables purely for layout. Only use tables to structure tabular data. 
 
 ### Name
-- The table can be named by a heading above.
+- The table can be named by a heading above or a `<caption>`
 
 ### Role
 - Semantic `<table>` structures identify headers appropriately and honors screen reader keyboard shortcuts.
