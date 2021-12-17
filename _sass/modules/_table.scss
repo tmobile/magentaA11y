@@ -122,8 +122,9 @@ table {
     }
   }
   &.subscription {
-    [scope=row] {
+    th[scope=row] {
       @include break($break-small) {
+        width: 300px !important;
         text-align: left;
       }
     }
