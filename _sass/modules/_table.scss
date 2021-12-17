@@ -1,12 +1,13 @@
 table {
   table-layout: auto;
   margin: 0 0 2rem 0;
-  padding:0;
-  background: none;
+  padding: 0;
   width: 100%;
   border: none;
   border-collapse: collapse;
   border-spacing: 0;
+  box-shadow: 0 0 0 .5rem #fff;
+  background-color: #fff;
   background-image: none;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -23,7 +24,7 @@ table {
 
   th {
     @include headline;
-    border-top: 1px solid $color-border-gray;
+    // border-top: 1px solid $color-border-gray;
     margin: 0;
     padding: .6rem 1rem .4rem 1px;
     vertical-align: top;
@@ -61,7 +62,10 @@ table {
     font-weight: bold;
     text-align: left;
     padding: .5rem 0;
+    box-shadow: 0 0 0 .5rem #fff;
+    background-color: #fff;
   }
+  
   p {
     padding: 0;
   }
@@ -83,6 +87,7 @@ table {
         background: #fff;
         margin: 0;
         box-shadow: 0 10px 10px -10px rgba(#000, .25);
+        z-index: 99;
       }
       th:first-of-type {
         @include break(0,$break-small) {
