@@ -100,7 +100,6 @@ table {
       @include break(0,$break-small) {
         border-top: 2px solid #000;
       }
-
     }
 
     [scope=row] {
@@ -110,7 +109,28 @@ table {
         grid-column: 1/-1;
         font-size: 1.25rem;
       }
+      details.compact {
+        font-size: 1rem;
+        @include regular;
+        
+        summary {
+          @include break(0,$break-small) {
+            font-size: 1.25rem;
+          }
+        }
+        @include break($break-small) {
+          text-align: left;
+          display: block;
+        }
+      }
     }
-
+  }
+  &.subscription {
+    [scope=row] {
+      @include break($break-small) {
+        text-align: left;
+        display: block;
+      }
+    }
   }
 }
