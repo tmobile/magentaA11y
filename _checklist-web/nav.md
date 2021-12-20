@@ -21,7 +21,7 @@ screenreader:
   name:  |
     the role AND if there are multiple navigations present (Ex: Main navigation, Site map, Category menu) the name of the navigation
   role:  |
-    It is discoverable as navigation landmark using screenreader shortcuts
+    It is discoverable with screenreader shortcuts as a navigation landmark
   group: |
     The navigation is read along with the interactive links and buttons when focused
 
