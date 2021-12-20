@@ -31,7 +31,7 @@ gherkin-keyboard:
 
 gherkin-mobile:
   - when:  |
-      swipe to enter the web browser window
+      swipe to focusable elements in the header
 ---
 
 ## General notes

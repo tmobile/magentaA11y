@@ -38,7 +38,6 @@ gherkin-mobile:
       doubletap with the link or button in focus
     result: |
       my browser goes somewhere or does something
-
 ---
 
 ## Code examples
