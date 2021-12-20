@@ -20,13 +20,21 @@ mobile:
 
 screenreader:
   name:  |
-    The web page has a unique title
+    The page has a unique title that is read on load
   role:  |
-    n/a
+    As focus traverses the page, the parent landmarks (header/banner, navigation, main and footer/content info) are indicated
   group: |
-    Contains discoverable landmarks: header, nav, main and footer landmarks
-  state: |
-    n/a
+    Major landmarks are discoverable with screenreader shortcuts: header/banner, navigation, main and footer/content info landmarks
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to enter the web browser window
+    result: |
+      focus is strongly visually indicated on the first interactive components
+
+gherkin-mobile:
+  - when:  |
+      swipe to enter the web browser window
 ---
 ## Developer notes
 
