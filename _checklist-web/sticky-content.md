@@ -10,17 +10,21 @@ keyboard:
       
 mobile:
   swipe: |
-    Content and controls within the sticky element appear in a logical order within the page
+    Content and controls within the sticky element appear in a logical order in relation to the whole page
 
 screenreader:
-  name:  |
-    Discoverable by screen reader
-  role:  |
-    n/a
   group: |
-    Appears in logical page order within the page
-  state: |
-    n/a
+    Interactive elements are read in logical order in relation to the whole page
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to interactive elements inside the sticky element
+    result: |
+      focus is strongly visually indicated in a logical order in relation to the whole page
+
+gherkin-mobile:
+  - when:  |
+      swipe to the sticky element
 ---
 
 ## Code examples

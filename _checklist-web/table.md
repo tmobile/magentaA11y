@@ -7,21 +7,30 @@ categories: main
 
 keyboard:
   arrow-keys: |
-    Move from cell to cell
-         
+    The table comes into view (and with a screenreader the cells become individually readable)
+
 mobile:
   swipe: |
-    Moves from cell to cell
+    The table is browsed from cell to cell
 
 screenreader:
   name:  |
-    Table has a caption or a heading to describe its purpose
+    The table has a caption or a heading to describe its purpose
   role:  |
-    Identifies as a table
+    It identifies itself as a table
   group: |
-    Columns and rows are identified
-  state: |
-    n/a
+    Column headers and row headers are identified with screenreader shortcuts
+
+gherkin-keyboard: 
+  - when:  |
+      the arrow keys
+    result: |
+      the table comes into view
+
+gherkin-mobile:
+  - when:  |
+      swipe to focusable elements in the footer
+
 ---
 ## Code examples
 

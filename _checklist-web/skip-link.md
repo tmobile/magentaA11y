@@ -11,6 +11,7 @@ keyboard:
     Focus moves to the skip link
   enter: |
     Activates the link, focus/tabindex moves directly to the targeted element     
+
 mobile:
   swipe: |
     Focus moves to the skip link
@@ -19,13 +20,29 @@ mobile:
 
 screenreader:
   name:  |
-    Describes which landmark it's targeting
+    It describes which landmark it's targeting
   role:  |
-    Identifies itself as a link
+    It identifies itself as a link
   group: |
-    Typically the first elements in the page
-  state: |
-    n/a
+    It is typically the first element in the page
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a skip link
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the enter key to activate the link
+    result: |
+      my focus moves directly to the targeted element
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a skip link
+  - then:  |
+      doubletap with the link in focus
+    result: |
+      my focus moves directly to the targeted element
 ---
 
 ## Code examples
@@ -39,8 +56,6 @@ screenreader:
 {% include /examples/main.html %}
 </example>
 {:/}
-
-
 
 ## Developer notes
 

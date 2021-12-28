@@ -84,7 +84,6 @@ The preferred method is to use `aria-disabled="true"` so screen reader users can
 
 A button that uses the disabled attribute will not be focusable, but it is still discoverable by the screen reader while browsing.
 
-
 {% highlight html %}
 {% include /examples/button-disabled.html %}
 {% endhighlight %}
@@ -94,7 +93,6 @@ A button that uses the disabled attribute will not be focusable, but it is still
 {% include /examples/button-disabled.html %}
 </example>
 {:/}
-
 
 ### When you can't use semantic HTML
 
@@ -116,6 +114,19 @@ As a last resort, `aria-label` can be used.
 </div>
 {% endhighlight %}
 
+
+### When there are repeating buttons
+
+Sometimes the design will call for multiple buttons with the same text label. In a case like this, `aria-label` can be used to name each control's purpose.
+
+{% highlight html %}
+<button aria-label="Edit payment date">
+  Edit
+</div>
+<button aria-label="Edit payment amount">
+  Edit
+</div>
+{% endhighlight %}
 
 ## Developer notes
 

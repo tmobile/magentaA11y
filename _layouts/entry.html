@@ -30,7 +30,7 @@ layout: default
           <label for="gherkin">Gherkin</label>
         {% endif %}
 
-        <div class="step-by-step">
+        <div class="step-by-step" tabindex="0">
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">
@@ -108,7 +108,7 @@ layout: default
         </div>
 
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
-          <div class="gherkin">
+          <div class="gherkin" tabindex="0">
             <p class="" itemprop="name">
               <strong>Given that</strong> I am on a page with a {{ page.title }}
             </p>

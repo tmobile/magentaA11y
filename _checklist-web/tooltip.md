@@ -16,12 +16,16 @@ mobile:
 screenreader:
   name:  |
     Nothing, because we don't use tooltips
-  role:  |
-    n/a
-  group: |
-    n/a
-  state: |
-    n/a
+
+gherkin-keyboard: 
+  - when:  |
+      the arrow keys or tab key
+    result: |
+      nothing, because we don't use tooltips
+
+gherkin-mobile:
+  - when:  |
+      swipe to focusable elements
       
 ---
 
@@ -35,16 +39,15 @@ screenreader:
 </nope>
 {% endhighlight %}
 
-
 ## Why don't we use tooltips?
 
-### Tooltips are extremely difficult to implement. 
-
-The specific WAI-ARIA guidance isn't clear and screen reader implementation will vary, so it's impossible to create success criteria.
-
-### Tooltips are often indicative of poor UX design. 
+### Tooltips are indicative of poor UX design. 
 
 If there is important content that is required to understand the UI, the tooltip is a sub optimal approach to helping the user.
+
+### Tooltip acceptance criteria are impossible to define
+
+The specific WAI-ARIA guidance isn't clear and screen reader implementation will vary, so it's impossible to create success criteria.
 
 ### What should I do instead?
 
@@ -52,4 +55,4 @@ Put in the work to design and edit the UI language so that it's self explanatory
 
 ### What if there's no other way?
 
-If you still have detailed information that needs to be displayed, consider putting it in a modal.
+If you still have detailed information that needs to be displayed, consider putting it in a modal or an expander accordion component.

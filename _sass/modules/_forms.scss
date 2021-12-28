@@ -44,9 +44,10 @@ input[type="password"],
 input[type="button"],
 input[type="submit"] {
   display: block;
+  width: auto;
   -webkit-appearance: none; // Remove iOS webkit styles
   border-radius: 0; // Remove iOS webkit styles
-  margin: 0  0 .75rem 0;
+  margin: 0  0 .75rem inherit;
   font-size: 1rem;
   padding: .5rem;
   border: 1px solid $color-border-gray;
@@ -70,15 +71,6 @@ label {
   }
 }
 
-input[type="text"],
-input[type="password"]{
-  width: calc(100%);
-}
-
-input[required],
-input[aria-required='true'] {
-
-}
 
 fieldset,
 .fieldset  {
@@ -105,6 +97,12 @@ fieldset,
     padding: 1rem 1rem 0 1rem;
   }
 }
+
+input[type="tel"] {
+  width: 11rem;
+}
+
+
 
 legend,
 .legend  {

@@ -18,15 +18,20 @@ mobile:
     This typically activates most elements.
 
 screenreader:
-  name:  |
-    Discoverable by screen reader as footer or contentinfo landmark
   role:  |
-    Identifies itself as a footer or contentinfo landmark
+    It is discoverable with screenreader shortcuts as a footer or contentinfo landmark
   group: |
-    Typically contains copyright information, navigation links, and privacy statements.
-  state: |
-    n/a
-      
+    It typically contains copyright information, navigation links, and privacy statements.
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a interactive element in the footer
+    result: |
+      focus is strongly visually indicated
+
+gherkin-mobile:
+  - when:  |
+      swipe to focusable elements in the footer
 ---
 
 ## Code examples

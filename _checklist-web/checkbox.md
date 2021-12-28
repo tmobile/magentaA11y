@@ -23,7 +23,7 @@ screenreader:
   role:  |
     It identifies its role of checkbox
   group: |
-    Each option has an associated label, related checkboxes should include a group name
+    Related checkboxes output a group name after the label (Ex: Account settings)
   state: |
     It expresses its state (checked/unchecked, disabled)
 

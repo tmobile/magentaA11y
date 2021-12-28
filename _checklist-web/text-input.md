@@ -16,13 +16,24 @@ mobile:
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies itself as a text input
+    It identifies itself as a text input
   group: |
-    Label is read with the input
+    Hints or errors are read after the label, related inputs include a group name (Ex: Enter your personal information)
   state: |
-    The input can be required, disabled
+    It expresses its state (required, disabled/dimmed/unavailable)
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a text input
+    result: |
+      focus is strongly visually indicated
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a text input
+
 ---
 
 ## Code examples
@@ -66,6 +77,21 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+
+### Group of inputs
+
+After the screenreader focuses on each input, it will read the group name "Enter your personal information" after the input.
+
+{% highlight html %}
+{% include /examples/input-text-group.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-group.html %}
+</example>
+{:/}
+
 ## Developer notes
 
 ### Name
@@ -75,7 +101,6 @@ This semantic HTML contains all accessibility features by default.
 
 ### Role
 - Identifies as a text input
-
 
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input

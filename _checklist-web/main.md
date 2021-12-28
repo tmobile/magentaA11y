@@ -16,14 +16,21 @@ mobile:
     Focus moves within main area
 
 screenreader:
-  name:  |
-    Discoverable by screen reader as main landmark
   role:  |
-    Identifies itself as a main landmark
+    It is discoverable with screenreader shortcuts as main landmark
   group: |
-    Typically contains the content of the page
-  state: |
-    n/a
+    It contains the content portion of the page starting with the H1
+
+gherkin-keyboard: 
+  - when:  |
+      the arrow keys to browse the main content
+    result: |
+      the screen scroll through the page
+
+gherkin-mobile:
+  - when:  |
+      swipe to elements in the header
+
 ---
 
 ## Code examples

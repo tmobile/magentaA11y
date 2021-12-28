@@ -6,24 +6,29 @@ categories: main form
 
 keyboard:
   tab: |
-    Focus does not automatically move to the alert
+    Focus does not automatically move to the alert, but can move to interactive elements within the alert (example: Dismiss button)
   arrow: |
-    Browses the element like any other content
+    Browses to the alert like any other content
 
 mobile:
   swipe: |
-      Focus does not move to the alert when it appears, but it can be perceived by the screen reader
+    Focus does not move to the alert when it appears, but it can be browsed by the screenreader
 
 screenreader:  
   name:  |
-    The alert's purpose should be read aloud when it appears
+    The alert is read when it appears (BUT focus DOES NOT transfer automatically when the alert appears)
   role:  |
-    Identifies itself as an alert
-  group: |
-    n/a
-  state: |
-    n/a
+    It identifies itself as an alert
 
+gherkin-keyboard: 
+  - when:  |
+      use features that trigger the alert
+    result: |
+      the alert (BUT focus DOES NOT transfer automatically when the alert appears)
+
+gherkin-mobile:
+  - when:  |
+      use features that trigger the alert
 ---
 
 ## Notes

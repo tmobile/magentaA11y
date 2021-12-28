@@ -7,25 +7,31 @@ order: 2
 
 keyboard:
   skip-links: |
-    Focus moves directly to the header
+    Focus moves directly to the header or navigation
   tab: |
     Links and buttons within the header are focusable
 
 mobile:
   swipe: |
-    Focus moves within the dialog and doesn't enter the rest of the page.
+    Focus moves directly to the header or navigation
   doubletap: |
-    This typically activates most elements.
+    This typically activates most elements
 
 screenreader:
-  name:  |
-    Discoverable by screen reader as header or banner landmark
   role:  |
-    Identifies itself as a header or banner landmark
+    It is discoverable with screenreader shortcuts as header/banner landmark
   group: |
-    Typically contains site title and primary navigation
-  state: |
-    n/a
+    It typically contains the name and primary navigation of the website
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to enter the web browser window
+    result: |
+      focus is strongly visually indicated on interactive components
+
+gherkin-mobile:
+  - when:  |
+      swipe to focusable elements in the header
 ---
 
 ## General notes

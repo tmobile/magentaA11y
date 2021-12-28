@@ -39,8 +39,10 @@ screenreader:
 
 ## Code examples
 
-
 ### Speciality stepper integer input
+
+This component is useful for small-ish selections. If the max count is more than 20, this component will be cumbersome for people using a mouse.
+
 
 {% highlight html %}
 {% include /examples/input-number-stepper.html %}
@@ -51,3 +53,20 @@ screenreader:
 {% include /examples/input-number-stepper.html %}
 </example>
 {:/}
+
+## Developer notes
+
+This example provides the simplest answer to a number input with a stepper control with minimal scripting.
+
+Notice that the stepper buttons are hidden from the screen reader because it's a better user experience to simply use the native select.
+
+Using a select also eliminates any issues with the update being read by the screenreader on button press.
+
+### Other attempts
+
+- Using a `input type="number"` with its built in stepper is also simple, can be similarly styled, but NVDA can't read number input labels
+- Wrapping a `input type="text"` with `aria-live="assertive"` isn't reliablly output across all screenreaders on change events
+
+### Other possible options
+
+If an unlimited number of options is required, using a normal text input with added controls will work, but a hidden element using `aria-live="assertive` will be required for the screenreader user.
