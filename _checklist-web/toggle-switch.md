@@ -18,13 +18,31 @@ mobile:
 
 screenreader:
   name:  |
-    Input label and purpose is clear
+    Its label and purpose is clear
   role:  |
-    Identifies itself as a switch, toggle button or checkbox
+    It identifies its role of switch, toggle button or checkbox
   group: |
-    Each switch has an associated label
+    Each switch has an associated label, related checkboxes should include a group name
   state: |
-    Expresses its state (on/off, checked/unchecked, disabled/dimmed)
+    It expresses its state (on/off, checked/unchecked, disabled/dimmed)
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a switch
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the spacebar to activate the switch
+    result: |
+      the state is changed
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a switch input
+  - then:  |
+      doubletap with the switch in focus
+    result: |
+      the state is changed
 
 ---
 
