@@ -5,22 +5,26 @@ description: "How to code and test an accessible separator / horizontal rule for
 categories: main form
 
 keyboard:
-  any key	: |
-    Nothing. Should be ignored by the screenreader.
+  any key: |
+    Nothing happens. It is completely inert.
   
 mobile:
   swipe: |
-    Nothing. Should be ignored by the screenreader.
-  
+    The element is skipped entirely. It is completely inert.
+
 screenreader:
   name:  |
-    None. Should be ignored by the screenreader.
-  role:  |
-    n/a
-  group: |
-    n/a
-  state: |
-    n/a
+    The element is skipped entirely. It is completely inert.
+
+gherkin-keyboard: 
+  - when:  |
+      arrow keys to browse to the separator
+    result: |
+      the element is skipped entirely. It is completely inert.
+
+gherkin-mobile:
+  - when:  |
+      swipe to the separator
 ---
 
 ## Developer notes

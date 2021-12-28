@@ -15,15 +15,13 @@ keyboard:
 mobile:
   swipe: |
     Focus moves within page
-  pinch: |
+  pinch/stretch: |
     Content zooms up to 200%
 
 screenreader:
   name:  |
     The page has a unique title that is read on load
   role:  |
-    As focus traverses the page, the parent landmarks (header/banner, navigation, main and footer/content info) are indicated
-  group: |
     Major landmarks are discoverable with screenreader shortcuts: header/banner, navigation, main and footer/content info landmarks
 
 gherkin-keyboard: 

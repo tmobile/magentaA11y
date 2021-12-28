@@ -11,6 +11,7 @@ keyboard:
     Focus moves to the skip link
   enter: |
     Activates the link, focus/tabindex moves directly to the targeted element     
+
 mobile:
   swipe: |
     Focus moves to the skip link
@@ -55,8 +56,6 @@ gherkin-mobile:
 {% include /examples/main.html %}
 </example>
 {:/}
-
-
 
 ## Developer notes
 
