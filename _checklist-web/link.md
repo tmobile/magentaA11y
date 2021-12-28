@@ -86,11 +86,35 @@ This custom button requires extra attributes and event listeners.
 </custom-element>
 {% endhighlight %}
 
+### When there are repeating links
+
+Sometimes the design will call for multiple links with the same text label. In a case like this, `aria-label` can be used to name each link's purpose.
+
+{% highlight html %}
+<a href="/security/" aria-label="Security policy">
+  Learn more
+</div>
+<a href="/privacy/" aria-label="Privacy policy">
+  Learn more
+</div>
+{% endhighlight %}
+
+### Don't repeat the name in the aria-label
+
+**Do not** repeat the inner text content of a link in the `aria-label`.
+
+{% highlight html %}
+<a href="/dont-repeat-yourself/" 
+   aria-label="Don't repeat yourself">
+   Don't repeat yourself
+</div>
+{% endhighlight %}{: .bad-example}
+
 ## Developer notes
 
 ### Name
 - Inner text should describe the purpose of the link.
-- **Do not** repeat the name with `aria-label="Link purpose"` 
+- **Do not** repeat the inner text content of a link in the `aria-label`
 
 ### Role
 - Native button identifies as button by default
