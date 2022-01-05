@@ -52,5 +52,5 @@ a.hidden:focus {
 
 div:focus,
 div:target {
-  outline: none;
+  outline-offset: 0.25rem;
 }
