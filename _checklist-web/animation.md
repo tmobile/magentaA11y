@@ -6,7 +6,7 @@ categories: main
 
 keyboard:
   tab: |
-    Where applicable, focus moves directly to pause / play / hide controls
+    Where applicable, focus moves directly to pause/play/hide controls
   spacebar: |
     Activates the control
   enter: |
@@ -16,20 +16,43 @@ keyboard:
 
 screenreader:   
   name:  |
-    The content  of the animation may be described
+    The control's purpose (pause/play/hide) is clear
   role:  |
-    Identifies itself as an image or figure
-  group: |
-    n/a
+    It identifies its role of button
   state: |
-    n/a
+    The control expresses its state if applicable (pressed, expanded)
 
 mobile:
   swipe: |
-    Description of the animation
-  reduced motion settings: |
-    Animation is disabled or reduced
-    
+    Focus moves to the control
+  doubletap: |
+    Activates the button
+
+gherkin-keyboard:
+  - when:  |
+      tab key to move focus to the pause/play/hide controls
+    result: |
+      the control is strongly visibly focused
+  - then:  |
+      the spacebar or enter key to activate the control
+    result: |
+      the intended action occurs
+  - then:  |
+      the device's reduced motion settings
+    result: |
+      the animation is disabled or reduced
+
+gherkin-mobile:
+  - when:  |
+      swipe to move focus to the pause/play/hide controls
+  - then:  |
+      doubletap to activate control
+    result: |
+      the intended action occurs
+  - then:  |
+      the device's reduced motion settings
+    result: |
+      the animation is disabled or reduced
 ---
 ## Developer notes
 

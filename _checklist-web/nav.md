@@ -27,7 +27,7 @@ gherkin-keyboard:
   - when:  |
       the arrow keys to browse the navigation menu
     result: |
-      the screen scroll through the page
+      the screen scrolls through the page
 
 gherkin-mobile:
   - when:  |
