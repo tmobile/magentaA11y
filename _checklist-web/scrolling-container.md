@@ -7,8 +7,6 @@ categories: form
 keyboard:
   tab: |
     Focus visibly moves to container
-  spacebar: |
-    Scrolls the container down
   arrow keys: |
     Browses the the container
 
