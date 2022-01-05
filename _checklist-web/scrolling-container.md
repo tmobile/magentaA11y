@@ -3,7 +3,6 @@ layout: entry
 title:  "Scrolling container"
 description: "How to code and test a scrolling overflow text container"
 categories: form
-order: 1
 
 keyboard:
   tab: |
@@ -21,7 +20,7 @@ screenreader:
 
 mobile:
   swipe: |
-    Browses the content
+    The content is browsed in logical order
 
 gherkin-keyboard: 
   - when:  |
@@ -32,10 +31,6 @@ gherkin-keyboard:
       the up/down arrow keys
     result: |
       the content is browsed up/down
-  - then:  |
-      the spacebar
-    result: |
-      the container scrolls down
 
 gherkin-mobile:
   - when:  |
