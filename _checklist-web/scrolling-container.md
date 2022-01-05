@@ -2,7 +2,7 @@
 layout: entry
 title:  "Scrolling container"
 description: "How to code and test a scrolling overflow text container"
-categories: main form
+categories: form
 order: 1
 
 keyboard:
