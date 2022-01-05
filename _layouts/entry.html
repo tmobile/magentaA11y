@@ -24,13 +24,13 @@ layout: default
 
       <div class="test-instructions">
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
-          <input type="radio" aria-label="Show condensed instructions" class="tabs" id="condensed" name="criteria" checked>
+          <input type="radio" aria-label="Show condensed testing instructions" class="tabs" id="condensed" name="criteria" checked>
           <label for="condensed">Condensed</label>
-          <input type="radio" aria-label="Show gherkin story instructions" class="tabs" id="gherkin" name="criteria">
+          <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tabs" id="gherkin" name="criteria">
           <label for="gherkin">Gherkin</label>
         {% endif %}
 
-        <div class="step-by-step" tabindex="0">
+        <div class="step-by-step" tabindex="0" role="region" aria-label="Condensed testing instructions">
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">
@@ -108,14 +108,21 @@ layout: default
         </div>
 
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
-          <div class="gherkin" tabindex="0">
+          <div class="gherkin" tabindex="0" role="region" aria-label="Gherkin story acceptance criteria">
             <p class="" itemprop="name">
-              <strong>Given that</strong> I am on a page with a {{ page.title }}
+              <strong>Given that</strong> I am on a page with 
+              {% assign firstLetter = page.title | downcase | slice: 0 %}
+              {% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u' %}
+              an
+              {% else %}
+              a
+              {% endif %}
+              {{ page.title | escape | downcase }}
             </p>
 
             <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
               <h3 class="h-charlie" itemprop="name">
-                <step-number>1 </step-number>Keyboard for mobile &amp; desktop
+                <step-number>1</step-number> Keyboard for mobile &amp; desktop
               </h3>
 
               <ul class="gherkin-list">
@@ -138,8 +145,7 @@ layout: default
 
             <div id="step2" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
               <h3 class="h-charlie">
-                <step-number>2</step-number>
-                Desktop screenreader
+                <step-number>2</step-number> Desktop screenreader
               </h3>
               <ul class="gherkin-list">
                 {% for action in page.gherkin-keyboard limit:1 %}
@@ -173,7 +179,7 @@ layout: default
             <div id="step3" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
 
               <h3 class="h-charlie">
-                <step-number>3 </step-number>Mobile screenreader
+                <step-number>3</step-number> Mobile screenreader
               </h3>
               <ul class="gherkin-list">
                 {% for action in page.gherkin-mobile limit:1 %}
