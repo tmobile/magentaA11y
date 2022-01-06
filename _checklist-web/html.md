@@ -81,7 +81,7 @@ Each page should include:
 
 - [Header](/checklist-web/header/)
 - [Nav](/checklist-web/nav/)
-- [Main](/checklist-web/footer/)
+- [Main](/checklist-web/main/)
 - [Footer](/checklist-web/footer/)
 
 {% highlight html %}
