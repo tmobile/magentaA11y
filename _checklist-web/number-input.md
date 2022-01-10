@@ -6,21 +6,47 @@ categories: form
 
 keyboard:
   tab: |
-    Focus moves visibly to the input unless it's disabled.
-  
+    Focus moves visibly to the input unless it's disabled
+  Number keys: |
+    Numbers are entered
+  Non-number keys: |
+    Nothing is entered
+
 mobile:
   swipe: |
     Focus moves to the input, number pad appears
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies itself as a input
+    It identifies itself as a text input
   group: |
-    Label is read with the input
+    Hints or errors are read after the label, related inputs include a group name (Ex: Enter your personal information)
   state: |
-    The input can be required, disabled
+    If applicable, it expresses its state (required, disabled / dimmed / unavailable)
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a number input
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the number keys
+    result: |
+      numbers are entered
+  - then:  |
+      non-number keys
+    result: |
+      nothing is entered
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a text input
+  - then:  |
+      the number keypad is revealed
+
+
 ---
 
 ## Code examples

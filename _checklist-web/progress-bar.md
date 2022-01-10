@@ -2,7 +2,6 @@
 layout: entry
 title:  "Progress bar"
 description: "How to code and test an accessible progress bar for Web"
-
 categories: main form
 order: 0
 
@@ -13,16 +12,24 @@ keyboard:
 mobile:
   swipe: |
     Reads the progress bar
-    
+
 screenreader:
   name:  |
-    Purpose is clear
+    The progress bar's purpose is clear
   role:  |
-    Identifies itself as a progress bar or progress indicator
-  group: |
-    n/a
-  state: |
-    The current value is expressed live as it changes
+    It identifies itself as a progress bar or progress indicator
+  state:  |
+    It expresses its value if it dynamically changes
+
+gherkin-keyboard: 
+  - when:  |
+      the arrow key to browse to a progress bar
+    result: |
+      the progress bar comes into view
+
+gherkin-mobile:
+  - when:  |
+      swipe to browse to a progress bar
 ---
 
 ## Code examples
@@ -41,7 +48,6 @@ This semantic HTML contains all accessibility features by default.
 {% include /examples/progress-bar.html %}
 </example>
 {:/}
-
 
 ## Developer notes
 
