@@ -18,13 +18,27 @@ mobile:
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies itself as an input
+    It identifies itself as a text input
   group: |
-    Label is read with the input
+    It is indicated if the password is being shown
   state: |
-    The input can be required, disabled
+    If applicable, it expresses its state (required, disabled / dimmed / unavailable)
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to the password input
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the show/hide password feature
+    result: |
+      that the password is being shown
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a text input
 ---
 
 ## Code examples

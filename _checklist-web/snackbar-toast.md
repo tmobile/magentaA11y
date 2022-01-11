@@ -2,12 +2,11 @@
 layout: entry
 title:  "Toast Snackbar"
 description: "How to code and test an snackbar or toast for Web"
-
 categories: main form
 
 keyboard:
   tab: |
-    Focus visibly moves in logical order to the toast.
+    Focus visibly moves in logical order to buttons or links inside the toast
   space: |
     Any buttons inside are activated
   enter: |
@@ -21,22 +20,40 @@ mobile:
 
 screenreader:
   name:  |
-    The element announces its purpose or title
+    The toast is read when it appears (BUT focus DOES NOT transfer automatically when the toast appears)
   role:  |
-    Identifies itself as an alert or status
+    It identifies itself as an alert or status when it appears
   group: |
-    When closed, focus returns to a logical place in the page
+    If it is possible to close the toast, focus then returns to a logical place in the page
   state: |
-    Toast remains open until closed by user
-        
+    It remains open until closed by user
 
+gherkin-keyboard: 
+  - when:  |
+      use features that trigger the toast
+    result: |
+      the toast (BUT focus DOES NOT transfer automatically when the alert appears)
+
+gherkin-mobile:
+  - when:  |
+      use features that trigger the toast snackbar
 ---
+
+## Avoid using toast snackbars
+
+It's **exceedingly rare** that this is a good design choice and a more conventional HTML element shouldn't be used instead.
 
 ## Only use toast to reinforce updates
 
-Toast snackbars should only be used for non-critical messaging, and the status described should be discernable on the page.
+Toast snackbars should only be used for non-critical messaging, and the status described should be discernable on the page without the snackbar.
 
-For example, upon changing state of a toggle to unsubscribe from a list, the toast can reinforce the change has been saved, but the user can also confirm this from the toggle itself.
+### Practical example
+
+Given that I am on a dyamic single page app
+
+- WHEN the customer changes the state of a toggle to OFF
+- THEN the toast appears to _reinforce_ that the change has been saved
+- AND the customer can **also** confirm this is true from the toggle itself
 
 ## Do not use toast for critical functionality
 

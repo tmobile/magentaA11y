@@ -21,13 +21,31 @@ mobile:
 
 screenreader:
   name:  |
-    Label describes input
+    Its purpose is clear
   role:  |
-    Identifies itself as a search input
+    It identifies itself as a search input
   group: |
-    Form identifies itself as search group
-  state: |
-    n/a
+    The form itself is discoverable with screenreader shortcuts as search landmark
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a search input
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the tab key to move focus to the search submit button
+    result: |
+      the button is focused
+  - then:  |
+      the enter or spacebar key
+    result: |
+      the search results are presented
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a search input
+
+
 ---
 
 ## Code examples
