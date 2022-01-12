@@ -3,7 +3,6 @@
   z-index: 99;
   @extend .hidden;
   background: none;
-  text-align: center;
   &:focus-within {
     @extend .visible;
   }

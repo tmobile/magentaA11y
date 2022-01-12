@@ -9,7 +9,6 @@ main {
   margin: 0 auto;
   padding-right: $gutter/2;
   padding-left: $gutter/2;
-
   &.narrow {
     max-width: $break-small;
   }
@@ -37,6 +36,11 @@ main {
 
 .post-content {
   margin-bottom: 2rem;
+
+  &.narrow {
+    max-width: $break-small;
+  }
+
 }
 
 .billboard {

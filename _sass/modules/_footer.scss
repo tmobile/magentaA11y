@@ -2,12 +2,12 @@ footer {
   @extend .container;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  text-align: center;
   margin-bottom: 3rem;
 
   nav {
     ul {
       display: block;
+      margin-left: -1rem;
       li {
         display: inline-block;
       }

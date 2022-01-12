@@ -11,6 +11,11 @@
 }
 
 @font-face {
+  font-family: 'teleneo-thin';
+  src: url('#{$baseUrl}/assets/fonts/teleneo-thin.woff2') format('truetype');
+}
+
+@font-face {
   font-family: 'teleneo';
   src: url('#{$baseUrl}/assets/fonts/teleneo-regular.woff2') format('truetype');
 }
@@ -37,14 +42,15 @@
 
 
 
-$sans:      "teleneo-medium";
-$sans-bold: "teleneo-bold";
-$serif:     "monospace";
-$display:   "teleneo-xtra-bold";
+$sans:       "teleneo-medium";
+$sans-light: "teleneo-thin";
+$sans-bold:  "teleneo-bold";
+$serif:      "monospace";
+$display:    "teleneo-xtra-bold";
 
 
 @mixin light {
-  font-family: $sans, sans-serif;
+  font-family: $sans-light, sans-serif;
   font-weight: 300;
   font-style: normal;
 }
