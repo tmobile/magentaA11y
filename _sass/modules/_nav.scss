@@ -31,7 +31,7 @@ nav {
     margin-bottom: -1px;
     text-decoration: none;
     position: relative;
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1rem;
     border: none;
     @include regular;
@@ -62,6 +62,10 @@ nav {
     &:focus {
       text-decoration: none ;
     }
+    &.home {
+      background-color: $color-brand-primary;
+      color: #fff;
+    }
   }
 
   .expander-group {
@@ -83,6 +87,7 @@ nav {
       }
     }
     .expander-toggle {
+      font-size: 1.125rem !important;
       &[aria-expanded="true"] {
         border-bottom: none;
       }
