@@ -4,6 +4,7 @@ _config.yml
 .jekyll-cache
 .jekyll-metadata
 vendor
+CNAME
 Icon[
 ]
 .DS_Store
