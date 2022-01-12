@@ -9,7 +9,7 @@
     - {{ site.title }}
   </title>
   {% seo title=false description=false %}
-  {% if site.url == "https://www.magentaa11y.com" %}
+  {% if jekyll.environment == "production" %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css?{{site.time | date: '%s'}}">
   {% else %}
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/main-dev.css?{{site.time | date: '%s'}}">
