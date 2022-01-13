@@ -8,49 +8,38 @@ input[type="checkbox"].radio,
     &:before {
       content: '';
       display: block;
-      width: calc(2rem - 2px);
-      height: calc(2rem - 2px);
-      border: 2px solid $color-gray-dark;
+      width: 2rem;
+      height: 2rem;
       border-radius: 100%;
       position: absolute;
-      left: 1.125rem;
+      left: 1rem;
       top: 1rem;
       background: #f2f2f2;
       transition: .4s;
+      box-shadow: inset 0 0 0 .25rem $color-brand-primary, inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba($color-focus,0);
     }
 
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      border-radius: 100%;
-      width: 1.5rem;
-      height: 1.5rem;
-      left: calc(1.5rem - 1px);
-      top: calc(1.5rem - 3px);
-      background: $color-gray-light;
-      transition: .4s;
-    }
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   border-radius: 100%;
+    //   width: 1.5rem;
+    //   height: 1.5rem;
+    //   left: calc(1.5rem - 1px);
+    //   top: calc(1.5rem - 3px);
+    //   background: $color-gray-light;
+    //   transition: .4s;
+    // }
   }
-  &:checked {
-    + label,
-    .label.fake-radio.checked {
-      &:before {
-        border-color: $color-brand-primary;
-      }
-      &:after {
-        content: '';
-        background: $color-brand-primary;
-      }
-    }
-  }
+
   + label:hover:before,
   &:focus + label:before {
     background: none;
-    box-shadow: 0 0 0rem .5rem rgba($color-focus,.2);
+    box-shadow: inset 0 0 0 .325rem $color-brand-primary, inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba($color-focus,.2);
   }
   &:active + label:before {
-    box-shadow: 0 0 0rem .75rem rgba($color-focus,.4);
+    box-shadow: inset 0 0 0 .5rem $color-brand-primary, inset 0 0 0rem .5rem transparent, 0 0 0rem .75rem rgba($color-focus,.4);
   }
 
   &.horizontal {
@@ -59,7 +48,24 @@ input[type="checkbox"].radio,
       width: auto;
     }
   }
-
+  &:checked {
+    + label,
+    .label.fake-radio.checked {
+      &:before {
+        background-color: $color-brand-primary;
+        box-shadow: inset 0 0 0 .25rem $color-brand-primary, inset 0 0 0rem .5rem #fff, 0 0 0rem 0 rgba($color-focus,.4);
+      }
+      // &:after {
+      //   content: '';
+      //   background: $color-brand-primary;
+      // }
+    }
+    &:active + label:before {
+      background-color: $color-brand-primary;
+      box-shadow: inset 0 0 0 .25rem $color-brand-primary, inset 0 0 0rem .5rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
+    }
+  }
+  
   &.tabs {
     @extend .horizontal;
     + label {
