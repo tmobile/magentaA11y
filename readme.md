@@ -33,7 +33,9 @@ These testing criteria are displayed in markdown format for easy copying/pasting
 
 ## Contribute 
 
-Here are some ways to contribute:
+MagentaA11y is built and maintained by the [T-Mobile Accessibility Resource Center](https://github.com/tmobile/magentaA11y/graphs/contributors)
+
+### Here are some ways to contribute:
 
 - Add a concise video using a screen reader that's not yet have covered.
 - Add an entry for a component that is not included.

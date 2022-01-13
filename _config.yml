@@ -21,7 +21,7 @@
 title: MagentaA11y
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Accessibility acceptance success criteria testing checklist.
+  Accessibility acceptance criteria testing checklist generator by T-Mobile - Accessibility Resource Center.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.magentaa11y.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
