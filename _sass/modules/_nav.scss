@@ -79,6 +79,8 @@ nav {
         margin-right: .25rem; 
         padding-left: 1rem;
         padding-right: 1rem;
+        transition: .2s;
+        outline: 0 solid transparent;
 
         @include break(500px) {
           font-size: 1.5rem;
@@ -86,6 +88,9 @@ nav {
           padding-right: 2rem;
           margin-right: 1rem;
           @include light;
+        }
+        &:hover {
+          outline: .25rem solid $color-brand-primary;
         }
       }
 

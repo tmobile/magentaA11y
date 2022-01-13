@@ -18,19 +18,6 @@ input[type="checkbox"].radio,
       transition: .4s;
       box-shadow: inset 0 0 0 .25rem $color-brand-primary, inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba($color-focus,0);
     }
-
-    // &:after {
-    //   content: '';
-    //   display: block;
-    //   position: absolute;
-    //   border-radius: 100%;
-    //   width: 1.5rem;
-    //   height: 1.5rem;
-    //   left: calc(1.5rem - 1px);
-    //   top: calc(1.5rem - 3px);
-    //   background: $color-gray-light;
-    //   transition: .4s;
-    // }
   }
 
   + label:hover:before,
@@ -80,16 +67,20 @@ input[type="checkbox"].radio,
       }
       &:after {
         display: block;
+        position: absolute;
+        content: '';
         width: calc(100% + .325rem);
-        height: .25rem;
+        height: 1px;
         border-radius: 0;
         background: $color-brand-primary;
         bottom: 0;
         left: 0;
+        transition: .4s;
         top: auto;
       }
     }
-    &:checked + label {
+    &:checked + label,
+    + label:hover {
       &:after {
         height: .5rem;
         background: $color-brand-primary;
