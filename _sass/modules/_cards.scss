@@ -14,7 +14,7 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
     .card {
-      border-bottom: .25rem solid $color-brand-primary;
+      //border-bottom: .25rem solid $color-brand-primary;
       @include break($break-mid) {
         grid-row: 1/3;
       } 
@@ -33,8 +33,6 @@
         grid-row: 2;
       } 
     }
-
-
   }
 
   .card {
@@ -88,6 +86,26 @@
       @include headline;
       align-self: center stretch;
       width: 100%;
+      position: relative;
+      &:after {
+        transition: .4s;
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0rem;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        border-radius: 0 0 2px 2px;
+        background: $color-brand-primary;
+      }
+      &:hover,
+      &:focus {
+        &:after {
+          content: '';
+          height: .5rem;
+        }
+    }
 
       svg {
         display: block;
@@ -98,7 +116,8 @@
         display: block;
         font-size: 1rem;
         font-weight: normal;
-        @include regular;
+        color: $color-brand-primary;
+        @include headline;
       }
     }
 

@@ -1,27 +1,10 @@
 nav {
   display: grid;
   margin: 0rem auto 2rem auto;
-  text-align: center;
   position: relative;
   border-radius: 2px;
   padding-bottom: 0;
   z-index: 999;
-
-  ul {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding: 0;
-    margin: 1em auto 0 auto;
-    width: 100%;
-
-    li {
-      list-style: none;
-      display: block;
-      margin: 0;
-      padding: 0;
-    }
-  }
 
   a,
   button.expander-toggle {
@@ -34,24 +17,24 @@ nav {
     font-size: 1rem;
     line-height: 1rem;
     border: none;
-    @include regular;
     @include break($break-mid) {
+      font-size: 1.125rem;
       padding: 1.5rem 1rem 1.5rem 1rem;
-
     }
 
     &:after {
       content: '';
       display: block;
       position: absolute;
-      bottom: -.25rem;
+      bottom: 0rem;
       left: 0;
       width: 100%;
-      height: .25rem;
+      height: 1px;
+      transition: .4s;
       background: $color-brand-primary;
     }
     &[aria-current="page"],
-    &.current {
+    &.current, {
       @include headline;
       &:after {
         content: '';
@@ -60,7 +43,69 @@ nav {
     }
     &:hover,
     &:focus {
-      text-decoration: none ;
+      text-decoration: none;
+      &:after {
+        content: '';
+        height: .5rem;
+      }
+    }
+  }
+
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content max-content max-content;
+    //justify-content: center;
+    position: relative;
+    padding: 0;
+    margin: 1em auto 0 auto;
+    width: 100%;
+    @include break($break-mid) {
+      display: flex;
+    }
+
+    li {
+      list-style: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+      @include regular;
+
+      &.home a {
+        display: inline-block;
+        background-color: $color-brand-primary;
+        color: #fff;
+        @include regular;
+        margin-right: .25rem; 
+        padding-left: 1rem;
+        padding-right: 1rem;
+        transition: .2s;
+        outline: 0 solid transparent;
+
+        @include break(500px) {
+          font-size: 1.5rem;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          margin-right: 1rem;
+          @include light;
+        }
+        &:hover {
+          outline: .25rem solid $color-brand-primary;
+        }
+      }
+
+      &.bravo {
+        display: none;
+        @include break($break-small) {
+          display: block;
+        }
+      }
+      &.expander-group {
+        @include break($break-small) {
+          display: none;
+        }
+
+      }
     }
   }
 
@@ -83,6 +128,7 @@ nav {
       }
     }
     .expander-toggle {
+      font-size: 1.125rem;
       &[aria-expanded="true"] {
         border-bottom: none;
       }
@@ -91,7 +137,7 @@ nav {
       position: absolute;
       width: 100%;
       left: 0;
-      top: 4.25rem;
+      top: 4rem;
       margin: 0;
       padding: 0 !important;
       border: none;

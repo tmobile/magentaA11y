@@ -6,7 +6,7 @@ categories: form
 
 keyboard:
   tab: |
-    Focus moves visibly to the input unless it's disabled.
+    Focus moves visibly to the input unless it's disabled
       
 mobile:
   swipe: |
@@ -22,7 +22,7 @@ screenreader:
   group: |
     Hints or errors are read after the label, related inputs include a group name (Ex: Enter your personal information)
   state: |
-    It expresses its state (required, disabled/dimmed/unavailable)
+    If applicable, it expresses its state (required, disabled / dimmed / unavailable)
 
 gherkin-keyboard: 
   - when:  |

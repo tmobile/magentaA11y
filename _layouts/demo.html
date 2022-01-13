@@ -2,11 +2,13 @@
 layout: default
 ---
 <article>
-  <div class="container post-content narrow">
+  <div class="container">
     <h1 class="h-alpha">{{ page.title | escape }}</h1>
-    {{ content }}
+    <div class="post-content narrow">
+      {{ content }}
+    </div>
   </div>
-  <ul class="container narrow">
+  <ul class="container">
     <li><a class="" href="{{ site.baseurl }}/checklist-web/{{ page.slug }}/">{{ page.title | escape }} success criteria</a></li>
     <li><a class="" href="#content">Back to top of page</a></li>
   </ul>

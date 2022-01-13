@@ -12,7 +12,7 @@ keyboard:
   enter: |
     Activates the control button
   arrow-keys: |
-    Fast forward/reverse media or operate some controls
+    Fast forward/reverse media
           
 mobile:
   swipe: |
@@ -22,13 +22,36 @@ mobile:
 
 screenreader:
   name:  |
-    Content is described by a heading or named on focus; button purpose is clear
+    The video control purpose is clear (play, pause, stop)
   role:  |
-    Controls identify as buttons, switches, etc.
+    Video controls identify as button, switch etc.
   group: |
-    Includes captions and a HTML based transcript
+    Audio content never autoplays
   state: |
-    Media should almost never autoplay
+    It expresses it state if applicable (pressed, expanded, disabled)
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a control
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the spacebar and/or enter key to activate the button
+    result: |
+      the intended action occurs
+  - then:  |
+      the arrow keys (left/right)
+    result: |
+      the media fast forwards/reverses
+
+gherkin-mobile:
+  - when:  |
+      swipe to move focus to a video control
+  - then:  |
+      doubletap with the video control in focus
+    result: |
+      the intended action occurs
+
 ---
 
 ## Do not autoplay
@@ -45,7 +68,7 @@ Let people choose if they're subjected to video content.
 
 - Media with audio should absolutely **never** autoplay
 - Just because a video contains controls to stop the video doesn't mean it's okay to autoplay
-- [Use case: When is it okay for video to autoplay?](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+  - [**Example**: When is it okay for video _and_ audio to autoplay?](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 - Silent video can autoplay under these conditions:
   - It must stop after 5 seconds 
   - The video features accessible controls

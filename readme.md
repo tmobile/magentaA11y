@@ -1,6 +1,6 @@
-# About A11yEngineer
+# About MagentaA11y
 
-A11yEngineer is a tool built to simplify the process of accessibility testing. 
+MagentaA11y is a tool built to simplify the process of accessibility testing. 
 
 We wanted to build an intuitive way for product teams to define "done" in a way that ensures accessible experiences work for everyone.
 
@@ -11,7 +11,7 @@ It uses Jekyll with a custom theme as a CMS and relies on markdown for entry cre
 - This is not a comprehensive list of all of the WCAG success criteria or techniques required to become WCAG compliant and should not be used as such.
 - Adherence to this list also does not guarantee that a digital asset will be free from accessibility issues or complaints.
 
-## Using A11yEngineer
+## Using MagentaA11y
 
 Product owners, designers, developers or testers can use the checklist builder to collect testing instructions for web or native app components.
 
@@ -52,4 +52,4 @@ A11yEngineer is just Github Pages site running Jekyll. Follow Github's instructi
 
 ## License
 
-A11yEngineer is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
+MagentaA11y is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
