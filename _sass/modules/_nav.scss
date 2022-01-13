@@ -14,10 +14,11 @@ nav {
     margin-bottom: -1px;
     text-decoration: none;
     position: relative;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1rem;
     border: none;
     @include break($break-mid) {
+      font-size: 1.125rem;
       padding: 1.5rem 1rem 1.5rem 1rem;
     }
 
@@ -52,12 +53,16 @@ nav {
 
 
   ul {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr max-content max-content max-content max-content;
     //justify-content: center;
     position: relative;
     padding: 0;
     margin: 1em auto 0 auto;
     width: 100%;
+    @include break($break-mid) {
+      display: flex;
+    }
 
     li {
       list-style: none;
@@ -67,6 +72,7 @@ nav {
       @include regular;
 
       &.home a {
+        display: inline-block;
         background-color: $color-brand-primary;
         color: #fff;
         @include regular;
@@ -74,7 +80,7 @@ nav {
         padding-left: 1rem;
         padding-right: 1rem;
 
-        @include break($break-mid) {
+        @include break(500px) {
           font-size: 1.5rem;
           padding-left: 2rem;
           padding-right: 2rem;
@@ -117,7 +123,7 @@ nav {
       }
     }
     .expander-toggle {
-      font-size: 1.125rem !important;
+      font-size: 1.125rem;
       &[aria-expanded="true"] {
         border-bottom: none;
       }
@@ -126,7 +132,7 @@ nav {
       position: absolute;
       width: 100%;
       left: 0;
-      top: 4.25rem;
+      top: 4rem;
       margin: 0;
       padding: 0 !important;
       border: none;
