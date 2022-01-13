@@ -23,10 +23,10 @@ input[type="checkbox"] {
       display: block;
       position: absolute;
       border-radius: .125rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      left: 1.25rem;
-      top: 1.25rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      left: 1.125rem;
+      top: 1.125rem;
       font-size: 0rem;
       line-height: 1.5rem;
       font-weight: normal;
@@ -56,6 +56,7 @@ input[type="checkbox"] {
       &:before {
         content: '';
         font-size: 1.9rem;
+        transition: 0s;
         text-align: center;
         box-shadow: 0 0 0 0 $color-brand-primary, 0 0 0rem .5rem rgba($color-focus,0);
         background-color: $color-brand-primary;
