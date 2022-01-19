@@ -22,7 +22,7 @@ screenreader:
   name:  |
     Its purpose is clear
   role:  |
-    It identifies itself as a select, popup, menu/submenu or listbox
+    It identifies itself as a select, popup, menu/submenu, listbox or combobox
   group: |
     Its label is read with the option
   state: |
