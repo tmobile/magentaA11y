@@ -81,6 +81,7 @@ nav {
         padding-right: 1rem;
         transition: .2s;
         outline: 0 solid transparent;
+        border-radius: 2px;
 
         @include break(500px) {
           font-size: 1.5rem;
@@ -90,7 +91,7 @@ nav {
           @include light;
         }
         &:hover {
-          outline: .25rem solid $color-brand-primary;
+          outline: .5rem solid rgba($color-brand-primary, .5);
         }
       }
 
