@@ -1,161 +1,159 @@
 ---
 layout: default
 ---
-<article>
-  <div class="billboard" style="background: url('{{ site.baseurl }}/assets/images/backgrounds/assistive-technology-bg.png')">
-    <div class="container group-2-1">
-      <div>
-        <h1 class="h-alpha">{{ page.title | escape }}</h1>
-        <p class="h-bravo subhead">
-          This basic web page demonstrates how a screen reader consumes headings, forms and interactive elements.
-        </p>
-      </div>
-      <div class="lowlight center-text">
-        <h2 class="h-delta">
-          We want to know your favorite screen reader.
-        </h2>
-        <a href="#favorites" class="button">
-          Screen reader survey
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="container">
-    <h2 class="h-bravo center-text">
-      Broad categories of disabilities
-    </h2>
-  </div>
-
-  <div class="container section group-4">
-    <div class="display-list">
-      <h3 class="h-charlie center-text">
-        <img src="{{ site.baseurl }}/assets/images/icons/icon-pointer.svg"
-             role="img"
-             alt=""
-             class="icon icon-large">
-        Motor
-      </h3>
-      <p>
-        Not everyone uses a mouse or taps their screen.
-        Some people exclusively use a keyboard or custom switch input devices.
+<div class="billboard" style="background: url('{{ site.baseurl }}/assets/images/backgrounds/assistive-technology-bg.png')">
+  <div class="container group-2-1">
+    <div>
+      <h1 class="h-alpha">{{ page.title | escape }}</h1>
+      <p class="h-bravo subhead">
+        This basic web page demonstrates how a screen reader consumes headings, forms and interactive elements.
       </p>
     </div>
-
-
-    <div class="display-list">
-      <h3 class="h-charlie center-text">
-        <img src="{{ site.baseurl }}/assets/images/icons/icon-vision.svg"
-             role="img"
-             alt=""
-             class="icon icon-large">
-        Vision
-      </h3>
-      <p>
-        People who are blind or low vision use the internet using a screen reader or extreme zoom tools.
-      </p>
-    </div>
-
-    <div class="display-list">
-      <h3 class="h-charlie center-text">
-        <img src="{{ site.baseurl }}/assets/images/icons/icon-hearing.svg"
-             role="img"
-             alt=""
-             class="icon icon-large">
-        Hearing
-      </h3>
-      <p>
-        Some people rely on captions or transcripts to consume audio or video.
-      </p>
-    </div>
-
-    <div class="display-list">
-      <h3 class="h-charlie center-text">
-        <img src="{{ site.baseurl }}/assets/images/icons/icon-brain.svg"
-             role="img"
-             alt=""
-             class="icon icon-large">
-        Cognitive
-      </h3>
-      <p>
-        There is a wide range of cognitive differences that can be accommodated by design and code.
-      </p>
+    <div class="lowlight center-text">
+      <h2 class="h-delta">
+        We want to know your favorite screen reader.
+      </h2>
+      <a href="#favorites" class="button">
+        Screen reader survey
+      </a>
     </div>
   </div>
 
+</div>
 
-  <div class="container section narrow">
-    <h2 class="h-bravo">
-      Common questions
-    </h2>
 
-    <details>
-      <summary>
-        Are all projects in scope?
-      </summary>
-      Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible.
-      This includes customer and employee facing applications.
-    </details>
+<div class="container">
+  <h2 class="h-bravo center-text">
+    Broad categories of disabilities
+  </h2>
+</div>
 
-    <details>
-      <summary>
-        Who does this really affect?
-      </summary>
-      Over 1/4 of the US population has a disability that requires assistive technology or accommodation.
-    </details>
-
-    <details>
-      <summary>
-        How do we test our products?
-      </summary>
-     <ol>
-       <li>Test with the keyboard only</li>
-       <li>
-         Test with the mobile screenreader
-       </li>
-       <li>
-         Test with the desktop screenreader
-       </li>
-     </ol>
-    </details>
+<div class="container section group-4">
+  <div class="display-list">
+    <h3 class="h-charlie center-text">
+      <img src="{{ site.baseurl }}/assets/images/icons/icon-pointer.svg"
+            role="img"
+            alt=""
+            class="icon icon-large">
+      Motor
+    </h3>
+    <p>
+      Not everyone uses a mouse or taps their screen.
+      Some people exclusively use a keyboard or custom switch input devices.
+    </p>
   </div>
 
-  <div class="container narrow">
-    <h2 id="favorites" class="h-bravo">
-      Survey: Which is your favorite screen reader
-    </h2>
 
-    <form aria-labelledby="favorites">
-      <fieldset>
-        <legend>
-          Choose your favorite screen reader
-        </legend>
-
-        <input type="radio" name="nato" id="alphaRadio" checked>
-        <label for="alphaRadio">VoiceOver for iOS</label>
-
-        <input type="radio" name="nato" id="bravoRadio">
-        <label for="bravoRadio">Talkback for Android</label>
-
-        <input type="radio" name="nato" id="charlieRadio">
-        <label for="charlieRadio">NVDA for Windows</label>
-
-        <input type="radio" name="nato" id="deltaRadio">
-        <label for="deltaRadio">JAWS for Windows</label>
-
-        <input type="radio" name="nato" id="echoRadio">
-        <label for="echoRadio">VoiceOver for MacOS</label>
-      </fieldset>
-
-      <div role="alert" class="alert inert">
-      </div>
-
-      <button type="button" id="submit-response">
-        Submit
-      </button>
-    </form>
-
+  <div class="display-list">
+    <h3 class="h-charlie center-text">
+      <img src="{{ site.baseurl }}/assets/images/icons/icon-vision.svg"
+            role="img"
+            alt=""
+            class="icon icon-large">
+      Vision
+    </h3>
+    <p>
+      People who are blind or low vision use the internet using a screen reader or extreme zoom tools.
+    </p>
   </div>
-</article>
+
+  <div class="display-list">
+    <h3 class="h-charlie center-text">
+      <img src="{{ site.baseurl }}/assets/images/icons/icon-hearing.svg"
+            role="img"
+            alt=""
+            class="icon icon-large">
+      Hearing
+    </h3>
+    <p>
+      Some people rely on captions or transcripts to consume audio or video.
+    </p>
+  </div>
+
+  <div class="display-list">
+    <h3 class="h-charlie center-text">
+      <img src="{{ site.baseurl }}/assets/images/icons/icon-brain.svg"
+            role="img"
+            alt=""
+            class="icon icon-large">
+      Cognitive
+    </h3>
+    <p>
+      There is a wide range of cognitive differences that can be accommodated by design and code.
+    </p>
+  </div>
+</div>
+
+
+<div class="container section narrow">
+  <h2 class="h-bravo">
+    Common questions
+  </h2>
+
+  <details>
+    <summary>
+      Are all projects in scope?
+    </summary>
+    Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible.
+    This includes customer and employee facing applications.
+  </details>
+
+  <details>
+    <summary>
+      Who does this really affect?
+    </summary>
+    Over 1/4 of the US population has a disability that requires assistive technology or accommodation.
+  </details>
+
+  <details>
+    <summary>
+      How do we test our products?
+    </summary>
+    <ol>
+      <li>Test with the keyboard only</li>
+      <li>
+        Test with the mobile screenreader
+      </li>
+      <li>
+        Test with the desktop screenreader
+      </li>
+    </ol>
+  </details>
+</div>
+
+<div class="container narrow">
+  <h2 id="favorites" class="h-bravo">
+    Survey: Which is your favorite screen reader
+  </h2>
+
+  <form aria-labelledby="favorites">
+    <fieldset>
+      <legend>
+        Choose your favorite screen reader
+      </legend>
+
+      <input type="radio" name="nato" id="alphaRadio" checked>
+      <label for="alphaRadio">VoiceOver for iOS</label>
+
+      <input type="radio" name="nato" id="bravoRadio">
+      <label for="bravoRadio">Talkback for Android</label>
+
+      <input type="radio" name="nato" id="charlieRadio">
+      <label for="charlieRadio">NVDA for Windows</label>
+
+      <input type="radio" name="nato" id="deltaRadio">
+      <label for="deltaRadio">JAWS for Windows</label>
+
+      <input type="radio" name="nato" id="echoRadio">
+      <label for="echoRadio">VoiceOver for MacOS</label>
+    </fieldset>
+
+    <div role="alert" class="alert inert">
+    </div>
+
+    <button type="button" id="submit-response">
+      Submit
+    </button>
+  </form>
+
+</div>

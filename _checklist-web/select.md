@@ -74,6 +74,7 @@ This native select contains all the accessibility criteria for free and is style
 Custom dropdown selects are [notoriously difficult](https://www.24a11y.com/2019/select-your-poison/) to make screen reader accessible. 
 
 > …it is now thoroughly clear that recreating the native behavior of a `<select>` element is impossible: its underlying semantics differ across platforms; its keyboard behavior is inconsistent; its mobile presentation and behavior is entirely different from desktop. In making a custom UI control, we take upon ourselves what was the browser’s responsibility to define semantics, presentation, and behavior, and this means we must choose one single implementation to serve to everyone.
+> — [Sarah Higley](https://www.24a11y.com/2019/select-your-poison/), Web Developer at Microsoft
 
 Even Angular Material documentation says "The native `<select>` offers the best accessibility because it is supported directly by screen-readers."
 
@@ -81,7 +82,7 @@ Angular material custom listbox requires the Live Announcer overlay to be access
 
 > Angular Material also supports use of the native `<select>` element inside of `<mat-form-field>`. The native control has several performance, accessibility, and usability advantages.
 
-Before you attempt to use one of these, be certain a native `<select>` is not an option and you understand the commitment.
+Before you attempt to use one of these, be certain a native `<select>` is not an option and you understand the commitment for coding and testing across all platforms.
 
 ## Further reading
 
