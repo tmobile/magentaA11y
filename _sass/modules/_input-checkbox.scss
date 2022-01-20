@@ -1,22 +1,6 @@
-
-
 input[type="checkbox"] {
   + label {
     padding-left: 4rem;
-    // &:before {
-    //   content: '';
-    //   display: block;
-    //   width: calc(2rem - 2px);
-    //   height: calc(2rem - 2px);
-    //   border: 2px solid $color-gray-dark;
-    //   border-radius: .25rem;
-    //   position: absolute;
-    //   left: 1.125rem;
-    //   top: 1rem;
-    //   background-color: #f2f2f2;
-    //   transition: .2s;
-    // }
-
     &:before {
       content: '';
       color: #fff;
@@ -50,9 +34,6 @@ input[type="checkbox"] {
   }
   &:checked {
     + label {
-      // &:before {
-      //   border-color: $color-brand-primary;
-      // }
       &:before {
         content: '';
         font-size: 1.9rem;
