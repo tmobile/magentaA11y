@@ -116,7 +116,7 @@
 
 @mixin ripple($background: #fff, $ripple: #eee, $position-x: 10%, $position-y: center) {
   background-position: $position-x $position-y;
-  transition: background 5s;
+  transition: background 1s;
   &:hover {
     background: $background radial-gradient(circle at $position-x $position-y, transparent 1%,  $background 1%) $position-x $position-y/15000%;
   }
