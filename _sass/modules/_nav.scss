@@ -101,7 +101,7 @@ nav {
           display: block;
         }
       }
-      &.expander-group {
+      &.expander-group.site-sub-group {
         @include break($break-small) {
           display: none;
         }
