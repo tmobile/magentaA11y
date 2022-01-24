@@ -2,37 +2,35 @@
 layout: default
 ---
 
-<article>
-  <div class="container">
-    <h1 class="h-alpha">
-      {{ page.title | escape }}
-    </h1>
-  </div>
-  <div class="container post-content">
-    {{ content }}
-  </div>
-  <div class="container">
-    <form>
-      <div class="success-criteria-maker">
-        <div class="checklist-container">
-          {% assign ordered_pages = site.checklist-web | sort: "title" | sort: "order" %}
+<div class="container">
+  <h1 class="h-alpha">
+    {{ page.title | escape }}
+  </h1>
+</div>
+<div class="container post-content">
+  {{ content }}
+</div>
+<div class="container">
+  <form>
+    <div class="success-criteria-maker">
+      <div class="checklist-container">
+        {% assign ordered_pages = site.checklist-web | sort: "title" | sort: "order" %}
 
-          {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
-          {% for category in site.web-categories-order %}
-            <details class="checklist-details" open>
-              <summary id="{{ category | escape }}-category-title">
-                <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
-              </summary>
-                <ul role="group" aria-labelledby="{{ category | escape }}-category-title">
-                  {% for page in ordered_pages %}
-                  {% include checklist-loop.html %}
-                  {% endfor %}
-                </ul>
-            </details>
-          {% endfor %}
-        </div>
-        {% include criteria-textarea.html %}
+        {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
+        {% for category in site.web-categories-order %}
+          <details class="checklist-details" open>
+            <summary id="{{ category | escape }}-category-title">
+              <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
+            </summary>
+              <ul role="group" aria-labelledby="{{ category | escape }}-category-title">
+                {% for page in ordered_pages %}
+                {% include checklist-loop.html %}
+                {% endfor %}
+              </ul>
+          </details>
+        {% endfor %}
       </div>
-    </form>
-  </div>
-</article>
+      {% include criteria-textarea.html %}
+    </div>
+  </form>
+</div>

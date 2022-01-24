@@ -2,37 +2,36 @@
 layout: default
 ---
 
-<article>
-  <div class="container">
-    <h1 class="h-alpha">
-      {{ page.title | escape }}
-    </h1>
-  </div>
-  <div class="container post-content">
-    {{ content }}
-  </div>
-  <div class="container">
-    <form>
-      <div class="success-criteria-maker">
-        <div class="checklist-container">
-          {% assign categories = site.checklist-native | map: 'categories' | join: ',' | split: ',' | uniq %}
-          {% for category in site.native-categories-order %}
-          <details class="checklist-details" open>
-            <summary id="{{ category | escape }}-category-title">
-              {{ category | capitalize }}
-            </summary>
-            <div role="group" aria-labelledby="{{ category | escape }}-category-title">
-              <ul>
-                {% for page in site.checklist-native %}
-                {% include checklist-loop.html %}
-                {% endfor %}
-              </ul>
-            </div>
-          </details>
-          {% endfor %}
-        </div>
-        {% include criteria-textarea.html %}
+
+<div class="container">
+  <h1 class="h-alpha">
+    {{ page.title | escape }}
+  </h1>
+</div>
+<div class="container post-content">
+  {{ content }}
+</div>
+<div class="container">
+  <form>
+    <div class="success-criteria-maker">
+      <div class="checklist-container">
+        {% assign categories = site.checklist-native | map: 'categories' | join: ',' | split: ',' | uniq %}
+        {% for category in site.native-categories-order %}
+        <details class="checklist-details" open>
+          <summary id="{{ category | escape }}-category-title">
+            {{ category | capitalize }}
+          </summary>
+          <div role="group" aria-labelledby="{{ category | escape }}-category-title">
+            <ul>
+              {% for page in site.checklist-native %}
+              {% include checklist-loop.html %}
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
+        {% endfor %}
       </div>
-    </form>
-  </div>
-</article>
+      {% include criteria-textarea.html %}
+    </div>
+  </form>
+</div>

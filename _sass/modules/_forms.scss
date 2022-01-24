@@ -126,27 +126,26 @@ input[type=radio],
   @extend .hidden;
   + label,
   + .label {
+    @include ripple;
     display: block;
     padding: 1.5rem 2rem 1.325rem 4rem;
     line-height: 1.25rem;
     width: 100%;
     background: #fff;
     margin: 0;
-    color: $color-gray-xtra-dark;
+    color: $color-text;
     position: relative;
     font-weight: bold;
     cursor: pointer;
     background-position: 10% center;
     transition: background .8s;
     -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
-    @include ripple;
   }
 
   &:checked + label {
     color: #000;
   }
   &:focus-visible + label {
-    color: $color-brand-primary;
     z-index: 9;
     @extend .focused;
   }
