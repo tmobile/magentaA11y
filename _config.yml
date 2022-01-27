@@ -27,7 +27,7 @@ url: "https://www.magentaa11y.com" # the base hostname & protocol for your site,
 twitter_username:
 github_username:
 google_analytics:
-  $ANALYTICS_ACCT
+  ${{ secrets.ANALYTICS_ACCT }}
 # Build settings
 theme: minima
 plugins:
