@@ -186,15 +186,13 @@ $("#test-case-wrapper").on('toggle', function() {
 
     $("nav").after('<button tabindex="-1" id="nav" class="test-case-flag">Navigation</button>');
     
-    $("form").after('<button tabindex="-1" id="form" class="test-case-flag">Form</button>');
-
     $(".expander-toggle").after('<button tabindex="-1" id="expander" class="test-case-flag">Expander</button>');
 
-    $(".fake-radio").first().after('<button tabindex="-1" id="radio" class="test-case-flag">Radio input</button>').css("position", "relative");;
+    $(".fake-radio").first().after('<button tabindex="-1" id="radio" class="test-case-flag">Radio input</button>');
     
     $(".test-case-flag").click(function() {
         // Close all details
-        $(".acceptance-criteria").removeAttr("open");  
+        $(".acceptance-criteria").removeAttr("open");
         // Get the id
     
         var id = $(this).attr('id');
