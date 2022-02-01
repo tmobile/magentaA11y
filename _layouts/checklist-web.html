@@ -18,7 +18,7 @@ layout: default
 
         {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
         {% for category in site.web-categories-order %}
-          <details class="checklist-details" open>
+          <details id="{{ category | escape }}-details" class="checklist-details" open>
             <summary id="{{ category | escape }}-category-title">
               <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
             </summary>

@@ -205,3 +205,46 @@ $("#test-case-wrapper").on('toggle', function() {
 
 });
 
+// Store details state and favorites
+
+var formValues = JSON.parse(localStorage.getItem('formValues')) || {};
+
+var $checkboxes = $(".checklist-container :checkbox");
+
+var $details = $(".checklist-container details");
+
+var $button = $("#checkbox-container button");
+
+function allOpen(){
+    return $details.length === $details.open;
+}
+
+function updateStorage(){
+//   $checkboxes.each(function(){
+//     formValues[this.id] = this.checked;
+//   });
+
+  $details.each(function(){
+    formValues[this.id] = this.open;
+  });
+
+  localStorage.setItem("formValues", JSON.stringify(formValues));
+
+  console.log(formValues);
+}
+
+// $checkboxes.on("change", function(){
+//     updateStorage();
+// });
+
+$details.on("toggle", function() {
+    updateStorage();
+});
+
+
+// On page load
+$.each(formValues, function(key, value) {
+//   $("#" + key).prop('checked', value);
+  $("#" + key).prop('open', value);
+  console.log(key, value);
+});
