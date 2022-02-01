@@ -43,7 +43,7 @@ input[type="checkbox"] {
     }
     &:active + label:before {
       transition:  .2s;
-      box-shadow: inset 0 0 0 0rem $color-brand-primary, 0 0 0rem .75rem rgba($color-focus,.4);
+      box-shadow: inset 0 0 0 0rem $color-brand-primary, 0 0 0rem .5rem rgba($color-focus,.4);
       border-color: $color-brand-primary;
     }
   }

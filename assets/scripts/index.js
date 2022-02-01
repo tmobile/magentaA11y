@@ -209,7 +209,7 @@ $("#test-case-wrapper").on('toggle', function() {
 
 var formValues = JSON.parse(localStorage.getItem('formValues')) || {};
 
-var $checkboxes = $(".checklist-container :checkbox");
+var $checkboxes = $(".checkbox-item-controls :checkbox");
 
 var $details = $(".checklist-container details");
 
@@ -220,9 +220,9 @@ function allOpen(){
 }
 
 function updateStorage(){
-//   $checkboxes.each(function(){
-//     formValues[this.id] = this.checked;
-//   });
+  $checkboxes.each(function(){
+    formValues[this.id] = this.checked;
+  });
 
   $details.each(function(){
     formValues[this.id] = this.open;
@@ -233,9 +233,9 @@ function updateStorage(){
   console.log(formValues);
 }
 
-// $checkboxes.on("change", function(){
-//     updateStorage();
-// });
+$checkboxes.on("change", function(){
+    updateStorage();
+});
 
 $details.on("toggle", function() {
     updateStorage();
@@ -244,7 +244,7 @@ $details.on("toggle", function() {
 
 // On page load
 $.each(formValues, function(key, value) {
-//   $("#" + key).prop('checked', value);
+  $("#" + key).prop('checked', value);
   $("#" + key).prop('open', value);
   console.log(key, value);
 });

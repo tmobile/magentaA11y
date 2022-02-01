@@ -48,7 +48,8 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
-input[type="radio"].star {
+input[type="radio"].star,
+input[type="checkbox"].star {
   + label {
     height: 4rem;
     padding: 0;
