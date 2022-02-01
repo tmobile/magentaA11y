@@ -12,32 +12,32 @@
 
 @font-face {
   font-family: 'teleneo-thin';
-  src: url('#{$baseUrl}/assets/fonts/teleneo-thin.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Thin.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo';
-  src: url('#{$baseUrl}/assets/fonts/teleneo-regular.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Regular.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-bold';
-  src: url('#{$baseUrl}/assets/fonts/teleneo-bold.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Bold.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-medium';
-  src: url('#{$baseUrl}/assets/fonts/teleneo-medium.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Medium.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-xtra-bold';
-  src: url('#{$baseUrl}/assets/fonts/teleneo-bold.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Bold.woff2') format('truetype');
 }
 
 @font-face {
   font-family: 'teleneo-xtra-bold';
-  src: url('#{$baseUrl}/assets/fonts/teleneo-extrabold.woff2') format('truetype');
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-ExtraBold.woff2') format('truetype');
 }
 
 
@@ -51,12 +51,10 @@ $display:    "teleneo-xtra-bold";
 
 @mixin light {
   font-family: $sans-light, sans-serif;
-  font-weight: 300;
-  font-style: normal;
+  font-weight: normal;
 }
 @mixin light-italic {
   font-family: $sans, sans-serif;
-  font-weight: 200;
   font-style: italic;
 }
 
@@ -65,22 +63,19 @@ $display:    "teleneo-xtra-bold";
 }
 @mixin italic {
   font-family: $sans, sans-serif;
-  font-weight: 400;
   font-style: italic;
 }
 
 @mixin medium {
   font-family: $sans-bold, sans-serif;
-  font-weight: 500;
-  font-style: bold;
 }
 
 @mixin bold {
   font-family: $sans-bold, sans-serif;
+  font-weight: normal;
 }
 @mixin bold-italic {
   font-family: $sans-bold, sans-serif;
-  font-weight: 700;
   font-style: italic;
 }
 //@mixin black {
@@ -89,14 +84,13 @@ $display:    "teleneo-xtra-bold";
 //}
 @mixin headline {
   font-family: $display, sans-serif;
-  font-weight: 900;
-  font-style: normal;
+  font-weight: normal;
 }
 
 @mixin sans {
   font-family: "Arial", sans-serif;
   font-weight: normal;
-  font-style: normal;
+  font-weight: normal;
 }
 
 
