@@ -112,13 +112,12 @@ label[for="criteria-area"] {
  }
  
 .checkbox-item-controls {
-  border-left: 1px solid $color-border-gray;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-left: 1px solid lighten($color-border-gray,10);
-  .star + label {
-    background-color: lighten($color-gray-xtra-light, 1) !important;
-  }
+  // .star + label {
+  //   background-color: lighten($color-gray-xtra-light, 1) !important;
+  // }
 }
 
 .textarea-controls {
