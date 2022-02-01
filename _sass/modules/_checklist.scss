@@ -20,11 +20,12 @@
     position: -webkit-sticky;
     top: 0rem;
     border-top: 1px solid lighten($color-border-gray,3);
+    background-color: #fff;
     z-index: 0;
     box-shadow: 0 0 5px 1px rgba(#000, .1);
 
     textarea {
-      height: calc(100vh - 7rem);
+      height: calc(100vh - 6.25rem);
       width: 100%;
       margin: 0;
       padding: 2rem;
