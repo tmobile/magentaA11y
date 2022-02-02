@@ -1,8 +1,5 @@
 html {
   font-size: 16px;
-  @include break($break-mid) {
-    font-size: 18px;
-  }
 }
 
 body,html {
