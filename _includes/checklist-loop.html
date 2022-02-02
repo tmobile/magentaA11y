@@ -15,24 +15,21 @@ How to test {% assign firstLetter = page.title | downcase | slice: 0 %}{% if fir
 Full information: {{ page.url | absolute_url | replace: '.html', '/' }}
 {% endcapture %}
 <li class="input-checkbox-item">
-  <input type="checkbox" id="{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}" data-success-criteria="
-{{ all | strip | lstrip }}
-">
+  <input type="checkbox" class="criteria-checkbox" id="{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}" data-success-criteria="
+{{ all | strip | lstrip }}">
   <label for="{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
     {{ page.title | escape }}
   </label>
   <div class="checkbox-item-controls">
     <input class="star" type="checkbox" id="favorite-{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
-      <label for="favorite-{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
-        <span class="hidden">Add {{ page.title | escape }} to favorites</span>
-      </label>
-      <a class="checklist-link" href="{{ page.url | relative_url }}">
-        <span class="hidden">
-        {{ page.title | escape }}
-        </span>
-      </a>
-  
-    </div>
-
+    <label for="favorite-{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
+      <span class="hidden">Add {{ page.title | escape }} to favorites</span>
+    </label>
+    <a class="checklist-link" href="{{ page.url | relative_url }}">
+      <span class="hidden">
+      {{ page.title | escape }}
+      </span>
+    </a>
+  </div>
 </li>
 {% endif %}
