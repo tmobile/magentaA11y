@@ -7,7 +7,10 @@ footer {
   nav {
     ul {
       display: block;
-      margin-left: -1rem;
+      margin-left: -.5rem;
+      @include break($break-mid) {
+        margin-left: -1rem;
+      }
       li {
         display: inline-block;
       }
