@@ -82,7 +82,9 @@ nav {
         transition: .2s;
         outline: 0 solid transparent;
         border-radius: 2px;
-
+        &:after {
+          display: none;
+        }
         @include break(500px) {
           font-size: 1.5rem;
           padding-left: 2rem;
