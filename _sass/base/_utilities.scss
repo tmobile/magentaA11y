@@ -79,7 +79,7 @@
 
 .focused {
   outline: .25rem solid rgba($color-focus, 1);
-  outline-offset: 0rem;
+  outline-offset: .125rem;
   transition: .2s;
 
   &:hover {
@@ -99,13 +99,14 @@
   &:active {
     @extend .active;
   }
+  &:focus, 
   &:focus-visible {
     @extend .focused;
   }
 }
 @mixin focused {
-  outline: .25rem solid rgba($color-focus, 1);
-  outline-offset: 0rem;
+  outline: .125rem solid rgba($color-focus, 1);
+  outline-offset: .5rem;
   transition: .2s;
 
   &:hover {

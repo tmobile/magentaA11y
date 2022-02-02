@@ -158,6 +158,7 @@ input[type="checkbox"].favorite {
 }
 
 input[type="checkbox"].favorite + label:hover,
+input[type="checkbox"].favorite:focus + label,
 input[type="checkbox"].favorite:focus-visible + label {
   z-index: 99;
   &:before {
@@ -181,6 +182,7 @@ input[type="checkbox"].favorite:focus-visible + label {
   }
 }
 
+input[type="checkbox"].favorite:checked:focus + label,
 input[type="checkbox"].favorite:checked:focus-visible + label,
 input[type="checkbox"].favorite:checked:hover + label {
   z-index: 99;

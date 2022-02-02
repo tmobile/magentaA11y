@@ -79,8 +79,7 @@ nav {
         margin-right: .25rem; 
         padding-left: 1rem;
         padding-right: 1rem;
-        transition: .2s;
-        outline: 0 solid transparent;
+        //transition: .2s;
         border-radius: 2px;
         &:after {
           display: none;
@@ -92,11 +91,7 @@ nav {
           margin-right: 1rem;
           @include light;
         }
-        &:hover {
-          outline: .5rem solid rgba($color-brand-primary, .5);
-        }
       }
-
       &.bravo {
         display: none;
         @include break($break-small) {
