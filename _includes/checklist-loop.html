@@ -21,7 +21,7 @@ Full information: {{ page.url | absolute_url | replace: '.html', '/' }}
     {{ page.title | escape }}
   </label>
   <div class="checkbox-item-controls">
-    <input class="star" type="checkbox" id="favorite-{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
+    <input class="favorite" type="checkbox" id="favorite-{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
     <label for="favorite-{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
       <span class="hidden">Add {{ page.title | escape }} to favorites</span>
     </label>

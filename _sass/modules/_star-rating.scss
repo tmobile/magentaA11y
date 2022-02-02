@@ -49,10 +49,11 @@
 }
 
 input[type="radio"].star,
-input[type="checkbox"].star {
+input[type="checkbox"].favorite {
   + label {
     height: 4rem;
-    padding: 0;
+    padding: 1.5rem 0 1.5rem 0;
+    line-height: 1.25rem;
     @include ripple(#fff, $color-gray-light, center, center);
     &:before {
       left: calc(50% - 1rem);
@@ -123,3 +124,20 @@ input[type="checkbox"].star {
   }
 
 }
+
+input[type="checkbox"].favorite + label:hover,
+input[type="checkbox"].favorite:focus-visible + label {
+  z-index: 99;
+  &:after {
+    content: 'Favorite';
+    @include regular;
+    color: $color-gray-dark;
+    transition: 0s;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    text-align: center;
+    border-radius: 2px;
+  }
+}
+
