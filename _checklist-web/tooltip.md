@@ -31,7 +31,7 @@ gherkin-mobile:
 
 ## Code examples
 
-### We don't use tooltops
+### We don't use tooltips
 
 {% highlight html %}
 <nope>
