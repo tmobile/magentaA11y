@@ -172,6 +172,7 @@ input[type="checkbox"].favorite:focus-visible + label {
   }
   &:after {
     content: 'Favorite';
+    text-shadow: 0 0 3px #fff;
     @include regular;
     color: $color-gray-dark;
     transition: 0s;
@@ -192,6 +193,9 @@ input[type="checkbox"].favorite:checked:hover + label {
     background-repeat: no-repeat;
     background-position: 0px -1px;
     box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
+  }
+  &:after {
+    display: none;
   }
 }
 

@@ -126,7 +126,7 @@ input[type=radio],
   + .label {
     @include ripple;
     display: block;
-    padding: 1.5rem 2rem 1.325rem 4rem;
+    padding: 1.5rem .5rem 1.325rem 4rem;
     line-height: 1.25rem;
     width: 100%;
     background: #fff;
