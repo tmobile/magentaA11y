@@ -48,6 +48,32 @@
 }
 
 
+
+label[for="criteria-area"] {
+  margin: 0;
+  background: #fff;
+  padding: 1.5rem 1rem;
+  line-height: 1rem;
+  box-shadow: 0 0 5px 1px rgba(#000, .0625);
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  z-index: 99;
+}
+
+.input-checkbox-item {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+ }
+ 
+.checkbox-item-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-left: 1px solid lighten($color-border-gray,10);
+  // .star + label {
+  //   background-color: lighten($color-gray-xtra-light, 1) !important;
+  // }
+}
+
 .checklist-link {
   display: block;
   position: relative;
@@ -108,32 +134,6 @@
       border-radius: 2px;
     }
   }
-}
-
-
-label[for="criteria-area"] {
-  margin: 0;
-  background: #fff;
-  padding: 1.5rem 1rem;
-  line-height: 1rem;
-  box-shadow: 0 0 5px 1px rgba(#000, .0625);
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  z-index: 99;
-}
-
-.input-checkbox-item {
-  display: grid;
-  grid-template-columns: 1fr 8rem;
- }
- 
-.checkbox-item-controls {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-left: 1px solid lighten($color-border-gray,10);
-  // .star + label {
-  //   background-color: lighten($color-gray-xtra-light, 1) !important;
-  // }
 }
 
 .textarea-controls {
