@@ -57,16 +57,22 @@ input[type="checkbox"].favorite {
     line-height: 1.25rem;
     @include ripple(#fff, $color-gray-light, center, center);
     &:before {
-      left: calc(50% - 1rem);
+      width: 2rem;
+      height: 2rem;
       border: none;
+      top: 1rem;
+      left: calc(50% - 1rem);
+
       background-color: transparent;
       background: url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='white' stroke='gray' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: 0px -1px;
+
       border-radius: 1rem;
+
       transition: 0.0s;
-      box-shadow: 0 0 0rem 0rem transparent, 0 0 0rem .125rem transparent;
+      box-shadow: 0 0 0rem .125rem transparent, 0 0 0rem .125rem transparent;
       transition: background-color .2s, box-shadow .2s;
     }
     &:after {
@@ -82,7 +88,7 @@ input[type="checkbox"].favorite {
         background: url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-size: contain;
-        box-shadow: 0 0 0rem 0rem transparent, 0 0 0rem .5rem rgba($color-focus,.2);
+        box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .5rem rgba($color-focus,.2);
         background-position: 0px -1px;
         border-radius: 1rem;
       }
@@ -134,7 +140,7 @@ input[type="checkbox"].favorite {
           background-repeat: no-repeat;
           background-size: contain;
           background-position: 0px -1px;
-          box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
+          box-shadow: 0 0 0rem 0rem #fff, 0 0 0rem .5rem rgba($color-focus,.2);
 
         }
       }
@@ -148,7 +154,6 @@ input[type="checkbox"].favorite {
           background-size: contain;
           background-position: 0px -1px;
           box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
-
         }
       }
     }
@@ -163,6 +168,7 @@ input[type="checkbox"].favorite:focus-visible + label {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 0px -1px;
+    box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.2);
   }
   &:after {
     content: 'Favorite';
@@ -176,3 +182,16 @@ input[type="checkbox"].favorite:focus-visible + label {
     border-radius: 2px;
   }
 }
+
+input[type="checkbox"].favorite:checked:focus-visible + label,
+input[type="checkbox"].favorite:checked:hover + label {
+  z-index: 99;
+  &:before {
+    background: url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px -1px;
+    box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
+  }
+}
+
