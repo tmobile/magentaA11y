@@ -86,20 +86,20 @@ This custom button requires extra attributes and event listeners.
 </custom-element>
 {% endhighlight %}
 
-### When there are repeating links
+### Repeating text links
 
 Sometimes the design will call for multiple links with the same text label. In a case like this, `aria-label` can be used to name each link's purpose.
 
 {% highlight html %}
 <a href="/security/" aria-label="Security policy">
   Learn more
-</div>
+</a>
 <a href="/privacy/" aria-label="Privacy policy">
   Learn more
-</div>
+</a>
 {% endhighlight %}
 
-### Don't repeat the name in the aria-label
+### Don't duplicate the visible text name in the aria-label
 
 **Do not** repeat the inner text content of a link in the `aria-label`.
 
