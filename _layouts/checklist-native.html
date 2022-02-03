@@ -21,13 +21,11 @@ layout: default
           <summary id="{{ category | escape }}-category-title">
             {{ category | capitalize }}
           </summary>
-          <div role="group" aria-labelledby="{{ category | escape }}-category-title">
-            <ul>
-              {% for page in site.checklist-native %}
-              {% include checklist-loop.html %}
-              {% endfor %}
-            </ul>
-          </div>
+          <ul>
+            {% for page in site.checklist-native %}
+            {% include checklist-loop.html %}
+            {% endfor %}
+          </ul>
         </details>
         {% endfor %}
       </div>
