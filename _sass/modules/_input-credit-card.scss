@@ -1,0 +1,27 @@
+.credit-card-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+li {
+  grid-column: span 2;
+
+  &.cc-exp-item,
+  &.cc-cvc-item {
+    grid-column: span 1;
+  }
+}
+
+
+
+input[name='cardnumber'] {
+  width: 16rem;
+}
+
+input[name='cvc'] {
+  width: 4rem;
+}
+
+input[name='ccexp'] {
+  width: 5rem;
+}

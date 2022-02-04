@@ -20,6 +20,8 @@ $('input[inputmode="numeric"]').on('input',function(e) {
     this.value=this.value.replace(/[^\d]/,'');
 });
 
+
+
 // Trigger alert
 $("#submit-response").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
