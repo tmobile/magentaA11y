@@ -62,7 +62,7 @@ screenreader:
 
 - Follow button state guidance if applicable
 - Modals that have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
- **iOS**
+- **iOS**
   - Active: `isEnabled property`
   - Disabled: `UIAccessibilityTraitNotEnabled`. Announcement: dimmed  
 - **Android**  
@@ -75,7 +75,7 @@ screenreader:
 - Android  _sometimes_  initially focuses on the CTAs in the alert, not the text or title
 - Android often takes one swipe to bring focus inside the modal
 
- **iOS**
+- **iOS**
 	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
   - `accessibilityElementIsFocused`  
 	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
