@@ -4,6 +4,8 @@ title: Teleneo examples
 permalink: /teleneo/
 ---
 
+Teleneo at 16px has a cap-height of about 14px.
+
 ## Teleneo regular rescaled 110%
 
 <p class="teleneo-rescaled">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
