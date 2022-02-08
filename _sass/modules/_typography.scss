@@ -15,10 +15,26 @@
   src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Thin.woff2') format('truetype');
 }
 
+
+@font-face {
+  font-family: 'teleneo-regular-default';
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Regular.woff2') format('truetype');
+}
+
+@font-face {
+  font-family: 'teleneo-medium-default';
+  src: url('#{$baseUrl}/assets/fonts/TeleNeoWeb-Medium.woff2') format('truetype');
+}
+
+
+
+
+
 @font-face {
   font-family: 'teleneo';
   src: url('#{$baseUrl}/assets/fonts/teleneo-regular-webfont.woff2') format('truetype');
 }
+
 @font-face {
   font-family: 'teleneo-bold';
   src: url('#{$baseUrl}/assets/fonts/teleneo-bold-webfont.woff2') format('truetype');
@@ -175,7 +191,6 @@ label {
 
 }
 
-
 blockquote {
   margin: 0 0 2rem 0;
   padding: 3rem 1rem 1rem 1rem;
@@ -238,4 +253,20 @@ ol {
       margin-bottom: inherit;
     }
   }
+}
+
+
+.teleneo-rescaled {
+  font-family: teleneo;
+  font-weight: normal;
+}
+
+.teleneo {
+  font-family: teleneo-regular-default;
+  font-weight: normal;
+}
+
+.teleneo-medium {
+  font-family: teleneo-medium-default;
+  font-weight: normal;
 }

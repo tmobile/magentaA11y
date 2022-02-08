@@ -62,11 +62,9 @@ If you have a figure that can't be described by alt text, place the content in a
 </example>
 {:/}
 
-
 {% highlight html %}
 {% include /examples/pie-chart-image.html %}
 {% endhighlight %}
-
 
 ### Provide alternative interactions with dynamic figures
 
@@ -85,8 +83,6 @@ When building maps, add a search or filtering feature for those who can't use a 
   </button>
 </form>
 {% endhighlight %}
-
-
 
 ## Developer notes
 
