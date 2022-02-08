@@ -11,7 +11,7 @@ form {
     list-style-type: none;
   }
   ul {
-    // border-top: 1px solid $color-border-gray;
+    border-top: 1px solid $color-border-gray;
   }
   fieldset {
     padding-bottom: 1rem;
@@ -19,9 +19,9 @@ form {
 
   li {
     border-top: none;
-    // border-bottom: 1px solid lighten($color-border-gray,10);
+    border-bottom: 1px solid lighten($color-border-gray,10);
     display: grid;
-    
+
     &.input-checkbox-item,
     &.input-radio-item {
       padding: 0;
