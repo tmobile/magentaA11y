@@ -40,12 +40,12 @@ This semantic HTML contains all accessibility features by default.
 Optional: The table is wrapped in a `<figure>` to indicate author and source.
 
 {% highlight html %}
-{%- include /examples/figure.html -%}
+{%- include /examples/table.html -%}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/figure.html %}
+{% include /examples/table.html %}
 </example>
 {:/}
 

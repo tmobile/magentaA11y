@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Figure: map, chart, table"
+title:  "Figure: maps, charts and graphics"
 description: "How to test accessible figures, maps, charts and tables for the Web"
 categories: main
 
@@ -37,7 +37,6 @@ screenreader:
 {% include /examples/figure-bar-chart.html %}
 {% endhighlight %}
 
-
 {::nomarkdown}
 <example>
 {% include /examples/figure-bar-chart.html %}
@@ -46,26 +45,28 @@ screenreader:
 
 ### Provide alternative ways to consume visual content
 
-If there is one primary message for an image chart, describe it in the alt attribute.
+If there is one primary message for an chart that is displayed as an image file, describe it in the alt attribute.
 
 {% highlight html %}
-<img src="pie-chart.jpg" 
-     alt="Sales forecast show June 34% higher">
+<img src="monthly-usage-chart.jpg" 
+     alt="Usage shows a large jump in May to 91%">
 {% endhighlight %}
-
 
 ### Provide alternative ways to consume data
 
 If you have a figure that can't be described by alt text, place the content in a different format.
-{% highlight html %}
-{% include /examples/pie-chart-image.html %}
-{% endhighlight %}
 
 {::nomarkdown}
 <example>
 {% include /examples/pie-chart-image.html %}
 </example>
 {:/}
+
+
+{% highlight html %}
+{% include /examples/pie-chart-image.html %}
+{% endhighlight %}
+
 
 ### Provide alternative interactions with dynamic figures
 
