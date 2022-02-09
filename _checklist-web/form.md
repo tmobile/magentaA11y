@@ -37,8 +37,6 @@ gherkin-mobile:
 
 ### Use semantic HTML
 
-This semantic HTML contains all accessibility features by default. 
-
 {% highlight html %}
 {% include /examples/form.html %}
 {% endhighlight %}
@@ -48,21 +46,3 @@ This semantic HTML contains all accessibility features by default.
 {% include /examples/form.html %}
 </example>
 {:/}
-
-
-## Developer notes
-
-### Name
-- Include `for="input-id` in each `<label>` label to associate it with the input
-- Use `aria-label="Input name"` as a last resort if a `<label>` can't be used
-- Don't hide the label on focus
-
-### Role
-- Identifies as a text input
-
-### Group
-- Include `for="input-id` in each `<label>` label to associate it with the input
-- Use `<fieldset>` and `<legend>` to name a group of inputs.
-
-### Focus
-- Focus must be visible
