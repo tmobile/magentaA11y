@@ -1,6 +1,6 @@
 form {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   padding-bottom: 1rem;
 
   ul,
@@ -239,4 +239,10 @@ input[type="file"] {
 
 i {
   background-color: #AA0000;
+}
+
+@for $i from 1 through 100 {
+  input[maxlength="#{$i}"] {
+    width: #{$i + 1}rem;
+  }
 }
