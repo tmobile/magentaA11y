@@ -37,11 +37,12 @@ $("#submit-response").click(function() {
 // Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('visible')) {
-        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
+        $('[role="alert"]').removeClass('visible').addClass('inert');
+        $('#favorite-error').empty();
     } else {
         $('[role="alert"]').removeClass('inert').addClass('visible');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('[role="alert"]').append('The correct answer is Charlie');
+            $('#favorite-error').append('The correct answer is Charlie');
         }, 25);
     }
 });

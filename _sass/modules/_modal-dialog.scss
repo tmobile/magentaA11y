@@ -10,11 +10,9 @@ dialog {
   border-radius: .25rem;
   background-color: #fff;
   box-shadow: 0 0 100px 50px rgba(#000,.2);
-  outline: none;
   border: none;
+  outline-offset: .25rem;
 
-  &:focus {
-  }
 
   &[open] {
     display: block;
