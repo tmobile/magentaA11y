@@ -12,9 +12,8 @@ title:  "Hint, Help or Error"
 {:/}
 
 ## Error
-
 {::nomarkdown}
 <example>
-{% include /examples/hint-error.html %}
+{% include /examples/input-text-error.html %}
 </example>
 {:/}

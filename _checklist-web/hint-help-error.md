@@ -48,12 +48,12 @@ gherkin-mobile:
 Note: The alert must be structured as below to function properly in VoiceOver, with the alert text nested inside the `role="alert"` element.
 
 {% highlight html %}
-{% include /examples/hint-error.html %}
+{% include /examples/input-text-error.html %}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/hint-error.html %}
+{% include /examples/input-text-error.html %}
 </example>
 {:/}
 
@@ -61,6 +61,8 @@ Note: The alert must be structured as below to function properly in VoiceOver, w
 
 ### Browser + screenreader quirks
 
+- Screenreaders do not implement alerts uniformly and must be tested
+  - Just because an alert pattern works in one screenreader doesn't mean it will work in all three
 - The element referenced by the `aria-describedby` attribute cannot use the `role="alert"` attribute (see example above for workaround). 
   - [VoiceOver fails to read a referenced `role="alert"` element when the input is in focus](https://a11ysupport.io/tests/tech__aria__aria-describedby-with-role-alert).
 - NVDA will read the alert twice if it appears while the input is in focus: once from the `role="alert"` being injected and from the `aria-describedby` association.

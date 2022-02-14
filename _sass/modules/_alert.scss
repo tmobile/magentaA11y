@@ -1,15 +1,20 @@
 [role="alert"] {
-  background: $color-alert;
-  padding: 1rem;
   border-radius: 2px;
-  font-weight: bold;
-  margin: 1rem 0;
+  transition: .2s;
+  height: 0px;
+  padding: 0rem 1rem;
 
   &.inert {
-    display: none;
+    display: block;
+    max-height: 0px;
   }
 
-  &.visible {
-    display: block;
+  &.active {
+    padding: 1rem;
+    line-height: 1rem;
+    margin: 1rem 0;
+    background: $color-alert;
+    height: auto;
+    max-height: 8rem;
   }
 }
