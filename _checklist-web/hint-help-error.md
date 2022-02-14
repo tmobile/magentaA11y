@@ -45,6 +45,8 @@ gherkin-mobile:
 
 ### Adding an error
 
+Note: The alert must be structured as below to function properly in VoiceOver, with the alert text nested inside the `role="alert"` element.
+
 {% highlight html %}
 {% include /examples/hint-error.html %}
 {% endhighlight %}
@@ -61,6 +63,7 @@ gherkin-mobile:
 
 - The element referenced by the `aria-describedby` attribute cannot use the `role="alert"` attribute (see example above for workaround). 
   - [VoiceOver fails to read a referenced `role="alert"` element when the input is in focus](https://a11ysupport.io/tests/tech__aria__aria-describedby-with-role-alert).
+- NVDA will read the alert twice if it appears while the input is in focus: once from the `role="alert"` being injected and from the `aria-describedby` association.
 - NVDA needs a fraction of a second to catch up with changes in the DOM, use a `setTimeout` to delay displaying the alert
 
 ### Name
