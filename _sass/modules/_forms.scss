@@ -53,7 +53,7 @@ input[type="submit"] {
   width: auto;
   -webkit-appearance: none; // Remove iOS webkit styles
   border-radius: 0; // Remove iOS webkit styles
-  margin: 0  0 .75rem inherit;
+  margin: 0  0 .75rem 0;
   font-size: 1rem;
   padding: .5rem;
   border: 1px solid $color-border-gray;
@@ -87,12 +87,20 @@ fieldset,
   display: grid;
   box-shadow: 0 1px 2px 1px rgba(#000, .05);
 
-  input,
-  textarea {
+  textarea,
+  input[type="text"],
+  input[type="search"],
+  input[type="file"],
+  input[type="email"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  input[type="button"],
+  input[type="submit"] {
     margin: 0 1rem 1rem 1rem;
     border: 1px solid $color-border-gray;
     display: block;
-
     &:last-of-type {
       margin-bottom: 1.25rem;
     }
