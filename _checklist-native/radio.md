@@ -33,11 +33,12 @@ screenreader:
 - Use a radio button when a user is to select an item from a predefined list of options
 - Except in a rare case where a mixed state is needed, radio buttons should be mutually exclusive
 - You should use a native element rather than a custom element because it will announce the correct built-in screen reader announcements without additional development effort
--  A radio button should just change between checked and unchecked states.  It should not automatically navigate the user to another field or screen when checked, as that would most likely cause a change of context
+-  A radio button should just change between checked and unchecked states.  It should not automatically navigate the user to another field or screen when checked, as that may cause a change of context. Revealing new information on the same screen as a result of activating a checkbox is usually not a change of context.
     
 ### Name
 
-- Name describes purpose while focus is on the control (or on the whole table row/blade)
+- Programmatic name describes purpose while focus is on the control (or on the whole table row/blade)
+- Programmatic name matches the visible text label 
 
 - **iOS Tips**
 	- Set a label in Interface Builder in the Identity Inspector
@@ -45,9 +46,7 @@ screenreader:
 	- `setTitle( )` method
 	- If no visible label, use `accessibilityLabel` on control
 	- `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label
-	- Match visible label
 	- To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector or use `isAccessibilityElement=false`
-	- If hiding visible label from screen reader, use `accessibilityLabel` on control
 - **Android Tips**  
 	- `android:text` XML attribute
 	- Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label
@@ -55,11 +54,11 @@ screenreader:
 	- Use `labelFor` attribute to associate the visible label with the control (Best practice)
 
 ### Role
-
 - Role is automatically announced if a native component is used
+- When not using native controls (custom controls), roles will need to be manually coded.
 
 - **iOS**
-	- Standard NSRadioButton
+	- Standard UIButton
 	- Announce as "button"
 - **Android**
 	- Standard RadioButton with RadioGroup when applicable
@@ -67,13 +66,17 @@ screenreader:
 
 ### Groupings
 
-- Group visible label with radio button (label and radio button can be grouped together in a tableview/row/blade - one swipe)
+- Group visible label with radio button (label and radio button can be grouped together in a tableview/row/blade - one swipe) to provide a programmatic name for the button 
+-   Or use `labelFor` (Android)
 
 - **iOS Tips**
-	- `accessibilityFrame`
-	- `accessibilityFrameInContainerSpace`
-	- GroupView
-	- Only the container class is an accessible element `isAccessibilityElement=true` and announces all elements in one announcement  This makes child elements no longer accessible by screen reader 
+  -   `accessibilityFrame`
+  -   `accessibilityFrameInContainerSpace`
+  -   Create a wrapper as an accessible element
+  -   Define action upon double-tap
+  -   `shouldGroupAccessibilityElement` attribute: For a precise order if the native order should be disrupted.
+  -   `GroupView`
+  -   `shouldGroupAccessibilityChildren` attribute indicates whether VoiceOver must group it's children views. This allows making unique vocalizations or define a particular reading order for a part of the page
 - **Android Tips**
 	- ViewGroup
 	- Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
@@ -83,12 +86,11 @@ screenreader:
 - States can be selected, dimmed/disabled, checked/unchecked, on/off
 
 - **iOS**  
-	- Active: `isEnabled property`
-	- Disabled: `UIAccessibilityTraitNotEnabled`
-	- disabled/dimmed
-	- on/off:  `isOn` or `setOn` or `isChecked`
-	- Announcement: dimmed, selected  
-        
+  - `UIControlState` or `isSelected`, `UIAccessibilityTraitNotEnabled`
+  - Selected: Announced as "checked" or "selected"
+  - Not selected: Announced as "not checked" (optional)
+  - Active: `isEnabled property`
+  - Disabled: `UIAccessibilityTraitNotEnabled`. Announced as "dimmed"
 - **Android**
 	- Active: `android:enabled=true`
 	- Disabled: `android:enabled=false`
@@ -99,6 +101,7 @@ screenreader:
 
 - Only manage focus when needed. Primarily, let the device manage default focus order.
 - Consider how focus should be managed between child elements and their parent views or containers
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 
 - **iOS**
 	- `accessibilityElementIsFocused`  
@@ -107,6 +110,7 @@ screenreader:
 	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
 	- To move screen reader focus to newly revealed content: `UIAccessibilityLayoutChangedNotification`
 	- To NOT move focus, but dynamically announce new content: `UIAccessibilityAnnouncementNotification`
+	- `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
 - **Android**
 	- `importantForAccessibility` makes the element visible to the Accessibility API
 	- `android:focusable`
@@ -120,3 +124,4 @@ screenreader:
 	- To move screen reader focus to newly revealed content: `Type_View_Focused`
 	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
 	- To hide controls: `Important_For_Accessibility_false`
+	- For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
