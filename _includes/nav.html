@@ -37,8 +37,7 @@
     </li>
 
     <li class="expander-group site-sub-group">
-      <button
-        class="expander-toggle" aria-expanded="false">
+      <button class="expander-toggle" aria-expanded="false">
         More
       </button>
       <ul class="expander-content">
@@ -56,6 +55,18 @@
         </li>
       </ul>
     </li>
-
+    <li class="search expander-group">
+      <form role="search" action="/search/" method="post">
+        <label for="search" class="hidden">
+          Search this website:
+        </label>
+        <input type="search" id="search-input" autocomplete="off" aria-haspopup="menu">
+        <button type="submit">
+          <span class="hidden">Search</span>
+        </button>      
+      </form>
+      <ul class="expander-content visible" id="results-container"></ul>  
+    </li>
   </ul>
+
 </nav>

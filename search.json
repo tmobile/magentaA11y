@@ -1,0 +1,14 @@
+---
+layout: none
+---
+[
+  {% for entry in site.checklist-web %}
+    {
+      "title"    : "{{ entry.title | escape }}",
+      "category" : "{{ entry.category }}",
+      "tags"     : "{{ entry.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ entry.url }}",
+      "date"     : "{{ entry.date }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

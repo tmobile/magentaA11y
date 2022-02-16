@@ -14,6 +14,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/assets/scripts/index.js?{{site.time | date: '%s'}}"></script>
+    
     <script>
       $("input[type='checkbox']").change(function() {
         // criteria-checkbox
@@ -49,6 +50,13 @@
             });
           }
         }
+    </script>
+    <script>
+      var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json'
+      })
     </script>
   </body>
 </html>
