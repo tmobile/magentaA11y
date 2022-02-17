@@ -128,15 +128,19 @@ layout: default
               <ul class="gherkin-list">
                 {% for action in page.gherkin-keyboard limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>WHEN</strong> I use {{ action.when }} 
-                    <strong>I SEE</strong> {{ action.result }}
+                    <div itemprop="text">
+                      <strong>WHEN</strong> I use {{ action.when }} 
+                      <strong>I SEE</strong> {{ action.result }}  
+                    </div>
                   </li>
                 {% endfor %}
                 {% for action in page.gherkin-keyboard offset:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>THEN</strong> when I use {{ action.then }} 
-                    <strong>I SEE</strong> {{ action.result }}
-                    </li>
+                    <div itemprop="text">
+                      <strong>THEN</strong> when I use {{ action.then }} 
+                      <strong>I SEE</strong> {{ action.result }}
+                    </div>
+                  </li>
                 {% endfor %}
               </ul>
             </div>
@@ -150,27 +154,31 @@ layout: default
               <ul class="gherkin-list">
                 {% for action in page.gherkin-keyboard limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
-                    <strong>AND</strong>  
-                    {% for action in page.gherkin-keyboard limit:1 %}
-                      I use {{ action.when }} 
-                      <ul>
-                        {% for requirement in page.screenreader %}
-                          <li>
-                            <strong>I HEAR</strong>
-                            <span class="lowercase">{{ requirement[1] | escape }}</span>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% endfor %}  
+                    <div itemprop="text">
+                      <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+                      <strong>AND</strong>  
+                      {% for action in page.gherkin-keyboard limit:1 %}
+                        I use {{ action.when }} 
+                        <ul>
+                          {% for requirement in page.screenreader %}
+                            <li>
+                              <strong>I HEAR</strong>
+                              <span class="lowercase">{{ requirement[1] | escape }}</span>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endfor %}
+                    </div>
                   </li>
                 {% endfor %}
 
                 {% for action in page.gherkin-keyboard offset:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>THEN</strong> when I use {{ action.then }} 
-                    <strong>I HEAR</strong> 
-                    <span class="lowercase">{{ action.result }}</span>
+                    <div itemprop="text">
+                      <strong>THEN</strong> when I use {{ action.then }} 
+                      <strong>I HEAR</strong> 
+                      <span class="lowercase">{{ action.result }}</span>
+                    </div>
                   </li>
                 {% endfor %}
               </ul>
@@ -184,26 +192,30 @@ layout: default
               <ul class="gherkin-list">
                 {% for action in page.gherkin-mobile limit:1 %}
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                    <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
-                    <strong>AND</strong> 
-                    {% for action in page.gherkin-mobile limit:1 %}
-                      I {{ action.when }} 
-                      <ul>
-                        {% for requirement in page.screenreader %}
-                          <li>
-                            <strong>I HEAR</strong>
-                            <span class="lowercase">{{ requirement[1] | escape }}</span>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% endfor %}  
+                    <div itemprop="text">
+                      <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
+                      <strong>AND</strong> 
+                      {% for action in page.gherkin-mobile limit:1 %}
+                        I {{ action.when }} 
+                        <ul>
+                          {% for requirement in page.screenreader %}
+                            <li>
+                              <strong>I HEAR</strong>
+                              <span class="lowercase">{{ requirement[1] | escape }}</span>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endfor %}
+                    </div>
                   </li>
                 {% endfor %}
                 {% for action in page.gherkin-mobile offset:1 %}
                   {% if action and action != "" %} 
                     <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
-                      <strong>THEN</strong> when I {{ action.then }} 
-                      <strong>I HEAR</strong> <span class="lowercase">{{ action.result }}</span>
+                      <div itemprop="text">
+                        <strong>THEN</strong> when I {{ action.then }} 
+                        <strong>I HEAR</strong> <span class="lowercase">{{ action.result }}</span>
+                      </div>
                     </li>
                   {% endif %}
                 {% endfor %}
