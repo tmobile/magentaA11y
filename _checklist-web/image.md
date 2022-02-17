@@ -53,7 +53,7 @@ If you were describing the image to someone who couldn't see it, what would you 
 
 There are times that images shouldn't be read because they would be repetitive or not add any value to the content.
 
-- When the alt attribute is empty, the screen reader ignores it. 
+- When the `alt` attribute is empty, the screen reader ignores it. 
   - The `alt` attribute is still required to be valid html.
 - Use `aria-hidden="true"` as a backup and reinforcement:
   - As a backup: **developers often mistakenly omit the alt attribute entirely**, meaning that some screenreaders will read the entire filename.
