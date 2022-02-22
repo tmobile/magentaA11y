@@ -139,6 +139,14 @@ $("[name='checkboxRadioGroup']").on('change', function() {
     $(this).prop('checked', true);
 });
 
+// For required radio input fields
+$("[name='natoReq']").on('change', function() {
+    if($(this).closest("fieldset").attr('aria-invalid', "true")) {
+        $(this).closest("fieldset").attr('aria-invalid', "false");
+    }
+});
+
+
 // Make inaccessible radio inputs look like they're working
 $(".fake-radio").click(function() {
     $(".fake-radio").not(this).removeClass('checked');

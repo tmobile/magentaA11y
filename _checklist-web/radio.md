@@ -48,8 +48,6 @@ gherkin-mobile:
       doubletap with the radio in focus
     result: |
       the state is changed
-
-
 ---
 
 
@@ -74,6 +72,7 @@ This semantic HTML contains all accessibility features by default.
 Ensuring all screenreaders indicate radio inputs as being required requires some aria and reinforcement.
 
 - Use `aria-required="true"` to indicate the group is required
+- Use `aria-invalid="true/false"` to indicate an error state
 - Add `role="radiogroup"` to the `<fieldset>` to make the `aria-required` attribute valid
 - Add "Required" as text to the `<legend>` to ensure compliance across all platforms
 
