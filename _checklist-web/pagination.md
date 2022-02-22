@@ -17,13 +17,27 @@ mobile:
 
 screenreader:
   name:  |
-    Describes itself as pagination navigation
+    The pagination navigation is named
   role:  |
-    Discoverable by screen reader as navigation landmark
-  group: |
-    n/a
-  state: |
-    Current page is indicated on focus
+    The navigation landmark is discoverable with screenreader shortcuts
+
+gherkin-keyboard: 
+  - when:  |
+      the arrow keys to browse to a pagination navigation
+    result: |
+      the navigation comes into view
+  - then:  |
+      the tab key to move focus to a link in the navigation and use the enter key
+    result: |
+      my browser goes to the intended location
+
+gherkin-mobile:
+  - when:  |
+      swipe to elements in the navigation
+  - then:  |
+      doubletap with the link in focus
+    result: |
+      my browser goes to the intended location
 ---
 
 ## Code examples
