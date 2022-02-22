@@ -17,23 +17,23 @@ mobile:
 
 screenreader:
   name:  |
-    The pagination navigation is named
+    The pagination nav has a logical name ("pagination")
   role:  |
-    The navigation landmark is discoverable with screenreader shortcuts
+    The nav landmark is discoverable with screenreader shortcuts
 
 gherkin-keyboard: 
   - when:  |
       the arrow keys to browse to a pagination navigation
     result: |
-      the navigation comes into view
+      the nav comes into view
   - then:  |
-      the tab key to move focus to a link in the navigation and use the enter key
+      the tab key to move focus to a link in the nav and use the enter key
     result: |
       my browser goes to the intended location
 
 gherkin-mobile:
   - when:  |
-      swipe to elements in the navigation
+      swipe to elements in the nav
   - then:  |
       doubletap with the link in focus
     result: |
@@ -65,7 +65,7 @@ This semantic HTML contains all accessibility features by default.
 ### Role
 
 - Identifies itself as navigation
-- Use `role="navigation"` when it's not possible to use `<nav`. 
+- Use `role="navigation"` when it's not possible to use `<nav>`. 
 - **DO NOT** add menu or option roles with arrow key event listeners unless you're building an actual application like Gmail.
 
 ### State
