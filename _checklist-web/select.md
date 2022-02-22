@@ -44,16 +44,14 @@ gherkin-keyboard:
 
 gherkin-mobile:
   - when:  |
-      swipe to focus on a radio button
+      swipe to focus on a select
   - then:  |
-      doubletap with the radio in focus
+      doubletap with the select in focus
     result: |
-      the state is changed   
-
+      the picker/spinner opens
 ---
 
 ## Code examples
-
 
 ### Use the Semantic HTML `<select>`
 
