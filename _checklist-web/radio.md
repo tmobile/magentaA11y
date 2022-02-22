@@ -162,4 +162,8 @@ This hack must be used very carefully on a case by case basis.
 - Custom elements will require keyboard event listeners and roving tabindex
 - **DO NOT** put interactive elements inbetween radio inputs.
 
+## Thanks
+
+- [Support for Marking Radio Buttons Required, Invalid - Adrian Roselli](https://adrianroselli.com/2022/02/support-for-marking-radio-buttons-required-invalid.html)
+
 
