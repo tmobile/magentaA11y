@@ -28,14 +28,35 @@ mobile:
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies itself as a range
+    It identifies itself as a range
   group: |
-    Label is read with the input
+    Its label is read with the input
   state: |
-    Expresses minimum value, maximum value, and current value
-      
+    It its current value
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to a range slider
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the up/down/left/right arrow keys
+    result: |
+      the value is changed one step
+  - then:  |
+      the page up/page down keys
+    result: |
+      the value is changed one step
+
+gherkin-mobile:
+  - when:  |
+      swipe to move focus to a range slider
+  - then:  |
+      swipe up/down in iOS or use the volume buttons in Android
+    result: |
+      the value is changed one step
 ---
 
 ## Code examples
@@ -91,13 +112,15 @@ Working example: <https://www.w3.org/TR/wai-aria-practices/examples/slider/slide
 - Identifies as a text input
 
 ### State
-- aria-valuemin
-- aria-valuemax
-- aria-valuenow
+
+For custom elements, use these aria attributes to describe the min, max and current value.
+
+- `aria-valuemin`
+- `aria-valuemax`
+- `aria-valuenow`
 
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input
-- Use `<fieldset>` and `<legend>` to name a group of inputs.
 
 ### Focus
 - Focus must be visible
