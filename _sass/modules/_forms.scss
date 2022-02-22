@@ -69,7 +69,7 @@ label {
     display: inline-block;
     height: 1rem;
     line-height: 1rem;
-    font-weight: normal;
+    @include regular;
     background: darken($color-gray-xtra-light,8);
     padding: 0 .5rem;
     border-radius: .125rem;
@@ -136,6 +136,16 @@ legend,
   position: relative;
   @include clearfix;
   border-bottom: 1px dotted $color-border-gray;
+  span {
+    font-size: .75rem;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    @include regular;
+    background: darken($color-gray-xtra-light,8);
+    padding: 0 .5rem;
+    border-radius: .125rem;
+  }
 }
 
 

@@ -69,6 +69,24 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+### Required radio inputs
+
+Ensuring all screenreaders indicate radio inputs as being required requires some aria and reinforcement.
+
+- Use `aria-required="true"` to indicate the group is required
+- Add `role="radiogroup"` to the `<fieldset>` to make the `aria-required` attribute valid
+- Add "Required" as text to the `<legend>` to ensure compliance across all platforms
+
+{% highlight html %}
+{% include /examples/input-radio-required.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-radio-required.html %}
+</example>
+{:/}
+
 ### When you can't use semantic HTML
 
 This custom button requires extra scripting work for roving tabindex and event listeners.
