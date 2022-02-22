@@ -28,7 +28,7 @@ gherkin-keyboard:
 
 gherkin-mobile:
   - when:  |
-      swipe to focus on an image
+      swipe to browse to an image
 ---
 
 ## Code examples
