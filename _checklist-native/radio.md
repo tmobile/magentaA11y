@@ -23,7 +23,7 @@ screenreader:
   role:  |
       Identifies itself as a button in iOS and radio button in Android
   group: |
-      Visble label is grouped or associated with the radio button in a single swipe
+      Visble label can be grouped or associated with the radio button in a single swipe
   state: |
       Expresses its state (disabled/dimmed, iOS: checked/not checked, selected.  Android: checked/not checked)
 ---
@@ -34,6 +34,7 @@ screenreader:
 - Except in a rare case where a mixed state is needed, radio buttons should be mutually exclusive
 - You should use a native element rather than a custom element because it will announce the correct built-in screen reader announcements without additional development effort
 -  A radio button should just change between checked and unchecked states.  It should not automatically navigate the user to another field or screen when checked, as that may cause a change of context. Revealing new information on the same screen as a result of activating a checkbox is usually not a change of context.
+- Name, Role, State must be announced when focus is on the control. Announcing the label before the radio button does not meet this requirement.
     
 ### Name
 
