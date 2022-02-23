@@ -3,7 +3,7 @@ layout: entry
 title:  "Listbox with inline autocomplete"
 description: "How to code and test an accessible listbox with inline autocomplete for the Web"
 categories: form
-
+     
 keyboard:
   tab: |
     Focus moves visibly to the text input
@@ -16,31 +16,54 @@ keyboard:
     The listbox closes.
   escape: |
     Clears the textbox. If the listbox is displayed, closes it.
-      
+
 mobile:
   swipe: |
     Focus moves to the input, traverses list
   double-tap: |
-    Selects option
+    Opens select, chooses option
 
 screenreader:
   name:  |
-    Purpose is clear
+    Its purpose is clear
   role:  |
-    Identifies itself as a listbox
+    It identifies itself as a select, popup, menu/submenu, listbox or combobox
   group: |
-    Label is read with the input
+    Its label is read and selected options are read
   state: |
-    Indicates when the list is expanded/collapsed
----
+    It indicates the value of the text input 
+    
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to the text input
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the arrow keys to select an option
+    result: |
+      the selected option
+  - then:  |
+      the enter key
+    result: |
+      the selected option is changed and focus returns to the text input
+  - then:  |
+      the escape key when the select is open 
+    result: |
+     it collapses and focus moves to the select
 
+gherkin-mobile:
+  - when:  |
+      swipe to focus on a select
+  - then:  |
+      doubletap with the select in focus
+    result: |
+      the selected option is changed
+---
 ## Code example
 
 {% highlight html %}
 {% include /examples/input-listbox-autocomplete.html %}
 {% endhighlight %}
-
-
 
 ## Developer notes
 

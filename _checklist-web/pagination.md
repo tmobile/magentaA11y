@@ -53,7 +53,6 @@ This semantic HTML contains all accessibility features by default.
 {% include /examples/pagination.html %}
 {:/}
 
-
 ## Developer notes
 
 ### Name
