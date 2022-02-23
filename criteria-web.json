@@ -57,7 +57,7 @@ layout: none
                   {% endfor -%}
                   {% endfor -%}
                   {% for action in page.gherkin-mobile offset:1 %}
-                  {% if action and action != "" %} "- THEN when I {{ action.then | strip_newlines }} I HEAR {{ action.result | strip_newlines }}",{% endif -%}
+                  {% if action and action != "" %}"- THEN when I {{ action.then | strip_newlines }} I HEAR {{ action.result | strip_newlines }}",{% endif -%}
                   {%- endfor %}
                   "Full information: {{ page.url | absolute_url | replace: '.html', '/' | strip_newlines }}"
                 ],
