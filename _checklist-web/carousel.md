@@ -7,25 +7,43 @@ order: 2
 
 keyboard:
   tab: |
-    Focus moves to Links and buttons within the nav
-  left/right arrow keys: |
-    Advances the slide forward/backward
+    Focus moves to carousel controls (forward, backward, pause/play, stop)
+  spacebar: |
+    Activates the button
+  enter: |
+    Activates the button
 
 mobile:
   swipe: |
-      Focus moves within the carousel
+    Focus moves within the carousel
   doubletap: |
-      This typically activates most elements
+    This typically activates most elements
 
 screenreader:
   name:  |
-    Can have a heading or label
+    Its name and purpose is clear
   role:  |
-    No clue
+    It identifies as a button
   group: |
-    Indicates the number of slides and position in the carousel
-  state: |
-    n/a
+    It indicates the number of slides and current position in the carousel
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to carousel controls (forward, backward, pause/play, stop)
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the spacebar or enter key
+    result: |
+      the intended action occurs
+
+gherkin-mobile:
+  - when:  |
+      swipe to move focus to carousel controls (forward, backward, pause/play, stop)
+  - then:  |
+      doubletap
+    result: |
+      the intended action occurs
 ---
 
 ## UX design notes

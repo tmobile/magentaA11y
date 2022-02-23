@@ -28,13 +28,37 @@ mobile:
 
 screenreader:
   name:  |
-    Purpose is clear, +/- buttons are ignored
+    Its purpose is clear (+/- buttons are ignored)
   role:  |
-    Identifies itself as a menu/submenu or listbox
+    It identifies itself as a select, popup button, menu/submenu or listbox
   group: |
-    Label is read with the input
+    Its label is read with the input
   state: |
-    Indicates when the button is expanded/collapsed, indicates which option is selected    
+    It indicates when the select is expanded/collapsed, indicates which option is selected
+
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to the select (+/- buttons are ignored)
+    result: |
+      focus is strongly visually indicated
+  - then:  |
+      the arrow keys to select an option
+    result: |
+      the selected option is changed
+  - then:  |
+      the escape key when the select is open 
+    result: |
+      it collapses and focus moves to the select
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on the select (+/- buttons are ignored)
+  - then:  |
+      doubletap with the select in focus
+    result: |
+      the picker/spinner opens
+
+
 ---
 
 ## Code examples

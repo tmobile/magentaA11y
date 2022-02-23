@@ -5,6 +5,8 @@ description: "How to test accessible figures, maps, charts and tables for the We
 categories: main
 
 keyboard:
+  arrow-keys: |
+    Browse to content
   tab: |
     Interactive figure controls are focusable
   enter: |
@@ -20,13 +22,32 @@ mobile:
 
 screenreader:
   name:  |
-    Content is described by a heading, alt text or named on focus; control purpose is clear
+    Content is described by a heading, alt text or named on focus
   role:  |
-    Element indicates it is a map, table, or image
+    It identifies as a common HTML element (image, list, table)
   group: |
-    Alternative method interaction is available.
-  state: |
-    n/a
+    An alternative method of consumption or interaction is available
+
+gherkin-keyboard: 
+  - when:  |
+      the arrow key to browse to a figure
+    result: |
+      the figure comes into view
+  - then:  |
+      the tab key to move focus to figure controls (toggle, show/hide, etc) 
+    result: |
+      the control is in focus
+  - then:  |
+      the spacebar or enter key
+    result: |
+      the intended action occurs
+
+
+gherkin-mobile:
+  - when:  |
+      swipe to browse to an image
+
+
 ---
 
 ## Code examples
@@ -73,9 +94,10 @@ When building maps, add a search or filtering feature for those who can't use a 
 {% highlight html %}
 <map-embed></map-embed>
 
-<form role="search" action="/map/">
+<form role="search" 
+      aria-label="Location search">
   <label for="search">
-    Search for an location
+    Search for a location
   </label>
   <input type="search" id="search">
   <button type="submit">
@@ -87,13 +109,13 @@ When building maps, add a search or filtering feature for those who can't use a 
 ## Developer notes
 
 ### Name
-- Use `alt="Figure content"` for images
-- Supply a heading for interactive figures or `aria-label="Figure name"` can be used as well.
+- Use `alt="Descriptive figure content"` for images
+- Supply a heading for interactive figures or `aria-label="Figure name"` can be used as well
 
 ### Role
-- Wrap charts and tables in a `<figure>` element where applicable.
+- Wrap charts and tables in a `<figure>` element where applicable
 - Include `<figcaption>` to describe the figure
-- Use `<cite>` to label sources.
+- Use `<cite>` to label sources
 
 ### Group
 - Provide alternative ways to consume content
