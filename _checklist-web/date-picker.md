@@ -34,7 +34,7 @@ screenreader:
     dialog identifies itself dialog or modal, 
     date grid table may identify itself as table or grid
   group: |
-    The launch button indicates it has a popup, days are announced with month and year
+    The launch button indicates it has a popup, menu or dialog; days are announced with month and year
   state: |
     Date options express state (pressed, selected, disabled/dimmed)
 
