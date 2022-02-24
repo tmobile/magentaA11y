@@ -5,7 +5,7 @@ categories: controls
 
 keyboard:
   tab or arrow keys: |
-    Focus visibly moves to the switch
+    Focus visibly moves to the switch or table row with switch
   spacebar: |
     Activates on iOS and Android
   enter: |
@@ -32,14 +32,14 @@ screenreader:
 
 - Switch or Toggle Button - A switch is a visual toggle between two mutually exclusive states — on and off
 - You should use a native switch when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
-- A toggle should just toggle on or off.  It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context
+- A toggle should just toggle on or off.  It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context. Revealing new information on the same screen as a result of activating a toggle is usually not a change of context.
+- Name, Role, State must be announced when focus is on the control, if it is isolated in the table row. Announcing the label before the switch does not meet this requirement.
 
 
 ### Name
 
 - Name describes purpose while focus is on the control (or on the whole table row)
-- Best practice is to not include "button" in the name
-- Name should match the visible label, if any
+- Name should match the visible label, if any, or text in the table row
 
 - **iOS Tips**
 	- Set a label in Interface Builder in the Identity Inspector
@@ -47,7 +47,6 @@ screenreader:
 	- `setTitle( )` method
 	- If no visible label, use `accessibilityLabel` on control
 	- `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label
-	- Match visible label
 	- To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector or use `isAccessibilityElement=false`
 	- If hiding visible label from screen reader, use `accessibilityLabel` on control
 - **Android Tips**  
@@ -59,6 +58,7 @@ screenreader:
 ### Role
 
 - Role is automatically announced if a native component is used
+- When not using native controls (custom controls), roles will need to be manually coded.
 
 - **iOS Tips**
 	- Standard UISwitchControl
@@ -69,13 +69,18 @@ screenreader:
 
 ### Groupings
 
-- Group visible label with switch (label and switch can be grouped together in a tableview/row/blade - one swipe)
+- Group visible label/text with switch (label and switch can be grouped together in a tableview/row/blade - all in one swipe)
 
 - **iOS Tips**
-	- `accessibilityFrame`
-	- `accessibilityFrameInContainerSpace`
-	- GroupView
-	- Only the container class is an accessible element `isAccessibilityElement=true` and announces all elements in one announcement  This makes child elements no longer accessible by screen reader 
+  - `accessibilityFrame`
+  - `accessibilityFrameInContainerSpace`
+  - GroupView
+  - Create a wrapper as an accessible element
+  - Define action upon double-tap
+  - `shouldGroupAccessibilityElement` attribute: For a precise order if the native order should be disrupted.
+  - `GroupView`
+  - `shouldGroupAccessibilityChildren` attribute indicates whether VoiceOver must group it's children views. This allows making unique vocalizations or define a particular reading order for a part of the page
+  - Only the container class is an accessible element `isAccessibilityElement=true` and announces all elements in one announcement  This makes child elements no longer accessible by screen reader 
 - **Android Tips**
 	- ViewGroup
 	- Set the container objects `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
@@ -99,8 +104,10 @@ screenreader:
 
 ### Focus
 
-- Only manage focus when needed. Primarily, let the device manage default focus order  
+- Only manage focus when needed. Primarily, let the device manage default focus order
+- Screen reader focus should be around the entire tablerow/blade when there is one interactive element (switch)  
 - Consider how focus should be managed between child elements and their parent views or containers
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 
 - **iOS**
 	- `accessibilityElementIsFocused` 
