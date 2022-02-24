@@ -4,16 +4,16 @@ input[type="checkbox"].radio,
 .radio {
   + label,
   + .label {
-    padding-left: 4rem;
     &:before {
       content: '';
       display: block;
       width: 2rem;
       height: 2rem;
       border-radius: 100%;
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
+      position: relative;
+      top: 0rem;
+      left: 0rem;
+      justify-self: center;
       background: #f2f2f2;
       transition: .4s;
       box-shadow: inset 0 0 0 .25rem $color-gray-xtra-dark, inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba($color-focus,0);
