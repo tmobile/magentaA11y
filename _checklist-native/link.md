@@ -14,7 +14,7 @@ keyboard:
           
 mobile:
   swipe: |
-    Focus moves to the element
+    Focus moves to the element, expresses its name, role (state, if applicable)
   rotor/lcm: |
     Links can be navigated to and activated from the Rotor/Local Context Menu or by focus/double tap.  Only one way is required.
   doubletap: |
@@ -34,16 +34,18 @@ screenreader:
 
 ## Developer notes
 
-- Clickable textview that navigates the user outside the app (Ex: to a browser)
-- Even if the link looks like a button, if the user is navigated to a browser, it must be coded as a link
+- Clickable textview that navigates the user outside the app (Ex: opens a browser)
+- Button: even if the control visibly looks like a link, code as a button to cue the screen reader the action will keep them within the app
+- Focus around an entire paragraph and activating an in-line link with double tap is an expected behavior.  The link does not have isolated focus.  (There can be only one active link in the paragraph)
 
 ### Name
 
 - Clickable text describes the destination or purpose of the link
+- Programmatic name matches the visible text
 
 ### Role
 
-- Ensure links appear in the Local Context Menu and Rotor  
+- Ensure screen reader users can navigate to links from the Local Context Menu and Rotor  
   
 - **iOS**
   - Use TextView with `UIAccessibilityTraitLink`
