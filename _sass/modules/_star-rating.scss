@@ -177,7 +177,7 @@ input[type="checkbox"].favorite:focus-visible + label {
     color: $color-gray-dark;
     transition: 0s;
     position: absolute;
-    bottom: -3px;
+    top: 3rem;
     width: 100%;
     text-align: center;
     border-radius: 2px;
