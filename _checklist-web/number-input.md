@@ -88,6 +88,7 @@ The `type="number"` input is intended for **integers** and includes features we 
 
 ## Developer notes
 
+- [Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
 - [Stepper/counter input example](/checklist-web/stepper-input/)
 
 ### Name

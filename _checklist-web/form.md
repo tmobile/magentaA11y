@@ -37,12 +37,43 @@ gherkin-mobile:
 
 ### Use semantic HTML
 
-{% highlight html %}
-{% include /examples/form.html %}
-{% endhighlight %}
-
 {::nomarkdown}
 <example>
 {% include /examples/form.html %}
 </example>
 {:/}
+
+{% highlight html %}
+{% include /examples/form.html %}
+{% endhighlight %}
+
+### Affordance: width indicates the expected input
+
+Form field width should afford the user space to enter the characters will be required. **Do not** arbitrarily limit the width of names, usernames, passwords or emails.
+
+
+- Middle initial should be wide enough to accommodate 1 character
+- State should be wide enough to accommodate 2 characters
+- Zip code should be wide enough to accommodate 5 characters
+
+### Why we stack inputs
+
+**Do not** put forms in multiple columns.
+
+- People are accustomed to scrolling vertically. There is no advantage to making the page take up less vertical space.
+- People with low vision may be using a zoom tool, enlarging the view of their screen and thus only seeing a portion of the form. If there is a column on the right side, it will be difficult to discover the fields.
+
+### Why we use autocomplete
+
+- Autocomplete is helpful for all customers leading to a speedier conversion
+- For those with motor disabilities, it eliminates the need to laboriously enter information
+
+{::nomarkdown}
+<example>
+{% include /examples/form-shipping.html %}
+</example>
+{:/}
+
+{% highlight html %}
+{% include /examples/form-shipping.html %}
+{% endhighlight %}

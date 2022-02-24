@@ -1,0 +1,25 @@
+<label for="favorite-letter">
+  What is your favorite NATO letter?
+  <span>Required</span>
+</label>
+
+<input type="text"
+       id="favorite-letter"
+       aria-describedby="favorite-error favorite-hint"
+       required>
+
+<div role="alert" class="inert">
+  <!--- Do not reference this alert element
+        directly with aria-describedby -->
+  <div id="favorite-error">
+    <!--- Use JS to inject the alert here -->
+  </div>     
+</div>
+
+<div class="hint" id="favorite-hint">
+  Example: Alpha, Bravo, Charlie
+</div>
+
+<button id="show-alert">
+  Toggle error
+</button>

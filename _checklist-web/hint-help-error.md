@@ -14,13 +14,20 @@ mobile:
     
 screenreader:
   name:  |
-    The input's name is read, then the hint text
+    After the input label is read, the hint, help or error is read
   role:  |
-    n/a
-  group: |
-    The hint should be read after the primary name
-  state: |
-    n/a
+    When it appears, an error is read automatically as an alert
+    
+gherkin-keyboard: 
+  - when:  |
+      the tab key to move focus to an input
+    result: |
+      hint, help or error text meets size and contrast requirements
+
+gherkin-mobile:
+  - when:  |
+      swipe to focus on an input
+
 ---
 ## Code examples
 
@@ -38,18 +45,28 @@ screenreader:
 
 ### Adding an error
 
+Note: The alert must be structured as below to function properly in VoiceOver, with the alert text nested inside the `role="alert"` element.
 
 {% highlight html %}
-{% include /examples/hint-error.html %}
+{% include /examples/input-text-error.html %}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/hint-error.html %}
+{% include /examples/input-text-error.html %}
 </example>
 {:/}
 
 ## Developer notes
+
+### Browser + screenreader quirks
+
+- Screenreaders do not implement alerts uniformly and must be tested
+  - Just because an alert pattern works in one screenreader doesn't mean it will work in all three
+- The element referenced by the `aria-describedby` attribute cannot use the `role="alert"` attribute (see example above for workaround). 
+  - [VoiceOver fails to read a referenced `role="alert"` element when the input is in focus](https://a11ysupport.io/tests/tech__aria__aria-describedby-with-role-alert).
+- NVDA will read the alert twice if it appears while the input is in focus: once from the `role="alert"` being injected and from the `aria-describedby` association.
+- NVDA needs a fraction of a second to catch up with changes in the DOM, use a `setTimeout` to delay displaying the alert
 
 ### Name
 - Inner text describes the hint

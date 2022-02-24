@@ -37,6 +37,7 @@ screenreader:
 - Move screen reader focus into sheet when opened
 - A grabber is recommended but not required for Android if a two-finger swipe for the screen reader in any direction closes it
 
+
 ### Name
 
 - Name describes the purpose of the control
@@ -45,12 +46,14 @@ screenreader:
   - Set a label of grabber in Interface Builder in the Identity Inspector
   - `setTitle( ) method`
   - If no visible label, use `accessibilityLabel` on control
+
   - If hiding visible label, use `accessibilityLabel` on control
 - **Android Tips**  
   - `android:text` XML attribute
   - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label
   - `contentDescription` overrides `android:text`  
   - Use `labelFor` attribute to connect the visible text label to the control
+
 
 ### Role
 
@@ -60,6 +63,7 @@ screenreader:
 - **Android**
   - `ModalBottomSheet`
   - Grabber announces as "double tap to activate"
+
 
 ### Groupings
 
@@ -90,6 +94,7 @@ screenreader:
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - Moving focus into the sheet when a button opens it makes it clear to the screen reader user that there is a sheet available
+
 
 - **iOS**
   - `accessibilityViewIsModal` contains the screen reader focus inside the Modal

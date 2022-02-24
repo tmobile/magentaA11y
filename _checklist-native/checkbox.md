@@ -3,7 +3,6 @@ layout: entry
 title:  "Checkbox"
 categories: controls
 
-
 keyboard:
   tab or arrow keys: |
     Focus visibly moves to the checkbox

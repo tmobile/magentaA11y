@@ -5,17 +5,18 @@
 
 input[type="checkbox"] {
   + label {
-    padding-left: 4rem;
+    align-items: center;
     &:before {
       content: '';
       color: #fff;
       display: block;
-      position: absolute;
+      position: relative;
+      justify-self: center;
       border-radius: .125rem;
+      top: 0rem;
+      left: 0rem;
       width: 1.75rem;
       height: 1.75rem;
-      left: 1.125rem;
-      top: 1.125rem;
       font-size: 0rem;
       line-height: 1.5rem;
       font-weight: normal;

@@ -28,7 +28,7 @@ gherkin-keyboard:
 
 gherkin-mobile:
   - when:  |
-      swipe to focus on an image
+      swipe to browse to an image
 ---
 
 ## Code examples
@@ -44,18 +44,26 @@ If you were describing the image to someone who couldn't see it, what would you 
 ### Linked SVG that conveys meaning
 
 {% highlight html %}
-<img src="/smartphone.svg" 
+<img src="/coffee-roaster.svg" 
      role="img"
-     alt="Smartphone">
+     alt="Coffee roaster">
 {% endhighlight %}
 
 ### Images that are decorative
-When the alt attribute is empty, the screen reader ignores it. The `alt` attribute is still required to be valid html.
+
+There are times that images shouldn't be read because they would be repetitive or not add any value to the content.
+
+- When the `alt` attribute is empty, the screen reader ignores it. 
+  - The `alt` attribute is still required to be valid html.
+- Use `aria-hidden="true"` as a backup and reinforcement:
+  - As a backup: **developers often mistakenly omit the alt attribute entirely**, meaning that some screenreaders will read the entire filename.
+  - As a **reinforcement** to ensure the screenreader ignores the image. Screenreaders have been observed reading an image role when the alt attribute is present but empty.
 
 {% highlight html %}
-<img src="/smartphone.png" alt="">
+<img src="/info-icon.png" aria-hidden="true" alt="">
 
-<img src="/smartphone.png" alt>
+<!-- The ="" is not necessary for an empty attribute -->
+<img src="/info-icon.png" aria-hidden="true" alt >
 {% endhighlight %}
 
 ### Inline SVG that conveys meaning

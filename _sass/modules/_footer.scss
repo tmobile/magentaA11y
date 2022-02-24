@@ -4,6 +4,10 @@ footer {
   padding-bottom: 2rem;
   margin-bottom: 3rem;
 
+  .last-modified {
+    color: $color-gray-dark;
+  }
+
   nav {
     ul {
       display: block;

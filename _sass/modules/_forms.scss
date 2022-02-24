@@ -1,6 +1,6 @@
 form {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   padding-bottom: 1rem;
 
   ul,
@@ -53,7 +53,7 @@ input[type="submit"] {
   width: auto;
   -webkit-appearance: none; // Remove iOS webkit styles
   border-radius: 0; // Remove iOS webkit styles
-  margin: 0  0 .75rem inherit;
+  margin: 0  0 .75rem 0;
   font-size: 1rem;
   padding: .5rem;
   border: 1px solid $color-border-gray;
@@ -69,7 +69,7 @@ label {
     display: inline-block;
     height: 1rem;
     line-height: 1rem;
-    font-weight: normal;
+    @include regular;
     background: darken($color-gray-xtra-light,8);
     padding: 0 .5rem;
     border-radius: .125rem;
@@ -87,12 +87,20 @@ fieldset,
   display: grid;
   box-shadow: 0 1px 2px 1px rgba(#000, .05);
 
-  input,
-  textarea {
+  textarea,
+  input[type="text"],
+  input[type="search"],
+  input[type="file"],
+  input[type="email"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  input[type="button"],
+  input[type="submit"] {
     margin: 0 1rem 1rem 1rem;
     border: 1px solid $color-border-gray;
     display: block;
-
     &:last-of-type {
       margin-bottom: 1.25rem;
     }
@@ -128,6 +136,16 @@ legend,
   position: relative;
   @include clearfix;
   border-bottom: 1px dotted $color-border-gray;
+  span {
+    font-size: .75rem;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    @include regular;
+    background: darken($color-gray-xtra-light,8);
+    padding: 0 .5rem;
+    border-radius: .125rem;
+  }
 }
 
 
@@ -138,9 +156,11 @@ input[type=radio],
   + label,
   + .label {
     @include ripple;
-    display: block;
-    padding: 1.5rem .5rem 1.325rem 4rem;
-    line-height: 1.25rem;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    padding: 1rem .5rem 1rem 0rem;
+    line-height: 1;
     width: 100%;
     background: #fff;
     margin: 0;
@@ -239,4 +259,10 @@ input[type="file"] {
 
 i {
   background-color: #AA0000;
+}
+
+@for $i from 1 through 100 {
+  input[maxlength="#{$i}"] {
+    width: #{$i + 1}rem;
+  }
 }

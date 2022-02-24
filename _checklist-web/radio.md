@@ -48,8 +48,6 @@ gherkin-mobile:
       doubletap with the radio in focus
     result: |
       the state is changed
-
-
 ---
 
 
@@ -66,6 +64,25 @@ This semantic HTML contains all accessibility features by default.
 {::nomarkdown}
 <example>
 {% include /examples/input-radio.html %}
+</example>
+{:/}
+
+### Required radio inputs
+
+Ensuring all screenreaders indicate radio inputs as being required requires some aria and reinforcement.
+
+- Use `aria-required="true"` to indicate the group is required
+- Use `aria-invalid="true/false"` to indicate an error state
+- Add `role="radiogroup"` to the `<fieldset>` to make the `aria-required` attribute valid
+- Add "Required" as text to the `<legend>` to ensure compliance across all platforms
+
+{% highlight html %}
+{% include /examples/input-radio-required.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-radio-required.html %}
 </example>
 {:/}
 
@@ -144,5 +161,9 @@ This hack must be used very carefully on a case by case basis.
 - Focus must be visible
 - Custom elements will require keyboard event listeners and roving tabindex
 - **DO NOT** put interactive elements inbetween radio inputs.
+
+## Thanks
+
+- [Support for Marking Radio Buttons Required, Invalid - Adrian Roselli](https://adrianroselli.com/2022/02/support-for-marking-radio-buttons-required-invalid.html)
 
 

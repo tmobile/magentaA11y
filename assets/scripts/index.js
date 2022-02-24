@@ -36,12 +36,13 @@ $("#submit-response").click(function() {
 
 // Trigger alert
 $("#show-alert").click(function() {
-    if($('[role="alert"]').hasClass('visible')) {
-        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
+    if($('[role="alert"]').hasClass('active')) {
+        $('[role="alert"]').removeClass('active').addClass('inert');
+        $('#favorite-error').empty();
     } else {
-        $('[role="alert"]').removeClass('inert').addClass('visible');
+        $('[role="alert"]').removeClass('inert').addClass('active');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('[role="alert"]').append('The correct answer is Charlie');
+            $('#favorite-error').append('The correct answer is Charlie');
         }, 25);
     }
 });
@@ -137,6 +138,14 @@ $("[name='checkboxRadioGroup']").on('change', function() {
     $("[name='checkboxRadioGroup']").not(this).prop('checked', false);
     $(this).prop('checked', true);
 });
+
+// For required radio input fields
+$("[name='natoReq']").on('change', function() {
+    if($(this).closest("fieldset").attr('aria-invalid', "true")) {
+        $(this).closest("fieldset").attr('aria-invalid', "false");
+    }
+});
+
 
 // Make inaccessible radio inputs look like they're working
 $(".fake-radio").click(function() {
