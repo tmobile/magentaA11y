@@ -15,20 +15,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ site.baseurl }}/assets/scripts/index.js?{{site.time | date: '%s'}}"></script>
     <script>
-      $("input[type='checkbox']").change(function() {
-        // criteria-checkbox
+      $(".criteria-checkbox").change(function() {
           var arr = [];
-          if ($(this).hasClass('criteria-checkbox')) {
-            arr.push([ '#a11y - {{ page.url | replace: '/', '' | capitalize }} Accessibility Acceptance Criteria' ]);
-            $("input[type='checkbox']:checked").each(function(){
-                var $this = $(this);
-                // arr.push([ $this.data('title'), $this.data('success-criteria'), $this.data('keyboard-support'), ]);
-                arr.push([ $this.data('success-criteria') ]);
-            });
-            var textarea = document.getElementById("criteria-area");
-            textarea.value = arr.join("\n");
-            //console.log(arr);
-          }
+          arr.push([ '#a11y - {{ page.url | replace: '/', '' | capitalize }} Accessibility Acceptance Criteria' ]);
+          $(".criteria-checkbox:checked").each(function(){
+              var $this = $(this);
+              arr.push([ $this.data('success-criteria') ]);
+          });
+          var textarea = document.getElementById("criteria-area");
+          textarea.value = arr.join("\n");
+          console.log(arr);
       });
       $("#copy").click(function(){
           $("#criteria-area").select();
