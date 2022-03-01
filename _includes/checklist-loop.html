@@ -17,7 +17,10 @@ Full information: {{ page.url | absolute_url | replace: '.html', '/' }}
 {% endcapture %}
 
 {% capture gherkin %}
+How to test {% assign firstLetter = page.title | downcase | slice: 0 %}{% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u'  %}an{% else %}a{% endif %} {{ page.title | escape | downcase }}
+
 GIVEN THAT I am on a page with {% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u' %}an{% else %}a{% endif %} {{ page.title | escape | downcase }}
+
 1 - Keyboard for mobile &amp; desktop
 {% for action in page.gherkin-keyboard limit:1 -%}
 - WHEN I use {{ action.when | strip_newlines }} I SEE {{ action.result | strip_newlines }}
@@ -25,7 +28,6 @@ GIVEN THAT I am on a page with {% if firstLetter == 'a' or firstLetter== 'e' or 
 {% for action in page.gherkin-keyboard offset:1 -%}
   - THEN when I use {{ action.then | strip_newlines }} I SEE {{ action.result | strip_newlines }}
 {% endfor %}
-
 2 - Desktop screenreader
 {% for action in page.gherkin-keyboard limit:1 -%}
 - WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) AND 
