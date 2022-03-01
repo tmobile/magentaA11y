@@ -37,7 +37,7 @@ MagentaA11y is built and maintained by the [T-Mobile Accessibility Resource Cent
 
 ### Here are some ways to contribute:
 
-- Add a concise video using a screen reader that's not yet have covered.
+- Add a concise [demo video](/demos/) using a screen reader that's not yet covered.
 - Add an entry for a component that is not included.
 - Fix a typo or edit for consistent language.
 
