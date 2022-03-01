@@ -237,9 +237,9 @@ function updateStorage(){
     formValues[this.id] = this.checked;
   });
 
-  $tabs.each(function(){
-    formValues[this.id] = this.checked;
-  });
+//   $tabs.each(function(){
+//     formValues[this.id] = this.checked;
+//   });
 
   $details.each(function(){
     formValues[this.id] = this.open;
@@ -254,9 +254,9 @@ $checkboxes.on("change", function(){
     updateStorage();
 });
 
-$tabs.on("change", function(){
-    updateStorage();
-});
+// $tabs.on("change", function(){
+//     updateStorage();
+// });
 
 $details.on("toggle", function() {
     updateStorage();
