@@ -264,7 +264,7 @@ $details.on("toggle", function() {
 
 // On page load
 $.each(formValues, function(key, value) {
-  $('#' + key).prop('checked', value);
-  $('#' + key).prop('open', value);
+  $("#" + key).prop('checked', value);
+  $("#" + key).prop('open', value);
   console.log(key, value);
 });
