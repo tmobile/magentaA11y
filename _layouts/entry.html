@@ -22,7 +22,7 @@ layout: default
         {{ page.title | escape | downcase }}
       </h2>
 
-      <div class="test-instructions">
+      <div class="test-instructions tab-group">
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
           <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tabs" id="gherkin" name="criteria" checked>
           <label for="gherkin">Gherkin</label>

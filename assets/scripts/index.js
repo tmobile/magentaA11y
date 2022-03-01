@@ -222,6 +222,8 @@ var formValues = JSON.parse(localStorage.getItem('formValues')) || {};
 
 var $checkboxes = $(".checkbox-item-controls :checkbox");
 
+var $tabs = $(".tab-group :radio");
+
 var $details = $(".checklist-container details");
 
 var $button = $("#checkbox-container button");
@@ -235,16 +237,24 @@ function updateStorage(){
     formValues[this.id] = this.checked;
   });
 
+  $tabs.each(function(){
+    formValues[this.id] = this.checked;
+  });
+
   $details.each(function(){
     formValues[this.id] = this.open;
   });
 
   localStorage.setItem("formValues", JSON.stringify(formValues));
 
-  console.log(formValues);
+//   console.log($tabs);
 }
 
 $checkboxes.on("change", function(){
+    updateStorage();
+});
+
+$tabs.on("change", function(){
     updateStorage();
 });
 
@@ -257,5 +267,5 @@ $details.on("toggle", function() {
 $.each(formValues, function(key, value) {
   $("#" + key).prop('checked', value);
   $("#" + key).prop('open', value);
-  console.log(key, value);
+//   console.log(key, value);
 });
