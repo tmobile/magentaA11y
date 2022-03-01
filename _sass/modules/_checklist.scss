@@ -1,4 +1,3 @@
-
 .success-criteria-maker {
   position: relative;
   display: grid;
@@ -13,22 +12,23 @@
   }
   .criteria-container {
     margin-bottom: calc(2rem + 3px);
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgba(#000, .1);
+    padding: 0rem 2rem 0 2rem;
   }
 
   .textarea-container {
     position: sticky;
     position: -webkit-sticky;
     top: 0rem;
-    border-top: 1px solid lighten($color-border-gray,3);
-    background-color: #fff;
     z-index: 0;
-    box-shadow: 0 0 5px 1px rgba(#000, .1);
     textarea {
       height: calc(100vh - 6.25rem);
       width: 100%;
-      margin: 0;
-      padding: 2rem;
+      margin: -1px 0 0 0;
+      padding-top: 2rem;
       border: none;
+      border-top: 1px solid #000;
       border-radius: 0;
       margin-bottom: 0;
       color: $color-text;
@@ -48,15 +48,15 @@
 
 
 
-label[for="criteria-area"] {
-  margin: 0;
+label[for="condensed-textarea"] {
+  margin: 0 -2rem 0 -2rem;
   background: #fff;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
   line-height: 1rem;
-  box-shadow: 0 0 5px 1px rgba(#000, .0625);
   border-radius: 2px 2px 0 0;
   position: relative;
   z-index: 99;
+  border-bottom: 1px solid $color-border-gray;
 }
 
 .input-checkbox-item {
@@ -139,8 +139,9 @@ label[for="criteria-area"] {
 .textarea-controls {
   display: grid;
   grid-template-columns: auto 1fr;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 1rem 0rem 1rem 0rem;
   border-top: 1px solid $color-border-gray;
+  box-shadow: 0 -20px 10px -20px rgba(#000, .15);
   background: #fff;
   position: sticky;
   bottom: 0;

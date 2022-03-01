@@ -1,5 +1,5 @@
 {% if page.categories contains category %}
-{% capture top %}
+{% capture condensed %}
 How to test {% assign firstLetter = page.title | downcase | slice: 0 %}{% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u'  %}an{% else %}a{% endif %} {{ page.title | escape | downcase }}
 
 1. Test keyboard only, then keyboard + screenreader
@@ -9,14 +9,65 @@ How to test {% assign firstLetter = page.title | downcase | slice: 0 %}{% if fir
 3. Listen to screenreader output on all devices
 {% for output in page.screenreader %}- {{ output[0] | capitalize }}: {{ output[1] | escape }}{% endfor %}
 {% endcapture %}
-{% capture all %}
-{{ top | strip | lstrip }}
+
+{% capture condensed-clean %}
+{{ condensed | strip | lstrip }}
 
 Full information: {{ page.url | absolute_url | replace: '.html', '/' }}
 {% endcapture %}
+
+{% capture gherkin %}
+GIVEN THAT I am on a page with {% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u' %}an{% else %}a{% endif %} {{ page.title | escape | downcase }}
+1 - Keyboard for mobile &amp; desktop
+{% for action in page.gherkin-keyboard limit:1 -%}
+- WHEN I use {{ action.when | strip_newlines }} I SEE {{ action.result | strip_newlines }}
+{%- endfor %}
+{% for action in page.gherkin-keyboard offset:1 -%}
+  - THEN when I use {{ action.then | strip_newlines }} I SEE {{ action.result | strip_newlines }}
+{% endfor %}
+
+2 - Desktop screenreader
+{% for action in page.gherkin-keyboard limit:1 -%}
+- WHEN I use a desktop screenreader (NVDA, JAWS, VoiceOver) AND 
+{% for action in page.gherkin-keyboard limit:1 -%}
+- I use {{ action.when | strip_newlines }}
+{%- for requirement in page.screenreader %}
+  - I HEAR {{ requirement[1] | escape | strip_newlines }}
+{%- endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% for action in page.gherkin-keyboard offset:1 %}
+- THEN when I use {{ action.then | strip_newlines }} I HEAR {{ action.result | strip_newlines }}
+{%- endfor %}
+
+3 - Mobile screenreader
+{% for action in page.gherkin-mobile limit:1 -%}
+- WHEN I use a mobile screenreader (Talkback, VoiceOver) AND
+{%- for action in page.gherkin-mobile limit:1 %}
+- I {{ action.when | strip_newlines }}
+{%- for requirement in page.screenreader %}
+  - I HEAR {{ requirement[1] | escape | strip_newlines }}
+{%- endfor -%}
+{% endfor -%}
+{% endfor -%}
+{% for action in page.gherkin-mobile offset:1 %}
+{% if action and action != "" %}- THEN when I {{ action.then | strip_newlines }} I HEAR {{ action.result | strip_newlines }}{% endif -%}
+{%- endfor %}
+{% endcapture %}
+
+
+{% capture gherkin-clean %}
+{{ gherkin | strip | lstrip  }}
+
+Full information: {{ page.url | absolute_url | replace: '.html', '/' }}
+{% endcapture %}
+
 <li class="input-checkbox-item">
-  <input type="checkbox" class="criteria-checkbox" id="{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}" data-success-criteria="
-{{ all | strip | lstrip }}">
+  <input type="checkbox" class="criteria-checkbox" id="{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}" 
+data-condensed-criteria="
+{{ condensed-clean | strip | lstrip }}"
+data-gherkin-criteria="
+{{ gherkin-clean | strip | lstrip }}">
   <label for="{{ category | escape }}-{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '' }}">
     {{ page.title | escape }}
   </label>

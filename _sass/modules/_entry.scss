@@ -44,21 +44,27 @@ step-number {
   @include break($break-small) {
     padding: .5rem 2rem 1rem 2rem;
   }
+  .condensed-criteria {
+    padding-top: 2rem;
+  }
+  .gherkin-criteria {
+    padding-top: 2rem;
+  }
 }
 
-.step-by-step {
-  padding-top: 2rem;
-}
-.gherkin {
-  padding-top: 2rem;
+
+.condensed-criteria {
   display: none;
 }
+.gherkin-criteria {
+  display: block;
+}
 
-input[type=radio]#gherkin:checked {
+input[type=radio]#condensed:checked {
   + label {   
-    + .step-by-step {
+    + .gherkin-criteria  {
       display: none;
-      + .gherkin {
+      + .condensed-criteria {
         display: block;
       }
     }  

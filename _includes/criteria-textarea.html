@@ -1,16 +1,35 @@
 <div class="criteria-container">
-  <label for="criteria-area" class="h-charlie">
-    Acceptance criteria list
-  </label>
-  <div class="textarea-container">
-    <textarea id="criteria-area">Select components to get started or use ••• to learn more.</textarea>
+  {% if page.url != "/native/" %}
+    <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tabs" id="gherkin" name="criteria" checked>
+    <label for="gherkin">Gherkin</label>
+    <input type="radio" aria-label="Show condensed testing instructions" class="tabs" id="condensed" name="criteria">
+    <label for="condensed">Condensed</label>
+  {% else %}
+    <label for="condensed-textarea" class="h-charlie">
+      Acceptance criteria list
+    </label>
+  {% endif %}
+
+  {% if page.url != "/native/" %}
+  <div class="textarea-container gherkin-criteria">
+    <textarea aria-label="Acceptance criteria" id="gherkin-textarea">Select components to get started or use ••• to learn more.</textarea>
     <div class="textarea-controls">
       <div>
-        <button id="copy" class="button-alpha" type="button">
+        <button id="copy-gherkin" aria-label="Copy gherkin acceptance criteria" class="button-alpha" type="button">
           Copy
         </button>
-        <!--<input type="checkbox" role="switch" id="markdown">-->
-        <!--<label for="markdown">Show Markdown</label>-->
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="textarea-container condensed-criteria" {% if page.url == "/native/" %}style="display:block;"{% endif %}>
+    <textarea aria-label="Acceptance criteria" id="condensed-textarea">Select components to get started or use ••• to learn more.</textarea>
+    <div class="textarea-controls">
+      <div>
+        <button id="copy-condensed" aria-label="Copy condensed test instructions" class="button-alpha" type="button">
+          Copy
+        </button>
       </div>
     </div>
   </div>
