@@ -262,7 +262,6 @@ $details.on("toggle", function() {
     updateStorage();
 });
 
-
 // On page load
 $.each(formValues, function(key, value) {
   $("#" + key).prop('checked', value);
