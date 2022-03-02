@@ -58,10 +58,7 @@ input[type="checkbox"].radio,
     @extend .horizontal;
     + label {
       @include ripple(#fff, #eee, center, center);
-      padding: 1rem 1rem 1.25rem;
-      @include break($break-max){
-        padding: 1.75rem 1rem 1.25rem;
-      }
+      padding: 1.75rem 1rem 1.25rem;
       &:after,
       &:before {
         display: none;      
