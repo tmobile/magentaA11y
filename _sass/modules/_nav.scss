@@ -7,7 +7,7 @@ nav {
   z-index: 999;
 
   a,
-  button.expander-toggle {
+  .expander-toggle {
     display: block;
     text-align: center;
     padding: 1.5rem .5rem 1.5rem .5rem;
@@ -86,10 +86,10 @@ nav {
         }
         @include break(500px) {
           font-size: 1.5rem;
-          padding-left: 2rem;
-          padding-right: 2rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
           margin-right: 1rem;
-          @include light;
+          @include regular;
         }
       }
       &.bravo {
@@ -116,22 +116,27 @@ nav {
       font-size: 1rem;
       line-height: 1rem;
       background: transparent;
-      &:before {
-        display: none;
-      }
-      @include break(321px) {
-        padding-right: 3.25rem;
-        &:before {
-          display: block;
-        }
-      }
-    }
-    .expander-toggle {
-      font-size: 1.125rem;
+      padding: 1.5rem .5rem 1.5rem .5rem;
+
       &[aria-expanded="true"] {
         border-bottom: none;
       }
+      &:before {
+        display: none;
+      }       
+      @include break(400px) {
+        padding-right: 2.125rem;
+        &:before {
+          display: block;
+          right: 0;
+        }
+      }
+      @include break($break-mid) {
+        font-size: 1.125rem;
+        padding: 1.5rem 1rem 1.5rem 3.25rem;
+      }
     }
+  
     ul.expander-content {
       position: absolute;
       width: 100%;
