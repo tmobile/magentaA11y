@@ -1,21 +1,21 @@
 ---
 layout: entry
-title:  "Drawer / Snappable"
+title:  "Drawer / Snappable / Sheet"
 categories: controls
 
 keyboard:
   tab and arrow keys: |
-      Focus visibly moves to the drawer
+      Focus visibly moves to the drawer grabber or first interactive element
   spacebar: |
-      Selects and opens the picker/spinner on iOS and Android
+      Activates on iOS and Android
   enter: |
-      Selects and opens the picker/spinner on Android
+      Activates on Android
         
 mobile:
   swipe: |
       Focus moves to the element, expresses its name, role, value & state (if applicable)
   doubletap: |
-     Selects and opens picker/spinner
+     Activates interactive elements
 
 screenreader:
   name:  |
@@ -23,52 +23,47 @@ screenreader:
   role:  |
       Identifies itself as a button in iOS and "double tap to activate" in Android
   group: |
-      Visible label is grouped or associated with the picker in a single swipe
+      Visible label is grouped or associated with controls in a single swipe
   state: |
-      Expresses its state (disabled/dimmed)
+      Expresses its state (expands/collapses or disabled/dimmed)
 ---
 
 ## Developer notes
+- A sheet helps people perform a distinct task that’s related to the parent view without taking them away from their current context
+- Use native elements when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Most sheets appear as a card that partially covers the underlying content. 
+- The screen reader should be confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader does not have to be confined in it
+- Ensure there is a way to collapse or close the sheet for the screen reader (iOS)
+- Move screen reader focus into sheet when opened
+- A grabber is recommended but not required for Android if a two-finger swipe for the screen reader in any direction closes it
 
-
-- Spinners and pickers provide a quick way to select one value from a set. Dropdowns/ Spinners/ Pickers all follow this page's guidance
-- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Screen reader focus moves to the picker or spinner when it opens. Sometimes it takes one swipe to enter spinner on Android
-- "Picker item, adjustable" "swipe up or down to adjust the value" for custom actions on the picker are the common announcements on iOS. Done button closes picker and screen reader focus should move to the button that opened the picker
-- "Dropdown list" or "pop up window" often brings up a modal on Android.  Focus remains in modal or back to triggering button.  Swipe anywhere on screen with two fingers can close modal
-- The value or option that the user chose must be announced along with the name and role
 
 ### Name
 
 - Name describes the purpose of the control
 
-- **iOS Tips**
-  - Set a label in Interface Builder in the Identity Inspector
-  - Group visible text label and the control in the same view container: `accessibilityFrameInContainerSpace`
+- **iOS Tips**  
+  - Set a label of grabber in Interface Builder in the Identity Inspector
   - `setTitle( ) method`
   - If no visible label, use `accessibilityLabel` on control
-  - `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label.
-  - Match visible label, if any
-  - To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector
+
   - If hiding visible label, use `accessibilityLabel` on control
 - **Android Tips**  
   - `android:text` XML attribute
   - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label
   - `contentDescription` overrides `android:text`  
-  - Use `labelFor` attribute to connect the visible label to the control
+  - Use `labelFor` attribute to connect the visible text label to the control
+
 
 ### Role
 
 - **iOS**
-  - UIPickerView
-  - UIDatePicker
-  - "picker item" and/or "adjustable" can be the role
+  - `UISheetPresentationController` 
+  - Grabber announces as 'Button"
 - **Android**
-  - Spinner Class  
-  - DatePickerDialog 
-  - TimePickerDialog
-  - See native date or time pickers in Gmail or Settings to determine the specific device's swipe order and behavior (Ex: Gmail-Compose-Menu-Schedule send-Pick date & time)
-  - "pop up window" or "dropdown list" can be the role  
+  - `ModalBottomSheet`
+  - Grabber announces as "double tap to activate"
+
 
 ### Groupings
 
@@ -86,9 +81,11 @@ screenreader:
 ### State
 
 - **iOS**  
+  - Grabber announces as expands/collapses
   - Active: `isEnabled property`
   - Disabled: `UIAccessibilityTraitNotEnabled`. Announcement: dimmed
-- **Android**  
+- **Android** 
+  - Grabber, if any, announces as expands/collapses
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
 
@@ -96,8 +93,8 @@ screenreader:
 
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
-- Moving focus into the picker/spinner tells the screen reader user there is a picker available
-- Screen reader focus can move out of the picker onto the rest of the screen, as it is not considered a modal on iOS, not on Android
+- Moving focus into the sheet when a button opens it makes it clear to the screen reader user that there is a sheet available
+
 
 - **iOS**
   - `accessibilityViewIsModal` contains the screen reader focus inside the Modal
