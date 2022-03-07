@@ -62,6 +62,16 @@ label[for="condensed-textarea"] {
 .input-checkbox-item {
   display: grid;
   grid-template-columns: 1fr calc(8rem + 2px);
+  &:last-of-type {
+    border-radius: 0 0 1rem 1rem;
+    label {
+      border-radius: 0 0 1rem 1rem;
+    }
+    a {
+      border-radius: 0 0 1rem 0rem;
+
+    }
+  }
  }
  
 .checkbox-item-controls {

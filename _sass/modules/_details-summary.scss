@@ -1,16 +1,18 @@
 details {
   background: #fff;
-  padding: 1rem;
   border: none;
-  border-radius: 2px;
+  border-radius: 1rem;
   margin-bottom: calc(2rem + 2px);
-  box-shadow: 0 0 5px 1px rgba(#000, .1);
+  padding: 1rem;
+  box-shadow: 0 20px 10px -20px rgba(#000, .15),
+              0 4px 20px -5px rgba(#000, .07);
 
   summary {
     font-weight: bold;
     @include headline;
     padding: 1.5rem 1rem 1.5rem 5rem;
     margin: calc(-1rem);
+    border-radius: 1rem 1rem 0 0;
     line-height: .875;
     font-size: 1.25rem;
     line-height: 1rem;
@@ -18,8 +20,6 @@ details {
     position: relative;
     display: block; // necessary to control ::marker
     z-index: 9;
-
-
     @include ripple;
 
     &::-webkit-details-marker,
