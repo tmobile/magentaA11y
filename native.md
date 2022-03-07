@@ -4,4 +4,4 @@ title: Native app accessibility checklist
 permalink: /native/
 ---
 
-Choose components to define your list of accessibility success criteria
+## Choose components to define your accessibility success criteria
