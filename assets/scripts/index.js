@@ -34,6 +34,19 @@ $("#submit-response").click(function() {
     }
 });
 
+// Trigger error
+$("#show-error").click(function() {
+    if($('[role="alert"]').hasClass('active')) {
+        $('[role="alert"]').removeClass('active').addClass('inert');
+        $('#favorite-error').empty();
+    } else {
+        $('[role="alert"]').removeClass('inert').addClass('active');
+        setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
+            $('#favorite-error').append('The correct answer is Charlie');
+        }, 25);
+    }
+});
+
 // Trigger alert
 $("#show-alert").click(function() {
     if($('[role="alert"]').hasClass('active')) {
@@ -42,7 +55,7 @@ $("#show-alert").click(function() {
     } else {
         $('[role="alert"]').removeClass('inert').addClass('active');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('#favorite-error').append('The correct answer is Charlie');
+            $('#favorite-error').append('Hello world');
         }, 25);
     }
 });

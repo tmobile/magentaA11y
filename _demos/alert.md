@@ -4,5 +4,5 @@ title:  "Alert"
 ---
 
 {::nomarkdown}
-{% include /examples/input-text-error.html %}
+{% include /examples/alert.html %}
 {:/}
