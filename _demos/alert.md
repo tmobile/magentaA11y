@@ -3,8 +3,6 @@ layout: demo
 title:  "Alert"
 ---
 
-
-
 {::nomarkdown}
-{% include /examples/alert.html %}
+{% include /examples/input-text-error.html %}
 {:/}
