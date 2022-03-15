@@ -1,0 +1,37 @@
+---
+permalink: /site-map.html
+layout: default
+---
+
+<div class="container">
+  <h1 class="h-alpha">Site map</h1>
+
+  <h2 class="h-bravo">Web acceptance criteria</h2>
+
+  <ul>
+    {% for page in site.checklist-web %}
+      <li>
+        <a href="{{ page.url | remove: "index.html" }}">{{ page.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="h-bravo">Native acceptance criteria</h2>
+
+  <ul>
+    {% for page in site.checklist-native %}
+    <li>
+        <a href="{{ page.url | remove: "index.html" }}">{{ page.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="h-bravo">Demos</h2>
+  <ul>
+    {% for page in site.demos %}
+    <li>
+        <a href="{{ page.url | remove: "index.html" }}">{{ page.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
