@@ -17,6 +17,8 @@ mobile:
     Focus moves within page
   pinch/stretch: |
     Content zooms up to 200%
+  orientation: |
+    Content is accessible in landscape or portrait orientation
 
 screenreader:
   name:  |
@@ -30,9 +32,14 @@ gherkin-keyboard:
     result: |
       focus is strongly visually indicated on the first interactive components
 
+
 gherkin-mobile:
   - when:  |
       swipe to enter the web browser window
+  - then: |
+      change orientations
+    result: |
+      content is accessible in landscape or portrait orientation       
 ---
 ## Developer notes
 
