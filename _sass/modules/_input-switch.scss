@@ -1,6 +1,8 @@
 input[role="switch"] {
   + label {
-    padding-left: 6rem;
+    padding-left: 1rem;
+    grid-template-columns: 4rem 1fr;
+    column-gap: 1rem;
     
     &:before {
       transform: translateZ(0);
@@ -9,9 +11,9 @@ input[role="switch"] {
       width: 2.5rem;
       padding: 0 .75rem 0 .75rem;
       height: 2rem;
-      position: absolute;
-      left: 1.25rem;
-      top: .5rem;
+      position: relative;
+      left: 0rem;
+      top: 0rem;
       border-radius: 1rem;
       background-color: $color-gray-light;
       transition: background-color .4s, box-shadow .4s;
@@ -30,8 +32,8 @@ input[role="switch"] {
       height: 2rem;
       border-radius: 2rem;
       position: absolute;
-      left: 1.25rem;
-      top: .5rem;
+      left: 1rem;
+      top: 1rem;
       background-color: #fff;
       transition: .4s;
       box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px 2px $color-gray-light;
