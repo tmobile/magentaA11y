@@ -16,7 +16,7 @@ input[role="switch"] {
       top: 0rem;
       border-radius: 1rem;
       background-color: $color-gray-light;
-      transition: background-color .4s, box-shadow .4s;
+      transition: background-color .2s, box-shadow .2s;
       border: none;
       background-size: 1.75rem 1.75rem;
       background-position: 85% center;
@@ -36,7 +36,7 @@ input[role="switch"] {
       top: 1rem;
       background-color: #fff;
       transition: .4s;
-      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px 2px $color-gray-light;
+      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px .25rem $color-gray-light;
     }
   }
 
@@ -45,12 +45,12 @@ input[role="switch"] {
     box-shadow: none;
     background-color: $color-gray-light;
     transition: background-color .4s;
-    box-shadow: inset 0 0 0rem .125rem rgba($color-brand-primary,.75);
+    box-shadow: inset 0 0 0rem .25rem rgba($color-brand-primary, .25);
   }
 
   + label:hover:after,
   &:focus + label:after {
-    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px 2px rgba($color-brand-primary, 1);
+    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px .25rem rgba($color-brand-primary, 1);
   }
 
   &:active {
@@ -90,7 +90,7 @@ input[role="switch"] {
       content: '';
       left: 3.25rem;
       background-color: #fff;
-      box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px 2px  $color-brand-primary;
+      box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .25rem  $color-brand-primary;
     }
     &:hover:before {
       background-color: $color-brand-primary;
@@ -101,6 +101,6 @@ input[role="switch"] {
 
   &:checked:hover + label:after,
   &:checked:focus + label:after, {
-    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px 2px rgba($color-brand-primary, 1);
+    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px .25rem rgba($color-brand-primary, 1);
   }
 }
