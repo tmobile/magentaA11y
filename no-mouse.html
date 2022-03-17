@@ -1,0 +1,101 @@
+---
+permalink: /no-mouse/
+title: No Mouse
+layout: default
+---
+
+<div class="container no-mouse">
+  <h1 class="h-alpha">Try using this page with no mouse</h1>
+
+  <fieldset>
+    <legend>Choose your favorite NATO letters:</legend>
+  
+    <input type="checkbox" id="alphaCheckbox">
+    <label for="alphaCheckbox">Alpha</label>
+  
+    <input type="checkbox" id="bravoCheckbox">
+    <label for="bravoCheckbox">Bravo</label>
+  
+    <input type="checkbox" id="charlieCheckbox" checked>
+    <label for="charlieCheckbox">Charlie</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      Choose your favorite NATO letter
+    </legend>
+  
+    <input type="radio" name="nato" id="alphaRadio">
+    <label for="alphaRadio">Alpha</label>
+  
+    <input type="radio" name="nato" id="bravoRadio">
+    <label for="bravoRadio">Bravo</label>
+  
+    <input type="radio" name="nato" id="charlieRadio" checked>
+    <label for="charlieRadio">Charlie</label>
+  </fieldset>
+
+
+  <label for="cowbell">
+    How much cowbell?
+  </label>
+  <input type="range"
+         id="cowbell"
+         name="cowbell"
+         min="0"
+         max="11"
+         value="10"
+         step="1">
+
+  <fieldset>
+    <legend>Activate your options:</legend>
+    <input type="checkbox" role="switch" id="alphaSwitch">
+    <label for="alphaSwitch">Alpha</label>
+
+    <input type="checkbox" role="switch" id="bravoSwitch">
+    <label for="bravoSwitch">Bravo</label>
+
+    <input type="checkbox"
+          role="switch"
+          id="charlieSwitch"
+          checked>
+    <label for="charlieSwitch">Charlie</label>
+  </fieldset>
+
+
+
+
+  <button id="showModal">
+    Open dialog
+  </button>
+  
+  <dialog role="dialog"
+          id="modal"
+          tabindex="-1"
+          aria-modal="true"
+          aria-labelledby="modal-title">
+    <button type="reset"
+            id="closeModal">
+      <span class="hidden">Close</span>
+    </button>
+    <section>
+      <h2 id="modal-title" class="h-bravo">
+        Things you should know
+      </h2>
+      <h3>Keyboard</h3>
+      <ul>
+        <li>Focus should not enter the rest of the page.</li>
+        <li>The escape key should close the modal.</li>
+      </ul>
+      <h3>Screenreader</h3>
+      <ul>
+        <li>The launch button should indicate a popup.</li>
+        <li>The modal's title is announced on launch.</li>
+      </ul>
+      <button type="submit">
+        Continue
+      </button>
+    </section>
+  </dialog>
+
+</div>

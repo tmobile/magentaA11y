@@ -11,7 +11,7 @@ input[role="switch"] {
       height: 2rem;
       position: absolute;
       left: 1.25rem;
-      top: 1rem;
+      top: .5rem;
       border-radius: 1rem;
       background-color: $color-gray-light;
       transition: background-color .4s, box-shadow .4s;
@@ -31,7 +31,7 @@ input[role="switch"] {
       border-radius: 2rem;
       position: absolute;
       left: 1.25rem;
-      top: 1rem;
+      top: .5rem;
       background-color: #fff;
       transition: .4s;
       box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px 2px $color-gray-light;
