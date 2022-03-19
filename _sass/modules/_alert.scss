@@ -1,4 +1,4 @@
-[role="alert"] {
+.alert {
   border-radius: 2px;
   transition: .2s;
   height: 0px;
@@ -9,7 +9,7 @@
     max-height: 0px;
   }
 
-  &.active {
+  &.enabled {
     padding: 1rem;
     line-height: 1rem;
     margin: 1rem 0;

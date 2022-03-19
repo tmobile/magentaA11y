@@ -24,23 +24,24 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 
 // Trigger alert
 $("#submit-response").click(function() {
-    if($('[role="alert"]').hasClass('visible')) {
-        $('[role="alert"]').removeClass('visible').addClass('inert').empty();
+    if($('[role="alert"]').hasClass('enabled')) {
+        $('[role="alert"]').removeClass('enabled').addClass('inert');
+        $('#favorite-error').empty();
     } else {
-        $('[role="alert"]').removeClass('inert').addClass('visible');
+        $('[role="alert"]').removeClass('inert').addClass('enabled');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('[role="alert"]').append('Your answer has been submitted');
+            $('#response-message').append('Your survey is submitted');
         }, 25);
     }
 });
 
 // Trigger error
 $("#show-error").click(function() {
-    if($('[role="alert"]').hasClass('active')) {
-        $('[role="alert"]').removeClass('active').addClass('inert');
+    if($('[role="alert"]').hasClass('enabled')) {
+        $('[role="alert"]').removeClass('enabled').addClass('inert');
         $('#favorite-error').empty();
     } else {
-        $('[role="alert"]').removeClass('inert').addClass('active');
+        $('[role="alert"]').removeClass('inert').addClass('enabled');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
             $('#favorite-error').append('The correct answer is Charlie');
         }, 25);
@@ -49,11 +50,11 @@ $("#show-error").click(function() {
 
 // Trigger alert
 $("#show-alert").click(function() {
-    if($('[role="alert"]').hasClass('active')) {
-        $('[role="alert"]').removeClass('active').addClass('inert');
+    if($('[role="alert"]').hasClass('enabled')) {
+        $('[role="alert"]').removeClass('enabled').addClass('inert');
         $('#favorite-error').empty();
     } else {
-        $('[role="alert"]').removeClass('inert').addClass('active');
+        $('[role="alert"]').removeClass('inert').addClass('enabled');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
             $('#favorite-error').append('Hello world');
         }, 25);
