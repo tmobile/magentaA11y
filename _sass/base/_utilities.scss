@@ -99,7 +99,6 @@
   &:active {
     @extend .active;
   }
-  &:focus, 
   &:focus-visible {
     @extend .focused;
   }
