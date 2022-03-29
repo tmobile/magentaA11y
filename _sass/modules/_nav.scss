@@ -30,7 +30,7 @@ nav {
       left: 0;
       width: 100%;
       height: 1px;
-      transition: .4s;
+      transition: .2s;
       background: $color-brand-primary;
     }
     &[aria-current="page"],
@@ -46,7 +46,7 @@ nav {
       text-decoration: none;
       &:after {
         content: '';
-        height: .5rem;
+        height: .75rem;
       }
     }
   }
@@ -102,7 +102,6 @@ nav {
         @include break($break-small) {
           display: none;
         }
-
       }
     }
   }
