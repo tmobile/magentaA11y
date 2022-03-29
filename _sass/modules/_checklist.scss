@@ -15,6 +15,7 @@
     background-color: #fff;
     border-radius: 1rem;
     box-shadow: 0 6px 12px 0 rgba(#000, .15);
+    border-radius: 1rem;
     padding: 0 2rem 0 2rem;
   }
 
@@ -54,7 +55,7 @@ label[for="condensed-textarea"] {
   background: #fff;
   padding: 1.5rem 2rem;
   line-height: 1rem;
-  border-radius: 2px 2px 0 0;
+  border-radius: 1rem 1rem 0 0;
   position: relative;
   z-index: 99;
   border-bottom: 1px solid $color-border-gray;

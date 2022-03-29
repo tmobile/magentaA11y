@@ -127,3 +127,8 @@
     transition: background 0s;
   }
 }
+
+
+@mixin float {
+  box-shadow: 0 6px 12px 0 rgba(#000, .15);
+}
