@@ -1,6 +1,8 @@
 input[role="switch"] {
   + label {
-    padding-left: 6rem;
+    padding-left: 1rem;
+    grid-template-columns: 4rem 1fr;
+    column-gap: 1rem;
     
     &:before {
       transform: translateZ(0);
@@ -9,12 +11,12 @@ input[role="switch"] {
       width: 2.5rem;
       padding: 0 .75rem 0 .75rem;
       height: 2rem;
-      position: absolute;
-      left: 1.25rem;
-      top: 1rem;
+      position: relative;
+      left: 0rem;
+      top: 0rem;
       border-radius: 1rem;
       background-color: $color-gray-light;
-      transition: background-color .4s, box-shadow .4s;
+      transition: background-color .2s, box-shadow .2s;
       border: none;
       background-size: 1.75rem 1.75rem;
       background-position: 85% center;
@@ -30,11 +32,11 @@ input[role="switch"] {
       height: 2rem;
       border-radius: 2rem;
       position: absolute;
-      left: 1.25rem;
+      left: 1rem;
       top: 1rem;
       background-color: #fff;
       transition: .4s;
-      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px 2px $color-gray-light;
+      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px .25rem $color-gray-light;
     }
   }
 
@@ -43,19 +45,19 @@ input[role="switch"] {
     box-shadow: none;
     background-color: $color-gray-light;
     transition: background-color .4s;
-    box-shadow: inset 0 0 .25rem .25rem $color-green;
+    box-shadow: inset 0 0 0rem .25rem rgba($color-brand-primary, .25);
   }
 
   + label:hover:after,
   &:focus + label:after {
-    box-shadow: 0 0 0rem .5rem rgba($color-green,.4), inset 0 0px 0px 2px rgba($color-green, 1);
+    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px .25rem rgba($color-brand-primary, 1);
   }
 
   &:active {
     + label {
       &:before {
-        background-color: $color-green;
-        box-shadow: inset 0 0 0 2rem #color-green;
+        background-color: rgba($color-brand-primary,.5);
+        box-shadow: inset 0 0 0 2rem rgba($color-brand-primary,.25);
       }
       &:after {
         background-color: #fff;
@@ -66,7 +68,7 @@ input[role="switch"] {
       + label {
         &:before {
           background-color: $color-gray-light;
-          box-shadow: inset 0 0 1rem .25rem $color-green;
+          box-shadow: inset 0 0 1rem .25rem rgba($color-brand-primary,.25);
         }
       }
     }
@@ -76,8 +78,8 @@ input[role="switch"] {
     &:before {
       content: '';
       color: #fff;
-      text-shadow: 0 0 3px rgba($color-green,.4);
-      background-color: $color-green;
+      text-shadow: 0 0 3px rgba($color-brand-primary,.4);
+      background-color: $color-brand-primary;
       background-repeat: no-repeat;
       background-position: 15% center;
       background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 22 16' style='enable-background:new 0 0 22 16;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M5.93,11.16c-0.47-0.29-0.83-0.71-1.08-1.25C4.59,9.36,4.46,8.73,4.46,8s0.13-1.36,0.38-1.9 c0.25-0.54,0.61-0.96,1.08-1.25C6.4,4.55,6.95,4.4,7.58,4.4s1.19,0.15,1.66,0.44c0.47,0.29,0.83,0.71,1.08,1.25 c0.25,0.54,0.38,1.18,0.38,1.9s-0.13,1.36-0.38,1.9c-0.25,0.54-0.61,0.96-1.08,1.25c-0.47,0.29-1.02,0.44-1.66,0.44 S6.4,11.45,5.93,11.16z M8.87,8c0-1.3-0.43-1.95-1.29-1.95C6.73,6.05,6.3,6.7,6.3,8s0.43,1.95,1.29,1.95C8.44,9.95,8.87,9.3,8.87,8 z'/%3E%3Cpath class='st0' d='M17.54,6.91v4.47h-1.8V7.13c0-0.72-0.29-1.08-0.88-1.08c-0.35,0-0.62,0.12-0.83,0.37 C13.81,6.67,13.7,7,13.7,7.41v3.96H11.9V4.63h1.69v0.83h0.08c0.18-0.34,0.42-0.6,0.73-0.78c0.31-0.18,0.67-0.27,1.07-0.27 C16.85,4.4,17.54,5.24,17.54,6.91z'/%3E%3C/g%3E%3C/svg%3E");
@@ -88,17 +90,17 @@ input[role="switch"] {
       content: '';
       left: 3.25rem;
       background-color: #fff;
-      box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px 2px  $color-green;
+      box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .25rem  $color-brand-primary;
     }
     &:hover:before {
-      background-color: $color-green;
+      background-color: $color-brand-primary;
       transition: background-color .4s;
-      box-shadow: inset 0 0 1rem .25rem $color-green;
+      box-shadow: inset 0 0 1rem .25rem $color-brand-primary;
     }
   }
 
   &:checked:hover + label:after,
   &:checked:focus + label:after, {
-    box-shadow: 0 0 0rem .5rem rgba($color-green,.4), inset 0 0px 0px 2px rgba($color-green, 1);
+    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px .25rem rgba($color-brand-primary, 1);
   }
 }

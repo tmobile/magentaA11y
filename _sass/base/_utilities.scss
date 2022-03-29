@@ -129,6 +129,12 @@
 }
 
 
+
 @mixin float {
   box-shadow: 0 6px 12px 0 rgba(#000, .15);
+}
+
+.no-mouse {
+  pointer-events: none; 
+  cursor: none !important;
 }

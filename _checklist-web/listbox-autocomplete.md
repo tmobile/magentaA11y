@@ -41,7 +41,7 @@ gherkin-keyboard:
   - then:  |
       the arrow keys to select an option
     result: |
-      the selected option
+      the selected option is the new text input value
   - then:  |
       the enter key
     result: |
@@ -49,7 +49,7 @@ gherkin-keyboard:
   - then:  |
       the escape key when the select is open 
     result: |
-     it collapses and focus moves to the select
+     it collapses and focus moves to the text input
 
 gherkin-mobile:
   - when:  |

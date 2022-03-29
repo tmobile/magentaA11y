@@ -1,0 +1,8 @@
+---
+layout: none
+permalink: /sitemap.csv
+---
+Title, URL
+{% for page in site.checklist-web -%}
+{{ page.title | replace: ",", "" }},{{ site.url }}{{ page.url | remove: "index.html" }}
+{% endfor -%}
