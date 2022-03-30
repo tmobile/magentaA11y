@@ -14,7 +14,8 @@
     margin-bottom: calc(2rem + 3px);
     background-color: #fff;
     border-radius: 1rem;
-    box-shadow: 0 6px 12px 0 rgba(#000, .15);
+    transition: 1s;
+    @include float;
     border-radius: 1rem;
     padding: 0 2rem 0 2rem;
   }
