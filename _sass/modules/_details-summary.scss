@@ -21,6 +21,7 @@ details {
     display: block; // necessary to control ::marker
     z-index: 9;
     @include ripple;
+    transition: .2s;
 
     &::-webkit-details-marker,
     &::marker {
@@ -73,23 +74,30 @@ details {
   &[open] {
     summary {
       border-radius: 1rem 1rem 0 0;
+      border-bottom: 1px dotted $color-border-gray;
+      margin-bottom: 1rem;
+      transition: .2s;
+      @include ripple;
+      @include pop;
+
+      &:hover,
+      &:focus-visible {
+      transition: .2s;
+        border-radius: 1rem;
+      }
+  
+      &:before {
+        transform: rotate(180deg);
+        background-position: center center;
+      }
     }
   }
 
-  &[open] summary {
-    border-bottom: 1px dotted $color-border-gray;
-    margin-bottom: 1rem;
-    @include ripple;
-    &:before {
-      transform: rotate(180deg);
-      background-position: center center;
-    }
-  }
+  
   &:not([open]) summary {
     @include ripple;
     @include pop;
-    transition: .2s;
-    
+    transition: .2s;   
   }
   &.compact { 
     border: none !important;

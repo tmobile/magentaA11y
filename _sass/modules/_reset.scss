@@ -7,8 +7,8 @@ body,html {
   padding: 0;
   height: 100%;
   scroll-behavior: smooth;
-  background-color: $color-gray-xtra-light;
-  @include linear-gradient(#fff,$color-gray-xtra-light );
+  //background-color: $color-gray-xtra-light;
+  @include linear-gradient($color-gray-xtra-light, #f2f2f2);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
