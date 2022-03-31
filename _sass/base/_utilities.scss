@@ -104,8 +104,8 @@
   }
 }
 @mixin focused {
-  outline: .125rem solid rgba($color-focus, 1);
-  outline-offset: .5rem;
+  outline: .25rem solid rgba($color-focus, 1);
+  outline-offset: 0rem;
   transition: .2s;
 
   &:hover {

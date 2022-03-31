@@ -1,3 +1,9 @@
+// .dialog-open {
+//   .page-wrapper {
+//     display: none;
+//   }
+// }
+
 dialog {
   // display: none;
   top: 0;
@@ -10,8 +16,14 @@ dialog {
   border-radius: .25rem;
   background-color: #fff;
   box-shadow: 0 0 100px 50px rgba(#000,.2);
-  border: none;
-  outline-offset: .25rem;
+  outline: 0rem solid rgba(#fff,.7);
+  
+  &:focus,
+  &:focus-visible {
+    outline: .5rem solid rgba(#fff,.7);
+    outline-offset: 0rem;
+    transition: .2s;
+  }
 
 
   &[open] {

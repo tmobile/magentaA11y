@@ -90,6 +90,7 @@ if ( $('dialog').length ) {
     showModal.onclick = () => {
         if (isDialogSupported) {
             modal.showModal();
+            // document.body.classList.add("dialog-open");
         } else {
             modal.setAttribute("open", "");
         }
