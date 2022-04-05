@@ -22,15 +22,15 @@ $('input[inputmode="numeric"]').on('input',function(e) {
 
 
 
-// Trigger alert
+// Submit vote
 $("#submit-response").click(function() {
-    if($('[role="alert"]').hasClass('enabled')) {
-        $('[role="alert"]').removeClass('enabled').addClass('inert');
-        $('#favorite-error').empty();
+    if($('.alert').hasClass('enabled')) {
+        $('.alert').removeClass('enabled').addClass('inert');
+        $('#response-message').empty();
     } else {
-        $('[role="alert"]').removeClass('inert').addClass('enabled');
+        $('.alert').removeClass('inert').addClass('enabled');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('#response-message').append('Your survey is submitted');
+            $('#response-message').append('Your response has been recorded');
         }, 25);
     }
 });
