@@ -17,6 +17,7 @@ dialog {
   background-color: #fff;
   box-shadow: 0 0 100px 50px rgba(#000,.2);
   outline: 0rem solid rgba(#fff,.7);
+  border: none;
   
   &:focus,
   &:focus-visible {
@@ -37,6 +38,7 @@ dialog {
   section {
     position: relative;
     padding: 2rem;
+    border-radius: 0;
     z-index: -1;
     background-color: #fff;
     transform: translateZ(0);
@@ -58,9 +60,16 @@ dialog {
     background-repeat: no-repeat;
     background-position: center center;
     border: 1px solid transparent; // This is only here to solve for a Chrome bug that keeps the button from showing focus
-    @include focus;
-
-    &:focus {
+    
+    outline: .25rem solid rgba($color-focus,0);
+    outline-offset: .125rem;
+    transition: .2s;
+    
+    &:focus,
+    &:focus-visible {
+      outline: .25rem solid rgba($color-focus,1);
+      outline-offset: .125rem;
+      transition: .2s;
       border: 1px solid transparent;// This is only here to solve for a Chrome bug that keeps the button from showing focus
     }
 
