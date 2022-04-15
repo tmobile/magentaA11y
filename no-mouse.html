@@ -7,7 +7,7 @@ layout: default
 <div class="container">
   <h1 class="h-alpha">Try using this page with no mouse</h1>
 
-  <div class="post-content narrow ">
+  <div class="post-content narrow no-mouse">
 
     <p class="h-bravo">To learn the secret slack channel, you must navigate this page without a mouse and answer the questions correctly.</p>
 
@@ -66,28 +66,10 @@ layout: default
       <input type="checkbox" role="switch" id="charlieSwitch">
       <label for="charlieSwitch">JAWS</label>
     </fieldset>
-  
-    <details>
-      <summary>
-        What's the difference between a link and a button?
-      </summary>
-  
-      <p>Buttons make something happen, like submitting a form or showing a popup message. Try it out.</p>
-      <div role="alert" class="alert inert">
-        <div id="favorite-error">
-          <!--- Use JS to inject the alert here -->
-        </div>     
-      </div>
-      <button id="show-alert">If it does something, it's a button</button>
-      <hr>
-      <p>Links take the user to another place, be it a skip link to another element in the same page or to another page entirely. Try it out.</p>
-      <a class="button" href="#best-letter">If it goes somewhere, it's a link</a>
-    </details>
-  
     
     <fieldset>
       <legend>
-        One last question:
+        Pop quiz:
       </legend>
       <label for="best-letter">
         A common abbreviation for accessibility is:
@@ -103,7 +85,22 @@ layout: default
     
     </fieldset>
   
-
+    <details>
+      <summary>
+        What's the difference between a link and a button?
+      </summary>
+  
+      <p>Buttons make something happen, like submitting a form or showing a popup message. Try it out.</p>
+      <div role="alert" class="alert inert">
+        <div id="favorite-error">
+          <!--- Use JS to inject the alert here -->
+        </div>     
+      </div>
+      <button id="show-alert">If it does something, it's a button</button>
+      <hr>
+      <p>Links take the user to another place, be it a skip link to another element in the same page or to another page entirely. Try it out.</p>
+      <a class="button" href="#showModal">If it goes somewhere, it's a link</a>
+    </details>
 
     <button id="showModal" disabled>
       Get the secret slack channel
@@ -133,32 +130,3 @@ layout: default
     </dialog>
   </div>
 </div>
-
-<script>
-$(function() {
-
-  $("input").on('change', function() {
-        
-    $cowbellValue = $("#cowbell").val();
-    $abbreviation = $("#best-letter").val();
-    
-    console.log($cowbellValue);
-
-    if( 
-      $('#alphaCheckbox').is(":checked") &&
-      $('#bravoCheckbox').is(":checked") &&
-      $('#charlieCheckbox').is(":checked") &&
-      $('#bravoRadio').is(":checked") &&
-      $cowbellValue == 11 &&
-      $('#alphaSwitch').is(":not(:checked)") && 
-      $('#bravoSwitch').is(":checked") && 
-      $('#charlieSwitch').is(":not(:checked)") && 
-      $abbreviation == "a11y" || $abbreviation == "A11y" || $abbreviation == "A11Y"       
-      ) {
-      alert('correct');
-      $("#showModal").removeAttr('disabled');
-    }
-  });
-});
-
-</script>
