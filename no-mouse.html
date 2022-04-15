@@ -21,21 +21,20 @@ layout: default
     </div>
   </fieldset> -->
 
-  <div class="post-content narrow no-mouse">
+  <div class="post-content narrow ">
 
-    <p class="h-bravo">To learn the secret slack channel, you must navigate this page with out a mouse and answer the questions correctly.</p>
-
+    <p class="h-bravo">To learn the secret slack channel, you must navigate this page without a mouse and answer the questions correctly.</p>
 
     <fieldset>
       <legend>To be accessible, a checkbox must have:</legend>
     
-      <input type="checkbox" id="alphaCheckbox">
+      <input type="checkbox" id="alphaCheckbox" correct>
       <label for="alphaCheckbox">Label that names the input's purpose</label>
     
-      <input type="checkbox" id="bravoCheckbox">
+      <input type="checkbox" id="bravoCheckbox" correct>
       <label for="bravoCheckbox">Role of checkbox</label>
     
-      <input type="checkbox" id="charlieCheckbox">
+      <input type="checkbox" id="charlieCheckbox" correct>
       <label for="charlieCheckbox">State of checked or unchecked</label>
     </fieldset>
   
@@ -47,7 +46,7 @@ layout: default
       <input type="radio" name="nato" id="alphaRadio">
       <label for="alphaRadio">Tab key</label>
     
-      <input type="radio" name="nato" id="bravoRadio">
+      <input type="radio" name="nato" id="bravoRadio" correct>
       <label for="bravoRadio">Arrow key</label>
     
       <input type="radio" name="nato" id="charlieRadio">
@@ -71,11 +70,11 @@ layout: default
     </div>
     
     <fieldset>
-      <legend>Which screenreader is available for free on iOS and MacOS?</legend>
+      <legend>Which screenreader is available for free on Apple iOS and MacOS?</legend>
       <input type="checkbox" role="switch" id="alphaSwitch">
       <label for="alphaSwitch">NVDA</label>
   
-      <input type="checkbox" role="switch" id="bravoSwitch">
+      <input type="checkbox" role="switch" id="bravoSwitch" correct>
       <label for="bravoSwitch">VoiceOver</label>
   
       <input type="checkbox" role="switch" id="charlieSwitch">
@@ -99,21 +98,24 @@ layout: default
       <a class="button" href="#best-letter">If it goes somewhere, it's a link</a>
     </details>
   
-    <hr>
-  
-    <label for="best-letter">
-      The best place for getting help for accessibility in digital at T-Mobile is:
-    </label>
-    <input type="text" 
-           id="best-letter"
-           maxlength="27"
-           aria-describedby="best-letter-hint">
     
-    <div class="hint" id="best-letter-hint">
-      It's a slack channel with over 38,000 members
-    </div>
-  
-    <hr>
+    <fieldset>
+      <legend>
+        One last question:
+      </legend>
+      <label for="best-letter">
+        A common abbreviation for accessibility is:
+      </label>
+      <input type="text" 
+             id="best-letter"
+             maxlength="4"
+             aria-describedby="best-letter-hint">
+      
+      <div class="hint" id="best-letter-hint">
+        Hint: It uses the number of letters between the a and y.
+      </div>
+    
+    </fieldset>
   
     <button id="showModal">
       Get the secret slack channel
@@ -139,12 +141,9 @@ layout: default
         <a class="button" href="https://tmus-cx.slack.com/archives/C039SQUULG7">
           Join #A11yFirst
         </a>
-  
-      </section>
+        </section>
     </dialog>
-  
   </div>
-
 </div>
 
 
