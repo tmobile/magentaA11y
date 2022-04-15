@@ -7,20 +7,6 @@ layout: default
 <div class="container">
   <h1 class="h-alpha">Try using this page with no mouse</h1>
 
-  <!-- <fieldset>
-    <legend>Simulate blindness</legend>
-
-    <div class="tab-group">
-      <input type="radio" aria-label="Hide screen curtain" class="tabs" id="gherkin" name="criteria" checked>
-      <label for="gherkin">Curtain off</label>
-      <input type="radio" aria-label="Show screen curtain" class="tabs" id="condensed" name="criteria">
-      <label for="condensed">Curtain on</label>
-      <div class="curtain">
-        This curtain hides the page to simulate the experience of a customer who cannot see the screen
-      </div>
-    </div>
-  </fieldset> -->
-
   <div class="post-content narrow ">
 
     <p class="h-bravo">To learn the secret slack channel, you must navigate this page without a mouse and answer the questions correctly.</p>
@@ -117,7 +103,9 @@ layout: default
     
     </fieldset>
   
-    <button id="showModal">
+
+
+    <button id="showModal" disabled>
       Get the secret slack channel
     </button>
     
@@ -146,4 +134,31 @@ layout: default
   </div>
 </div>
 
+<script>
+$(function() {
 
+  $("input").on('change', function() {
+        
+    $cowbellValue = $("#cowbell").val();
+    $abbreviation = $("#best-letter").val();
+    
+    console.log($cowbellValue);
+
+    if( 
+      $('#alphaCheckbox').is(":checked") &&
+      $('#bravoCheckbox').is(":checked") &&
+      $('#charlieCheckbox').is(":checked") &&
+      $('#bravoRadio').is(":checked") &&
+      $cowbellValue == 11 &&
+      $('#alphaSwitch').is(":not(:checked)") && 
+      $('#bravoSwitch').is(":checked") && 
+      $('#charlieSwitch').is(":not(:checked)") && 
+      $abbreviation == "a11y" || $abbreviation == "A11y" || $abbreviation == "A11Y"       
+      ) {
+      alert('correct');
+      $("#showModal").removeAttr('disabled');
+    }
+  });
+});
+
+</script>

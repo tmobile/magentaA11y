@@ -60,5 +60,25 @@
           }
         }
     </script>
-  </body>
+    <script>
+      $("input").on('change', function() {
+        $cowbellValue = $("#cowbell").val();
+        $abbreviation = $("#best-letter").val();
+    
+        if( 
+          $('#alphaCheckbox').is(":checked") &&
+          $('#bravoCheckbox').is(":checked") &&
+          $('#charlieCheckbox').is(":checked") &&
+          $('#bravoRadio').is(":checked") &&
+          $cowbellValue == 11 &&
+          $('#alphaSwitch').is(":not(:checked)") && 
+          $('#bravoSwitch').is(":checked") && 
+          $('#charlieSwitch').is(":not(:checked)") && 
+          $abbreviation == "a11y" || $abbreviation == "A11y" || $abbreviation == "A11Y" || $abbreviation == "a11Y"         
+          ) {
+          $("#showModal").removeAttr('disabled');
+        }
+      });
+    </script>
+</body>
 </html>
