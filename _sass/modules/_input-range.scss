@@ -1,3 +1,26 @@
+.range-group {
+  display: grid;
+  grid-template-columns: 4rem 1fr ;
+  background: #fff;
+  padding: 1rem 1rem 1rem 0;
+  border-radius: 1rem;
+  @include float;
+  transition: .8s;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+.range-value {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  margin-bottom: .5rem;
+  @include bold;
+}
+
 
 // Styling Cross-Browser Compatible Range Inputs with Sass
 // Github: https://github.com/darlanrod/input-range-sass
@@ -49,7 +72,7 @@ $contrast: 5% !default;
   background: $thumb-color;
   background: radial-gradient(circle, rgba(255,255,255,1) 33%, rgba(68,68,68,1) 35%);
   border: $thumb-border-width solid $thumb-border-color;
-  border-radius: $thumb-radius $thumb-radius $thumb-radius 0;
+  border-radius: $thumb-radius $thumb-radius $thumb-radius $thumb-radius;
   cursor: pointer;
   height: $thumb-height;
   width: $thumb-width;
@@ -65,10 +88,10 @@ $color: #ccc;
 [type='range'] {
   display: block;
   -webkit-appearance: none;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 1rem 0;
   width: $track-width;
   border-radius: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   outline: none !important;
   transition: .8s;
@@ -134,7 +157,8 @@ $color: #ccc;
     margin-top: 0;
   }
 
-  &:focus {
+  &:focus,
+  &:hover {
 
     &::-webkit-slider-runnable-track {
       background: lighten($track-color, $contrast);
@@ -148,7 +172,7 @@ $color: #ccc;
       background: lighten($track-color, $contrast);
     }
     &::-webkit-slider-thumb {
-      background: radial-gradient(circle, rgba(#fff,1) 32%, rgba($color-focus,1) 35%);
+      background: radial-gradient(circle, rgba(#fff,1) 32%, rgba($color-brand-primary,1) 35%);
     }
   }
 }

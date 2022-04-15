@@ -283,3 +283,9 @@ $.each(formValues, function(key, value) {
   $("#" + key).prop('open', value);
 //   console.log(key, value);
 });
+
+// Transfer range value to text input
+
+$(document).on('input', '#cowbell', function() {
+    $('#cowbellValue').val( $(this).val() );
+});

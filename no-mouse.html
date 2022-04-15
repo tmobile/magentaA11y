@@ -7,7 +7,7 @@ layout: default
 <div class="container">
   <h1 class="h-alpha">Try using this page with no mouse</h1>
 
-  <fieldset>
+  <!-- <fieldset>
     <legend>Simulate blindness</legend>
 
     <div class="tab-group">
@@ -19,117 +19,132 @@ layout: default
         This curtain hides the page to simulate the experience of a customer who cannot see the screen
       </div>
     </div>
-  </fieldset>
-</div>
+  </fieldset> -->
 
-<div class="container no-mouse">
+  <div class="post-content narrow">
 
-  <fieldset>
-    <legend>Choose your favorite NATO letters:</legend>
+    <p class="h-bravo">To learn the secret slack channel, you must navigate this page with out a mouse and answer the questions correctly.</p>
+
+
+    <fieldset>
+      <legend>To be accessible, a checkbox must have:</legend>
+    
+      <input type="checkbox" id="alphaCheckbox">
+      <label for="alphaCheckbox">Label that names the input's purpose</label>
+    
+      <input type="checkbox" id="bravoCheckbox">
+      <label for="bravoCheckbox">Role of checkbox</label>
+    
+      <input type="checkbox" id="charlieCheckbox">
+      <label for="charlieCheckbox">State of checked or unchecked</label>
+    </fieldset>
   
-    <input type="checkbox" id="alphaCheckbox">
-    <label for="alphaCheckbox">Alpha</label>
+    <fieldset>
+      <legend>
+        To navigated between radio inputs, use the keyboard:
+      </legend>
+    
+      <input type="radio" name="nato" id="alphaRadio">
+      <label for="alphaRadio">Tab key</label>
+    
+      <input type="radio" name="nato" id="bravoRadio">
+      <label for="bravoRadio">Arrow key</label>
+    
+      <input type="radio" name="nato" id="charlieRadio">
+      <label for="charlieRadio">Spacebar</label>
+    </fieldset>
   
-    <input type="checkbox" id="bravoCheckbox">
-    <label for="bravoCheckbox">Bravo</label>
+    <div class="range-group">
+      <input readonly tabindex="-1" class="range-value" id="cowbellValue" value="5" aria-hidden="true">
+      <div>
+        <label for="cowbell">
+          The number of letters between the a and y in the word accessibility?
+        </label>
+        <input type="range"
+               id="cowbell"
+               name="cowbell"
+               min="0"
+               max="11"
+               value="5"
+               step="1">
+      </div>
+    </div>
+    
+    <fieldset>
+      <legend>Which screenreader is available for free on iOS and MacOS?</legend>
+      <input type="checkbox" role="switch" id="alphaSwitch">
+      <label for="alphaSwitch">NVDA</label>
   
-    <input type="checkbox" id="charlieCheckbox" checked>
-    <label for="charlieCheckbox">Charlie</label>
-  </fieldset>
-
-  <fieldset>
-    <legend>
-      Choose your favorite NATO letter
-    </legend>
+      <input type="checkbox" role="switch" id="bravoSwitch">
+      <label for="bravoSwitch">VoiceOver</label>
   
-    <input type="radio" name="nato" id="alphaRadio">
-    <label for="alphaRadio">Alpha</label>
+      <input type="checkbox" role="switch" id="charlieSwitch">
+      <label for="charlieSwitch">JAWS</label>
+    </fieldset>
   
-    <input type="radio" name="nato" id="bravoRadio">
-    <label for="bravoRadio">Bravo</label>
+    <details>
+      <summary>
+        What's the difference between a link and a button?
+      </summary>
   
-    <input type="radio" name="nato" id="charlieRadio" checked>
-    <label for="charlieRadio">Charlie</label>
-  </fieldset>
-
-
-  <label for="cowbell">
-    How much cowbell?
-  </label>
-  <input type="range"
-         id="cowbell"
-         name="cowbell"
-         min="0"
-         max="11"
-         value="10"
-         step="1">
-
-  <fieldset>
-    <legend>Activate your options:</legend>
-    <input type="checkbox" role="switch" id="alphaSwitch">
-    <label for="alphaSwitch">Alpha</label>
-
-    <input type="checkbox" role="switch" id="bravoSwitch">
-    <label for="bravoSwitch">Bravo</label>
-
-    <input type="checkbox"
-          role="switch"
-          id="charlieSwitch"
-          checked>
-    <label for="charlieSwitch">Charlie</label>
-  </fieldset>
-
-  <details>
-    <summary>
-      More info
-    </summary>
-    This semantic element covers all success
-    criteria with no additional scripting.
-  </details>
-
-  <label for="best-letter">
-    The best NATO letter is:
-  </label>
-  <input type="text" 
-         id="best-letter" 
-         aria-describedby="best-letter-hint">
+      <p>Buttons make something happen, like submitting a form or showing a popup message. Try it out.</p>
+      <div role="alert" class="alert inert">
+        <div id="favorite-error">
+          <!--- Use JS to inject the alert here -->
+        </div>     
+      </div>
+      <button id="show-alert">If it does something, it's a button</button>
+      <hr>
+      <p>Links take the user to another place, be it a skip link to another element in the same page or to another page entirely. Try it out.</p>
+      <a class="button" href="#best-letter">If it goes somewhere, it's a link</a>
+    </details>
   
-  <div class="hint" id="best-letter-hint">
-    Example: Alpha, Bravo, Charlie
+    <hr>
+  
+    <label for="best-letter">
+      The best place for getting help for accessibility in digital at T-Mobile is:
+    </label>
+    <input type="text" 
+           id="best-letter"
+           maxlength="27"
+           aria-describedby="best-letter-hint">
+    
+    <div class="hint" id="best-letter-hint">
+      It's a slack channel with over 38,000 members
+    </div>
+  
+    <hr>
+  
+    <button id="showModal">
+      Get the secret slack channel
+    </button>
+    
+    
+    <dialog role="dialog"
+            id="modal"
+            tabindex="-1"
+            aria-modal="true"
+            aria-labelledby="modal-title">
+      <button type="reset"
+              id="closeModal">
+        <span class="hidden">Close</span>
+      </button>
+      <section>
+        <h2 id="modal-title" class="h-bravo">
+          The secret slack channel
+        </h2>
+        
+        <p>Join the secret slack channel to be entered to win fabulous prizes.</p>
+  
+        <a class="button" href="https://tmus-cx.slack.com/archives/C039SQUULG7">
+          Join #A11yFirst
+        </a>
+  
+      </section>
+    </dialog>
+  
   </div>
 
-
-  <button id="showModal">
-    Open dialog
-  </button>
-  
-  <dialog role="dialog"
-          id="modal"
-          tabindex="-1"
-          aria-modal="true"
-          aria-labelledby="modal-title">
-    <button type="reset"
-            id="closeModal">
-      <span class="hidden">Close</span>
-    </button>
-    <section>
-      <h2 id="modal-title" class="h-bravo">
-        Things you should know
-      </h2>
-      <h3>Keyboard</h3>
-      <ul>
-        <li>Focus should not enter the rest of the page.</li>
-        <li>The escape key should close the modal.</li>
-      </ul>
-      <h3>Screenreader</h3>
-      <ul>
-        <li>The launch button should indicate a popup.</li>
-        <li>The modal's title is announced on launch.</li>
-      </ul>
-      <button type="submit">
-        Continue
-      </button>
-    </section>
-  </dialog>
-
 </div>
+
+
