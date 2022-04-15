@@ -62,6 +62,8 @@ Screen readers all offer a slightly different experience.
   {% include /examples/table-screen-reader-keyboard-shortcuts-nvda-test.html %}
 </details>
 
+- Disable "Automatic Say All on page load" in NVDA Settings: Browse Mode
+  - This will increase the conformance of NVDA
 - NVDA has 2 modes with different keyboard shortcuts.
   - Browse (Red focus indicator)
     - Arrow keys will browse from element to element
