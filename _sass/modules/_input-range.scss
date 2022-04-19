@@ -70,16 +70,18 @@ $contrast: 5% !default;
 @mixin thumb {
   @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
   background: $thumb-color;
-  background: radial-gradient(circle, rgba(255,255,255,1) 33%, rgba(68,68,68,1) 35%);
+  background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(68,68,68,1) 31%);
   border: $thumb-border-width solid $thumb-border-color;
   border-radius: $thumb-radius $thumb-radius $thumb-radius $thumb-radius;
+  box-shadow: 0 0 0px 0rem rgba($color-brand-primary,.4);
+
   cursor: pointer;
   height: $thumb-height;
   width: $thumb-width;
   transform: rotate(-45deg);
   top: 0px !important;
   position: relative;
-  transition: .8s;
+  transition: .2s;
 }
 
 
@@ -159,7 +161,6 @@ $color: #ccc;
 
   &:focus,
   &:hover {
-
     &::-webkit-slider-runnable-track {
       background: lighten($track-color, $contrast);
     }
@@ -172,7 +173,8 @@ $color: #ccc;
       background: lighten($track-color, $contrast);
     }
     &::-webkit-slider-thumb {
-      background: radial-gradient(circle, rgba(#fff,1) 32%, rgba($color-brand-primary,1) 35%);
+      box-shadow: 0 0 0px .5rem rgba($color-brand-primary,.4);
+      background: radial-gradient(circle, rgba(#fff,1) 40%, rgba($color-brand-primary,1) 42%);
     }
   }
 }
