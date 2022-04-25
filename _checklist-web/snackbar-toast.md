@@ -41,24 +41,59 @@ gherkin-mobile:
 
 ## Avoid using toast snackbars
 
-It's **exceedingly rare** that this is a good design choice and a more conventional HTML element shouldn't be used instead.
+It's **exceedingly rare** this is a good design choice. A more semantic or visually inline HTML element should probably be used instead.
 
-## Only use toast to reinforce updates
+Snackbars are a custom HTML construct and have no semantic meaning. As such, like [tooltips](/checklist-web/tooltip/), it is difficult to define precise acceptance criteria.
 
-Toast snackbars should only be used for non-critical messaging, and the status described should be discernable on the page without the snackbar.
+### Never use snackbars for:
+
+- Critical or irrevocable functionality like:
+    - Time sensitive actions (ex: Unsend this message)
+    - Confirmation of choices (ex: Are you sure you want to send payment?)
+- On page load messaging
+  - Performing unexpected actions or alerts on page load is confusing to people using a screenreader
+
+## Only use toast to _reinforce_ updates
+
+If using a snackbar is unavoidable, it should only be used for non-critical messaging. 
+
+The status injected should also be discernable on the page _without the snackbar_.
 
 ### Practical example
 
-Given that I am on a dyamic single page app
+Given that I am on a dynamic single page app
 
-- WHEN the customer changes the state of a toggle to OFF
-- THEN the toast appears to _reinforce_ that the change has been saved
-- AND the customer can **also** confirm this is true from the toggle itself
+- WHEN the customer changes the state of a toggle to OFF or ON
+  - THEN the toast appears to _reinforce_ that the change has been saved
+  - AND the customer can confirm this is true from the toggle itself
 
-## Do not use toast for critical functionality
-
-Never use toast for critical tasks (Ex: undo/unsend or confirmation of choices).
-
-## Timing
+### Timing
 
 It is preferable to not let a toast snackbar time out. 
+
+If it is crucial for the snackbar to dismiss automatically, it is preferred that [timing be adjustable (WCAG 2.2.1)](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
+
+## Code example
+
+{% highlight html %}
+<div class="snackbar" role="status">
+  <strong>Let's at least try to avoid using these</strong>
+  <button>Dismiss</button>
+</div>
+{% endhighlight %}
+
+## Developer notes
+
+### Name
+
+- Inner text describes snackbar when it appears on screen
+
+### Role
+
+- Use `role="status"` for snackbars injected into the page
+
+### Focus
+
+- Focus **should not** move to the element automatically when the snackbar appears
+
+
