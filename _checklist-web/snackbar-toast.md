@@ -71,7 +71,7 @@ Given that I am on a dynamic single page app
 
 It is preferable to not let a toast snackbar time out. 
 
-If it is crucial for the snackbar to dismiss automatically, it is preferred that [timing be adjustable (WCAG 2.2.1)](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
+If the snackbar must dismiss automatically, it is preferred that [timing be adjustable (WCAG 2.2.1)](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
 
 ## Code example
 
