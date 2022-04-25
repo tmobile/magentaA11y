@@ -59,10 +59,11 @@
         background: transparent !important;
         width: 100%;
         height: 100%;
+        border-radius: 1rem;
       }
       &:hover {
-        box-shadow: 0 0 0 .25rem rgba($color-focus, .5);
-        outline-offset: 0rem;
+        box-shadow: 0 0 0 .5rem rgba($color-focus, .4);
+        outline-offset: .25rem;
         transition: .2s;
       }
     }
