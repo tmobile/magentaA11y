@@ -14,7 +14,7 @@ form {
     border-top: 1px solid $color-border-gray;
   }
   fieldset {
-    padding-bottom: 1rem;
+    //padding-bottom: 1rem;
   }
 
   li {
@@ -101,7 +101,8 @@ fieldset,
   input[type="number"],
   input[type="password"],
   input[type="button"],
-  input[type="submit"] {
+  input[type="submit"],
+  button {
     margin: 0 1rem 1rem 1rem;
     display: block;
     &:last-of-type {

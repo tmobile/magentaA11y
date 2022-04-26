@@ -63,6 +63,31 @@ This semantic HTML contains all accessibility features by default, and only requ
 </example>
 {:/}
 
+### Disabled states
+
+If it's helpful for screenreaders to perceive a disabled toggle, use `aria-disabled="true"` and prevent click events with scripting.
+
+{% highlight html %}
+<input type="checkbox"
+        role="switch"
+        id="deltaSwitch"
+        aria-disabled="true"
+        checked>
+<label for="deltaSwitch">Delta</label>
+{% endhighlight %}
+
+Using the `disabled` attribute will prevent the input from being clickable, but will also prevent it from being focusable, making it more difficult to discover for screenreaders.
+
+{% highlight html %}
+<input type="checkbox"
+        role="switch"
+        id="deltaSwitch"
+        disabled
+        checked>
+<label for="deltaSwitch">Delta</label>
+{% endhighlight %}
+
+
 ### You can also use a button
 
 This `<button>` toggle has focus and keyboard criteria built in. It requires the addition of `role="switch"` and scripting to toggle `aria-checked="true/false"`.
