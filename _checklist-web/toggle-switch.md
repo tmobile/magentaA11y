@@ -98,8 +98,6 @@ This `<button>` toggle has focus and keyboard criteria built in. It requires the
 </div>
 {% endhighlight %}
 
-
-
 ### When you can't use semantic HTML
 
 This custom switch requires extra attributes and keyboard event listeners.
@@ -110,9 +108,7 @@ This custom switch requires extra attributes and keyboard event listeners.
 </div>
 {% endhighlight %}
 
-
 ## Developer notes
-
 
 ### Name
 - `label` text should describe the input.
@@ -143,5 +139,3 @@ This custom switch requires extra attributes and keyboard event listeners.
 
 ### Focus
 - Focus must be visible
-
-
