@@ -106,6 +106,7 @@ fieldset,
     margin: 0 1rem 1rem 1rem;
     display: block;
   }
+
   input[type="radio"],
   input[type="checkbox"] {
     &:last-of-type + label {
@@ -116,25 +117,24 @@ fieldset,
   label {
     padding: 1rem 1rem 0 1rem;
   }
+
   input#show-password[type='checkbox'] + label {
     margin-left: 1rem;
   }
+
   button {
     justify-self: start;
     margin-left: 1rem;
   }
+
   .hint {
     margin-left: 1rem;
-  }
-
-  
+  } 
 }
 
 input[type="tel"] {
   width: 11rem;
 }
-
-
 
 legend,
 .legend  {
@@ -160,7 +160,6 @@ legend,
     border-radius: .125rem;
   }
 }
-
 
 input[type=checkbox],
 input[type=radio],
