@@ -49,7 +49,9 @@ button {
     color: $color-button-primary;
     background: $color-border-gray;
   }
-
+  &.margin {
+    margin-bottom: 1rem;
+  }
   &.tertiary {
     @extend .button;
     text-decoration: none;
