@@ -7,7 +7,7 @@ categories: main
 
 keyboard:
   arrow-keys: |
-    The table comes into view (and with a screenreader the cells become individually readable)
+    The table scrolls into view (and with a screenreader the cells become individually readable)
 
 mobile:
   swipe: |
@@ -25,7 +25,7 @@ gherkin-keyboard:
   - when:  |
       the arrow keys
     result: |
-      the table comes into view
+      the table scrolls into view (but is not focusable)
 
 gherkin-mobile:
   - when:  |
