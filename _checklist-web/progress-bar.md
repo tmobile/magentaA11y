@@ -52,18 +52,6 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
-### Loading progress spinner
-
-{% highlight html %}
-{% include /examples/progress-bar-busy.html %}
-{% endhighlight %}
-
-{::nomarkdown}
-<example>
-{% include /examples/progress-bar-busy.html %}
-</example>
-{:/}
-
 ## Developer notes
 
 ### Name

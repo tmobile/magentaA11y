@@ -304,10 +304,9 @@ $("#trigger-progressbar").click(function() {
     setTimeout(function() {
         $("#trigger-progressbar").attr("aria-disabled", "false");
         $("#trigger-progressbar").text($("#trigger-progressbar").text().replace("Saving", "Save"));
-        $("#progress-busy").addClass('inert');
         $("#trigger-progressbar").removeAttr("aria-describedby", "progress-busy");
-
-        $("#progress-busy").val("1").attr("aria-valuenow","1");
+        $("#progress-busy").addClass('inert');
+        $("#progress-busy").val("1");
     }, 10000);
 });
 
