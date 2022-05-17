@@ -1,4 +1,4 @@
-progress {
+.progress {
   display: block;
   -webkit-appearance: none;
   appearance: none;
@@ -26,4 +26,16 @@ progress {
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
+
+}
+
+.progress-busy {
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10rem;
+  height: 5rem;
+  margin: 1rem;
+  box-shadow: 0 0 0 1rem #fff, 0 0 0 calc(1rem + 1px) $color-border-gray;
+  border-radius: 0px;
 }
