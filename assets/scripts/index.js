@@ -294,17 +294,22 @@ $(document).on('input', '#cowbell', function() {
 $("#trigger-progressbar").click(function() {
     $(this).attr("aria-disabled", "true");
     $(this).attr("aria-describedby", "progress-busy");
+    $("#busy-container").attr("aria-busy", "true");
     $(this).text($(this).text().replace("Save", "Saving"));
 
     $("#progress-busy").removeClass('inert');
 
-
-    $("#progress-busy").animate({value: 100}, {duration: 9000, complete: function(){console.log('done!');}});
+    setTimeout(function() {
+        $("#progress-busy").val("76");
+        $("#progress-busy").attr("aria-valuenow", "76");
+        $("#progress-busy").text($("#progress-busy").text().replace("1", "76"));
+    }, 5000);
 
     setTimeout(function() {
         $("#trigger-progressbar").attr("aria-disabled", "false");
         $("#trigger-progressbar").text($("#trigger-progressbar").text().replace("Saving", "Save"));
         $("#trigger-progressbar").removeAttr("aria-describedby", "progress-busy");
+        $("#busy-container").attr("aria-busy", "false");
         $("#progress-busy").addClass('inert');
         $("#progress-busy").val("1");
     }, 10000);
