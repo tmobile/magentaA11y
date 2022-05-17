@@ -289,3 +289,25 @@ $.each(formValues, function(key, value) {
 $(document).on('input', '#cowbell', function() {
     $('#cowbellValue').val( $(this).val() );
 });
+
+
+$("#trigger-progressbar").click(function() {
+    $(this).attr("aria-disabled", "true");
+    $(this).attr("aria-describedby", "progress-busy");
+    $(this).text($(this).text().replace("Save", "Saving"));
+
+    $("#progress-busy").removeClass('inert');
+
+
+    $("#progress-busy").animate({value: 100}, {duration: 9000, complete: function(){console.log('done!');}});
+
+    setTimeout(function() {
+        $("#trigger-progressbar").attr("aria-disabled", "false");
+        $("#trigger-progressbar").text($("#trigger-progressbar").text().replace("Saving", "Save"));
+        $("#progress-busy").addClass('inert');
+        $("#trigger-progressbar").removeAttr("aria-describedby", "progress-busy");
+
+        $("#progress-busy").val("1").attr("aria-valuenow","1");
+    }, 10000);
+});
+
