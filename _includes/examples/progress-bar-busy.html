@@ -1,21 +1,24 @@
-<div aria-live="assertive">
-  <p>This content is awaiting submission of the form</p>
+<div 
+  id="slow-app"
+  aria-busy="false"
+  aria-live="polite">
+
+  <p>Save your changes</p>
+  
   <button 
-    id="trigger-progressbar">
-    Save
+    id="trigger-progressbar"
+    aria-describedby="progress-busy"
+    aria-disabled="false"
+    aria-live="assertive">
+    <span id="button-label">
+      Save
+    </span>
   </button>
 
-  <progress 
-    role="progressbar"
-    id="progress-busy"
-    class="inert"
-    aria-label="In progress"
-    value="1"
-    aria-valuemin="0"
-    aria-valuenow="1"
-    aria-valuemax="100"
-    max="100">
-      1%
-  </progress>
-  
+  <div 
+    role="alert">
+    <span id="progress-busy">
+    </span> 
+  </div>
+
 </div>

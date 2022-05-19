@@ -293,25 +293,30 @@ $(document).on('input', '#cowbell', function() {
 
 $("#trigger-progressbar").click(function() {
     $(this).attr("aria-disabled", "true");
-    $(this).attr("aria-describedby", "progress-busy");
-    $("#busy-container").attr("aria-busy", "true");
-    $(this).text($(this).text().replace("Save", "Saving"));
-
-    $("#progress-busy").removeClass('inert');
+    $("#slow-app").attr("aria-busy", "true");
+    $("#button-label").text($("#button-label").text().replace("Save", "Saving"));
+    $("#progress-busy").removeClass('inert').append(0);
 
     setTimeout(function() {
-        $("#progress-busy").val("76");
-        $("#progress-busy").attr("aria-valuenow", "76");
-        $("#progress-busy").text($("#progress-busy").text().replace("1", "76"));
+        $("#progress-busy").text($("#progress-busy").text().replace(0, 50));
+    }, 3000);
+    setTimeout(function() {
+        $("#progress-busy").text($("#progress-busy").text().replace(50, 75));
     }, 5000);
+    setTimeout(function() {
+        $("#progress-busy").text($("#progress-busy").text().replace(75, 100));
+    }, 8000);
 
     setTimeout(function() {
         $("#trigger-progressbar").attr("aria-disabled", "false");
-        $("#trigger-progressbar").text($("#trigger-progressbar").text().replace("Saving", "Save"));
+        $("#button-label").text($("#button-label").text().replace("Saving", "Save"));
         $("#trigger-progressbar").removeAttr("aria-describedby", "progress-busy");
-        $("#busy-container").attr("aria-busy", "false");
+        $("#slow-app").attr("aria-busy", "false");
         $("#progress-busy").addClass('inert');
-        $("#progress-busy").val("1");
+        $("#progress-busy").empty();
+
     }, 10000);
+    
+    
 });
 

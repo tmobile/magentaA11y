@@ -52,6 +52,18 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+### Waiting example
+
+{% highlight html %}
+{% include /examples/progress-bar-busy.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/progress-bar-busy.html %}
+</example>
+{:/}
+
 ## Developer notes
 
 ### Name
