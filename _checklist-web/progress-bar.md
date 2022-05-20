@@ -52,7 +52,13 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
-### Waiting example
+### Dynamic loading waiting example
+
+This example dynamically injects progress updates
+- `aria-busy="true"` has spotty support, but does indicate that the region is busy
+- `aria-describedby` is allows the current progress to be read when the button is focused
+- `aria-disabled` reinforces that the save action is incomplete
+- `role="status` has an implicit aria-live="polite" of polite and `aria-atomic="true"` meaning the entire content of the status will be read on each update
 
 {% highlight html %}
 {% include /examples/progress-bar-busy.html %}

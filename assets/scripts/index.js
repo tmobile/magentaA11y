@@ -291,32 +291,33 @@ $(document).on('input', '#cowbell', function() {
 });
 
 
-$("#trigger-progressbar").click(function() {
+$("#trigger-progressbar").click(function(event) {
     $(this).attr("aria-disabled", "true");
     $("#slow-app").attr("aria-busy", "true");
-    $("#button-label").text($("#button-label").text().replace("Save", "Saving"));
-    $("#progress-busy").removeClass('inert').append(0);
-
+    $("#progress-busy").append("0%");
+    $(".progress-busy").removeClass('inert').addClass('heartbeat');
+    event.preventDefault();
+    
     setTimeout(function() {
-        $("#progress-busy").text($("#progress-busy").text().replace(0, 50));
+        $("#progress-busy").text($("#progress-busy").text().replace("0%", "51%"));
     }, 3000);
     setTimeout(function() {
-        $("#progress-busy").text($("#progress-busy").text().replace(50, 75));
+        $("#progress-busy").text($("#progress-busy").text().replace("51%", "78%"));
     }, 5000);
     setTimeout(function() {
-        $("#progress-busy").text($("#progress-busy").text().replace(75, 100));
+        $("#progress-busy").text($("#progress-busy").text().replace("78%", "99%"));
     }, 8000);
+    setTimeout(function() {
+        $("#progress-busy").text($("#progress-busy").text().replace("99%", "Done"));
+    }, 9000);
 
     setTimeout(function() {
-        $("#trigger-progressbar").attr("aria-disabled", "false");
-        $("#button-label").text($("#button-label").text().replace("Saving", "Save"));
         $("#trigger-progressbar").removeAttr("aria-describedby", "progress-busy");
         $("#slow-app").attr("aria-busy", "false");
-        $("#progress-busy").addClass('inert');
         $("#progress-busy").empty();
-
+        $(".progress-busy").addClass('inert').removeClass('heartbeat');
+        $("#trigger-progressbar").attr("aria-disabled", "false");
     }, 10000);
-    
     
 });
 

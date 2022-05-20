@@ -29,7 +29,22 @@ progress {
 
 }
 
+.heartbeat {
+	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+	        animation: heartbeat 1.5s ease-in-out infinite both;
+          font-size: 1rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          line-height: 3.5rem;
+          border-radius: 1.75rem;
+          display: block;
+          background: $color-gray-xtra-dark;
+          text-align: center;
+          color: #fff;
+}
+
 
 .progress-busy {
-
+  display: inline-block;
+  margin-left: -1rem;
 }

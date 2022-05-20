@@ -2,23 +2,21 @@
   id="slow-app"
   aria-busy="false"
   aria-live="polite">
-
-  <p>Save your changes</p>
   
   <button 
     id="trigger-progressbar"
     aria-describedby="progress-busy"
-    aria-disabled="false"
-    aria-live="assertive">
+    aria-disabled="false">
     <span id="button-label">
       Save
     </span>
   </button>
 
-  <div 
-    role="alert">
+  <div class="progress-busy inert" role="status">
     <span id="progress-busy">
     </span> 
+    <span class="hidden">
+      Saving
+    </span>
   </div>
-
 </div>
