@@ -195,30 +195,6 @@ input[type=radio],
   }
 }
 
-.select-container {
-  margin-bottom: 4rem;
-  position: relative;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0rem;
-    height: .125rem;
-    width: 0%;
-    margin-left: 50%;
-    background: $color-focus;
-    transition: .3s;
-    z-index: 99;
-  }
-  &:focus-within,
-  &:hover {
-    &:after {
-      width: 100%;
-      margin-left: 0;
-    }
-  }
-}
-
 textarea {
   display: inline-block;
   font-size: 1rem;
