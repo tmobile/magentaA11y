@@ -1,6 +1,6 @@
 ---
 layout: demo
-title: Select
+title: Select listbox dropdown
 ---
 
 ## HTML select

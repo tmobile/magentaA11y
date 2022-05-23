@@ -87,3 +87,11 @@ Before you attempt to use one of these, be certain a native `<select>` is not an
 - [24 Accessibility : Select your poison](https://www.24a11y.com/2019/select-your-poison/)
 - [WebAxe.org: Accessible Custom Select Dropdowns](https://www.webaxe.org/accessible-custom-select-dropdowns/)
 - [WAI-ARIA listbox examples](https://www.w3.org/TR/wai-aria-practices-1.1/examples/listbox/listbox-collapsible.html)
+
+## Custom select using radio inputs
+
+If you were going to create a custom select, this method works quite well.
+
+{::nomarkdown}
+{% include /examples/input-select-radio.html %}
+{:/}
