@@ -20,20 +20,17 @@
       overflow: auto;
       padding: 1rem 0rem;
     }
-  }
-}
+    &:focus-within {
 
-radio-container  {
-  &:focus-within {
-
-    input[type="radio"] + label {
-      clip: auto;
-      height: auto;
-      overflow: auto;
-      padding: 1rem 0rem;
+      input[type="radio"] + label {
+        clip: auto;
+        height: auto;
+        overflow: auto;
+        padding: 1rem 0rem;
+      }
+      input[type="radio"]:active + label:hover {
+        position: relative !important;
+      }   
     }
-    input[type="radio"]:active + label:hover {
-      position: relative !important;
-    }   
   }
 }
