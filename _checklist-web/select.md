@@ -92,6 +92,12 @@ Before you attempt to use one of these, be certain a native `<select>` is not an
 
 If you were going to create a custom select, this method works quite well.
 
-{::nomarkdown}
+{% highlight html %}
 {% include /examples/input-select-radio.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-select-radio.html %}
+</example>
 {:/}
