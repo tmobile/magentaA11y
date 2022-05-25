@@ -20,7 +20,7 @@ These testing criteria are displayed in markdown format for easy copying/pasting
 ### Testing instructions includes:
 
 - How to test with keyboard
-- How to test with screeen reader
+- How to test with screen reader
 - How to test with a screen reader on a mobile device
 - Link to the full entry
 
@@ -45,12 +45,12 @@ MagentaA11y is built and maintained by the [T-Mobile Accessibility Resource Cent
 
 A11yEngineer is just Github Pages site running Jekyll. Follow Github's instructions for installing locally.
 
-- [Clone the open source repo from T-Mobile](https://github.com/tmobile/a11yEngineer)
+- [Clone the open source repo from T-Mobile](https://github.com/tmobile/magentaA11y)
 - [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
 - Helpful links for installing Jekyll with Ruby 3.0
   - [Install Ruby 3.0 · macOS Big Sur or Catalina for Intel or Apple Silicon](https://mac.install.guide/ruby/3.html)
-  - [Install Ruby 3.0 · macOS Big Sur or Catalina with Homebew for Intel or Apple Silicon](https://mac.install.guide/ruby/13.html)
-  - Note: Ruby 3.0 will need webrick
+  - [Install Ruby 3.0 · macOS Big Sur or Catalina with Homebrew for Intel or Apple Silicon](https://mac.install.guide/ruby/13.html)
+  - Note: Ruby 3.0 will need WEBrick
 
 ## License
 
