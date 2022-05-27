@@ -60,7 +60,7 @@ layout: default
               {% for action in page.gherkin-keyboard offset:1 %}
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                   <div itemprop="text">
-                    <strong>THEN</strong> when I use {{ action.then }} 
+                    <strong class="uppercase">{{ action.first[0] | capitalize  }}</strong> when I use {{ action.first[1] }}  
                     <strong>I SEE</strong> {{ action.result }}
                   </div>
                 </li>
@@ -96,7 +96,7 @@ layout: default
               {% for action in page.gherkin-keyboard offset:1 %}
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                   <div itemprop="text">
-                    <strong>THEN</strong> when I use {{ action.then }} 
+                    <strong class="uppercase">{{ action.first[0] | capitalize  }}</strong> when I use {{ action.first[1] }}  
                     <strong>I HEAR</strong> 
                     <span class="lowercase">{{ action.result }}</span>
                   </div>
@@ -134,7 +134,7 @@ layout: default
                 {% if action and action != "" %} 
                   <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
                     <div itemprop="text">
-                      <strong>THEN</strong> when I {{ action.then }} 
+                      <strong class="uppercase">{{ action.first[0] | capitalize  }}</strong> when I {{ action.first[1] }} 
                       <strong>I HEAR</strong> <span class="lowercase">{{ action.result }}</span>
                     </div>
                   </li>

@@ -5,7 +5,7 @@ layout: none
   {% for page in site.checklist-web %}
     {
       "title"    : "{{ page.title | escape }}",
-      "categories" : "{{ page.categories }}",
+      "categories" : "{{ page.categories | uniq | join: ", "  }}",
       "url"      : "{{ page.url | absolute_url }}",
       "id"      : "{{ page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', 'test' }}json",
       "compact"  : [

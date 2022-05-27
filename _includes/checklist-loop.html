@@ -26,7 +26,7 @@ GIVEN THAT I am on a page with {% if firstLetter == 'a' or firstLetter== 'e' or 
 - WHEN I use {{ action.when | strip_newlines }} I SEE {{ action.result | strip_newlines }}
 {%- endfor %}
 {% for action in page.gherkin-keyboard offset:1 -%}
-  - THEN when I use {{ action.then | strip_newlines }} I SEE {{ action.result | strip_newlines }}
+  - {{ action.first[0] | upcase  }} when I use {{ action.first[1] | strip_newlines | strip_html }} I SEE {{ action.result | strip_newlines | strip_html }}
 {% endfor %}
 2 - Desktop screenreader
 {% for action in page.gherkin-keyboard limit:1 -%}
@@ -39,7 +39,7 @@ GIVEN THAT I am on a page with {% if firstLetter == 'a' or firstLetter== 'e' or 
 {% endfor -%}
 {% endfor -%}
 {% for action in page.gherkin-keyboard offset:1 %}
-- THEN when I use {{ action.then | strip_newlines }} I HEAR {{ action.result | strip_newlines }}
+- {{ action.first[0] | upcase  }} when I use {{ action.first[1] | strip_newlines | strip_html }} I HEAR {{ action.result | strip_newlines | strip_html }}
 {%- endfor %}
 
 3 - Mobile screenreader
@@ -53,7 +53,7 @@ GIVEN THAT I am on a page with {% if firstLetter == 'a' or firstLetter== 'e' or 
 {% endfor -%}
 {% endfor -%}
 {% for action in page.gherkin-mobile offset:1 %}
-{% if action and action != "" %}- THEN when I {{ action.then | strip_newlines }} I HEAR {{ action.result | strip_newlines }}{% endif -%}
+{% if action and action != "" %}- {{ action.first[0] | upcase  }} when I {{ action.first[1] | strip_newlines | strip_html }} I HEAR {{ action.result | strip_newlines | strip_html }}{% endif -%}
 {%- endfor %}
 {% endcapture %}
 

@@ -49,7 +49,7 @@ gherkin-keyboard:
       the escape key
     result: |
       focus returns to the launch button
-  - then:  |
+  - or:  |
       the tab key to move focus to the dismiss/close button <strong>AND THEN</strong> use the spacebar or enter key to activate the dismiss/close button
     result: |
       focus returns to the launch button
