@@ -66,7 +66,7 @@ gherkin-mobile:
     result: |
       focus stays trapped in the modal dialog
   - then:  |
-      swipe to move focus to the dismis/close button <strong>AND THEN</strong> double tap on the close button
+      swipe to move focus to the dismiss/close button <strong>AND THEN</strong> double tap on the close button
     result: |
       focus returns to the launch button
 ---
