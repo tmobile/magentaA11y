@@ -116,4 +116,3 @@ Some browsers require additional scripting. This simple example works in Chrome,
 {% include /examples/modal-dialog.html %}
 </example>
 {:/}
-
