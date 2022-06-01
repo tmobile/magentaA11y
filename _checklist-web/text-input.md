@@ -63,9 +63,24 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
-### Disabled input
+### Disabled but focusable input
 
-- Disabled inputs should not be focusable
+- There may be times that it is advantageous for the input to be disabled but still focusable
+- Fully disabled inputs are not focusable and may not be as discoverable in a form
+
+{% highlight html %}
+{% include /examples/input-text-disabled-focusable.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-disabled-focusable.html %}
+</example>
+{:/}
+
+### Fully disabled input
+
+- Fully disabled inputs are not focusable so may not be as discoverable in a form
 
 {% highlight html %}
 {% include /examples/input-text-disabled.html %}
@@ -77,6 +92,38 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+
+### Readonly input
+
+- `readonly` inputs are focusable but not editable
+- Should be used when text is intended to be selectable
+- **NOT** to be used in place of disabled or aria-disabled
+
+{% highlight html %}
+{% include /examples/input-text-readonly.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-readonly.html %}
+</example>
+{:/}
+
+### Output
+
+- `output` can be used for a dynamic content that changes based on user inputs (example: a calculator).
+- Screenreader support varies, so placing the label inside the output seems to work best
+- Alternatively, using a custom element with role="status" will achieve more predictable results
+
+{% highlight html %}
+{% include /examples/output.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/output.html %}
+</example>
+{:/}
 
 ### Group of inputs
 
