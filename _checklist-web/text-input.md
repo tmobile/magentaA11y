@@ -65,6 +65,7 @@ This semantic HTML contains all accessibility features by default.
 
 ### Disabled but focusable input
 
+- Use JS to preventDefault()
 - There may be times that it is advantageous for the input to be disabled but still focusable
 - Fully disabled inputs are not focusable and may not be as discoverable in a form
 
@@ -93,11 +94,11 @@ This semantic HTML contains all accessibility features by default.
 {:/}
 
 
-### Readonly input
+### `readonly` input
 
+- Only use readonly when presenting **already submitted** information.
 - `readonly` inputs are focusable but not editable
-- Should be used when text is intended to be selectable
-- **NOT** to be used in place of disabled or aria-disabled
+- VoiceOver does not describe `readonly` attribute, so `aria-disabled` was added to reinforce that it's not editable
 
 {% highlight html %}
 {% include /examples/input-text-readonly.html %}
