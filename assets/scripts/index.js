@@ -16,12 +16,6 @@ $( ".expander-toggle" ).click(function() {
     }
 });
 
-$('input[inputmode="numeric"]').on('input',function(e) {
-    this.value=this.value.replace(/[^\d]/,'');
-});
-
-
-
 // Submit vote
 $("#submit-response").click(function() {
     if($('.alert').hasClass('enabled')) {
@@ -321,4 +315,12 @@ $("#trigger-progressbar").click(function(event) {
     
 });
 
+$('input[inputmode="numeric"]').not('#card-number').on('input',function(e) {
+    this.value=this.value.replace(/[^\d]/,'');
+});
 
+$('#card-number').on('keypress change', function () {
+    $(this).val(function (index, value) {
+        return value.replace(/[^0-9]/g, "").replace(/\W/gi, '').replace(/(.{4})/g, '$1 ');
+    });
+});

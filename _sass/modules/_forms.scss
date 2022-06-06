@@ -79,6 +79,7 @@ label {
 }
 
 
+
 fieldset,
 .fieldset  {
   border: none;
@@ -90,6 +91,17 @@ fieldset,
   // box-shadow: 0 1px 2px 1px rgba(#000, .05);
   @include float;
   transition: .8s;
+
+  fieldset {
+    box-shadow: none !important;
+    display: block;
+    legend {
+      background: none;
+      font-size: 1rem;
+      padding: 1rem 1rem .5rem 1rem;
+      border-bottom: none;
+    }
+  }
 
   textarea,
   input[type="text"],

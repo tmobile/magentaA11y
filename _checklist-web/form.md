@@ -33,24 +33,23 @@ gherkin-mobile:
 
 ---
 
-## Code examples
+## Building accessible forms
 
-### Use semantic HTML
+### Do not auto-focus
 
-{::nomarkdown}
-<example>
-{% include /examples/form.html %}
-</example>
-{:/}
+- Automatically moving focus to an input field is very confusing for people using assistive technology.
 
-{% highlight html %}
-{% include /examples/form.html %}
-{% endhighlight %}
+### Group inputs
 
-### Affordance: width indicates the expected input
+Use `fieldset` and `legend` (directly under the first fieldset tag) that describes  groupings such as
+- Sign in or Sign up
+- Personal information
+- Shipping address
+- Credit card information
+
+### Affordance: field width indicates the expected input
 
 Form field width should afford the user space to enter the characters will be required. **Do not** arbitrarily limit the width of names, usernames, passwords or emails.
-
 
 - Middle initial should be wide enough to accommodate 1 character
 - State should be wide enough to accommodate 2 characters
@@ -67,6 +66,36 @@ Form field width should afford the user space to enter the characters will be re
 
 - Autocomplete is helpful for all customers leading to a speedier conversion
 - For those with motor disabilities, it eliminates the need to laboriously enter information
+
+## Code examples
+
+### Use semantic HTML
+
+{::nomarkdown}
+<example>
+{% include /examples/form.html %}
+</example>
+{:/}
+
+{% highlight html %}
+{% include /examples/form.html %}
+{% endhighlight %}
+
+### Credit card information
+
+- This form uses minimal unobtrusive masking to make the credit card number more readable. (When done poorly, masking can can cause the field to be read repeatedly as the mask refreshes)
+- Autofill attributes to help customers complete fields with less effort. 
+- Using `inputmode="numeric"` brings up the numeric keyboard on mobile devices making entry easier.
+
+{::nomarkdown}
+<example>
+{% include /examples/form-payment.html %}
+</example>
+{:/}
+
+{% highlight html %}
+{% include /examples/form-payment.html %}
+{% endhighlight %}
 
 {::nomarkdown}
 <example>
