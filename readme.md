@@ -33,7 +33,9 @@ These testing criteria are displayed in markdown format for easy copying/pasting
 
 ## Contribute 
 
-MagentaA11y is built and maintained by the [T-Mobile Accessibility Resource Center](https://github.com/tmobile/magentaA11y/graphs/contributors)
+MagentaA11y is built and maintained by the [T-Mobile Accessibility Resource Center](https://github.com/tmobile/magentaA11y/graphs/contributors). 
+
+It was originally created by [Charlie Triplett](https://www.charliecharliecharlie.com/), author of [The Book on Accessibility](https://www.thebookonaccessibility.com/).
 
 ### Here are some ways to contribute:
 
