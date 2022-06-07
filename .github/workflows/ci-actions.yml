@@ -24,6 +24,3 @@ jobs:
       - uses: actions/checkout@v2
         env:
           ANALYTICS_ACCT: ${{secrets.ANALYTICS_ACCT}}
-
-- name: Lighthouse CI Action
-  uses: treosh/lighthouse-ci-action@v9
