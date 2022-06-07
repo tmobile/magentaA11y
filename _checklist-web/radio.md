@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Radio button"
+description: "How to test accessible radio button inputs"
 categories: form
 
 keyboard:

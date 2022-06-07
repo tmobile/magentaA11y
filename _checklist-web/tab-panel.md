@@ -1,6 +1,7 @@
 ---
 layout: entry
 title:  "Tab group"
+description: "How to test accessible tab panels"
 categories: main
 
 keyboard:
