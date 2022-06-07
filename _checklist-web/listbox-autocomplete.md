@@ -85,4 +85,4 @@ gherkin-mobile:
 - Focus must be visible
 
 ## Documentation
-- [WAI-ARIA examples](https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html)
+- [WAI-ARIA examples](https://www.w3.org/TR/2021/NOTE-wai-aria-practices-1.2-20211129/examples/combobox/combobox-autocomplete-both.html)
