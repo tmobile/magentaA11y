@@ -5,24 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      - name: Generate URLs
-        id: urls
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const globber = await glob.create('elements/*/demo/*.html');
-            const files = await globber.glob();
-            const urls = files
-              .map(x => x.match(/([\w-]+)/)[1])
-              .map(x => `${${{ env.DOMAIN }}}/components/${x}/demo/`)
-              .join('\n');
-            core.setOutput('urls', urls);
-
-      - name: Lighthouse CI Action
-        id: lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
-            ${{ steps.urls.outputs.urls }}
+            https://www.magentaa11y.com/
+            https://www.magentaa11y.com/web/
+            https://www.magentaa11y.com/native/
+            https://www.magentaa11y.com/checklist-web/html/
+            https://www.magentaa11y.com/checklist-native/button/
+            https://www.magentaa11y.com/how-to/
+          budgetPath: ./budget.json # test performance budgets
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
