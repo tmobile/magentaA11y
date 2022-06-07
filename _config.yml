@@ -83,3 +83,5 @@ video-demos:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+- name: Lighthouse CI Action
+  uses: treosh/lighthouse-ci-action@v9
