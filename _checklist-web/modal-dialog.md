@@ -26,7 +26,7 @@ screenreader:
   name:  |
     The dialog describes its purpose or title on launch
   role:  |
-    It dentifies itself as a modal or dialog
+    It identifies itself as a modal or dialog
   group: |
     When closed, focus returns to the launch button
   state: |
@@ -34,11 +34,7 @@ screenreader:
 
 gherkin-keyboard: 
   - when:  |
-      the tab key to move focus to the launch button
-    result: |
-      focus is strongly visually indicated
-  - then:  |
-      the spacebar and/or enter key to activate the button
+      the tab key to move focus to the launch button and use  spacebar and/or enter key to activate the button
     result: |
       the dialog opens
   - then:  |
