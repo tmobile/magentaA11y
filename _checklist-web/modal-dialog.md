@@ -95,6 +95,12 @@ gherkin-mobile:
 ### Documentation
 - [Browser Support](https://caniuse.com/?search=dialog)
 
+## Screenreader differences
+
+- NVDA
+  - By default, NVDA may the entire modal upon launch. This is expected behavior.
+
+
 ## Code examples
 
 ### Use semantic HTML where possible

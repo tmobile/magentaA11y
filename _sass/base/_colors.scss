@@ -1,4 +1,3 @@
-
 $color-text: #323234;
 
 $color-brand-secondary: #222;
@@ -20,10 +19,10 @@ $color-green-dark: #078A14;
 
 $color-alert: $color-gold;
 
-
 // WCAG 2.2 specifies states should meet min contrast requirements
 $color-button-primary: $color-brand-primary;
 $color-button-hover: darken($color-button-primary,5);
+$color-button-hover-border: $color-text;
 $color-button-focus: darken($color-button-primary,5);
 $color-button-active: lighten($color-button-primary,5);
 
