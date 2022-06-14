@@ -4,11 +4,11 @@
     "resourceSizes": [
       {
         "resourceType": "document",
-        "budget": 100
+        "budget": 1
       },
       {
         "resourceType": "total",
-        "budget": 200
+        "budget": 1
       }
     ]
   }
