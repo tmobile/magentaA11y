@@ -20,8 +20,9 @@ jobs:
               .join('\n');
             core.setOutput('urls', urls);
 
-      - name: Run Lighthouse on urls and upload data to private lhci server
-        uses: treosh/lighthouse-ci-action@v9
+      - name: Lighthouse CI Action
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v8
         with:
           urls: |
             ${{ steps.urls.outputs.urls }}
