@@ -29,7 +29,7 @@ step-number {
     margin-left: -1rem;
   }
 
-  @include break($break-max + 16px) {
+  @include break($break-max + 1rem) {
     margin-left: -3rem;
     margin-right: 1rem;
   }
