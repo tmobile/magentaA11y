@@ -10,8 +10,8 @@ jobs:
         uses: treosh/lighthouse-ci-action@v8
         with:
           urls: |
-            https://www.magentaa11y.com/about/
             https://www.magentaa11y.com/
+            https://www.magentaa11y.com/about/
             https://www.magentaa11y.com/checklist-web/alert/
             https://www.magentaa11y.com/demos/alert/
             https://www.magentaa11y.com/checklist-native/alert-dialog/
@@ -49,8 +49,6 @@ jobs:
             https://www.magentaa11y.com/checklist-web/image/
             https://www.magentaa11y.com/demos/basic-inaccessible-webpage/
             https://www.magentaa11y.com/404.html
-            https://www.magentaa11y.com/criteria-native.json
-            https://www.magentaa11y.com/criteria-web.json
             https://www.magentaa11y.com/checklist-web/link/
             https://www.magentaa11y.com/checklist-native/link/
             https://www.magentaa11y.com/demos/link/
