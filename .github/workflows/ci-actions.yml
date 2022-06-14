@@ -6,24 +6,53 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Generate URLs
-        id: urls
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const globber = await glob.create('/*.html');
-            const files = await globber.glob();
-            const urls = files
-              .map(x => x.match(/([\w-]+)/)[1])
-              .map(x => `${${{ env.DOMAIN }}}/${x}/`)
-              .join('\n');
-            core.setOutput('urls', urls);
-
       - name: Run Lighthouse on urls and upload data to private lhci server
         uses: treosh/lighthouse-ci-action@v8
         with:
           urls: |
-            ${{ steps.urls.outputs.urls }}
+            https://www.magentaa11y.com/checklist-web/alert/
+            https://www.magentaa11y.com/checklist-web/animation/
+            https://www.magentaa11y.com/checklist-web/button/
+            https://www.magentaa11y.com/checklist-web/carousel/
+            https://www.magentaa11y.com/checklist-web/checkbox/
+            https://www.magentaa11y.com/checklist-web/date-picker/
+            https://www.magentaa11y.com/checklist-web/expander/
+            https://www.magentaa11y.com/checklist-web/figure/
+            https://www.magentaa11y.com/checklist-web/footer/
+            https://www.magentaa11y.com/checklist-web/form/
+            https://www.magentaa11y.com/checklist-web/header/
+            https://www.magentaa11y.com/checklist-web/heading/
+            https://www.magentaa11y.com/checklist-web/hint-help-error/
+            https://www.magentaa11y.com/checklist-web/html/
+            https://www.magentaa11y.com/checklist-web/iframe/
+            https://www.magentaa11y.com/checklist-web/image/
+            https://www.magentaa11y.com/checklist-web/link/
+            https://www.magentaa11y.com/checklist-web/listbox-autocomplete/
+            https://www.magentaa11y.com/checklist-web/main/
+            https://www.magentaa11y.com/checklist-web/modal-dialog/
+            https://www.magentaa11y.com/checklist-web/nav/
+            https://www.magentaa11y.com/checklist-web/number-input/
+            https://www.magentaa11y.com/checklist-web/pagination/
+            https://www.magentaa11y.com/checklist-web/password-input/
+            https://www.magentaa11y.com/checklist-web/progress-bar/
+            https://www.magentaa11y.com/checklist-web/radio/
+            https://www.magentaa11y.com/checklist-web/range-slider/
+            https://www.magentaa11y.com/checklist-web/scrolling-container/
+            https://www.magentaa11y.com/checklist-web/search/
+            https://www.magentaa11y.com/checklist-web/select/
+            https://www.magentaa11y.com/checklist-web/separator/
+            https://www.magentaa11y.com/checklist-web/single-page-application/
+            https://www.magentaa11y.com/checklist-web/skip-link/
+            https://www.magentaa11y.com/checklist-web/snackbar-toast/
+            https://www.magentaa11y.com/checklist-web/star-rating/
+            https://www.magentaa11y.com/checklist-web/stepper-input/
+            https://www.magentaa11y.com/checklist-web/sticky-content/
+            https://www.magentaa11y.com/checklist-web/strikethrough/
+            https://www.magentaa11y.com/checklist-web/tab-panel/
+            https://www.magentaa11y.com/checklist-web/table/
+            https://www.magentaa11y.com/checklist-web/text-input/
+            https://www.magentaa11y.com/checklist-web/toggle-switch/
+            https://www.magentaa11y.com/checklist-web/tooltip/
+            https://www.magentaa11y.com/checklist-web/video-audio/
           serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
           serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
