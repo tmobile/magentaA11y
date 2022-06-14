@@ -16,7 +16,7 @@ jobs:
             const files = await globber.glob();
             const urls = files
               .map(x => x.match(/([\w-]+)/)[1])
-              .map(x => `${${{ env.DOMAIN }}}/checklist-web/${x}/`)
+              .map(x => '${${{ env.DOMAIN }}}/checklist-web/${x}/')
               .join('\n');
             core.setOutput('urls', urls);
 
