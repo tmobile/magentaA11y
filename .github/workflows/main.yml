@@ -15,7 +15,8 @@ jobs:
             https://www.magentaa11y.com/checklist-web/html/
             https://www.magentaa11y.com/checklist-native/button/
             https://www.magentaa11y.com/how-to/
-          budgetPath: ./budget.json # test performance budgets
+          # budgetPath: /budget.json # test performance budgets
+          configPath: './lighthouserc.json'
           uploadArtifacts: true # save results as an action artifacts
           serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
           serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
