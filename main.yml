@@ -1,2 +1,0 @@
-- name: Lighthouse CI Action
-  uses: treosh/lighthouse-ci-action@v9
