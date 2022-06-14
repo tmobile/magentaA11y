@@ -64,7 +64,7 @@ input[type="checkbox"].radio,
         display: block;
         position: absolute;
         content: '';
-        width: calc(100% + .325rem);
+        width: calc(100% + .25rem);
         height: 1px;
         border-radius: 0;
         background: $color-brand-primary;
@@ -74,13 +74,18 @@ input[type="checkbox"].radio,
         top: auto;
       }
     }
-    &:checked + label,
-    + label:hover {
+    &:checked + label {
       &:after {
         height: .5rem;
         background: $color-brand-primary;
       }
-
+   
+    }
+    + label:hover {
+      &:after {
+        height: .75rem;
+        background: $color-brand-primary;  
+      }
     }
   }
 }
