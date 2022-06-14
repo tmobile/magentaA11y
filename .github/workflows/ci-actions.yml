@@ -10,6 +10,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v8
         with:
           urls: |
+            https://www.magentaa11y.com/
             https://www.magentaa11y.com/checklist-web/alert/
             https://www.magentaa11y.com/checklist-web/animation/
             https://www.magentaa11y.com/checklist-web/button/

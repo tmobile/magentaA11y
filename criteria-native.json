@@ -1,5 +1,6 @@
 ---
 layout: none
+title: JSON criteria native
 ---
 [
   {% for page in site.checklist-native %}

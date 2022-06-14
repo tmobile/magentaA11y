@@ -1,8 +1,18 @@
 ---
 layout: none
+title: CSV sitemap
 permalink: /sitemap.csv
 ---
 Title, URL
 {% for page in site.checklist-web -%}
-{{ page.title | replace: ",", "" }},{{ site.url }}{{ page.url | remove: "index.html" }}
+{{ page.title | replace: ",", "" | default: "None" }},{{ site.url }}{{ page.url | remove: "index.html" }}
+{% endfor -%}
+{% for page in site.checklist-native -%}
+{{ page.title | replace: ",", "" | default: "None" }},{{ site.url }}{{ page.url | remove: "index.html" }}
+{% endfor -%}
+{% for page in site.demos -%}
+{{ page.title | replace: ",", ""| default: "None" }},{{ site.url }}{{ page.url | remove: "index.html" }}
+{% endfor -%}
+{% for page in site.pages -%}
+{{ page.title | replace: ",", ""| default: "None" }},{{ site.url }}{{ page.url | remove: "index.html" }}
 {% endfor -%}
