@@ -10,50 +10,108 @@ jobs:
         uses: treosh/lighthouse-ci-action@v8
         with:
           urls: |
+            https://www.magentaa11y.com/about/
             https://www.magentaa11y.com/
             https://www.magentaa11y.com/checklist-web/alert/
+            https://www.magentaa11y.com/demos/alert/
+            https://www.magentaa11y.com/checklist-native/alert-dialog/
             https://www.magentaa11y.com/checklist-web/animation/
+            https://www.magentaa11y.com/checklist-web/html/
+            https://www.magentaa11y.com/demos/basic-accessible-webpage/
             https://www.magentaa11y.com/checklist-web/button/
+            https://www.magentaa11y.com/checklist-native/button/
+            https://www.magentaa11y.com/demos/button/
+            https://www.magentaa11y.com/checklist-native/captcha/
             https://www.magentaa11y.com/checklist-web/carousel/
+            https://www.magentaa11y.com/checklist-native/carousel/
             https://www.magentaa11y.com/checklist-web/checkbox/
+            https://www.magentaa11y.com/checklist-native/checkbox/
+            https://www.magentaa11y.com/demos/checkbox/
+            https://www.magentaa11y.com/code-of-conduct/
             https://www.magentaa11y.com/checklist-web/date-picker/
+            https://www.magentaa11y.com/defect-reporter.html
+            https://www.magentaa11y.com/demos/
+            https://www.magentaa11y.com/checklist-native/drawer-snappable/
+            https://www.magentaa11y.com/checklist-web/select/
+            https://www.magentaa11y.com/demos/expander/
             https://www.magentaa11y.com/checklist-web/expander/
             https://www.magentaa11y.com/checklist-web/figure/
             https://www.magentaa11y.com/checklist-web/footer/
             https://www.magentaa11y.com/checklist-web/form/
+            https://www.magentaa11y.com/demos/header/
             https://www.magentaa11y.com/checklist-web/header/
             https://www.magentaa11y.com/checklist-web/heading/
+            https://www.magentaa11y.com/demos/heading/
             https://www.magentaa11y.com/checklist-web/hint-help-error/
-            https://www.magentaa11y.com/checklist-web/html/
+            https://www.magentaa11y.com/demos/hint-help-error/
+            https://www.magentaa11y.com/how-to/
             https://www.magentaa11y.com/checklist-web/iframe/
             https://www.magentaa11y.com/checklist-web/image/
+            https://www.magentaa11y.com/demos/basic-inaccessible-webpage/
+            https://www.magentaa11y.com/404.html
+            https://www.magentaa11y.com/criteria-native.json
+            https://www.magentaa11y.com/criteria-web.json
             https://www.magentaa11y.com/checklist-web/link/
+            https://www.magentaa11y.com/checklist-native/link/
+            https://www.magentaa11y.com/demos/link/
             https://www.magentaa11y.com/checklist-web/listbox-autocomplete/
             https://www.magentaa11y.com/checklist-web/main/
+            https://www.magentaa11y.com/checklist-native/menu/
             https://www.magentaa11y.com/checklist-web/modal-dialog/
+            https://www.magentaa11y.com/demos/modal-dialog/
+            https://www.magentaa11y.com/native/
+            https://www.magentaa11y.com/demos/nav/
             https://www.magentaa11y.com/checklist-web/nav/
+            https://www.magentaa11y.com/no-mouse/
             https://www.magentaa11y.com/checklist-web/number-input/
+            https://www.magentaa11y.com/demos/number-input/
+            https://www.magentaa11y.com/checklist-native/pagination-control/
             https://www.magentaa11y.com/checklist-web/pagination/
+            https://www.magentaa11y.com/demos/pagination/
             https://www.magentaa11y.com/checklist-web/password-input/
+            https://www.magentaa11y.com/demos/password-input/
+            https://www.magentaa11y.com/checklist-native/picker-spinner/
             https://www.magentaa11y.com/checklist-web/progress-bar/
+            https://www.magentaa11y.com/demos/progress-bar/
             https://www.magentaa11y.com/checklist-web/radio/
+            https://www.magentaa11y.com/checklist-native/radio/
+            https://www.magentaa11y.com/demos/radio/
+            https://www.magentaa11y.com/checklist-native/range-slider/
+            https://www.magentaa11y.com/demos/range-slider/
             https://www.magentaa11y.com/checklist-web/range-slider/
             https://www.magentaa11y.com/checklist-web/scrolling-container/
+            https://www.magentaa11y.com/demos/search/
             https://www.magentaa11y.com/checklist-web/search/
-            https://www.magentaa11y.com/checklist-web/select/
+            https://www.magentaa11y.com/checklist-native/segmented-control/
+            https://www.magentaa11y.com/demos/select/
             https://www.magentaa11y.com/checklist-web/separator/
             https://www.magentaa11y.com/checklist-web/single-page-application/
+            https://www.magentaa11y.com/site-map/
             https://www.magentaa11y.com/checklist-web/skip-link/
-            https://www.magentaa11y.com/checklist-web/snackbar-toast/
+            https://www.magentaa11y.com/demos/skip-link/
             https://www.magentaa11y.com/checklist-web/star-rating/
+            https://www.magentaa11y.com/demos/star-rating/
+            https://www.magentaa11y.com/checklist-native/stepper/
             https://www.magentaa11y.com/checklist-web/stepper-input/
+            https://www.magentaa11y.com/demos/sticky-content/
             https://www.magentaa11y.com/checklist-web/sticky-content/
             https://www.magentaa11y.com/checklist-web/strikethrough/
             https://www.magentaa11y.com/checklist-web/tab-panel/
             https://www.magentaa11y.com/checklist-web/table/
+            https://www.magentaa11y.com/demos/table/
+            https://www.magentaa11y.com/checklist-native/table-row-button/
+            https://www.magentaa11y.com/teleneo/
             https://www.magentaa11y.com/checklist-web/text-input/
+            https://www.magentaa11y.com/checklist-native/text-input/
+            https://www.magentaa11y.com/demos/text-input/
+            https://www.magentaa11y.com/checklist-web/snackbar-toast/
+            https://www.magentaa11y.com/checklist-native/snackbar-toast/
             https://www.magentaa11y.com/checklist-web/toggle-switch/
+            https://www.magentaa11y.com/checklist-native/toggle-switch/
+            https://www.magentaa11y.com/demos/toggle-switch/
+            https://www.magentaa11y.com/tools/
             https://www.magentaa11y.com/checklist-web/tooltip/
             https://www.magentaa11y.com/checklist-web/video-audio/
+            https://www.magentaa11y.com/web/
           serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
           serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
