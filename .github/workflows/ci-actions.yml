@@ -12,11 +12,11 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const globber = await glob.create('elements/*/demo/*.html');
+            const globber = await glob.create('checklist-web/*.md');
             const files = await globber.glob();
             const urls = files
               .map(x => x.match(/([\w-]+)/)[1])
-              .map(x => `${${{ env.DOMAIN }}}/components/${x}/demo/`)
+              .map(x => `${${{ env.DOMAIN }}}/checklist-web/${x}/`)
               .join('\n');
             core.setOutput('urls', urls);
 
