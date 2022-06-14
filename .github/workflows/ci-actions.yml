@@ -12,7 +12,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const globber = await glob.create('_checklist-web/*.md');
+            const globber = await glob.create('site/*/checklist-web/*.html');
             const files = await globber.glob();
             const urls = files
               .map(x => x.match(/([\w-]+)/)[1])
