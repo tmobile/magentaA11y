@@ -8,6 +8,15 @@ jobs:
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v9
         with:
+          urls: |
+            https://www.magentaa11y.com/
+            https://www.magentaa11y.com/web/
+            https://www.magentaa11y.com/native/
+            https://www.magentaa11y.com/checklist-web/html/
+            https://www.magentaa11y.com/checklist-native/button/
+            https://www.magentaa11y.com/how-to/
+            https://www.magentaa11y.com/demos/basic-accessible-webpage/
+          # budgetPath: /budget.json # test performance budgets
           configPath: './lighthouserc.json'
           uploadArtifacts: true # save results as an action artifacts
           serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
