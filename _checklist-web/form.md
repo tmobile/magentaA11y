@@ -73,12 +73,12 @@ Form field width should afford the user space to enter the characters will be re
 
 {::nomarkdown}
 <example>
-{% include /examples/form.html %}
+{% include /examples/form-sign-in.html %}
 </example>
 {:/}
 
 {% highlight html %}
-{% include /examples/form.html %}
+{% include /examples/form-sign-in.html %}
 {% endhighlight %}
 
 ### Credit card information

@@ -43,8 +43,12 @@
       background-position: center center;
       background-repeat: no-repeat;
       transform: rotate(0deg);
-      transition: 0s;
+      transition: .2s;
     }
+    &:after {
+      background-image: none;
+    }
+
     &:hover,
     &:focus {
       &:before {

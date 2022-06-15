@@ -284,7 +284,6 @@ $(document).on('input', '#cowbell', function() {
     $('#cowbellValue').val( $(this).val() );
 });
 
-
 $("#trigger-progressbar").click(function(event) {
     $(this).attr("aria-disabled", "true");
     $("#slow-app").attr("aria-busy", "true");

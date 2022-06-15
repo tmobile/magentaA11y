@@ -56,10 +56,9 @@ input[type="submit"] {
   margin: 0  0 .75rem 0;
   font-size: 1rem;
   padding: .5rem;
-  border: 1px solid $color-input-border;
+  border: .125rem solid $color-input-border;
   border-radius: 2px;
   box-shadow: 0 0 0px 3px #fff;
-
   -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
 }
 

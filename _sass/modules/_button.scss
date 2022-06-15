@@ -14,7 +14,6 @@ button {
   color: #fff;
   transition: text-indent .7s;
   cursor: pointer;
-
   background-color: $color-button-primary;
   @include ripple($color-button-primary, darken($color-button-primary,10), center, center);
   &:before,
