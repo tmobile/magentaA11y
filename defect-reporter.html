@@ -11,121 +11,118 @@ layout: default
 
   <div class="success-criteria-maker">
     <div class="checklist-container">
-    <form>
-      <details class="checklist-details" open>
-        <summary id="description">
-          Description
-        </summary>
-        <ul role="group" aria-labelledby="description">
-          <li class="input-text-item">
-            <label for="uri">URI</label>
-            <input type="text" id="uri">
-          </li>
-          <li class="input-text-item">
-            <label for="screenshot">Screenshot</label>
-            <input type="text" id="screenshot">
-          </li>
-          <li class="input-textarea-item">
-            <label for="whats-wrong">What's wrong</label>
-            <textarea id="whats-wrong"></textarea>
-          </li>
-          <li class="input-textarea-item">
-            <label for="problem">Why it's a problem</label>
-            <textarea id="problem"></textarea>
-          </li>
-          <li class="input-textarea-item">
-            <label for="fix">How to fix it</label>
-            <textarea id="fix"></textarea>
-          </li>
-        </ul>
-      </details>
-
-      <h2 class="h-bravo">Reproduce with</h2>
-
-      <details class="checklist-details" open>
-        <summary id="platform">Platform</summary>
-        <ul role="group" aria-labelledby="platform">
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="ios" name="screenreader">
-            <label for="ios">iOS</label>
-          </li>
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="android" name="screenreader">
-            <label for="android">Android</label>
-          </li>
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="windows" name="screenreader">
-            <label for="windows">Windows</label>
-          </li>
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="macos" name="screenreader">
-            <label for="macos">MacOS</label>
-          </li>
-        </ul>
-      </details>
-
-
-      <details class="checklist-details" open>
-        <summary id="assistive-technology">Assistive technology</summary>
-        <ul role="group" aria-labelledby="assistive-technology">
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="keyboard" name="screenreader">
-            <label for="keyboard">Keyboard</label>
-          </li>
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="voiceover" name="screenreader">
-            <label for="voiceover">Voiceover</label>
-          </li>
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="nvda" name="screenreader">
-            <label for="nvda">NVDA</label>
-          </li>
-          <li class="input-checkbox-item">
-            <input type="checkbox" id="jaws" name="screenreader">
-            <label for="jaws">JAWS</label>
-          </li>
-        </ul>
-      </details>
-
-      <h2 class="h-bravo">Validation test</h2>
-      {% assign ordered_pages = site.checklist-web | sort: "title" | sort: "order" %}
-      {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
-      {% for category in site.web-categories-order %}
-      <details class="checklist-details" open>
-        <summary id="{{ category | escape }}-category-title">
-          <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
-        </summary>
-        <div role="group" aria-labelledby="{{ category | escape }}-category-title">
-          <ul>
-            {% for page in ordered_pages %}
-            {% include checklist-loop.html %}
-            {% endfor %}
+      <form>
+        <details class="checklist-details" open>
+          <summary id="description">
+            Description
+          </summary>
+          <ul role="group" aria-labelledby="description">
+            <li class="input-text-item">
+              <label for="uri">URI</label>
+              <input type="text" id="uri">
+            </li>
+            <li class="input-text-item">
+              <label for="screenshot">Screenshot</label>
+              <input type="text" id="screenshot">
+            </li>
+            <li class="input-textarea-item">
+              <label for="whats-wrong">What's wrong</label>
+              <textarea id="whats-wrong"></textarea>
+            </li>
+            <li class="input-textarea-item">
+              <label for="problem">Why it's a problem</label>
+              <textarea id="problem"></textarea>
+            </li>
+            <li class="input-textarea-item">
+              <label for="fix">How to fix it</label>
+              <textarea id="fix"></textarea>
+            </li>
           </ul>
-        </div>
-      </details>
-      {% endfor %}
-    </form>
-  </div>
-  <div class="criteria-container">
-    <label for="criteria-area" class="h-charlie">
-      Full defect
-    </label>
-    <div class="textarea-container">
-      <textarea id="criteria-area"></textarea>
-      <div class="textarea-controls">
-        <div>
-          <button id="copy" class="button-alpha" type="button">
-            Copy markdown
-          </button>
-          <button id="copy" class="button-alpha" type="button">
-            Copy CSV
-          </button>
+        </details>
 
-          <!--<input type="checkbox" role="switch" id="markdown">-->
-          <!--<label for="markdown">Show Markdown</label>-->
+        <h2 class="h-bravo">Reproduce with</h2>
+
+        <details class="checklist-details" open>
+          <summary id="platform">Platform</summary>
+          <ul role="group" aria-labelledby="platform">
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="ios" name="screenreader">
+              <label for="ios">iOS</label>
+            </li>
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="android" name="screenreader">
+              <label for="android">Android</label>
+            </li>
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="windows" name="screenreader">
+              <label for="windows">Windows</label>
+            </li>
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="macos" name="screenreader">
+              <label for="macos">MacOS</label>
+            </li>
+          </ul>
+        </details>
+
+
+        <details class="checklist-details" open>
+          <summary id="assistive-technology">Assistive technology</summary>
+          <ul role="group" aria-labelledby="assistive-technology">
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="keyboard" name="screenreader">
+              <label for="keyboard">Keyboard</label>
+            </li>
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="voiceover" name="screenreader">
+              <label for="voiceover">Voiceover</label>
+            </li>
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="nvda" name="screenreader">
+              <label for="nvda">NVDA</label>
+            </li>
+            <li class="input-checkbox-item">
+              <input type="checkbox" id="jaws" name="screenreader">
+              <label for="jaws">JAWS</label>
+            </li>
+          </ul>
+        </details>
+
+        <h2 class="h-bravo">Validation test</h2>
+        {% assign ordered_pages = site.checklist-web | sort: "title" | sort: "order" %}
+        {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
+        {% for category in site.web-categories-order %}
+        <details class="checklist-details" open>
+          <summary id="{{ category | escape }}-category-title">
+            <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
+          </summary>
+          <div role="group" aria-labelledby="{{ category | escape }}-category-title">
+            <ul>
+              {% for page in ordered_pages %}
+              {% include checklist-loop.html %}
+              {% endfor %}
+            </ul>
+          </div>
+        </details>
+        {% endfor %}
+      </form>
+    </div>
+    <div class="criteria-container">
+      <label for="criteria-area" class="h-charlie">
+        Full defect
+      </label>
+      <div class="textarea-container">
+        <textarea id="criteria-area"></textarea>
+        <div class="textarea-controls">
+          <div>
+            <button id="copy" class="button-alpha" type="button">
+              Copy markdown
+            </button>
+            <button id="copy" class="button-alpha" type="button">
+              Copy CSV
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>

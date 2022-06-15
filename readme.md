@@ -43,16 +43,33 @@ It was originally created by [Charlie Triplett](https://www.charliecharliecharli
 - Add an entry for a component that is not included.
 - Fix a typo or edit for consistent language.
 
+## MagentaA11y.com accessibility
+
+MagentaA11y holds itself accountable to following a layered testing strategy.
+
+### CI process
+
+[Lighthouse CI](https://github.com/treosh/lighthouse-ci-action) triggers warnings for performance and SEO  and errors for accessibility on key pages and rendered templates.
+
+{% highlight json %}
+{% include_relative lighthouserc.json %}
+{% endhighlight %}
+
+### Results tracking
+
+Results are uploaded to a [Heroku based](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/recipes/heroku-server/README.md) [LHCI server for tracking](https://aqueous-fortress-57504.herokuapp.com/app/projects)
+- Installation note: to deploy, use git push heroku HEAD:main
+
 ## Local installation instructions
 
-A11yEngineer is just Github Pages site running Jekyll. Follow Github's instructions for installing locally.
+A11yEngineer is a Jekyll based site hosted by Github Pages. Follow Github's instructions for installing locally.
 
 - [Clone the open source repo from T-Mobile](https://github.com/tmobile/magentaA11y)
 - [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
 - Helpful links for installing Jekyll with Ruby 3.0
   - [Install Ruby 3.0 · macOS Big Sur or Catalina for Intel or Apple Silicon](https://mac.install.guide/ruby/3.html)
   - [Install Ruby 3.0 · macOS Big Sur or Catalina with Homebrew for Intel or Apple Silicon](https://mac.install.guide/ruby/13.html)
-  - Note: Ruby 3.0 will need WEBrick
+  - Note: Ruby 3.0 will require WEBrick
 
 ## License
 
