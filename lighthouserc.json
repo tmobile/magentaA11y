@@ -10,7 +10,7 @@
         "https://www.magentaa11y.com/how-to/",
         "https://www.magentaa11y.com/demos/basic-accessible-webpage/"
       ],
-      "numberOfRuns": 1,
+      "numberOfRuns": 1
     },
     "assert": {
       "assertions": {
