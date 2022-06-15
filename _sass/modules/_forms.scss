@@ -78,8 +78,6 @@ label {
   }
 }
 
-
-
 fieldset,
 .fieldset  {
   border: none;
@@ -136,6 +134,7 @@ fieldset,
 
   button {
     justify-self: start;
+    align-self: center;
     margin-left: 1rem;
   }
 
