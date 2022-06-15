@@ -114,7 +114,7 @@ fieldset,
   input[type="password"],
   input[type="button"],
   input[type="submit"],
-  button {
+  button[type="submit"] {
     margin: 0 1rem 1rem 1rem;
     display: block;
   }
