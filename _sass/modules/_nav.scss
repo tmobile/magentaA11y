@@ -184,7 +184,7 @@ nav {
           }
         }
         button.subnav {
-          margin: 0 ;
+          margin: 0;
           width: 4rem ;
           padding: 1rem ;
           top: 0 ;
@@ -194,6 +194,10 @@ nav {
           border-right: none;
           max-height: 4.125rem;
           border-radius: 0;
+          &:before {
+            right: 1rem;
+          }
+
           &:after {
             display: none;
           }
@@ -205,6 +209,11 @@ nav {
           li {
             display: flex !important;
             z-index: 99;
+
+            button {
+              margin: 1rem 1.5rem;
+
+            }
           }
         }
       }

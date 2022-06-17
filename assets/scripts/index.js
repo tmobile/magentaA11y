@@ -31,13 +31,13 @@ $("#submit-response").click(function() {
 
 // Trigger error
 $("#show-error").click(function() {
-    if($('[role="alert"]').hasClass('enabled')) {
-        $('[role="alert"]').removeClass('enabled').addClass('inert');
-        $('#favorite-error').empty();
+    if($('#favorite-nato-alert').hasClass('enabled')) {
+        $('#favorite-nato-alert').removeClass('enabled').addClass('inert');
+        $('#favorite-nato-error').empty();
     } else {
-        $('[role="alert"]').removeClass('inert').addClass('enabled');
+        $('#favorite-nato-alert').removeClass('inert').addClass('enabled');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('#favorite-error').append('The correct answer is Charlie');
+            $('#favorite-nato-error').append('The correct answer is Charlie');
         }, 25);
     }
 });
@@ -54,6 +54,19 @@ $("#show-alert").click(function() {
         }, 25);
     }
 });
+
+// Trigger alert notification
+$('#show-alert-notification').click(function() {
+    if($('#alert-notification').hasClass('enabled')) {
+        $('#alert-notification').removeClass('enabled').addClass('inert').empty();
+    } else {
+        $('#alert-notification').removeClass('inert').addClass('enabled');
+        setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
+            $('#alert-notification').append('Your account has been updated');
+        }, 25);
+    }
+});
+
 
 $("#show-password").on('change', function() {
     if($(this).is(":checked")) {
@@ -311,7 +324,6 @@ $("#trigger-progressbar").click(function(event) {
         $(".progress-busy").addClass('inert').removeClass('heartbeat');
         $("#trigger-progressbar").attr("aria-disabled", "false");
     }, 10000);
-    
 });
 
 $('input[inputmode="numeric"]').not('#card-number').on('input',function(e) {

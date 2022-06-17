@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Alert"
-description: "How to code accessible alerts for web pages"
+title:  "Alert notification"
+description: "How to code accessible alerts or status for web pages"
 categories: main form
 
 keyboard:
@@ -42,6 +42,20 @@ Alerts are dynamic content that is injected into the page when it changes and a 
 
 
 ## Code examples
+
+### Basic notification
+
+{% highlight html %}
+{% include /examples/alert-notification.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/alert-notification.html %}
+</example>
+{:/}
+
+### Error alert from an input field
 
 {% highlight html %}
 {% include /examples/input-text-error.html %}
