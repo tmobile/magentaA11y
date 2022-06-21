@@ -149,6 +149,7 @@
   input[type="checkbox"] {
     + label {
       border-radius: 1rem 1rem 0 0;
+      position: unset;
       &:after {
         content: '';
         position: absolute;
