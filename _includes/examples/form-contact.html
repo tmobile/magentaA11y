@@ -1,0 +1,48 @@
+<form aria-label="Contact us">
+  <fieldset>
+    <legend>
+      Preferred contact method
+    </legend>
+  
+    <input type="radio" name="method" id="contact-email" checked>
+    <label for="contact-email">Email</label>
+  
+    <input type="radio" name="method" id="contact-sms">
+    <label for="contact-sms">SMS text</label>
+  
+    <input type="radio" name="method" id="contact-phone">
+    <label for="contact-phone">Phone</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>
+      Your information
+    </legend>
+
+    <label for="email">
+      Email
+    </label>
+    <input type="text" 
+          id="email"
+          autocomplete="email"
+          aria-describedby="email-hint">
+
+
+    <label for="phone">
+      Phone
+    </label>
+    <input type="text" 
+          id="phone"
+          autocomplete="tel"
+          autocomplete="cc-number"
+          inputmode="numeric"
+          pattern="[0-9]*">
+
+    <label for="message">
+      Phone
+    </label>
+    <textarea id="message"></textarea> 
+      
+
+  </fieldset>
+</form>

@@ -76,15 +76,15 @@ $("#show-password").on('change', function() {
     }
 });
 
-$(".interactive").mouseup(function() {
-    if ($(this).find('input[type="checkbox"]').is(':checked') && !($(this).find('input[type="checkbox"]').is(":focus")) ) {
-        $(this).find('input[type="checkbox"]').trigger('click');
-        $(this).removeClass('checked');
-    } else {
-        $(this).find('input[type="checkbox"]').trigger('click');
-        $(this).addClass('checked');
-    }
-});
+// $(".interactive").mouseup(function() {
+//     if ($(this).find('input[type="checkbox"]').is(':checked') && !($(this).find('input[type="checkbox"]').is(":focus")) ) {
+//         $(this).find('input[type="checkbox"]').trigger('click');
+//         $(this).removeClass('checked');
+//     } else {
+//         $(this).find('input[type="checkbox"]').trigger('click');
+//         $(this).addClass('checked');
+//     }
+// });
 
 // Dialog support
 var isDialogSupported = true;

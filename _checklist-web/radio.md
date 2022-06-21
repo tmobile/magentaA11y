@@ -87,6 +87,20 @@ Ensuring all screenreaders indicate radio inputs as being required requires some
 </example>
 {:/}
 
+
+### Radio button cards
+
+{% highlight html %}
+{% include /examples/input-radio-card.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-radio-card.html %}
+</example>
+{:/}
+
+
 ### When you can't use semantic HTML
 
 This custom button requires extra scripting work for roving tabindex and event listeners.
