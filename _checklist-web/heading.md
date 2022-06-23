@@ -27,10 +27,14 @@ gherkin-keyboard:
       the arrow key to browse to a heading
     result: |
       the heading comes into view
+  - when:  |
+      the tab key
+    result: |
+      nothing happens to the heading because headings should NOT be focusable
 
 gherkin-mobile:
   - when:  |
-      swipe to focus on a heading
+      swipe to browse to a heading
 ---
 
 ## Headings are not focusable with the tab key

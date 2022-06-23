@@ -103,6 +103,7 @@
     @extend .focused;
   }
 }
+
 @mixin focused {
   outline: .25rem solid rgba($color-focus, 1);
   outline-offset: 0rem;
@@ -112,7 +113,6 @@
     outline: none;
   }
 }
-
 
 @mixin ripple($background: #fff, $ripple: #eee, $position-x: 10%, $position-y: center) {
   background-position: $position-x $position-y;
