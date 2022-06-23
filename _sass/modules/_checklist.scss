@@ -18,7 +18,14 @@
     @include float;
     border-radius: 1rem;
     padding: 0 2rem 0 2rem;
+
+    .tab-group {
+      position: sticky;
+      position: sticky;
+      top: 0;
+    }
   }
+
 
   .textarea-container {
     position: sticky;
