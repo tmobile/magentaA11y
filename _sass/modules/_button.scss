@@ -25,7 +25,7 @@ button {
     right: 1.75rem;
     width: 1.25rem;
     height: 1.25rem;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6.3,10.1l5.6-5.6C12,4.4,12,4.3,12,4.2c0-0.1,0-0.2-0.1-0.3l0,0c-0.1-0.1-0.2-0.1-0.3-0.1H8.9c-0.1,0-0.2,0-0.3,0.1L6,6.5 L3.4,3.9C3.3,3.8,3.2,3.8,3.1,3.8H0.4c-0.1,0-0.2,0-0.3,0.1l0,0C0,4,0,4.1,0,4.2c0,0.1,0,0.2,0.1,0.3l5.6,5.6 C5.9,10.2,6.1,10.2,6.3,10.1z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: var(--icon-chevron);
     opacity: .5;
     transition: .2s;
     transform: rotate(270deg);
@@ -55,7 +55,7 @@ button {
     background: $color-border-gray;
     &:before,
     &:after {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='gray' d='M6.3,10.1l5.6-5.6C12,4.4,12,4.3,12,4.2c0-0.1,0-0.2-0.1-0.3l0,0c-0.1-0.1-0.2-0.1-0.3-0.1H8.9c-0.1,0-0.2,0-0.3,0.1L6,6.5 L3.4,3.9C3.3,3.8,3.2,3.8,3.1,3.8H0.4c-0.1,0-0.2,0-0.3,0.1l0,0C0,4,0,4.1,0,4.2c0,0.1,0,0.2,0.1,0.3l5.6,5.6 C5.9,10.2,6.1,10.2,6.3,10.1z'%3E%3C/path%3E%3C/svg%3E");
+      background-image: var(--icon-chevron-gray);
     }
   }
   &.margin {
@@ -68,10 +68,10 @@ button {
     @include ripple(#fff, #eee, center, center);
 
     &:before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='black' d='M6.3,10.1l5.6-5.6C12,4.4,12,4.3,12,4.2c0-0.1,0-0.2-0.1-0.3l0,0c-0.1-0.1-0.2-0.1-0.3-0.1H8.9c-0.1,0-0.2,0-0.3,0.1L6,6.5 L3.4,3.9C3.3,3.8,3.2,3.8,3.1,3.8H0.4c-0.1,0-0.2,0-0.3,0.1l0,0C0,4,0,4.1,0,4.2c0,0.1,0,0.2,0.1,0.3l5.6,5.6 C5.9,10.2,6.1,10.2,6.3,10.1z'%3E%3C/path%3E%3C/svg%3E");
+      background-image: var(--icon-chevron-dark);
     }
     &:after {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='black' d='M6.3,10.1l5.6-5.6C12,4.4,12,4.3,12,4.2c0-0.1,0-0.2-0.1-0.3l0,0c-0.1-0.1-0.2-0.1-0.3-0.1H8.9c-0.1,0-0.2,0-0.3,0.1L6,6.5 L3.4,3.9C3.3,3.8,3.2,3.8,3.1,3.8H0.4c-0.1,0-0.2,0-0.3,0.1l0,0C0,4,0,4.1,0,4.2c0,0.1,0,0.2,0.1,0.3l5.6,5.6 C5.9,10.2,6.1,10.2,6.3,10.1z'%3E%3C/path%3E%3C/svg%3E");
+      background-image: var(--icon-chevron-dark);
     }
     &:hover,
     &:focus,
@@ -89,7 +89,7 @@ button {
     color: $color-text;
     border: 2px solid $color-gray-dark;
     &:before {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill='black' d='M6.3,10.1l5.6-5.6C12,4.4,12,4.3,12,4.2c0-0.1,0-0.2-0.1-0.3l0,0c-0.1-0.1-0.2-0.1-0.3-0.1H8.9c-0.1,0-0.2,0-0.3,0.1L6,6.5 L3.4,3.9C3.3,3.8,3.2,3.8,3.1,3.8H0.4c-0.1,0-0.2,0-0.3,0.1l0,0C0,4,0,4.1,0,4.2c0,0.1,0,0.2,0.1,0.3l5.6,5.6 C5.9,10.2,6.1,10.2,6.3,10.1z'%3E%3C/path%3E%3C/svg%3E");
+      background-image: var(--icon-chevron-dark);
     }
     &:hover,
     &:focus {
@@ -106,6 +106,10 @@ button {
     &:before {
       background-image: none;
     }
+    &:after {
+      background-image: none;
+
+    }
   }
 
   &.plus {
@@ -117,14 +121,13 @@ button {
       left: .75rem;
       width: 1.5rem;
       height: 1.5rem;
-      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' fill='white' viewBox='0 0 288 288' xml:space='preserve'%3E%3Cpolygon points='116.12,6.2 116.12,116.12 6.2,116.12 6.2,171.88 116.12,171.88 116.12,281.8 171.88,281.8 171.88,171.88 281.8,171.88 281.8,116.12 171.88,116.12 171.88,6.2 '/%3E%3Crect x='314.2' y='116.12' width='275.61' height='55.76'/%3E%3C/svg%3E%0A");
+      background-image: var(--icon-plus);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
       opacity: .9;
       transition: .45s;
       transform: rotate(0deg);
-
     }
   }
   &.minus {
@@ -136,7 +139,7 @@ button {
       left: .75rem;
       width: 1.5rem;
       height: 1.5rem;
-      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' fill='white' viewBox='0 0 288 288' style='enable-background:new 0 0 288 288;' xml:space='preserve'%3E%3Cpolygon points='-191.88,6.2 -191.88,116.12 -301.8,116.12 -301.8,171.88 -191.88,171.88 -191.88,281.8 -136.12,281.8 -136.12,171.88 -26.2,171.88 -26.2,116.12 -136.12,116.12 -136.12,6.2 '/%3E%3Crect x='6.2' y='116.12' width='275.61' height='55.76'/%3E%3C/svg%3E");
+      background-image: var(--icon-minus);
       background-repeat: no-repeat;
       background-position: center center;
       opacity: .9;
