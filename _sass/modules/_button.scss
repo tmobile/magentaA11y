@@ -25,7 +25,7 @@ button {
     right: 1.75rem;
     width: 1.25rem;
     height: 1.25rem;
-    background-image: var(--icon-chevron);
+    background-image: url(var(--icon-chevron));
     opacity: .5;
     transition: .2s;
     transform: rotate(270deg);
