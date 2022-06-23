@@ -67,7 +67,6 @@ $('#show-alert-notification').click(function() {
     }
 });
 
-
 $("#show-password").on('change', function() {
     if($(this).is(":checked")) {
         $('#password').attr('type', 'text')

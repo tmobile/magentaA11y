@@ -11,6 +11,9 @@
             inputmode="numeric"
             pattern="[0-9]*"
             required>
+      <div id="card-number-hint" class="hint secure-icon">
+        Secure form protected by 8 bit encryption
+      </div>
     <fieldset>
       <legend>
         Expiration <span aria-hidden="true">(MM YY)</span>
@@ -22,7 +25,6 @@
               name="ccmonth" 
               id="cc-exp-month"
               inputmode="numeric"
-              placeholder="MM" 
               autocomplete="cc-exp-month"
               pattern="[0-9]*"
               required>
@@ -32,7 +34,6 @@
               name="ccyear" 
               id="cc-exp-year"
               inputmode="numeric"
-              placeholder="YY" 
               autocomplete="cc-exp-year"
               pattern="[0-9]*"
               required>
