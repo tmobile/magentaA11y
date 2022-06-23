@@ -23,7 +23,7 @@
       left: 0rem;
       justify-self: center;
       background-repeat: no-repeat;
-      background-image: var(--icon-alert);
+      background-image: $icon-alert;
     }
   }
   &.notification {

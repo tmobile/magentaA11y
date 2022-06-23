@@ -25,7 +25,7 @@ button {
     right: 1.75rem;
     width: 1.25rem;
     height: 1.25rem;
-    background-image: url(var(--icon-chevron));
+    background-image: $icon-chevron;
     opacity: .5;
     transition: .2s;
     transform: rotate(270deg);
@@ -55,7 +55,7 @@ button {
     background: $color-border-gray;
     &:before,
     &:after {
-      background-image: var(--icon-chevron-gray);
+      background-image: $icon-chevron-gray;
     }
   }
   &.margin {
@@ -68,10 +68,10 @@ button {
     @include ripple(#fff, #eee, center, center);
 
     &:before {
-      background-image: var(--icon-chevron-dark);
+      background-image: $icon-chevron-dark;
     }
     &:after {
-      background-image: var(--icon-chevron-dark);
+      background-image: $icon-chevron-dark;
     }
     &:hover,
     &:focus,
@@ -89,7 +89,7 @@ button {
     color: $color-text;
     border: 2px solid $color-gray-dark;
     &:before {
-      background-image: var(--icon-chevron-dark);
+      background-image: $icon-chevron-dark;
     }
     &:hover,
     &:focus {
@@ -121,7 +121,7 @@ button {
       left: .75rem;
       width: 1.5rem;
       height: 1.5rem;
-      background-image: var(--icon-plus);
+      background-image: $icon-plus;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
@@ -139,7 +139,7 @@ button {
       left: .75rem;
       width: 1.5rem;
       height: 1.5rem;
-      background-image: var(--icon-minus);
+      background-image: $icon-minus;
       background-repeat: no-repeat;
       background-position: center center;
       opacity: .9;

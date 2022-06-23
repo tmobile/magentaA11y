@@ -44,8 +44,7 @@ input[type="checkbox"] {
         box-shadow: inset 0 0 0 0 $color-brand-primary, 0 0 0rem 0rem rgba($color-focus,.4);
         background-color: $color-brand-primary;
         background-size: 120% 120%;
-        background-image: url(var(--icon-check));
-
+        background-image: $icon-check;
       }
     }
     &:active + label:before {
