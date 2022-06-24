@@ -26,10 +26,10 @@ permalink: /design/
 
 - When I open the accessibility annotation layer
 - Then, at a minimum I see
-  - HTML <title> is defined
+  - HTML `<title>` is defined
   - HTML meta description is defined
   - Logical headings are defined
   - Links and buttons are assigned name and role
   - Alternative text for images is defined
-  - Ambiguously named components have defined aria-labels
+  - Ambiguously named components have defined `aria-label` attributes
   - Name, role state and group name is defined in the accessibility annotation layer for custom components
