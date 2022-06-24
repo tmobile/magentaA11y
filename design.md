@@ -12,10 +12,10 @@ Any deliverable should be able to fulfill these acceptance criteria.
 
 - When I examine any component therein
 - Then I see
-  - The type size is no smaller than 16px.
+  - The type size is no smaller than 16px
   - Any interactive target areas are no smaller than 48x48 
-  - The focus indication has a minimum area equal to the width of the element and 4px in height.
   - The hover state has a 3:1 or greater contrast ratio between the default and hover states.
+  - The focus indication has a minimum area equal to the width of the element and 4px in height.
   - The focus state has a 3:1 or greater contrast ratio between the default and focused states.
   - The focus indication has a 3:1 or greater contrast ratio against adjacent elements.
   - Color is not used as the sole means of conveying meaning
