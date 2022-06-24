@@ -45,6 +45,7 @@ details {
       box-shadow: 0 0 0rem .1rem transparent;
       transition: box-shadow .2s;
     }
+    
     &:after {
       content: '';
       display: block;
@@ -75,15 +76,7 @@ details {
       border-radius: 1rem 1rem 0 0;
       border-bottom: 1px dotted $color-border-gray;
       margin-bottom: 1rem;
-      transition: .2s;
       @include ripple;
-      @include pop;
-
-      &:hover,
-      &:focus-visible {
-      transition: .2s;
-        border-radius: 1rem;
-      }
   
       &:before {
         transform: rotate(180deg);
@@ -95,8 +88,6 @@ details {
   
   &:not([open]) summary {
     @include ripple;
-    @include pop;
-    transition: .2s;   
   }
   &.compact { 
     border: none !important;
