@@ -21,7 +21,6 @@ details {
     display: block; // necessary to control ::marker
     z-index: 9;
     @include ripple;
-    transition: .2s;
 
     &::-webkit-details-marker,
     &::marker {
