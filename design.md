@@ -4,11 +4,11 @@ title: Design criteria
 permalink: /design/
 ---
 
-## Any deliverable should be able to fulfill these acceptance criteria
+Any deliverable should be able to fulfill these acceptance criteria.
 
-### For design systems
+## For design systems
 
-#### Given that I have delivered a design component
+### Given that I have delivered a design component
 
 - When I examine any component therein
 - Then I see
@@ -20,7 +20,7 @@ permalink: /design/
   - The focus indication has a 3:1 or greater contrast ratio against adjacent elements.
   - Color is not used as the sole means of conveying meaning
 
-### For full experiences
+## For full experiences
 
 ### Given that I have delivered a UI design for development
 
