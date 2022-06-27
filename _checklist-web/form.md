@@ -47,13 +47,17 @@ Use `fieldset` and `legend` (directly under the first fieldset tag) that describ
 - Shipping address
 - Credit card information
 
+## UX guidance
+
 ### Affordance: field width indicates the expected input
 
-Form field width should afford the user space to enter the characters will be required. **Do not** arbitrarily limit the width of names, usernames, passwords or emails.
+Form field width should afford the user space to enter the characters that will be required. **Do not** arbitrarily limit the width of names, usernames, passwords or emails.
 
+#### Practical examples
 - Middle initial should be wide enough to accommodate 1 character
-- State should be wide enough to accommodate 2 characters
+- State abbreviations should be wide enough to accommodate 2 characters
 - Zip code should be wide enough to accommodate 5 characters
+- Pin numbers reflect the number of digits expected
 
 ### Why we stack inputs
 
@@ -61,6 +65,7 @@ Form field width should afford the user space to enter the characters will be re
 
 - People are accustomed to scrolling vertically. There is no advantage to making the page take up less vertical space.
 - People with low vision may be using a zoom tool, enlarging the view of their screen and thus only seeing a portion of the form. If there is a column on the right side, it will be difficult to discover the fields.
+- Do not place submit buttons in a sidebar unless there is also a submit button at the bottom of the form
 
 ### Why we use autocomplete
 
