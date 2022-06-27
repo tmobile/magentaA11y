@@ -25,7 +25,7 @@ gherkin-keyboard:
 
 gherkin-mobile:
   - when:  |
-      swipe to focusable elements
+      swipe
       
 ---
 
