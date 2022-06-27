@@ -44,7 +44,7 @@ form[role="search"] {
     line-height: 0;
     margin: 0;
     padding: 0;
-    border: 1px solid $color-input-border;
+    border: 2px solid $color-input-border;
     border-left: none;
     height: 2.25rem;
     width: 2.25rem;
@@ -57,6 +57,7 @@ form[role="search"] {
       content: '';
       display: block;
       position: absolute;
+      transform: rotate(0deg);
       top: 0rem;
       right: 0rem;
       width: 2rem;
