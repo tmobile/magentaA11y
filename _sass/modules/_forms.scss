@@ -209,7 +209,7 @@ textarea {
   display: inline-block;
   font-size: 1rem;
   resize: none;
-  width: calc(100%);
+  width: calc(100%) - 2rem;
   box-shadow: none;
 }
 

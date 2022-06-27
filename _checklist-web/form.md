@@ -97,6 +97,8 @@ Form field width should afford the user space to enter the characters will be re
 {% include /examples/form-payment.html %}
 {% endhighlight %}
 
+### Shipping information
+
 {::nomarkdown}
 <example>
 {% include /examples/form-shipping.html %}
@@ -105,4 +107,16 @@ Form field width should afford the user space to enter the characters will be re
 
 {% highlight html %}
 {% include /examples/form-shipping.html %}
+{% endhighlight %}
+
+### Contact form
+
+{::nomarkdown}
+<example>
+{% include /examples/form-contact.html %}
+</example>
+{:/}
+
+{% highlight html %}
+{% include /examples/form-contact.html %}
 {% endhighlight %}

@@ -7,9 +7,10 @@ example,
   margin-top: 1rem;
   margin-bottom: 3rem;
 
-  fieldset {
+  fieldset:last-of-type {
     margin-bottom: 0;
   }
+  
 
   nav {
     margin-top: 0;
