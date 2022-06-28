@@ -108,7 +108,7 @@ Sometimes a design may call for a card type checkbox.
 ## Developer notes
 
 ### Name
-- `label` text should describe the checkbox input.
+- `label` text must describe the checkbox input.
 - Use `aria-describedby="hint-id"` for hints or additional descriptions
 - `aria-label="Checkbox input purpose"` can also be used (as a last resort)
 
@@ -118,8 +118,8 @@ Sometimes a design may call for a card type checkbox.
 
 ### Group
 - Semantic HTML
-    - `<fieldset>` should wrap a checkbox group
-    - `<legend>` should describe the group's purpose
+    - `<fieldset>` wraps a checkbox group
+    - `<legend>` describes the group's purpose
     - Each `<label>` must include `for="input-id"` to be associated with its input
 - Custom elements
     - Use `role="group"` in the palace of fieldset

@@ -6,7 +6,7 @@ categories: main
 
 keyboard:
   tab: |
-    Nothing, images should not be focusable unless they are part of a control
+    Nothing, images must not be focusable unless they are part of a control
   arrow-keys: |
     The alt text of the image
 

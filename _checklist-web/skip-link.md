@@ -61,7 +61,7 @@ gherkin-mobile:
 
 ### Group
 
-- Skip links should be the first perceivable elements in the page
+- Skip links must be the first perceivable elements in the page
 
 ### Focus
 

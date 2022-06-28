@@ -6,7 +6,7 @@ description: "How to code and test accessible headings for websites"
 
 keyboard:
   tab: |
-    Nothing, headings should not be focusable
+    Nothing, headings must not be focusable
   arrow-keys: |
     Browses headings (when using screen reader)
   
@@ -16,7 +16,7 @@ mobile:
 
 screenreader:
   name:  |
-    The heading's purpose and level should be clear
+    The heading's purpose and level must be clear
   role:  |
     It identifies itself as a heading and its level
   group: |
@@ -30,7 +30,7 @@ gherkin-keyboard:
   - when:  |
       the tab key
     result: |
-      nothing happens to the heading because headings should NOT be focusable
+      nothing happens to the heading because headings must NOT be focusable
 
 gherkin-mobile:
   - when:  |
@@ -83,7 +83,7 @@ This custom header requires extra attributes.
 - Use `role="heading" aria-level="1"` to for custom elements
 
 ### Group
-- Headings should be logically ordered.
+- Headings must be logically ordered.
 - Start with a single `<h1>` per page.
   - Title major sections with `<h2>`
     - Subsections with `<h3>`
@@ -92,5 +92,5 @@ This custom header requires extra attributes.
 
 
 ### Focus
-- Headings should not receive focus
+- Headings must not receive focus
 - Arrow keys will browse headings (not the tab key)

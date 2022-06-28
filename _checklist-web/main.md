@@ -72,7 +72,7 @@ This custom main element requires extra attributes.
 
 ### Group
 
-- Should contain the main content of the page.
+- must contain the main content of the page.
 
 ### Focus
 

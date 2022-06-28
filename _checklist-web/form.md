@@ -17,7 +17,7 @@ mobile:
 
 screenreader:
   name:  |
-    If multiple forms are present (Ex: Search, Sign in, Newsletter subscription), the form should have a name
+    If multiple forms are present (Ex: Search, Sign in, Newsletter subscription), the form must have a name
   role:  |
     It is discoverable with screenreader shortcuts as a form landmark along with its name
 
@@ -56,7 +56,7 @@ Form field width should afford the user space to enter the characters that will 
 #### Practical examples
 - Middle initial should be wide enough to accommodate 1 character
 - State abbreviations should be wide enough to accommodate 2 characters
-- Zip code should be wide enough to accommodate 5 characters
+- Zip code must be wide enough to accommodate 5 characters
 - Pin numbers reflect the number of digits expected
 
 ### Why we stack inputs

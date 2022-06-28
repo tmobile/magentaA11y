@@ -76,7 +76,7 @@ This custom navigation requires extra attributes.
 
 ### Multiple navigation elements
 
-When there is more than one navigation element, they should have a name.
+When there is more than one navigation element, they must have a name.
 
 {% highlight html %}
 <nav tabindex="-1" id="nav" aria-label="Main">

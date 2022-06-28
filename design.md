@@ -4,7 +4,7 @@ title: Design criteria
 permalink: /design/
 ---
 
-Any deliverable should be able to fulfill these acceptance criteria.
+Any deliverable must be able to fulfill these acceptance criteria.
 
 ## For design systems
 
@@ -27,9 +27,10 @@ Any deliverable should be able to fulfill these acceptance criteria.
 - Then I see
   - HTML `<title>` is defined
   - HTML meta description is defined
-  - Logical headings are defined
+  - Logical headings are defined (h1, h2, h3)
   - Links and buttons are assigned name and role
   - Alternative text for images is defined
   - Ambiguously named components have defined `aria-label` attributes
   - For custom components Name, role state and group name is defined in the accessibility annotation layer
-  - Form labels and inputs are stacked vertically with no multicolumn layouts
+  - Form labels and fields are stacked vertically with no multi-column layouts
+  - Input fields are sized to accommodate the expected character count

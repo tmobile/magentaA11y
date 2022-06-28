@@ -71,7 +71,7 @@ gherkin-mobile:
 
 ### Launch button
 - Should be a button, not a link
-- Upon closing, focus should return to the button that launched the dialog
+- Upon closing, focus must return to the button that launched the dialog
 - **Do not**  use`aria-haspopup`. This attribute has very low and support and unpredictable output across screen readers. 
 
 ### Name
@@ -83,14 +83,14 @@ gherkin-mobile:
 - Use `role="dialog"` so the screen reader can identify this as a dialog or modal
 
 ### Group
-- Upon closing, focus should return to the button that launched the dialog
+- Upon closing, focus must return to the button that launched the dialog
 
 ### State
-- Use `aria-modal="true"` to indicate content beneath the modal is inert and that the screen reader should not browse outside the dialog.
+- Use `aria-modal="true"` to indicate content beneath the modal is inert and that the screen reader must not browse outside the dialog.
 
 ### Focus
 - Use `tabindex="-1"` to make the modal itself targetable for focus
-- Upon closing, focus should return to the button that launched the dialog
+- Upon closing, focus must return to the button that launched the dialog
 
 ### Documentation
 - [Browser Support](https://caniuse.com/?search=dialog)

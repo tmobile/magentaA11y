@@ -29,7 +29,7 @@ gherkin-mobile:
 
 ## Developer notes
 
-Separators should be ignored by the screenreader.
+Separators must be ignored by the screenreader.
 
 It is preferred to create these lines with CSS rather than using a DOM element.
 

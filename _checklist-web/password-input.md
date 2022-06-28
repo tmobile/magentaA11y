@@ -69,7 +69,7 @@ gherkin-mobile:
 - Identifies as some kind of secure input
 
 ### State
-- The show password checkbox should indicate its state on focus
+- The show password checkbox must indicate its state on focus
 
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input

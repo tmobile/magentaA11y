@@ -79,7 +79,7 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 ## Developer notes
 
 ### Name
-- Inner text should describe the purpose
+- Inner text must describe the purpose
 
 ### Role
 - `<details>` identifies as details

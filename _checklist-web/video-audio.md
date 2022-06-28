@@ -66,7 +66,7 @@ Let people choose if they're subjected to video content.
 
 ### Is it ever okay?
 
-- Media with audio should absolutely **never** autoplay
+- Media with audio must absolutely **never** autoplay
 - Just because a video contains controls to stop the video doesn't mean it's okay to autoplay
   - [**Example**: When is it okay for video _and_ audio to autoplay?](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 - Silent video can autoplay under these conditions:
@@ -99,7 +99,7 @@ Let people choose if they're subjected to video content.
 
 ### Role
 
-- Controls should identify as buttons, switches, etc.
+- Controls must identify as buttons, switches, etc.
 - There are accessible video embed options available
 
 ### Group
@@ -112,7 +112,7 @@ Let people choose if they're subjected to video content.
 
 ### State
 
-- Controls should identify their state (pressed, checked, selected, value, etc)
+- Controls must identify their state (pressed, checked, selected, value, etc)
 
 ### Focus
 

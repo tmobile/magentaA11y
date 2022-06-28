@@ -84,7 +84,7 @@ People with low vision need the ability to enlarge the page on mobile and deskto
 
 Landmarks give structure to the page for the screenreader user to be able to navigate the page by major sections.
 
-Each page should include:
+Each page must include:
 
 - [Header](/checklist-web/header/)
 - [Nav](/checklist-web/nav/)

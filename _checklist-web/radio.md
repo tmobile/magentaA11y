@@ -146,7 +146,7 @@ This hack must be used very carefully on a case by case basis.
 ## Developer notes
 
 ### Name
-- `label` text should describe the radio input.
+- `label` text must describe the radio input.
 - Use `aria-describedby="hint-id"` for hints or additional descriptions
 - `aria-label="Radio input purpose"` can also be used (as a last resort)
 
@@ -156,8 +156,8 @@ This hack must be used very carefully on a case by case basis.
 
 ### Group
 - Semantic HTML
-    - `<fieldset>` should wrap the radio group
-    - `<legend>` should describe the group's purpose
+    - `<fieldset>` must wrap the radio group
+    - `<legend>` must describe the group's purpose
     - Each `<label>` must include `for="input-id"` to be associated with its input
 - Custom elements
     - Use `role="radiogroup"` to take the palace of fieldset

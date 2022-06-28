@@ -78,5 +78,5 @@ Note: The alert must be structured as below to function properly in VoiceOver, w
 - Use `aria-describedby="hint-id"` to associate an input with a hint.
 
 ### Focus
-- Hints should not receive focus
+- Hints must not receive focus
 

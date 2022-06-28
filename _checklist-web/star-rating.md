@@ -67,7 +67,7 @@ This radio group uses CSS to reverse the visual order of the radio inputs while 
 
 ### Displaying star ratings
 
-The element should clearly express the rating and scale.
+The element must clearly express the rating and scale.
 
 {% highlight html %}
 {% include /examples/stars.html %}

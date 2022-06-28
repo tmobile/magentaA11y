@@ -55,9 +55,9 @@ Snackbars are a custom HTML construct and have no semantic meaning. As such, lik
 
 ## Only use toast to _reinforce_ updates
 
-If using a snackbar is unavoidable, it should only be used for non-critical messaging. 
+If using a snackbar is unavoidable, it must only be used for non-critical messaging. 
 
-The status injected should also be discernable on the page _without the snackbar_.
+The status injected must also be discernable on the page _without the snackbar_.
 
 ### Practical example
 
@@ -94,6 +94,6 @@ If the snackbar must dismiss automatically, it is preferred that [timing be adju
 
 ### Focus
 
-- Focus **should not** move to the element automatically when the snackbar appears
+- Focus **must not** move to the element automatically when the snackbar appears
 
 

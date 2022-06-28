@@ -38,7 +38,7 @@ gherkin-mobile:
 
 ## Focus management & consistency
 
-- Focus should be **deliberately and consistently** placed at the
+- Focus must be **deliberately and consistently** placed at the
   - top of new page content or 
   - top of the HTML page
 - Pick one or the other and **consistently** follow that pattern
@@ -49,7 +49,7 @@ gherkin-mobile:
 - The screenreader expects content **within** an element with a `aria-live="polite"` attribute to change
 - By default, **only the content that has changed** will be read
 - To force the screenreader to read all contents even if it did not change within the element, add `aria-atomic="true"`
-- **Rarely** should you use `aria-live="assertive"` as it will override every other message from the screenreader
+- **Rarely** must you use `aria-live="assertive"` as it will override every other message from the screenreader
 
 ## About alerts
 

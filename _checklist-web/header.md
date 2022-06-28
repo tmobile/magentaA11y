@@ -36,7 +36,7 @@ gherkin-mobile:
 
 ## General notes
 
-- There should only be a one singular header/banner element on the page. 
+- There must only be a one singular header/banner element on the page. 
 - Contains site title and typically the primary navigation.
 
 ## Code examples
@@ -67,7 +67,7 @@ This custom header requires extra attributes.
 ## Developer notes
 
 ### Name
-- Typically doesn't have a name or description since there should be only one instance per page
+- Typically doesn't have a name or description since there must be only one instance per page
 
 ### Role
 
