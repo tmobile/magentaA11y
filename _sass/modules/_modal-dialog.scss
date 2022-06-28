@@ -80,12 +80,17 @@ dialog {
       content: '';
       display: block;
       position: fixed;
+      width: 100vw;
+      height: 100vh;
       top: 0;
       right: 0;
       left: 0;
       bottom: 0;
       z-index: -1;
+      opacity: 1;
       background: rgba(#000, .7);
+      background-image: none;
+      transform: rotate(0deg)
     }
   }
 }
