@@ -24,6 +24,8 @@ permalink: /teleneo/
 
 - For the design system, it means defining font-sizes differently than the default REM value of 16px
 - For designers, it means confusion about what type sizes actually mean and what contrast ratios are acceptable.
+  - If you want something to be readable, 16px must actually be 18px
+  - Smaller legal text at [becomes illegible](https://telekom.github.io/scale/?path=/docs/guidelines-typography--page) for anyone with less than perfect vision
 - For customers, it means smaller text that's more difficult to read
 
 ## How to fix it
@@ -58,5 +60,5 @@ Et harum quidem rerum facilis est et expedita distinctio. Neque porro quisquam e
 ## Caveats & disclaimers
 
 - Any existing designers will have to expunge TeleNeo from their devices
-- A single source of truth for TeleNeoUS will have to be provided
+- A single frictionless source of truth for TeleNeoUS will have to be provided
 - Even if a designer did end up using TeleNeo default, it really won't have a huge impact, their type will just be more readable in production
