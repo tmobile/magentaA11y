@@ -59,6 +59,12 @@ Et harum quidem rerum facilis est et expedita distinctio. Neque porro quisquam e
 
 ## Caveats & disclaimers
 
-- Any existing designers will have to expunge TeleNeo from their devices
-- A single frictionless source of truth for TeleNeoUS will have to be provided
-- Even if a designer did end up using TeleNeo default, it really won't have a huge impact, their type will just be more readable in production
+### But if we switch it all out, won't making the type bigger break a bunch of things?
+- Not really. Mobile designs are generally flexible enough that a change like this won't be catastrophic. If custom fonts don't load, default system fonts take over automatically anyway and the site is expected to function normally.
+
+### Any existing designers will have to expunge TeleNeo from their devices
+- True, but we don't have as many designers as we used to.
+- And even if a designer did end up using TeleNeo default, it really won't have a huge impact, their type will just be more readable in production and very few people will even notice
+
+### A single frictionless source of truth for TeleNeoUS will have to be provided
+- That's easy enough. We can include it with Apeiron, making it easier to get than from DT
