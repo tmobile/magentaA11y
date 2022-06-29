@@ -1,0 +1,226 @@
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="file"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="button"],
+input[type="submit"] {
+  display: block;
+  width: auto;
+  -webkit-appearance: none; // Remove iOS webkit styles
+  border-radius: 0; // Remove iOS webkit styles
+  margin: 0  0 .75rem 0;
+  font-size: 1rem;
+  padding: .5rem;
+  border: .125rem solid $color-input-border;
+  border-radius: 2px;
+  box-shadow: 0 0 0px 3px #fff;
+  -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
+}
+
+label {
+  display: block;
+  margin: 0 0 .5rem 0;
+  span {
+    font-size: .75rem;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    @include regular;
+    background: darken($color-gray-xtra-light,8);
+    padding: 0 .5rem;
+    border-radius: .125rem;
+  }
+}
+
+fieldset,
+.fieldset  {
+  border: none;
+  padding: 0;
+  margin: 0rem 0 calc(2rem + 3px) 0;
+  border-radius: 1rem;
+  background: #fff;
+  display: grid;
+  // box-shadow: 0 1px 2px 1px rgba(#000, .05);
+  @include float;
+  transition: .8s;
+
+  fieldset {
+    box-shadow: none !important;
+    display: block;
+    legend {
+      background: none;
+      font-size: 1rem;
+      padding: 1rem 1rem .5rem 1rem;
+      border-bottom: none;
+    }
+  }
+
+  textarea,
+  input[type="text"],
+  input[type="search"],
+  input[type="file"],
+  input[type="email"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  input[type="button"],
+  input[type="submit"],
+  button[type="submit"] {
+    margin: 0 1rem 1rem 1rem;
+    display: block;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    &:last-of-type + label {
+      border-radius: 0 0 1rem 1rem;
+    }
+  }
+
+  label {
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  input#show-password[type='checkbox'] + label {
+    margin-left: 1rem;
+  }
+
+  button {
+    justify-self: start;
+    align-self: center;
+    margin-left: 1rem;
+  }
+
+  .hint {
+    margin-left: 1rem;
+  } 
+}
+
+input[type="tel"] {
+  width: 11rem;
+}
+
+legend,
+.legend  {
+  @include headline;
+  margin: 0 0 0 0;
+  padding: 1.5rem 1rem 1.5rem 1rem;
+  width: 100%;
+  font-size: 1.25rem;
+  float: left;
+  background: #fff;
+  position: relative;
+  @include clearfix;
+  border-bottom: 1px dotted $color-border-gray;
+  border-radius: 1rem 1rem 0 0;
+  span {
+    font-size: .75rem;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    @include regular;
+    background: darken($color-gray-xtra-light,8);
+    padding: 0 .5rem;
+    border-radius: .125rem;
+  }
+}
+
+input[type=checkbox],
+input[type=radio],
+.radio {
+  @extend .hidden;
+  + label,
+  + .label {
+    @include ripple;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    padding: 1rem .5rem 1rem 0rem;
+    line-height: 1;
+    width: 100%;
+    margin: 0;
+    color: $color-text;
+    position: relative;
+    cursor: pointer;
+    background-position: 10% center;
+    transition: background .8s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
+  }
+
+  &:checked + label {
+    color: $color-text;
+  }
+  &:focus-visible + label {
+    z-index: 9;
+    @extend .focused;
+  }
+  &:active + label {
+    @extend .active;
+  }
+}
+
+textarea {
+  display: inline-block;
+  font-size: 1rem;
+  resize: none;
+  width: calc(100%) - 2rem;
+  box-shadow: none;
+}
+
+input[type="file"] {
+  @extend .hidden;
+  + label {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 2rem 1rem 4rem;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: $color-button-primary;
+    @include ripple($color-button-primary, $color-button-hover);
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 2rem;
+      width: 3rem;
+      top: .5rem;
+      left: 1rem;
+      background-image: url("data:image/svg+xml,%0A%3Csvg height='100px' width='100px' fill='white' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 100 100' enable-background='new 0 0 100 100' xml:space='preserve'%3E%3Cpath d='M88.879,63.641c0.152-0.953,0.254-1.921,0.254-2.916c0-7.937-5.055-14.675-12.112-17.224 c-2.952-12.916-14.504-22.555-28.314-22.555c-13.496,0-24.839,9.203-28.104,21.675C11.776,43.941,5,51.531,5,60.725 c0,10.123,8.207,18.328,18.329,18.328h22.312V58.22H34.866L50.657,41.78L66.449,58.22H55.673v20.833H87.2 c4.308,0,7.8-3.49,7.8-7.799C95,67.523,92.379,64.409,88.879,63.641z'%3E%3C/path%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &:hover {
+      background-color: $color-button-hover;
+    }
+  }
+  &:focus-visible {
+    + label {
+      background-color: $color-button-hover;
+    }
+  }
+}
+
+.hint {
+  margin: 0 0 1rem 0;
+  padding: 0rem;
+  color: $color-gray-dark;
+  display: block;
+  border-radius: 2px;
+}
+
+i {
+  background-color: #AA0000;
+}
+
+@for $i from 1 through 100 {
+  input[maxlength="#{$i}"] {
+    max-width: #{$i + 1}rem;
+  }
+}
