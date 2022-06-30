@@ -53,6 +53,9 @@ gherkin-mobile:
 
 ## Code examples
 
+# LHCI TEST IGNORE
+
+
 ### Use semantic HTML
 This semantic HTML contains all accessibility features by default.
 
@@ -151,4 +154,3 @@ Sometimes the design will call for multiple buttons with the same text label. In
 ### Focus
 - Focus must be visible
 - Custom elements need `tabindex="0"` to be focusable
-
