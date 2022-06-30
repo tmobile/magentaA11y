@@ -62,8 +62,6 @@ gherkin-mobile:
 
 ## Code examples
 
-# TEST
-
 ### Custom listbox with autocomplete
 
 Custom listboxes are notoriously difficult to build in an accessible fashion for screenreaders.
