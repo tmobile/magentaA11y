@@ -53,9 +53,6 @@ gherkin-mobile:
 
 ## Code examples
 
-# LHCI TEST IGNORE
-
-
 ### Use semantic HTML
 This semantic HTML contains all accessibility features by default.
 
