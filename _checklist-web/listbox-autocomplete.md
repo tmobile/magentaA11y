@@ -64,6 +64,8 @@ gherkin-mobile:
 
 ## Custom listbox
 
+Custom listboxes are notoriously difficult to build in an accessible fashion for screenreaders. 
+
 {% highlight html %}
 {% include /examples/input-listbox-autocomplete.html %}
 {% endhighlight %}
@@ -81,22 +83,3 @@ gherkin-mobile:
 {% include /examples/input-text-autocomplete.html %}
 </example>
 {:/}
-
-## Developer notes
-
-### Name
-- Purpose must be clear from the label
-
-### Role
-- Use `role="combobox"` for the input
-- Use `role="listbox"` for the list of options
-- Use `role="option"` for the individual options
-
-### State
-- Use `aria-expanded="true/false"` on the text input to indicate the state of the list
-
-### Group
-- Use `aria-haspopup="true"` on the text input to indicate there is a popup
-
-### Focus
-- Focus must be visible
