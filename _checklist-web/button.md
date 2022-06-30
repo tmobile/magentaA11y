@@ -150,3 +150,15 @@ Sometimes the design will call for multiple buttons with the same text label. In
 ### Focus
 - Focus must be visible
 - Custom elements need `tabindex="0"` to be focusable
+
+## UI design notes
+
+### Minimum WCAG requirements
+
+- The type size is no smaller than 16px
+- The clickable/tappable target areas are no smaller than 44x44
+- The text has a 4.5:1 minimum contrast ratioa gainst its background
+- The focus indication has a minimum area equal to the width of the element and 2px in height
+- The focus state has a 3:1 minimum contrast ratio between the default and focused states
+- The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+- Color is not used as the sole means of conveying meaning

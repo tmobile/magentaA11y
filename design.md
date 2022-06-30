@@ -11,12 +11,18 @@ Any deliverable must be able to fulfill these acceptance criteria.
 ### Given that I have delivered a design component
 
 - When I examine any component therein
-- Then I see
-  - The type size is no smaller than 16px
-  - Any interactive target areas are no smaller than 48x48 
-  - The focus indication has a minimum area equal to the width of the element and 4px in height.
-  - The focus state has a 3:1 or greater contrast ratio between the default and focused states.
-  - The focus indication has a 3:1 or greater contrast ratio against adjacent elements.
+  - The type size is no smaller than 16px Helvetica or Arial as reference
+  - Any interactive target areas are no smaller than 44x44
+    - Ex: A video play button
+  - Any interactive component has a 3:1 minimum contrast ratio against adjacent elements
+    - Ex: A button against its background
+  - Any change of state exhibits a 3:1 minimum contrast ratio
+    - Ex: A checked radio input compared to unchecked
+    - Ex: A disabled checkbox compared to defaults
+  - The focus indication has a 3:1 or greater contrast ratio between the default and focused states
+  - The focus indication has a 3:1 or greater contrast ratio against adjacent elements
+  - The focus indication has a minimum area equal to the width of the element and 2px in height
+    - Ex: A button with a 1px focus outline meets the minimum
   - Color is not used as the sole means of conveying meaning
 
 ## For full experience designs
