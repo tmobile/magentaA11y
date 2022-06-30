@@ -29,9 +29,12 @@ form[role="search"] {
     border-radius: 0;
     box-shadow: none;
     background-color: #fff;
-
+    
     &:focus {
       z-index: 99;
+    }
+    &::-webkit-calendar-picker-indicator {
+      display: none !important;
     }
   }
 
