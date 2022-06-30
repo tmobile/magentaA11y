@@ -50,7 +50,6 @@ gherkin-mobile:
 
 ---
 
-
 ## Code examples
 
 ### Use semantic HTML
