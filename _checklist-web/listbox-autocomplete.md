@@ -60,19 +60,19 @@ gherkin-mobile:
       the selected option is changed
 ---
 
-## Code example
+## Code examples
 
-## Custom listbox
+# TEST
 
-Custom listboxes are notoriously difficult to build in an accessible fashion for screenreaders. 
+### Custom listbox with autocomplete
 
-{% highlight html %}
-{% include /examples/input-listbox-autocomplete.html %}
-{% endhighlight %}
+Custom listboxes are notoriously difficult to build in an accessible fashion for screenreaders.
 
 - [WAI-ARIA examples](https://w3c.github.io/aria-practices/examples/combobox/combobox-autocomplete-list.html)
 
-### Semantic input with datalist
+### Semantic input with datalist autocomplete
+
+This simple example illustrates all the functionality of a listbox with inline autocomplete. 
 
 {% highlight html %}
 {% include /examples/input-text-autocomplete.html %}
