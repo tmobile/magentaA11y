@@ -301,7 +301,6 @@ $("#trigger-progressbar").click(function(event) {
     $("#slow-app").attr("aria-busy", "true");
     $("#progress-busy").append("0%");
     $(".progress-busy").removeClass('inert').addClass('heartbeat');
-    event.preventDefault();
     
     setTimeout(function() {
         $("#progress-busy").text($("#progress-busy").text().replace("0%", "51%"));
@@ -317,7 +316,6 @@ $("#trigger-progressbar").click(function(event) {
     }, 9000);
 
     setTimeout(function() {
-        $("#trigger-progressbar").removeAttr("aria-describedby", "progress-busy");
         $("#slow-app").attr("aria-busy", "false");
         $("#progress-busy").empty();
         $(".progress-busy").addClass('inert').removeClass('heartbeat');
@@ -333,4 +331,8 @@ $('#card-number').on('keypress change', function () {
     $(this).val(function (index, value) {
         return value.replace(/[^0-9]/g, "").replace(/\W/gi, '').replace(/(.{4})/g, '$1 ');
     });
+});
+
+$('[aria-disabled="true"]').click(function(event){
+    event.preventDefault();
 });

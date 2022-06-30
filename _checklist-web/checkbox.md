@@ -76,6 +76,35 @@ Even though this is valid HTML, it creates unpredictable results with screenread
 </example>
 {:/}
 
+### Disabled and focusable checkbox (preferred)
+
+- An input using `aria-disabled="true` will be focusable with the tab key
+
+{% highlight html %}
+{% include /examples/input-checkbox-disabled-focusable.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-checkbox-disabled-focusable.html %}
+</example>
+{:/}
+
+
+### Fully disabled checkbox
+
+- An input using `disabled` will not be focusable with the tab key
+- Arrow keys will still be able to browse disabled inputs
+
+{% highlight html %}
+{% include /examples/input-checkbox-disabled.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-checkbox-disabled.html %}
+</example>
+{:/}
 
 
 ### When you can't use semantic HTML

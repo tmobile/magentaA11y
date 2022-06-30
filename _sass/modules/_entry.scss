@@ -1,11 +1,6 @@
 .success-criteria-entry {
-  @include break($break-large) {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    column-gap: 2rem;
-  }
-
   @include break($break-max) {
+    display: grid;
     grid-template-columns: 2fr 3fr;
     column-gap: 2rem;
   }
