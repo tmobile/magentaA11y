@@ -59,11 +59,28 @@ gherkin-mobile:
     result: |
       the selected option is changed
 ---
+
 ## Code example
+
+## Custom listbox
 
 {% highlight html %}
 {% include /examples/input-listbox-autocomplete.html %}
 {% endhighlight %}
+
+- [WAI-ARIA examples](https://w3c.github.io/aria-practices/examples/combobox/combobox-autocomplete-list.html)
+
+### Semantic input with datalist
+
+{% highlight html %}
+{% include /examples/input-text-autocomplete.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-autocomplete.html %}
+</example>
+{:/}
 
 ## Developer notes
 
@@ -83,6 +100,3 @@ gherkin-mobile:
 
 ### Focus
 - Focus must be visible
-
-## Documentation
-- [WAI-ARIA examples](https://www.w3.org/TR/2021/NOTE-wai-aria-practices-1.2-20211129/examples/combobox/combobox-autocomplete-both.html)
