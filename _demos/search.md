@@ -4,5 +4,5 @@ title:  "Search"
 ---
 
 {::nomarkdown}
-{% include /examples/input-search.html %}
+{% include /examples/form-search.html %}
 {:/}

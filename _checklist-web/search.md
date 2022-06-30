@@ -54,12 +54,12 @@ gherkin-mobile:
 This semantic HTML contains all accessibility features by default. Include a search button.
 
 {% highlight html %}
-{% include /examples/input-search.html %}
+{% include /examples/form-search.html %}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/input-search.html %}
+{% include /examples/form-search.html %}
 </example>
 {:/}
 
