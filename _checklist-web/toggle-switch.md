@@ -87,6 +87,18 @@ Using the `disabled` attribute will prevent the input from being clickable, but 
 <label for="deltaSwitch">Delta</label>
 {% endhighlight %}
 
+### Busy states
+
+{% highlight html %}
+{% include /examples/input-switch-busy.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-switch-busy.html %}
+</example>
+{:/}
+
 
 ### You can also use a button
 

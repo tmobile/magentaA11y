@@ -298,7 +298,6 @@ $(document).on('input', '#cowbell', function() {
 
 $("#trigger-progressbar").click(function(event) {
     $(this).attr("aria-disabled", "true");
-    $("#slow-app").attr("aria-busy", "true");
     $("#progress-busy").append("0%");
     $(".progress-busy").removeClass('inert').addClass('heartbeat');
     
@@ -316,7 +315,6 @@ $("#trigger-progressbar").click(function(event) {
     }, 9000);
 
     setTimeout(function() {
-        $("#slow-app").attr("aria-busy", "false");
         $("#progress-busy").empty();
         $(".progress-busy").addClass('inert').removeClass('heartbeat');
         $("#trigger-progressbar").attr("aria-disabled", "false");
