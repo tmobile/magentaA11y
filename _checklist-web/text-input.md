@@ -110,6 +110,22 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+### Email input
+
+- Setting type="email" changes the keyboard for mobile app users
+
+{% highlight html %}
+{% include /examples/input-email.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-email.html %}
+</example>
+{:/}
+
+
+
 ### Output
 
 - `output` can be used for a dynamic content that changes based on user inputs (example: a calculator).

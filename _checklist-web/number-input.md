@@ -86,6 +86,21 @@ The `type="number"` input is intended for **integers** and includes features we 
 </example>
 {:/}
 
+
+### Telephone number input
+
+- Setting type="tel" changes the keyboard for mobile app users
+
+{% highlight html %}
+{% include /examples/input-tel.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-tel.html %}
+</example>
+{:/}
+
 ## Developer notes
 
 - [Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
