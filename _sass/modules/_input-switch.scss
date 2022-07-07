@@ -103,5 +103,32 @@ input[role="switch"] {
   &:checked:focus + label:after, {
     box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px .25rem rgba($color-brand-primary, 1);
   }
-}
 
+  &:disabled,
+  &[aria-disabled="true"],
+  &[aria-disabled="true"]:focus-visible {
+    + label,
+    + label:hover {
+      &:before {
+        background-color: $color-gray-light;
+        background-image: var(--icon-off-dark);
+        box-shadow: none !important;
+      }
+      &:after {
+        box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .325rem $color-gray-light;
+        background-color: $color-gray-xtra-dark !important;
+      }
+    }
+    &:checked {
+      + label,
+      + label:hover {
+        &:before {
+          background-image: var(--icon-on-dark);
+        }
+        &:after {
+          box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .325rem $color-gray-light;
+        }
+      }
+    }
+  }
+}

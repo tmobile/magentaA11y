@@ -1,7 +1,6 @@
 // Allow :active styles to work in your CSS on a page in Mobile Safari:
 document.addEventListener("touchstart", function(){}, true);
 
-
 $("#copy").click(function(){
     $("#criteria-area").select();
     document.execCommand('copy');
