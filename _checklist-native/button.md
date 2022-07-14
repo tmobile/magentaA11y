@@ -34,7 +34,7 @@ screenreader:
 -   A button is a control that executes an action or navigates within the app.  Note: Links only navigate the user to a browser. 
 -   Even if the control visibly looks like a link, code as a button to cue the screen reader the action will keep them within the app
 -   When naming a button, do not add "button" to the programmatic name (label).  "Button" will be announced as the role.  Avoid duplication: "Submit button, button"
--   You should use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
+-   use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
 -   Name, Role, State must be announced when focus is on the control. Announcing the label before the input field does not meet this requirement.
 -   Placeholder text is NOT the programmatic name (unless the placeholder for a field moves up as a floating label)
 
@@ -50,6 +50,7 @@ screenreader:
     -   `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label
     -   To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector
     -   If hiding visible label from screen reader, use `accessibilityLabel` on control
+    -   SWIFTUI: Controls can take a Text view (visible label) as part of their view builder, connecting the visible label or meaning to the control.
 -   **Android Tips**  
     -   `android:text` XML attribute
     -   Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
@@ -78,25 +79,25 @@ screenreader:
     -   Define action upon double-tap
     -   `shouldGroupAccessibilityElement` attribute: For a precise order if the native order should be disrupted.
     -   `GroupView`
-    -   `shouldGroupAccessibilityChildren` attribute indicates whether VoiceOver must group it's children views. This allows making unique vocalizations or define a particular reading order for a part of the page
+    -   `shouldGroupAccessibilityChildren` attribute indicates whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page
+    -  SWIFTUI: `.accessibilityElement(children)` with argument of `.combine` 
+    -  SWIFTUI: `.ignore` property, then add accessibility attributes and traits to stack view
 -   **Android**
-    -   `ViewGroup`
-    -   Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+    -  `ViewGroup`
+    -  Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+    -  JETPACK COMPOSE: Composables can be merged together using the `semantics` modifier with its `mergeDescendants` property
 
 
-### State
--   When native code is not available for a state, add the state to the programmatic name (label).  Add logic when needed. 
+### State 
 
--   **iOS**
-    -   Active: `isEnabled property`
-    -   Disabled: `UIAccessibilityTraitNotEnabled`
-    -   Expands/Collapses
-    -   Announcement: dimmed
--   **Android**
-    -   Active: `android:enabled=true`
-    -   Disabled" `android:enabled=false`
-    -   Expands/Collapses
-    -   Announcement: disabled
+- **iOS**  
+  - Active: `isEnabled property`
+  -   Disabled: `UIAccessibilityTraitNotEnabled`.  Announcement: "dimmed"
+  -   AccessibilityTrait: `selected`
+  -   SWIFTUI: `.accessibility(addTraits: [.isSelected])`
+- **Android**
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`. Announcement: disabled
 
 ### Focus
 -   Only manage focus when needed. Primarily, let the device manage default focus
