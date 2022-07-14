@@ -70,6 +70,7 @@ A11yEngineer is a Jekyll based site hosted by Github Pages. Follow Github's inst
   - [Install Ruby 3.0 · macOS Big Sur or Catalina for Intel or Apple Silicon](https://mac.install.guide/ruby/3.html)
   - [Install Ruby 3.0 · macOS Big Sur or Catalina with Homebrew for Intel or Apple Silicon](https://mac.install.guide/ruby/13.html)
   - Note: Ruby 3.0 will require WEBrick
+    - Add `gem "webrick"` to  Gemfile
 
 ## License
 
