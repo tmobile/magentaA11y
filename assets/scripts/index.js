@@ -336,3 +336,10 @@ $('#card-number').on('keypress change', function () {
 $('[aria-disabled="true"]').click(function(event){
     event.preventDefault();
 });
+
+
+$("[name='select-radio']").mouseleave(function(event){
+    setTimeout(function() {
+        $('#radio-select-container').focus();
+    }, 25);
+});
