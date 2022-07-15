@@ -1,22 +1,20 @@
 <fieldset class="radio-filter-container">
   <legend id="radio-filter-group" tabindex="-1"><!-- focusable after click of labels-->
-    Select a NATO Phoenetic Letter
+    Select a NATO letter
   </legend>
-  <div>
+  <div><!-- block level element for layout purposes -->  
+    <div class="radio-filter" tabindex="-1"><!-- tabindex makes :focus-within work better for some reason-->  
+      <input type="radio" name="radio-filter" class="radio-select-item" id="alphaRadio" checked>
+      <label class="radio-filter-label" for="alphaRadio">Alpha</label>
+    
+      <input type="radio" name="radio-filter" class="radio-select-item" id="bravoRadio">
+      <label class="radio-filter-label" for="bravoRadio">Bravo</label>
+    
+      <input type="radio" name="radio-filter" class="radio-select-item" id="charlieRadio">
+      <label class="radio-filter-label" for="charlieRadio">Charlie</label>
 
-  <div class="radio-filter" tabindex="-1"><!-- tabindex makes :focus-within work better for some reason-->  
-    <input type="radio" name="radio-filter" class="radio-select-item" id="alphaRadio" checked>
-    <label class="radio-filter-label" for="alphaRadio">Alpha</label>
-  
-    <input type="radio" name="radio-filter" class="radio-select-item" id="bravoRadio">
-    <label class="radio-filter-label" for="bravoRadio">Bravo</label>
-  
-    <input type="radio" name="radio-filter" class="radio-select-item" id="charlieRadio">
-    <label class="radio-filter-label" for="charlieRadio">Charlie</label>
-
-    <input type="radio" name="radio-filter" class="radio-select-item" id="deltaRadio">
-    <label class="radio-filter-label" for="deltaRadio">Delta</label>
+      <input type="radio" name="radio-filter" class="radio-select-item" id="deltaRadio">
+      <label class="radio-filter-label" for="deltaRadio">Delta</label>
+    </div>
   </div>
-</div>
-
  </fieldset>
