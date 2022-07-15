@@ -338,8 +338,12 @@ $('[aria-disabled="true"]').click(function(event){
 });
 
 
-$("[name='select-radio']").mouseleave(function(event){
-    setTimeout(function() {
-        $('#radio-select-container').focus();
-    }, 25);
+
+$(".select-radio-label").click(function(event){
+    $for = $(this).attr("for");
+    if( ! $('#' + $for).is(":checked")) {
+        setTimeout(function() {
+            $('#radio-select-container').focus();
+        }, 25);
+    }
 });
