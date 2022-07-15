@@ -336,11 +336,11 @@ $('[aria-disabled="true"]').click(function(event){
 
 
 
-$(".select-radio-label").click(function(event){
+$(".radio-filter-label").click(function(event){
     $for = $(this).attr("for");
     if( ! $('#' + $for).is(":checked")) {
         setTimeout(function() {
-            $('#radio-select-container').focus();
+            $('#radio-filter-group').focus();
         }, 25);
     }
 });
