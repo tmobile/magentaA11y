@@ -17,7 +17,6 @@
         padding: 0rem;
         z-index: 9999;
         border-radius: 0 0 1rem 1rem;
-
       }
       input[type="radio"]:checked + label {
         clip: auto;
@@ -44,6 +43,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       input[type="radio"] + label {
+        display: inline-grid;
         @include ripple(#fff, #eee, center, center);
 
         width: auto;

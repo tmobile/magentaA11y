@@ -31,7 +31,7 @@ input[type="checkbox"].radio,
 
   &.horizontal {
     + label {
-      display: inline-block;
+      display: inline-grid;
       width: auto;
     }
   }
