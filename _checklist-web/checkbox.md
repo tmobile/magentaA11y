@@ -91,7 +91,6 @@ Even though this is valid HTML, it creates unpredictable results with screenread
 </example>
 {:/}
 
-
 ### Fully disabled checkbox
 
 - An input using `disabled` will not be focusable with the tab key
@@ -106,7 +105,6 @@ Even though this is valid HTML, it creates unpredictable results with screenread
 {% include /examples/input-checkbox-disabled.html %}
 </example>
 {:/}
-
 
 ### When you can't use semantic HTML
 
