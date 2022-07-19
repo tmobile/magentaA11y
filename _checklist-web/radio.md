@@ -68,7 +68,9 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
-### Disabled radio inputs
+### Disabled and focusable radio inputs (preferred)
+
+- An input using `aria-disabled="true` will be focusable with the tab key
 
 {% highlight html %}
 {% include /examples/input-radio-disabled-focusable.html %}

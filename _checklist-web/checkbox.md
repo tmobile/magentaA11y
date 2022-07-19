@@ -79,6 +79,7 @@ Even though this is valid HTML, it creates unpredictable results with screenread
 ### Disabled and focusable checkbox (preferred)
 
 - An input using `aria-disabled="true` will be focusable with the tab key
+- Use JS to preventDefault()
 
 {% highlight html %}
 {% include /examples/input-checkbox-disabled-focusable.html %}
