@@ -68,6 +68,19 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
+### Disabled radio inputs
+
+{% highlight html %}
+{% include /examples/input-radio-disabled-focusable.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-radio-disabled-focusable.html %}
+</example>
+{:/}
+
+
 ### Required radio inputs
 
 Ensuring all screenreaders indicate radio inputs as being required requires some aria and reinforcement.
