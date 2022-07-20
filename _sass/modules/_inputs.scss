@@ -13,7 +13,7 @@ input[type="submit"] {
   width: auto;
   -webkit-appearance: none; // Remove iOS webkit styles
   border-radius: 0; // Remove iOS webkit styles
-  margin: 0  0 .75rem 0;
+  margin: 0  0 .5rem 0;
   font-size: 1rem;
   padding: .5rem;
   border: .125rem solid $color-input-border;
@@ -98,7 +98,7 @@ fieldset,
   }
 
   .hint {
-    margin-left: 1rem;
+    margin: -.5rem 1rem 1rem 1rem;
   } 
 }
 

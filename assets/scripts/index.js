@@ -334,8 +334,6 @@ $('[aria-disabled="true"]').click(function(event){
     event.preventDefault();
 });
 
-
-
 $(".radio-filter-label").click(function(event){
     $for = $(this).attr("for");
     if( ! $('#' + $for).is(":checked")) {
@@ -344,3 +342,23 @@ $(".radio-filter-label").click(function(event){
         }, 25);
     }
 });
+
+const textarea = document.getElementById('message');
+const chars = document.getElementById('current');
+
+textarea.addEventListener("input", event => {
+    const target = event.currentTarget;
+    const maxLength = target.getAttribute("maxlength");
+    const currentLength = target.value.length;
+
+    if (currentLength >= maxLength) {
+        return console.log("You have reached the maximum number of characters.");
+    }
+    
+    console.log(`${maxLength - currentLength} chars left`);
+    setTimeout(function() {
+        chars.innerHTML = maxLength - currentLength;
+    }, 10);
+
+});
+  

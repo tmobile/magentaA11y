@@ -71,6 +71,7 @@ This semantic HTML contains all accessibility features by default.
 ### Disabled and focusable radio inputs (preferred)
 
 - An input using `aria-disabled="true` will be focusable with the tab key
+- Use JS to preventDefault()
 
 {% highlight html %}
 {% include /examples/input-radio-disabled-focusable.html %}
