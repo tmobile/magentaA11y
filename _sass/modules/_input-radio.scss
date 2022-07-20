@@ -64,8 +64,9 @@ input[type="checkbox"].radio,
     @extend .horizontal;
     + label {
       @include ripple(#fff, #eee, center, center);
-      padding: 1.25rem 1rem 1.25rem;
+      padding: 1.25rem 1rem 1.25rem 1rem;
       margin-top: .5rem;
+      grid-template-columns: 1fr;
       position: relative;
       &:after,
       &:before {
