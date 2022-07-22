@@ -91,7 +91,7 @@ Using the `disabled` attribute will prevent the input from being clickable, but 
 {% endhighlight %}
 
 
-### You can also use a button
+### Using a `<button>`
 
 This `<button>` toggle has focus and keyboard criteria built in. It requires the addition of `role="switch"` and scripting to toggle `aria-checked="true/false"`.
 
@@ -114,7 +114,7 @@ This custom switch requires extra attributes and keyboard event listeners.
 ## Developer notes
 
 ### Name
-- `label` text should describe the input.
+- `label` text should describe the input purpose
 - Use `aria-describedby="hint-id"` for hints or additional descriptions
 - `aria-label="Switch purpose"` can also be used (as a last resort)
 
@@ -142,3 +142,20 @@ This custom switch requires extra attributes and keyboard event listeners.
 
 ### Focus
 - Focus must be visible
+
+## Design notes
+
+- Perceivable
+  - Is easy to identify as interactive 
+  - Type size is no smaller than 16px
+  - The label has a 4.5:1 minimum contrast ratio
+  - Color is not used as the only means of conveying information
+- Operable
+  - The clickable/tappable target area includes the label and is no smaller than 44x44px
+  - The focus indication has a minimum area equal to the width of the element and 2px in height
+  - The focus state has a 3:1 minimum contrast ratio between the default and focused states
+  - The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+- Understandable
+  - The purpose should be clear in the context of the whole page
+- Robust
+  - Meets criteria across platforms, devices and viewports

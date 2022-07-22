@@ -159,8 +159,6 @@ Sometimes the design will call for multiple buttons with the same text label. In
 
 ## Design notes
 
-### Minimum WCAG requirements
-
 - Perceivable
   - Is easy to identify as interactive 
   - Type size is no smaller than 16px
@@ -172,7 +170,9 @@ Sometimes the design will call for multiple buttons with the same text label. In
   - The focus state has a 3:1 minimum contrast ratio between the default and focused states
   - The focus indication has a 3:1 minimum contrast ratio against adjacent elements
 - Understandable
-  - If it goes somewhere, it's `<a>` link (that can look like a button)
-  - If it does something, it's a `<button>` (that can look like a link)
+  - The button purpose should be clear in the context of the whole page
+  - It has the correct semantic meaning
+    - If it goes somewhere, it's `<a>` link (that can look like a button)
+    - If it does something, it's a `<button>` (that can look like a link)
 - Robust
-  - Performs its purpose across platforms, devices and viewports
+  - Meets criteria across platforms, devices and viewports

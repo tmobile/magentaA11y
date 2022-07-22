@@ -29,7 +29,7 @@ gherkin-mobile:
       
 ---
 
-## Code examples
+## Code and design examples
 
 ### We don't use tooltips
 

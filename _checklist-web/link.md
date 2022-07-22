@@ -124,3 +124,21 @@ Sometimes the design will call for multiple links with the same text label. In a
 - Focus must be visible
 - Custom elements need `tabindex="0"` to be focusable
 
+## Design notes
+
+- Perceivable
+  - Is easy to identify as interactive 
+  - Type size is no smaller than 16px
+  - The text has a 4.5:1 minimum contrast ratio
+  - Color is not used as the only means of conveying information
+- Operable
+  - The clickable/tappable target areas are no smaller than 44x44px
+  - The focus indication has a minimum area equal to the width of the element and 2px in height
+  - The focus state has a 3:1 minimum contrast ratio between the default and focused states
+  - The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+- Understandable
+  - The purpose should be clear in the context of the whole page
+  - If it goes somewhere, it's `<a>` link (that can look like a button)
+  - If it does something, it's a `<button>` (that can look like a link)
+- Robust
+  - Meets criteria across platforms, devices and viewports
