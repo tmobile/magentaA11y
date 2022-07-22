@@ -103,13 +103,19 @@ This custom button requires extra attributes and JS event listeners. Adding `tab
 </div>
 {% endhighlight %}
 
-### When there is no inner text
+### When there's no inner text that text doesn't make sense
 
-As a last resort, `aria-label` can be used.
+- As a last resort, `aria-label` can be used.
+- `aria-label` will (typically) replace the inner text of the button for the screen reader output.
+- DO NOT repeat the inner text in the `aria-label` as some screenreaders will read both.
 
 {% highlight html %}
 <div role="button" tabindex="0" aria-label="Continue">
-  <!-- icon -->
+  <!-- icon but no text -->
+</div>
+
+<div role="button" tabindex="0" aria-label="Add iPhone 17 to cart">
+  Buy now <!-- Ambiguous text doesn't describe the intent -->
 </div>
 {% endhighlight %}
 
@@ -144,12 +150,12 @@ Sometimes the design will call for multiple buttons with the same text label. In
 ### State
 - Toggle buttons `aria-pressed="true/false"`
 - Menus or expanders use `aria-expanded="true/false"` 
-- Use the `disabled` state for inactive buttons 
+- Use the `disabled` state for completely inactive buttons that shouldn't be focusable
 - Use `aria-disabled="true/false"` state for inactive custom elements 
 
 ### Focus
 - Focus must be visible
-- Custom elements need `tabindex="0"` to be focusable
+- Custom elements (like `<div>`) need `tabindex="0"` to be focusable
 
 ## Design notes
 
