@@ -115,7 +115,7 @@ input[role="switch"] {
         box-shadow: none !important;
       }
       &:after {
-        box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .325rem $color-gray-light;
+        box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem $color-gray-light;
         background-color: $color-gray-xtra-dark !important;
       }
     }
@@ -126,7 +126,7 @@ input[role="switch"] {
           background-image: var(--icon-on-dark);
         }
         &:after {
-          box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .325rem $color-gray-light;
+          box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem $color-gray-light;
         }
       }
     }
