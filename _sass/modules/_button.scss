@@ -148,27 +148,28 @@ button {
     }
   }
   &.previous {
-    padding: 1.5rem 2rem 1.5rem 3rem;
+    padding: 1.25rem 2rem 1.25rem 3rem;
 
-    &:before {
+    &:before,
+    &:after {
+      content: '';
+      left: 1.75rem;
       right: auto;
-      left: 2rem;
-      top: 1.5rem;
+      background-image: $icon-chevron-dark;
       transform: rotate(90deg);
     }
-    &:hover,
-    &:focus {
-      &:before {
-        opacity: 1;
-        right: auto;
-      }
+    
+  &:hover,
+  &:focus {
+    &:before {
+      opacity: 1;
+      left: 1.5rem;
     }
-    &:active {
-      &:before {
-        opacity: 1;
-        right: 2rem;
-      }
+    &:after {
+      opacity: 1;
+      left: .75rem;
     }
+  }
   }
 
   &.inline {

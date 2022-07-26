@@ -37,9 +37,12 @@
         padding: 0rem;
         &:before {
           top: 1rem;
-          left: 1rem;
+          left: .875rem;
           opacity: 1;
-
+          background-image: $icon-chevron;
+        }
+        &:after {
+          display: none;
         }
 
       }
