@@ -77,23 +77,18 @@
   transition: $args;
 }
 
+
+
 .focused {
   outline: .25rem solid rgba($color-focus, 1);
   outline-offset: .125rem;
   transition: .2s;
 
   &:hover {
-    outline: none;
+    outline: .25rem solid rgba($color-focus, 0);
+    box-shadow: 0 0 0 1px #000;
+    outline-offset: 0rem;
   }
-}
-
-.active {
-  transition: .2s;
-}
-
-.inert,
-[inert] {
-  display: none;
 }
 
 @mixin focus {
@@ -105,14 +100,24 @@
   }
 }
 
+
 @mixin focused {
   outline: .25rem solid rgba($color-focus, 1);
   outline-offset: 0rem;
   transition: .2s;
 
   &:hover {
-    outline: none;
+    outline: .125rem solid rgba($color-focus, 1);
   }
+}
+
+.active {
+  transition: .2s;
+}
+
+.inert,
+[inert] {
+  display: none;
 }
 
 @mixin ripple($background: #fff, $ripple: #eee, $position-x: 10%, $position-y: center) {

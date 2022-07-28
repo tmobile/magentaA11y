@@ -224,3 +224,10 @@ i {
     max-width: #{$i + 1}rem;
   }
 }
+
+input[type="text"],
+textarea {
+  &:focus {
+    border: .125rem solid $color-focus;
+  }
+}
