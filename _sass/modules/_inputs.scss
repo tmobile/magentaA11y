@@ -22,8 +22,7 @@ input[type="submit"] {
   -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
 }
 
-input[type="text"],
-textarea {
+input[type="text"] {
   &:focus {
     border: .125rem solid $color-focus;
   }

@@ -81,12 +81,12 @@
 
 .focused {
   outline: .25rem solid rgba($color-focus, 1);
-  outline-offset: .125rem;
+  outline-offset: 0rem;
   transition: .2s;
 
   &:hover {
-    outline: .25rem solid rgba($color-focus, 0);
-    box-shadow: 0 0 0 1px #000;
+    outline: .125rem solid rgba($color-focus, .5);
+    box-shadow: 0 0 0 .125rem #000;
     outline-offset: 0rem;
   }
 }
