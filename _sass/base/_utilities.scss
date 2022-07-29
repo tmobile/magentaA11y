@@ -80,7 +80,7 @@
 
 .focused {
   outline: 5px auto Highlight; // For Firefox
-  outline: 3px solid -webkit-focus-ring-color; // For Chrome
+  outline: 3px solid $color-focus; // For Chrome
   transition: .2s;
   @media not all and (min-resolution:.001dpcm) // for Safari
     { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
