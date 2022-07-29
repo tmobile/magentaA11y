@@ -78,17 +78,14 @@
 }
 
 
-
 .focused {
-  outline: .25rem solid rgba($color-focus, 1);
-  outline-offset: 0rem;
+  outline: 5px auto Highlight; // For Firefox
+  outline: 3px solid -webkit-focus-ring-color; // For Chrome
   transition: .2s;
-
-  &:hover {
-    outline: .125rem solid rgba($color-focus, .5);
-    box-shadow: 0 0 0 .125rem #000;
-    outline-offset: 0rem;
-  }
+  @media not all and (min-resolution:.001dpcm) // for Safari
+    { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+      outline: 5px auto -webkit-focus-ring-color;
+  }}
 }
 
 @mixin focus {
