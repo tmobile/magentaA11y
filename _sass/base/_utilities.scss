@@ -82,10 +82,11 @@
   outline: 5px auto Highlight; // For Firefox
   outline: 3px solid $color-focus; // For Chrome
   transition: .2s;
-  @media not all and (min-resolution:.001dpcm) // for Safari
-    { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  @media not all and (min-resolution:.001dpcm) { // for Safari 
+    @supports (-webkit-appearance:none) and (stroke-color:transparent) {
       outline: 5px auto -webkit-focus-ring-color;
-  }}
+    }
+  }
 }
 
 @mixin focus {
