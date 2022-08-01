@@ -6,7 +6,7 @@ permalink: /design/
 
 Any deliverable must be able to fulfill these acceptance criteria.
 
-## For design systems
+## For web design systems
 
 ### Given that I have delivered a design component
 
@@ -27,7 +27,7 @@ Any deliverable must be able to fulfill these acceptance criteria.
 
 ## For full experience designs
 
-### Given that I have delivered a UI design for development
+### Given that I have delivered a web UI design for development
 
 - When I open the accessibility annotation layer
 - Then I see
