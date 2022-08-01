@@ -27,6 +27,8 @@ Any deliverable must be able to fulfill these acceptance criteria.
 
 ## For full experience designs
 
+When delivering part of a user journey that uses existing design components that already meet accessibility acceptance criteria.
+
 ### Given that I have delivered a web UI design for development
 
 - When I open the accessibility annotation layer
@@ -40,3 +42,4 @@ Any deliverable must be able to fulfill these acceptance criteria.
   - For custom components Name, role state and group name is defined in the accessibility annotation layer
   - Form labels and fields are stacked vertically with no multi-column layouts
   - Input fields are sized to accommodate the expected character count
+  - Color is not used as the sole means of conveying meaning
