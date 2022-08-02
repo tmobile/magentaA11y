@@ -6,8 +6,7 @@ categories: main
 
 keyboard:
   tab: |
-    Controls are focusable in a logical order within the page
-      
+    Controls are visibly focusable in a logical order in relation to the whole page
 mobile:
   swipe: |
     Content and controls within the sticky element appear in a logical order in relation to the whole page
@@ -20,7 +19,7 @@ gherkin-keyboard:
   - when:  |
       the tab key to move focus to interactive elements inside the sticky element
     result: |
-      focus is strongly visually indicated in a logical order in relation to the whole page
+      focus is visually indicated in a logical order in relation to the whole page
 
 gherkin-mobile:
   - when:  |
@@ -36,7 +35,7 @@ Unless you have a really good reason, it's best to avoid sticking content to the
 - Where will this appear in the actual DOM (code) order?
   - If it's injected at the top or bottom of the content, will it be cumbersome or impossible for someone using a keyboard or screen reader to locate it?
 - Is it preferable to place this content in multiple locations on the page?
-  - A "Buy now" button can appear more than once in the page
+  - A "Buy now" button can appear more than once in the page.
 - Will this content be perceived as an ad and thus ignored by the customer?
   - We've trained people for years to ignore sticky content in their browser offering app downloads and other ads. Why is your popup sticky content any different?
 
