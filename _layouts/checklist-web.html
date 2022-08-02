@@ -14,7 +14,7 @@ layout: default
   <form>
     <div class="success-criteria-maker">
       <div class="checklist-container">
-        {% assign ordered_pages = site.checklist-web | sort: "order" %}
+        {% assign ordered_pages = site.checklist-web | sort: "title" %}
 
         {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
         {% for category in site.web-categories-order %}
