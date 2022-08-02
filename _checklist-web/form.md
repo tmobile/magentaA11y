@@ -35,17 +35,21 @@ gherkin-mobile:
 
 ## Building accessible forms
 
-### Do not auto-focus
+### Do not auto-focus inputs
 
 - Automatically moving focus to an input field is very confusing for people using assistive technology.
 
 ### Group inputs
 
 Use `fieldset` and `legend` (directly under the first fieldset tag) that describes  groupings such as
-- Sign in or Sign up
-- Personal information
+- Sign in
 - Shipping address
-- Credit card information
+- Payment information
+
+### Error handling
+
+- Individual inputs must have [programmatically described errors](/checklist-web/hint-help-error/) read by the screen reader on focus
+- For long forms, it can be helpful to list all errors in an [alert](/checklist-web/alert/) with links back to individual invalid inputs on each attempt to submit
 
 ## UX guidance
 
