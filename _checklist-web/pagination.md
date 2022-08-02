@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Pagination nav"
+title:  "Pagination"
 description: "How to code and test an accessible pagination nav for Web"
 categories: main nav
 order: 0
