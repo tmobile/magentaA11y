@@ -21,9 +21,15 @@ input[type="submit"] {
   box-shadow: 0 0 0px 3px #fff;
 }
 
-input[type="text"] {
-  &:focus {
-    border: .125rem solid $color-focus;
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+input[type="number"],
+input[type="password"] {
+  &:focus-visible {
+    border: .125rem solid ;
   }
 }
 
