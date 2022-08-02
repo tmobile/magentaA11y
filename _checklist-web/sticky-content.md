@@ -27,6 +27,19 @@ gherkin-mobile:
       swipe to the sticky element
 ---
 
+## Pitfalls of sticky content
+
+Unless you have a really good reason, it's best to avoid sticking content to the bottom (or top) of the page. While it seems like an obvious solution, without user testing in production environments you won't know how people are really going to interact with it.
+
+### Ask the following questions first
+
+- Where will this appear in the actual DOM (code) order?
+  - If it's injected at the top or bottom of the content, will it be cumbersome or impossible for someone using a keyboard or screen reader to locate it?
+- Is it preferable to place this content in multiple locations on the page?
+  - A "Buy now" button can appear more than once in the page
+- Will this content be perceived as an ad and thus ignored by the customer?
+  - We've trained people for years to ignore sticky content in their browser offering app downloads and other ads. Why is your popup sticky content any different?
+
 ## Code examples
 
 ### Place the element in logical DOM order
