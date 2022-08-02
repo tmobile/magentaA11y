@@ -35,10 +35,13 @@ label {
     display: inline-block;
     height: 1rem;
     line-height: 1rem;
-    @include regular;
-    background: darken($color-gray-xtra-light,8);
-    padding: 0 .5rem;
-    border-radius: .125rem;
+    font-family: "teleneo-medium", sans-serif;
+    background: #222;
+    padding: 0 .325rem;
+    position: relative;
+    top: -1px;
+    color: #eee;
+    border-radius: 0.125rem;
   }
 }
 
