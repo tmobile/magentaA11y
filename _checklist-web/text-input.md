@@ -81,7 +81,7 @@ This semantic HTML contains all accessibility features by default.
 
 ### Fully disabled input
 
-- Fully disabled inputs are not focusable so may not be as discoverable in a form
+- Fully `disabled` inputs are not focusable so may not be as discoverable in a form
 
 {% highlight html %}
 {% include /examples/input-text-disabled.html %}

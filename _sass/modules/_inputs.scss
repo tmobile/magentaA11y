@@ -31,6 +31,11 @@ input[type="password"] {
   &:focus-visible {
     border: .125rem solid ;
   }
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: #ccc !important;
+  }
+
 }
 
 label {

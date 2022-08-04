@@ -51,16 +51,16 @@ gherkin-mobile:
 
 ## Code examples
 
-### Use `type="text"` 
-
-Use `type=text` with `inputmode="numeric"` with an input pattern and JS to filter out non-numeric characters.
-
 ### Don't use `type="number"`
 
 The `type="number"` input is intended for **integers** and includes features we _don't_ want (like stepper/scroll functionality) that is a nuisance to everyone 
 
 - Phone, credit card, pin etc. are not integers
 - NVDA doesn't fully support `type="number"` inputs at this time
+
+### Use `type="text"` for number inputs
+
+Use `type=text` with `inputmode="numeric"` with an input pattern and JS to filter out non-numeric characters.
 
 {% highlight html %}
 {% include /examples/input-text-number.html %}
@@ -72,9 +72,23 @@ The `type="number"` input is intended for **integers** and includes features we 
 </example>
 {:/}
 
-### Disabled number input
+### Disabled and focusable number input (preferred)
 
-- Disabled inputs should not be focusable
+- Using the `aria-disabled` attribute will allow the input to be focusable and more discoverable
+
+{% highlight html %}
+{% include /examples/input-text-number-disabled-focusable.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-text-number-disabled-focusable.html %}
+</example>
+{:/}
+
+### Fully disabled number input (avoid)
+
+- Fully `disabled` inputs are not focusable so may not be as discoverable in a form
 
 {% highlight html %}
 {% include /examples/input-text-number-disabled.html %}
