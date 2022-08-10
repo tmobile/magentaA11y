@@ -149,7 +149,7 @@ layout: default
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">
-              <step-number>1 </step-number>Keyboard only &amp; screenreader
+              <step-number>1 </step-number>Keyboard {% if page.url contains "native" %}actions{% endif %}{% unless page.url contains "native" %}only &amp; screenreader{% endunless %}
             </h3>
             <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
               <table itemprop="text">
