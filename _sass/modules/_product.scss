@@ -12,7 +12,7 @@
   .product-list-item {
     display: grid;
     margin: 0;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     list-style-type: none;
     background: #fff;
     border-radius: 1rem;
@@ -22,23 +22,62 @@
     
     .link-container {
       position: relative;
+      padding-bottom: 1rem;
       a {
-        @extend .h-charlie;
         text-decoration: none;
+        display: grid;
+        .brand {
+          margin: 0;
+        }
+        .product-title {
+          @extend .h-charlie;
+        }
         &:after {
           content: '';
           display: block;
           position: absolute;
-          background-color: rgba(yellow, .2);
-          inset: 0;
-          
+          inset: 0;         
         }
       }
     }
   }
 }
 
-.colors {
+.product-image-container {
+  display: grid;
+  justify-content: center;
+  background: $color-gray-xtra-light;
+  margin-bottom: 1rem;
+  aspect-ratio: 1;
+
+  img {
+    max-height: 12rem;
+    justify-self: center;
+    align-self: center;
+    opacity: .5;
+  }
+}
+
+
+.product-pricing {
+  margin: 0px;
+  display: grid;
+  padding-bottom: 1rem;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .full-price {
+    grid-column: span 2;
+  }
+
+}
+
+.product-colors {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -52,5 +91,15 @@
     height: 1.5rem;
     background: #777;
     border-radius: 100%;
+
+    &.blue {
+      background: blue;
+    }
+    &.red {
+      background: red;
+    }
+    &.gold {
+      background: $color-gold;
+    }
   }
 }
