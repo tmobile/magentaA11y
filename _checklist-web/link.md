@@ -110,6 +110,20 @@ Sometimes the design will call for multiple links with the same text label. In a
 </div>
 {% endhighlight %}{: .bad-example}
 
+### Complex examples
+
+- Don't wrap large blocks of content or nest other interactive components inside a link.
+- This example uses a simple link and references product information using `aria-describedby`
+- This allows the link to be read first (without the repetition of the image alt text) and then the screen reader will read the related product information (colors, pricing).
+
+<example>
+{% include /examples/product.html %}
+</example>
+
+{% highlight html %}
+{% include /examples/product.html %}
+{% endhighlight %}
+
 ## Developer notes
 
 ### Name
