@@ -50,7 +50,8 @@ Snackbars are a custom HTML construct and have no semantic meaning. As such, lik
 - Critical or irrevocable functionality like:
     - Time sensitive actions (ex: Unsend this message)
     - Confirmation of choices (ex: Are you sure you want to send payment?)
-- On page load messaging
+    - Error messages
+- On page load messaging/alerts
   - Performing unexpected actions or alerts on page load is confusing to people using a screenreader
 
 ## Only use toast to _reinforce_ updates
