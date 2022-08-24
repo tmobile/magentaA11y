@@ -2,7 +2,6 @@
 layout: entry
 title:  "Table"
 description: "How to code and test an accessible table for Web"
-
 categories: main
 
 keyboard:
