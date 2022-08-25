@@ -284,9 +284,11 @@ $details.on("toggle", function() {
 
 // On page load
 $.each(formValues, function(key, value) {
-  $("#" + key).prop('checked', value);
-  $("#" + key).prop('open', value);
-//   console.log(key, value);
+    $("#" + key).prop('open', value);
+
+    $("#" + key).prop('checked', value);
+
+    //   console.log(key, value);
 });
 
 // Transfer range value to text input
@@ -349,16 +351,11 @@ $(document).on('input', '#cowbell', function() {
 
 
 $(".tab").on("change", function(){
-    if($(this).is(':checked')) {
-        $panelId = $(this).attr('aria-controls');
-        $("#" + $panelId).addClass('active').removeClass('inert');
-        $("#" + $panelId).addClass('active').removeClass('inert');
-    } else {
-        $panelId = $(this).attr('aria-controls');
-        $("#" + $panelId).addClass('inert').removeClass('active');
-        $("#" + $panelId).removeClass('active');
-    }
+    $panelId = $(this).attr('aria-controls');
+    $(".tab-panel").addClass('inert');
+    $("#" + $panelId).removeClass('inert');
 });
+
 
 
 // Need to make this conditional for that specific instance

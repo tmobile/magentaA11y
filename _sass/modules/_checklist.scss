@@ -17,12 +17,13 @@
     transition: 1s;
     @include float;
     border-radius: 1rem;
-    padding: 1.75rem 2rem 0 2rem;
+    padding: 0rem 2rem 0 2rem;
 
     .tab-group {
+      padding-top: 2rem;
       position: sticky;
       position: sticky;
-      top: .5rem;
+      top: 0;
     }
   }
 

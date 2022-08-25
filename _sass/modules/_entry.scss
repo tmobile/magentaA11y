@@ -42,6 +42,12 @@ step-number {
   @include break($break-small) {
     padding: 2rem 2rem 1rem 2rem;
   }
+
+  .tabs {
+    @include break($break-max) {
+     display: flex;
+    }
+  }
 }
 
 
@@ -49,7 +55,7 @@ step-number {
 //   display: none;
 // }
 // .gherkin-criteria {
-//   display: block;
+//   display: none;
 // }
 
 // input[type=radio]#condensed:checked {
