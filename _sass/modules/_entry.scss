@@ -35,18 +35,12 @@ step-number {
   border-radius: 2px;
   margin-bottom: 3rem;
   box-shadow: 0 0 5px 1px rgba(#000,.1);
-  padding: 0rem .5rem .5rem .5rem;
+  padding: 1.5rem .5rem .5rem .5rem;
   border-radius: 1rem;
   box-shadow: 0 6px 12px 0 rgba(#000, .15);
 
   @include break($break-small) {
-    padding: 0rem 2rem 1rem 2rem;
-  }
-  .condensed-criteria {
-    padding-top: 2rem;
-  }
-  .gherkin-criteria {
-    padding-top: 2rem;
+    padding: 1.75rem 2rem 1rem 2rem;
   }
 }
 
