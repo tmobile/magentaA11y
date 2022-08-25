@@ -342,16 +342,35 @@ $(".radio-filter-label").click(function(event){
         }, 25);
     }
 });
-
-const textarea = document.getElementById('message');
-const chars = document.getElementById('currentChars');
-
-textarea.addEventListener("input", event => {
-    const target = event.currentTarget;
-    const maxLength = target.getAttribute("maxlength");
-    const currentLength = target.value.length;
-    setTimeout(function() {
-        chars.innerHTML = maxLength - currentLength;
-    }, 10);
+ 
+$(document).on('input', '#cowbell', function() {
+    $('#cowbellValue').val( $(this).val() );
 });
+
+
+$(".tab").on("change", function(){
+    if($(this).is(':checked')) {
+        $panelId = $(this).attr('aria-controls');
+        $("#" + $panelId).addClass('active').removeClass('inert');
+        $("#" + $panelId).addClass('active').removeClass('inert');
+    } else {
+        $panelId = $(this).attr('aria-controls');
+        $("#" + $panelId).addClass('inert').removeClass('active');
+        $("#" + $panelId).removeClass('active');
+    }
+});
+
+
+// Need to make this conditional for that specific instance
+// const textarea = document.getElementById('message');
+// const chars = document.getElementById('currentChars');
+
+// textarea.addEventListener("input", event => {
+//     const target = event.currentTarget;
+//     const maxLength = target.getAttribute("maxlength");
+//     const currentLength = target.value.length;
+//     setTimeout(function() {
+//         chars.innerHTML = maxLength - currentLength;
+//     }, 10);
+// });
   

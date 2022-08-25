@@ -40,28 +40,28 @@ step-number {
   box-shadow: 0 6px 12px 0 rgba(#000, .15);
 
   @include break($break-small) {
-    padding: 1.75rem 2rem 1rem 2rem;
+    padding: 2rem 2rem 1rem 2rem;
   }
 }
 
 
-.condensed-criteria {
-  display: none;
-}
-.gherkin-criteria {
-  display: block;
-}
+// .condensed-criteria {
+//   display: none;
+// }
+// .gherkin-criteria {
+//   display: block;
+// }
 
-input[type=radio]#condensed:checked {
-  + label {   
-    + .gherkin-criteria  {
-      display: none;
-      + .condensed-criteria {
-        display: block;
-      }
-    }  
-  }
-}
+// input[type=radio]#condensed:checked {
+//   + label {   
+//     + .gherkin-criteria  {
+//       display: none;
+//       + .condensed-criteria {
+//         display: block;
+//       }
+//     }  
+//   }
+// }
 
 .gherkin-list {
   border-top: 3px solid #000;
