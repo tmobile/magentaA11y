@@ -3,6 +3,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 1rem;
   align-items: stretch;
+  background-color: #eee;
+  padding: .25rem;
+  column-gap: 2px;
+  // box-shadow: inset 0 0 .5rem 1px rgba(#000, .1);
+  border-radius: .75rem;
 }
 
 input[type="radio"].tab {
@@ -14,34 +19,28 @@ input[type="radio"].tab {
     column-gap: .5rem;
     row-gap: .25rem;
     position: relative;
-    border-top: 2px solid $color-border-gray;
-    border-bottom: 2px solid $color-border-gray;
-    border-right: 1px solid $color-border-gray;
-    grid-template-columns: 1fr ;
+    border-radius: .25rem;
+    grid-template-columns: 1fr;
     @include break($break-xsmall) {
       grid-template-columns: 1.5rem 1fr;
       padding: .75rem;
     }
     &:first-of-type {
       text-indent: 0rem;
-      border-left:  2px solid $color-border-gray;
-      border-radius: .5rem 0 0 .5rem;
-      // @include break($break-xsmall) {
-      //   border-radius: 2rem 0 0 2rem;
-      // }
+      border-radius: .5rem .25rem .25rem .5rem;
     }
     &:last-of-type {
       text-indent: 0rem;
       padding-right: 1rem;
-      border-right:  2px solid $color-border-gray;
-      border-radius: 0 .5rem .5rem 0;
-      // @include break($break-xsmall) {
-      //   border-radius: 0 2rem 2rem 0;
-      // }
+      border-radius:  .25rem .5rem .5rem .25rem;
     }
     &:before {
       width: 1.5rem;
       height: 1.5rem;
     }
+  }
+  &:checked + label {
+    background-color: #fff;
+    box-shadow: 0 0 4px 1px rgba(#000, .1);
   }
 }
