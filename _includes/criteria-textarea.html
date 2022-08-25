@@ -1,12 +1,10 @@
 <div class="criteria-container">
   <div class="tab-group">
     {% if page.url != "/native/" %}
-      <div class="tabs">
-        <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tab" id="gherkin" name="criteria" checked>
-        <label for="gherkin">Gherkin</label>
-        <input type="radio" aria-label="Show condensed testing instructions" class="tab" id="condensed" name="criteria">
-        <label for="condensed">Condensed</label>
-      </div>
+      <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tabs" id="gherkin" name="criteria" checked>
+      <label for="gherkin">Gherkin</label>
+      <input type="radio" aria-label="Show condensed testing instructions" class="tabs" id="condensed" name="criteria">
+      <label for="condensed">Condensed</label>
     {% else %}
       <label for="condensed-textarea" class="h-charlie">
         Acceptance criteria list
