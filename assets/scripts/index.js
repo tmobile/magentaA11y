@@ -349,25 +349,40 @@ $(document).on('input', '#cowbell', function() {
     $('#cowbellValue').val( $(this).val() );
 });
 
-
+// Tab panels are open by default in case of JS can't run
+// Hide all panels on load
+$(".tab-panel").addClass('inert');
+$(".tab").each(function() {
+    // Check for checked radio tabs
+    if($(this).is(":checked")) {
+        // Get the ID from aria-controls
+        $panelId = $(this).attr('aria-controls');
+        // Remove the class
+        $("#" + $panelId).removeClass('inert');
+    } 
+});
+// Watch for changes
 $(".tab").on("change", function(){
+    // Get the ID from aria-controls
     $panelId = $(this).attr('aria-controls');
+    // Hide all panels
     $(".tab-panel").addClass('inert');
+    // Show the checked panel
     $("#" + $panelId).removeClass('inert');
 });
 
 
+const textarea = document.getElementById('message');
+if(textarea) {
+    const chars = document.getElementById('currentChars');
+    textarea.addEventListener("input", event => {
+        const target = event.currentTarget;
+        const maxLength = target.getAttribute("maxlength");
+        const currentLength = target.value.length;
+        setTimeout(function() {
+            chars.innerHTML = maxLength - currentLength;
+        }, 10);
+    });
+}
 
-// Need to make this conditional for that specific instance
-// const textarea = document.getElementById('message');
-// const chars = document.getElementById('currentChars');
-
-// textarea.addEventListener("input", event => {
-//     const target = event.currentTarget;
-//     const maxLength = target.getAttribute("maxlength");
-//     const currentLength = target.value.length;
-//     setTimeout(function() {
-//         chars.innerHTML = maxLength - currentLength;
-//     }, 10);
-// });
   

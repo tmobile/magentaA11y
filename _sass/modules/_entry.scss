@@ -45,7 +45,7 @@ step-number {
 
   .tabs {
     @include break($break-max) {
-     display: flex;
+     display: grid;
     }
   }
 }

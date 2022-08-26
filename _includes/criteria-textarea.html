@@ -1,10 +1,10 @@
 <div class="criteria-container">
-  <div class="tab-group">
+  <div class="sticky-group">
     {% if page.url != "/native/" %}
-      <div class="tabs">
-        <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tab" aria-controls="gherkin" id="gherkin" name="criteria" checked>
+      <div class="tabs" role="radiogroup" aria-label="Choose your test instructions">
+        <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tab" aria-controls="gherkin-panel" id="gherkin" name="criteria" checked>
         <label for="gherkin">Gherkin</label>
-        <input type="radio" aria-label="Show condensed testing instructions" class="tab" aria-controls="condensed" id="condensed" name="criteria">
+        <input type="radio" aria-label="Show condensed testing instructions" class="tab" aria-controls="condensed-panel" id="condensed" name="criteria">
         <label for="condensed">Condensed</label>
       </div>
     {% else %}
@@ -14,7 +14,7 @@
     {% endif %}
 
     {% if page.url != "/native/" %}
-    <div class="textarea-container gherkin-criteria">
+    <div class="textarea-container gherkin-criteria tab-panel" id="gherkin-panel">
       <textarea aria-label="Acceptance criteria" id="gherkin-textarea">Choose components to get started or use ••• to learn more.</textarea>
       <div class="textarea-controls">
         <div>
@@ -26,7 +26,7 @@
     </div>
     {% endif %}
 
-    <div class="textarea-container condensed-criteria" {% if page.url == "/native/" %}style="display:block;"{% endif %}>
+    <div class="textarea-container condensed-criteria tab-panel" {% if page.url == "/native/" %}style="display:block;"{% endif %} id="condensed-panel">
       <textarea aria-label="Acceptance criteria" id="condensed-textarea">Choose components to get started or use ••• to learn more.</textarea>
       <div class="textarea-controls">
         <div>

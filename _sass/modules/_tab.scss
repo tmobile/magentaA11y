@@ -1,8 +1,8 @@
 .tabs {
-  display: inline-flex;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   margin-bottom: 1rem;
-  align-items: stretch;
   background-color: #eee;
   padding: .25rem;
   column-gap: 2px;
@@ -10,7 +10,6 @@
 }
 
 .tab-panel {
-  // display: block;
 }
 
 input[type="radio"].tab {
@@ -18,7 +17,6 @@ input[type="radio"].tab {
   + label {
     @include ripple(#fff, #eee, center, center);
     padding: .5rem .75rem;
-    flex-grow: 1;
     column-gap: .5rem;
     row-gap: .25rem;
     position: relative;
@@ -27,9 +25,6 @@ input[type="radio"].tab {
     @include break($break-xsmall) {
       grid-template-columns: 1.5rem 1fr;
       padding: .75rem;
-    }
-    @include break($break-large) {
-      flex-grow: 1;
     }
     &:first-of-type {
       text-indent: 0rem;
