@@ -17,9 +17,10 @@
     transition: 1s;
     @include float;
     border-radius: 1rem;
-    padding: 0 2rem 0 2rem;
+    padding: 0rem 2rem 0 2rem;
 
-    .tab-group {
+    .sticky-group {
+      padding-top: 2rem;
       position: sticky;
       position: sticky;
       top: 0;
@@ -35,11 +36,11 @@
     textarea {
       height: calc(100vh - 6.25rem);
       width: 100%;
-      margin: -1px 0 0 0;
-      padding-top: 2rem;
+      margin: 0;
+      padding-top: 1rem;
       box-shadow: none !important;
       border: none;
-      border-top: 1px solid $color-brand-primary;
+      // border-top: 1px solid $color-brand-primary;
       border-radius: 0;
       margin-bottom: 0;
       color: $color-text;
@@ -60,7 +61,7 @@
 
 
 label[for="condensed-textarea"] {
-  margin: 0 -2rem 0 -2rem;
+  margin: -2rem -2rem 0 -2rem;
   background: #fff;
   padding: 1.5rem 2rem;
   line-height: 1rem;

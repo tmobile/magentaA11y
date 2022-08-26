@@ -230,11 +230,9 @@ $("#test-case-wrapper").on('toggle', function() {
         // Find the corresponding details
         // open the details
         $('#' + id + '-details').prop('open', true);
-    
-    });
-    
-
+    });  
 });
+
 
 // Store details state and favorites
 
@@ -242,7 +240,7 @@ var formValues = JSON.parse(localStorage.getItem('formValues')) || {};
 
 var $checkboxes = $(".checkbox-item-controls :checkbox");
 
-var $tabs = $(".tab-group :radio");
+var $tabs = $(".tabs :radio");
 
 var $details = $(".checklist-container details");
 
@@ -266,7 +264,6 @@ function updateStorage(){
   });
 
   localStorage.setItem("formValues", JSON.stringify(formValues));
-
 //   console.log($tabs);
 }
 
@@ -284,13 +281,35 @@ $details.on("toggle", function() {
 
 // On page load
 $.each(formValues, function(key, value) {
-  $("#" + key).prop('checked', value);
-  $("#" + key).prop('open', value);
-//   console.log(key, value);
+    $("#" + key).prop('open', value);
+    $("#" + key).prop('checked', value);
+    //   console.log(key, value);
 });
 
-// Transfer range value to text input
+// Tab panels are open by default in case of JS can't run
+// Hide all panels on load
+$(".tab-panel").addClass('inert');
+$(".tab").each(function() {
+    // Check for checked radio tabs
+    if($(this).is(":checked")) {
+        // Get the ID from aria-controls
+        $panelId = $(this).attr('aria-controls');
+        // Remove the class
+        $("#" + $panelId).removeClass('inert');
+    } 
+});
+// Watch for changes
+$(".tab").on("change", function(){
+    // Get the ID from aria-controls
+    $panelId = $(this).attr('aria-controls');
+    // Hide all panels
+    $(".tab-panel").addClass('inert');
+    // Show the checked panel
+    $("#" + $panelId).removeClass('inert');
+});
 
+
+// Transfer range value to text input
 $(document).on('input', '#cowbell', function() {
     $('#cowbellValue').val( $(this).val() );
 });
@@ -342,16 +361,23 @@ $(".radio-filter-label").click(function(event){
         }, 25);
     }
 });
+ 
+$(document).on('input', '#cowbell', function() {
+    $('#cowbellValue').val( $(this).val() );
+});
+
 
 const textarea = document.getElementById('message');
-const chars = document.getElementById('currentChars');
+if(textarea) {
+    const chars = document.getElementById('currentChars');
+    textarea.addEventListener("input", event => {
+        const target = event.currentTarget;
+        const maxLength = target.getAttribute("maxlength");
+        const currentLength = target.value.length;
+        setTimeout(function() {
+            chars.innerHTML = maxLength - currentLength;
+        }, 10);
+    });
+}
 
-textarea.addEventListener("input", event => {
-    const target = event.currentTarget;
-    const maxLength = target.getAttribute("maxlength");
-    const currentLength = target.value.length;
-    setTimeout(function() {
-        chars.innerHTML = maxLength - currentLength;
-    }, 10);
-});
   

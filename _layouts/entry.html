@@ -22,19 +22,13 @@ layout: default
         {{ page.title | escape | downcase }}
       </h2>
 
-      <div class="test-instructions tab-group">
+      <div class="test-instructions">
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
-        
-        <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tabs" controls="gherkin" id="gherkin" name="criteria" checked>
-          <label for="gherkin">Gherkin</label>
-          <input type="radio" aria-label="Show condensed testing instructions" class="tabs" controls="condensed" id="condensed" name="criteria">
-          <label for="condensed">Condensed</label>
-          <!-- <input type="radio" aria-label="Show design criteria" class="tabs" controls="design" id="design" name="criteria">
-          <label for="design">Design</label> -->
+          {% include criteria-tabs.html %}
         {% endif %}
 
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
-        <div class="gherkin-criteria" tabindex="0" role="region" aria-label="Gherkin story acceptance criteria">
+        <div class="gherkin-criteria tab-panel" id="gherkin-panel" tabindex="0" role="region" aria-label="Gherkin story acceptance criteria">
           <p class="" itemprop="name">
             <strong>Given that</strong> I am on a page with 
             {% assign firstLetter = page.title | downcase | slice: 0 %}
@@ -148,7 +142,7 @@ layout: default
         </div>
       {% endif %}
 
-        <div class="condensed-criteria" tabindex="0" role="region" aria-label="Condensed testing instructions" {% if page.url contains "native" %}style="display:block;"{% endif %}>
+        <div class="condensed-criteria tab-panel inert" id="condensed-panel" tabindex="0" role="region" aria-label="Condensed testing instructions" {% if page.url contains "native" %}style="display:block;"{% endif %}>
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">

@@ -1,0 +1,45 @@
+.tabs {
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  margin-bottom: 1rem;
+  background-color: #eee;
+  padding: .25rem;
+  column-gap: 2px;
+  border-radius: .75rem;
+}
+
+.tab-panel {
+}
+
+input[type="radio"].tab {
+  @extend .horizontal;
+  + label {
+    @include ripple(#fff, #eee, center, center);
+    padding: .5rem .75rem;
+    column-gap: .5rem;
+    row-gap: .25rem;
+    position: relative;
+    border-radius: .5rem;
+    grid-template-columns: 1fr;
+    @include break($break-xsmall) {
+      grid-template-columns: 1.5rem 1fr;
+      padding: .75rem;
+    }
+    &:first-of-type {
+      text-indent: 0rem;
+    }
+    &:last-of-type {
+      text-indent: 0rem;
+      padding-right: 1rem;
+    }
+    &:before {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  &:checked + label {
+    background-color: #fff;
+    box-shadow: 0 0 4px 1px rgba(#000, .1);
+  }
+}
