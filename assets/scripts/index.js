@@ -264,7 +264,6 @@ function updateStorage(){
   });
 
   localStorage.setItem("formValues", JSON.stringify(formValues));
-
 //   console.log($tabs);
 }
 
@@ -283,9 +282,7 @@ $details.on("toggle", function() {
 // On page load
 $.each(formValues, function(key, value) {
     $("#" + key).prop('open', value);
-
     $("#" + key).prop('checked', value);
-
     //   console.log(key, value);
 });
 
