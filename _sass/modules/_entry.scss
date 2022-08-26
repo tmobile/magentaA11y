@@ -35,39 +35,39 @@ step-number {
   border-radius: 2px;
   margin-bottom: 3rem;
   box-shadow: 0 0 5px 1px rgba(#000,.1);
-  padding: 0rem .5rem .5rem .5rem;
+  padding: 1.5rem .5rem .5rem .5rem;
   border-radius: 1rem;
   box-shadow: 0 6px 12px 0 rgba(#000, .15);
 
   @include break($break-small) {
-    padding: 0rem 2rem 1rem 2rem;
+    padding: 2rem 2rem 1rem 2rem;
   }
-  .condensed-criteria {
-    padding-top: 2rem;
-  }
-  .gherkin-criteria {
-    padding-top: 2rem;
+
+  .tabs {
+    @include break($break-max) {
+     display: grid;
+    }
   }
 }
 
 
-.condensed-criteria {
-  display: none;
-}
-.gherkin-criteria {
-  display: block;
-}
+// .condensed-criteria {
+//   display: none;
+// }
+// .gherkin-criteria {
+//   display: none;
+// }
 
-input[type=radio]#condensed:checked {
-  + label {   
-    + .gherkin-criteria  {
-      display: none;
-      + .condensed-criteria {
-        display: block;
-      }
-    }  
-  }
-}
+// input[type=radio]#condensed:checked {
+//   + label {   
+//     + .gherkin-criteria  {
+//       display: none;
+//       + .condensed-criteria {
+//         display: block;
+//       }
+//     }  
+//   }
+// }
 
 .gherkin-list {
   border-top: 3px solid #000;

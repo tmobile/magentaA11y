@@ -1,0 +1,19 @@
+<label for="message">
+  Your message
+</label>
+<textarea 
+  id="message"
+  maxlength="50"
+  aria-describedby="charcounter">
+</textarea>
+<div role="status">
+  <!-- Do not reference the status element with aria-describedby 
+       Doing so will not work in VoiceOver -->
+  <div id="charcounter" class="hint">
+    <span id="currentChars">50</span> 
+    of 50
+    <span class="hidden">
+      characters remaining
+    </span>
+  </div>
+</div>
