@@ -1,12 +1,7 @@
 <div class="criteria-container">
   <div class="sticky-group">
     {% if page.url != "/native/" %}
-      <div class="tabs" role="radiogroup" aria-label="Choose your test instructions">
-        <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tab" aria-controls="gherkin-panel" id="gherkin" name="criteria" checked>
-        <label for="gherkin">Gherkin</label>
-        <input type="radio" aria-label="Show condensed testing instructions" class="tab" aria-controls="condensed-panel" id="condensed" name="criteria">
-        <label for="condensed">Condensed</label>
-      </div>
+      {% include criteria-tabs.html %}
     {% else %}
       <label for="condensed-textarea" class="h-charlie">
         Acceptance criteria list

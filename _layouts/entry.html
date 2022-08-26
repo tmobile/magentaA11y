@@ -24,14 +24,7 @@ layout: default
 
       <div class="test-instructions">
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
-          <div class="tabs" role="radiogroup" aria-label="Choose your test instructions">
-            <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tab" aria-controls="gherkin-panel" id="gherkin" name="criteria" checked>
-            <label for="gherkin">Gherkin</label>
-            <input type="radio" aria-label="Show condensed testing instructions" class="tab" aria-controls="condensed-panel" id="condensed" name="criteria">
-            <label for="condensed">Condensed</label>
-            <!-- <input type="radio" aria-label="Show design criteria" class="tab" aria-controls="design-panel" id="design" name="criteria">
-            <label for="design">Design</label> -->
-          </div>
+          {% include criteria-tabs.html %}
         {% endif %}
 
         {% if page.gherkin-keyboard and page.gherkin-keyboard != "" %}
