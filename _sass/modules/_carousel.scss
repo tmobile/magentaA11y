@@ -39,7 +39,7 @@
           top: 1rem;
           left: .875rem;
           opacity: 1;
-          background-image: $icon-chevron;
+          background-image: var(--icon-chevron-white);
         }
         &:after {
           display: none;
