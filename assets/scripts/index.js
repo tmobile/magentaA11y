@@ -296,8 +296,9 @@ $(".tab").each(function() {
         $panelId = $(this).attr('aria-controls');
         // Remove the class
         $("#" + $panelId).removeClass('inert');
-    } 
+    }
 });
+
 // Watch for changes
 $(".tab").on("change", function(){
     // Get the ID from aria-controls
@@ -308,6 +309,13 @@ $(".tab").on("change", function(){
     $("#" + $panelId).removeClass('inert');
 });
 
+// If no tab is selected on load
+if ( ! $(".tab").is(':checked') ) {
+    // Re-check the first radio input
+    $("#gherkin").prop("checked", true);
+    // Activate the first panel
+    $(".tab-panel").first().removeClass('inert');
+}
 
 // Transfer range value to text input
 $(document).on('input', '#cowbell', function() {
