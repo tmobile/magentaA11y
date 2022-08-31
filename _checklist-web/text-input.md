@@ -38,7 +38,7 @@ design:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive
-      - criteria: Type size is no smaller than 16px
+      - criteria: Type size is optically no smaller than 16px
       - criteria: The text has a 4.5:1 minimum contrast ratio
       - criteria: Color is not used as the only means of conveying information or state (error, success, focus, disabled etc)
   - name: Operable
