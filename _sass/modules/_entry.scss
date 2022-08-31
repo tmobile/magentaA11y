@@ -35,7 +35,7 @@ step-number {
   border-radius: 2px;
   margin-bottom: 3rem;
   box-shadow: 0 0 5px 1px rgba(#000,.1);
-  padding: 1.5rem .5rem .5rem .5rem;
+  padding: .5rem .5rem .5rem .5rem;
   border-radius: 1rem;
   box-shadow: 0 6px 12px 0 rgba(#000, .15);
 
@@ -44,9 +44,12 @@ step-number {
   }
 
   .tabs {
-    @include break($break-max) {
+    @include break($break-xsmall, $break-small) {
      display: grid;
     }
+    @include break($break-max) {
+      display: grid;
+     }
   }
 }
 
