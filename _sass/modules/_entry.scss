@@ -44,8 +44,9 @@ step-number {
   }
 
   .tabs {
-    @include break($break-xsmall, $break-small) {
-     display: grid;
+    display: grid;
+    @include break($break-small) {
+      display: inline-grid;
     }
     @include break($break-max) {
       display: grid;
