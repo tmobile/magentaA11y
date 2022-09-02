@@ -1,0 +1,130 @@
+<!-- <div class="tabs" role="radiogroup">
+  <input type="radio"  class="tab" aria-controls="plans-panel" id="choose-plan" name="start" checked>
+  <label for="choose-plan">Choose a plan</label>
+  <input type="radio" aria-label="Show condensed testing instructions" class="tab" aria-controls="phones-panel" id="choose-phone" name="start">
+  <label for="choose-phone">Choose a phone</label>
+</div> -->
+
+<div class="plans-wrapper">
+
+  <div class="line-discounts">
+    <div class="sticky-top">
+      <div class="select-container">
+        <label for="nato">
+          How many devices
+        </label>
+        <select id="nato">
+          <option label="1">1</option>
+          <option label="2">2</option>
+          <option label="3">3</option>
+          <option label="4">4</option>
+          <option label="5">5</option>
+        </select>
+      </div>
+
+      <p>With X devices you're saving $XX per line every month.</p>
+      <p>Combined with a [XYZ discount] that's a total savings of</p>
+      <p>$XX/month and $XXX/year</p>
+
+    </div>
+    
+  </div>
+
+  <div id="plans-panel">
+    <p>These should be checkboxes, not radio buttons that show the best discount of all chosen </p>
+    <div class="tabs" role="radiogroup">
+      <input type="radio" class="tab" aria-controls="first-responder-panel" id="first-responder" name="discounts" checked>
+      <label for="first-responder">First responder</label>
+      <input type="radio" class="tab" aria-controls="age-panel" id="age" name="discounts">
+      <label for="age">55 or older</label>
+      <input type="radio" class="tab" aria-controls="military-panel" id="military" name="discounts">
+      <label for="military">Military veteran</label>
+      <input type="radio" class="tab" aria-controls="trade-panel" id="trade" name="discounts">
+      <label for="trade">Trade in deals</label>
+      <input type="radio" class="tab" aria-controls="none-panel" id="none" name="discounts">
+      <label for="none">None</label>
+    </div>
+    
+    <div class="tab-panel" id="first-responder-panel">
+      <h2 class="h-bravo plan-title">
+        First responder discounts
+      </h2>
+      <ul class="plan-list">
+        <li class="plan-list-item">
+          <h3>Magenta Max</h3>
+          <button>Choose this plan</button>
+          <ul>
+            <li>Thing about this plan</li>
+            <li>Thing about this plan</li>
+            <li>Thing about this plan</li>
+            <li>Thing about this plan</li>
+            <li>Thing about this plan</li>
+          </ul>
+          <button class="tertiary end">Choose this plan</button>
+          
+
+        </li>
+        <li class="plan-list-item">
+          <div>
+            <h3>Magenta</h3>
+            <button>Choose this plan</button>
+            <ul>
+              <li>Thing about this plan</li>
+              <li>Thing about this plan</li>
+              <li>Thing about this plan</li>
+              <li>Thing about this plan</li>
+            </ul>
+          </div>
+          <button class="tertiary end">Choose this plan</button>
+        </li>
+
+        <li class="plan-list-item">
+          <div>
+            <h3>Essentials</h3>
+            <button>Choose this plan</button>
+            <ul>
+              <li>Thing about this plan</li>
+              <li>Thing about this plan</li>
+              <li>Thing about this plan</li>
+            </ul>
+          </div>
+          <button class="tertiary end">Choose this plan</button>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="tab-panel" id="age-panel">
+      <div class="plan-picker">
+        <div>55 & older discounts</div>
+        <div>55 & older discounts</div>
+        <div>55 & older discounts</div>
+      </div>
+    </div>
+    
+    <div class="tab-panel" id="military-panel"> 
+      <div class="plan-picker">
+        <div>Military veteran discounts</div>
+        <div>Military veteran discounts</div>
+        <div>Military veteran discounts</div>
+      </div>
+    </div>
+    
+    <div class="tab-panel" id="trade-panel">
+      <div class="plan-picker">
+        <div>I have a trade in</div>
+        <div>I have a trade in</div>
+        <div>I have a trade in</div>
+      </div>
+    </div>
+    
+    <div class="tab-panel" id="none-panel">
+      <div class="plan-picker">
+        <div>No discounts whatsover</div>
+        <div>No discounts whatsover</div>
+        <div>No discounts whatsover</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,46 @@
+.plans-wrapper {
+  display: grid;
+  position: relative;
+  @include break($break-mid) {
+    grid-template-columns: 300px 1fr;
+    column-gap: 2rem;
+  }
+
+  .sticky-top {
+    position: sticky;
+    top: 1rem;
+    z-index: 999;
+    
+  }
+
+  
+  .select-container {
+
+  }
+
+  .plan-list {
+    display: grid;
+
+    @include break($break-small) {
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 2rem;
+    }
+
+    .plan-list-item {
+      display: grid;
+      justify-items: start;
+      list-style-type: none;
+      margin: 0;
+      padding:0;
+
+      * {
+        align-self: start;
+      }
+      .end {
+        align-self: end;
+      }
+    }
+
+  }
+
+}
