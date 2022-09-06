@@ -8,15 +8,15 @@ permalink: /teleneo/
 
 ### Teleneo at 16px scales like Helvetica or Arial at 14px
 
-<p class="helvetica">This is Helvetica regular 16px: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
+<p class="helvetica">This is Helvetica or system default font regular 16px: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
 
 <p class="teleneo">This is Teleno regular 16px: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
 
-<p class="helvetica-14">This is Helvetica regular 14px: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
+<p class="helvetica-14">This is Helvetica or system default font regular 14px: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
 
 ### Compare Helvetica or Arial to TeleNeo Medium rescaled
 
-<p class="helvetica">Helvetica regular 16px: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
+<p class="helvetica">Helvetica or system default font regular 16px: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
 
 <p>TeleNeo Medium rescaled 16px rescaled: Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Fugiat quo voluptas nulla pariatur? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae vitae dicta sunt explicabo.</p>
 

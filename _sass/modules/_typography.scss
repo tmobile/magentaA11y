@@ -3,7 +3,7 @@
 .wf-loading .h-bravo,
 .wf-loading p,
 .wf-loading cite {
-  font-family: "droid-sans", Arial;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   visibility: hidden;
 }
 .wf-active {
@@ -274,10 +274,10 @@ ol {
 }
 
 .helvetica {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",sans-serif;
 
 }
 .helvetica-14 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",sans-serif;
   font-size: 14px;
 }
