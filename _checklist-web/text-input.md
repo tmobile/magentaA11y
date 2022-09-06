@@ -45,9 +45,8 @@ design:
   - name: Operable
     list:
       - criteria: The click/tap target area is no smaller than 44x44px
+      - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
-      - criteria: The focus state has a 3:1 minimum contrast ratio between the default and focused states
-      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
   - name: Understandable
     list:
       - criteria: The input purpose should be clear in the context of the whole page

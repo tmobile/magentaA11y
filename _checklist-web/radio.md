@@ -58,9 +58,7 @@ design:
   - name: Operable
     list:
       - criteria: The click/tap target area includes the label and is no smaller than 44x44px
-      - criteria: The default/checked state has a 3:1 minimum contrast ratio
-      - criteria: The default/disabled state has a 3:1 minimum contrast ratio
-      - criteria: The default/focus state has a 3:1 minimum contrast ratio 
+      - criteria: The checked, disabled and focus states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
       - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
   - name: Understandable
