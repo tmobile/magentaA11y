@@ -40,6 +40,25 @@ gherkin-mobile:
       doubletap with the link in focus
     result: |
       my browser goes somewhere
+
+design:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as interactive
+      - criteria: Color and weight are not used as the only means of conveying it is a link
+  - name: Operable
+    list:
+      - criteria: The click/tap target area is no smaller than 44x44px
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+      - criteria: The focus state has a 3:1 minimum contrast ratio between the default and focused states
+      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+  - name: Understandable
+    list:
+      - criteria: Its purpose is clear in the context of the whole page
+      - criteria: It has the correct semantic meaning. If it goes somewhere, it’s a link (that can look like a button). If it does something, it’s a button (that can look like a link)
+  - name: Robust
+    list:
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Code examples
@@ -104,9 +123,9 @@ Sometimes the design will call for multiple links with the same text label. In a
 **Do not** repeat the inner text content of a link in the `aria-label`.
 
 {% highlight html %}
-<a href="/dont-repeat-yourself/" 
-   aria-label="Don't repeat yourself">
-   Don't repeat yourself
+<a href="/do-NOT-repeat-yourself/" 
+   aria-label="Do NOT repeat yourself">
+   Do NOT repeat yourself
 </div>
 {% endhighlight %}{: .bad-example}
 
@@ -131,28 +150,9 @@ Sometimes the design will call for multiple links with the same text label. In a
 - **Do not** repeat the inner text content of a link in the `aria-label`
 
 ### Role
-- Native button identifies as button by default
+- Native link identifies as link by default
 - Use `role="link"` for custom elements
 
 ### Focus
 - Focus must be visible
 - Custom elements need `tabindex="0"` to be focusable
-
-## Design notes
-
-- Perceivable
-  - Is easy to identify as interactive 
-  - Type size is no smaller than 16px
-  - The text has a 4.5:1 minimum contrast ratio
-  - Color is not used as the only means of conveying information
-- Operable
-  - The clickable/tappable target areas are no smaller than 44x44px
-  - The focus indication has a minimum area equal to the width of the element and 2px in height
-  - The focus state has a 3:1 minimum contrast ratio between the default and focused states
-  - The focus indication has a 3:1 minimum contrast ratio against adjacent elements
-- Understandable
-  - The purpose should be clear in the context of the whole page
-  - If it goes somewhere, it's `<a>` link (that can look like a button)
-  - If it does something, it's a `<button>` (that can look like a link)
-- Robust
-  - Meets criteria across platforms, devices and viewports

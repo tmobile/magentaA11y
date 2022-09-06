@@ -38,8 +38,9 @@ design:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive
-      - criteria: Type size is optically no smaller than 16px
+      - criteria: Type size is optically no smaller than 16px Helvetica
       - criteria: The text has a 4.5:1 minimum contrast ratio
+      - criteria: Label is always visible (placeholder cannot be used as a label)
       - criteria: Color is not used as the only means of conveying information or state (error, success, focus, disabled etc)
   - name: Operable
     list:
@@ -50,7 +51,7 @@ design:
   - name: Understandable
     list:
       - criteria: The input purpose should be clear in the context of the whole page
-      - criteria: The width of the input accommodates the intended input, reinforcing its purpose
+      - criteria: The width of the input accommodates/affords the intended input, reinforcing its purpose
   - name: Robust
     list:
       - criteria: Meets criteria across platforms, devices and viewports
@@ -192,22 +193,3 @@ After the screenreader focuses on each input, it will read the group name "Enter
 
 ### Focus
 - Focus must be visible
-
-## Design notes
-
-- Perceivable
-  - Is easy to identify as interactive
-  - Type size is no smaller than 16px
-  - The text has a 4.5:1 minimum contrast ratio
-  - Color is not used as the only means of conveying information (error, success, etc)
-- Operable
-  - The clickable/tappable target area is no smaller than 44x44px
-  - The focus indication has a minimum area equal to the width of the element and 2px in height
-  - The focus state has a 3:1 minimum contrast ratio between the default and focused states
-  - The focus indication has a 3:1 minimum contrast ratio against adjacent elements
-- Understandable
-  - The input purpose should be clear in the context of the whole page
-  - The width of the input accommodates the intended input, reinforcing its purpose
-    - Ex: State field is 2 characters wide
-- Robust
-  - Meets criteria across platforms, devices and viewports

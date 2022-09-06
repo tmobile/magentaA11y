@@ -51,9 +51,7 @@ design:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive
-      - criteria: Type size is optically no smaller than 16px
-      - criteria: The text has a 4.5:1 minimum contrast ratio
-      - criteria: Color is not used as the only means of conveying information or state (error, success, focus, disabled etc)
+      - criteria: Color is not used as the only means of conveying information (error, success, pressed, etc)
   - name: Operable
     list:
       - criteria: The click/tap target area is no smaller than 44x44px
@@ -62,7 +60,7 @@ design:
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
   - name: Understandable
     list:
-      - criteria: The button purpose is clear in the context of the whole page
+      - criteria: Its purpose is clear in the context of the whole page
       - criteria: It has the correct semantic meaning. If it goes somewhere, it’s a link (that can look like a button). If it does something, it’s a button (that can look like a link)
   - name: Robust
     list:

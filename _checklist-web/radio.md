@@ -49,6 +49,27 @@ gherkin-mobile:
       doubletap with the radio in focus
     result: |
       the state is changed
+
+design:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as a radio input
+      - criteria: Color is not used as the only means of conveying state (checked/unchecked/selected/unselected)
+  - name: Operable
+    list:
+      - criteria: The click/tap target area includes the label and is no smaller than 44x44px
+      - criteria: The default/checked state has a 3:1 minimum contrast ratio
+      - criteria: The default/disabled state has a 3:1 minimum contrast ratio
+      - criteria: The default/focus state has a 3:1 minimum contrast ratio 
+      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+  - name: Understandable
+    list:
+      - criteria: The radio group itself has a title
+      - criteria: Its purpose is clear in the context of the whole page
+  - name: Robust
+    list:
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 
@@ -192,22 +213,6 @@ This hack must be used very carefully on a case by case basis.
 - Focus must be visible
 - Custom elements will require keyboard event listeners and roving tabindex
 - **DO NOT** put interactive elements inbetween radio inputs.
-
-## Design notes
-
-- Perceivable
-  - Is easy to identify as mutually exclusive interactive options
-  - Type size is no smaller than 16px
-  - The label has a 4.5:1 minimum contrast ratio
-  - Color is not used as the only means of conveying information
-- Operable
-  - The clickable/tappable target area includes the label and is no smaller than 44x44px
-  - The focus indication has a minimum area equal to the width of the element and 2px in height
-  - The focus state has a 3:1 minimum contrast ratio between the default and focused states
-  - The focus indication has a 3:1 minimum contrast ratio against adjacent elements
-- Understandable
-  - The purpose should be clear in the context of the whole page
-- Robust
   - Performs its purpose across platforms, devices and viewports
 
 

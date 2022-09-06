@@ -11,7 +11,7 @@ Any deliverable must be able to fulfill these acceptance criteria.
 ### Given that I have delivered a design component
 
 - When I examine any component therein
-  - The type size is no smaller than 16px Helvetica or Arial as reference
+  - Interactive component type size is optically no smaller than 16px Helvetica
   - Any interactive target areas are no smaller than 44x44
     - Ex: A video play button
   - Any interactive component has a 3:1 minimum contrast ratio against adjacent elements
@@ -43,3 +43,4 @@ When delivering part of a user journey that uses existing design components that
   - Form labels and fields are stacked vertically with no multi-column layouts
   - Input fields are sized to accommodate the expected character count
   - Color is not used as the sole means of conveying meaning
+
