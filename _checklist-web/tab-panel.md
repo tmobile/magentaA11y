@@ -55,14 +55,29 @@ gherkin-mobile:
 
 ## Avoid tab groups
 
+Tab groups are a sub-par solution used in a couple of scenarios:
+- A page has become bloated with content and the designer seeks to condense even more information into a tighter space. 
+- It's also possible a product owner still believes it's the year 1999 and people don't know how to scroll. 
+
+Either way, it's about trying to cram low quality content into a page until it becomes a high quality experience, which is not a good plan.
+
+### Why tab groups are problematic
+
 - Many people who use a screenreader don't know how to operate a tab group with the arrow keys and can miss parts of the content.
-- Tab groups are a solution used when a page has become bloated with content and designer seek to condense even more information into a tighter space.
-- Interaction rates will be exceedingly low for anything but the first tab panel.
-- Rather than cramming more content into the page, consider breaking the page into more concise sections or separate pages.
+- It requires the screenreader user to repeatedly parse the content to consume it.
+- Interaction rates will be exceedingly low for anything but the first tab panel (like a carousel).
+
+### What to do instead
+
+Rather than cramming more content into the page, consider breaking the page into more concise sections or separate pages.
 
 ### Still need a solution?
 
 - Use **radio buttons** as tabs. This will be easier to understand for screenreader users (as is done with this website's tabs).
+
+#### Wait, then why are you using tabs on this site?
+
+- See above: The page has become bloated with content and the designer seeks to condense even more information into a tighter space.
 
 ## Code examples
 
