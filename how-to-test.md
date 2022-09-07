@@ -27,6 +27,9 @@ It is crucial to test with the keyboard first, without the screenreader activate
 
 Many websites have crossed the threshold to a majority of visits being from mobile devices.
 
+- Following the mobile gesture test instructions
+- Test with a mobile device and a bluetooth keyboard
+
 ## 3. Test with the desktop screenreader
 
 ### About the tab key
