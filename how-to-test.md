@@ -51,7 +51,7 @@ Screenreaders can also consume content automatically, starting reading at the to
 
 ### Do NOT use a mouse
 
-- **Do not use the mouse** for screenreader testing.
+- **Do not use the mouse** for screen reader testing.
 
 {::nomarkdown}
 {% include /examples/table-screen-reader-browser-pairing.html %}
