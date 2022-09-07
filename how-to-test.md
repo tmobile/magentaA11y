@@ -16,10 +16,12 @@ It is crucial to test with the keyboard first, without the screenreader activate
 - Screenreader applications will sometimes cover missing functionality that the sighted keyboard user won't be able to use.
 
 ### Devices
+
 - Test with a mobile device and a bluetooth keyboard
 - Test with a desktop device and a keyboard
 
 ### Browsers
+
 - Any major browser (Chrome, Safari, Firefox) is acceptable for keyboard testing.
 - Note: In Safari, you'll have to activate tab in Preferences » Advanced » Press Tab
 
@@ -27,7 +29,8 @@ It is crucial to test with the keyboard first, without the screenreader activate
 
 Many websites have crossed the threshold to a majority of visits being from mobile devices.
 
-- Following the mobile gesture test instructions
+- Follow the mobile gesture test instructions (swipe, tap, doubletap, etc.)
+  - **Do NOT just tap** on elements, you must swipe to browse the content
 - Test with a mobile device and a bluetooth keyboard
 
 ## 3. Test with the desktop screenreader
@@ -45,7 +48,11 @@ Screenreaders can also consume content automatically, starting reading at the to
 
 - Not having all three screen readers available doesn't mean you can't test for accessibility.
 - Most of the major accessibility defects you're likely to encounter will show up in any screen reader.
-  
+
+### Do NOT use a mouse
+
+- **Do not use the mouse** for screenreader testing.
+
 {::nomarkdown}
 {% include /examples/table-screen-reader-browser-pairing.html %}
 {:/}
