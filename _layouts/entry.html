@@ -143,6 +143,7 @@ layout: default
         {% endif %}
 
         <div class="condensed-criteria tab-panel inert" id="condensed-panel" tabindex="0" role="region" aria-label="Condensed testing instructions" {% if page.url contains "native" %}style="display:block;"{% endif %}>
+          {% unless page.url contains "native" %}<p>Test with keyboard only, then screen readers</p>{% endunless %}
           <div id="step1" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step1" />
             <h3 class="h-charlie" itemprop="name">
