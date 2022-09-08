@@ -258,6 +258,12 @@ ol {
 }
 
 
+.step {
+  display: block;
+  padding-bottom: .5rem;
+  border-bottom: .25rem solid $color-text;
+}
+
 .teleneo-rescaled {
   font-family: teleneo;
   font-weight: normal;

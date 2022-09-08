@@ -73,7 +73,7 @@ Rather than cramming more content into the page, consider breaking the page into
 
 ### Still need a solution?
 
-- Use **radio buttons** as tabs. This will be easier to understand for screenreader users (as is done with this website's tabs).
+- Use **radio buttons** as controls. This will be easier to understand for screenreader users (as is done with this website's tabs).
 
 #### Wait, then why are you using tabs on this site?
 

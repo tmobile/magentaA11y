@@ -32,13 +32,17 @@ gherkin-keyboard:
     result: |
       focus is strongly visually indicated
   - then:  |
+      the tab key to move focus to the show/hide password
+    result: |
+      its name, role and state
+  - then:  |
       the show/hide password feature
     result: |
-      that the password is being shown
+      the state of the password visibility (with or without characters entered)
 
 gherkin-mobile:
   - when:  |
-      swipe to focus on a text input
+      swipe to focus on a password input
 ---
 
 ## Code examples
