@@ -30,7 +30,7 @@ gherkin-keyboard:
   - when:  |
       the tab key to enter the web browser window
     result: |
-      focus is strongly visually indicated on the first interactive components
+      focus is strongly visually indicated on the first interactive component
 
 
 gherkin-mobile:

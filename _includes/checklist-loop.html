@@ -1,9 +1,8 @@
 {% if page.categories contains category %}
 {% capture condensed %}
 How to test {% assign firstLetter = page.title | downcase | slice: 0 %}{% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u'  %}an{% else %}a{% endif %} {{ page.title | escape | downcase }}
-{% unless page.url contains "native" -%}Start with keyboard only, then test screen reader + keyboard{%- endunless %}
 
-1. Test keyboard functions
+1. Test keyboard {% unless page.url contains "native" %}only, then screen reader + keyboard{% endunless %} actions
 {% for action in page.keyboard %}- {{ action[0] | capitalize }}: {{ action[1] | escape }}{% endfor %}
 2. Test mobile screenreader gestures
 {% for gesture in page.mobile %}- {{ gesture[0] | capitalize }}: {{ gesture[1] | escape }}{% endfor %}
