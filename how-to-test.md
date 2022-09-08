@@ -35,10 +35,9 @@ The tab key is not the only key the screenreaders use to browse content. Before 
 
 - Arrow keys browse content for reading
 - The tab key focuses interactive controls
+- Screenreaders can also consume content automatically, starting reading at the top with no keyboard interaction
 
-Screenreaders can also consume content automatically, starting reading at the top with no keyboard interaction
-
-### Do NOT use a mouse
+### Do not use a mouse
 
 - **Do not use the mouse** for screen reader testing.
 
@@ -48,7 +47,7 @@ Screenreaders can also consume content automatically, starting reading at the to
 Many websites have crossed the threshold to a majority of visits being from mobile devices.
 
 - Follow the mobile gesture test instructions (swipe, tap, doubletap, etc.)
-  - **Do NOT just tap** on elements, you must swipe to browse the content
+  - **Do not tap** on elements to navigate, you must swipe to browse the content in a linear pattern
 
 ### Devices
 
@@ -61,7 +60,6 @@ Follow the screen reader browser pairings table
 
 ## About screen readers
 {: .step }
-
 
 ### Screenreaders are all slightly different
 
