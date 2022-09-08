@@ -6,15 +6,16 @@ permalink: /how-to/
 
 Manual testing is not difficult or time consuming once a team understands keyboard interactions.
 
-## 1. Test with the keyboard ONLY
-{: .step }
+## <step-number>1</step-number> Test with the keyboard only
+{: .divider }
 
-It is crucial to **test with the keyboard first**, without the screenreader activated.
+It is crucial to **test with only the keyboard first**, without the screen reader activated.
 
-### Why keyboard is so important
+### Why keyboard testing is so important
 
-- Keyboard accessibility is **prerequisite** to screen reader accessibility. (If it doesn't work here, it won't work with a screen reader).
-- Screenreader applications will sometimes cover missing functionality that the sighted keyboard user won't be able to use.
+- Keyboard accessibility is **prerequisite** to screen reader accessibility. 
+  - If it doesn't work with only the keyboard, it won't work with a screen reader.
+- screen reader applications will sometimes cover missing functionality that the sighted keyboard user won't be able to use.
 
 ### Devices
 
@@ -26,23 +27,23 @@ It is crucial to **test with the keyboard first**, without the screenreader acti
 - Any major browser (Chrome, Safari, Firefox) is acceptable for keyboard testing.
 - Note: In Safari, you'll have to activate tab in Preferences » Advanced » Press Tab
 
-## 2. Test with the desktop screenreader
-{: .step }
+## <step-number>2</step-number> Test with desktop screen readers
+{: .divider }
 
 ### About the tab key
 
-The tab key is not the only key the screenreaders use to browse content. Before you test, learn the difference between **interactive elements that should receive focus** with the tab key and **content that should not**.
+The tab key is not the only key the screen readers use to browse content. Before you test, learn the difference between **interactive elements that should receive focus** with the tab key and **content that should not**.
 
 - Arrow keys browse content for reading
 - The tab key focuses interactive controls
-- Screenreaders can also consume content automatically, starting reading at the top with no keyboard interaction
+- screen readers can also consume content automatically, starting reading at the top with no keyboard interaction
 
 ### Do not use a mouse
 
 - **Do not use the mouse** for screen reader testing.
 
-## 3. Test with the mobile screenreader
-{: .step }
+## <step-number>3</step-number> Test with the mobile screen reader
+{: .divider }
 
 Many websites have crossed the threshold to a majority of visits being from mobile devices.
 
@@ -59,9 +60,9 @@ Many websites have crossed the threshold to a majority of visits being from mobi
 Follow the screen reader browser pairings table
 
 ## About screen readers
-{: .step }
+{: .divider }
 
-### Screenreaders are all slightly different
+### screen readers are all slightly different
 
 - Screen readers all offer a slightly different experience.
 - Not having all 5 screen readers available doesn't mean you can't test for accessibility.
@@ -72,14 +73,14 @@ Follow the screen reader browser pairings table
 {:/}
 
 ## NVDA
-{: .step }
+{: .divider }
 
 <details>
   <summary>
-    NVDA screenreader shortcuts
+    NVDA screen reader shortcuts
   </summary>
   {% include /examples/table-screen-reader-keyboard-shortcuts-nvda.html %}
-  <p>Use the screenreader to list useful elements: headings, links and landmarks.</p>
+  <p>Use the screen reader to list useful elements: headings, links and landmarks.</p>
   {% include /examples/table-screen-reader-keyboard-shortcuts-nvda-test.html %}
 </details>
 
@@ -102,14 +103,14 @@ Follow the screen reader browser pairings table
 - Any element in focus like a dialog or section will be read in its entirety
 
 ## VoiceOver
-{: .step }
+{: .divider }
 
 <details>
   <summary>
-    VoiceOver screenreader shortcuts
+    VoiceOver screen reader shortcuts
   </summary>
   {% include /examples/table-screen-reader-keyboard-shortcuts-voiceover.html %}
-  <p>Use the screenreader to list useful elements: headings, links and landmarks.</p>
+  <p>Use the screen reader to list useful elements: headings, links and landmarks.</p>
   {% include /examples/table-screen-reader-keyboard-shortcuts-voiceover-test.html %}
 </details>
 
@@ -121,14 +122,14 @@ Follow the screen reader browser pairings table
 - It may say things in a different order than NVDA or JAWS but the core acceptance criteria are the same.
 
 ## JAWS
-{: .step }
+{: .divider }
 
 <details>
   <summary>
-    JAWS screenreader shortcuts
+    JAWS screen reader shortcuts
   </summary>
   {% include /examples/table-screen-reader-keyboard-shortcuts-jaws.html %}
-  <p>Use the screenreader to list useful elements: headings, links and landmarks.</p>
+  <p>Use the screen reader to list useful elements: headings, links and landmarks.</p>
   {% include /examples/table-screen-reader-keyboard-shortcuts-jaws-test.html %}
 </details>
 

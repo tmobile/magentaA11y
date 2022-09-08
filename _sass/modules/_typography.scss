@@ -258,10 +258,14 @@ ol {
 }
 
 
-.step {
+.divider {
   display: block;
-  padding-bottom: .5rem;
-  border-bottom: .25rem solid $color-text;
+  &:after {
+    content: '';
+    display: block;
+    margin-top: .5rem;
+    border-bottom: .25rem solid $color-text;
+  }
 }
 
 .teleneo-rescaled {
@@ -286,4 +290,20 @@ ol {
 .system-font-14 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",sans-serif;
   font-size: 14px;
+}
+
+
+step-number {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  line-height: 2rem;
+  border-radius: 1.5rem;
+  margin-top: -.125rem;
+  margin-left: -.75rem;
+  margin-right: .25rem;
 }

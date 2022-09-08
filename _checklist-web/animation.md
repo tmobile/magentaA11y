@@ -53,6 +53,26 @@ gherkin-mobile:
       the device's reduced motion settings
     result: |
       the animation is disabled or reduced
+
+design:
+  - name: Perceivable
+    list:
+      - criteria: Color is not used as the only means of conveying information (error, success, etc)
+  - name: Operable
+    list:
+      - criteria: "For any animation controls:"
+      - criteria: The click/tap target area is no smaller than 44x44px
+      - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
+      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+  - name: Understandable
+    list:
+      - criteria: Any control's purpose is clear in the context of the whole page
+  - name: Robust
+    list:
+      - criteria: The animation respects device reduce motion settings and still conveys any critical information
+      - criteria: Meets criteria across platforms, devices and viewports
+
 ---
 ## Developer notes
 
