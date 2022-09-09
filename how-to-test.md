@@ -62,7 +62,7 @@ Follow the screen reader browser pairings table
 ## About screen readers
 {: .divider }
 
-### screen readers are all slightly different
+### Screen readers are all slightly different
 
 - Screen readers all offer a slightly different experience.
 - Not having all 5 screen readers available doesn't mean you can't test for accessibility.
