@@ -56,5 +56,6 @@ gherkin-mobile:
 {:/}
 
 
-## Thanks
-[https://www.sitepoint.com/accessible-footnotes-css/](https://www.sitepoint.com/accessible-footnotes-css/)
+## Alternate approach
+
+- [Foonotes using a dedicated footnotes section](https://www.sitepoint.com/accessible-footnotes-css/)

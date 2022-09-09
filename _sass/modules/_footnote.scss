@@ -21,3 +21,20 @@
     }
   }
 }
+
+@keyframes targeted {
+  0%		{ 
+          outline: 0rem solid rgba($color-gold, 0);
+        }
+  75%		{ 
+          outline: .5rem solid rgba($color-gold, .75);
+  }
+  100%	{ 
+          outline: 0rem solid rgba($color-gold, 0);
+        }
+}
+
+.footnote:target {
+  animation: targeted 2s 2;
+  outline-offset: .25rem;
+}
