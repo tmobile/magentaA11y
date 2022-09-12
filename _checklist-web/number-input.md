@@ -20,7 +20,7 @@ screenreader:
   name:  |
     Its purpose is clear
   role:  |
-    It identifies itself as a text input
+    It identifies itself as an editable input
   group: |
     Hints or errors are read after the label, related inputs include a group name (Ex: Enter your personal information)
   state: |
@@ -99,7 +99,6 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JS to filte
 {% include /examples/input-text-number-disabled.html %}
 </example>
 {:/}
-
 
 ### Telephone number input
 
