@@ -6,8 +6,14 @@ permalink: /design/
 
 Any deliverable must be able to fulfill these acceptance criteria.
 
+- [For web design systems](#for-web-design-systems)
+- [For full experience web designs](#for-full-experience-web-designs)
+- [For native app design systems](#for-native-app-design-systems)
+- [For full experience native designs](#for-full-experience-native-designs)
+
+
 ## For web design systems
-{: .divider }
+{: .divider tabindex="-1"}
 
 ### Given that I have delivered a design component
 
@@ -27,7 +33,7 @@ Any deliverable must be able to fulfill these acceptance criteria.
   - Color is not used as the sole means of conveying meaning
 
 ## For full experience web designs
-{: .divider }
+{: .divider tabindex="-1"}
 
 When delivering part of a user journey that uses existing design components that already meet accessibility acceptance criteria.
 
@@ -47,7 +53,7 @@ When delivering part of a user journey that uses existing design components that
   - Color is not used as the sole means of conveying meaning
 
 ## For native app design systems
-{: .divider }
+{: .divider tabindex="-1"}
 
 ### Given that I have delivered a design component 
 - When I examine any component therein 
@@ -63,7 +69,7 @@ When delivering part of a user journey that uses existing design components that
   - Color is not used as the sole means of conveying meaning 
 
 ## For full experience native designs 
-{: .divider }
+{: .divider tabindex="-1"}
 
 When delivering part of a user journey that uses existing design components that already meet accessibility acceptance criteria. 
 
