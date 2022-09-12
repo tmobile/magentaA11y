@@ -7,6 +7,7 @@ permalink: /design/
 Any deliverable must be able to fulfill these acceptance criteria.
 
 ## For web design systems
+{: .divider }
 
 ### Given that I have delivered a design component
 
@@ -25,7 +26,8 @@ Any deliverable must be able to fulfill these acceptance criteria.
     - Ex: A button with a 1px focus outline meets the minimum
   - Color is not used as the sole means of conveying meaning
 
-## For full experience designs
+## For full experience web designs
+{: .divider }
 
 When delivering part of a user journey that uses existing design components that already meet accessibility acceptance criteria.
 
@@ -44,3 +46,35 @@ When delivering part of a user journey that uses existing design components that
   - Input fields are sized to accommodate the expected character count
   - Color is not used as the sole means of conveying meaning
 
+## For native app design systems
+{: .divider }
+
+### Given that I have delivered a design component 
+- When I examine any component therein 
+- Then I see 
+  - The type size is no smaller than 14px on system fonts for both Android and iOS 
+  - Any interactive target areas are no smaller than 44x44 
+    - Ex: An info button 
+  - Any interactive component has a 3:1 minimum contrast ratio against adjacent elements 
+    - Ex: A button against its background 
+  - Any change of state exhibits a 3:1 minimum contrast ratio 
+    - Ex: A checked radio input compared to unchecked 
+    - Ex: A disabled checkbox compared to defaults 
+  - Color is not used as the sole means of conveying meaning 
+
+## For full experience native designs 
+{: .divider }
+
+When delivering part of a user journey that uses existing design components that already meet accessibility acceptance criteria. 
+
+### Given that I have delivered a native app UI design for development 
+
+- When I open the accessibility annotation layer 
+- Then I see 
+  - Text headings are noted as headings 
+  - Links and buttons are assigned name and role 
+  - Icon buttons are assigned a name 
+  - Alternative text for images is defined 
+  - For custom components Name and role  
+  - Color is not used as the sole means of conveying meaning 
+  - Animations are noted to not last more than 5 seconds 
