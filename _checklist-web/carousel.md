@@ -21,11 +21,11 @@ mobile:
 
 screenreader:
   name:  |
-    Its name and purpose is clear
+    Control name and purpose is clear
   role:  |
-    It identifies as a button
+    Control identifies itself as a button
   group: |
-    It indicates the number of slides and current position in the carousel
+    The number of slides and current position in the carousel is indicated
 
 gherkin-keyboard: 
   - when:  |

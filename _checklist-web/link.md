@@ -125,9 +125,28 @@ Sometimes the design will call for multiple links with the same text label. In a
 {% highlight html %}
 <a href="/do-NOT-repeat-yourself/" 
    aria-label="Do NOT repeat yourself">
-   Do NOT repeat yourself
+   Do not repeat yourself
 </div>
 {% endhighlight %}{: .bad-example}
+
+### Don't use javascript in href
+
+- **Do not** use `"href="javascript:void(0)"`. 
+- When screen readers read the href, it becomes confusing and nonsensical 
+
+{% highlight html %}
+<a href="href="javascript:void(0)">
+   Do not use javascript in href
+</div>
+{% endhighlight %}{: .bad-example}
+
+Instead, remove the `href` and add `tabindex="0"`
+
+{% highlight html %}
+<a tabindex="0">
+  About
+</a>
+{% endhighlight %}
 
 ### Complex examples
 
