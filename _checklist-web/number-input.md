@@ -44,7 +44,9 @@ gherkin-mobile:
   - when:  |
       swipe to focus on a number input
   - then:  |
-      the number keypad is revealed
+      enter a number
+    result: |
+      the numeric keypad is revealed
 
 
 ---
