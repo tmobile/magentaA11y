@@ -21,6 +21,7 @@
     @include float;
     
     .link-container {
+      display: grid;
       position: relative;
       padding-bottom: 1rem;
       a {
@@ -54,6 +55,7 @@
 
 .product-image-container {
   display: grid;
+  grid-row: 1;
   justify-content: center;
   background: $color-gray-xtra-light;
   margin-bottom: 0rem;
@@ -65,6 +67,9 @@
     align-self: center;
     opacity: .5;
   }
+}
+.product-link {
+  grid-row: 3;
 }
 .product-pricing {
   margin: 0px;

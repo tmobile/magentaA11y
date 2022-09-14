@@ -129,16 +129,10 @@ Sometimes the design will call for multiple links with the same text label. In a
 </div>
 {% endhighlight %}{: .bad-example}
 
-### Don't use javascript in href
+### Making a link with no `href` focusable
 
-- **Do not** use `"href="javascript:void(0)"`. 
-- When screen readers read the href, it becomes confusing and nonsensical 
-
-{% highlight html %}
-<a href="href="javascript:void(0)">
-   Do not use javascript in href
-</div>
-{% endhighlight %}{: .bad-example}
+- A link with no `href` will not be focusable with the keyboard. 
+- **Do not** put anything but a URI in the `href`
 
 Instead, remove the `href` and add `tabindex="0"`
 
@@ -148,11 +142,32 @@ Instead, remove the `href` and add `tabindex="0"`
 </a>
 {% endhighlight %}
 
+### Don't use javascript in href
+
+- **Do not** use `"href="javascript:void(0)"`. 
+- When screen readers read the href, it becomes confusing and nonsensical 
+
+{% highlight html %}
+<a href="javascript:void(0)">
+   Do not use javascript in href
+</div>
+{% endhighlight %}{: .bad-example}
+
+### Don't use "#" in href
+
+{% highlight html %}
+<a href="#">
+   Do not use # to populate the href
+</div>
+{% endhighlight %}{: .bad-example}
+
 ### Complex examples
 
-- Don't wrap large blocks of content or nest other interactive components inside a link.
-- This example uses a simple link and references product information using `aria-describedby`
+- **Don't** wrap large blocks of content or nest other interactive components inside a link.
+- This complex example uses a simple link and references product information using `aria-describedby`
 - This allows the link to be read first (without the repetition of the image alt text) and then the screen reader will read the related product information (colors, pricing).
+- The HTML is **written in logical order** for the screen reader and CSS grid layout is used to re-arrange the elements visually.
+- No Javascript is used, this example uses well supported CSS only techniques
 
 <example>
 {% include /examples/product.html %}
