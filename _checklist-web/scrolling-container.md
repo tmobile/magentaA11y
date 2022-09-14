@@ -40,6 +40,11 @@ gherkin-mobile:
 
 
 ---
+## Do not enable/disable buttons based on scrolling container
+
+- Screen readers can read content _without_ changing the scroll offset position in the viewpoint.
+- If you use a scrolling container for terms & conditions, **don't disable the continue button** because someone using a screen reader may not be able to enable the button.
+
 ## Code examples
 
 {::nomarkdown}

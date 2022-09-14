@@ -80,7 +80,13 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {% endraw %}
 
+
+### Making a link with no `href` focusable
+
 If a link has no definable url, add `tabindex="0"` to make it focusable.
+
+- A link with no `href` will not be focusable with the keyboard. 
+- **Do not** put anything but a URI in the `href`
 
 {% highlight html %}
 <a tabindex="0">
@@ -97,7 +103,8 @@ If a link has no definable url, add `tabindex="0"` to make it focusable.
 {% endraw %}
 
 ### Avoid custom elements
-This custom button requires extra attributes and event listeners.
+
+This custom button requires extra attributes and keyboard event listeners.
 
 {% highlight html %}
 <custom-element role="link" tabindex="0">
@@ -110,11 +117,13 @@ This custom button requires extra attributes and event listeners.
 Sometimes the design will call for multiple links with the same text label. In a case like this, `aria-label` can be used to name each link's purpose.
 
 {% highlight html %}
-<a href="/security/" aria-label="Security policy">
-  Learn more
+<button>Get free coffee</button>
+<a href="/free-coffee-tc/" aria-label="Free coffee terms and conditions">
+  Terms &amp; Conditions
 </a>
-<a href="/privacy/" aria-label="Privacy policy">
-  Learn more
+<button>Get free donuts</button>
+<a href="/free-donuts-tc/" aria-label="Free donuts terms and conditions">
+  Terms &amp; Conditions
 </a>
 {% endhighlight %}
 
@@ -128,19 +137,6 @@ Sometimes the design will call for multiple links with the same text label. In a
    Do not repeat yourself
 </div>
 {% endhighlight %}{: .bad-example}
-
-### Making a link with no `href` focusable
-
-- A link with no `href` will not be focusable with the keyboard. 
-- **Do not** put anything but a URI in the `href`
-
-Instead, remove the `href` and add `tabindex="0"`
-
-{% highlight html %}
-<a tabindex="0">
-  About
-</a>
-{% endhighlight %}
 
 ### Don't use javascript in href
 
@@ -176,17 +172,3 @@ Instead, remove the `href` and add `tabindex="0"`
 {% highlight html %}
 {% include /examples/product.html %}
 {% endhighlight %}
-
-## Developer notes
-
-### Name
-- Inner text should describe the purpose of the link.
-- **Do not** repeat the inner text content of a link in the `aria-label`
-
-### Role
-- Native link identifies as link by default
-- Use `role="link"` for custom elements
-
-### Focus
-- Focus must be visible
-- Custom elements need `tabindex="0"` to be focusable
