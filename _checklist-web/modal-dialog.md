@@ -5,6 +5,8 @@ description: "How to code and test an accessible modal dialog popup for Web"
 categories: main
 
 keyboard:
+  launch button: |
+    Focus visibly moves to the open dialog itself
   tab: |
     Focus visibly moves only within the dialog, starting with the dialog element itself on launch
   escape: |
