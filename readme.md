@@ -43,6 +43,13 @@ It was originally created by [Charlie Triplett](https://www.charliecharliecharli
 - Add an entry for a component that is not included.
 - Fix a typo or edit for consistent language.
 
+## JSON Integration
+
+You can integrate MagentaA11y acceptance criteria into your own tools using these JSON feeds:
+
+- [Web Acceptance Criteria JSON](/criteria-web.json)
+- [Native App Acceptance Criteria JSON](/criteria-native.json)
+
 ## MagentaA11y.com accessibility
 
 MagentaA11y holds itself accountable to following a layered testing strategy.

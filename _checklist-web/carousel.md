@@ -48,12 +48,16 @@ gherkin-mobile:
 
 ## UX design notes
 
-Think carefully before you use a carousel or slideshow wizard.
+Think carefully before you use a carousel or slideshow wizard. Consider another way to present the information.
 
 ### Carousels are often a poor design choice
 
 - As a general rule, [carousels should be avoided](https://shouldiuseacarousel.com/) for critical functionality unless there is a strong business case.
 - People must be highly motivated to engage with a carousel beyond the first slide.
+- The cognitive load is immediately increased over other patterns aas the user must determine how to use the carousel:
+  - Is it easier to use previous/next buttons?
+  - Is it possible to swipe left/right?
+  - How many slides are present?
 - A good business case might be a multi-step lead form, but this should always be A/B tested against a traditional scrolling form.
 
 ### Carousels can be a development challenge
