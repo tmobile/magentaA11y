@@ -6,24 +6,22 @@
 
 dialog {
   // display: none;
-  top: 0;
-  right: 0;
-  left: 0;
+  inset: 3rem 1rem 0 1rem;
   position: fixed;
-  margin: 6rem auto;
-  width: 100%;
+  margin: 0px auto;
+  width: calc(100% -  2rem);
   max-width: 640px;
   border-radius: 2rem;
   background-color: #fff;
   box-shadow: 0 0 100px 50px rgba(#000,.2);
   outline: 0rem solid rgba(#fff,.7);
   border: none;
-  
+  transition: .2s;
+
   &:focus,
   &:focus-visible {
-    outline: .5rem solid rgba(#fff,.7);
-    outline-offset: 0rem;
-    transition: .2s;
+    outline: .25rem solid rgba(#fff,.7);
+    outline-offset: .125rem;
   }
 
 
