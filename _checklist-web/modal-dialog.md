@@ -71,6 +71,23 @@ gherkin-mobile:
       swipe to move focus to the dismiss/close button <strong>AND THEN</strong> double tap on the close button
     result: |
       focus returns to the launch button
+
+design:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as a modal dialog on top of a page (and not a new page)
+  - name: Operable
+    list:
+      - criteria: The close button click/tap target area is no smaller than 44x44px
+      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+  - name: Understandable
+    list:
+      - criteria: Its purpose and title is clear in the context of the whole page
+  - name: Robust
+    list:
+      - criteria: Meets criteria across platforms, devices and viewports
+
 ---
 
 ## Required attributes

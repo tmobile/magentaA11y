@@ -24,7 +24,6 @@ dialog {
     outline-offset: .125rem;
   }
 
-
   &[open] {
     display: block;
   }
@@ -58,7 +57,6 @@ dialog {
     background-repeat: no-repeat;
     background-position: center center;
     border: 1px solid transparent; // This is only here to solve for a Chrome bug that keeps the button from showing focus
-    
     outline: .25rem solid rgba($color-focus,0);
     outline-offset: .125rem;
     transition: .2s;
