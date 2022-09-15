@@ -7,17 +7,17 @@ categories: main
 keyboard:
   launch button: |
     Focus visibly moves to the open dialog itself
+  arrow keys: |
+    Content only within the dialog is browsed in logical order
   tab: |
-    Focus visibly moves only within the dialog, starting with the dialog element itself on launch
+    Focus visibly moves only within the dialog, starting with the first interactive control (typically close button)
   escape: |
     The dialog closes and returns focus to the button that launched it
   space: |
     Any buttons are activated
   enter: |
     Any buttons or links are activated
-  arrow-keys: |
-    Screen reader browses only within the dialog
-
+  
 mobile:
   swipe: |
     Focus moves within the dialog and doesn't enter the rest of the page.
