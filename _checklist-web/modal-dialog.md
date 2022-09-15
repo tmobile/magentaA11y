@@ -8,7 +8,7 @@ keyboard:
   launch button: |
     Focus visibly moves to the open dialog itself
   arrow keys: |
-    Content only within the dialog is browsed in logical order
+    Content within the dialog is browsed in logical order
   tab: |
     Focus visibly moves only within the dialog, starting with the first interactive control (typically close button)
   escape: |
@@ -38,11 +38,15 @@ gherkin-keyboard:
   - when:  |
       the tab key to move focus to the launch button and use  spacebar and/or enter key to activate the button
     result: |
-      the dialog opens
+      the dialog opens and is in focus
   - then:  |
-      the tab key or arrow keys
+      the arrow keys
     result: |
-      focus stays trapped in the modal dialog
+      content within the dialog is browsed in logical order
+  - then:  |
+      the tab key
+    result: |
+      focus stays trapped in the modal dialog, starting with the first interactive element
   - then:  |
       the escape key
     result: |
