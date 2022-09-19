@@ -68,7 +68,9 @@ design:
 
 ### Use as much semantic HTML as possible
 
-This semantic HTML contains all accessibility features by default, and only requires the addition of `role="switch"`. 
+- This semantic HTML contains all accessibility features by default, and only requires the addition of `role="switch"`. 
+- It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_input-switch.scss) to create the toggle switch indicator, no Javascript
+
 
 {% highlight html %}
 {% include /examples/input-switch.html %}
