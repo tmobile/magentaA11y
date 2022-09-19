@@ -71,7 +71,9 @@ design:
 ## Code examples
 
 ### Use semantic HTML
-This semantic HTML contains all accessibility features by default.
+
+- This semantic HTML contains all accessibility features by default.
+- It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_button.scss) to create the arrow indicator, no Javascript.
 
 {% highlight html %}
 {% include /examples/button.html %}

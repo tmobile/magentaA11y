@@ -158,18 +158,18 @@ button {
       background-image: var(--icon-chevron-dark);
       transform: rotate(90deg);
     }
-    
-  &:hover,
-  &:focus {
-    &:before {
-      opacity: 1;
-      left: 1.5rem;
+  
+    &:hover,
+    &:focus {
+      &:before {
+        opacity: 1;
+        left: 1.5rem;
+      }
+      &:after {
+        opacity: 1;
+        left: .75rem;
+      }
     }
-    &:after {
-      opacity: 1;
-      left: .75rem;
-    }
-  }
   }
 
   &.inline {

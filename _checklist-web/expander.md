@@ -68,7 +68,10 @@ design:
 ## Code examples
 
 ### Use semantic HTML
-This semantic HTML contains all accessibility features by default with no scripting required.
+
+- This semantic HTML contains all accessibility features by default with no scripting required.
+- It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_details-summary.scss) to create the expanded/collapsed indicator, no Javascript.
+
 
 {% highlight html %}
 {% include /examples/details-summary.html %}

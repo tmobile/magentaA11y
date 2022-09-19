@@ -61,26 +61,13 @@ gherkin-mobile:
 
 ## Code examples
 
-
-### Semantic HTML
-While there is a native range input, it is difficult to style reliably across browsers.
-
 This is one of the exceedingly rare instances where a custom element makes a lot of sense.
 
-{% highlight html %}
-{% include /examples/input-range.html %}
-{% endhighlight %}
+### Use a custom element
 
-{::nomarkdown}
-<example>
-{% include /examples/input-range.html %}
-</example>
-{:/}
+- Custom elements are **easier to style reliably** across browsers.
+- [Working slider pattern examples](https://www.w3.org/WAI/ARIA/apg/patterns/slider/)
 
-
-### Custom elements
-
-This is a rare instance where custom elements are easier to style reliably across browsers.
 
 {% highlight html %}
 <div id="range-label">
@@ -98,29 +85,17 @@ This is a rare instance where custom elements are easier to style reliably acros
 </div>
 {% endhighlight %}
 
-Working example: <https://www.w3.org/TR/wai-aria-practices/examples/slider/slider-1.html>
 
+### Semantic HTML
 
-## Developer notes
+While there is a native range input, it is **difficult to style reliably** across browsers.
 
-### Name
-- Include `for="input-id` in each `<label>` label to associate it with the input
-- Use `aria-label="Input name"` as a last resort if a `<label>` can't be used
-- Don't hide the label on focus
+{% highlight html %}
+{% include /examples/input-range.html %}
+{% endhighlight %}
 
-### Role
-- Identifies as a text input
-
-### State
-
-For custom elements, use these aria attributes to describe the min, max and current value.
-
-- `aria-valuemin`
-- `aria-valuemax`
-- `aria-valuenow`
-
-### Group
-- Include `for="input-id` in each `<label>` label to associate it with the input
-
-### Focus
-- Focus must be visible
+{::nomarkdown}
+<example>
+{% include /examples/input-range.html %}
+</example>
+{:/}

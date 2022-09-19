@@ -55,7 +55,9 @@ gherkin-mobile:
 
 ### Use the Semantic HTML `<select>`
 
-This native select contains all the accessibility criteria for free and is styled to look cool.
+- This native select contains all the accessibility criteria for free and is styled to look cool.
+- It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_input-select.scss) to create the arrow indicator, no Javascript.
+
 
 {% highlight html %}
 {% include /examples/input-select.html %}
