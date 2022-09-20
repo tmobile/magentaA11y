@@ -1,14 +1,14 @@
 ---
 layout: entry
-title:  "Progress bar"
+title:  "Progress spinner"
 description: "How to code and test an accessible progress bar for Web"
 categories: main form
 order: 0
 
 keyboard:
-  tab: |
-    Nothing happens, progress bar is not typically focusable
-        
+  arrow keys: |
+    The progress bar is able to be browsed
+
 mobile:
   swipe: |
     Reads the progress bar
@@ -17,9 +17,9 @@ screenreader:
   name:  |
     The progress bar's purpose is clear
   role:  |
-    It identifies itself as a progress bar or progress indicator
+    It identifies itself as some kind of progress indicator
   state:  |
-    It expresses its value if it dynamically changes
+    It expresses its current value if it dynamically changes
 
 gherkin-keyboard: 
   - when:  |
