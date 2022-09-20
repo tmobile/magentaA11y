@@ -48,3 +48,41 @@ progress {
   display: inline-block;
   margin-left: -1rem;
 }
+
+@-moz-keyframes spin { 
+  100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+  100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+  100% { 
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+  } 
+}
+
+.spinner {
+  display: grid;
+  position: relative;
+  width: calc(100px + 2rem);
+  height: calc(100px + 2rem);
+  border-radius: 100px;
+  background: #fff;
+  text-align: center;
+  align-items: center;
+  font-size: 1.25rem;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 1rem dotted $color-brand-primary;
+    animation:spin 4s linear infinite;
+  }
+
+}

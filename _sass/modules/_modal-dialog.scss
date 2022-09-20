@@ -89,6 +89,16 @@ dialog {
       transform: rotate(0deg)
     }
   }
+
+  &.takeover {
+    width: 200px;
+    height: 200px;
+
+    &::backdrop {
+      background-color: rgba(#000, .7);
+    }
+
+  }
 }
 
 

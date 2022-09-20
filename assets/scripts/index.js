@@ -101,6 +101,13 @@ if ( $('dialog').length ) {
         }
         // Focus the dialog itself on open
         modal.focus();
+        // if ( $('dialog').hasClass("takeover") ) {
+        //     setTimeout(function(){
+        //         modal.close();
+        //     }, 4000);
+        // }
+
+
     };
 
     closeModal.onclick = () => {
@@ -127,6 +134,8 @@ if ( $('dialog').length ) {
         }
     });
 }
+
+
 
 $("[name='stepper-input']").on('change', function() {
     var val = parseInt($(this).val());

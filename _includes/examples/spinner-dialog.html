@@ -1,0 +1,19 @@
+<slow-app aria-live="polite" aria-busy="false">
+  <button id="showModal">
+    Launch spinner
+  </button>
+
+  <dialog role="dialog"
+          class="takeover"
+          id="modal"
+          tabindex="-1"
+          aria-modal="true"
+          aria-labelledby="modal-title">
+    <section>
+      <progressbar tabindex="0" id="modal-title" class="spinner">
+        <span>Loading</span>
+      </progressbar>
+    </section>
+  </dialog>
+
+</slow-app>
