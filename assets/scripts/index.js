@@ -92,7 +92,7 @@ if (!window.HTMLDialogElement) {
 }
 
 if ( $('dialog').length ) {
-    showModal.onclick = () => {
+    $('#showModal').click(function(){
         if (isDialogSupported) {
             modal.showModal();
             // document.body.classList.add("dialog-open");
@@ -102,27 +102,27 @@ if ( $('dialog').length ) {
         // Focus the dialog itself on open
         modal.focus();
         if ( $('dialog').hasClass("takeover") ) {
-            $('#slow-app').attr('aria-busy', "true")
+            $('#really-slow-app').attr('aria-busy', "true")
             setTimeout(function(){
                 modal.close();
-                $('#slow-app').attr('aria-busy', "false")
+                $('#really-slow-app').attr('aria-busy', "false")
 
             }, 10000);
         }
+    });
 
-
-    };
-
-    closeModal.onclick = () => {
-        if (isDialogSupported) {
-            modal.close();
-        } else {
-            modal.removeAttribute("open", "");
-        }
-        setTimeout(function(){
-            showModal.focus();
-        }, 25);
-    };
+    if ( $('#closeModal').length ) {
+        $('#closeModal').click(function(){
+            if (isDialogSupported) {
+                modal.close();
+            } else {
+                modal.removeAttribute("open", "");
+            }
+            setTimeout(function(){
+                showModal.focus();
+            }, 25);
+        });
+    }       
 
     $(document).keydown(function (e) {
         if (e.keyCode == 27) {

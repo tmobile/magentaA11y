@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Progress spinner"
+title:  "Progress bar & spinner"
 description: "How to code and test an accessible progress bar for Web"
 categories: main form
 order: 0
@@ -40,6 +40,7 @@ There are many variations of progressbars, some of which may not need to be a tr
 Support varies by screen reader. It's recommended to add full aria attributes, even when using a native `<progress>` element.
 
 ### Use semantic HTML
+
 This semantic HTML contains all accessibility features by default.
 
 {% highlight html %}
@@ -52,9 +53,10 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
-### Dynamic loading waiting example
+### Inline dynamic loading waiting example
 
-This example dynamically injects progress updates
+This example dynamically injects progress updates that will be read by a screen reader
+
 - `aria-busy="true"` has spotty support, but does indicate that the region is busy
 - `aria-describedby` is allows the current progress to be read when the button is focused
 - `aria-disabled` reinforces that the save action is incomplete
@@ -68,6 +70,16 @@ This example dynamically injects progress updates
 <example>
 {% include /examples/progress-bar-busy.html %}
 </example>
+{:/}
+
+## Full takeover spinner
+
+{% highlight html %}
+{% include /examples/spinner-full.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+{% include /examples/spinner-full.html %}
 {:/}
 
 ## Developer notes
