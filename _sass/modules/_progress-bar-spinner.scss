@@ -1,0 +1,11 @@
+.spinner {
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  width: calc(100% - 2rem);
+  height: 20px;
+  margin: 1rem;
+  box-shadow: 0 0 0 1rem #fff, 0 0 0 calc(1rem + 1px) $color-border-gray;
+  border-radius: 0px;
+
+}

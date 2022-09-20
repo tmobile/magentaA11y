@@ -101,11 +101,14 @@ if ( $('dialog').length ) {
         }
         // Focus the dialog itself on open
         modal.focus();
-        // if ( $('dialog').hasClass("takeover") ) {
-        //     setTimeout(function(){
-        //         modal.close();
-        //     }, 4000);
-        // }
+        if ( $('dialog').hasClass("takeover") ) {
+            $('#slow-app').attr('aria-busy', "true")
+            setTimeout(function(){
+                modal.close();
+                $('#slow-app').attr('aria-busy', "false")
+
+            }, 10000);
+        }
 
 
     };
