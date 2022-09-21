@@ -1,3 +1,4 @@
+// Thanks to  https://css-tricks.com/html5-progress-element/
 progress {
   display: block;
   -webkit-appearance: none;
@@ -26,7 +27,6 @@ progress {
     border-radius: 2px;
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
-
 }
 
 .heartbeat {
@@ -64,14 +64,19 @@ progress {
 
 .spinner {
   display: grid;
+  margin: 0px auto;
   position: relative;
   width: calc(100px + 2rem);
   height: calc(100px + 2rem);
-  border-radius: 100px;
+  border: none;
+  border-radius: 50%;
   background: #fff;
+  color: $color-text;
   text-align: center;
   align-items: center;
-  font-size: 1.25rem;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
 
   &:after {
     content: '';
@@ -84,5 +89,10 @@ progress {
     border: 1rem dotted $color-brand-primary;
     animation:spin 4s linear infinite;
   }
-
+  &::-webkit-progress-bar {
+    box-shadow: none;
+  }
+  &::-webkit-progress-value {
+    background: none;
+  }
 }
