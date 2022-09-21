@@ -34,16 +34,15 @@ gherkin-mobile:
       swipe to browse to a loader
 ---
 
-## Development notes
+## Code examples
 
 - There are many variations of loaders / spinners.
 - While the loader is present, other content on the page should be inert
 
-## Code examples
-
 ### Use semantic HTML
 
-- This semantic HTML contains all accessibility features by default
+- This semantic HTML contains all accessibility features by default by placing it inside a dialog.
+- If content is being loaded slowly behind the spinner inside an `aria-live` region, use `aria-busy="true"` to keep it from being read until the update is complete
 
 {% highlight html %}
 {% include /examples/spinner-full.html %}

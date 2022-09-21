@@ -72,16 +72,6 @@ This example dynamically injects progress updates that will be read by a screen 
 </example>
 {:/}
 
-## Full takeover spinner
-
-{% highlight html %}
-{% include /examples/spinner-full.html %}
-{% endhighlight %}
-
-{::nomarkdown}
-{% include /examples/spinner-full.html %}
-{:/}
-
 ## Developer notes
 
 ### Name
