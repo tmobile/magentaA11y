@@ -71,7 +71,9 @@ Custom listboxes are notoriously difficult to build in an accessible fashion for
 ### Semantic input with datalist autocomplete
 
 - This simple example illustrates all the functionality of a listbox with inline autocomplete in Chrome and Firefox.
-- Note: `datalist` is not fully supported in Safari, but is included in the newest Safari Technology Preview
+  - **This is not production ready code** as its support across browsers is not uniform.
+  - A `datalist` is **not fully supported in Safari**, but is included in the newest Safari Technology Preview as of late 2022
+  - Support and functionality on mobile devices varies
 
 {% highlight html %}
 {% include /examples/input-text-autocomplete.html %}

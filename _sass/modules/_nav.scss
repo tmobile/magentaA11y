@@ -55,7 +55,6 @@ nav {
     }
   }
 
-
   ul {
     display: grid;
     grid-template-columns: 1fr max-content max-content max-content max-content;
@@ -98,7 +97,7 @@ nav {
           @include regular;
         }
         &:hover {
-          box-shadow: inset 0 0 0rem .25rem rgba($color-focus,.4), 0 0 0 .25rem $color-brand-primary;
+          box-shadow: inset 0 0 0rem .25rem rgba($color-focus,.0), 0 -.5rem 0 0rem $color-brand-primary;
         }
       }
       &.bravo {
