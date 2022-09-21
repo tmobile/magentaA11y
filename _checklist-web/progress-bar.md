@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Progress bar & spinner"
+title:  "Progress bar"
 description: "How to code and test an accessible progress bar for Web"
 categories: main form
 order: 0
@@ -37,7 +37,7 @@ gherkin-mobile:
 There are many variations of progressbars, some of which may not need to be a true progress bar at all.
 * [WAI ARIA Multi-page form examples](https://www.w3.org/WAI/tutorials/forms/multi-page/)
 
-Support varies by screen reader. It's recommended to add full aria attributes, even when using a native `<progress>` element.
+Support varies by screen reader. It's recommended to add full aria attributes, even when using a native `<progressbar>` element.
 
 ### Use semantic HTML
 
