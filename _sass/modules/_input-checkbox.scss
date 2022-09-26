@@ -47,6 +47,11 @@ input[type="checkbox"] {
         background-size: 120% 120%;
         background-image: var(--icon-check-white);
       }
+      &:hover {
+        &:before {
+          box-shadow: inset 0 0 0 0 $color-brand-primary, 0 0 0rem .5rem rgba($color-focus,.2);
+        }
+      }
     }
     &:active + label:before {
       transition:  .2s;

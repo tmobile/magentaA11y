@@ -51,11 +51,12 @@ design:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive
-      - criteria: Color is not used as the only means of conveying information (error, success, pressed, etc)
+      - criteria: Color is not used as the only means of conveying information (error, success, pressed, expanded, etc)
   - name: Operable
     list:
       - criteria: The click/tap target area is no smaller than 44x44px
       - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
+      - criteria: Toggle pressed or expanded states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
       - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
   - name: Understandable
