@@ -28,6 +28,10 @@ screenreader:
     Visible label (if any) is grouped or associated with the button in a single swipe
   state: |
     Expresses its state (selected/disabled/dimmed)
+
+settings:
+  text resize: |
+    This element is exempt from text resizing requirements
 ---
 
 ## Developer notes

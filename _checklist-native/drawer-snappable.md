@@ -26,6 +26,10 @@ screenreader:
       Visible label is grouped or associated with controls in a single swipe
   state: |
       Expresses its state (expands/collapses or disabled/dimmed)
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer notes

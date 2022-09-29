@@ -26,6 +26,10 @@ screenreader:
       Visble label can be grouped or associated with the radio button in a single swipe
   state: |
       Expresses its state (disabled/dimmed, iOS: checked/not checked, selected.  Android: checked/not checked)
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ### **Developer Notes**

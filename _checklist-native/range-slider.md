@@ -26,6 +26,10 @@ screenreader:
     Label is read with the input
   state: |
     Expresses its current value
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer Notes

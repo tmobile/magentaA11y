@@ -217,6 +217,33 @@ layout: default
               </table>
             </div>
           </div>
+          
+          {% if page.settings and page.settings != "" %}
+          <div id="step4" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+            <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step3" />
+            <h3 class="h-charlie" itemprop="name">
+              <step-number>4 </step-number>Device OS settings
+            </h3>
+            <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+              <table itemprop="text">
+                <thead>
+                <tr>
+                  <th scope="col">When I use</th>
+                  <th scope="col">I see</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for requirement in page.settings %}
+                  <tr>
+                    <th scope="row">{{ requirement[0] | capitalize  }}</th>
+                    <td>{{ requirement[1] | escape }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {% endif %}
         </div>
       
         {% if page.design and page.design != "" %}

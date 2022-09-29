@@ -28,6 +28,9 @@ screenreader:
   state: |
     Expresses its state (disabled/dimmed)
 
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer notes

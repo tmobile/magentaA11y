@@ -28,6 +28,10 @@ screenreader:
     May identify itself as a menu, sidebar or panel. 
   state: |
     Typically, when open, other content is inert. Expands/collapses, closes/opens states are announced for a menu, sidebar or panel
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer notes

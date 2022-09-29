@@ -24,6 +24,10 @@ screenreader:
     Visible label is grouped or associated with the text input in a single swipe
   state: |
     The input can be disabled/dimmed
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer notes

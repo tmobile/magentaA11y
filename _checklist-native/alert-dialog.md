@@ -28,6 +28,10 @@ screenreader:
     May identify itself as a modal, dialog, drawer, sidebar, panel, popover, menu or alert. Confining the user within the modal communicates the context to the screen reader user that there is a modal present
   state: |
     When open, other content is inert. Expands/collapses, closes/opens states are typically announced for a menu, drawer, sidebar, panel or popover
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 

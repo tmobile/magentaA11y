@@ -26,6 +26,10 @@ screenreader:
     Visible label is grouped or associated with the switch in a single swipe
   state: |
     Express its state (disabled/dimmed, on/off)
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer Notes

@@ -27,6 +27,10 @@ screenreader:
     Visible label (if any) is grouped or associated with the button in a single swipe
   state: |
     Expresses its state (disabled/dimmed)
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer notes

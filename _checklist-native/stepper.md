@@ -29,6 +29,10 @@ screenreader:
     n/a
   state: |
     Expresses its state and stepper value (disabled/dimmed)
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer notes

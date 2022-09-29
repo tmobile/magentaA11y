@@ -26,6 +26,10 @@ screenreader:
     When closed, focus returns to a logical place in the page
   state: |
     Toast remains open until closed by user
+
+settings:
+  text resize: |
+    Text can resize up to 200% without losing information
 ---
 
 ## Developer notes
