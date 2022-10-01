@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Carousel"
+title:  "Carousel / slideshow"
 description: "How to code and test an accessible carousel slideshow wizard"
 categories: main
 order: 2
@@ -8,6 +8,8 @@ order: 2
 keyboard:
   tab: |
     Focus moves to carousel controls (forward, backward, pause/play, stop)
+  arrow-keys: |
+    Advance or reverse the slides
   spacebar: |
     Activates the button
   enter: |
@@ -36,6 +38,10 @@ gherkin-keyboard:
       the spacebar or enter key
     result: |
       the intended action occurs
+  - then:  |
+      the arrow keys
+    result: |
+      the slides advance or reverse
 
 gherkin-mobile:
   - when:  |
@@ -44,13 +50,17 @@ gherkin-mobile:
       doubletap
     result: |
       the intended action occurs
+
+settings:
+  reduced motion:  |
+    Carousel does not auto-advance
 ---
 
 ## UX design notes
 
 Think carefully before you use a carousel or slideshow wizard. Consider another way to present the information.
 
-### Carousels are often a poor design choice
+### Carousels are typically a poor design choice
 
 - As a general rule, [carousels should be avoided](https://shouldiuseacarousel.com/) for critical functionality unless there is a strong business case.
 - People must be highly motivated to engage with a carousel beyond the first slide.
@@ -58,7 +68,18 @@ Think carefully before you use a carousel or slideshow wizard. Consider another 
   - Is it easier to use previous/next buttons?
   - Is it possible to swipe left/right?
   - How many slides are present?
-- A good business case might be a multi-step lead form, but this should always be A/B tested against a traditional scrolling form.
+
+### Okay, fine. Carousels usually suck. Are there any good use cases for a carousel?
+
+Carousels are worth testing against a normal scrolling format when people can generally predict what's in the carousel.
+
+- A multi-step form
+  - This can work because it helps people stay on task.
+- A list of easily recognizable structure, like "US Presidents"
+  - This can work because the scope and contents are predictable.
+- Highlighted customer reviews
+  - This can work to build trust because the contents are predictable and a motivated user seeking social proof may be willing to navigate the carousel.
+
 
 ### Carousels can be a development challenge
 
