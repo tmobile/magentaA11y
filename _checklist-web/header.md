@@ -9,7 +9,9 @@ keyboard:
   skip-links: |
     Focus moves directly to the header or navigation
   tab: |
-    Links and buttons within the header are focusable
+    Nothing, headings are not focusable unless they are actionable
+  arrow-keys: |
+    Headings are browsed
 
 mobile:
   swipe: |

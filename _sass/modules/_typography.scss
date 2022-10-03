@@ -143,6 +143,10 @@ html {
   margin: 1rem 0 1rem 0;
 }
 
+.post-content h4 {
+  @include bold;
+  margin: 1rem 0 .5rem 0;
+}
 
 
 .h-delta {
