@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Navigation menu"
+title:  "Navigation landmark"
 description: "How to code and test an accessible navigation menu for Web"
 categories: header nav footer html
 order: 2

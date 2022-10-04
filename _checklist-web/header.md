@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Header / banner"
+title:  "Header landmark"
 categories: header html
 description: "How to code and test an accessible header for websites"
 order: 2
