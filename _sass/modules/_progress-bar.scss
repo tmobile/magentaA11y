@@ -78,18 +78,10 @@ progress {
   appearance: none;
   box-shadow: none !important;
   outline-offset: .25rem;
+  border-radius: 100px;
+  border: 1rem solid $color-brand-primary;
+  animation:spin 4s linear infinite;
 
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    inset: 0;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    border: 1rem dotted $color-brand-primary;
-    animation:spin 4s linear infinite;
-  }
   &::-webkit-progress-bar {
     box-shadow: none;
   }
