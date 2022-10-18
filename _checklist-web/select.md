@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Dropdown select"
+title:  "Select dropdown"
 description: "How to code and test an accessible select listbox dropdown for the Web"
 categories: form
 
