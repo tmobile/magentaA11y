@@ -22,9 +22,9 @@ screenreader:
   role:  |
     It identifies itself as a text input
   group: |
-    It is indicated if the password is being shown
+     Hints or errors are read after the label (Ex: Password formatting)
   state: |
-    If applicable, it expresses its state (required, disabled / dimmed / unavailable)
+    If applicable, it expresses its state (required, disabled / dimmed / unavailable) and it is indicated if the password is being shown
 
 gherkin-keyboard: 
   - when:  |
@@ -32,7 +32,7 @@ gherkin-keyboard:
     result: |
       focus is strongly visually indicated
   - then:  |
-      the tab key to move focus to the show/hide password
+      the tab key to move focus to the show/hide password feature
     result: |
       its name, role and state
   - then:  |

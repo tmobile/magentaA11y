@@ -69,7 +69,6 @@ title:  "All the things"
 {% include /examples/input-select.html %}
 {:/}
 
-
 ## Star rating
 
 {::nomarkdown}
