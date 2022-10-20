@@ -77,16 +77,10 @@
   transition: $args;
 }
 
-
+// This class is used as a include. It is NOT applied with JS
 .focused {
-  outline: 5px auto Highlight; // For Firefox
   outline: 3px solid $color-focus; // For Chrome
   transition: .2s;
-  @media not all and (min-resolution:.001dpcm) { // for Safari 
-    @supports (-webkit-appearance:none) and (stroke-color:transparent) {
-      outline: auto auto -webkit-focus-ring-color;
-    }
-  }
 }
 
 @mixin focus {

@@ -16,13 +16,12 @@
   position: absolute;
   left: 0;
   width: 1px;
-  height: 1px;
+  height: 40px;
+  line-height: 40px;
   clip: rect(1px, 1px, 1px, 1px);
   margin:0 0 0 0%;
   padding:0 0 0 0%;
   border:0 !important;
-  height: 40px;
-  line-height: 40px;
   overflow: hidden;
   -webkit-transition: all .5s ease-in-out;
   -moz-transition: all .5s ease-in-out;
