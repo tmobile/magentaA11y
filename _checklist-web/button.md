@@ -21,7 +21,7 @@ screenreader:
   group: |
     It indicates if it has popup for listbox or menus
   state: |
-    It expresses its state if applicable (pressed, expanded, disabled/dimmed)
+    It expresses its state if applicable (pressed, expanded, disabled/dimmed/unavailable)
 
 mobile:
   swipe: |
