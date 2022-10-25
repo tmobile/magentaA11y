@@ -80,7 +80,6 @@ Carousels are worth testing against a normal scrolling format when people can ge
 - Highlighted customer reviews
   - This can work to build trust because the contents are predictable and a motivated user seeking social proof may be willing to navigate the carousel.
 
-
 ### Carousels can be a development challenge
 
 - Logical focus order and updates for the screen reader may be complex interactions for developers.
