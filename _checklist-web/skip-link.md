@@ -10,7 +10,7 @@ keyboard:
   tab: |
     Focus moves to the skip link
   enter: |
-    Activates the link, focus/tabindex moves directly to the targeted element     
+    Activates the link, focus/tabindex moves directly to the targeted element
 
 mobile:
   swipe: |

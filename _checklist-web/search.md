@@ -12,7 +12,7 @@ keyboard:
     Search button is activated
   enter: |
     Search is activated
-      
+
 mobile:
   swipe: |
     Focus moves to the search text input and search button
