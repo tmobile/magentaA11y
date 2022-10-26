@@ -49,6 +49,28 @@ gherkin-mobile:
       doubletap with the select in focus
     result: |
       the picker/spinner opens
+
+design:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as interactive
+      - criteria: Color is not used as the only means of conveying information (error, success, etc)
+      - criteria: Doesn't rely on placeholder text as label or hint text
+  - name: Operable
+    list:
+      - criteria: The click/tap target area is no smaller than 44x44px
+      - criteria: The disabled states have a 3:1 minimum contrast ratio against default
+      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+  - name: Understandable
+    list:
+      - criteria: Its purpose is clear in the context of the whole page
+      - criteria: It has the correct semantic meaning
+      - criteria: Avoids very long option names
+      - criteria: Doesn't use the same words at the beginning of a set of options
+  - name: Robust
+    list:
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Code examples
