@@ -7,7 +7,7 @@ categories: form
 keyboard:
   tab: |
     Focus moves visibly to the textarea unless it's disabled
-      
+
 mobile:
   swipe: |
     Focus moves to the textarea
