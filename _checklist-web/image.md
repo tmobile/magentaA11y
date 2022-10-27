@@ -22,7 +22,7 @@ screenreader:
 
 gherkin-keyboard: 
   - when:  |
-      the arrow key to browse to an image
+      the arrow keys to browse to an image
     result: |
       the image comes into view
 
