@@ -5,30 +5,24 @@ description: "How to code and test accessible images the Web"
 categories: main
 
 keyboard:
-  tab: |
-    Nothing, images themselves are not focusable (unless it is a control)
   arrow-keys: |
-    Screen reader reads the alt text or ignores decorative images
+    Screen reader reads the alt text (ignored if decorative)
 
 mobile:
   swipe: |
-    The screenreader reads the alt text (or ignores decorative images)
+    The screenreader reads the alt text (ignored if decorative)
 
 screenreader:
   name:  |
-    The content of the image alt text is clear (or ignored if decorative)
+    The content of the image alt text is clear (ignored if decorative)
   role:  |
-    It identifies its role as an image or graphic (or ignored if decorative)
+    It identifies its role as an image or graphic (ignored if decorative)
 
 gherkin-keyboard: 
   - when:  |
       the arrow keys to browse to an image
     result: |
       the image comes into view
-  - when:  |
-      the tab key
-    result: |
-      nothing, images themselves are not focusable (unless it is a control)
 
 gherkin-mobile:
   - when:  |
