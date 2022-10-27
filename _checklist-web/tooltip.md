@@ -26,7 +26,20 @@ gherkin-keyboard:
 gherkin-mobile:
   - when:  |
       swipe
-      
+
+design:
+  - name: Perceivable
+    list:
+      - criteria: Nothing to perceive because we don't use tooltips 
+  - name: Operable
+    list:
+      - criteria: No need to operate because we don't use tooltips 
+  - name: Understandable
+    list:
+      - criteria: The rest of the UI is understandable so we don't need tooltips to explain it
+  - name: Robust
+    list:
+      - criteria: The design is robust because it doesn't rely on tooltips
 ---
 
 ## Code and design examples
