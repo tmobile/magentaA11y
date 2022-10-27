@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Textarea"
-description: "How to code and test an accessible textarea for Web"
+title:  "Textarea multiline input"
+description: "How to code and test an accessible textarea multiline input for Web"
 categories: form
 
 keyboard:
