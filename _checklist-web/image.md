@@ -12,13 +12,13 @@ keyboard:
 
 mobile:
   swipe: |
-    The screenreader reads the alt text
+    The screenreader reads the alt text (or ignores decorative images)
 
 screenreader:
   name:  |
-    The content of the image alt text is clear
+    The content of the image alt text is clear (or ignored if decorative)
   role:  |
-    It dentifies its role as an image or graphic (AND the role is NOT included in the alt text)
+    It identifies its role as an image or graphic (or ignored if decorative)
 
 gherkin-keyboard: 
   - when:  |
