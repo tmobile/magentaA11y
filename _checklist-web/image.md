@@ -6,7 +6,7 @@ categories: main
 
 keyboard:
   tab: |
-    Nothing, images themselves are not be focusable (unless it is a control)
+    Nothing, images themselves are not focusable (unless it is a control)
   arrow-keys: |
     Screen reader reads the alt text or ignores decorative images
 
@@ -25,6 +25,10 @@ gherkin-keyboard:
       the arrow keys to browse to an image
     result: |
       the image comes into view
+  - when:  |
+      the tab key
+    result: |
+      nothing, images themselves are not focusable (unless it is a control)
 
 gherkin-mobile:
   - when:  |
