@@ -58,6 +58,7 @@ design:
       - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
   - name: Understandable
     list:
+      - criteria: There are no other interactive elements inside the label
       - criteria: Its purpose is clear in the context of the whole page
   - name: Robust
     list:
