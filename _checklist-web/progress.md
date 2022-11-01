@@ -1,21 +1,21 @@
 ---
 layout: entry
-title:  "Progress bar"
-description: "How to code and test an accessible progress bar for Web"
+title:  "Progress bar / spinner"
+description: "How to code and test an accessible progress bar, loader or spinner for Web"
 categories: main form
 order: 0
 
 keyboard:
   arrow keys: |
-    The progress bar is able to be browsed
+    Content within the progress indicator is browsed in logical order
 
 mobile:
   swipe: |
-    Reads the progress bar
+    Content within the progress indicator is browsed in logical order
 
 screenreader:
   name:  |
-    The progress bar's purpose is clear
+    The progress indicator purpose is clear
   role:  |
     It identifies itself as some kind of progress indicator
   state:  |
@@ -34,10 +34,13 @@ gherkin-mobile:
 
 ## Code examples
 
-There are many variations of progressbars, some of which may not need to be a true progress bar at all.
-* [WAI ARIA Multi-page form examples](https://www.w3.org/WAI/tutorials/forms/multi-page/)
+### Progress bar
 
-Support varies by screen reader. It's recommended to add full aria attributes, even when using a native `<progressbar>` element.
+There are many variations of progress bars and loading spinners, some of which may not need to be a true progress bar at all.
+
+- [WAI ARIA Multi-page form examples](https://www.w3.org/WAI/tutorials/forms/multi-page/)
+
+Support varies by screen reader. It's recommended to add full aria attributes, even when using a native `<progress>` element.
 
 ### Use semantic HTML
 
@@ -50,6 +53,30 @@ This semantic HTML contains all accessibility features by default.
 {::nomarkdown}
 <example>
 {% include /examples/progress-bar.html %}
+</example>
+{:/}
+
+### Spinner loading takeover
+
+- There are many variations of loaders / spinners.
+- While a takeover spinner modal is present, other content on the page should be inert
+
+#### Use semantic HTML
+
+- This semantic HTML contains all accessibility features using a dialog.
+  - The `progress` element can be used to describe the state
+
+#### Ensure content is ready before being available
+
+- If content is being loaded slowly behind the spinner inside an `aria-live` region, use `aria-busy="true"` to keep it from being read until the update is complete
+
+{% highlight html %}
+{% include /examples/spinner-full.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/spinner-full.html %}
 </example>
 {:/}
 
