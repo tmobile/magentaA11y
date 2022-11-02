@@ -22,30 +22,43 @@
     grid-row: 2;
   }
 
+  .stepper-overlay {
+    grid-column: 2 / span 1;
+    grid-row: 2;
+    justify-self: stretch;
+    font-family: monospace;
+    line-height: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    z-index: 2;
+    pointer-events: none;
+    &:after {
+      justify-self: stretch;
+      display: block;
+      content: ''attr(data-selected)'';
+    }
+  }
+
   select[name="stepper-input"] {
     display: inline;
     position: relative;
     height: 3rem;
+    appearance: none;
     //text-indent: .875rem;
     overflow: visible;
     background: none;
     margin: 0px;
     padding: 0;
     border: none;
-    line-height: 3rem;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
+
     grid-column: 2 / span 1;
     grid-row: 2;
     justify-self: stretch;
     font-family: monospace;
     transition: 0s;
 
-    &[data-selected='10'],
-    &[data-selected='11'] {
-      //text-indent: .25rem;
-    }
     &:focus {
       outline: .25rem solid rgba($color-focus, .5);
       outline-offset: 0rem;

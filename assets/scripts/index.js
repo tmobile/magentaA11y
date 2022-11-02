@@ -138,14 +138,15 @@ if ( $('dialog').length ) {
     });
 }
 
-
-
 $("[name='stepper-input']").on('change', function() {
+    var overlay = $(this).parents(".stepper").find("#stepper-overlay");
     var val = parseInt($(this).val());
     $(this).attr('data-selected', val);
+    overlay.attr('data-selected', val);
 });
 
 $(".minus").click(function(){
+    var overlay = $(this).parents(".stepper").find("#stepper-overlay");
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var min = $(this).parents(".stepper").find("[name=stepper-input]").attr('min');
     var val = parseInt(inpt.val());
@@ -154,15 +155,18 @@ $(".minus").click(function(){
     if ( val == min ) return;
     inpt.val(val-1);
     inpt.attr('data-selected', val-1);
+    overlay.attr('data-selected', val-1);
 });
 
 $(".plus").click(function(){
+    var overlay = $(this).parents(".stepper").find("#stepper-overlay");
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var max = $(this).parents(".stepper").find("[name=stepper-input]").attr('max');
     var val = parseInt(inpt.val());
     if ( val == max ) return;
     inpt.val(val+1);
     inpt.attr('data-selected', val+1);
+    overlay.attr('data-selected', val+1);
 });
 
 

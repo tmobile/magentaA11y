@@ -69,12 +69,12 @@ This component is useful for small-ish selections. If the max count is more than
 
 
 {% highlight html %}
-{% include /examples/input-number-stepper.html %}
+{% include /examples/input-select-stepper.html %}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/input-number-stepper.html %}
+{% include /examples/input-select-stepper.html %}
 </example>
 {:/}
 
