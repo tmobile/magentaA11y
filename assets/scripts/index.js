@@ -386,11 +386,16 @@ $(".radio-filter-label").click(function(event){
     }
 });
  
-$(document).on('input', '#cowbell', function() {
-    $('#cowbellValue').val( $(this).val() );
+$(document).on('input', '#cowbell-range', function() {
+    $('#cowbell-range-value').val( $(this).val() );
+});
+
+$(document).on('change', '#cowbell-range-value', function() {
+    $('#cowbell-range').val( $(this).val() );
 });
 
 
+// Let's start converting jquery to JS
 const textarea = document.getElementById('message');
 if(textarea) {
     const chars = document.getElementById('currentChars');

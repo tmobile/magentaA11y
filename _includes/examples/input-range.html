@@ -1,15 +1,17 @@
 <div class="range-group">
+  <!-- Input hidden from the screen reader 
+    and keyboard to avoid repetition -->
   <input tabindex="-1" 
           value="10" 
           aria-hidden="true"
           class="range-value" 
-          id="cowbellValue">
+          id="cowbell-range-value">
   <div>
-    <label for="cowbell">
+    <label for="cowbell-range">
       How much cowbell?
     </label>
     <input type="range"
-      id="cowbell"
+      id="cowbell-range"
       name="cowbell"
       min="0"
       max="11"
