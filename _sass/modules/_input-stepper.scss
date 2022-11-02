@@ -24,10 +24,11 @@
   .stepper-overlay {
     grid-column: 2 / span 1;
     grid-row: 2;
+    min-width: 4rem;
     justify-self: stretch;
     font-family: monospace;
     line-height: 3rem;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     text-align: center;
     background-color: #fff;

@@ -2,7 +2,6 @@
 layout: entry
 title:  "Stepper input"
 description: "How to code and test an accessible stepper input"
-
 categories: form
 
 keyboard:
