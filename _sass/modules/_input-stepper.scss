@@ -1,12 +1,10 @@
 .stepper {
-  display: grid;
+  display: inline-grid;
   width: auto;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: .5rem;
   padding: 1rem;
   background: #fff;
-  max-width: 12rem;
-
   label {
     grid-column: 1 / span 3;
   }
@@ -14,12 +12,13 @@
   .minus {
     grid-column: 1 / span 1;
     grid-row: 2;
-
+    justify-self: center;
   }
   
   .plus {
     grid-column: 3 / span 1;
     grid-row: 2;
+    justify-self: center;
   }
 
   .stepper-overlay {
@@ -45,8 +44,6 @@
     display: inline;
     position: relative;
     height: 3rem;
-    appearance: none;
-    //text-indent: .875rem;
     appearance: none;
     overflow: visible;
     background: none;
