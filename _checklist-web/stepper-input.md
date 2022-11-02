@@ -57,8 +57,6 @@ gherkin-mobile:
       doubletap with the select in focus
     result: |
       the picker/spinner opens
-
-
 ---
 
 ## Code examples
@@ -66,7 +64,6 @@ gherkin-mobile:
 ### Speciality stepper integer input
 
 This component is useful for small-ish selections. If the max count is more than 20, this component will be cumbersome for people using a mouse.
-
 
 {% highlight html %}
 {% include /examples/input-select-stepper.html %}
@@ -86,11 +83,7 @@ Notice that the stepper buttons are hidden from the screen reader because it's a
 
 Using a select also eliminates any issues with the update being read by the screenreader on button press.
 
-### Other attempts
+### Notable failed prototype attempts
 
-- Using a `input type="number"` with its built in stepper is also simple, can be similarly styled, but NVDA can't read number input labels
-- Wrapping a `input type="text"` with `aria-live="assertive"` isn't reliablly output across all screenreaders on change events
-
-### Other possible options
-
-If an unlimited number of options is required, using a normal text input with added controls will work, but a hidden element using `aria-live="assertive` will be required for the screenreader user.
+- Do not use a `input type="number"` — NVDA doesn't support number inputs
+- Wrapping a `input type="text"` with `aria-live="assertive"` isn't reliably output across all screen readers on change events
