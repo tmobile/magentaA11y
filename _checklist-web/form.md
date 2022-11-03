@@ -2,7 +2,7 @@
 layout: entry
 title:  "Form"
 description: "How to code and test an accessible text input for Web"
-categories: form
+categories: form html
 order: 1
 
 keyboard:
