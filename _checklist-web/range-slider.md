@@ -9,14 +9,6 @@ keyboard:
     Focus moves visibly to the input
   arrow-keys: |
     Increase / decrease value one step
-  page-up: |
-    Increases slider value
-  page-down: |
-    Decreases slider value
-  home: |
-    Sets slider to its minimum value.
-  end: |
-    Sets slider to its maximum value.
 
 mobile:
   swipe: |
@@ -45,10 +37,6 @@ gherkin-keyboard:
       the up/down/left/right arrow keys
     result: |
       the value is changed one step
-  - then:  |
-      the page up/page down keys
-    result: |
-      the value is changed up or down
 
 gherkin-mobile:
   - when:  |
