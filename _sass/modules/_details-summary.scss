@@ -27,7 +27,12 @@ details {
       display:none;
     }
     &:before {
-      content: '';
+      content: 'Collapsed';
+      @include break($break-small) {
+        content: '';
+      }
+      font-size: 1px;
+      color: transparent;
       display: block;
       position: absolute;
       top: 1rem;
@@ -79,6 +84,10 @@ details {
       @include ripple;
   
       &:before {
+        content: 'Expanded'; // iOS Voiceover doesn't support state
+        @include break($break-small) {
+          content: '';
+        }
         transform: rotate(180deg);
         background-position: center center;
       }
