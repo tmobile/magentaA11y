@@ -48,7 +48,7 @@ gherkin-keyboard:
   - then:  |
       the page up/page down keys
     result: |
-      the value is changed one step
+      the value is changed up or down
 
 gherkin-mobile:
   - when:  |
