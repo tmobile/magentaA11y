@@ -34,7 +34,7 @@ screenreader:
   group: |
     Its label is read with the input
   state: |
-    It its current value
+    Its current value
 
 gherkin-keyboard: 
   - when:  |
