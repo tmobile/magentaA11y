@@ -139,6 +139,23 @@ layout: default
                 {% endfor %}
               </ul>
             </div>
+            {% if page.settings and page.settings != "" %} 
+              <div id="step4" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
+                <h3 class="h-charlie" itemprop="name">
+                  <step-number>4</step-number> Device settings
+                </h3>
+                <ul class="gherkin-list">
+                  {% for requirement in page.settings %}
+                      <li itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
+                        <div itemprop="text">
+                          <strong class="uppercase">When</strong> I use <span class="lowercase">{{ requirement[0] | capitalize  }}</span>
+                          <strong>I SEE</strong> <span class="lowercase">{{ requirement[1] | escape }}</span>
+                        </div>
+                      </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
           </div>
         {% endif %}
 
@@ -222,7 +239,7 @@ layout: default
           <div id="step4" itemprop="step" itemscope itemtype="http://schema.org/HowToStep">
             <link itemprop="url" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace:'index.html',''}}#step3" />
             <h3 class="h-charlie" itemprop="name">
-              <step-number>4 </step-number>Device OS settings
+              <step-number>4 </step-number>Device settings
             </h3>
             <div itemprop="itemListElement" itemscope itemtype="http://schema.org/HowToDirection">
               <table itemprop="text">
@@ -235,8 +252,8 @@ layout: default
                 <tbody>
                 {% for requirement in page.settings %}
                   <tr>
-                    <th scope="row">{{ requirement[0] | capitalize  }}</th>
-                    <td>{{ requirement[1] | escape }}</td>
+                    <th scope="row">{{ requirement[0] | capitalize | escape }}</th>
+                    <td>{{ requirement[1] | capitalize | escape }}</td>
                   </tr>
                 {% endfor %}
                 </tbody>

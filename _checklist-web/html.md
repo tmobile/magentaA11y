@@ -31,14 +31,17 @@ gherkin-keyboard:
     result: |
       focus is strongly visually indicated on the first interactive component
 
-
 gherkin-mobile:
   - when:  |
       swipe to enter the web browser window
   - then: |
       change orientations
     result: |
-      content is accessible in landscape or portrait orientation       
+      content is accessible in landscape or portrait orientation
+
+settings:
+  zoom/pinch: |
+    text can resize up to 200% without losing information
 ---
 ## Developer notes
 

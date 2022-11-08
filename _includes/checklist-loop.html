@@ -59,8 +59,12 @@ GIVEN THAT I am on a page with {% if firstLetter == 'a' or firstLetter== 'e' or 
 {% for action in page.gherkin-mobile offset:1 %}
 {% if action and action != "" %}- {{ action.first[0] | upcase  }} when I {{ action.first[1] | strip_newlines | strip_html }} I HEAR {{ action.result | strip_newlines | strip_html }}{% endif -%}
 {%- endfor %}
-{% endcapture %}
 
+{% if page.settings and page.settings != "" -%}
+4. Device OS settings
+{% for output in page.settings %}- WHEN I use {{ output[0] }} THEN I see {{ output[1] | escape }}{% endfor %}
+{% endif %}
+{% endcapture %}
 
 {% capture gherkin-clean %}
 {{ gherkin | strip | lstrip  }}

@@ -49,10 +49,10 @@ gherkin-mobile:
       doubletap to activate control
     result: |
       the intended action occurs
-  - then:  |
-      the device's reduced motion settings
-    result: |
-      the animation is disabled or reduced
+
+settings:
+  reduced motion: |
+    Large motion, animations or effects are reduced or eliminated
 
 design:
   - name: Perceivable
@@ -77,8 +77,8 @@ design:
 ## Developer notes
 
 ### Animations (like gifs) can be accessible if:
-- they are set to stop after 5 seconds or 
-- if users are presented with a way to pause it
+- it automatically stops after 5 seconds or 
+- if users are presented with an intuitive way to pause it
 
 ## Code examples
 
