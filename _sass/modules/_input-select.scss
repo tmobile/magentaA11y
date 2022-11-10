@@ -23,7 +23,7 @@
     height: 2rem;
     border-radius: 2rem;
     background-color: transparent;
-    background-image: var(--icon-chevron-gray);
+    background-image: var(--icon-chevron-dark);
     opacity: 1;
     background-size: 1.25rem 1.25rem;
     background-position: center center;
@@ -36,8 +36,16 @@
   &:hover {
     &:before {
       box-shadow: 0 0 0rem .5rem rgba($color-focus,.2);
-      background-image: var(--icon-chevron-dark);
     }
+  }
+
+  &:has(select:disabled),
+  &:has(select[aria-disabled="true"]) {
+    &:before {
+      background-image: var(--icon-chevron-gray);
+      opacity: .5;
+      box-shadow: none;
+    }  
   }
 
   label {
@@ -83,6 +91,12 @@
     option {
       font-weight: normal;
     }
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      color: $color-text;
+    }
+
   }
   // Remove MS down arrow on the select
   select::-ms-expand {

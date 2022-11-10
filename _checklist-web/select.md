@@ -91,6 +91,35 @@ design:
 </example>
 {:/}
 
+### Focusable disabled select (preferred)
+
+This select is focusable with all options disabled.
+
+{% highlight html %}
+{% include /examples/input-select-disabled-focusable.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-select-disabled-focusable.html %}
+</example>
+{:/}
+
+
+### Disabled select
+
+This select is completely disabled and not focusable, making it harder to discover for the screen reader.
+
+{% highlight html %}
+{% include /examples/input-select-disabled.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-select-disabled.html %}
+</example>
+{:/}
+
 ### Custom dropdown select elements: Just don't.
 
 Custom dropdown selects are [notoriously difficult](https://www.24a11y.com/2019/select-your-poison/) to make screen reader accessible. 
