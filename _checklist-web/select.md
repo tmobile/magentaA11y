@@ -26,7 +26,7 @@ screenreader:
   group: |
     Its label is read with the option
   state: |
-    It indicates which option is selected 
+    It indicates which option is selected and if disabled/dimmed/unavailable
     
 gherkin-keyboard: 
   - when:  |
@@ -48,7 +48,7 @@ gherkin-mobile:
   - then:  |
       doubletap with the select in focus
     result: |
-      the picker/spinner opens
+      the options can be selected
 
 design:
   - name: Perceivable

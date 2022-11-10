@@ -43,10 +43,15 @@
   &:has(select[aria-disabled="true"]) {
     &:before {
       background-image: var(--icon-chevron-gray);
-      opacity: .5;
+    }  
+  }
+
+  &:has(select:disabled) {
+    &:before {
       box-shadow: none;
     }  
   }
+
 
   label {
     grid-column: span 2;
