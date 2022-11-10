@@ -45,7 +45,26 @@ gherkin-mobile:
   - when:  |
       swipe to focus on a search input
 
-
+design:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as interactive
+      - criteria: Type size is optically no smaller than 16px Helvetica
+      - criteria: Text/iconography has a 4.5:1 minimum contrast ratio
+      - criteria: Color is not used as the only means of conveying information or state (error, success, focus, disabled etc)
+  - name: Operable
+    list:
+      - criteria: Any click/tap target area is no smaller than 44x44px
+      - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+      - criteria: A search submit button is also available and meets button design criteria
+  - name: Understandable
+    list:
+      - criteria: The search scope should be clear in the context of the whole page
+      - criteria: The width of the input accommodates/affords the intended input, reinforcing its purpose
+  - name: Robust
+    list:
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Code examples

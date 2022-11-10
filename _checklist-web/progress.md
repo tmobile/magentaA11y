@@ -30,6 +30,24 @@ gherkin-keyboard:
 gherkin-mobile:
   - when:  |
       swipe to browse to a progress bar
+
+design:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as a progress indicator
+      - criteria: State indicator or any text has a 4.5:1 minimum contrast ratio
+      - criteria: Color is not used as the only means of conveying state
+  - name: Operable
+    list:
+      - criteria: If focusable, the focus indication has a minimum area equal to the width of the element and 2px in height
+      - criteria: If focusable, the focus state has a 3:1 minimum contrast ratio against default
+  - name: Understandable
+    list:
+      - criteria: The purpose must be clear in the context of the whole page
+      - criteria: The name and state for screen readers must fit the context
+  - name: Robust
+    list:
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Code examples
@@ -59,7 +77,7 @@ This semantic HTML contains all accessibility features by default.
 ### Spinner loading takeover
 
 - There are many variations of loaders / spinners.
-- While a takeover spinner modal is present, other content on the page should be inert
+- While a takeover spinner modal is present, other content on the page must be inert
 
 #### Use semantic HTML
 
