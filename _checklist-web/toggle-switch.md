@@ -9,7 +9,7 @@ keyboard:
     Focus visibly moves to the switch
   spacebar: |
     Toggles the switch between states
-      
+
 mobile:
   swipe: |
     Focus moves to the element, expresses its state
@@ -63,14 +63,12 @@ design:
       - criteria: Meets criteria across platforms, devices and viewports
 ---
 
-
 ## Code examples
 
 ### Use as much semantic HTML as possible
 
 - This semantic HTML contains all accessibility features by default, and only requires the addition of `role="switch"`. 
 - It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_input-switch.scss) to create the toggle switch indicator, no Javascript
-
 
 {% highlight html %}
 {% include /examples/input-switch.html %}
@@ -109,15 +107,14 @@ Using the `disabled` attribute will prevent the input from being clickable, but 
 <label for="deltaSwitch">Delta</label>
 {% endhighlight %}
 
-
-### Using a `<button>`
+### Using a `<button>` as a switch
 
 This `<button>` toggle has focus and keyboard criteria built in. It requires the addition of `role="switch"` and scripting to toggle `aria-checked="true/false"`.
 
 {% highlight html %}
 <button role="switch" aria-checked="true">
   Alpha
-</div>
+</button>
 {% endhighlight %}
 
 ### When you can't use semantic HTML
@@ -133,14 +130,17 @@ This custom switch requires extra attributes and keyboard event listeners.
 ## Developer notes
 
 ### Name
+
 - `label` text should describe the input purpose
 - Use `aria-describedby="hint-id"` for hints or additional descriptions
 - `aria-label="Switch purpose"` can also be used (as a last resort)
 
 ### Role
+
 - Use `role="switch"`
 
 ### Group
+
 - Semantic HTML
     - `<fieldset>` should wrap a switch group
     - `<legend>` should describe the group's purpose
@@ -151,6 +151,7 @@ This custom switch requires extra attributes and keyboard event listeners.
     - `aria-label="Group purpose"` can also be used if there's no label with an ID
 
 ### State
+
 - Semantic HTML
     - Use `checked` for native HTML
     - Use the `disabled` state for inactive switches
@@ -160,4 +161,5 @@ This custom switch requires extra attributes and keyboard event listeners.
     - Use `aria-readonly="true"` to declare a switch can't be edited
 
 ### Focus
+
 - Focus must be visible
