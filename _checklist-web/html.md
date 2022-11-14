@@ -21,7 +21,7 @@ mobile:
 
 screenreader:
   name:  |
-    The page has a unique title in the browser tab
+    The page has a unique logical title in the browser tab
   role:  |
     Major landmarks are discoverable with screenreader shortcuts: header/banner, navigation, main and footer/content info landmarks
 
@@ -29,11 +29,11 @@ gherkin-keyboard:
   - when:  |
       the keyboard to open a new web page
     result: |
-      focus is strongly visually indicated on the first interactive component
+      the page has a unique logical title in the browser tab
 
 gherkin-mobile:
   - when:  |
-      swipe to enter from the web browser tab
+      swipe to enter from the web browser tabs
   - then: |
       change orientations
     result: |
