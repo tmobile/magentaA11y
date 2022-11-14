@@ -53,14 +53,14 @@ gherkin-mobile:
 
 settings:
   reduced motion:  |
-    Carousel does not auto-advance
+    Carousel does not auto-advance, motion transitions are disabled
 ---
 
 ## UX design notes
 
 Think carefully before you use a carousel or slideshow wizard. Consider another way to present the information.
 
-### Carousels are typically a poor design choice
+### Carousels are almost always a poor design choice
 
 - As a general rule, [carousels should be avoided](https://shouldiuseacarousel.com/) for critical functionality unless there is a strong business case.
 - People must be highly motivated to engage with a carousel beyond the first slide.
@@ -69,7 +69,7 @@ Think carefully before you use a carousel or slideshow wizard. Consider another 
   - Is it possible to swipe left/right?
   - How many slides are present?
 
-### Okay, fine. Carousels usually suck. Are there any good use cases for a carousel?
+### Are there any good use cases for a carousel?
 
 Carousels are worth testing against a normal scrolling format when people can generally predict what's in the carousel.
 
@@ -80,9 +80,10 @@ Carousels are worth testing against a normal scrolling format when people can ge
 - Highlighted customer reviews
   - This can work to build trust because the contents are predictable and a motivated user seeking social proof may be willing to navigate the carousel.
 
-### Carousels can be a development challenge
+### Avoid auto-advance carousels
 
-- Logical focus order and updates for the screen reader may be complex interactions for developers.
+- This is distracting for people with attention differences
+- Live carousel updates are noisy for the screen reader 
 
 ## Code examples
 
