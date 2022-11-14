@@ -1,5 +1,21 @@
-<output tabindex="0">
-  The answer to the question of life,
-  the universe and everything is: 
-  42
-</output>
+<form oninput="result.value=parseInt(rent.value)+parseInt(utilities.value)">
+  <fieldset>
+    <legend>
+      Calculate monthly expenses
+    </legend>
+    
+    <label for="rent">Monthly rent</label>
+    <input type="text" id="rent" inputmode="numeric" value="2500" maxlength="4">
+
+    <label for="utilities">Monthly utilities</label>
+    <input type="text" id="utilities" inputmode="numeric" value="500" maxlength="4">
+    <label for="result">Total</label>
+    <output 
+      id="result" 
+      for="rent utilities" 
+      tabindex="0">
+      3000
+    </output>
+  </fieldset>
+
+</form>

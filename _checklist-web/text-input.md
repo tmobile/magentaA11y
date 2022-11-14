@@ -144,12 +144,10 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
-
-
 ### Output
 
+- Screenreader support varies
 - `output` can be used for a dynamic content that changes based on user inputs (example: a calculator).
-- Screenreader support varies, so placing the label inside the output seems to work best
 - Alternatively, using a custom element with role="status" will achieve more predictable results
 
 {% highlight html %}
