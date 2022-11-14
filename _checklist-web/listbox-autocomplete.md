@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Autocomplete text input with listbox"
-description: "How to code and test an accessible listbox with inline autocomplete text input for the Web"
+title:  "Autocomplete input with listbox"
+description: "How to test an accessible listbox with inline autocomplete text input for the Web"
 categories: form
      
 keyboard:

@@ -144,22 +144,6 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {:/}
 
-### Output
-
-- Screenreader support varies
-- `output` can be used for a dynamic content that changes based on user inputs (example: a calculator).
-- Alternatively, using a custom element with role="status" will achieve more predictable results
-
-{% highlight html %}
-{% include /examples/output.html %}
-{% endhighlight %}
-
-{::nomarkdown}
-<example>
-{% include /examples/output.html %}
-</example>
-{:/}
-
 ### Group of inputs
 
 After the screenreader focuses on each input, it will read the group name "Enter your personal information" after the input.

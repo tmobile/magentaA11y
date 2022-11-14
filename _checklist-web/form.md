@@ -131,3 +131,19 @@ Form field width should afford the user space to enter the characters that will 
 {% highlight html %}
 {% include /examples/form-contact.html %}
 {% endhighlight %}
+
+### Output from inputs
+
+- Screenreader support varies
+- `output` can be used for a dynamic content that changes based on user inputs (example: a calculator).
+- Alternatively, using a custom element with role="status" will achieve more predictable results
+
+{% highlight html %}
+{% include /examples/output.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/output.html %}
+</example>
+{:/}
