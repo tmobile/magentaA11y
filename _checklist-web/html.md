@@ -21,19 +21,19 @@ mobile:
 
 screenreader:
   name:  |
-    The page has a unique title that is read on load
+    The page has a unique title in the browser tab
   role:  |
     Major landmarks are discoverable with screenreader shortcuts: header/banner, navigation, main and footer/content info landmarks
 
 gherkin-keyboard: 
   - when:  |
-      the tab key to enter the web browser window
+      the keyboard to open a new web page
     result: |
       focus is strongly visually indicated on the first interactive component
 
 gherkin-mobile:
   - when:  |
-      swipe to enter the web browser window
+      swipe to enter from the web browser tab
   - then: |
       change orientations
     result: |
