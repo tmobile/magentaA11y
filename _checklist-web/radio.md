@@ -24,7 +24,7 @@ screenreader:
   role:  |
     It identifies itself as a radio option
   group: |
-    Each option has an associated label and the radio group name
+    Hints or errors are read after the label and related inputs include a group name (ex: Account settings)
   state: |
     It expresses its state (selected, checked, disabled)
 

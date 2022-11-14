@@ -22,7 +22,7 @@ screenreader:
   role:  |
     It identifies its role of switch, toggle button or checkbox
   group: |
-    Related switches output a group name after the label (Ex: Account settings)
+    Hints or errors are read after the label and related inputs include a group name (ex: Account settings)
   state: |
     It expresses its state (on/off, checked/unchecked, disabled/dimmed)
 

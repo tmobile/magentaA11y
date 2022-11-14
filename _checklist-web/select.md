@@ -24,7 +24,7 @@ screenreader:
   role:  |
     It identifies itself as a select, popup, menu/submenu, listbox or combobox
   group: |
-    Its label is read with the option
+    Hints or errors are read after the label and related inputs include a group name (ex: Account settings)
   state: |
     It indicates which option is selected and if disabled/dimmed/unavailable
     
