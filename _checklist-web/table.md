@@ -62,7 +62,7 @@ If it's required to display tabular data without using a `<table>` element, attr
 {% highlight html %}
 <div role="table" aria-describedby="table-desc">
   <div id="table-desc">
-    NATO Phoenetic Alphabet
+    Nato phonetic alphabet
   </div>
   <div role="rowgroup">
     <div role="row">
