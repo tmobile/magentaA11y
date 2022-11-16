@@ -264,7 +264,7 @@ layout: default
         </div>
       
         {% if page.design and page.design != "" %}
-          <div class="condensed-criteria tab-panel inert" id="design-panel" tabindex="0" role="region" aria-label="Condensed testing instructions" {% if page.url contains "native" %}style="display:block;"{% endif %}>
+          <div class="condensed-criteria tab-panel inert" id="design-panel" tabindex="0" role="region" aria-label="WCAG success criteria" {% if page.url contains "native" %}style="display:block;"{% endif %}>
             <p>
             {% assign firstLetter = page.title | downcase | slice: 0 %}
             {% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u' %}
@@ -273,7 +273,7 @@ layout: default
             A
             {% endif %}
             {{ page.title | escape | downcase }}
-            must meet these design principles.
+            must meet these WCAG principles.
             </p>
             {% assign i = 0 %}
             {% for checklist in page.design %}  

@@ -1,11 +1,11 @@
 <div class="tabs" role="radiogroup" aria-label="Choose your test instructions">
-  <input type="radio" aria-label="Show gherkin story acceptance criteria" class="tab" aria-controls="gherkin-panel" id="gherkin" name="criteria" checked>
+  <input type="radio" aria-label="Show gherkin acceptance criteria" class="tab" aria-controls="gherkin-panel" id="gherkin" name="criteria" checked>
   <label for="gherkin">Gherkin</label>
   <input type="radio" aria-label="Show condensed testing instructions" class="tab" aria-controls="condensed-panel" id="condensed" name="criteria">
   <label for="condensed">Condensed</label>
   {% if page.design and page.design != "" %}
 
-  <input type="radio" aria-label="Show design criteria" class="tab" aria-controls="design-panel" id="design" name="criteria">
-  <label for="design">Design</label>
+  <input type="radio" aria-label="Show WCAG principles" class="tab" aria-controls="design-panel" id="design" name="criteria">
+  <label for="design">WCAG</label>
   {% endif %}
 </div>
