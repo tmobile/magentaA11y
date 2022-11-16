@@ -54,7 +54,7 @@ settings:
   reduced motion: |
     Large motion, animations or effects are reduced or eliminated
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Color is not used as the only means of conveying information (error, success, etc)

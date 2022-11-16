@@ -50,7 +50,7 @@ gherkin-mobile:
     result: |
       the options can be selected
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive

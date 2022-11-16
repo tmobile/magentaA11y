@@ -44,7 +44,7 @@ gherkin-mobile:
     result: |
       the intended action occurs
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive

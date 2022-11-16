@@ -45,7 +45,7 @@ gherkin-mobile:
   - when:  |
       swipe to focus on a search input
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive

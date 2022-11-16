@@ -33,6 +33,22 @@ gherkin-mobile:
   - when:  |
       swipe to focus on inputs inside the form
 
+wcag:
+  - name: Perceivable
+    list:
+      - criteria: Is discoverable as a form landmark
+      - criteria: Color is not used as the only means of conveying information (error, success)
+  - name: Operable
+    list:
+      - criteria: Headings and labels are used to describe context and purpose
+  - name: Understandable
+    list:
+      - criteria: Labels or instructions are provided when content requires user input.
+  - name: Robust
+    list:
+      - criteria: All components provide name, role and state
+      - criteria: Notification of changes are available to screen reader
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Building accessible forms

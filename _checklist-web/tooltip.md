@@ -27,7 +27,7 @@ gherkin-mobile:
   - when:  |
       swipe
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Nothing to perceive because we don't use tooltips 

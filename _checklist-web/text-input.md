@@ -34,7 +34,7 @@ gherkin-mobile:
   - when:  |
       swipe to focus on a text input
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive
@@ -85,9 +85,9 @@ This semantic HTML contains all accessibility features by default.
 
 ### Disabled but focusable input
 
-- Use JS to preventDefault()
 - There may be times that it is advantageous for the input to be disabled but still focusable
 - Fully disabled inputs are not focusable and may not be as discoverable in a form
+- Use readonly to prevent editing
 
 {% highlight html %}
 {% include /examples/input-text-disabled-focusable.html %}

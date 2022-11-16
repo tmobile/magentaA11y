@@ -263,8 +263,8 @@ layout: default
           {% endif %}
         </div>
       
-        {% if page.design and page.design != "" %}
-          <div class="condensed-criteria tab-panel inert" id="design-panel" tabindex="0" role="region" aria-label="WCAG success criteria" {% if page.url contains "native" %}style="display:block;"{% endif %}>
+        {% if page.wcag and page.wcag != "" %}
+          <div class="condensed-criteria tab-panel inert" id="wcag-panel" tabindex="0" role="region" aria-label="WCAG success criteria" {% if page.url contains "native" %}style="display:block;"{% endif %}>
             <p>
             {% assign firstLetter = page.title | downcase | slice: 0 %}
             {% if firstLetter == 'a' or firstLetter== 'e' or firstLetter== 'i' or firstLetter== 'i' or firstLetter== 'u' %}
@@ -276,7 +276,7 @@ layout: default
             must meet these WCAG principles.
             </p>
             {% assign i = 0 %}
-            {% for checklist in page.design %}  
+            {% for checklist in page.wcag %}  
               {% assign i = i | plus:1 %}
                 <h3 class="h-charlie"><step-number>{{ i }}</step-number>{{ checklist.name }} </h3>
                 {% if checklist.list %}

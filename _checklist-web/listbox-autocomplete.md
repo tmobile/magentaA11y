@@ -59,7 +59,7 @@ gherkin-mobile:
     result: |
       the selected option is changed
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive

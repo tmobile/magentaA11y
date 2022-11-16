@@ -72,7 +72,7 @@ gherkin-mobile:
     result: |
       focus returns to the launch button
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as a modal dialog on top of a page (and not a new page)

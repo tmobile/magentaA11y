@@ -48,7 +48,7 @@ gherkin-mobile:
     result: |
       the numeric keypad is revealed
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive

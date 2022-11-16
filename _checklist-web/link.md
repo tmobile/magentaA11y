@@ -41,11 +41,11 @@ gherkin-mobile:
     result: |
       my browser goes somewhere
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive
-      - criteria: Color and weight are not used as the only means of conveying it is a link
+      - criteria: Color or weight are not used as the only means of conveying it is a link
   - name: Operable
     list:
       - criteria: Is keyboard operable

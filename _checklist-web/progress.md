@@ -31,7 +31,7 @@ gherkin-mobile:
   - when:  |
       swipe to browse to a progress bar
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as a progress indicator

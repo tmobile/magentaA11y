@@ -38,6 +38,26 @@ gherkin-mobile:
       doubletap with the link in focus
     result: |
       my browser goes to the intended location
+
+wcag:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as interactive
+  - name: Operable
+    list:
+      - criteria: Is keyboard operable
+      - criteria: The click/tap target area is no smaller than 44x44px
+      - criteria: The focus state has a 3:1 minimum contrast ratio against default
+      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+      - criteria: Color is not used as the only means of conveying current page
+  - name: Understandable
+    list:
+      - criteria: Its purpose is clear in the context of the whole page
+      - criteria: It has the correct semantic meaning (link, navigation)
+  - name: Robust
+    list:
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Code examples

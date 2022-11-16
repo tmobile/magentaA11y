@@ -50,7 +50,7 @@ gherkin-mobile:
     result: |
       the state is changed
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as a radio input

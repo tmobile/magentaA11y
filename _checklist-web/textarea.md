@@ -34,7 +34,7 @@ gherkin-mobile:
   - when:  |
       swipe to focus on a textarea
 
-design:
+wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as interactive
