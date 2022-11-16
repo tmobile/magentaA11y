@@ -44,6 +44,7 @@ design:
       - criteria: Color is not used as the only means of conveying information or state (error, success, focus, disabled etc)
   - name: Operable
     list:
+      - criteria: Is keyboard operable
       - criteria: The click/tap target area is no smaller than 44x44px
       - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements

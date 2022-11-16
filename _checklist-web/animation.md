@@ -60,7 +60,7 @@ design:
       - criteria: Color is not used as the only means of conveying information (error, success, etc)
   - name: Operable
     list:
-      - criteria: "For any animation controls:"
+      - criteria: Is keyboard operable (if controls are required)
       - criteria: The click/tap target area is no smaller than 44x44px
       - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements

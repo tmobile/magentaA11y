@@ -52,6 +52,7 @@ design:
       - criteria: Color is not used as the only means of conveying state (checked/unchecked)
   - name: Operable
     list:
+      - criteria: Is keyboard operable
       - criteria: The click/tap target area includes the label and is no smaller than 44x44px
       - criteria: The checked, disabled and focus states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements

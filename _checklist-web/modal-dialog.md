@@ -78,6 +78,7 @@ design:
       - criteria: Is easy to identify as a modal dialog on top of a page (and not a new page)
   - name: Operable
     list:
+      - criteria: Is keyboard operable
       - criteria: The close button click/tap target area is no smaller than 44x44px
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
       - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height

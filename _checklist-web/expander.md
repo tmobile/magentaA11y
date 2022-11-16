@@ -51,6 +51,7 @@ design:
       - criteria: Color is not used as the only means of conveying information (expanded/collapsed)
   - name: Operable
     list:
+      - criteria: Is keyboard operable (if controls are required)
       - criteria: The click/tap target area is no smaller than 44x44px
       - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
       - criteria: The focus state has a 3:1 minimum contrast ratio between the default and focused states

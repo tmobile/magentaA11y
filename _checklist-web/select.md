@@ -58,6 +58,7 @@ design:
       - criteria: Doesn't rely on placeholder text as label or hint text
   - name: Operable
     list:
+      - criteria: Is keyboard operable
       - criteria: The click/tap target area is no smaller than 44x44px
       - criteria: The disabled states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
