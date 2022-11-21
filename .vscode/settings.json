@@ -6,7 +6,9 @@
     "doubletap",
     "endraw",
     "nomarkdown",
+    "screenreader",
     "targetable",
-    "Triplett"
+    "Triplett",
+    "WCAG"
   ]
 }
