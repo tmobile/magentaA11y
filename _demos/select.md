@@ -1,9 +1,7 @@
 ---
 layout: demo
-title: Select listbox dropdown
+title: Select dropdown
 ---
-
-## HTML select
 
 {::nomarkdown}
 {% include /examples/input-select.html %}
