@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Progress bar / spinner"
+title:  "Progress indicator"
 description: "How to code and test an accessible progress bar, loader or spinner for Web"
 categories: main form
 order: 0
