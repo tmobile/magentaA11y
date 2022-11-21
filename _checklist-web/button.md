@@ -62,12 +62,30 @@ wcag:
   - name: Understandable
     list:
       - criteria: Its purpose is clear in the context of the whole page
-      - criteria: It has the correct semantic meaning. If it goes somewhere, it’s a link (that can look like a button). If it does something, it’s a button (that can look like a link)
   - name: Robust
     list:
       - criteria: Meets criteria across platforms, devices and viewports
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state (if applicable)
 
 ---
+
+## Buttons vs links
+
+### If it goes somewhere, it's `<a>` link.
+
+- When the user clicks a link, they are taken to a different location in the site.
+  - Either another page or even another area of the same page
+- A link can look like a big shiny button but it must be coded as `<a>` link
+
+### If it does something, it's a `<button>`
+
+- Buttons cause an action to occur on the same page
+  - Submit a form (even when submission takes you to a new page)
+  - Open a menu
+  - Launch a modal
+  - Expand details
+- A button can look like a link, but it must be coded as a `<button>`
 
 ## Code examples
 
