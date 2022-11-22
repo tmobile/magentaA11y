@@ -81,7 +81,8 @@ wcag:
 
 ## Code examples
 
-### Use semantic HTML
+### Use semantic HTML with common sense names
+
 This semantic HTML contains all accessibility features by default. 
 
 {% highlight html %}
@@ -98,6 +99,18 @@ This semantic HTML contains all accessibility features by default.
 </example>
 {% endraw %}
 
+### Name links logically
+
+- **Do not** use a heading with a generic link below. 
+- Instead, make the heading a link.
+
+{% highlight html %}
+<h3>About our coffee subscriptions</h3>
+<p>Get the best coffee delivered to your door</p>
+<a href="/about/">
+   Learn more
+</div>
+{% endhighlight %}{: .bad-example}
 
 ### Making a link with no `href` focusable
 
