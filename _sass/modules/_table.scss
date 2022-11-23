@@ -37,7 +37,7 @@ table {
     th {
       padding: .6rem 1rem .4rem 1px;
       line-height: 1.25;
-      border-top: 1px solid $color-border-gray;
+      border-top: 1px solid var(--color-border-gray);
       strong {
         display: inline-block;
         padding: 0px 7px;

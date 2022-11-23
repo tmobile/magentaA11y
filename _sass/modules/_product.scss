@@ -140,7 +140,7 @@
     }
     &.network {
       color: #fff;
-      background: $color-gray-dark;
+      background: var(--color-gray-dark);
     }
   }
 }

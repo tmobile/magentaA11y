@@ -5,10 +5,10 @@
     grid-column: span 2;
   }
   label {
-    border-bottom: 1px solid $color-border-gray;
+    border-bottom: 1px solid var(--color-border-gray);
   }
   .expander-toggle {
-    border-bottom: 1px solid $color-border-gray;
+    border-bottom: 1px solid var(--color-border-gray);
 
   }
   .expander-content {

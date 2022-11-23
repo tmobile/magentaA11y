@@ -26,7 +26,7 @@ input[type="checkbox"] {
       background-position: center center;
       background-size: 0% 0%;
       transition: .2s;
-      box-shadow: inset 0 0 0 .25rem $color-gray-xtra-dark, 0 0 0rem .5rem rgba($color-focus,0);
+      box-shadow: inset 0 0 0 .25rem var(--color-gray-xtra-dark), 0 0 0rem .5rem rgba($color-focus,0);
     }
   }
   + label:hover:before,
@@ -68,7 +68,7 @@ input[type="checkbox"] {
   &[aria-disabled="true"] {
     + label {
       &:before {
-        background-color: $color-gray;
+        background-color: var(--color-gray);
         background-image: $icon-check-dark;
         box-shadow: none !important;
       }

@@ -173,7 +173,7 @@ input[type="checkbox"].favorite:focus-visible + label {
   &:after {
     content: 'Favorite';
     @include regular;
-    color: $color-gray-dark;
+    color: var(--color-gray-dark);
     transition: 0s;
     position: absolute;
     top: 3rem;

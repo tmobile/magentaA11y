@@ -116,7 +116,7 @@ input[role="switch"] {
       }
       &:after {
         box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem var(--color-gray-light);
-        background-color: $color-gray-xtra-dark !important;
+        background-color: var(--color-gray-xtra-dark) !important;
       }
     }
     &:checked {

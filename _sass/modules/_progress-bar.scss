@@ -6,7 +6,7 @@ progress {
   width: calc(100% - 2rem);
   height: 20px;
   margin: 1rem;
-  box-shadow: 0 0 0 1rem #fff, 0 0 0 calc(1rem + 1px) $color-border-gray;
+  box-shadow: 0 0 0 1rem #fff, 0 0 0 calc(1rem + 1px) var(--color-border-gray);
   border-radius: 0px;
 
   &::-webkit-progress-bar {
@@ -38,7 +38,7 @@ progress {
           line-height: 3.5rem;
           border-radius: 1.75rem;
           display: block;
-          background: $color-gray-xtra-dark;
+          background: var(--color-gray-xtra-dark);
           text-align: center;
           color: #fff;
 }

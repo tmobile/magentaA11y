@@ -52,7 +52,7 @@ button {
   &:disabled,
   &[aria-disabled="true"]{
     color: var(--color-text);
-    background: $color-border-gray;
+    background: var(--color-border-gray);
     &:before,
     &:after {
       background-image: var(--icon-chevron-gray);
@@ -87,7 +87,7 @@ button {
     text-decoration: none;
     background-color: transparent;
     color: var(--color-text);
-    border: 2px solid $color-gray-dark;
+    border: 2px solid var(--color-gray-dark);
     &:before {
       background-image: var(--icon-chevron-dark);
     }

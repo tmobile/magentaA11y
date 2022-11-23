@@ -64,7 +64,7 @@
     background: #fff;
     position: relative;
     @include clearfix;
-    border-bottom: 1px dotted $color-border-gray;
+    border-bottom: 1px dotted var(--color-border-gray);
     border-radius: 1rem 1rem 0 0;
   }
 
@@ -99,7 +99,7 @@
 
     &:disabled,
     &[aria-disabled="true"] {
-      color: $color-gray-dark;
+      color: var(--color-gray-dark);
     }
 
   }

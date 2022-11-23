@@ -5,7 +5,7 @@ footer {
   margin-bottom: 3rem;
 
   .last-modified {
-    color: $color-gray-dark;
+    color: var(--color-gray-dark);
   }
 
   nav {
@@ -22,7 +22,7 @@ footer {
     a {
       text-decoration: underline;
       text-underline-offset: 4px;
-      text-decoration-color: $color-gray-dark;
+      text-decoration-color: var(--color-gray-dark);
 
       &:after {
         display: none !important;

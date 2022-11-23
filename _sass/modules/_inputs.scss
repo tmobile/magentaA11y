@@ -137,7 +137,7 @@ legend,
   background: #fff;
   position: relative;
   @include clearfix;
-  border-bottom: 1px dotted $color-border-gray;
+  border-bottom: 1px dotted var(--color-border-gray);
   border-radius: 1rem 1rem 0 0;
   span {
     font-size: .75rem;
@@ -230,7 +230,7 @@ input[type="file"] {
 .hint {
   margin: 0 0 1rem 0;
   padding: 0rem;
-  color: $color-gray-dark;
+  color: var(--color-gray-dark);
   display: block;
   border-radius: 2px;
 }

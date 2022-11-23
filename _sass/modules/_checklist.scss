@@ -68,7 +68,7 @@ label[for="condensed-textarea"] {
   border-radius: 1rem 1rem 0 0;
   position: relative;
   z-index: 99;
-  border-bottom: 1px solid $color-border-gray;
+  border-bottom: 1px solid var(--color-border-gray);
 }
 
 .input-checkbox-item {
@@ -89,7 +89,7 @@ label[for="condensed-textarea"] {
 .checkbox-item-controls {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-left: 1px solid lighten($color-border-gray,10);
+  border-left: 1px solid var(--color-border-gray-light);
   // .star + label {
   //   background-color: lighten(var(--color-gray-xtra-light), 1) !important;
   // }
@@ -144,7 +144,7 @@ label[for="condensed-textarea"] {
       line-height: 1rem;
       padding: 0;
       background: transparent;
-      color: $color-gray-dark;
+      color: var(--color-gray-dark);
       transition: 0s;
       position: absolute;
       bottom: 0;
@@ -161,7 +161,7 @@ label[for="condensed-textarea"] {
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 1rem 0rem 1rem 0rem;
-  border-top: 1px solid $color-border-gray;
+  border-top: 1px solid var(--color-border-gray);
   box-shadow: 0 -20px 10px -20px rgba(#000, .15);
   background: #fff;
   position: sticky;

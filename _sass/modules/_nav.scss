@@ -159,7 +159,7 @@ nav {
         margin: 0;
         padding: 0;
         overflow: hidden;
-        border-top: 1px solid $color-border-gray;
+        border-top: 1px solid var(--color-border-gray);
         a {
           text-align: left;
           padding: 1.5rem;
@@ -189,7 +189,7 @@ nav {
           top: 0 ;
           line-height: 1rem;
           right: 0 ;
-          border: 1px solid $color-border-gray;
+          border: 1px solid var(--color-border-gray);
           border-right: none;
           max-height: 4.125rem;
           border-radius: 0;

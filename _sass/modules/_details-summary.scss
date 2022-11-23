@@ -79,7 +79,7 @@ details {
   &[open] {
     summary {
       border-radius: 1rem 1rem 0 0;
-      border-bottom: 1px dotted $color-border-gray;
+      border-bottom: 1px dotted var(--color-border-gray);
       margin-bottom: 1rem;
       @include ripple;
   
