@@ -48,7 +48,7 @@ form[role="search"] {
     line-height: 0;
     margin: 0;
     padding: 0;
-    border: 2px solid $color-input-border;
+    border: 2px solid var(--color-input-border);
     border-left: none;
     height: 2.25rem;
     width: 2.25rem;

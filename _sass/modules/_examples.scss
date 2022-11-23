@@ -3,7 +3,7 @@ example,
 [id^="example"] {
   display: block;
   padding: 2rem;
-  background: $color-example;
+  background: var(--color-example);
   margin-top: 1rem;
   margin-bottom: 3rem;
 

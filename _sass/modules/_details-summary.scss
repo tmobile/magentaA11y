@@ -64,7 +64,7 @@ details {
     &:hover,
     &:focus-visible {
       &:before {
-        box-shadow: 0 0 0rem .5rem rgba($color-focus,.4);
+        box-shadow: 0 0 0rem .5rem rgba(var(--color-focus),.4);
         background-image: var(--icon-chevron-dark);
       }
     }

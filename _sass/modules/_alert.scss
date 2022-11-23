@@ -10,7 +10,7 @@
   &.enabled {
     line-height: 1rem;
     margin: 1rem 0;
-    background: $color-alert;
+    background: var(--color-alert);
     height: auto;
     max-height: 8rem;
     &:before {

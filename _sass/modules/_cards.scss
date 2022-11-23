@@ -62,7 +62,7 @@
         border-radius: 1rem;
       }
       &:hover {
-        box-shadow: 0 0 0 .5rem rgba($color-focus, .4);
+        box-shadow: 0 0 0 .5rem rgba(var(--color-focus), .4);
         outline-offset: .25rem;
         transition: .2s;
       }

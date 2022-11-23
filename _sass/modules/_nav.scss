@@ -97,7 +97,7 @@ nav {
           @include regular;
         }
         &:hover {
-          box-shadow: inset 0 0 0rem .25rem rgba($color-focus,.0), 0 -.5rem 0 0rem var(--color-brand-primary);
+          box-shadow: inset 0 0 0rem .25rem rgba(var(--color-focus),.0), 0 -.5rem 0 0rem var(--color-brand-primary);
         }
       }
       &.bravo {
@@ -178,7 +178,7 @@ nav {
               left: 0;
               width: .5rem !important;
               height: 100%;
-              background: $color-focus;
+              background: var(--color-focus);
             }
           }
         }

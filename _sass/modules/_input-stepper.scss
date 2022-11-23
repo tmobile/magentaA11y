@@ -59,7 +59,7 @@
     transition: 0s;
 
     &:focus {
-      outline: .25rem solid rgba($color-focus, .5);
+      outline: .25rem solid rgba(var(--color-focus), .5);
       outline-offset: 0rem;
       transition: .2s;
     }

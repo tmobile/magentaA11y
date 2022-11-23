@@ -34,7 +34,7 @@ pre {
     max-width: 682px;
   }
   .highlighter-rouge & {
-    background: $color-example;
+    background: var(--color-example);
   }
   &.bad-example {
     position: relative;

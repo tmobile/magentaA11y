@@ -8,6 +8,11 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
 }
 
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+
 @mixin break($min,$max:null) {
   @if $min and $max {
     @media only screen and (min-width: $min) and (max-width: $max) {
@@ -79,7 +84,7 @@
 
 // This class is used as a include. It is NOT applied with JS
 .focused {
-  outline: 3px solid $color-focus; // For Chrome
+  outline: 3px solid var(--color-focus); // For Chrome
   transition: .2s;
 }
 
@@ -94,12 +99,12 @@
 
 
 @mixin focused {
-  outline: .25rem solid rgba($color-focus, 1);
+  outline: .25rem solid rgba(var(--color-focus), 1);
   outline-offset: 0rem;
   transition: .2s;
 
   &:hover {
-    outline: .125rem solid rgba($color-focus, 1);
+    outline: .125rem solid rgba(var(--color-focus), 1);
   }
 }
 

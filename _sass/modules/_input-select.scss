@@ -35,7 +35,7 @@
 
   &:hover {
     &:before {
-      box-shadow: 0 0 0rem .5rem rgba($color-focus,.2);
+      box-shadow: 0 0 0rem .5rem rgba(var(--color-focus),.2);
     }
   }
 

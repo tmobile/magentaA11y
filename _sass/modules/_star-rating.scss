@@ -82,7 +82,7 @@ input[type="checkbox"].favorite {
         background-repeat: no-repeat;
         background-size: 85%;
         background-position: 50% 49%;
-        box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .5rem rgba($color-focus,.2);
+        box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .5rem rgba(var(--color-focus),.2);
         border-radius: 1rem;
       }
       &:after {
@@ -133,7 +133,7 @@ input[type="checkbox"].favorite {
           background-repeat: no-repeat;
           background-size: 85%;
           background-position: 50% 49%;
-          box-shadow: 0 0 0rem 0rem #fff, 0 0 0rem .5rem rgba($color-focus,.2);
+          box-shadow: 0 0 0rem 0rem #fff, 0 0 0rem .5rem rgba(var(--color-focus),.2);
 
         }
       }
@@ -146,7 +146,7 @@ input[type="checkbox"].favorite {
           background-repeat: no-repeat;
           background-size: 85%;
           background-position: 50% 49%;
-          box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
+          box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba(var(--color-focus),.4);
         }
       }
     }
@@ -168,7 +168,7 @@ input[type="checkbox"].favorite:focus-visible + label {
     background-repeat: no-repeat;
     background-size: 85%;
     background-position: 50% 49%;
-    box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.2);
+    box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba(var(--color-focus),.2);
   }
   &:after {
     content: 'Favorite';
@@ -193,7 +193,7 @@ input[type="checkbox"].favorite:checked:hover + label {
     background-size: 85%;
     background-position: 50% 49%;
     background-repeat: no-repeat;
-    box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
+    box-shadow: 0 0 0rem .25rem #fff, 0 0 0rem .75rem rgba(var(--color-focus),.4);
   }
   &:after {
   }

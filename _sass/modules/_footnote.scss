@@ -24,13 +24,13 @@
 
 @keyframes targeted {
   0%		{ 
-          outline: 0rem solid rgba($color-gold, 0);
+          outline: 0rem solid rgba(var(--color-gold), 0);
         }
   75%		{ 
-          outline: .5rem solid rgba($color-gold, .75);
+          outline: .5rem solid rgba(var(--color-gold), .75);
   }
   100%	{ 
-          outline: 0rem solid rgba($color-gold, 0);
+          outline: 0rem solid rgba(var(--color-gold), 0);
         }
 }
 

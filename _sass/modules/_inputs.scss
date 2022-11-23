@@ -16,7 +16,7 @@ input[type="submit"] {
   margin: 0  0 .5rem 0;
   font-size: 1rem;
   padding: .5rem;
-  border: .125rem solid $color-input-border;
+  border: .125rem solid var(--color-input-border);
   border-radius: 2px;
   box-shadow: 0 0 0px 3px #fff;
   outline-offset: -1px;
@@ -202,8 +202,8 @@ input[type="file"] {
     color: #fff;
     border-radius: 2px;
     cursor: pointer;
-    background-color: $color-button-primary;
-    @include ripple($color-button-primary, $color-button-hover);
+    background-color: var(--color-button-primary);
+    @include ripple(var(--color-button-primary), $color-button-hover);
 
     &:before {
       content: '';
