@@ -30,7 +30,7 @@ input[type="tel"],
 input[type="number"],
 input[type="password"] {
   &:focus-visible {
-    border-color: $color-text ;
+    border-color: var(--color-text) ;
   }
   &:disabled,
   &[aria-disabled="true"] {
@@ -165,7 +165,7 @@ input[type=radio],
     line-height: 1;
     width: 100%;
     margin: 0;
-    color: $color-text;
+    color: var(--color-text);
     position: relative;
     cursor: pointer;
     background-position: 10% center;
@@ -174,7 +174,7 @@ input[type=radio],
   }
 
   &:checked + label {
-    color: $color-text;
+    color: var(--color-text);
   }
   &:focus-visible + label {
     z-index: 9;

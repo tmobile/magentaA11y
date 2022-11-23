@@ -51,7 +51,7 @@ button {
   }
   &:disabled,
   &[aria-disabled="true"]{
-    color: $color-text;
+    color: var(--color-text);
     background: $color-border-gray;
     &:before,
     &:after {
@@ -64,7 +64,7 @@ button {
   &.tertiary {
     text-decoration: none;
     background-color: transparent;
-    color: $color-text;
+    color: var(--color-text);
     @include ripple(#fff, #eee, center, center);
 
     &:before {
@@ -86,7 +86,7 @@ button {
     @extend .button;
     text-decoration: none;
     background-color: transparent;
-    color: $color-text;
+    color: var(--color-text);
     border: 2px solid $color-gray-dark;
     &:before {
       background-image: var(--icon-chevron-dark);
@@ -175,7 +175,7 @@ button {
   &.inline {
     padding: 1rem;
     background: none;
-    color: $color-text;
+    color: var(--color-text);
     &:before {
       display: none;
     }

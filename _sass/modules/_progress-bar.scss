@@ -71,7 +71,7 @@ progress {
   border: none;
   border-radius: 50%;
   background: #fff;
-  color: $color-text;
+  color: var(--color-text);
   text-align: center;
   align-items: center;
   -webkit-appearance: none;

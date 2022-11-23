@@ -43,7 +43,7 @@
       // border-top: 1px solid $color-brand-primary;
       border-radius: 0;
       margin-bottom: 0;
-      color: $color-text;
+      color: var(--color-text);
     }
   }
 }
@@ -110,7 +110,7 @@ label[for="condensed-textarea"] {
   &:before {
     content: '';
     font-size: 12px;
-    color: $color-text;
+    color: var(--color-text);
     line-height: 3.5rem;
     display: block;
     text-align: center;

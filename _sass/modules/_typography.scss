@@ -104,7 +104,7 @@ $display:    "teleneo-xtra-bold";
 body,
 html {
   font-family: $sans, sans-serif;
-  color: $color-text;
+  color: var(--color-text);
   @include regular;
 
 }
@@ -268,7 +268,7 @@ ol {
     content: '';
     display: block;
     margin-top: .5rem;
-    border-bottom: .25rem solid $color-text;
+    border-bottom: .25rem solid var(--color-text);
   }
 }
 
