@@ -46,7 +46,7 @@
     right: 0;
     bottom: 0;
     top: 0;
-    background: rgba($color-brand-primary,$percentage);
+    background: rgba(var(--color-brand-primary),$percentage);
     z-index: 0;
   }
 

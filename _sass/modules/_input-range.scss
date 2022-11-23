@@ -43,7 +43,7 @@ $track-border-color: transparent !default;
 $track-radius: 2rem !default;
 
 
-$thumb-color:  $color-brand-primary !default;
+$thumb-color:  var(--color-brand-primary) !default;
 $thumb-radius: 24px !default;
 $thumb-height: 48px !default;
 $thumb-width: 48px !default;
@@ -73,7 +73,7 @@ $contrast: 5% !default;
   background: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(68,68,68,1) 31%);
   border: $thumb-border-width solid $thumb-border-color;
   border-radius: $thumb-radius $thumb-radius $thumb-radius $thumb-radius;
-  box-shadow: 0 0 0px 0rem rgba($color-brand-primary,.4);
+  box-shadow: 0 0 0px 0rem rgba(var(--color-brand-primary),.4);
 
   cursor: pointer;
   height: $thumb-height;
@@ -173,8 +173,8 @@ $color: #ccc;
       background: lighten($track-color, $contrast);
     }
     &::-webkit-slider-thumb {
-      box-shadow: 0 0 0px .5rem rgba($color-brand-primary,.4);
-      background: radial-gradient(circle, rgba(#fff,1) 40%, rgba($color-brand-primary,1) 42%);
+      box-shadow: 0 0 0px .5rem rgba(var(--color-brand-primary),.4);
+      background: radial-gradient(circle, rgba(#fff,1) 40%, rgba(var(--color-brand-primary),1) 42%);
     }
   }
 }

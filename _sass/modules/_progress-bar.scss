@@ -79,7 +79,7 @@ progress {
   box-shadow: none !important;
   outline-offset: .25rem;
   border-radius: 100px;
-  border: 1rem solid $color-brand-primary;
+  border: 1rem solid var(--color-brand-primary);
   animation:spin 4s linear infinite;
 
   &::-webkit-progress-bar {

@@ -40,7 +40,7 @@
           inset: 0 -1rem 0 -1rem;   
           border-radius: 2px 2px 1rem 1rem;
           transition: .2s;
-          box-shadow: 0 0 0 0 rgba($color-brand-primary,.5);
+          box-shadow: 0 0 0 0 rgba(var(--color-brand-primary),.5);
           z-index: 1; // keeps the element on top of the image etc
         }
         &:hover {

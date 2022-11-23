@@ -33,7 +33,7 @@ nav {
       width: 100%;
       height: 1px;
       transition: .2s;
-      background: $color-brand-primary;
+      background: var(--color-brand-primary);
       opacity: 1;
       transform: rotate(0deg);
     }
@@ -76,7 +76,7 @@ nav {
 
       &.home a {
         display: inline-block;
-        background-color: $color-brand-primary;
+        background-color: var(--color-brand-primary);
         color: #fff;
         @include regular;
         margin-right: .25rem; 
@@ -84,7 +84,7 @@ nav {
         padding-right: 1rem;
         transition: .2s;
         border-radius: 2px;
-        box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 $color-brand-primary;
+        box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 var(--color-brand-primary);
 
         &:after {
           display: none;
@@ -97,7 +97,7 @@ nav {
           @include regular;
         }
         &:hover {
-          box-shadow: inset 0 0 0rem .25rem rgba($color-focus,.0), 0 -.5rem 0 0rem $color-brand-primary;
+          box-shadow: inset 0 0 0rem .25rem rgba($color-focus,.0), 0 -.5rem 0 0rem var(--color-brand-primary);
         }
       }
       &.bravo {
