@@ -59,7 +59,7 @@ details {
       bottom: 0;
       left: 1rem;
       width: 3rem;
-      border-right: 1px solid darken($color-gray-xtra-light, 5);
+      border-right: 1px solid var(--color-border-gray-light);
     }
     &:hover,
     &:focus-visible {

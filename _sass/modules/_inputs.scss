@@ -145,7 +145,7 @@ legend,
     height: 1rem;
     line-height: 1rem;
     @include regular;
-    background: darken($color-gray-xtra-light,8);
+    background: var(--color-gray-xtra-light);
     padding: 0 .5rem;
     border-radius: .125rem;
   }

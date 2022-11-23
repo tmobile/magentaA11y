@@ -91,7 +91,7 @@ label[for="condensed-textarea"] {
   grid-template-columns: 1fr 1fr;
   border-left: 1px solid lighten($color-border-gray,10);
   // .star + label {
-  //   background-color: lighten($color-gray-xtra-light, 1) !important;
+  //   background-color: lighten(var(--color-gray-xtra-light), 1) !important;
   // }
 }
 
@@ -99,12 +99,12 @@ label[for="condensed-textarea"] {
   display: block;
   position: relative;
   line-height: 1rem;
-  background-color: lighten($color-gray-xtra-light, 1);
+  background-color: var(--color-gray-xtra-light);
   text-align: center;
   font-size: 3rem;
   line-height: 4rem;
   margin: 0;
-  border-left: 1px solid lighten($color-border-gray,10);
+  border-left: 1px solid var(--color-border-gray-light);
   text-decoration: none;
 
   &:before {
