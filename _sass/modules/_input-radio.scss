@@ -16,17 +16,17 @@ input[type="checkbox"].radio,
       justify-self: center;
       background: #f2f2f2;
       transition: .4s;
-      box-shadow: inset 0 0 0 .25rem var(--color-gray-xtra-dark), inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba(var(--color-focus),0);
+      box-shadow: inset 0 0 0 .25rem var(--color-gray-xtra-dark), inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba(var(--color-focus-rgb),0);
     }
   }
 
   + label:hover:before,
   &:focus + label:before {
     background: none;
-    box-shadow: inset 0 0 0 .325rem var(--color-brand-primary), inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba(var(--color-focus),.2);
+    box-shadow: inset 0 0 0 .325rem var(--color-brand-primary), inset 0 0 0rem .5rem transparent, 0 0 0rem .5rem rgba(var(--color-focus-rgb),.2);
   }
   &:active + label:before {
-    box-shadow: inset 0 0 0 .5rem var(--color-brand-primary), inset 0 0 0rem .5rem transparent, 0 0 0rem .75rem rgba(var(--color-focus),.4);
+    box-shadow: inset 0 0 0 .5rem var(--color-brand-primary), inset 0 0 0rem .5rem transparent, 0 0 0rem .75rem rgba(var(--color-focus-rgb),.4);
   }
 
   &.horizontal {
@@ -41,12 +41,12 @@ input[type="checkbox"].radio,
       &:before {
         transition: 0s;
         background-color: var(--color-brand-primary);
-        box-shadow: inset 0 0 0 .25rem var(--color-brand-primary), inset 0 0 0rem .5rem #fff, 0 0 0rem 0 rgba(var(--color-focus),.4);
+        box-shadow: inset 0 0 0 .25rem var(--color-brand-primary), inset 0 0 0rem .5rem #fff, 0 0 0rem 0 rgba(var(--color-focus-rgb),.4);
       }
     }
     &:active + label:before {
       background-color: var(--color-brand-primary);
-      box-shadow: inset 0 0 0 .25rem var(--color-brand-primary), inset 0 0 0rem .5rem #fff, 0 0 0rem .75rem rgba(var(--color-focus),.4);
+      box-shadow: inset 0 0 0 .25rem var(--color-brand-primary), inset 0 0 0rem .5rem #fff, 0 0 0rem .75rem rgba(var(--color-focus-rgb),.4);
     }
   }
   &:disabled,
@@ -66,6 +66,6 @@ input[type="checkbox"].radio,
   &:before {
     transition: 0s;
     background-color: var(--color-brand-primary);
-    box-shadow: inset 0 0 0 .25rem var(--color-brand-primary), inset 0 0 0rem .5rem #fff, 0 0 0rem 0 rgba(var(--color-focus),.4);
+    box-shadow: inset 0 0 0 .25rem var(--color-brand-primary), inset 0 0 0rem .5rem #fff, 0 0 0rem 0 rgba(var(--color-focus-rgb),.4);
   }
 }
