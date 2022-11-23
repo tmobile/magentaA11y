@@ -136,7 +136,7 @@
     border-radius: 2px;
 
     &.rating {
-      background: $color-gray-light;
+      background: var(--color-gray-light);
     }
     &.network {
       color: #fff;

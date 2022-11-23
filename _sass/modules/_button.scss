@@ -93,7 +93,7 @@ button {
     }
     &:hover,
     &:focus {
-      background: $color-gray-light;
+      background: var(--color-gray-light);
     }
   }
 

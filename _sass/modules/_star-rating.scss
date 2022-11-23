@@ -55,7 +55,7 @@ input[type="checkbox"].favorite {
     padding: 1rem 0 1rem 0;
     height: 4rem;
     line-height: 1;
-    @include ripple(#fff, $color-gray-light, center, center);
+    @include ripple(#fff, var(--color-gray-light), center, center);
     &:before {
       width: 2rem;
       height: 2rem;

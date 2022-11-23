@@ -14,14 +14,14 @@ input[role="switch"] {
       left: 0rem;
       top: 0rem;
       border-radius: 1rem;
-      background-color: $color-gray-light;
+      background-color: var(--color-gray-light);
       transition: background-color .2s, box-shadow .2s;
       border: none;
       background-size: 1.75rem 1.75rem;
       background-position: 85% center;
       background-repeat: no-repeat;
       background-image: var(--icon-off-white);
-      box-shadow: inset 0 0 0 0 $color-gray-light;
+      box-shadow: inset 0 0 0 0 var(--color-gray-light);
       transform: translateZ(0); // Hack to engage GPU to ensure smooth animation
     }
 
@@ -36,14 +36,14 @@ input[role="switch"] {
       top: 1rem;
       background-color: #fff;
       transition: .4s;
-      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px .25rem $color-gray-light;
+      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px .25rem var(--color-gray-light);
     }
   }
 
   + label:hover:before,
   &:focus + label:before {
     box-shadow: none;
-    background-color: $color-gray-light;
+    background-color: var(--color-gray-light);
     transition: background-color .4s;
     box-shadow: inset 0 0 0rem .25rem rgba(var(--color-brand-primary), .25);
   }
@@ -67,7 +67,7 @@ input[role="switch"] {
     &:checked {
       + label {
         &:before {
-          background-color: $color-gray-light;
+          background-color: var(--color-gray-light);
           box-shadow: inset 0 0 1rem .25rem rgba(var(--color-brand-primary),.25);
         }
       }
@@ -110,12 +110,12 @@ input[role="switch"] {
     + label,
     + label:hover {
       &:before {
-        background-color: $color-gray-light;
+        background-color: var(--color-gray-light);
         background-image: var(--icon-off-dark);
         box-shadow: none !important;
       }
       &:after {
-        box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem $color-gray-light;
+        box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem var(--color-gray-light);
         background-color: $color-gray-xtra-dark !important;
       }
     }
@@ -126,7 +126,7 @@ input[role="switch"] {
           background-image: var(--icon-on-dark);
         }
         &:after {
-          box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem $color-gray-light;
+          box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem var(--color-gray-light);
         }
       }
     }
