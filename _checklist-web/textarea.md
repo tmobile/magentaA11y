@@ -55,6 +55,8 @@ wcag:
       - criteria: The width of the input accommodates/affords the intended input, reinforcing its purpose
   - name: Robust
     list:
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state (if applicable)
       - criteria: Meets criteria across platforms, devices and viewports
 ---
 
