@@ -59,7 +59,9 @@ Note: The alert must be structured as below to function properly in VoiceOver, w
 
 ### When there is no hint or alert (yet)
 
-Using aria-describedby with a uniqueID that doesn't exist on page yet will generate errors in automated syntax checking tools.
+Using `aria-describedby` with a uniqueID that doesn't exist on page yet will generate errors in automated syntax checking tools. 
+
+If it's not possible to remove the attribute, there are ways to avoid the error flag.
 
 #### Option 1: Leave `aria-describedby=""` empty until the hint exists (preferred)
 
