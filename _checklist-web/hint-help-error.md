@@ -57,6 +57,40 @@ Note: The alert must be structured as below to function properly in VoiceOver, w
 </example>
 {:/}
 
+### When there is no hint or alert
+
+Using aria-describedby with a uniqueID that doesn't exist on page yet will generate errors in automated syntax checking tools.
+
+#### Option 1: Leave `aria-describedby=""` empty until the hint exists (preferred)
+
+This is preferred because the DOM is cleaner
+
+{% highlight html %}
+<label for="favorite-pickle">
+  What is your favorite pickle?
+</label>
+<input type="text"
+       id="favorite-pickle"
+       aria-describedby="">
+       <!-- Leave aria-describedby empty unless the hint exists -->
+{% endhighlight %}
+
+#### Option 2: Leave the empty hint element in the DOM
+
+This also works and shouldn't have any significant side effects
+
+{% highlight html %}
+<label for="favorite-snack">
+  What is your favorite healthy snack?
+</label>
+<input type="text"
+       id="favorite-snack"
+       aria-describedby="hint-favorite-snack">
+<div class="hint" id="hint-favorite-snack">
+  <!-- Leave the hint element empty -->
+</div>
+{% endhighlight %}
+
 ## Developer notes
 
 ### Browser + screenreader quirks
