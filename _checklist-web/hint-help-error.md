@@ -74,7 +74,7 @@ This is preferred because the DOM is cleaner.
 <input type="text"
        id="favorite-pickle"
        aria-describedby="">
-       <!-- Leave aria-describedby empty unless the hint exists -->
+       <!-- Leave aria-describedby attribute empty -->
 {% endhighlight %}
 
 #### Option 2: Leave the empty hint element in the DOM
