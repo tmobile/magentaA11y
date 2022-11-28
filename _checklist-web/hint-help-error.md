@@ -14,9 +14,9 @@ mobile:
     
 screenreader:
   name:  |
-    After the input label is read, the hint, help or error is read
+    After the input name, role and state is read, the hint, help or error is read
   role:  |
-    When it appears, an error is read automatically as an alert
+    When it appears dynamically, an error is read automatically
     
 gherkin-keyboard: 
   - when:  |
@@ -27,7 +27,6 @@ gherkin-keyboard:
 gherkin-mobile:
   - when:  |
       swipe to focus on an input
-
 ---
 ## Code examples
 
