@@ -102,15 +102,3 @@ This also works and shouldn't have any significant side effects
 - NVDA will read the alert twice if it appears while the input is in focus: once from the `role="alert"` being injected and from the `aria-describedby` association.
 - NVDA needs a fraction of a second to catch up with changes in the DOM, use a `setTimeout` to delay displaying the alert
 
-### Name
-- Inner text describes the hint
-
-### Role
-- May have `role="alert"` if serving as an input error message
-
-### Group
-- Use `aria-describedby="hint-id"` to associate an input with a hint.
-
-### Focus
-- Hints must not receive focus
-
