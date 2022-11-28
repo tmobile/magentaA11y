@@ -57,7 +57,7 @@ Note: The alert must be structured as below to function properly in VoiceOver, w
 </example>
 {:/}
 
-### When there is no hint or alert (yet)
+### When there is no hint or alert
 
 Using `aria-describedby` with a uniqueID that doesn't exist on page yet will generate errors in automated syntax checking tools. 
 
