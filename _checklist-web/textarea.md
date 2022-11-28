@@ -61,7 +61,28 @@ wcag:
 ## Code examples
 
 ### Use semantic HTML
-This semantic HTML contains all accessibility features by default. 
+
+This semantic HTML contains all accessibility features by default.
+
+- **Delay the update** for dynamic counters
+  - Use `setTimeout`to allow the accessibility tree and screen reader time to update in a logical fashion
+- **Do not** reference the `role="status"` element with aria-describedby
+  - This causes a bug in VoiceOver 
+
+{% highlight js %}
+const textarea = document.getElementById('message');
+if(textarea) {
+    const chars = document.getElementById('currentChars');
+    textarea.addEventListener("input", event => {
+        const target = event.currentTarget;
+        const maxLength = target.getAttribute("maxlength");
+        const currentLength = target.value.length;
+        setTimeout(function() {
+            chars.innerHTML = maxLength - currentLength;
+        }, 10);
+    });
+}
+{% endhighlight %}
 
 {% highlight html %}
 {% include /examples/textarea.html %}
