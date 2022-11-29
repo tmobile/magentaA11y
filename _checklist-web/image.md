@@ -33,7 +33,6 @@ wcag:
     list:
       - criteria: All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, unless it is decorative or repetitive
       - criteria: If an image contains text critical to understanding the page the user has a text alternative that serves the equivalent purpose
-
 ---
 
 ## Basic examples

@@ -49,17 +49,28 @@ This semantic HTML contains all accessibility features by default.
 
 {% highlight html %}
 <h1>My favorite taco recipe</h1>
+  <!-- Author's entire life story 
+   as it relates to tacos -->
+
   <h2>Ingredients</h2>
-  
+  <!-- List of ingredients -->
+
   <h2>Steps</h2>
 
     <h3>Preparing the protein</h3>
+    <!-- List of instructions -->
+
     <h3>Preparing the vegetables</h3>
+    <!-- List of instructions -->
+    
     <h3>Assembly and plating</h3>
+    <!-- List of instructions -->
   
   <h2>Nutrition information</h2>
+  <!-- List of nutrition info -->
   
-  <h2>Related receipes`</h2>
+  <h2>Related receipes</h2>
+  <!-- List of related recipes -->
 {% endhighlight %}
 
 

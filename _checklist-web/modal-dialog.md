@@ -10,7 +10,7 @@ keyboard:
   arrow keys: |
     Content within the dialog is browsed in logical order
   tab: |
-    Focus visibly moves only within the dialog, starting with the first interactive control (typically close button)
+    Focus visibly moves within the dialog, starting with the first interactive control (typically close button)
   escape: |
     The dialog closes and returns focus to the button that launched it
   space: |
@@ -36,7 +36,7 @@ screenreader:
 
 gherkin-keyboard: 
   - when:  |
-      the tab key to move focus to the launch button and use  spacebar and/or enter key to activate the button
+      the tab key to move focus to the launch button and use spacebar and/or enter key to activate the button
     result: |
       the dialog opens and is in focus
   - then:  |
@@ -46,7 +46,7 @@ gherkin-keyboard:
   - then:  |
       the tab key
     result: |
-      focus stays trapped in the modal dialog, starting with the first interactive element
+      focus moves within in the modal dialog, starting with the first interactive control
   - then:  |
       the escape key
     result: |
