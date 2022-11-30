@@ -1,0 +1,50 @@
+.toast {
+  position: fixed;
+  inset: auto calc(50% - 160px) -50px calc(50% - 160px);
+  transition: .3s;
+  color: #fff;
+  border-radius: .5rem;
+  width: 320px;
+  cursor: pointer;
+
+
+  &.enabled {
+    background: #000000;
+    padding: 1rem 1rem;
+    inset: auto calc(50% - 160px) 1rem calc(50% - 160px);
+  }
+  
+  &.inert {
+    transition: .3s;
+  }
+  &:after {
+    display: none;
+  }
+  
+  button {
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    padding: 0;
+    top: .625rem;
+    right: .625rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4rem;
+    background-image: url("data:image/svg+xml,%0A%3Csvg height='100px' width='100px' fill='white' xmlns='http://www.w3.org/2000/svg' data-name='Layer 1' viewBox='0 0 100 100' x='0px' y='0px'%3E%3Ctitle%3E35%3C/title%3E%3Cpath d='M93.24268,6.75732a6.00078,6.00078,0,0,0-8.48536,0L50,41.51465,15.24268,6.75732a6.00006,6.00006,0,0,0-8.48536,8.48536L41.51465,50,6.75732,84.75732a6.00006,6.00006,0,0,0,8.48536,8.48536L50,58.48535,84.75732,93.24268a6.00006,6.00006,0,0,0,8.48536-8.48536L58.48535,50,93.24268,15.24268A5.99989,5.99989,0,0,0,93.24268,6.75732Z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid transparent; // This is only here to solve for a Chrome bug that keeps the button from showing focus
+    transition: .2s;
+    &:after,
+    &:before {
+      display: none;
+    }
+    
+    &:focus-visible {
+      outline: .25rem solid #fff;
+      outline-offset: .125rem;
+    }
+  }
+}

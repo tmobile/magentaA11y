@@ -83,6 +83,17 @@ If the snackbar must dismiss automatically, it is preferred that [timing be adju
 </div>
 {% endhighlight %}
 
+
+
+{% highlight html %}
+{% include /examples/snackbar.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/snackbar.html %}
+</example>
+{:/}
 ## Developer notes
 
 ### Name

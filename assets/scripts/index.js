@@ -409,4 +409,20 @@ if(textarea) {
     });
 }
 
-  
+function closeToast() {
+    $('#toast').removeClass('enabled').addClass('inert');
+    $('#toast-message').empty();
+  }
+// Close the toast
+$("#toast").click(function(){
+    closeToast();
+});
+// Trigger toast
+$("#marketingCookies").on('change', function() {
+    closeToast();
+    setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
+        $('#toast').removeClass('inert').addClass('enabled');
+        $('#toast-message').append('Marketing cookie changes saved');
+    }, 800);
+});
+
