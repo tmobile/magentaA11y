@@ -12,6 +12,7 @@
     background: #000000;
     padding: 1rem 1rem;
     inset: auto calc(50% - 160px) 1rem calc(50% - 160px);
+    z-index: 999999;
   }
   
   &.inert {
