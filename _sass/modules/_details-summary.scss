@@ -86,6 +86,8 @@ details {
       &:before {
         content: '';
         background-position: center center;
+        transform: rotate(180deg);
+
       }
       &:after {
         content: 'Expanded'; // iOS Voiceover doesn't support state, this hacks it in
