@@ -6,7 +6,6 @@
   display: grid;
   grid-template-columns: 4rem 1fr;
   align-items: center;
-
   &.enabled {
     line-height: 1rem;
     margin: 1rem 0;
@@ -27,7 +26,13 @@
     }
   }
   &.notification {
-    background: #fff;
+    background-color: transparent;
+    grid-template-columns: 1fr;
+    margin: 0rem 1rem;
+    padding-top: .5rem;
+    &:before {
+      display: none;
+    }
   }
   &.inert {
     display: block;

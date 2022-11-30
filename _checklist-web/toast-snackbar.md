@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Toast Snackbar"
+title:  "Toast snackbar"
 description: "How to code and test an snackbar or toast for Web"
 categories: main form
 
@@ -39,26 +39,45 @@ gherkin-mobile:
       use features that trigger the toast snackbar
 ---
 
-## Avoid using toast snackbars
+## Don't use toast snackbars
 
-It's **exceedingly rare** this is a good design choice. A more semantic or visually inline HTML element should probably be used instead.
+It's **exceedingly rare** this is a good design choice. 
 
-Snackbars are a custom HTML construct and have no semantic meaning. As such, like [tooltips](/checklist-web/tooltip/), it is difficult to define precise acceptance criteria.
+- Snackbars are a custom HTML construct and have no semantic meaning. 
+- They add auditory noise to the screen reader experience and are difficult to browse if the message was missed.
+- As such, like [tooltips](/checklist-web/tooltip/), it is difficult to define precise acceptance criteria.
 
-### Never use snackbars for:
+### Instead use an inline element to indicate a change
+
+- Inject a success message _in proximity_ to the updated control
+- Place undo/edit buttons in easy to find locations for keyboard users
+- Utilize a confirmation screen on exit
+
+{::nomarkdown}
+<example>
+{% include /examples/input-switch-dynamic.html %}
+</example>
+{:/}
+
+
+### Never use toast snackbars for:
 
 - Critical or irrevocable functionality like:
     - Time sensitive actions (ex: Unsend this message)
     - Confirmation of choices (ex: Are you sure you want to send payment?)
-    - Error messages
+    - Blocking error messages
 - On page load messaging/alerts
   - Performing unexpected actions or alerts on page load is confusing to people using a screenreader
 
-## Only use toast to _reinforce_ updates
+### Timing
 
-If using a snackbar is unavoidable, it must only be used for non-critical messaging. 
+- It is preferable to not let a toast snackbar time out. 
+- If the snackbar must dismiss automatically, it is preferred that [timing be adjustable (WCAG 2.2.1)](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
 
-The status injected must also be discernable on the page _without the snackbar_.
+## Only use toast snackbars to _reinforce_ updates
+
+- If using a snackbar is unavoidable, it must only be used for non-critical messaging. 
+- The status injected must also be discernable on the page _without the snackbar_.
 
 ### Practical example
 
@@ -68,44 +87,15 @@ Given that I am on a dynamic single page app
   - THEN the toast appears to _reinforce_ that the change has been saved
   - AND the customer can confirm this is true from the toggle itself
 
-### Timing
-
-It is preferable to not let a toast snackbar time out. 
-
-If the snackbar must dismiss automatically, it is preferred that [timing be adjustable (WCAG 2.2.1)](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
-
 ## Code example
 
 {% highlight html %}
-<div class="snackbar" role="status">
-  <strong>Let's at least try to avoid using these</strong>
-  <button>Dismiss</button>
+<div id="toast">
+  <span id="toast-message" role="status">
+    <!-- Inject snackbar message here -->
+  </span>
+  <button type="button">
+    Dismiss
+  </button>
 </div>
 {% endhighlight %}
-
-
-
-{% highlight html %}
-{% include /examples/snackbar.html %}
-{% endhighlight %}
-
-{::nomarkdown}
-<example>
-{% include /examples/snackbar.html %}
-</example>
-{:/}
-## Developer notes
-
-### Name
-
-- Inner text describes snackbar when it appears on screen
-
-### Role
-
-- Use `role="status"` for snackbars injected into the page
-
-### Focus
-
-- Focus **must not** move to the element automatically when the snackbar appears
-
-

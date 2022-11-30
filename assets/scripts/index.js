@@ -426,3 +426,19 @@ $("#marketingCookies").on('change', function() {
     }, 800);
 });
 
+function closeUpdate() {
+    $('#hint-spam').removeClass('enabled').addClass('inert');
+    $('#hint-spam-message').empty();
+  }
+// Close the toast
+$("#spam").on('change', function() {
+    closeUpdate();
+});
+// Trigger toast
+$("#spam").on('change', function() {
+    closeUpdate();
+    setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
+        $('#hint-spam').removeClass('inert').addClass('enabled');
+        $('#hint-spam-message').append('Spam preferences saved');
+    }, 1000);
+});
