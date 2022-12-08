@@ -87,6 +87,7 @@ wcag:
       - criteria: Its purpose and title is clear in the context of the whole page
   - name: Robust
     list:
+      - criteria: Conveys the correct semantic role 
       - criteria: Meets criteria across platforms, devices and viewports
 
 ---

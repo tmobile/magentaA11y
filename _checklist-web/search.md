@@ -65,13 +65,21 @@ wcag:
       - criteria: The width of the input accommodates/affords the intended input, reinforcing its purpose
   - name: Robust
     list:
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state (if applicable)
       - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Code examples
 
 ### Use semantic HTML
-This semantic HTML contains all accessibility features by default. Include a search button.
+
+- This semantic HTML contains all accessibility features by default. 
+- Include a search button
+
+### Search with autocomplete suggestions
+
+- For search autocomplete see [Autocomplete input with listbox](/checklist-web/listbox-autocomplete/)
 
 {% highlight html %}
 {% include /examples/form-search.html %}

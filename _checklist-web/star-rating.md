@@ -49,6 +49,27 @@ gherkin-mobile:
       doubletap with the radio in focus
     result: |
       the state is changed
+
+wcag:
+  - name: Perceivable
+    list:
+      - criteria: Is easy to identify as interactive
+      - criteria: Color is not used as the only means of conveying information
+  - name: Operable
+    list:
+      - criteria: Is keyboard operable
+      - criteria: The click/tap target area is no smaller than 44x44px
+      - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
+      - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
+      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+  - name: Understandable
+    list:
+      - criteria: Its purpose is clear in the context of the whole page
+  - name: Robust
+    list:
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Code examples

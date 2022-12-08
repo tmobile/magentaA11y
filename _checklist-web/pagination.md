@@ -57,6 +57,8 @@ wcag:
       - criteria: It has the correct semantic meaning (link, navigation)
   - name: Robust
     list:
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state
       - criteria: Meets criteria across platforms, devices and viewports
 ---
 

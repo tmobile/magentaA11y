@@ -71,6 +71,8 @@ wcag:
       - criteria: Doesn't use the same words at the beginning of a set of options
   - name: Robust
     list:
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state (if applicable)
       - criteria: Meets criteria across platforms, devices and viewports
 ---
 

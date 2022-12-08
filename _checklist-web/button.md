@@ -64,10 +64,9 @@ wcag:
       - criteria: Its purpose is clear in the context of the whole page
   - name: Robust
     list:
-      - criteria: Meets criteria across platforms, devices and viewports
       - criteria: Conveys the correct semantic role 
       - criteria: Expresses its state (if applicable)
-
+      - criteria: Meets criteria across platforms, devices and viewports
 ---
 
 ## Buttons vs links
