@@ -21,9 +21,11 @@ screenreader:
   name:  |
     The link names correspond to their destination page titles
   role:  |
-    Is discoverable with screenreader shortcuts as a navigation landmark
+    Links identify as a links in a breadcrumb navigation landmark
   state:  |
     The current page link is indicated when focused
+  group:  |
+    Is discoverable with screenreader shortcuts as a navigation landmark
 
 gherkin-keyboard: 
   - when:  |
