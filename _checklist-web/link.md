@@ -13,7 +13,7 @@ keyboard:
 
 mobile:
   swipe: |
-    Focus moves to the element
+    Focus moves to the link
   doubletap: |
     Activates the link
 

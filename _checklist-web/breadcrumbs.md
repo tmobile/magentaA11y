@@ -13,7 +13,7 @@ keyboard:
 
 mobile:
   swipe: |
-    Focus moves to the element
+    Focus moves to the link
   doubletap: |
     Activates the link
 
@@ -24,8 +24,6 @@ screenreader:
     Is discoverable with screenreader shortcuts as a navigation landmark
   state:  |
     The current page link is indicated when focused
-  group:  |
-    Links identify as a link in a breadcrumb navigation landmark
 
 gherkin-keyboard: 
   - when:  |
