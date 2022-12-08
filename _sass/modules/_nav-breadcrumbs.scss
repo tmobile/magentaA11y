@@ -15,7 +15,7 @@
         padding: .5rem 0 .5rem .75rem;
         position: relative;
         text-decoration: none;
-        background: $color-gray-xtra-light;
+        background: #eee;
         line-height: 1rem;
 
         &:after {
@@ -33,7 +33,7 @@
         &:hover,
         &:focus-visible {
           text-decoration: underline;
-          background-color: #eee;
+          background-color: $color-gray-light;
           color: $color-text;
           z-index: 9;
           &:after {
