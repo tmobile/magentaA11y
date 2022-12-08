@@ -19,7 +19,7 @@ mobile:
 
 screenreader:
   name:  |
-    It indicates its role AND IF multiple navigations are present (Ex: Main navigation, Site map, Category menu), the name of the navigation
+    It indicates its role AND IF multiple navigations are present (ex: Main navigation, Site map, Breadcrumbs), the name of the navigation
   role:  |
     It is discoverable with screenreader shortcuts as a navigation landmark
 
