@@ -64,6 +64,8 @@ wcag:
   - name: Robust
     list:
       - criteria: Meets criteria across platforms, devices and viewports
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state (and group name if applicable)
 ---
 
 ## Code examples

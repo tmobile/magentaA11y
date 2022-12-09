@@ -68,6 +68,8 @@ wcag:
       - criteria: Its purpose is clear in the context of the whole page
   - name: Robust
     list:
+      - criteria: Conveys the correct semantic role 
+      - criteria: Expresses its state and group name
       - criteria: Meets criteria across platforms, devices and viewports
 ---
 
@@ -79,7 +81,6 @@ wcag:
 
 - This semantic HTML contains all accessibility features by default.
 - It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_input-radio.scss) to create the radio indicator, no Javascript.
-
 
 {% highlight html %}
 {% include /examples/input-radio.html %}
@@ -106,7 +107,6 @@ wcag:
 </example>
 {:/}
 
-
 ### Required radio inputs
 
 Ensuring all screenreaders indicate radio inputs as being required requires some aria and reinforcement.
@@ -125,7 +125,6 @@ Ensuring all screenreaders indicate radio inputs as being required requires some
 {% include /examples/input-radio-required.html %}
 </example>
 {:/}
-
 
 ### Radio button cards
 
@@ -161,16 +160,20 @@ This custom button requires extra scripting work for roving tabindex and event l
 </div>
 {% endhighlight %}
 
-## Speciality use cases
+## Specialty use cases
 
-### Radio with interactive elements
+### Radio mixed with interactive elements
 
-When a UI calls for interactive elements inbetween radio buttons, this can be very difficult.
+**Avoid** placing interactive elements between radio buttons.
+
 - Radio button focus order is not what you think it is.
 - When nothing is selected, tab order moves through as expected. 
 - However, as soon as a radio button is selected, the selected radio input receives focus first from the group. 
 
-This hack must be used very carefully on a case by case basis.
+#### Checkbox radio hack
+
+- This hack must be used very carefully on a case by case basis.
+- With great power comes great responsibility.
   
 {% highlight html %}
 {% include /examples/input-checkbox-radio.html %}

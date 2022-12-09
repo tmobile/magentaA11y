@@ -20,7 +20,7 @@ input[type="radio"].tab {
     border-radius: .5rem;
     grid-template-columns: 1fr;
     text-align: center;
-    @include break($break-xsmall) {
+    @include break($break-small) {
       grid-template-columns: 1.5rem 1fr;
       padding: .75rem;
       text-align: left;
@@ -30,7 +30,7 @@ input[type="radio"].tab {
     }
     &:last-of-type {
       text-indent: 0rem;
-      padding-right: 1rem;
+      padding-right: .75rem;
     }
     &:before {
       width: 1.5rem;

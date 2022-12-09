@@ -395,13 +395,13 @@ $(document).on('change', '#cowbell-range-value', function() {
 });
 
 
-// Let's start converting jquery to JS
 const textarea = document.getElementById('message');
 if(textarea) {
     const chars = document.getElementById('currentChars');
     textarea.addEventListener("input", event => {
         const target = event.currentTarget;
         const maxLength = target.getAttribute("maxlength");
+        // const currentLength = target.value.replace(/\r(?!\n)|\n(?!\r)/g, "\r\n").length;
         const currentLength = target.value.length;
         setTimeout(function() {
             chars.innerHTML = maxLength - currentLength;
@@ -429,7 +429,7 @@ $("#marketingCookies").on('change', function() {
 function closeUpdate() {
     $('#hint-spam').removeClass('enabled').addClass('inert');
     $('#hint-spam-message').empty();
-  }
+}
 // Close the toast
 $("#spam").on('change', function() {
     closeUpdate();

@@ -39,7 +39,7 @@ wcag:
       - criteria: The rest of the UI is understandable so we don't need tooltips to explain it
   - name: Robust
     list:
-      - criteria: The design is robust because it doesn't rely on tooltips
+      - criteria: The design is super robust because it doesn't rely on tooltips
 ---
 
 ## Code and design examples

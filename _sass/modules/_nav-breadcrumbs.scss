@@ -1,22 +1,21 @@
 .breadcrumbs {
-  background-color: #fff;;
+  background-color: #fff;
   
   ul {
     display: flex;
     margin: 0;
-    padding: 0 1rem;
+    padding: 1rem;
 
     li {
       list-style-type: none;
       margin: 0;
       padding: 0;
-
       a {
         display: flex;
-        padding: 1rem .5rem 1rem 0rem;
+        padding: .5rem 0 .5rem .75rem;
         position: relative;
         text-decoration: none;
-        color: $color-gray-dark;
+        background: #eee;
         line-height: 1rem;
 
         &:after {
@@ -30,10 +29,31 @@
           background-position: center center;
           transform: rotate(-90deg);
         }
+
+        &:hover,
+        &:focus-visible {
+          text-decoration: underline;
+          background-color: $color-gray-light;
+          color: $color-text;
+          z-index: 9;
+          &:after {
+            background-image: var(--icon-chevron-dark);
+          }
+        }
+
+      }
+
+      &:first-of-type {
+        a {
+          border-radius: .5rem 0 0 .5rem;
+          padding-left: 1rem;
+        }
       }
 
       &:last-of-type {
         a {
+          padding-right: .75rem;
+          border-radius: 0 .5rem .5rem 0;
           &:after {
             display: none;
           }
