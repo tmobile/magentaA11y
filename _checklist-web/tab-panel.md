@@ -56,6 +56,7 @@ gherkin-mobile:
 ## Avoid tab groups
 
 Tab groups are a sub-par solution used in a couple of scenarios:
+
 - A page has become bloated with content and the designer seeks to condense even more information into a tighter space. 
 - It's also possible a product owner still believes it's the year 1999 and people don't know how to scroll. 
 
@@ -66,22 +67,25 @@ Either way, it's about trying to cram low quality content into a page until it b
 - Many people who use a screenreader don't know how to operate a tab group with the arrow keys and can miss parts of the content.
 - It requires the screenreader user to repeatedly parse the content to consume it.
 - Interaction rates will be exceedingly low for anything but the first tab panel (like a carousel).
+- It hides content from the user by default and not everyone will notice or know how it works.
+- If users need to compare information they cannot
 
 ### What to do instead
 
-Rather than cramming more content into the page, consider breaking the page into more concise sections or separate pages.
+Rather than cramming more content into the page, consider other designs such as:
 
-### Still need a solution?
-
-- Use **radio buttons** as controls. This will be easier to understand for screenreader users (as is done with this website's tabs).
+- Breaking the page into more concise sections with tight copywriting
+- Putting content inside expander/accordions
+- Using separate pages
 
 #### Wait, then why are you using tabs on this site?
 
-- See above: The page has become bloated with content and the designer seeks to condense even more information into a tighter space.
+- See above: The page has become bloated with content and the designer seeks to condense even more information into a tighter space. The information in the tabs is largely the same and not something the user needs to compare, so there's no loss of functionality.
 
 ## Code examples
 
 - [More details and working examples](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/)
+- You can also use **radio buttons** as controls. This will be easier to understand for screenreader users (as is done with this website's tabs).
 
 ### Use semantic HTML where possible
 

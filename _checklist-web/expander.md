@@ -117,3 +117,9 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 ### Focus
 - Focus must be visible
 
+## Design notes
+
+- [Nielsen Norman Group study](https://www.nngroup.com/articles/accordion-icons/): The caret icon most clearly indicated to users that it would open an accordion in place, rather than linking directly to a new page.
+- Not all users will notice there is hidden content or understand how these work. For this reason, you should only use them in specific situations and if user research supports it.
+
+
