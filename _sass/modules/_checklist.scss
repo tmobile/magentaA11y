@@ -17,13 +17,22 @@
     transition: 1s;
     @include float;
     border-radius: 1rem;
-    padding: 0rem 2rem 0 2rem;
+    padding: 0rem 1rem 0 1rem;
+
+    @include break($break-mid) {
+      padding: 0rem 2rem 0 2rem;
+    }
 
     .sticky-group {
-      padding-top: 2rem;
       position: sticky;
       position: sticky;
       top: 0;
+      padding-top: 1rem;
+
+      @include break($break-mid) {
+        padding-top: 2rem;
+      }
+  
     }
   }
 
@@ -166,4 +175,17 @@ label[for="condensed-textarea"] {
   background: #fff;
   position: sticky;
   bottom: 0;
+  justify-items: start;
+  align-items: start;
+  @include break($break-xsmall) {
+    grid-template-columns: auto 1fr;
+  }
+  @include break(480px) {
+    grid-template-columns: auto 1fr min-content;
+    .support-container {
+      justify-self: end;
+      margin-right: .75rem;
+    }
+  }
+
 }

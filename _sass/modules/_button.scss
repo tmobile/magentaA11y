@@ -66,6 +66,7 @@ button {
     background-color: transparent;
     color: $color-text;
     @include ripple(#fff, #eee, center, center);
+    padding-left: 0;
 
     &:before {
       background-image: var(--icon-chevron-dark);
@@ -94,6 +95,47 @@ button {
     &:hover,
     &:focus {
       background: $color-gray-light;
+    }
+  }
+  &.accessory {
+    @extend .button;
+    display: inline-block;
+    text-decoration: none;
+    background: transparent;
+    color: $color-text;
+    padding-left: .5rem;
+    padding-right: .5rem;
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 2rem;
+      width: calc(100%);
+      grid-column: 1;
+      grid-row: 1;
+      background: $color-gray-xtra-light;
+      border-radius: .25rem;
+      border: 1px solid $color-gray;
+      top: .7rem;
+      left: 0 !important;
+      transform: rotate(0);
+      z-index: -1;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-text;
+      &:after {
+        background-color: $color-gray-light;
+        border: 1px solid $color-gray-dark;
+
+      }
+  
     }
   }
 

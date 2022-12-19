@@ -4,15 +4,21 @@ input[role="switch"] {
     grid-template-columns: 4rem 1fr;
     column-gap: 1rem;
     
+    &:before,
+    &:after { 
+      margin: -.25rem 0 -.25rem 0;
+    }
+
+
     &:before {
       content: '';
       display: block;
+      grid-column: 1;
+      grid-row: 1;
       width: 2.5rem;
       padding: 0 .75rem 0 .75rem;
       height: 2rem;
       position: relative;
-      left: 0rem;
-      top: 0rem;
       border-radius: 1rem;
       background-color: $color-gray-light;
       transition: background-color .2s, box-shadow .2s;
@@ -28,12 +34,13 @@ input[role="switch"] {
     &:after {
       content: '';
       display: block;
+      left: 0rem;
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
       width: 2rem;
       height: 2rem;
       border-radius: 2rem;
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
       background-color: #fff;
       transition: .4s;
       box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px .25rem $color-gray-light;
@@ -88,7 +95,7 @@ input[role="switch"] {
     }
     &:after {
       content: '';
-      left: 3rem;
+      left: 2rem;
       background-color: #fff;
       box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .25rem  $color-brand-primary;
     }
