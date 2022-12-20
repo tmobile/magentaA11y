@@ -60,7 +60,8 @@ Support varies by screen reader. It's recommended to add full aria attributes, e
 
 ### Use semantic HTML
 
-This semantic HTML contains all accessibility features by default.
+- This semantic HTML contains all accessibility features by default. 
+- While not a requirement, it is focusable to increase discoverability.
 
 {% highlight html %}
 {% include /examples/progress-bar.html %}
