@@ -62,15 +62,15 @@ progress {
   } 
 }
 
-.spinner {
+.progress-spinner {
   display: grid;
   margin: 0px auto;
   position: relative;
   width: calc(100px + 2rem);
   height: calc(100px + 2rem);
+  padding: 1rem;
   border: none;
   border-radius: 50%;
-  background: #fff;
   color: $color-text;
   text-align: center;
   align-items: center;
@@ -79,13 +79,19 @@ progress {
   box-shadow: none !important;
   outline-offset: .25rem;
   border-radius: 100px;
-  border: 1rem solid $color-brand-primary;
-  animation:spin 4s linear infinite;
+  animation: spin 2s linear infinite;
+  background: conic-gradient(#fff,lighten($color-brand-primary, 30), $color-brand-primary, $color-brand-primary);
 
-  &::-webkit-progress-bar {
-    box-shadow: none;
-  }
-  &::-webkit-progress-value {
-    background: none;
+  &:after {
+    content: '';
+    display: block;
+    background-color: #fff;
+    width: calc(100px);
+    height: calc(100px);
+    border: none;
+    border-radius: 50%;
+    }
+  progress {
+    @extend .hidden; 
   }
 }

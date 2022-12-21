@@ -6,5 +6,5 @@ title: Loading spinner
 ## Full takeover spinner
 
 {::nomarkdown}
-{% include /examples/spinner-full.html %}
+{% include /examples/progress-spinner.html %}
 {:/}

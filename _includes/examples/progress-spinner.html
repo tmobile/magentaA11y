@@ -1,5 +1,8 @@
 <!-- Use aria-busy if content doesn't all load at once -->
-<div id="really-slow-app" aria-live="polite" aria-busy="false">
+<div id="really-slow-app" 
+     aria-live="polite" 
+     aria-busy="false">
+     
   <button id="showModal">
     Launch spinner
   </button>
@@ -11,7 +14,12 @@
           aria-modal="true"
           aria-labelledby="modal-title">
     <section>
-      <progress role="progressbar" tabindex="0" aria-label="loading" id="modal-title" class="spinner">
+      <div class="progress-spinner">
+        <progress role="progressbar" 
+                  id="modal-title" 
+                  tabindex="0" 
+                  aria-label="Loading">
+      </div>
     </section>
   </dialog>
 </div>

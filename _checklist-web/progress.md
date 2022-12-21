@@ -87,12 +87,12 @@ This semantic HTML contains all accessibility features by default.
 - If content is being loaded slowly behind the spinner inside an `aria-live` region, use `aria-busy="true"` to keep it from being read until the update is complete
 
 {% highlight html %}
-{% include /examples/spinner-full.html %}
+{% include /examples/progress-spinner.html %}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/spinner-full.html %}
+{% include /examples/progress-spinner.html %}
 </example>
 {:/}
 
