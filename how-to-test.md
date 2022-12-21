@@ -42,10 +42,10 @@ The tab key is not the only key the screen readers use to browse content. Before
 
 - **Do not use the mouse** for screen reader testing.
 
-## <step-number>3</step-number> Test with the mobile screen reader
+## <step-number>3</step-number> Test with mobile screen readers
 {: .divider }
 
-Many websites have crossed the threshold to a majority of visits being from mobile devices.
+Because many websites have crossed the threshold to a majority of visits being from mobile devices this may be higher priority than desktop testing.
 
 - Follow the mobile gesture test instructions (swipe, tap, doubletap, etc.)
   - **Do not tap** on elements to navigate, you must swipe to browse the content in a linear pattern
@@ -72,7 +72,7 @@ Follow the screen reader browser pairings table
 {% include /examples/table-screen-reader-browser-pairing.html %}
 {:/}
 
-## NVDA
+## NVDA + Windows
 {: .divider }
 
 <details>
@@ -102,7 +102,7 @@ Follow the screen reader browser pairings table
 - Will read a button with `aria-haspopup="true"` as "menu submenu"
 - Any element in focus like a dialog or section will be read in its entirety
 
-## VoiceOver
+## VoiceOver + MacOS
 {: .divider }
 
 <details>
@@ -121,7 +121,7 @@ Follow the screen reader browser pairings table
 - Voiceover will say "dimmed" instead of "disabled"
 - It may say things in a different order than NVDA or JAWS but the core acceptance criteria are the same.
 
-## JAWS
+## JAWS + Windows
 {: .divider }
 
 <details>
