@@ -47,7 +47,6 @@ gherkin-mobile:
 This semantic HTML contains all accessibility features by default.
 
 {% highlight html %}
-<!-- NATO letters that are common first names -->
 <ul>
   <li>Charlie</li>
   <li>Romeo</li>
@@ -57,16 +56,40 @@ This semantic HTML contains all accessibility features by default.
 </ul>
 {% endhighlight %}
 
+{::nomarkdown}
+<example>
+<h3>NATO letters that are common first names</h3>
+<ul>
+  <li>Charlie</li>
+  <li>Romeo</li>
+  <li>Juliet</li>
+  <li>Mike</li>
+  <li>Victor</li>
+</ul>
+</example>
+{:/}
+
+
 ### Ordered list
 
 {% highlight html %}
-<!-- The NATO alphabet in order -->
 <ol>
   <li>Alpha</li>
   <li>Bravo</li>
   <li>Charlie</li>
 </ol>
 {% endhighlight %}
+
+{::nomarkdown}
+<example>
+<h3>The NATO alphabet</h3>
+<ol>
+  <li>Alpha</li>
+  <li>Bravo</li>
+  <li>Charlie</li>
+</ol>
+</example>
+{:/}
 
 ### When you can't use semantic HTML
 
@@ -86,16 +109,13 @@ As a **last resort**, this custom list uses extra attributes if it's not possibl
 The `<ul>` or `<ol>` list must only contain `<li>` list items.
 
 {% highlight html %}
-<!-- NATO letters that are common first names -->
+<!-- Starcrossed NATO letters -->
 <ul>
-  <li>Charlie</li>
   <li>Romeo</li>
-  <li>Juliet</li>
   <div>
     <a href="#">Buy tickets to Romeo and Juliet, The Experience</a>
   </div>
-  <li>Mike</li>
-  <li>Victor</li>
+  <li>Juliet</li>
 </ul>
 {% endhighlight %}{: .bad-example}
 
