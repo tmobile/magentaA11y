@@ -73,7 +73,6 @@ This semantic HTML contains all accessibility features by default.
   <!-- List of related recipes -->
 {% endhighlight %}
 
-
 ### When you can't use semantic HTML
 
 This custom header requires extra attributes.
