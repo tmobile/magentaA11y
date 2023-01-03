@@ -168,6 +168,7 @@ input[type=radio],
   -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   z-index: 9999;
+  outline: none !important;
   + label,
   + .label {
     @include ripple;
