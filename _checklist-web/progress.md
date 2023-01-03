@@ -35,16 +35,16 @@ wcag:
   - name: Perceivable
     list:
       - criteria: Is easy to identify as a progress indicator
-      - criteria: State indicator or any text has a 4.5:1 minimum contrast ratio
-      - criteria: Color is not used as the only means of conveying state
+      - criteria: State indicator with a minimum width and height of 3px has at least 3:1 contrast ratio, or 4.5:1 if smaller
+      - criteria: Text meets 4.5:1 for small text and 3:1 for large text
   - name: Understandable
     list:
       - criteria: The purpose must be clear in the context of the whole page
       - criteria: The name and state for screen readers must fit the context
   - name: Robust
     list:
-      - criteria: Conveys the correct semantic role
-      - criteria: Expresses its state
+      - criteria: Conveys a meaningful semantic role
+      - criteria: Expresses its state to assistive technology
       - criteria: Meets criteria across platforms, devices and viewports
 ---
 
@@ -132,3 +132,7 @@ This example dynamically injects progress updates that will be read by a screen 
 
 ### Focus
 - Progress bar is not usually focusable.
+
+## Reference
+
+- MagentaA11y applies [WCAG Graphics Contrast Guidelines](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Graphics_Contrast)
