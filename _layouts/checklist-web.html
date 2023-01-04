@@ -20,7 +20,7 @@ layout: default
         {% for category in site.web-categories-order %}
           <details id="{{ category | escape }}-details" class="checklist-details" open>
             <summary id="{{ category | escape }}-category-title">
-              <span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span>
+              <h3><span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span></h3>
             </summary>
             <ul>
               {% for page in ordered_pages %}
