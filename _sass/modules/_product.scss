@@ -27,6 +27,7 @@
       a {
         text-decoration: none;
         display: grid;
+        outline: none;
         .brand {
           margin: 0;
         }
@@ -70,7 +71,7 @@
     opacity: .5;
   }
 }
-.product-link {
+.product-heading {
   grid-row: 3;
 }
 .product-pricing {
