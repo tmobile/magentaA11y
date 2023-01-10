@@ -24,6 +24,12 @@
       display: grid;
       position: relative;
       padding-bottom: 1rem;
+
+      .product-heading {
+        margin: 0;
+        padding: 0;
+      }
+
       a {
         text-decoration: none;
         display: grid;
