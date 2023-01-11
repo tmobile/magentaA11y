@@ -34,19 +34,19 @@
     list-style-type: none;
     transition: .8s;
     @include float;
-
-    &:hover {
-      .button {
-        transition: .2s;
-        background-color: $color-button-hover !important;
-      }
-    }
     
     .link-container {
       display: grid;
       position: relative;
       padding-bottom: 1rem;
       align-self: end;
+
+      &:hover {
+        .button {
+          transition: .2s;
+          background-color: $color-button-hover !important;
+        }
+      }
 
       .product-heading {
         margin: 0;
