@@ -28,6 +28,12 @@
     list-style-type: none;
     transition: .8s;
     @include float;
+
+    &:hover {
+      .button {
+        background-color: $color-button-hover !important;
+      }
+    }
     
     .link-container {
       display: grid;
@@ -62,7 +68,6 @@
         }
         &:hover {
           text-decoration: underline;
-
         }
         &:focus {
           &:after {
