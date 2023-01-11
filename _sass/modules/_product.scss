@@ -17,6 +17,12 @@
     display: grid;
   }
 
+  .product-group-container {
+    display: grid;
+    align-items: start;
+    border-radius: 1rem;
+  }
+
   .product-list-item {
     display: grid;
     align-items: start;
