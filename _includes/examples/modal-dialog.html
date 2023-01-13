@@ -1,18 +1,19 @@
 <button id="showModal">
-  Open dialog
+  Things you should know
 </button>
 
 <dialog role="dialog"
         id="modal"
         tabindex="-1"
         aria-modal="true"
-        aria-labelledby="modal-title">
-  <button type="reset"
-          id="closeModal">
+        aria-labelledby="dialog-title">
+  <button type="button"
+          id="closeModal"
+          class="close">
     <span class="hidden">Close</span>
   </button>
-  <section>
-    <h2 id="modal-title" class="h-bravo">
+  <div class="dialog-content">
+    <h2 id="dialog-title" class="h-bravo">
       Things you should know
     </h2>
     <h3>Keyboard</h3>

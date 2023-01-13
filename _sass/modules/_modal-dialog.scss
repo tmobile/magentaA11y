@@ -32,7 +32,7 @@ dialog {
   //   background: rgba(#000,.8);
   // }
 
-  section {
+  .dialog-content {
     position: relative;
     padding: 2rem;
     border-radius: 0;
@@ -41,7 +41,7 @@ dialog {
     transform: translateZ(0);
   }
 
-  [type="reset"] {
+  button.close {
     display: block;
     background-color: #000;
     position: absolute;
