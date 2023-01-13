@@ -12,8 +12,8 @@ dialog {
   width: calc(100% -  2rem);
   max-width: 640px;
   border-radius: 2rem;
-  background-color: #fff;
-  box-shadow: 0 0 100px 50px rgba(#000,.2);
+  background-color: red;
+  // box-shadow: 0 0 100px 50px rgba(#000,.2);
   outline: 0rem solid rgba(#fff,.7);
   border: none;
   transition: .2s;
@@ -26,6 +26,9 @@ dialog {
 
   &[open] {
     display: block;
+    &::backdrop {
+      background-color: rgba(#000, .7);   
+    }
   }
 
   // &::backdrop {
@@ -71,7 +74,9 @@ dialog {
 
     &:before {
       display: none;
+
     }
+    &:before,
     &:after {
       content: '';
       display: block;
@@ -84,7 +89,7 @@ dialog {
       bottom: 0;
       z-index: -1;
       opacity: 1;
-      background: rgba(#000, .7);
+      background: transparent;
       background-image: none;
       transform: rotate(0deg)
     }
