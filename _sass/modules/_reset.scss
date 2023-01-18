@@ -1,12 +1,13 @@
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem; // Places spacing above :target
 }
 
 body,html {
   margin: 0rem 0 3rem 0;
   padding: 0;
   height: 100%;
-  scroll-behavior: smooth;
   background-color: $color-gray-xtra-light;
   @include linear-gradient($color-gray-xtra-light, #fff);
   background-repeat: no-repeat;
