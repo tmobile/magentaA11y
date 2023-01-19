@@ -1,31 +1,42 @@
 // Thanks to  https://css-tricks.com/html5-progress-element/
+
+
 progress {
   display: block;
   -webkit-appearance: none;
   appearance: none;
-  width: calc(100% - 2rem);
-  height: 20px;
-  margin: 1rem;
-  box-shadow: 0 0 0 1rem #fff, 0 0 0 calc(1rem + 1px) $color-border-gray;
-  border-radius: 0px;
+  width: calc(100%);
+  height: 1rem;
+  border: none;
+  // box-shadow: 0 0 0 1rem #fff, 0 0 0 calc(1rem + 1px) $color-border-gray;
+  background: linear-gradient(90deg, rgba(207,207,207,1) 49%, rgba(207,207,207,1) 85%, rgba(149,149,149,1) 100%);
+  border-radius: 1rem;
+  background-color: transparent;
+  overflow: hidden;
 
+  // Chrome/Safari styles the wrapping progress element itself
   &::-webkit-progress-bar {
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 1rem;
   }
-  &::-webkit-progress-value {
-    background-image:
-            -webkit-linear-gradient(-45deg,
-                    transparent 33%, rgba(0, 0, 0, .1) 33%,
-                    rgba(0,0, 0, .1) 66%, transparent 66%),
-            -webkit-linear-gradient(top,
-                    rgba(255, 255, 255, .25),
-                    rgba(0, 0, 0, .25)),
-            -webkit-linear-gradient(left, #09c, #f44);
 
-    border-radius: 2px;
-    background-size: 35px 20px, 100% 100%, 100% 100%;
+  @mixin progress-indicator-bar {
+    background-color: #e20074;
+    box-shadow: 2px 0 0 0 #cfcfcf, 0 0 1rem .5rem #cfcfcf;
+    border-radius: 1rem;
+  }
+
+  // Firefox progress bar styles
+  &::-moz-progress-bar {
+    @include progress-indicator-bar;
+
+
+  }
+
+  // Styles progress indicator bar
+  &::-webkit-progress-value  {
+    @include progress-indicator-bar;
   }
 }
 
