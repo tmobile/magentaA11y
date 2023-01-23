@@ -30,8 +30,6 @@ progress {
   // Firefox progress bar styles
   &::-moz-progress-bar {
     @include progress-indicator-bar;
-
-
   }
 
   // Styles progress indicator bar
