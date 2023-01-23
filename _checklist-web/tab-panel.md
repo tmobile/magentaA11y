@@ -86,6 +86,7 @@ Rather than cramming more content into the page, consider other designs such as:
 
 - [More details and working examples](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/)
 - You can also use **radio buttons** as controls. This will be easier to understand for screenreader users (as is done with this website's tabs).
+- Note: an `aria-selected` state is explicity required as some screenreaders will assume the tab is selected unless delared `false`.
 
 ### Use semantic HTML where possible
 

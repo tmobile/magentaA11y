@@ -1,7 +1,7 @@
 <nav id="nav" class="menu" aria-label="Site menu">
   <ul>
     <li class="home">
-      <a
+      <a aria-label="{{ site.title-aria-label }}"
         {% if page.url== "/" %} aria-current="page" {% endif %}
         href="{{ site.baseurl }}/">{{ site.title }}
       </a>
