@@ -13,6 +13,7 @@ progress {
   border-radius: 1rem;
   background-color: transparent;
   overflow: hidden;
+  box-shadow: 0 0 0 1rem #fff, 0 1rem .75rem -.25rem rgba(#000, .3);
 
   // Chrome/Safari styles the wrapping progress element itself
   &::-webkit-progress-bar {
