@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Image: jpg, gif, png, svg"
-description: "How to code and test accessible images the Web"
+title:  "Informative Image"
+description: "How to code and test accessible informative images (jpg, gif, png, svg)"
 categories: main
 
 keyboard:
@@ -34,59 +34,41 @@ wcag:
       - criteria: All non-text content that is presented to the user has a text alternative that serves the equivalent purpose, unless it is decorative or repetitive
       - criteria: If an image contains text critical to understanding the page the user has a text alternative that serves the equivalent purpose
 ---
+## Is this image decorative or informative?
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image likely is informative. If the image only serves to impart a tone or feeling to the page, the image is likely decorative. See the [decorative image checklist](/checklist-web/image-decorative) item instead. 
 
-## Basic examples
+If your image contains text inside it, this is a violation of [WCAG AA 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html). Exceptions exist for logos.
 
-### Describe the content of the image
-If you were describing the image to someone who couldn't see it, what would you say?
+## Describe the content of the image
+If you were describing the image to someone via phone conversation and they couldn't see what you were looking at, what would you say?
 
 {% highlight html %}
 <img src="/farm.jpg" 
      alt="Rustic barn surrounded by rolling hills">
 {% endhighlight %}
 
-### Linked SVG that conveys meaning
+## Linked img/SVG that conveys meaning
+If the and img or SVG is linked to another page, its purpose should be clear and a user should know where they will go when clicking it.
 
 {% highlight html %}
-<img src="/coffee-roaster.svg" 
+<a href="/coffee-roasting">
+  <img src="/coffee-roaster.svg" 
      role="img"
-     alt="Coffee roaster">
-{% endhighlight %}
-
-## Decorative images
-
-There are times that images shouldn't be read because they would be repetitive or not add any value to the content.
-
-### The alt attribute is still required
-
-- To be valid html, the `alt` attribute must still be present, even if empty
-  - When the `alt` attribute is empty, the screen reader ignores it.
-  - When the `alt` attribute is missing, the screen reader will read the src url or filename of the image.
-
-### Reinforce decorative images with aria-hidden
-
-- Use `aria-hidden="true"` as a backup and reinforcement:
-  - As a backup: **developers often mistakenly omit the alt attribute entirely**, meaning that some screenreaders will read the entire filename.
-  - As a **reinforcement** to ensure the screenreader ignores the image. Screenreaders have been observed reading an image role when the alt attribute is present but empty.
-
-{% highlight html %}
-<img src="/info-icon.png" aria-hidden="true" alt>
-{% endhighlight %}
-
-{% highlight html %}
-<a href="tel:8888888888">
-  <!-- The phone icon would be repetitive in this case and should be hidden -->
-  <img src="/phone-icon.png" aria-hidden="true" alt>
-  Call us: 888-888-888
+     alt="Learn about the coffee roasting process">
 </a>
 {% endhighlight %}
-
 
 ## Using inline SVG
 
 ### Inline SVG that conveys meaning
 
-Inline SVGs require some special code to be read consistently in all screenreaders.
+Inline SVGs require some special code to be read consistently in all screenreaders:
+- Name: either `aria-label` or `<title />`
+- Role: `role="img"`
+
+If you are using a `<use />` element, add `aria-hidden="true"` to it.
+
+#### Using title
 
 {% highlight html %}
 <svg role="img" focusable="false">
@@ -97,18 +79,13 @@ Inline SVGs require some special code to be read consistently in all screenreade
 </svg>
 {% endhighlight %}
 
-### Inline SVG `<use>` that conveys meaning
-{% highlight html %}
-<svg role="img" aria-label="Name" focusable="false">
-  <use xlink:href="#..." aria-hidden="true"></use>
-</svg>
-{% endhighlight %}
+#### Using aria-label
 
-
-### Inline SVG that is decorative
 {% highlight html %}
-<svg aria-hidden="true" focusable="false">
-  <!-- ... --> 
+<svg role="img" aria-label="Accessible name" focusable="false">
+  <use href="#svg-id" aria-hidden="true" />
+  <!-- if not using <use> then the child elements 
+       of the inline SVG would go here -->
 </svg>
 {% endhighlight %}
 
@@ -118,6 +95,6 @@ Inline SVGs require some special code to be read consistently in all screenreade
 - they are set to stop after 5 seconds or 
 - if users are presented with a way to pause it
 
-### Further reading
-
+## Further reading
 - This page owes a lot to this exhaustive blog post: [Contextually Marking up accessible images and SVGs by Scott O'Hara](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html)
+- [W3C Image decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
