@@ -40,6 +40,9 @@ settings:
 -   Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app.
 -   Name, Role, State must be stated in a single announcement when focus is on the control.
 
+Navigate to section: [Android](#android), [iOS](#ios)
+
+[](#ios)
 ## **iOS**
 
 ### Name
@@ -124,7 +127,7 @@ settings:
         -   Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
     - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-
+[](#android)
 ## **Android**
 
 ### Name
@@ -161,7 +164,6 @@ settings:
     - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
-
 - **Android Views**
     - Active: `android:enabled=true`
     - Disabled: `android:enabled=false`. Announcement: disabled
@@ -206,7 +208,7 @@ settings:
 
 ### Custom Accessibility Action
 - **Android Views**
-    - step 1. Create an accessibility service
+    - step 1: Create an accessibility service
     - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
     - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
 
