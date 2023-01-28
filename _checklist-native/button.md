@@ -141,25 +141,24 @@ settings:
     -   The built-in Button composable will fill the semantics properties with information inferred from the composable by default.
     -   Optional: use `contentDescription` for a more descriptive name to override the default visible label of the button text.
     -   Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
-    -   Exclusive list of custom accessibility actions can be defined using customActions. `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))},`
 
 ### Role
 -   When not using native controls (custom controls), roles will need to be manually coded.
--   **Android**
+-   **Android Views**
     -   Standard button or ImageButton
-
+- **Android Compose**
+    -   Standard `Button` composable
 
 ### Groupings
 -   Group visible label with button (if applicable) to provide a programmatic name for the button
 -   Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
--   **Android Views**
+- **Android Views**
     -  `ViewGroup`
     -  Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
-    -  JETPACK COMPOSE: Composables can be merged together using the `semantics` modifier with its `mergeDescendants` property
 - **Android Compose**
-    - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views.
-    - In combination with `FocusRequester` usage individual components can be grouped. More on FocusRequester in the focus section below.
+    - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
+    - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
 
@@ -167,10 +166,10 @@ settings:
     - Active: `android:enabled=true`
     - Disabled: `android:enabled=false`. Announcement: disabled
 - **Android Compose**
-    - Active: default state is active.enabled.
-    - Disabled: `modifier = Modifier.semantics { disabled() }`. Announcement: disabled
-    - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement.
-
+    - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
+    - Disabled:  `Button(enabled = false)` announces as disabled
+    - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+    - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
 
 ### Focus
 -   Only manage focus when needed. Primarily, let the device manage default focus
@@ -196,19 +195,21 @@ settings:
     -   For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
 - **Android Compose**
     - `Modifier.focusTarget()` makes the component focusable
-    - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order.
-    - Example: to customize the focus events behaviour
-    - step-1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
-    - step-2: update the modifier to set the order: `modifier = Modifier.focusOrder(first) { this.down = second }`
-    - focus order takes values like: down, left, right, up, previous, next, start, end
-    - `FocusRequester` allows to request focus to individual components with in a group of merged descendant views, extending the above example use `second.requestFocus()` to request focus.
+    - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
     - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+    - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+    - *Example:* To customize the focus events behaviour
+      - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+      - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+      - focus order accepts following values: up, down, left, right, previous, next, start, end
+      - step 3: use `second.requestFocus()` to gain focus
 
 ### Custom Accessibility Action
 - **Android Views**
     - step 1. Create an accessibility service
-    - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute.
-    - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`.
+    - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
+    - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
 
 - **Android Compose**
-    -   Exclusive list of custom accessibility actions can be defined in simple way in compose using customActions. `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
+    - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
+    - *Example:* `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
