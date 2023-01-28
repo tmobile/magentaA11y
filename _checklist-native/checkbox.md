@@ -39,9 +39,14 @@ settings:
 - A check box should just toggle between checked and unchecked.  It should not automatically navigate the user to another field or screen when activated, as that may cause a change of context.  Revealing new information on the same screen as a result of activating a checkbox is usually not a change of context.
 - Name, Role, State must be announced when focus is on the control. Announcing the label before the checkbox does not meet this requirement.
 
+Navigate to section: [Android](#android), [iOS](#ios)
+
+
+[](#ios)
 ## **iOS**
 
 
+[](#android)
 ## **Android**
 
 #### Code example
@@ -61,7 +66,7 @@ settings:
   - Use `labelFor` attribute to associate the visible label with the control (Best practice)
 - **Android Compose**
   - By default, the simple checkbox composable is readout & focused separately from its label text, which makes it hard to understand the context. 
-  - Use `Row` composable with `toggleable` (recommended practice) to have entire row including its label focused for selection and it allows screenreader to read the name and role together. 
+  - Use `Row` composable and `toggleable(role = Role.Checkbox)` with inner element as `Checkbox` composable (recommended practice) to have entire row including its label focused for selection, so it allows screenreader to read the name and role together. 
   - Optional: use `Modifier.semantics {  contentDescription = "" }` for a more descriptive name
 
 ### Role
@@ -71,7 +76,8 @@ settings:
   - CheckBox Class
   - Announced as "checkbox"
 - **Android Compose**
-  - Simple checkbox composable. Alternatively use `Row` composable and `toggleable` grouped with `Checkbox`. Code example above.
+  - Simple checkbox composable. 
+  - Alternatively use checkbox composable in combination with `Row` and `toggleable(role = Role.Checkbox)`. Code example above.
   - Announced as "checkbox"
 
 ### Groupings
@@ -83,7 +89,7 @@ settings:
   -  use `labelFor`
 - **Android Compose**
   - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to importantForAccessibility when compared to android views.
-  - Specifying `onCheckedChange = null` on simple checkbox composable when combined with `Row` composable and `toggleable` allows the checkbox for grouping.  
+  - To allow checkbox grouping, specify `onCheckedChange = null` on inner simple checkbox composable when combined with `Row` composable and `toggleable(value = checkedState.value, onValueChange = { checkedState.value = it })`. This makes the entire row group selectable including its label. 
   - `FocusRequester` can be used to request focus to individual components with in the group. More on FocusRequester in the focus section below.
  
 ### State
@@ -91,11 +97,11 @@ settings:
 
 - **Android Views**
   - Active: `android:enabled=true`, `isChecked`, `setChecked`
-  - Disabled: `android:enabled=false`. Announced as: "disabled"
+  - Disabled: `android:enabled=false` announced as: "disabled"
 - **Android Compose**
-  - `Checkbox(checked = true)` announced as checked and `Checkbox(checked = false)` announced as unchecked.
+  - Checked: `Checkbox(checked = true)` announced as: "checked"
   - Enabled:  `Checkbox(enabled = true)` 
-  - Disabled: `Checkbox(enabled = false)`. Announcement: disabled 
+  - Disabled: `Checkbox(enabled = false)` announced as: "disabled"
   - When using checkbox composable with row and toggleable, need to specify `Modifier.toggleable(enabled = false)` along with `Checkbox(enabled = false)`
   - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement.
 
@@ -108,7 +114,7 @@ settings:
   - **Android Views**
      - `importantForAccessibility` makes the element visible to the Accessibility API
      - `android:focusable`
-      - `android=clickable`
+     - `android=clickable`
      - Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
      - `nextFocusDown`
      - `nextFocusUp`
@@ -121,10 +127,12 @@ settings:
      - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
   - **Android Compose**
     - `Modifier.focusTarget()` makes the component focusable
-    - `Modifier.focusOrder()` used in combination with FocusRequesters to define focus order.
-    - *Example:* to customize the focus events behaviour
-        - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
-        - step 2: update the modifier to set the order: `modifier = Modifier.focusOrder(first) { this.down = second }`
-        - focus order takes values like: down, left, right, up, previous, next, start, end
-    - `FocusRequester` allows to request focus to individual components with in a group of merged descendant views. 
+    - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
     - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+    - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+    - *Example:* To customize the focus events behaviour
+        - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+        - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+        - focus order accepts following values: up, down, left, right, previous, next, start, end
+        - step 3: use `second.requestFocus()` to gain focus
+
