@@ -73,6 +73,18 @@ This semantic HTML contains all accessibility features by default.
   <!-- List of related recipes -->
 {% endhighlight %}
 
+### Complex headings
+
+- When multiple styles exist inside a heading use spans and css to achieve the desired result.
+- Do not use multiple headings.
+
+{% highlight html %}
+<h1>
+  <span class="brand">Apple</span> 
+  <span class="model">iPhone XVI</span> 
+</h1>
+{% endhighlight %}
+
 ### When you can't use semantic HTML
 
 This custom header requires extra attributes.
