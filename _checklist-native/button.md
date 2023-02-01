@@ -40,9 +40,6 @@ settings:
 -   Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app.
 -   Name, Role, State must be stated in a single announcement when focus is on the control.
 
-Navigate to section: [Android](#android), [iOS](#ios)
-
-[](#ios)
 ## **iOS**
 
 ### Name
@@ -127,7 +124,6 @@ Navigate to section: [Android](#android), [iOS](#ios)
         -   Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
     - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-[](#android)
 ## **Android**
 
 ### Name
