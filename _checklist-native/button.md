@@ -195,7 +195,7 @@ settings:
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
   - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
-  - *Example:* To customize the focus events behaviour
+  - Example: To customize the focus events behaviour
     - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
     - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
     - focus order accepts following values: up, down, left, right, previous, next, start, end
@@ -209,4 +209,4 @@ settings:
 
 - **Android Compose**
   - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
-  - *Example:* `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
+  - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
