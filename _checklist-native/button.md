@@ -95,7 +95,7 @@ settings:
 - **UIKit**  
   - For enabled: Set `isEnabled` to `true`.
   - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
-    - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overrwrite the current accessibility role of the button.
+    - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
     - For selected, use `accessibilityAddTraits(.isSelected)`.
     - For disabled, use view modifier `disabled()`.
