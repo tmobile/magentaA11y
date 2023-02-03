@@ -40,7 +40,7 @@ settings:
 - Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app.
 - Name, Role, State must be stated in a single announcement when focus is on the control.
 
-## **iOS**
+## iOS
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -56,11 +56,9 @@ settings:
   - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
     - In Interface Builder, set the label in the Identity Inspector.
     - In Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
-
 - **SwiftUI**
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
-        
 
 ### Role
 - When using non-native controls (custom controls), roles will need to be manually coded.
@@ -71,25 +69,21 @@ settings:
 - **SwiftUI**
   - Use native `Button` view
   - If necessary, use view modifier `accessibilityAddTraits(.isButton)` to assign the role as Button.
-  - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.
-        
+  - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
 - Group visible label with button, if applicable, to provide a programmatic name for the button.
 - Group label with data to ensure reading order is logical. (Not label, label, data, data).
 
-
 - **UIKit**
-1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
-2. Set `isAccessibilityElement` to `true` for the parent view.
-  - Assign `accessibilityLabel` and `accessibilityTraits` accordingly.
-- If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
-  - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
-- Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
-- Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
+  1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
+  2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
+  - If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
+    - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
+  - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
+  - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
-
 
 ### State 
 - **UIKit**  
@@ -97,9 +91,8 @@ settings:
   - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
-    - For selected, use `accessibilityAddTraits(.isSelected)`.
-    - For disabled, use view modifier `disabled()`.
-
+  - For selected, use `accessibilityAddTraits(.isSelected)`.
+  - For disabled, use view modifier `disabled()`.
 
 ### Focus
 - Use the device's default focus functionality. 
@@ -108,7 +101,6 @@ settings:
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
 - When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen. It should not stay in the bottom navigation bar.
 - When a menu, picker, or modal is closed, the focus should return to the triggering element.
-
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -123,7 +115,7 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-## **Android**
+## Android
 
 ### Name
 - Name describes the purpose of the control
