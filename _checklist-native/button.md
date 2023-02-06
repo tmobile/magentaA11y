@@ -194,6 +194,10 @@ settings:
     - step 3: use `second.requestFocus()` to gain focus
 
 ### Custom Accessibility Action
+- When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
+- Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
+- The Button class by default supplies all the necessary semantics to make it fully accessible.
+
 - **Android Views**
   - step 1: Create an accessibility service
   - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
