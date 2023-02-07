@@ -34,10 +34,10 @@ wcag:
 
 ## Decorative images
 
-There are times that images shouldn't be read because they would be repetitive or not add any value in addition to the existing page content. These images are generally included for purely stylistic purposes and don't have any direct meaning to the rest of the content on the page other than imparting a certain tone or feeling.
+There are times that images shouldn't be read because it would be repetitive or not add any value in addition to the existing page content. These types of images are generally included for purely stylistic purposes and don't impart any meaning to the rest of the content on the page other than evoking a certain tone or feeling.
 
 ## Is this image decorative or informative?
-If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image likely is informative. See the [informative image checklist](/checklist-web/image) item instead. 
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image likely is informative. In this case, check out the [informative image checklist](/checklist-web/image) item instead. 
 
 If your image contains text inside it, this is a violation of [WCAG AA 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html). Exceptions exist for logos.
 
@@ -45,7 +45,7 @@ If your image contains text inside it, this is a violation of [WCAG AA 1.4.5 Ima
 
 - To have valid HTML, the `alt` attribute must still be present, even when set to the empty empty value of `alt` or `alt=""` (no space in between quotations). Either is an acceptable way to set the alt attribute to empty ([source](https://www.w3.org/TR/html-aam-1.0/#el-img-empty-alt)).
   - When the `alt` attribute is empty, the screen reader ignores it (and will not read anything).
-  - When the `alt` attribute is missing, the screen reader will read the src url or filename of the image which is a very poor user experience.
+  - When the `alt` attribute is missing, the screen reader will read the `src` name or filename of the image which is a very poor user experience.
 
 ## Reinforce decorative images with aria-hidden
 // Is this still true? We should test with a few screen readers and confirm. I think empty alt is very well supported by now. Additionally, I feel like adding additional aria goes against using the semantics first and foremost and actually builds in tech debt that devs may misuse.

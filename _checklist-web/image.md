@@ -35,7 +35,7 @@ wcag:
       - criteria: If an image contains text critical to understanding the page the user has a text alternative that serves the equivalent purpose
 ---
 ## Is this image decorative or informative?
-If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image likely is informative. If the image only serves to impart a tone or feeling to the page, the image is likely decorative. See the [decorative image checklist](/checklist-web/image-decorative) item instead. 
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image likely is informative. If the image only serves to impart a tone or feeling to the page, the image is likely decorative. In this case, check out the [decorative image checklist](/checklist-web/image-decorative) item instead. 
 
 If your image contains text inside it, this is a violation of [WCAG AA 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html). Exceptions exist for logos.
 
@@ -48,13 +48,13 @@ If you were describing the image to someone via phone conversation and they coul
 {% endhighlight %}
 
 ## Linked img/SVG that conveys meaning
-If the and img or SVG is linked to another page, its purpose should be clear and a user should know where they will go when clicking it.
+If an img or SVG is linked to another page, its purpose should be clear and a user should know where they will go when clicking it.
 
 {% highlight html %}
 <a href="/coffee-roasting">
   <img src="/coffee-roaster.svg" 
      role="img"
-     alt="Learn about the coffee roasting process">
+     alt="Coffee roasting process">
 </a>
 {% endhighlight %}
 
