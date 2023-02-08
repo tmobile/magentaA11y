@@ -45,6 +45,7 @@ settings:
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. Be sure to hide the visible text label from VoiceOver recognization in order to avoid this.
 - When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
   - **Incorrect announcement:** "Submit button, Button"
   - **Correct announcement:** "Submit, Button"
