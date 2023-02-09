@@ -11,3 +11,15 @@
   height: 64px;
   width: 64px;
 }
+
+.image-decorative {
+  .icon {
+    margin: 0;
+  }
+
+  .informative,
+  .telephone {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+}
