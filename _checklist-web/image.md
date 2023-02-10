@@ -35,7 +35,7 @@ wcag:
       - criteria: If an image contains text critical to understanding the page the user has a text alternative that serves the equivalent purpose
 ---
 ## Is this image decorative or informative?
-If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image likely is informative. If the image is included for purely stylistic purposes and doesn't impart any meaning to the rest of the content on the page, the image is likely decorative. In this case, check out the [decorative image checklist](/checklist-web/image-decorative) item instead. 
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. If the image is included for purely stylistic purposes and doesn't impart any meaning to the rest of the content on the page, then the image is likely decorative. In this case, check out the [decorative image checklist](/checklist-web/image-decorative) item instead. 
 
 If your image contains text inside it, it should not! This is a violation of [WCAG AA 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html). Exceptions exist for logos.
 

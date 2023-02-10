@@ -37,7 +37,7 @@ wcag:
 There are times that images shouldn't be read because it would be repetitive or not add any value in addition to the existing page content. These types of images are generally included for purely stylistic purposes and don't impart any meaning to the rest of the content on the page.
 
 ## Is this image decorative or informative?
-If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image likely is informative. In this case, check out the [informative image checklist](/checklist-web/image) item instead. 
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. In this case, check out the [informative image checklist](/checklist-web/image) item instead. 
 
 If your image contains text inside it, it should not! This is a violation of [WCAG AA 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html). Exceptions exist for logos.
 
