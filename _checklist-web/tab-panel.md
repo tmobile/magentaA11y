@@ -82,6 +82,16 @@ Rather than cramming more content into the page, consider other designs such as:
 
 - See above: The page has become bloated with content and the designer seeks to condense even more information into a tighter space. The information in the tabs is largely the same and not something the user needs to compare, so there's no loss of functionality.
 
+### Automatic and manual tab selection
+
+Tabs can be built to be selected **automatically** or **manually**. There are a couple subtle differences between each type:
+- "Automatic" tabs become selected immediately upon focus via a mouse click or the arrow keys.
+- "Manual" tabs can receive focus, but require the user to press either `Enter` or `Space`, or click them with their mouse to select them.
+
+
+#### Which version should I use?
+Both versions can be accessible but automatic tabs are more common in the wild. The [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) recommends automatic tabs as long as all of the tab panel content is preloaded and users will not experience delays or latency as they navigate them.
+
 ## Code examples
 
 - [More details and working examples](https://www.w3.org/WAI/ARIA/apg/patterns/tabpanel/)
