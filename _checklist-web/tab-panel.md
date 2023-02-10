@@ -8,9 +8,9 @@ keyboard:
   tab key: |
     Focus visibly moves to the active tab and then the open tab panel
   left/right-arrow-keys: |
-    Moves focus to the next or previous tab
+    Moves focus to the next or previous tab and selects the focused tab if tab selection is AUTOMATIC
   spacebar or enter: |
-    Activates the tab
+    Activates the tab if tab selection is MANUAL
         
 mobile:
   swipe: |
@@ -31,15 +31,15 @@ gherkin-keyboard:
       the tab key to move focus to a tab
     result: |
       focus is strongly visually indicated on the selected tab
-  - then:  | 
+  - if tab selection is manual: |
       the left/right arrow keys
     result: |
-      focus moves to other tabs
-  - then:  |
-      the spacebar or enter key to activate the tab
+      focus moves to other tabs and I use the spacebar or enter key to activate the tab
+  - if tab selection is automatic: |
+      the left/right arrow keys
     result: |
       the tab is selected
-  - then:  |
+  - then: |
       the tab key
     result: |
       focus moves to the selected tab panel
