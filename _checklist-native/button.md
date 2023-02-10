@@ -45,7 +45,7 @@ settings:
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. Be sure to hide the visible text label from VoiceOver recognization in order to avoid this.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 - When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
   - **Incorrect announcement:** "Submit button, Button"
   - **Correct announcement:** "Submit, Button"
@@ -55,8 +55,9 @@ settings:
   - You can programmatically set the visible label with `setTitle()`.
     - The button’s title will overwrite the button’s `accessibilityLabel`.
   - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
-    - In Interface Builder, set the label in the Identity Inspector.
-    - In Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+    - To do this in Interface Builder, set the label using the Identity Inspector
+  - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
+  - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
