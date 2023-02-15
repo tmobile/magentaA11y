@@ -117,6 +117,14 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
+### Announcement examples
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label 
+
+- "<label>, button"
+- "<label>, <other text and content in cell>, button" (grouping)
+- "<label>, button, selected" (selected state)
+- "<label>, dimmed" (disabled state)
+
 ## Android
 
 ### Name
@@ -208,3 +216,12 @@ settings:
 - **Android Compose**
   - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
   - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
+  
+### Announcement examples
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label
+  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
+  
+- "<label>, button, double tap to activate"
+- "<label>, <other text and content in cell>, button, double tap to activate" (grouping)
+- "<label>, button, selected, double tap to activate" (selected state)
+- "<label>, disabled" (disabled state)
