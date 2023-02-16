@@ -101,7 +101,6 @@ settings:
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen. It should not stay in the bottom navigation bar.
 - When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
@@ -175,7 +174,6 @@ settings:
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen, not stay in the bottom nav bar.
 - When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
