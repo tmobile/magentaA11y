@@ -119,10 +119,10 @@ settings:
 ### Announcement examples
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label 
 
-- "<label>, button"
-- "<label>, <other text and content in cell>, button" (grouping)
-- "<label>, button, selected" (selected state)
-- "<label>, dimmed" (disabled state)
+- "Label, button"
+- "Label, <other text and content in cell>, button" (grouping)
+- "Label, button, selected" (selected state)
+- "Label, dimmed" (disabled state)
 
 ## Android
 
@@ -219,7 +219,7 @@ settings:
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label
   - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
   
-- "<label>, button, double tap to activate"
-- "<label>, <other text and content in cell>, button, double tap to activate" (grouping)
-- "<label>, button, selected, double tap to activate" (selected state)
-- "<label>, disabled" (disabled state)
+- "Label, button, double tap to activate"
+- "Label, <other text and content in cell>, button, double tap to activate" (grouping)
+- "Label, button, selected, double tap to activate" (selected state)
+- "Label, disabled" (disabled state)
