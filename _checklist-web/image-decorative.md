@@ -53,10 +53,12 @@ If your image contains text inside it, it should not! This is a violation of [WC
   - Backup: **developers often mistakenly omit the alt attribute entirely**, meaning that some screenreaders will read the entire filename without an alt attribute. Including `aria-hidden="true"` will act as a backup.
   - Reinforcement: using `aria-hidden="true"` ensures that screenreaders ignores the image. Screenreaders have been observed reading an image role even when the alt attribute is empty.
 
-<example>{% include /examples/image-decorative.html %}</example>
+<example>
+{% include /examples/image-decorative.html %}
+</example>
 
 {% highlight html %}
-  {% include /examples/image-decorative.html %}
+{% include /examples/image-decorative.html %}
 {% endhighlight %}
 
 ## Using inline SVG

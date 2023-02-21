@@ -12,14 +12,10 @@
   width: 64px;
 }
 
-.demo-image-decorative {
-  .icon {
-    margin: 0;
-  }
+.icon {
+  margin: 0;
+}
 
-  .info-container,
-  .telephone {
-    display: flex;
-    margin-bottom: 2rem;
-  }
+.decorated {
+  display: flex;
 }
