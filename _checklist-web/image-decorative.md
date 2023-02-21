@@ -63,14 +63,13 @@ If your image contains text inside it, it should not! This is a violation of [WC
 
 ## Using inline SVG
 
-### Inline SVG that conveys meaning
+### Inline SVG that is decorative
 
 Inline SVGs require some special code to be hidden properly from screen readers:
 - `aria-hidden="true"`
 
 If you are using a `<use />` element, add `aria-hidden="true"`.
 
-### Inline SVG that is decorative
 {% highlight html %}
 <svg aria-hidden="true" focusable="false">
   <use href="#svg-id" aria-hidden="true" />
