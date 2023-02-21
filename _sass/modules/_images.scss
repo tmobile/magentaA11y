@@ -2,7 +2,7 @@
   height: 2rem;
   width: 2rem;
   display: block;
-  margin: 0;
+  margin: 0px auto;
   margin-bottom: .25rem;
 }
 
@@ -11,9 +11,10 @@
   width: 64px;
 }
 
-.icon {
-}
-
 .decorated {
   display: flex;
+  .icon {
+    margin: 0;
+  }
+  
 }
