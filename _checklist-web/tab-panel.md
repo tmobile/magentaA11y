@@ -7,10 +7,12 @@ categories: main
 keyboard:
   tab key: |
     Focus visibly moves to the active tab and then the open tab panel
-  left/right-arrow-keys: |
-    Moves focus to the next or previous tab and selects the focused tab if tab selection is AUTOMATIC
-  spacebar or enter: |
-    Activates the tab if tab selection is MANUAL
+  left/right-arrow-keys (automatic activation): |
+    Moves focus to the next or previous tab and activates the tab
+  left/right-arrow-keys (manual activation): |
+    Moves focus to the next or previous tab
+  spacebar or enter (manual activation): |
+    Activates the focused tab
         
 mobile:
   swipe: |
@@ -30,19 +32,19 @@ gherkin-keyboard:
   - when:  |
       the tab key to move focus to a tab
     result: |
-      focus is strongly visually indicated on the selected tab
-  - if tab selection is manual: |
+      focus is strongly visually indicated on the activated tab
+  - if tab activation is manual: |
       the left/right arrow keys
     result: |
       focus moves to other tabs and I use the spacebar or enter key to activate the tab
-  - if tab selection is automatic: |
+  - if tab activation is automatic: |
       the left/right arrow keys
     result: |
-      the tab is selected
+      the tab is activated
   - then: |
       the tab key
     result: |
-      focus moves to the selected tab panel
+      focus moves to the activated tab panel
 
 gherkin-mobile:
   - when:  |
@@ -82,15 +84,13 @@ Rather than cramming more content into the page, consider other designs such as:
 
 - See above: The page has become bloated with content and the designer seeks to condense even more information into a tighter space. The information in the tabs is largely the same and not something the user needs to compare, so there's no loss of functionality.
 
-### Automatic and manual tab selection
+## Automatic and manual tab activation
 
-Tabs can be built to be selected **automatically** or **manually**. There are a couple subtle differences between each type:
-- "Automatic" tabs become selected immediately upon focus via a mouse click or the arrow keys.
-- "Manual" tabs can receive focus, but require the user to press either `Enter` or `Space`, or click them with their mouse to select them.
+Tabs can be built to be activated **automatically** or **manually**. There are a couple subtle differences between each type:
+- "Automatic" tabs become activated immediately upon focus via a mouse click or the arrow keys.
+- "Manual" tabs can receive focus via the arrow keys, but require the user to press either `Enter` or `Space`, or click them with their mouse to activate them.
 
-
-#### Which version should I use?
-Both versions can be accessible but automatic tabs are more common in the wild. The [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) recommends automatic tabs as long as all of the tab panel content is preloaded and users will not experience delays or latency as they navigate them.
+You can find additional guidance as well as examples of automatic and manually activated tab groups on the [WAI-ARIA Authoring Practices Guide Tabs Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/tabs/) page. 
 
 ## Code examples
 
