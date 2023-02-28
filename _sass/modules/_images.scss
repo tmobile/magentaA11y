@@ -4,10 +4,17 @@
   display: block;
   margin: 0px auto;
   margin-bottom: .25rem;
-
 }
 
 .icon-large {
   height: 64px;
   width: 64px;
+}
+
+.decorated {
+  display: flex;
+  .icon {
+    margin: 0;
+  }
+  
 }
