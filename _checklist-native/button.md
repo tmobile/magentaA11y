@@ -45,6 +45,7 @@ settings:
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 - When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
   - **Incorrect announcement:** "Submit button, Button"
   - **Correct announcement:** "Submit, Button"
@@ -54,8 +55,9 @@ settings:
   - You can programmatically set the visible label with `setTitle()`.
     - The button’s title will overwrite the button’s `accessibilityLabel`.
   - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
-    - In Interface Builder, set the label in the Identity Inspector.
-    - In Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+    - To do this in Interface Builder, set the label using the Identity Inspector
+  - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
+  - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
@@ -99,7 +101,6 @@ settings:
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen. It should not stay in the bottom navigation bar.
 - When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
@@ -114,6 +115,14 @@ settings:
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
+
+### Announcement examples
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label 
+
+- "Label, button"
+- "Label, <other text and content in cell>, button" (grouping)
+- "Label, button, selected" (selected state)
+- "Label, dimmed" (disabled state)
 
 ## Android
 
@@ -165,7 +174,6 @@ settings:
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen, not stay in the bottom nav bar.
 - When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
@@ -206,3 +214,12 @@ settings:
 - **Android Compose**
   - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
   - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
+  
+### Announcement examples
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label
+  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
+  
+- "Label, button, double tap to activate"
+- "Label, <other text and content in cell>, button, double tap to activate" (grouping)
+- "Label, button, selected, double tap to activate" (selected state)
+- "Label, disabled" (disabled state)
