@@ -133,8 +133,29 @@ Navigate to section: [Android](#android), [iOS](#ios)
 ## **Android**
 
 #### Code example
-{% highlight html %}
-{% include /examples/native-checkbox-android-compose.html %}
+{% highlight kotlin %}
+val checkedState = remember { mutableStateOf(true) }
+val stateNotSubscribed = "Not Selected"
+val stateSubscribed = "Selected"
+Row(
+  modifier = Modifier
+        .semantics {
+            stateDescription = if (checkedState.value) { stateSubscribed } else { stateNotSubscribed }
+            contentDescription = "Subscribe"
+        }
+        .toggleable(
+            value = checkedState.value,
+            onValueChange = { checkedState.value = it },
+            role = Role.Checkbox
+        )
+  ) {
+    Checkbox(
+            modifier = Modifier.align(Alignment.CenterVertically),
+            checked = checkedState.value,
+            onCheckedChange = null
+    )
+        Text(text = "Subscription")
+    }
 {% endhighlight %}
 
 ### Name
