@@ -39,10 +39,7 @@ settings:
 - A check box should just toggle between checked and unchecked.  It should not automatically navigate the user to another field or screen when activated, as that may cause a change of context.  Revealing new information on the same screen as a result of activating a checkbox is usually not a change of context.
 - Name, Role, State must be announced when focus is on the control. Announcing the label before the checkbox does not meet this requirement.
 
-Navigate to section: [Android](#android), [iOS](#ios)
 
-
-[](#ios)
 ## iOS
 
 ### Name
@@ -129,7 +126,6 @@ Navigate to section: [Android](#android), [iOS](#ios)
 - "Label, checked, button"
 - "Label, not checked, button"  (both "not checked" or unselected are acceptable)
 
-[](#android)
 ## **Android**
 
 #### Code example
