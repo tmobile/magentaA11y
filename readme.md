@@ -29,7 +29,7 @@ These testing criteria are displayed in markdown format for easy copying/pasting
 - Video demos with recommended screen reader browser pairings
 - Code examples
 - Developer notes
-- Links to official [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) and [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) documentation
+- Links to official [WCAG](https://www.w3.org/WAI/-guidelines/wcag/) and [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) documentation
 
 ## Contribute 
 
