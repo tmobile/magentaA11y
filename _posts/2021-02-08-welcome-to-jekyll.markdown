@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome A11yEngineer!"
+title:  "Welcome MagentaA11y!"
 date:   2021-05-03 16:24:47 -0800
 categories: updates
 ---
