@@ -27,22 +27,7 @@ It is crucial to **test with only the keyboard first**, without the screen reade
 - Any major browser (Chrome, Safari, Firefox) is acceptable for keyboard testing.
 - Note: In Safari, you'll have to activate tab in Preferences » Advanced » Press Tab
 
-## <step-number>2</step-number> Test with desktop screen readers
-{: .divider }
-
-### About the tab key
-
-The tab key is not the only key the screen readers use to browse content. Before you test, learn the difference between **interactive elements that should receive focus** with the tab key and **content that should not**.
-
-- Arrow keys browse content for reading
-- The tab key focuses interactive controls
-- screen readers can also consume content automatically, starting reading at the top with no keyboard interaction
-
-### Do not use a mouse
-
-- **Do not use the mouse** for screen reader testing.
-
-## <step-number>3</step-number> Test with mobile screen readers
+## <step-number>2</step-number> Test with mobile screen readers
 {: .divider }
 
 Because many websites have crossed the threshold to a majority of visits being from mobile devices this may be higher priority than desktop testing.
@@ -57,7 +42,22 @@ Because many websites have crossed the threshold to a majority of visits being f
 
 ### Browsers
 
-Follow the screen reader browser pairings table
+Follow the [screen reader browser pairings table](#screen-readers-are-all-slightly-different)
+
+## <step-number>3</step-number> Test with desktop screen readers
+{: .divider }
+
+### About the tab key
+
+The tab key is not the only key the screen readers use to browse content. Before you test, learn the difference between **interactive elements that should receive focus** with the tab key and **content that should not**.
+
+- Arrow keys browse content for reading
+- The tab key focuses interactive controls
+- screen readers can also consume content automatically, starting reading at the top with no keyboard interaction
+
+### Do not use a mouse
+
+- **Do not use the mouse** for screen reader testing.
 
 ## About screen readers
 {: .divider }
