@@ -9,14 +9,14 @@
     <li class="web alpha">
       <a
         {% if page.url== "/web/" %} aria-current="page" {% endif %}
-        {% if page.url contains "web" %} class="current" {% endif %}
+        {% if page.url contains "web/" %} class="current" {% endif %}
         href="{{ site.baseurl }}/web/">Web
       </a>
     </li>
     <li class="native alpha">
       <a
         {% if page.url== "/native/" %} aria-current="page" {% endif %}
-        {% if page.url contains "native" %} class="current" {% endif %}
+        {% if page.url contains "native/" %} class="current" {% endif %}
         href="{{ site.baseurl }}/native/">Native
       </a>
     </li>
@@ -27,7 +27,6 @@
         href="{{ site.baseurl }}/how-to/">How to test
       </a>
     </li>
-
     <li class="native bravo">
       <a
         {% if page.url== "/demos/" %} aria-current="page" {% endif %}
@@ -35,7 +34,6 @@
         href="{{ site.baseurl }}/demos/">Demos
       </a>
     </li>
-
     <li class="expander-group site-sub-group">
       <button
         class="expander-toggle" aria-expanded="false">
@@ -56,6 +54,5 @@
         </li>
       </ul>
     </li>
-
   </ul>
 </nav>
