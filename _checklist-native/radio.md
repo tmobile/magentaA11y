@@ -23,7 +23,7 @@ screenreader:
   role:  |
       Identifies itself as a button in iOS and radio button in Android
   group: |
-      Visble label can be grouped or associated with the radio button in a single swipe
+      Visible label can be grouped or associated with the radio button in a single swipe
   state: |
       Expresses its state (disabled/dimmed, iOS: checked/not checked, selected.  Android: checked/not checked)
 
@@ -119,5 +119,101 @@ settings:
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
+## **Android**
+
+### Name
+
+- Programmatic name describes purpose while focus is on the control (or on the whole table row/blade)
+- Programmatic name matches the visible text label
+
+- **Android Views**
+  - `android:text` XML attribute
+  - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label
+  - `contentDescription` overrides `android:text`
+  - Use `labelFor` attribute to associate the visible label with the control (Best practice)
+
+- **Android Compose**
+  - Radiobutton compose class combined with Text is used
+  - Recommended to use Row layout to allow for entire row to be selectable
+  - Use the `click` on the row for selection event and nullify the `click` on the RadioButton.
+  - Optional: use `contentDescription` for a more descriptive name to override the default visible label of the button text.
+  - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
+
+### Role
+- Role is automatically announced if a native component is used
+- When not using native controls (custom controls), roles will need to be manually coded.
+
+- **Android Views**
+  - Standard RadioButton with RadioGroup when applicable
+  - Announced as: "Radio Button, double tap to toggle"
+
+- **Android Compose**
+  - Simple `RadioButton` composable.
+  - In case of radio button group, use `Column(Modifier.selectableGroup())` to add radio buttons as child views.
+  - Alternatively use checkbox composable in combination with `Row` or `Colum` and `toggleable(role = Role.RadioButton)`. Code example above.
+  - Announced as "Radio Button, double tap to toggle"
+
+### Groupings
+
+- Group visible label with radio button (label and radio button can be grouped together in a tableview/row/blade - one swipe) to provide a programmatic name for the button
+- Or use `labelFor` (Android)
+- Ensure that number of items in the group are announced, while grouping by default allows to make single selection from the set of radio buttons.   
+- Using `selectableGroup()` announces the number of items.
+
+- **Android Views**
+  - ViewGroup
+  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. 
+  - In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
+
+- **Android Compose**
+  - Radiobutton can be combined with Text into either a Column or Row layout to get radio group-like behaviour so the entire layout is selectable.
+  - To ensure correct accessibility behavior `Modifier.selectableGroup()` is essential.
+  - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
+  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
+
+### State
+
+- States can be selected, dimmed/disabled, checked/unchecked, on/off
+
+- **Android Views**
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`
+  - on/off: `isChecked`, `setChecked`
+  - Announcement: disabled, checked/not checked
+
+- **Android Compose**
+  - Active: default state is active and enabled. Use `RadioButton(enabled = true)` to specify explicitly
+  - Disabled:  `RadioButton(enabled = false)` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
+
+### Focus
+
+- Only manage focus when needed. Primarily, let the device manage default focus order.
+- Consider how focus should be managed between child elements and their parent views or containers
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
+
+- **Android Views**
+  - `importantForAccessibility` makes the element visible to the Accessibility API
+  - `android:focusable`
+  - `android=clickable`
+  - Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+  - `nextFocusDown`
+  - `nextFocusUp`
+  - `nextFocusRight`
+  - `nextFocusLeft`
+  - `accessibilityTraversalBefore` (or after)
+  - To move screen reader focus to newly revealed content: `Type_View_Focused`
+  - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+  - To hide controls: `Important_For_Accessibility_false`
+  - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+
+- **Android Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+
 ### Announcement examples
-- TBA
+- "Checked, label, radio button, double tap to toggle"
+- "Not checked, label, radio button, double tap to toggle"
