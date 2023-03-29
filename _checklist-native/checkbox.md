@@ -50,7 +50,7 @@ settings:
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The button’s title will overwrite the button’s `accessibilityLabel`.
+    - The checkbox's title will overwrite the checkbox's `accessibilityLabel`.
   - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
@@ -64,7 +64,7 @@ settings:
 
 - **UIKit**
   - Since there is no native checkbox in UIKit, implementing a custom checkbox may be necessary using `UIButton`, `UISwitch`, `UIControl`, or another class.
-  - If necessary, set `accessibilityTraits` to `.button`. Be sure to set the accessibility value to either "Checked" or "Unselected" to indicate that this control behaves as a checkbox.
+  - If necessary, set `accessibilityTraits` to `.button`. Be sure to set the accessibility value to either "Checked" or "Unchecked" to indicate that this control behaves as a checkbox.
   - An alternative to setting the accessibility trait to `.button` is removing and hiding the accessibility trait using `accessibilityTraits.remove(:)`. Then, append ", Checkbox" to the programmatic name
 - **SwiftUI**
   - Use native `Toggle` view with `toggleStyle(.checkbox)` 
@@ -83,7 +83,7 @@ settings:
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
-  - If the tap gesture is removed to due to grouping logic, restore the tap gesture functionality using bindings to bind the tap gesture of the container with the state of the checkbox.
+  - If the tap gesture is removed due to grouping logic, restore the tap gesture functionality using bindings to bind the tap gesture of the container with the state of the checkbox.
 
 ### State 
 - **UIKit** 
@@ -94,7 +94,7 @@ settings:
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
   - For checked state, if necessary: Set accessibility value to "Checked" with `accessibility(:)`
-  - For unchecked state, if necessary: Set accessibility value to "Checked" with `accessibilityValue(:)`
+  - For unchecked state, if necessary: Set accessibility value to "Unchecked" with `accessibilityValue(:)`
   - For disabled, use view modifier `disabled()`.
 
 ### Focus
@@ -115,7 +115,7 @@ settings:
 - **SwiftUI**
   - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
-    - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
+    - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
