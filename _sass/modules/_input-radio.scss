@@ -20,6 +20,15 @@ input[type="checkbox"].radio,
     }
   }
 
+  @media screen and (-ms-high-contrast: active) {
+    + label,
+    + .label {
+      &:before {
+        border: solid 2px transparent;
+      }
+    }
+  }
+
   + label:hover:before,
   &:focus + label:before {
     background: none;
@@ -47,6 +56,18 @@ input[type="checkbox"].radio,
     &:active + label:before {
       background-color: $color-brand-primary;
       box-shadow: inset 0 0 0 .25rem $color-brand-primary, inset 0 0 0rem .5rem #fff, 0 0 0rem .75rem rgba($color-focus,.4);
+    }
+  }
+  @media screen and (-ms-high-contrast: active) {
+    &:checked {
+      + label,
+      .label.fake-radio.checked {
+        &:before {
+          outline: 4px solid transparent;
+          outline-offset: -10px;
+          border: solid 2px transparent;
+        }
+      }
     }
   }
   &:disabled,
