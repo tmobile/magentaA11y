@@ -6,6 +6,7 @@ title:  "Popular dog breeds by category"
 # Popular dog breeds by category
 {: .annotated}
 
+
 This page demonstrates heading structure by major categories of popular dog breeds.
 
 Hover over headings to see their heading level.
