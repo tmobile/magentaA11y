@@ -125,6 +125,23 @@ main {
   margin-bottom: 3rem;
 }
 
+// h1 {
+//   position: relative;
+//   &:before {
+//     content: 'H1';
+//     display: block;
+//     background: darkblue;
+//     color: #fff;
+//     font-size: 1rem;
+//     width: 1.75rem;
+//     padding: .25rem;
+//     position: absolute;
+//     left: -2.25rem;
+//     border-radius: .125rem;
+//     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+//   }
+// }
+
 gallery {
   display: grid;
   grid-column-gap: 1rem;
@@ -132,7 +149,6 @@ gallery {
   @include break($break-small) {
     grid-template-columns:  1fr 1fr;
   }
-
 
   @include break($break-mid) {
     grid-template-columns:  1fr 1fr 1fr;
@@ -142,13 +158,62 @@ gallery {
     grid-template-columns:  1fr 1fr 1fr 1fr;
   }
 
-
   h2 {
     grid-column: 1/-1;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     border-top: 2px solid $color-text;
     border-bottom: 1px solid $color-border-gray;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
-
 }
+
+
+h1.annotated,
+h2.annotated,
+h3.annotated {
+  position: relative;
+  &:hover {
+    &:before {
+      content: 'h1';
+      display: block;
+      background: darkblue;
+      color: #fff;
+      font-size: 1rem;
+      width: 1.75rem;
+      @include regular;
+      padding: .25rem;
+      position: absolute;
+      left: -2.25rem;
+      border-radius: .125rem;
+      clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    }
+  }
+}
+
+h2.annotated {
+  &:hover {
+    &:before {
+      content: 'h2';
+      background: blue;
+    }
+  }
+}
+
+h3.annotated {
+  &:hover {
+    &:before {
+      content: 'h3';
+      background: blueviolet;
+    }
+  }
+}
+
+h4.annotated {
+  &:hover {
+    &:before {
+      content: 'h4';
+      background: violet;
+    }
+  }
+}
+
