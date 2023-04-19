@@ -15,7 +15,8 @@ button {
   transition: text-indent .7s;
   cursor: pointer;
   background-color: $color-button-primary;
-  @include ripple($color-button-primary, darken($color-button-primary,10), center, center);
+  @include ripple($color-button-primary, $color-button-primary, center, center);
+  
   &:before,
   &:after {
     content: '';
@@ -52,10 +53,22 @@ button {
   &:disabled,
   &[aria-disabled="true"]{
     color: $color-text;
-    background: $color-border-gray;
+    background: $color-button-disabled;
     &:before,
     &:after {
       background-image: var(--icon-chevron-gray);
+    }
+    &:hover,
+    &:focus {
+      &:before,
+      &:after {
+        top: 1.125rem;
+        right: 1.75rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        opacity: .5;
+
+      }
     }
   }
   &.margin {

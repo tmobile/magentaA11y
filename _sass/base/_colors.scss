@@ -10,6 +10,8 @@ $color-border-gray: #ccc;
 $color-input-border: #686868;
 $color-focus: #6692F0;
 $color-focus: $color-brand-secondary;
+$color-disabled: #ccc;
+
 
 $color-example: #eef;
 
@@ -21,9 +23,10 @@ $color-alert: $color-gold;
 
 // WCAG 2.2 specifies states should meet min contrast requirements
 $color-button-primary: $color-brand-primary;
-$color-button-hover: darken($color-button-primary,10);
+$color-button-hover: darken($color-button-primary,3);
 $color-button-hover-border: $color-text;
 $color-button-focus: darken($color-button-primary,5);
 $color-button-active: lighten($color-button-primary,5);
+$color-button-disabled: $color-disabled;
 
 // Reset Styles
