@@ -125,22 +125,6 @@ main {
   margin-bottom: 3rem;
 }
 
-// h1 {
-//   position: relative;
-//   &:before {
-//     content: 'H1';
-//     display: block;
-//     background: darkblue;
-//     color: #fff;
-//     font-size: 1rem;
-//     width: 1.75rem;
-//     padding: .25rem;
-//     position: absolute;
-//     left: -2.25rem;
-//     border-radius: .125rem;
-//     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-//   }
-// }
 
 gallery {
   display: grid;
@@ -158,13 +142,6 @@ gallery {
     grid-template-columns:  1fr 1fr 1fr 1fr;
   }
 
-  h2 {
-    grid-column: 1/-1;
-    border-top: 2px solid $color-text;
-    border-bottom: 1px solid $color-border-gray;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
 }
 
 
@@ -216,4 +193,3 @@ h4.annotated {
     }
   }
 }
-
