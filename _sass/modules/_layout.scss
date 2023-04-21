@@ -144,6 +144,9 @@ gallery {
 
   h2 {
     grid-column: 1/-1;
+    border-bottom: 2px solid $color-text;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
 }
