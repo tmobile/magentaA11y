@@ -79,6 +79,11 @@ A11yEngineer is a Jekyll based site hosted by Github Pages. Follow Github's inst
   - Note: Ruby 3.0 will require WEBrick
     - Add `gem "webrick"` to  Gemfile
 
+### Check the site for broken links
+When contributing, check the site for broken links by use of the following commands:
+- `bundle exec jekyll build`
+- `bundle exec htmlproofer ./_site`
+
 ## License
 
 MagentaA11y is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
