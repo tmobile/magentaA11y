@@ -97,7 +97,7 @@ Don't use tables purely for layout. Only use tables to structure tabular data.
 - Semantic `<table>` structures identify headers appropriately and honors screen reader keyboard shortcuts.
 
 ### Group
-- Wrapping a table in a [`<figure>` element](/OpenA11yEngineer/checklist-web/figure/) can be used to build a relationship to `<figcaption>` and `<cite>`
+- Wrapping a table in a [`<figure>` element](/checklist-web/figure/) can be used to build a relationship to `<figcaption>` and `<cite>`
 
 ### State
 - Sortable tables can use `aria-sort` to indicate state.
