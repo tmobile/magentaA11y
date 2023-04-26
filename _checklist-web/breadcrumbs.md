@@ -84,5 +84,5 @@ wcag:
   - In the example here, the "Web" link uses an `aria-label` that corresponds to the full title of the destination page.
 - Use a `<nav>` with a unique name like `aria-label=”breadcrumbs”`
 - Placing the links inside `<ol>` and `<li>` provides context to users about a given breadcrumb’s position in a list and of the total number of breadcrumbs.
-- Add `aria-current="true"` to the last link in the breadcrumb. This represents the current item within a container or set of related elements.
+- Add `aria-current="page"` to the last link in the breadcrumb. This represents the current item within a container or set of related elements.
 - [ARIA Authoring Practices Guide (APG) Breadcrumb Example](https://www.w3.org/WAI/ARIA/apg/patterns/breadcrumb/examples/breadcrumb/)
