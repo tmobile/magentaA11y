@@ -123,7 +123,7 @@ wcag:
 ## Screenreader differences
 
 - NVDA
-  - By default, NVDA may the entire modal upon launch. This is expected behavior.
+  - By default, NVDA may read the entire modal upon launch. This is expected behavior.
 
 
 ## Code examples
