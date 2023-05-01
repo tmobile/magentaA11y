@@ -10,7 +10,7 @@ keyboard:
   arrow keys: |
     Content within the dialog is browsed in logical order
   tab: |
-    Focus visibly moves within the dialog, starting with the first interactive control (typically close button)
+    Focus visibly moves to interactive controls in the dialog, starting with the first interactive control (typically close button)
   escape: |
     The dialog closes and returns focus to the button that launched it
   space: |
@@ -42,11 +42,11 @@ gherkin-keyboard:
   - then:  |
       the arrow keys
     result: |
-      content within the dialog is browsed in logical order
+      content in the dialog is browsed in logical order and does not leave the dialog
   - then:  |
       the tab key
     result: |
-      focus moves within in the modal dialog, starting with the first interactive control
+      focus moves to interactive controls in the modal dialog
   - then:  |
       the escape key
     result: |
