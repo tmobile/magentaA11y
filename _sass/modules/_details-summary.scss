@@ -52,8 +52,7 @@ details {
       background-repeat: no-repeat;
       transform: rotate(0deg);
       box-shadow:  0 0 0rem .325rem transparent;
-      transition: box-shadow .2s;
-      
+      transition: box-shadow .2s, transform .5s;
     }
     
     // &:after {
@@ -111,7 +110,7 @@ details {
       &:before {
         content: '';
         background-position: center center;
-        transform: rotate(180deg);
+        transform: rotate(-180deg);
 
       }
       // &:after {
