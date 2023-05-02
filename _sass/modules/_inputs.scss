@@ -99,7 +99,7 @@ fieldset,
   input[type="radio"],
   input[type="checkbox"] {
     &:last-of-type + label {
-      border-radius: 0 0 1rem 1rem;
+      // border-radius: 0 0 1rem 1rem;
     }
   }
 
