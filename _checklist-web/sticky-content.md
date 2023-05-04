@@ -70,8 +70,7 @@ html { scroll-padding-top: 3rem; }
 {% endhighlight %}
 
 <script>
-  document.documentElement.style.scrollPaddingTop = "5rem";
-  document.documentElement.style.scrollPaddingBottom = "5rem";
+  document.documentElement.style.scrollPadding = "5rem 0";
 </script>
 
 
