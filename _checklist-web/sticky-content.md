@@ -71,6 +71,7 @@ html { scroll-padding-top: 3rem; }
 
 <script>
   document.documentElement.style.scrollPaddingTop = "5rem";
+  document.documentElement.style.scrollPaddingBottom = "5rem";
 </script>
 
 
