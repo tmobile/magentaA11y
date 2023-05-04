@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="css-grid-container">
+    <div class="row">
+		<div class="col-3">
+			<!-- <h2 class="h-bravo">In this section</h2> -->
+      <nav aria-label="Secondary">
+        <ul class="secondary-nav">
+          <li>
+            <a
+              {% if page.url== "/how-to/" %} aria-current="page" {% endif %}
+              {% if page.url contains "how-to/" %} class="current" {% endif %}
+              href="{{ site.baseurl }}/how-to/">How to Test
+            </a>
+          </li>
+          <li>
+            <a
+              {% if page.url== "/not-sure-if-it-is-an-issue/" %} aria-current="page" {% endif %}
+              {% if page.url contains "not-sure-if-it-is-an-issue/" %} class="current" {% endif %}
+              href="{{ site.baseurl }}/not-sure-if-it-is-an-issue/">Not sure if it is an issue?
+            </a>
+          </li>
+          <li>
+            <a
+              {% if page.url== "/testing-tools/" %} aria-current="page" {% endif %}
+              {% if page.url contains "testing-tools/" %} class="current" {% endif %}
+              href="{{ site.baseurl }}/testing-tools/">Testing Tools
+            </a>
+          </li>
+        </ul>
+      </nav>
+		</div>
+		<div class="col-9">
+        <div class="post-content">
+          {{ content }}
+        </div>
+		</div>
+	</div>
+  </div>
+</div>

@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: two-column-how-to-test
 title: How to test
 permalink: /how-to/
 ---
-
+# How to test
 Manual testing is not difficult or time consuming once a team understands keyboard interactions.
 
 ## <step-number>1</step-number> Test with the keyboard only
