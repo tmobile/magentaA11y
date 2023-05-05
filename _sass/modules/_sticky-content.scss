@@ -1,9 +1,9 @@
 .sticky-wrapper {
   position: relative;
-  // Adds margin around focusable items
-  // Prevents elements from being hidden by sticky content
+  //Adds margin around focusable items
+  //Prevents elements from being hidden by sticky content
   *:focus-visible {
-    scroll-margin: 10rem;
+    scroll-margin: 10rem 0  10rem 0;
   }
 }
 
