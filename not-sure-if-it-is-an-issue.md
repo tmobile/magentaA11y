@@ -28,7 +28,7 @@ If you are testing an experience that is created from a formal design system, yo
 
 <details>
   <summary>
-    Example: Interactive Grid
+    Example: Interactive Table
   </summary>
   <h3>Scenario</h3>
   You are testing a page that consists of an interactive table. When you send keyboard focus to the table, focus skips the table headers and jumps to the 2nd row. You are not sure if this is a focus order issue.
