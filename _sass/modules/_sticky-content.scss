@@ -1,3 +1,12 @@
+.sticky-wrapper {
+  position: relative;
+  // Adds margin around focusable items
+  // Prevents elements from being hidden by sticky content
+  *:focus-visible {
+    scroll-margin: 10rem;
+  }
+}
+
 .promo-bar {
   background: #fff;
   padding: 1rem 0 1rem 1rem;
@@ -31,5 +40,4 @@
     top: 0px !important;
 
   }
-
 }
