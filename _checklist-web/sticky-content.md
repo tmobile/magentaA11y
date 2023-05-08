@@ -63,14 +63,4 @@ It uses only CSS (no JavaScript) to float content as desired.
 
 - Must appear in logical page order within the page.
 - Do not place it at the actual end or beginning of the DOM
-- To ensure that controls which receive keyboard focus are not concealed by a sticky container, utilize CSS [scroll-padding](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding).
-
-{% highlight css %}
-html { scroll-padding-top: 3rem; }
-{% endhighlight %}
-
-<script>
-  document.documentElement.style.scrollPadding = "5rem 0";
-</script>
-
-
+- To ensure that controls which receive keyboard focus are not concealed by a sticky container, utilize CSS [scroll-padding](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-padding) or [scroll-margin](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-margin).
