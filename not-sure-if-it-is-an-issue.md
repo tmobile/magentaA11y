@@ -5,7 +5,7 @@ permalink: /not-sure-if-it-is-an-issue/
 ---
 
 # Not sure if it is an issue?
-Accessibility testers can encounter barriers that may or may not be actual accessibility issues. If you are uncertain if the thing you’ve uncovered is an actual issue follow the steps below to help verify.
+When conducting accessibility testing, testers may come across barriers that could be accessibility-related issues, or they could be unrelated. If you're unsure whether the problem you've identified is a genuine accessibility issue, the following steps can help you verify it.
 
 ## <step-number>1</step-number> Test against Magentaa11y.com
 {: .divider }
@@ -55,11 +55,33 @@ Often, accessibility barriers are related to code issues. Automated testing can 
 
 ## <step-number>4</step-number> Code Inspection 
 {: .divider }
-Sometimes, automated testing does not catch everything. You can have code that is “correct” or valid and it can still create accessibility issues.
+Automated testing does not catch everything. You can have code that is “correct” or valid and it can still create accessibility issues. Manual inpsection of code can often identify what the issue is.
 
-## <step-number>5</step-number> HTML Specification 
+<details>
+  <summary>
+    Example: Nested Dialogs
+  </summary>
+  <h3>Scenario</h3>
+  On the web page you are testing you encounter a dialog that its contents are not announced by the NVDA screen reader for some reason.
+
+  <h3>What to do</h3>
+  After opening Chrome DevTools and inspection of the code you notice up higher in the DOM that there is actually a dialog element nested inside of another dialog element. While this may be valid HTML, it has created a barrier for NVDA users because it is not a standard implementation of a dialog. 
+</details>
+
+## <step-number>5</step-number> Validate HTML 
 {: .divider }
-Refer to the HTML specification WhatWG linkage …. 
+Code validity and proper use of HTML is an important factor with accessibility.   
+
+<details>
+  <summary>
+    Example: Nested Dialogs
+  </summary>
+  <h3>Scenario</h3>
+  On the web page you are testing you encounter a dialog that its contents are not announced by the NVDA screen reader for some reason.
+
+  <h3>What to do</h3>
+  After opening Chrome DevTools and inspection of the code you notice up higher in the DOM that there is actually a dialog element nested inside of another dialog element. While this may be valid HTML, it has created a barrier for NVDA users because it is not a standard implementation of a dialog. 
+</details>
 
 ## <step-number>6</step-number> ARIA Authoring Practices Guidance  
 {: .divider }
