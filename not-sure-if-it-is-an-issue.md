@@ -68,19 +68,19 @@ Automated testing does not catch everything. You can have code that is “correc
   After opening Chrome DevTools and inspection of the code you notice up higher in the DOM that there is actually a dialog element nested inside of another dialog element. While this may be valid HTML, it has created a barrier for NVDA users because it is not a standard implementation of a dialog. 
 </details>
 
-## <step-number>5</step-number> Validate HTML 
+## <step-number>5</step-number> HTML Validation
 {: .divider }
-Code validity and proper use of HTML is an important factor with accessibility.   
+Code validity and proper use of HTML is an important factor with accessibility.   You can use the Nu Html Checker to validate code. You can also reference the HTML Living Standard for guidelines on proper HTML use.  
 
 <details>
   <summary>
-    Example: Nested Dialogs
+    Example: Label not announced
   </summary>
   <h3>Scenario</h3>
-  On the web page you are testing you encounter a dialog that its contents are not announced by the NVDA screen reader for some reason.
+  An ARIA Combobox has a nearby text label, but this label is not announced by the screen reader when the widget receives focus. 
 
   <h3>What to do</h3>
-  After opening Chrome DevTools and inspection of the code you notice up higher in the DOM that there is actually a dialog element nested inside of another dialog element. While this may be valid HTML, it has created a barrier for NVDA users because it is not a standard implementation of a dialog. 
+  Using the Nu Html Checker, validate an isolated fragment of code to see if there are any code validity issues. Improper use of HTML or even spelling errors can cause accessibility barriers. For example, `aria-labeledby` is misspelled and should be `aria-labelledby`. Code validation would detect this code issue. 
 </details>
 
 ## <step-number>6</step-number> ARIA Authoring Practices Guidance  
