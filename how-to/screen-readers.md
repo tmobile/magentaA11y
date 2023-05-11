@@ -1,7 +1,7 @@
 ---
 layout: two-column-how-to-test
 title: How to test - Screen Readers
-permalink: /how-to/screenreaders/
+permalink: /how-to/screen-readers/
 ---
 # Screen Readers
 
