@@ -86,27 +86,11 @@ Code validity and proper use of HTML is an important factor with accessibility. 
 ## <step-number>6</step-number> ARIA Authoring Practices Guidance  
 {: .divider }
 For ARIA widgets, refer to the APG to check code and expected keyboard functionality  
-
-## <step-number>7</step-number> WCAG / WCAG Sufficient Techniques 
-{: .divider }
-Refer to WCAG – Understanding / Sufficient Techniques 
-
-## <step-number>8</step-number> Verify with other screen reader / browser combinations
-{: .divider } 
-Test against other assistive technology and browser pairings – link to pairings in MagentaA11y 
-
-## <step-number>9</step-number> Verify screen reader settings 
-{: .divider }
-Ensure settings are correct …. link to MagentaA11y SR default settings? 
-
-## <step-number>10</step-number> Verify you are correctly using the screen reader or keyboard
+ 
+## <step-number>7</step-number> Verify you are correctly using the screen reader or keyboard
 {: .divider } 
 Some components may provide keyboard functionality ….  
 
-## <step-number>11</step-number> Create a prototype or test standalone code
-{: .divider } 
-A reduced test case..... 
-
-## <step-number>12</step-number> Capture Steps to Recreate 
+## <step-number>8</step-number> Capture Steps to Recreate 
 {: .divider }
 Clearly capture the exact steps to recreate the issue to note in the issue logged.... 
