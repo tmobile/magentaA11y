@@ -1,7 +1,7 @@
 ---
 layout: two-column-how-to-test
 title: How to test - Keyboard & Focus
-permalink: /how-to/keyboard-and-focus/
+permalink: /how-to-test/keyboard-and-focus/
 ---
 
 # Keyboard & Focus

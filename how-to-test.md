@@ -1,7 +1,7 @@
 ---
 layout: two-column-how-to-test
 title: How to test
-permalink: /how-to/
+permalink: /how-to-test/
 ---
 
 # How to test

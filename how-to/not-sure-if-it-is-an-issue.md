@@ -1,7 +1,7 @@
 ---
 layout: two-column-how-to-test
 title: How to test - Not sure if it is an issue?
-permalink: /how-to/not-sure-if-it-is-an-issue/
+permalink: /how-to-test/not-sure-if-it-is-an-issue/
 ---
 
 # Not sure if it is an issue?
