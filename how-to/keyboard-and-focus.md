@@ -126,7 +126,7 @@ Where there are large chunks of repeated content, ensure that there are skip lin
 
 ## Video Example
 {: .divider }
-{% include video-player.html filename = "/assets/media/video/how-to/how-to-keyboard.mp4" title = "How to test with the keyboard" %}
+{% include video-player.html filename = "/assets/media/video/how-to/how-to-keyboard.mp4" title = "How to test with the keyboard" vtt="/assets/media/video/how-to/how-to-keyboard.mp4.vtt" %}
 
 <hr>
 
