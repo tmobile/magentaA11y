@@ -12,6 +12,7 @@ The Web Content Accessibility Guidelines (WCAG) provide very specific color cont
 - Normal text (up to 18pt or 14 pt if bold) must have a contrast ratio of at least 4.5:1 between the text color and background color.
 - Large text (at least 18pt or 14 pt if bold) must have a contrast ratio of at least 3:1 between the text color and background color.
 - Meaningful graphics, user interface components and their various states, as well as focus indicactors must have a contrast ratio of at least 3:1 with the background color. 
+- <strong>Exceptions:</strong> Logos, incidental or decorative text and graphics, and disabled controls do not need to meet color contrast requirements.  
 
 ## <step-number>2</step-number> How to test
 {: .divider }
