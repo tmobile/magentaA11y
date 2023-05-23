@@ -1,0 +1,55 @@
+nav.how-to-test {
+    display: grid;
+    position: sticky;
+    top: 1rem;
+    background-color: #fff;
+    @include float;
+    border-radius: 1rem;
+    transition: .8s;
+    padding: 1rem;
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    
+      li {
+        list-style: none;
+        display: block;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #fff;
+
+        ul {
+          padding-left: .75rem;
+          border-left: .5rem  solid $color-gray-light;
+        }
+  
+        a {
+          display: block;
+          @include regular;
+          margin-right: .25rem; 
+          padding: .5rem 0;
+          transition: .2s;
+          border-radius: 2px;
+          font-weight: bold;
+          text-decoration: none;
+  
+          &:after {
+            display: none;
+          }
+          &:hover {
+          }
+          &[aria-current=page] {
+            @include headline;
+          }
+        }
+  
+      }
+    }
+  
+    
+  }

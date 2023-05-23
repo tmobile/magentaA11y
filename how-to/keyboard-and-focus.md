@@ -1,10 +1,9 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Keyboard & Focus
+layout: how-to-test
+title: Keyboard & focus
 permalink: /how-to-test/keyboard-and-focus/
 ---
 
-# Keyboard & Focus
 Manual testing is not difficult or time consuming once a team understands keyboard interactions.
 
 ## <step-number>1</step-number> Test with the keyboard only
