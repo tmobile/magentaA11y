@@ -1,10 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test
+layout: how-to-test
+title: How to test websites
 permalink: /how-to-test/
 ---
-
-# How to test
 
 Accessibility testing is important because it helps to ensure that everyone can use a website or application, regardless of their disability. This includes people who are blind, deaf, have low vision, or have mobility impairments.
 

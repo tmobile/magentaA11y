@@ -1,10 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Links and Buttons
+layout: how-to-test
+title: Links & Buttons
 permalink: /how-to-test/links-and-buttons/
 ---
-
-# Links and Buttons
 
 ## <step-number>1</step-number> Content Here if needed
 {: .divider }

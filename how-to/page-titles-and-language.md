@@ -1,10 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Page Titles and Language
-permalink: /how-to-test/page-titles-and-language/
+layout: how-to-test
+title: Page titles & language
+permalink: /how-to-test/page-titles-language/
 ---
-
-# Page Titles and Language
 
 ## <step-number>1</step-number> Content Here if needed
 {: .divider }

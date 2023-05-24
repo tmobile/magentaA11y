@@ -1,10 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Dialogs
+layout: how-to-test
+title: Dialogs
 permalink: /how-to-test/dialogs/
 ---
-
-# Dialogs
 
 ## <step-number>1</step-number> Content Here if needed
 {: .divider }

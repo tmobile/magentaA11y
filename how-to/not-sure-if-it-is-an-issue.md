@@ -1,10 +1,9 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Not sure if it is an issue?
+layout: how-to-test
+title: Not sure if it is an issue?
 permalink: /how-to-test/not-sure-if-it-is-an-issue/
 ---
 
-# Not sure if it is an issue?
 When conducting accessibility testing, testers may come across barriers that could be accessibility-related issues, or they could be unrelated. If you're unsure whether the problem you've identified is a genuine accessibility issue, the following steps can help you verify it.
 
 ## <step-number>1</step-number> Test against Magentaa11y.com

@@ -1,12 +1,10 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Multimedia
+layout: how-to-test
+title: Multimedia
 permalink: /how-to-test/multimedia/
 ---
 
-# Multimedia
-
-## <step-number>1</step-number> Content Here if needed
+# <step-number>1</step-number> Content Here if needed
 {: .divider }
 [content here]
 

@@ -1,10 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Content Structure
+layout: how-to-test
+title: Content Structure
 permalink: /how-to-test/content-structure/
 ---
-
-# Content Structure
 
 ## <step-number>1</step-number> Content Here if needed
 {: .divider }

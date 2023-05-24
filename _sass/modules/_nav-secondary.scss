@@ -1,7 +1,5 @@
 nav.how-to-test {
     display: grid;
-    position: sticky;
-    top: 1rem;
     background-color: #fff;
     @include float;
     border-radius: 1rem;
@@ -21,11 +19,12 @@ nav.how-to-test {
         display: block;
         margin: 0;
         padding: 0;
-        border-bottom: 1px solid #fff;
 
         ul {
+          border-top: .25rem solid $color-gray-light;
+          border-bottom: .125rem solid $color-gray-light;
           padding-left: .75rem;
-          border-left: .5rem  solid $color-gray-light;
+          // border-left: .25rem dotted $color-gray-light;
         }
   
         a {
@@ -42,6 +41,7 @@ nav.how-to-test {
             display: none;
           }
           &:hover {
+            text-decoration: underline;
           }
           &[aria-current=page] {
             @include headline;

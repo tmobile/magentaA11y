@@ -1,10 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Images
+layout: how-to-test
+title: Images
 permalink: /how-to-test/images/
 ---
-
-# Images
 
 ## <step-number>1</step-number> Content Here if needed
 {: .divider }

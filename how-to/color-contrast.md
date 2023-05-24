@@ -1,9 +1,9 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Color and Contrast
-permalink: /how-to-test/color-and-contrast/
+layout: how-to-test
+title: Color & contrast
+permalink: /how-to-test/color-contrast/
 ---
-# Color and Contrast
+
 Testing color contrast is a simple yet crucial step in ensuring content is perceivable for users with low vision and color blindness. 
 
 ## <step-number>1</step-number> General requirements

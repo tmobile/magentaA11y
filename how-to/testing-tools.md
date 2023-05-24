@@ -1,8 +1,7 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Testing Tools
+layout: how-to-test
+title: Testing Tools
 permalink: /how-to-test/testing-tools/
 ---
 
-# Testing Tools
 [content here]

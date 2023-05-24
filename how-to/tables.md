@@ -1,10 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Tables
+layout: how-to-test
+title: Tables
 permalink: /how-to-test/tables/
 ---
-
-# Tables
 
 ## <step-number>1</step-number> Content Here if needed
 {: .divider }

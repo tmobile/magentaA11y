@@ -1,9 +1,8 @@
 ---
-layout: two-column-how-to-test
-title: How to test - Screen Readers
+layout: how-to-test
+title: Screen readers
 permalink: /how-to-test/screen-readers/
 ---
-# Screen Readers
 
 ## <step-number>1</step-number> Test with desktop screen readers
 {: .divider }
