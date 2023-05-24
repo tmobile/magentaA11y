@@ -1,7 +1,7 @@
 ---
 layout: how-to-test
 title: Keyboard & focus
-permalink: /how-to-test/keyboard-and-focus/
+permalink: /how-to-test/keyboard-focus/
 ---
 
 Manual testing is not difficult or time consuming once a team understands keyboard interactions.

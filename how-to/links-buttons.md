@@ -1,7 +1,7 @@
 ---
 layout: how-to-test
 title: Links & Buttons
-permalink: /how-to-test/links-and-buttons/
+permalink: /how-to-test/links-buttons/
 ---
 
 ## <step-number>1</step-number> Content Here if needed
