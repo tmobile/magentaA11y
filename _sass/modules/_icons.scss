@@ -27,6 +27,10 @@ $icon-minus-white: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf
 // Alert
 $icon-alert-black: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' viewBox='0 0 30.184 24.959' style='enable-background:new 0 0 30.184 24.959;' xml:space='preserve'%3E%3Cg%3E%3Cpath d='M29.796,22.442L16.679,1.059c-0.873-1.425-2.301-1.405-3.174,0.02L0.388,22.433c-0.873,1.426-0.221,2.527,1.449,2.527 h26.509C30.017,24.96,30.669,23.866,29.796,22.442z M15.081,5.792c0.84,0,1.49,0.928,1.447,2.062l-0.266,6.834 c-0.043,1.133-0.576,2.061-1.184,2.061c-0.608,0-1.142-0.928-1.185-2.061L13.63,7.854C13.587,6.72,14.239,5.792,15.081,5.792z M15.081,21.897c-1.06,0-1.787-0.775-1.765-1.834c0-1.082,0.729-1.834,1.765-1.834c1.08,0,1.763,0.752,1.786,1.834 C16.867,21.122,16.161,21.897,15.081,21.897z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 
+// Shapes
+$icon-international-on-white: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 400 400' style='enable-background:new 0 0 400 400;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23ffffff;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M200,395.6L200,395.6c-39.2,0-71-31.8-71-71V75.4c0-39.2,31.8-71,71-71h0c39.2,0,71,31.8,71,71v249.1 C271,363.8,239.2,395.6,200,395.6z'/%3E%3C/g%3E%3C/svg%3E%0A");
+$icon-international-on-dark: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 400 400' style='enable-background:new 0 0 400 400;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23000000;%7D%0A%3C/style%3E%3Cg%3E%3Cpath class='st0' d='M200,395.6L200,395.6c-39.2,0-71-31.8-71-71V75.4c0-39.2,31.8-71,71-71h0c39.2,0,71,31.8,71,71v249.1 C271,363.8,239.2,395.6,200,395.6z'/%3E%3C/g%3E%3C/svg%3E%0A");
+
 :root {
   --icon-on-white: #{$icon-on-white};
   --icon-on-dark: #{$icon-on-dark};
@@ -47,4 +51,8 @@ $icon-alert-black: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/20
   --icon-minus-white: #{$icon-minus-white};
   
   --icon-alert-black: #{$icon-alert-black};
+
+  --icon-international-on-white: #{$icon-international-on-white};
+  --icon-international-on-dark: #{$icon-international-on-dark};
+
 }
