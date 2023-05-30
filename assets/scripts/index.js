@@ -375,6 +375,7 @@ $('#card-number').on('keypress change', function () {
 
 $('[aria-disabled="true"]').click(function(event){
     event.preventDefault();
+    alert("clicked a disabled thing");
 });
 
 $(".radio-filter-label").click(function(event){
