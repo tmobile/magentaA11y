@@ -119,3 +119,95 @@ settings:
 [Insert examples here]
 
 ## Android
+
+### Name
+- Clickable text that describes the destination or purpose of the link
+- Programmatic name matches the visible text label
+### Role
+- Ensure screen reader users can navigate to links from the Local Context Menu and Rotor
+- Role is automatically announced if a native component is used
+- When using non-native controls (custom controls), roles will need to be manually coded.
+- **Android Views**
+  - TextView - Announces as “link”
+  - URLSpan / ClickableSpan
+  - Linkify Class
+- **Android Compose**
+  - Compose does not have native support on Link in Text, a customized linkable text need to be added into Text composable or use a `AndroidView` to bring the Android View with `Linkify` to build Compose composable
+### Groupings
+- Link text can be grouped with paragraph text automatically to make a larger touch target, provided there is only one interactive link in view.
+- **Android Views**
+  - `ViewGroup`
+  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+- **Android Compose** 
+  - `Modifier.semantics(mergeDescendants = true) {}` for the child elements grouping/merging
+  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
+
+### State
+- **Android Views**
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`
+  - Announcement: disabled
+- **Android Compose**
+  - Active: default state is active and enabled. Use `RadioButton(enabled = true)` to specify explicitly
+  - Disabled:  `RadioButton(enabled = false)` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
+
+### Focus
+- Only manage focus when needed. Primarily, let the device manage default focus order
+- Consider how focus should be managed between child elements and their parent views or containers
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
+- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading
+- When a menu, picker, or modal is closed, the focus should return to the triggering element
+- **Android Views**
+  - `importantForAccessibility` makes the element visible to the Accessibility API
+  - `android:focusable`
+  - `android=clickable`
+  - Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+  - `nextFocusDown`
+  - `nextFocusUp`
+  - `nextFocusRight`
+  - `nextFocusLeft`
+  - `accessibilityTraversalBefore` (or after)
+  - To move screen reader focus to newly revealed content: `Type_View_Focused`
+  - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+  - To hide controls: `Important_For_Accessibility_false`
+  - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+- **Android Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+  - *Example:* To customize the focus events behaviour or the sequence of focus,
+    - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+    - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+    - focus order accepts following values: up, down, left, right, previous, next, start, end
+    - step 3: use `second.requestFocus()` to gain focus
+
+
+### Announcement examples
+- "Read our terms and conditions, links available, use tap with three fingers to view"
+
+### Code Example
+- **Android Compose**
+```kotlin
+/**
+ * Custom Composable with AndroidView to support link in textView and the links accessibility features from talkback menu
+ */
+@Composable
+fun LinkText(
+    modifier: Modifier = Modifier,
+    textBody: String
+) {
+    AndroidView(
+        modifier = modifier,
+        factory = { context ->
+            TextView(context).apply {
+                text = SpannableString(textBody)
+                LinkifyCompat.addLinks(this, Linkify.WEB_URLS)
+                movementMethod = LinkMovementMethod.getInstance()
+            }
+        }
+    )
+}
+```
