@@ -11,7 +11,7 @@ keyboard:
   enter: |
       Activates on Android
         
-mobile:
+mobile gestures:
   swipe: |
       Focus moves to the element, expresses its name, role, state
   doubletap: |
@@ -118,6 +118,14 @@ settings:
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
+### Announcement examples
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
+
+- "Label, button"
+- "Label, button, selected" (selected state)
+- "Label, selected" (selected state)
+- "Label, dimmed" (disabled state)
+- "Label, dimmed, button" (disabled state)
 
 ## **Android**
 
@@ -220,6 +228,9 @@ settings:
     - step 3: use `second.requestFocus()` to gain focus
 
 
-### Announcement examples
-- "Checked, label, radio button, double tap to toggle"
+### Announcement examples 
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
+
+- "Checked, label, radio button, double tap to toggle" (selected state)
 - "Not checked, label, radio button, double tap to toggle"
+- "Not checked, label, radio button, double tap to select"
