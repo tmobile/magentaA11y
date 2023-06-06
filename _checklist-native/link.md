@@ -189,8 +189,6 @@ settings:
     - step 3: use `second.requestFocus()` to gain focus
 
 
-### Announcement examples
-- "Read our terms and conditions, links available, use tap with three fingers to view"
 
 ### Code Example
 - **Android Compose**
@@ -214,9 +212,10 @@ fun LinkText(
         }
     )
 }
-``
+```
+
 ### Announcement examples
--  Options for announcements below depend on framework and versions. Announcement order can vary.  "Double tap to activate" hint announcement varies with implementation.
+Options for announcements below depend on framework and versions. Announcement order can vary.  "Double tap to activate" hint announcement varies with implementation.
 
 - "Label, link"
 - "Label, link, double tap to activate"
