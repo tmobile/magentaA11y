@@ -38,6 +38,15 @@ settings:
 - Name, Role, State must be announced when focus is on the control. Announcing the label before the input field does not meet this requirement.
 - "text field" or "editbox" can be announced prior to "adjustable", picker item or other controls.
 
+## iOS
+---
+> :construction: WORK IN PROGRESS
+
+## Android
+---
+> :construction: WORD IN PROGRESS
+
+<!--- comment-out current content. TODO: remove this when we have new content ready.
 ### Name
 
 - Name describes what data is to be entered and matches a **required** label that is visible at all times.  
@@ -128,3 +137,4 @@ settings:
    -   To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
    -   To hide controls: `importantForAccessibility=false`
    -   For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+-->
