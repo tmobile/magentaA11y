@@ -41,6 +41,7 @@ settings:
 - Clickable textview that navigates the user outside the app (Ex: opens a browser)
 - Button: even if the control visibly looks like a link, code as a button to cue the screen reader the action will keep them within the app
 - Focus around an entire paragraph and activating an in-line link with double tap is an expected behavior.  The link does not have isolated focus.  (There can be only one active link in the paragraph)
+- Links can also be focused separately within a paragraph or sentence.  Since this would require 3 swipes to get through the sentence, this is not optimal.
 
 ## iOS
 
@@ -115,8 +116,11 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
+- Announcement order can vary.
 
-[Insert examples here]
+- "Label, link"
+- "All text in paragraph including url, link" (link in paragraph)
+- "Label, dimmed, link" (disabled)
 
 ## Android
 
@@ -210,4 +214,13 @@ fun LinkText(
         }
     )
 }
-```
+``
+### Announcement examples
+-  Options for announcements below depend on framework and versions. Announcement order can vary.  "Double tap to activate" hint announcement varies with implementation.
+
+- "Label, link"
+- "Label, link, double tap to activate"
+- "Label, double tap to activate, links available, tap with three fingers to view"
+- "All text in paragraph including link name, links available, tap with three fingers to view" (link in paragraph)
+- "Text in sentence, link name, link, remainder of sentence, double tap to activate, links available, tap with three fingers to view" (link in sentence with separate link focus)
+- "Label, disabled" (disabled)
