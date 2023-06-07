@@ -13,24 +13,27 @@ By combining both approaches, we can identify and address accessibility barriers
 ## Tester reference guide
   <ul style="column-count: 3; column-gap: 20px;">
     <li>
-      <a {% if page.url=="/how-to/keyboard-and-focus/" %} aria-current="page" {% endif %} {% if
-        page.url=="/how-to/keyboard-and-focus/" %} class="current" {% endif %}
-        href="{{ site.baseurl }}/how-to/keyboard-and-focus/">Keyboard & Focus
+      <a {% if page.url=="/how-to-test/keyboard-focus/" %} aria-current="page" {% endif %} {% if
+        page.url=="/how-to-test/keyboard-focus/" %} class="current" {% endif %}
+        href="{{ site.baseurl }}/how-to-test/keyboard-focus/">Keyboard & Focus
       </a>
     </li>
     <li>
-      <a {% if page.url=="/how-to/screen-readers/" %} aria-current="page" {% endif %} {% if
-        page.url=="/how-to/screen-readers/" %} class="current" {% endif %}
-        href="{{ site.baseurl }}/how-to/screen-readers/">Screen Readers
+      <a {% if page.url=="/how-to-test/screen-readers/" %} aria-current="page" {% endif %} {% if
+        page.url=="/how-to-test/screen-readers/" %} class="current" {% endif %}
+        href="{{ site.baseurl }}/how-to-test/screen-readers/">Screen Readers
       </a>
     </li>
     <li>
-      <a href="#">Color & Contrast</a>
+      <a {% if page.url=="/how-to-test/color-contrast/" %} aria-current="page" {% endif %} {% if
+        page.url=="/how-to-test/color-contrast/" %} class="current" {% endif %}
+        href="{{ site.baseurl }}/how-to-test/color-contrast/">Color & Contrast
+      </a>
     </li>
     <li>
       <a href="#">Links & Buttons</a>
     </li>
-    <li>
+    <!-- <li>
       <a href="#">Images</a>
     </li>
     <li>
@@ -39,9 +42,11 @@ By combining both approaches, we can identify and address accessibility barriers
     <li>
       <a href="#">Content Structure</a>
     </li>
+    -->
     <li>
       <a href="#">Forms</a>
     </li>
+    <!-- 
     <li>
       <a href="#">Tables</a>
     </li>
@@ -51,10 +56,13 @@ By combining both approaches, we can identify and address accessibility barriers
     <li>
       <a href="#">Dialogs</a>
     </li>
+    --> 
     <li>
-      <a href="/how-to/not-sure-if-it-is-an-issue/">Not sure if it is an issue?</a>
+      <a href="/how-to-test/not-sure-if-it-is-an-issue/">Not sure if it is an issue?</a>
     </li>
+    <!-- 
     <li>
       <a href="/testing-tools/">Testing Tools</a>
     </li>
+    -->
   </ul>
