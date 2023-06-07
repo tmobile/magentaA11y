@@ -50,6 +50,13 @@ Often, accessibility barriers are related to code issues. Automated testing can 
 
   <h3>What to do</h3>
   You have ran some automated accessibility tests and in the results there is an issue identified that indicates the author has nested a button element inside of another button element and that is no only invalid HTML, it is creating the barrier with the screen reader so this is an issue. 
+<br><br>
+{% highlight html %}
+<div role="button">
+  <button>Click Me</button>
+</div>
+{% endhighlight %}
+
 </details>
 
 ## <step-number>4</step-number> Code Inspection 
