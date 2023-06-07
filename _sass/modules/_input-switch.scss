@@ -75,6 +75,7 @@ input[role="switch"] {
       }
       &:after { // Handle
         background-color: #fff;
+        width: 2.25rem;
       }
     }
     &:checked {
@@ -82,6 +83,10 @@ input[role="switch"] {
         &:before { // Track
           background-color: $color-gray-light;
           box-shadow: 0 0 0rem 0 rgba($color-text,.4), inset 0 0 0rem .25rem rgba($color-text,.5);
+        }
+        &:after { // Handle
+          left: .5rem;
+          background-size: 0 0;
         }
       }
     }
