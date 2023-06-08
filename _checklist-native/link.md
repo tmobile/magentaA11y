@@ -39,7 +39,7 @@ settings:
 ## Developer notes
 
 - Clickable text that navigates the user outside the app (ex: opens a browser)
-- Button: even if the control visibly looks like a link, code as a button to cue the screen reader the action will keep them within the app
+- If your framework does not have a native link, develop the element as a native button, even if the control visibly looks like a link. This will cue the screen reader the action will keep them within the app, specifically the in-app browser. 
 - When accessing an in-line link that is inside a paragraph, the focus should be around the paragraph container. Double-tap to activate the link is an expected behavior. 
   - A link from within a paragraph does not have standalone focus. (There can be only one active link in the paragraph)
 - Links can also be focused separately within a paragraph or sentence.  Since this would require 3 swipes to get through the sentence, this is not optimal.
@@ -53,25 +53,87 @@ settings:
 
 - **UIKit**
   - The link's visible text will overwrite the link's `accessibilityLabel`.
-  - Add a gesture recognizer to the text that is to become a link
-  - Stylize the text to appear as a link
-  - Add 
-
+  - If necessary, change the element's `accessibilityLabel` property.
 - **SwiftUI**
-  - If no visible label, use view modifier `accessibilityLabel(_:)`.
-  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
+  - The link's visible text will overwrite the link's `accessibilityLabel`.
+  - If necessary, use view modifier `accessibilityLabel(_:)` to change the `accessibilityLabel`.
 
 ### Role
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 - **UIKit**
-  - Use `UIButton`
-  - If necessary, set `accessibilityTraits` to `.button`.
-  - If necessary, set `accessibilityTraits` to `.link`.
+  - Since UIKit does not have a native link, develop using `UIButton`
+  - Set `accessibilityTraits` to `.link`.
+  - Stylize the text to appear as a link
 - **SwiftUI**
   - Use native `Link` view
   - If necessary, use view modifier `accessibilityAddTraits(.isLink)` to assign the role as Link.
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
+
+### Groupings
+- Link text can be grouped with paragraph text to make a larger touch target, provided there is only one interactive link in view.
+
+- **UIKit**
+  1. Ensure that the child elements, such as the in-line link, of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
+  2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
+  - If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
+    - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
+  - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
+  - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
+- **SwiftUI**
+  - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
+  - Check that if VoiceOver is running, attach the link action to the paragraph container
+
+### State 
+- **UIKit**  
+  - For enabled: Set `isEnabled` to `true`.
+  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+    - If necessary, you may change the accessibility trait of the link to `notEnabled`, but this may overwrite the current accessibility role of the link.
+- **SwiftUI**
+  - For disabled, use view modifier `disabled()`.
+
+### Focus
+- Use the device's default focus functionality. 
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
+- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
+- When the in-app browser is closed, the focus should return to the triggering element.
+
+- **UIKit**
+  - Implement focus ring to be around the paragraph container, so that double-tapping the paragraph will activate the in-line link, given that there is one link inside the program.
+  - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
+    - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
+  - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
+  - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
+- **SwiftUI**
+  - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
+    - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
+    - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
+  - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
+
+### Announcement examples
+- Announcement order can vary.
+
+- "Label, link"
+- "All text in paragraph including url, link" (link in paragraph)
+- "Label, dimmed, link" (disabled)
+
+## Android
+
+### Name
+- Clickable text that describes the destination or purpose of the link
+- Programmatic name matches the visible text label
+
+### Role
+- Ensure screen reader users can navigate to links from the Local Context Menu and Rotor
+- Role is automatically announced if a native component is used
+- When using non-native controls (custom controls), roles will need to be manually coded.
+- **Android Views**
+  - TextView - Announces as “link”
+  - URLSpan / ClickableSpan
+  - Linkify Class
+- **Android Compose**
+  - Compose does not have native support on Link in Text, a customized linkable text need to be added into Text composable or use a `AndroidView` to bring the Android View with `Linkify` to build Compose composable
 
 ### Groupings
 - Link text can be grouped with paragraph text automatically to make a larger touch target, provided there is only one interactive link in view.
@@ -123,8 +185,6 @@ settings:
     - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
     - focus order accepts following values: up, down, left, right, previous, next, start, end
     - step 3: use `second.requestFocus()` to gain focus
-
-
 
 ### Code Example
 - **Android Compose**
