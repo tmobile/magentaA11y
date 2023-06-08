@@ -38,26 +38,34 @@ settings:
 
 ## Developer notes
 
-- Clickable textview that navigates the user outside the app (Ex: opens a browser)
+- Clickable text that navigates the user outside the app (ex: opens a browser)
 - Button: even if the control visibly looks like a link, code as a button to cue the screen reader the action will keep them within the app
-- Focus around an entire paragraph and activating an in-line link with double tap is an expected behavior.  The link does not have isolated focus.  (There can be only one active link in the paragraph)
+- When accessing an in-line link that is inside a paragraph, the focus should be around the paragraph container. Double-tap to activate the link is an expected behavior. 
+  - A link from within a paragraph does not have standalone focus. (There can be only one active link in the paragraph)
 
 ### Name
 
-- Clickable text describes the destination or purpose of the link
-- Programmatic name matches the visible text
+- **UIKit**
+  - The link's visible text will overwrite the link's `accessibilityLabel`.
+  - Add a gesture recognizer to the text that is to become a link
+  - Stylize the text to appear as a link
+  - Add 
+
+- **SwiftUI**
+  - If no visible label, use view modifier `accessibilityLabel(_:)`.
+  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
+- When using non-native controls (custom controls), roles will need to be manually coded.
 
-- Ensure screen reader users can navigate to links from the Local Context Menu and Rotor  
-  
-- **iOS**
-  - Use TextView with `UIAccessibilityTraitLink`
-  - Announces as "link"
-- **Android**  
-  - TextView - Announces as "link"  
-  - `URLSpan` / `ClickableSpan`
-  - Linkify Class
+- **UIKit**
+  - Use `UIButton`
+  - If necessary, set `accessibilityTraits` to `.button`.
+  - If necessary, set `accessibilityTraits` to `.link`.
+- **SwiftUI**
+  - Use native `Link` view
+  - If necessary, use view modifier `accessibilityAddTraits(.isLink)` to assign the role as Link.
+  - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
 
