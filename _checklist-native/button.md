@@ -12,7 +12,7 @@ keyboard:
   enter: |
     Activates on Android
           
-mobile:
+mobile gestures:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
   doubletap: |
@@ -22,7 +22,7 @@ screenreader:
   name:  |
     Purpose is clear and matches visible label
   role:  |
-    Identifies as a button in iOS and "double tap to activate" in Android
+    Identifies as a button in iOS and button or "double tap to activate" in Android
   group: |
     Visible label is grouped or associated with the button in a single swipe
   state: |
@@ -117,11 +117,12 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label 
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
 
 - "Label, button"
-- "Label, <other text and content in cell>, button" (grouping)
+- "Label, (other content in cell), button" (grouping)
 - "Label, button, selected" (selected state)
+- "Label, selected" (selected state)
 - "Label, dimmed" (disabled state)
 
 ## Android
@@ -217,9 +218,9 @@ settings:
   
 ### Announcement examples
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label
-  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
+  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
   
 - "Label, button, double tap to activate"
-- "Label, <other text and content in cell>, button, double tap to activate" (grouping)
+- "Label, (other content in cell), button, double tap to activate" (grouping)
 - "Label, button, selected, double tap to activate" (selected state)
 - "Label, disabled" (disabled state)
