@@ -133,7 +133,7 @@ legend,
   padding: 1.5rem 1rem 1.5rem 1rem;
   width: 100%;
   font-size: 1.25rem;
-  float: left;
+  // float: left; // Layout hack for Safari
   background: #fff;
   position: relative;
   @include clearfix;
