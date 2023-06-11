@@ -18,16 +18,22 @@ The Web Content Accessibility Guidelines (WCAG) provide very specific color cont
 {: .divider }
 ### Automated scanning
 
-Automated scanning tools, such as [WAVE](https://wave.webaim.org/), [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), or [Deque's Axe DevTools](https://www.deque.com/blog/axe-devtools-extension-update-new-color-contrast-analyzer/) are a great starting point for color contrast testing.  
+Automated scanning tools, such as [WAVE](https://wave.webaim.org/), [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), or [Deque's Axe DevTools](https://www.deque.com/blog/axe-devtools-extension-update-new-color-contrast-analyzer/) are a great starting point for color contrast testing. All of these tools can run page scans that quickly generate reports identifying color contrast issues. Scans are:
 
-You can use these tools to run scans on your pages and quickly generate reports that identify content that does not meet color contrast requirments. However, it is important to remember that automated tools are limited to calling out simple contrast issues. They are not effective at finding more complex issues involving text on background images, gradients, and different states for user interface components (like hover or focus).
+- <strong>Good</strong> at identifying simple issues like solid colored text on solid colored backgrounds that do not meet contrast ratios. 
+- <strong>Bad</strong> at idenitfying anything more complex like text on background images, gradients, and different states for user interface components (like hover or focus) that do not meet contrast ratios.
 
 ### Manual testing
 
 Automated scanning must be complemented with a manual review of the page.  
 
 #### <strong>Getting started</strong>
-Open DevTools in your browser window and inspect the different color combinations that you see as you move from the top of the page on down. You can find hexidecimal color values in the "Styles" tab of your DevTools window (see example image below). Use tools such as the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) or [Deque's Color Contrast Analyzer](https://dequeuniversity.com/color-contrast) to check your hex values against contrast requirments. 
+- Open DevTools in your browser window (<span class="keyboard-key">F12</span>)
+- Right-click and select "Inspect" on the different color combinations that you see as you move from the top of the page on down
+- Find the hexidecimal color values in the "Styles" tab of your DevTools window (see example image below)
+- Enter the hex values into a contrast checking tool (like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) or [Deque's Color Contrast Analyzer](https://dequeuniversity.com/color-contrast)) to see if they meet contrast requirments.
+
+
 
 {::nomarkdown}
 <example>
@@ -38,7 +44,10 @@ Open DevTools in your browser window and inspect the different color combination
 {:/}
 
 #### <strong>Hover to inspect</strong>
-In Chrome, you can also enable the "Inspect Element by Mouse" feature in DevTools by clicking on the button located in the upper left-hand corner. Once activated, hover over the elements on the page with your cursor. A popup will appear that often indicates whether the element passes contrast by displaying a green check mark within a circle (see example image below).
+- Chrome has an "Inspect Element by Mouse" DevTools feature that is useful for checking contrast
+- Click the button located in the upper left-hand corner of your DevTools window to enable the feature
+- Hover over elements on the page with your cursor
+- A popup will appear that often indicates whether the element passes contrast by displaying a green check mark within a circle (see example image below)
 
 {::nomarkdown}
 <example>
@@ -49,7 +58,13 @@ In Chrome, you can also enable the "Inspect Element by Mouse" feature in DevTool
 {:/}
 
 #### <strong>Background images and gradients</strong>
-When you come across text that sits on top of a background image, you can use a color picker tool to get representative hex codes from the image. In Chrome's DevTools, under the "Styles" tab you can click on any of the color boxes to bring up the Color Picker popup. Within the popup there is an eyedropper icon that you can activate which allows you to capture colors on the page by hovering them with your curser. Click on the desired area of the background image to capture the color. The hex value will be displayed in the Color Picker (see example image below).
+
+- Identify instances of text and user insterface elements that sit on top of background images or color gradients
+- Use a color picker tool to get representative hex codes from the background
+- In Chrome's DevTools, under the "Styles" tab you can click on any of the color boxes to bring up the Color Picker popup 
+- Within the popup, activate the eyedropper icon
+- Hover over the desired area on the background image with your cursor and click
+- The hex value will be displayed in the Color Picker (see example image below)
 
 {::nomarkdown}
 <example>
@@ -60,7 +75,13 @@ When you come across text that sits on top of a background image, you can use a 
 {:/}
 
 #### <strong>State changes</strong>
-Some interactive elements change color based on their states, like focus or hover. These state changes also need to meet contrast requirements. You can force states on some elements through Chrome's DevTools. Inspect the desired element and activate the ":hov" (Toggle Element State) button from the "Styles" tab in DevTools. Then select the checkbox with the desired state. This will force a persistent state on the element and allow you to capture the color associated with it (see example image below). 
+- Identify interactive elements that change color based on their states, such as focus or hover
+- Ensure that the state changes meet contrast requirements
+- You can force some state changes to persist, which makes them easier to check
+- Inspect the desired element 
+- In Chrome's DevTools, under the "Styles" tab, activate the ":hov" toggle button
+- Select the checkbox with desired state
+- This will force a persistent state and allow you to check for contrast on the element (see example image below) 
 
 {::nomarkdown}
 <example>
