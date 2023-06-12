@@ -1,7 +1,7 @@
 input[role="switch"] {
   + label {
     padding-left: 1rem;
-    grid-template-columns: 4rem 1fr;
+    grid-template-columns: max-content 1fr;
     column-gap: 1rem;
     
     &:before,
@@ -9,106 +9,120 @@ input[role="switch"] {
       margin: -.25rem 0 -.25rem 0;
     }
 
-
-    &:before {
+    &:before { // Track
       content: '';
       display: block;
       grid-column: 1;
       grid-row: 1;
-      width: 2.5rem;
+      width: 1.75rem;
       padding: 0 .75rem 0 .75rem;
       height: 2rem;
       position: relative;
       border-radius: 1rem;
-      background-color: $color-gray-light;
-      transition: background-color .2s, box-shadow .2s;
+      background-color: $color-toggle-track-off;
+      transition: .4s;
       border: none;
       background-size: 1.75rem 1.75rem;
       background-position: 85% center;
       background-repeat: no-repeat;
-      background-image: var(--icon-off-white);
       box-shadow: inset 0 0 0 0 $color-gray-light;
       transform: translateZ(0); // Hack to engage GPU to ensure smooth animation
     }
 
-    &:after {
+    &:after { // Handle
       content: '';
       display: block;
       left: 0rem;
       grid-column: 1;
       grid-row: 1;
       position: relative;
-      width: 2rem;
-      height: 2rem;
+      width: calc(2rem - .5rem);
+      height: calc(2rem - .5rem);
       border-radius: 2rem;
+      border: .25rem solid $color-toggle-track-off;
+
       background-color: #fff;
-      transition: .4s;
-      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px .25rem $color-gray-light;
+      background-image: var(--icon-international-on-dark);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 0 0;
+
+
+      transition: .2s;
+      box-shadow: 0 1px 5px 1px rgba(#000,.0), inset 0 0px 0px .25rem $color-text;
     }
   }
 
   + label:hover:before,
-  &:focus + label:before {
+  &:focus + label:before { // Track
     box-shadow: none;
-    background-color: $color-gray-light;
+    background-color: $color-toggle-track-off;
     transition: background-color .4s;
-    box-shadow: inset 0 0 0rem .25rem rgba($color-brand-primary, .25);
+    box-shadow: inset 0 0 0rem .25rem rgba($color-text, .25);
   }
 
   + label:hover:after,
-  &:focus + label:after {
-    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px .25rem rgba($color-brand-primary, 1);
+  &:focus + label:after { // Handle
+    box-shadow: 0 0 0rem .5rem rgba($color-text,.4), inset 0 0px 0px 0rem rgba($color-text, 1);
+    border-color: $color-text !important;
   }
 
   &:active {
     + label {
-      &:before {
-        background-color: rgba($color-brand-primary,.5);
-        box-shadow: inset 0 0 0 2rem rgba($color-brand-primary,.25);
+      &:before { // Track
+        // background-color: rgba($color-text,.5);
+        box-shadow: 0 0 0rem 0 rgba($color-text,.4), inset 0 0 0rem .25rem rgba($color-text,.5);
       }
-      &:after {
+      &:after { // Handle
         background-color: #fff;
-        border: 0;
+        width: 2.25rem;
       }
     }
     &:checked {
       + label {
-        &:before {
+        &:before { // Track
           background-color: $color-gray-light;
-          box-shadow: inset 0 0 1rem .25rem rgba($color-brand-primary,.25);
+          box-shadow: 0 0 0rem 0 rgba($color-text,.4), inset 0 0 0rem .25rem rgba($color-text,.5);
+        }
+        &:after { // Handle
+          left: .5rem;
+          background-size: 0 0;
         }
       }
     }
   }
     
   &:checked + label {
-    &:before {
+    &:before { // Track
       content: '';
       color: #fff;
-      text-shadow: 0 0 3px rgba($color-brand-primary,.4);
-      background-color: $color-brand-primary;
-      background-repeat: no-repeat;
-      background-position: 15% center;
-      background-image: var(--icon-on-white);
-      background-size: 1.75rem 1.75rem;
-      transition: background-color .4s;
+      text-shadow: 0 0 3px rgba($color-text,.4);
+      background-color: $color-text;
+      background-image: none;
+      transition: background-color .2s;
     }
-    &:after {
+
+    &:hover:before { // Track
+      background-color: $color-text;
+      transition: background-color .2s;
+      box-shadow: inset 0 0 1rem .25rem $color-text;
+    }
+    &:after { // Handle
       content: '';
-      left: 2rem;
+      left: 1.25rem;
       background-color: #fff;
-      box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .25rem  $color-brand-primary;
-    }
-    &:hover:before {
-      background-color: $color-brand-primary;
-      transition: background-color .4s;
-      box-shadow: inset 0 0 1rem .25rem $color-brand-primary;
+      box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px 0rem  $color-text;
+      border-color: $color-text;
+      background-image: var(--icon-international-on-dark);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 1rem 1rem;
     }
   }
 
   &:checked:hover + label:after,
-  &:checked:focus + label:after, {
-    box-shadow: 0 0 0rem .5rem rgba($color-brand-primary,.4), inset 0 0px 0px .25rem rgba($color-brand-primary, 1);
+  &:checked:focus + label:after, { // Handle
+    box-shadow: 0 0 0rem .5rem rgba($color-text,.4), inset 0 0px 0px 0 rgba($color-text, 1);
   }
 
   &:disabled,
@@ -116,24 +130,26 @@ input[role="switch"] {
   &[aria-disabled="true"]:focus-visible {
     + label,
     + label:hover {
-      &:before {
+      &:before { // Track
         background-color: $color-gray-light;
-        background-image: var(--icon-off-dark);
+        background-image: none !important;
         box-shadow: none !important;
       }
-      &:after {
-        box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem $color-gray-light;
-        background-color: $color-gray-xtra-dark !important;
+      &:after { // Handle
+        box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .25rem #777;
+        background-color: $color-gray-xtra-light !important;
+        border-color: $color-gray-light !important;
       }
     }
     &:checked {
       + label,
       + label:hover {
-        &:before {
-          background-image: var(--icon-on-dark);
+        &:before { // Track
         }
-        &:after {
-          box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px .5rem $color-gray-light;
+        &:after { // Handle
+          background-color: #777 !important;
+          box-shadow: 0 0 0rem 0rem transparent, inset 0 0px 0px 0rem $color-gray-light;
+          background-image: var(--icon-international-on-white);
         }
       }
     }
