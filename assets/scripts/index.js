@@ -295,11 +295,13 @@ $details.on("toggle", function() {
     updateStorage();
 });
 
-// On page load
+// On page load set the values stored
 $.each(formValues, function(key, value) {
-    $("#" + key).prop('open', value);
-    $("#" + key).prop('checked', value);
-    //   console.log(key, value);
+    if(key) { // Check to see if key is populated
+        $("#" + key).prop('open', value); 
+        $("#" + key).prop('checked', value);
+        // console.log(key, value);
+    }
 });
 
 // Tab panels are open by default in case of JS can't run
