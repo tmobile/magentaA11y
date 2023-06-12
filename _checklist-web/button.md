@@ -152,7 +152,7 @@ This custom button requires extra attributes and JS event listeners. Adding `tab
   <!-- icon but no text -->
 </div>
 
-<div role="button" tabindex="0" aria-label="Add iPhone 17 to cart">
+<div role="button" tabindex="0" aria-label="Buy now, iPhone 17">
   Buy now <!-- Ambiguous text doesn't describe the intent -->
 </div>
 {% endhighlight %}
