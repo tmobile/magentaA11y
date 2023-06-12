@@ -76,7 +76,7 @@ settings:
 - **UIKit**
   1. Ensure that the child elements, such as the in-line link, of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
   2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
-  - If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
+  - If frame does not exist due to custom development, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
     - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
