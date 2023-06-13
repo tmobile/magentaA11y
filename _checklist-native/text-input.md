@@ -194,6 +194,6 @@ settings:
       - step 3: use `second.requestFocus()` to gain focus
 
 ### Announcement examples
-  -Android Edit Box (ex: placeholder floats to eyebrow of border)
-  -“Edit box, Label, double tap to edit text”  (no value)
-  -“Value, Edit box, Label, double tap to edit text” (value entered)
+  - Android Edit Box (ex: placeholder floats to eyebrow of border)
+  - “Edit box, Label, double tap to edit text”  (no value)
+  - “Value, Edit box, Label, double tap to edit text” (value entered)
