@@ -82,7 +82,9 @@ settings:
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
-  - Check that if VoiceOver is running, attach the link action to the paragraph container
+  - After grouping the paragraph and the in-line link to form a single accessibility element, bind the link action to it.
+    - For the screen reader experience, focus will surround the paragraph container. Double-tapping the paragraph will activate the link.
+    - For the non-screen reader experience, do not bind the link action to the paragraph container. Non-screen readers must tap on the link itself to activate the link.
 
 ### State 
 - **UIKit**  
