@@ -4,16 +4,16 @@ title:  "Text input"
 categories: controls
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or ctl-tab: |
     Focus visibly moves to and from the text input. 
   enter: |
-    Starts input
+    Starts input (iOS only)
           
-mobile:
+mobile gestures:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if disabled)
   doubletap: |
-    Keyboard appears
+    Keyboard appears to edit
 
 screenreader:
   name:  |
@@ -33,9 +33,9 @@ settings:
 ## Developer notes
 - The text input field allows users to enter and edit text.
 - A text input field cannot be automatically focused from any other component, or focus cannot be automatically moved to another component. The user must control navigating to and from a text input.
-- Placeholder text must meet color contrast minimum ratios.
+- Placeholder text must meet color contrast minimum ratios and cannot be considered the visible label if it disappears.
 - Use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort.
-- Name, Role, State must be announced when focus is on the control. Just announcing the label before the input field does not meet this requirement.
+- Name, Role, State must be announced when focus is on the control. Just announcing the label in the swipe before the input field does not meet this requirement.
 - "text field" or "editbox" can be announced prior to "adjustable", picker item or other controls.
 
 ## iOS
@@ -111,7 +111,11 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-TBD
+  - iOS Text field
+  - “Label, value, text field, double tap to edit”  (value entered)
+  - “Label, placeholder, text field, double tap to edit” (placeholder)
+  - “Label, text field, double tap to edit”  (no placeholder or value)
+
 
 ## Android
 
@@ -190,4 +194,6 @@ TBD
       - step 3: use `second.requestFocus()` to gain focus
 
 ### Announcement examples
-TBD
+  -Android Edit Box (ex: placeholder floats to eyebrow of border)
+  -“Edit box, Label, double tap to edit text”  (no value)
+  -“Value, Edit box, Label, double tap to edit text” (value entered)
