@@ -188,7 +188,7 @@ settings:
 
 ### Code Example
 - **Android Compose**
-```kotlin
+{% highlight kotlin %}
 /**
  * Custom Composable with AndroidView to support link in textView and the links accessibility features from talkback menu
  */
@@ -208,7 +208,7 @@ fun LinkText(
         }
     )
 }
-```
+{% endhighlight %}
 
 ### Announcement examples
 Options for announcements below depend on framework and versions. Announcement order can vary.  "Double tap to activate" hint announcement varies with implementation.
