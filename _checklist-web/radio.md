@@ -107,6 +107,22 @@ wcag:
 </example>
 {:/}
 
+### Fully disabled radio inputs
+
+- An input using `disabled` will not be as easily discoverable for the screen reader user
+- Note: The disabled input can be unchecked by checking one of the enabled inputs, but cannot be selected again.
+
+{% highlight html %}
+{% include /examples/input-radio-disabled.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-radio-disabled.html %}
+</example>
+{:/}
+
+
 ### Required radio inputs
 
 Ensuring all screenreaders indicate radio inputs as being required requires some aria and reinforcement.

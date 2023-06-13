@@ -70,13 +70,22 @@ input[type="checkbox"].radio,
       }
     }
   }
+  
   &:disabled,
   &[aria-disabled="true"] {
     + label {
       &:before {
         background-color: $color-gray;
-        background-image: $icon-check-dark;
-        box-shadow: none !important;
+        background-image: none;
+      }
+    }
+    &:checked {
+      + label {
+        &:before {
+          transition: 0s;
+          background-color: $color-gray-dark;
+          box-shadow: inset 0 0 0 .25rem $color-gray-dark, inset 0 0 0rem .5rem #fff, 0 0 0rem 0 rgba($color-focus,.4);
+        }
       }
     }
   }
