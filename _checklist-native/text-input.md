@@ -6,7 +6,7 @@ categories: controls
 keyboard:
   tab or arrow keys: |
     Focus visibly moves to and from the text input. 
-  enter: |
+  space bar: |
     Starts input
           
 mobile:
