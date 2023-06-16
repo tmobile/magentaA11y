@@ -189,6 +189,16 @@ Sometimes the design will call for multiple links with the same text label. In a
 </div>
 {% endhighlight %}{: .bad-example}
 
+## Disabled links
+
+- If it's unavoidable to have a disabled link present you'll need these attributes for the screen reader.
+
+{% highlight html %}
+<a tabindex="0" role="link" aria-disabled="true">
+  Continue
+</a>
+{% endhighlight %}
+
 ### Complex examples
 
 - **Don't** wrap large blocks of content or nest other interactive components inside a link.
