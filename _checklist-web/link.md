@@ -115,20 +115,19 @@ This semantic HTML contains all accessibility features by default.
 
 ### Making a link with no `href` focusable
 
-If a link has no definable url, add `tabindex="0"` to make it focusable.
-
-- A link with no `href` will not be focusable with the keyboard. 
+- A link with no `href` will not be focusable with the keyboard without `tabindex="0"`.
 - **Do not** put anything but a URI in the `href`
+- Add `role="link"` to ensure screen reader reads the role
 
 {% highlight html %}
-<a tabindex="0">
+<a tabindex="0" role="link">
   About
 </a>
 {% endhighlight %}
 
 {% raw %}
 <example>
-<a tabindex="0">
+<a tabindex="0" role="link">
   About
 </a>
 </example>
