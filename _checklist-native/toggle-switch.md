@@ -34,102 +34,87 @@ settings:
 
 ## Developer Notes
 
-- Switch or Toggle Button - A switch is a visual toggle between two mutually exclusive states — on and off
-- You should use a native switch when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
-- A toggle should just toggle on or off.  It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context. Revealing new information on the same screen as a result of activating a toggle is usually not a change of context.
+- A switch, or toggle, has two mutually exclusive states — on and off
+- You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
+- A switch should just toggle on or off. It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context. Revealing new information on the same screen as a result of activating a toggle is usually not a change of context.
 - Name, Role, State must be announced when focus is on the control, if it is isolated in the table row. Announcing the label before the switch does not meet this requirement.
 
+## iOS
 
 ### Name
+- Programmatic name describes the purpose of the control.
+- If visible text label exists, the programmatic name should match the visible text label.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+- When naming a switch, do not add "switch" or "button" to the programmatic name.
+- Placeholder text is NOT the programmatic name
 
-- Name describes purpose while focus is on the control (or on the whole table row)
-- Name should match the visible label, if any, or text in the table row
-
-- **iOS Tips**
-	- Set a label in Interface Builder in the Identity Inspector
-	- Group visible text label and the control in the same view container: `accessibilityFrameInContainerSpace`
-	- `setTitle( )` method
-	- If no visible label, use `accessibilityLabel` on control
-	- `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label
-	- To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector or use `isAccessibilityElement=false`
-	- If hiding visible label from screen reader, use `accessibilityLabel` on control
-- **Android Tips**  
-	- `android:text` XML attribute
-	- Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label
-	- `contentDescription` overrides `android:text`  
-	- Use `labelFor` attribute to associate the visible label with the control (Best practice)
+- **UIKit**
+  - You can programmatically set the visible label with `setTitle()`.
+    - The switch's title will overwrite its `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the switch's `accessibilityLabel` to the label of your choice.
+    - To do this in Interface Builder, set the label using the Identity Inspector
+  - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
+  - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+- **SwiftUI**
+  - If no visible label, use view modifier `accessibilityLabel(_:)`.
+  - If table row of switch has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
+- When using non-native controls (custom controls), roles will need to be manually coded.
 
-- Role is automatically announced if a native component is used
-- When not using native controls (custom controls), roles will need to be manually coded.
-
-- **iOS Tips**
-	- Standard UISwitchControl
-	- "double tap to toggle setting" is expected announcement
-- **Android Tips**
-	- Standard RadioButton with RadioGroup when applicable
-	- "double tap to activate" or "double tap to toggle" is expected announcement
+- **UIKit**
+  - Use `UIButton` or `UISwitch`
+  - If necessary, set `accessibilityTraits` to `.button`.
+- **SwiftUI**
+  - Use native `Toggle` view
+	- Native behavior does not announce role, but implies role by announcing the current state
 
 ### Groupings
+- Group visible label with switch, if applicable, to provide a programmatic name for the switch.
+- Group label with data to ensure reading order is logical. (Not label, label, data, data).
 
-- Group visible label/text with switch (label and switch can be grouped together in a tableview/row/blade - all in one swipe)
+- **UIKit**
+  1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
+  2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
+  - If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
+    - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
+  - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
+  - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
+- **SwiftUI**
+  - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
-- **iOS Tips**
-  - `accessibilityFrame`
-  - `accessibilityFrameInContainerSpace`
-  - GroupView
-  - Create a wrapper as an accessible element
-  - Define action upon double-tap
-  - `shouldGroupAccessibilityElement` attribute: For a precise order if the native order should be disrupted.
-  - `GroupView`
-  - `shouldGroupAccessibilityChildren` attribute indicates whether VoiceOver must group it's children views. This allows making unique vocalizations or define a particular reading order for a part of the page
-  - Only the container class is an accessible element `isAccessibilityElement=true` and announces all elements in one announcement  This makes child elements no longer accessible by screen reader 
-- **Android Tips**
-	- ViewGroup
-	- Set the container objects `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
-
-### State
-
-- States can be selected, dimmed/disabled, on/off, checked/unchecked
-
-- **iOS**  
-	- Active: `isEnabled property`
-	- Disabled: `UIAccessibilityTraitNotEnabled`
-	- disabled/dimmed
-	- on/off:  `isOn` or `setOn`   
-	- Announcement: dimmed, on/off, "double tap to toggle setting" 
-        
-- **Android**
-	- Active: `android:enabled=true`
-	- Disabled: `android:enabled=false`
-	- on/off: `isChecked`, `setChecked`
-	- Announcement: disabled, on/off, "double tap to activate" or "double tap to toggle"
+### State 
+- **UIKit**  
+  - For checked state: Set `accessibilityValue` to "On"
+	- For unchecked state: Optionally, set `accessibilityValue` to "Off"
+  - For enabled: Set `isEnabled` to `true`.
+  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+    - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
+- **SwiftUI**
+	- By default, the `Toggle` view announces "On" or "Off"
+  - For disabled, use view modifier `disabled()`.
 
 ### Focus
+- Use the device's default focus functionality. 
+- Consider how focus should be managed between child elements and their parent views.
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
+- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
 
-- Only manage focus when needed. Primarily, let the device manage default focus order
-- Screen reader focus should be around the entire tablerow/blade when there is one interactive element (switch)  
-- Consider how focus should be managed between child elements and their parent views or containers
-- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
+- **UIKit**
+	- Focus should be around the entire row that has the switch
+  - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
+    - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
+  - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
+  - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
+  - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
+- **SwiftUI**
+	- Focus should be around the entire row that has the switch
+  - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
+    - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
+    - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
+  - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-- **iOS**
-	- `accessibilityElementIsFocused` 
-	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
-	- `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
-	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
-	- To move screen reader focus to newly revealed content: `UIAccessibilityLayoutChangedNotification`
-	- To NOT move focus, but dynamically announce new content: `UIAccessibilityAnnouncementNotification`
-- **Android**
-	- `importantForAccessibility` makes the element visible to the Accessibility API
-	- `android:focusable`
-	- `android=clickable`
-	- Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
-	- `nextFocusDown`
-	- `nextFocusUp`
-	- `nextFocusRight`
-	- `nextFocusLeft`
-	- `accessibilityTraversalBefore` (or after)
-	- To move screen reader focus to newly revealed content: `Type_View_Focused`
-	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
-	- To hide controls: `Important_For_Accessibility_false`
+### Announcement examples
+
+TODO for Debbie
