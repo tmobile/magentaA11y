@@ -3,18 +3,32 @@
     <legend>
       Enter your payment information
     </legend>
-    <label for="card-number">Card Number</label>
-    <input type="text" 
-            name="cardnumber" 
-            id="card-number" 
-            autocomplete="cc-number"
-            inputmode="numeric"
-            pattern="[0-9]*"
-            aria-describedby="description-card-number"
-            required>
+
+    <div class="card-number-container">
+
+      <label for="card-number">Card Number</label>
+      
+      <button type="button" class="cc-camera secondary">
+         <span class="hidden">Use camera to</span> 
+         Scan
+         <span class="hidden">card number</span>
+      </button>
+      
+      <input type="text" 
+              name="cardnumber" 
+              id="card-number" 
+              autocomplete="cc-number"
+              inputmode="numeric"
+              pattern="[0-9]*"
+              aria-describedby="description-card-number"
+              required>
+
       <div id="description-card-number" class="hint secure-icon">
         Secure form protected by 8 bit encryption
       </div>
+
+    </div>
+
     <fieldset>
       <legend>
         Expiration <span aria-hidden="true">(MM YY)</span>
@@ -40,6 +54,15 @@
               required>
       </div>
     </fieldset>
+
+    <label for="cc-name">Name on card</label>
+    <input type="text"
+          name="ccname" 
+          id="cc-name"
+          autocomplete="cc-name"
+          maxlength="19" 
+          required>
+
     <label for="cc-cvc">Security code</label>
     <input type="text" 
             maxlength="5" 
@@ -48,14 +71,10 @@
             autocomplete="cc-csc"
             inputmode="numeric"
             pattern="[0-9]*"
+            aria-describedby="description-cc-cvc"
             required>
-    <label for="cc-name">Name on card</label>
-    <input type="text"
-          name="ccname" 
-          id="cc-name"
-          placeholder="Full Name" 
-          autocomplete="cc-name"
-          maxlength="19" 
-          required>
+    <div id="description-cc-cvc" class="hint">
+      <button type="button" class="inline-link">What's a security code?</a>
+    </div>
   </fieldset>
 </form>

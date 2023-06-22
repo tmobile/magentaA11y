@@ -235,4 +235,17 @@ button {
       display: none;
     }
   }
+
+  &.inline-link {
+    padding: 0rem;
+    margin: 0;
+    line-height: auto;;
+    background: none;
+    color: $color-text;
+    text-decoration: underline;
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
 }
