@@ -39,59 +39,47 @@ settings:
 - A scrolling, single-column row or list of rows that can be divided into sections or groups
 - You should use a native component rather than custom, because it will announce the correct built-in screen reader output for free
 
+
+## Android
+
 ### Name
 
-- Name describes the purpose of the control and matches the visible label, which can all be grouped together in the tablerow in an accessibilityLabel
+- Name describes the purpose of the control and matches the visible label, which can all be grouped together in the table row in an accessibility label
 
 ### Role
 
-- **iOS**
-  - UITableViewCell
-  - Use Link Trait if the user is taken out of the app to a URL
-- **Android**
+- Add header trait to table rows that describe a section if needed and do not make header row interactive
+- **Android View**
   - Use an interactive RecyclerView
   - Should be coded as a list, if more than one row
-- **Table Rows as headings**  
-  - Add Header Trait to table rows that describe a section
-  - Do not make row interactive
+- **Android Compose**
+  - Use regular `Column` for a table row with short list, and `LazyColumn` for the long list of items. For the row to behave as button role, use `modifier.clickable` with role of `role.Button`
 
 ### Groupings
 
 - Group text label/ images/controls together in one swipe
-- Only one interactive control can be in the swipe  
-  
-- **iOS**
-  - The table row is designated as a container
-  - Only the container class is an accessible element
-- **Android**
+- Only one interactive control can be in the swipe    
+- **Android View**
   - ViewGroup
   - Set the container object's android:screenReaderFocusable attribute to true, and each inner object's android:focusable attribute to false. In doing so, accessibility services can present the inner elements' content descriptions/names, one after the other, in a single announcement.
+- **Android Compose**
+  - In `item` or `items` composable of the table, the `modifier.clickable` with the role of button will group the internal components automatically.
 
 ### State
 
-- **iOS**  
-  - Active: isEnabled property
-  - Disabled: UIAccessibilityTraitNotEnabled. Announcement: dimmed
-  - Announcement: Selected/"double tap to select" for row with a checkmark
-- **Android**  
+- **Android View**  
   - Active: android:enabled=true
   - Disabled" android:enabled=false. Announcement: disabled
   - Announcement: Selected/ "not selected" for row with a checkmark
-- **Accordion/Collapsible rows**
-  - Values are the future state - "expands"/"collapses" - iOS and Android
-  - Android sometimes announces "double tap to expand list"  
-    
+- **Android Compose**
+  - Active: `enabled=true`
+  - Disabled: `enabled=false`
 
 ### Focus
 
 - Only manage focus when needed. Primarily, let the device manage default focus.  
 - Consider how focus should be managed between child elements and their parent views.
-- **iOS Options**
-  - accessibilityElementIsFocused
-  - isAccessibilityElement - Yes, if the element can respond to user input
-  - To move screen reader focus to newly revealed content: UIAccessibilityLayoutChangedNotification
-  - To NOT move focus, but announce new content: UIAccessibilityAnnouncementNotification
-- **Android Options**
+- **Android View**
   - android:focusable=true
   - android=clickable=true
   - Implement an onClick( ) event handler for keyboard, not onTouch( )
@@ -103,3 +91,17 @@ settings:
   - To move screen reader focus to newly revealed content: Type_View_Focused
   - To NOT move focus, but announce new content: accessibilityLiveRegion
   - To hide controls: Important_For _Accessibility_NO
+- **Android Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+  - *Example:* To customize the focus events behaviour
+      - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+      - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+      - focus order accepts following values: up, down, left, right, previous, next, start, end
+      - step 3: use `second.requestFocus()` to gain focus
+
+### Announcement examples
+
+TODO
