@@ -117,7 +117,6 @@ settings:
 
 ### Announcement examples
 
-TODO for Debbie
 
 ## Android
 
@@ -231,4 +230,3 @@ Row(
 
 ### Announcement examples
 
-TODO for Debbie
