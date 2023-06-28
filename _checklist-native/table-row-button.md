@@ -113,8 +113,6 @@ settings:
 
 ### Announcement examples
 
-TODO for Debbie
-
 ## Android
 
 ### Name
@@ -178,5 +176,3 @@ TODO for Debbie
       - step 3: use `second.requestFocus()` to gain focus
 
 ### Announcement examples
-
-TODO
