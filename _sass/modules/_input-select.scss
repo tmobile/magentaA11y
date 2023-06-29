@@ -8,22 +8,23 @@ select {
   display: inline-block;
   border-radius: .25rem;
   border: 2px solid $color-input-border;
-  margin: 0 0 calc(2rem + 2px) 1rem;
+  margin: 0 0 calc(2rem + 2px) 0;
   display: inline-block;
   justify-self: start;
   font-size: 1rem;
   @include regular;
   padding: .75rem 3.5rem .75rem .5rem !important;
   cursor: pointer;
-
-  box-shadow: 0 0px 4px 1px rgba(#000, .2);
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:focus-visible,
+  &:active {
     border: .125rem solid darken($color-input-border, 50);
-    background-image: var(--icon-chevron-gray);
+    box-shadow: 0 0px 4px 1px rgba(#000, .2);
   }
 
   option {
@@ -45,3 +46,8 @@ select::-ms-expand {
   display: none;
 }
 
+fieldset {
+  select {
+    margin-left: 1rem;
+  }
+}
