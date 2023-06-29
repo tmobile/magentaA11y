@@ -6,8 +6,8 @@ categories: controls
 keyboard:
   tab, arrow keys or ctl-tab: |
     Focus visibly moves to and from the text input. 
-  enter: |
-    Starts input (iOS only)
+  space bar: |
+    Starts input
           
 mobile gestures:
   swipe: |
