@@ -135,7 +135,7 @@ details {
     @include regular;
 
     summary {
-      padding: 1.25rem .5rem 1rem 3rem;
+      padding: .5rem .5rem .5rem 0;
       font-size: 1rem;
       margin: 0;
       @include headline;
@@ -143,7 +143,7 @@ details {
 
       &:before {
         content: '';
-        top: .625rem;
+        top: 0rem;
         left: 0rem !important; 
       }
       &:after {
