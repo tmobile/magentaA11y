@@ -122,8 +122,7 @@ settings:
 - "Label, button"
 - "Label, (other content in cell), button" (grouping)
 - "Label, button, selected" (selected state)
-- "Label, selected" (selected state)
-- "Label, dimmed" (disabled state)
+- "Label, dimmed, button" (disabled state)
 
 ## Android
 
