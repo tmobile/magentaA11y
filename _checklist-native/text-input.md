@@ -32,11 +32,10 @@ settings:
 
 ## Developer notes
 - The text input field allows users to enter and edit text.
-- A text input field cannot be automatically focused from any other component, or focus cannot be automatically moved to another component. The user must control navigating to and from a text input.
-- Placeholder text must meet color contrast minimum ratios and cannot be considered the visible label if it disappears.
+- Placeholder text must meet color contrast minimum ratios and cannot be considered the visible label as it often disappears.
 - Use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort.
 - Name, Role, State must be announced when focus is on the control. Just announcing the label in the swipe before the input field does not meet this requirement.
-- "text field" or "editbox" can be announced prior to "adjustable", picker item or other controls.
+- "text field" can be announced prior to "adjustable", picker item or other controls. (iOS)
 
 ## iOS
 
@@ -111,7 +110,7 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-  - iOS Text field
+  - iOS Text field and text area (multiple lines)
   - “Label, value, text field, double tap to edit”  (value entered)
   - “Label, placeholder, text field, double tap to edit” (placeholder)
   - “Label, text field, double tap to edit”  (no placeholder or value)
@@ -194,6 +193,6 @@ settings:
       - step 3: use `second.requestFocus()` to gain focus
 
 ### Announcement examples
-  - Android Edit Box (ex: placeholder floats to eyebrow of border)
+  - Android Edit Box (ex: placeholder floats to eyebrow of border) and text area edit box (multiple lines)
   - “Edit box, Label, double tap to edit text”  (no value)
   - “Value, Edit box, Label, double tap to edit text” (value entered)
