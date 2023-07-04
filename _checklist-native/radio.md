@@ -123,7 +123,6 @@ settings:
 
 - "Label, button"
 - "Label, button, selected" (selected state)
-- "Label, selected" (selected state)
 - "Label, dimmed" (disabled state)
 - "Label, dimmed, button" (disabled state)
 
