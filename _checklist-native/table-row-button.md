@@ -35,9 +35,9 @@ settings:
 
 ## Developer notes
 
-
 - A scrolling, single-column row or list of rows that can be divided into sections or groups
-- You should use a native component rather than custom, because it will announce the correct built-in screen reader output for free
+- A table row button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort
+- A table row can be separated into two different tap/swipe areas if there are two interactive elements in the row.
 
 ### Name
 
@@ -103,3 +103,16 @@ settings:
   - To move screen reader focus to newly revealed content: Type_View_Focused
   - To NOT move focus, but announce new content: accessibilityLiveRegion
   - To hide controls: Important_For _Accessibility_NO
+ 
+### Announcement examples
+- "Label, button"  
+- "Label, (plus other content in cell), button" (grouping)
+- "Label, button, selected" (selected state)
+- "Label, dimmed, button" (disabled state)
+
+
+### Announcement examples
+- "Label, double tap to activate"
+- "Label, (plus other content in cell), double tap to activate" (grouping)
+- "Selected, Label, double tap to activate" (selected state)
+- "Label, dimmed" (disabled state)
