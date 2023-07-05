@@ -127,32 +127,6 @@ settings:
 
 ## **Android**
 
-#### Code example
-{% highlight kotlin %}
-val checkedState = remember { mutableStateOf(true) }
-val stateNotSubscribed = "Not Selected"
-val stateSubscribed = "Selected"
-Row(
-  modifier = Modifier
-        .semantics {
-            stateDescription = if (checkedState.value) { stateSubscribed } else { stateNotSubscribed }
-            contentDescription = "Subscribe"
-        }
-        .toggleable(
-            value = checkedState.value,
-            onValueChange = { checkedState.value = it },
-            role = Role.Checkbox
-        )
-  ) {
-    Checkbox(
-            modifier = Modifier.align(Alignment.CenterVertically),
-            checked = checkedState.value,
-            onCheckedChange = null
-    )
-        Text(text = "Subscription")
-    }
-{% endhighlight %}
-
 ### Name
 
 -   Programmatic name describes the purpose of the control
@@ -234,6 +208,33 @@ Row(
         - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
         - focus order accepts following values: up, down, left, right, previous, next, start, end
         - step 3: use `second.requestFocus()` to gain focus
+
+### Code example
+- **Android Compose**
+{% highlight kotlin %}
+val checkedState = remember { mutableStateOf(true) }
+val stateNotSubscribed = "Not Selected"
+val stateSubscribed = "Selected"
+Row(
+  modifier = Modifier
+        .semantics {
+            stateDescription = if (checkedState.value) { stateSubscribed } else { stateNotSubscribed }
+            contentDescription = "Subscribe"
+        }
+        .toggleable(
+            value = checkedState.value,
+            onValueChange = { checkedState.value = it },
+            role = Role.Checkbox
+        )
+  ) {
+    Checkbox(
+            modifier = Modifier.align(Alignment.CenterVertically),
+            checked = checkedState.value,
+            onCheckedChange = null
+    )
+        Text(text = "Subscription")
+    }
+{% endhighlight %}
 
 ### Announcement examples
 - "Checked, label, checkbox, double tap to toggle"
