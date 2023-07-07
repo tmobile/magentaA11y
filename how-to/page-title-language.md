@@ -1,7 +1,7 @@
 ---
 layout: how-to-test
 title: Page titles & language
-permalink: /how-to-test/page-titles-language/
+permalink: /how-to-test/page-title-language/
 ---
 
 ## <step-number>1</step-number> Content Here if needed

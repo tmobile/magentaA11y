@@ -1,7 +1,7 @@
 ---
 layout: how-to-test
-title: Forms
-permalink: /how-to-test/forms/
+title: Tables
+permalink: /how-to-test/table/
 ---
 
 ## <step-number>1</step-number> Content Here if needed

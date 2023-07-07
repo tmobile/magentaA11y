@@ -10,7 +10,6 @@
 
 }
 
-
 .cards-how-to-test {
   grid-template-columns: 1fr 1fr;
   @include break($break-mid) {
@@ -30,7 +29,7 @@
       margin: 0;
     }
     svg {
-      max-width: 50px;
+      max-width: 48px;
       justify-self: start;
       align-self: start;
     }
@@ -50,11 +49,9 @@
 
       }
       svg {
-        max-width: 100px;
+        max-width: 128px;
       }
 
     }
   }
-
-  
 }

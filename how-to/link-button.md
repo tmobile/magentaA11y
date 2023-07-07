@@ -1,7 +1,7 @@
 ---
 layout: how-to-test
-title: Dialogs
-permalink: /how-to-test/dialogs/
+title: Links & Buttons
+permalink: /how-to-test/link-button/
 ---
 
 ## <step-number>1</step-number> Content Here if needed

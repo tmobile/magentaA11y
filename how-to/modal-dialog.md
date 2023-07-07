@@ -1,7 +1,7 @@
 ---
 layout: how-to-test
-title: Tables
-permalink: /how-to-test/tables/
+title: Dialogs
+permalink: /how-to-test/modal-dialog/
 ---
 
 ## <step-number>1</step-number> Content Here if needed

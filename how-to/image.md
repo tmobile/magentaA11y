@@ -1,7 +1,7 @@
 ---
 layout: how-to-test
 title: Images
-permalink: /how-to-test/images/
+permalink: /how-to-test/image/
 ---
 
 ## <step-number>1</step-number> Content Here if needed
