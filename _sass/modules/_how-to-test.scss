@@ -20,14 +20,24 @@
   .card {
 
     a {
-      padding: 1rem;
+      padding: 1rem 1rem .75rem 1rem;
       @extend .h-charlie;
       text-align: left !important;
       text-decoration: none;
       display: grid;
+      row-gap: .5rem;
       justify-items: start;
-      align-items: end;
       margin: 0;
+    }
+    svg {
+      max-width: 50px;
+      justify-self: start;
+      align-self: start;
+    }
+    span {
+      align-self: end;
+      justify-self: start;
+
     }
 
     &.emphasized {
@@ -38,6 +48,9 @@
         @extend .h-alpha;
         margin: 0;
 
+      }
+      svg {
+        max-width: 100px;
       }
 
     }
