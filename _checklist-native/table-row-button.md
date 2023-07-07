@@ -111,8 +111,6 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-### Announcement examples
-
 ## Android
 
 ### Name
@@ -174,5 +172,3 @@ settings:
       - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
       - focus order accepts following values: up, down, left, right, previous, next, start, end
       - step 3: use `second.requestFocus()` to gain focus
-
-### Announcement examples
