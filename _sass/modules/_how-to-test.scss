@@ -9,3 +9,39 @@
   }
 
 }
+
+
+.cards-how-to-test {
+  grid-template-columns: 1fr 1fr;
+  @include break($break-mid) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .card {
+
+    a {
+      padding: 1rem;
+      @extend .h-charlie;
+      text-align: left !important;
+      text-decoration: none;
+      display: grid;
+      justify-items: start;
+      align-items: end;
+      margin: 0;
+    }
+
+    &.emphasized {
+      grid-column: span 2;
+      grid-row: span 2;
+
+      a {
+        @extend .h-alpha;
+        margin: 0;
+
+      }
+
+    }
+  }
+
+  
+}
