@@ -9,7 +9,7 @@ keyboard:
   space bar: |
     Starts input
           
-mobile gestures:
+mobile:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if disabled)
   doubletap: |
