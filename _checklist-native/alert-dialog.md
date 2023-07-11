@@ -99,3 +99,4 @@ settings:
 	- To move screen reader focus to newly revealed content: `Type_View_Focused`
 	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
 	- To hide controls: `Important_For_Accessibility_false`
+
