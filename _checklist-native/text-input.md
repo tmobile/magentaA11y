@@ -43,11 +43,10 @@ settings:
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-- Placeholder text is NOT the programmatic name
+- Placeholder text, such as that of a `UITextField`, is NOT the programmatic name
 
 - **UIKit**
-  - You can programmatically set the visible label with `setTitle()`.
-    - The text input field's title will overwrite the button’s `accessibilityLabel`.
+  - If you require a visible label, you may use a `UILabel` to define the label, and then group this with your text input field
   - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
@@ -60,10 +59,12 @@ settings:
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 - **UIKit**
-  - Use `UITextField`
+  - Generally for single-line text editing, use `UITextField`
+  - Generally for multi-line text editing, use `UITextView`
   - If necessary, append the role to the programmatic name or accessibility value
 - **SwiftUI**
-  - Use native `TextField` or `TextEditor` view
+  - For single-line text editing, use `TextField`
+  - For multi-line text editing, use `TextEditor`
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
@@ -78,7 +79,7 @@ settings:
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 - **SwiftUI**
-  - Use view modifier `accessibilityElement(children: .combine)` to merge label and field into a new accessibilityElement.
+  - Use view modifier `accessibilityElement(children: .combine)` to merge visible label and field into a new accessibilityElement.
 
 ### State 
 - **UIKit**  

@@ -64,7 +64,11 @@ settings:
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 - **UIKit**
-  - Since there is no native radio button in UIKit, implementing a custom checkbox may be necessary using `UIButton`, `UISwitch`, `UIControl`, or another class.
+  - Since there is no native radio button in UIKit, implementing a custom checkbox may be necessary using `UIButton`, `UISwitch`, `UIControl`, or another class
+    - Extend from one of the UIKit native controls above. A common control for custom radio boxes to extend from is the `UIButton`, but choose the native control that best fits your use case.
+    - Provide your own selected and unselected radio button images
+    - Implement action handlers for your custom radio button
+    - Set accessibility properties accordingly
   - If necessary, set `accessibilityTraits` to `.button`. Be sure to set the accessibility value to either "Selected"/"Checked" or "Unselected"/"Unchecked" to indicate that this control behaves as a radio button.
   - An alternative to setting the accessibility trait to `.button` is removing and hiding the accessibility trait using `accessibilityTraits.remove(:)`. Then, append ", Radio Button" or ", Button" to the programmatic name
 - **SwiftUI**

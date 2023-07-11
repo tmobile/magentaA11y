@@ -66,7 +66,7 @@ settings:
   - If necessary, set `accessibilityTraits` to `.button`.
 - **SwiftUI**
   - Use native `Toggle` view
-	- Native behavior does not announce role, but implies role by announcing the current state
+	- Native behavior does not announce role, but the role is implied by announcing the current state
 
 ### Groupings
 - Group visible label with switch, if applicable, to provide a programmatic name for the switch.
@@ -118,7 +118,6 @@ settings:
 - “Label, off, double tap to toggle setting”     On or off
 - “Label, off, switch button, double tap to toggle setting”   On or off
 - “Label, dimmed, switch button, off”  Disabled state
-
 
 ## Android
 
@@ -233,4 +232,3 @@ Row(
 ### Announcement examples
 - “On, “label”, Switch, double tap to toggle”   On or Off
 - “Off, “label”, Switch, disabled”    Disabled state
-
