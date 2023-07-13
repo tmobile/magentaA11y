@@ -104,6 +104,10 @@ fieldset,
     margin: 0 1rem 1rem 1rem;
     display: block;
   }
+  input[type="text"] {
+    width: calc(100% - 2rem);
+  }
+
 
   input[type="radio"],
   input[type="checkbox"] {
