@@ -36,7 +36,7 @@ settings:
 ## Developer notes
 - A button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort.
 - A button is a control that executes an action or navigates within the app. 
-  - **Note:** Links only navigate the user to a browser. 
+  - To redirect users outside of the app, use links.
 - Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app.
 - Name, Role, State must be stated in a single announcement when focus is on the control.
 
@@ -122,8 +122,7 @@ settings:
 - "Label, button"
 - "Label, (other content in cell), button" (grouping)
 - "Label, button, selected" (selected state)
-- "Label, selected" (selected state)
-- "Label, dimmed" (disabled state)
+- "Label, dimmed, button" (disabled state)
 
 ## Android
 

@@ -36,8 +36,7 @@ settings:
 
 - A switch, or toggle, has two mutually exclusive states — on and off
 - You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
-- A switch should just toggle on or off. It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context. Revealing new information on the same screen as a result of activating a toggle is usually not a change of context.
-- Name, Role, State must be announced when focus is on the control, if it is isolated in the table row. Announcing the label before the switch does not meet this requirement.
+- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label before the switch does not meet this requirement.
 
 ## iOS
 
@@ -67,7 +66,7 @@ settings:
   - If necessary, set `accessibilityTraits` to `.button`.
 - **SwiftUI**
   - Use native `Toggle` view
-	- Native behavior does not announce role, but implies role by announcing the current state
+	- Native behavior does not announce role, but the role is implied by announcing the current state
 
 ### Groupings
 - Group visible label with switch, if applicable, to provide a programmatic name for the switch.
@@ -116,7 +115,9 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-
+- “Label, off, double tap to toggle setting”     On or off
+- “Label, off, switch button, double tap to toggle setting”   On or off
+- “Label, dimmed, switch button, off”  Disabled state
 
 ## Android
 
@@ -229,4 +230,5 @@ Row(
 
 
 ### Announcement examples
-
+- “On, “label”, Switch, double tap to toggle”   On or Off
+- “Off, “label”, Switch, disabled”    Disabled state
