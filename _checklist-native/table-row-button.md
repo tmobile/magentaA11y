@@ -46,13 +46,15 @@ settings:
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 
 - **UIKit**
-  - You can programmatically set the visible label with `setTitle()`.
-    - The button’s title will overwrite the button’s `accessibilityLabel`.
+  - The visible label is the programmatic name
+    - If there is a description following the visible label, it must be announced before the role.
   - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
+  - The visible label is the programmatic name
+    - If there is a description following the visible label, it must be announced before the role.
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
@@ -60,11 +62,12 @@ settings:
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 - **UIKit**
-  - Implement a `UITableVIew` and set the specific `UITableViewCell` as interactive or capable of a tap gesture.
+  - Implement a `UITableVIew`. Set the specific `UITableViewCell` as interactive or capable of a tap gesture.
   - If user is redirected away from the app, set `accessibilityTraits` to `.link`.
   - If user is redirected to a screen within the app, set `accessibilityTraits` to `.button`.
 - **SwiftUI**
   - Use native `List` view
+    - If using the `List` view is not suitable for your use case, you may implement as a `UIButton` and stylize the component as an interactable table row. Or you may make a fully custom table row from scratch that is interactable and redirects the user to the correct destination.
   - If user is redirected away from the app, use view modifier `accessibilityAddTraits(.isButton)` to assign the role as Link.
   - If user is redirected away from the app, use view modifier `accessibilityAddTraits(.isLink)` to assign the role as Link.
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
@@ -99,6 +102,7 @@ settings:
 - When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
+  - Focus ring must surround the table row
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
     - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
   - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
@@ -106,10 +110,17 @@ settings:
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
 - **SwiftUI**
+  - Focus ring must surround the table row
   - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
+
+### Announcement examples
+- "Label, button"  
+- "Label, (plus other content in cell), button" (grouping)
+- "Label, button, selected" (selected state)
+- "Label, dimmed, button" (disabled state)
 
 ## Android
 
@@ -172,3 +183,9 @@ settings:
       - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
       - focus order accepts following values: up, down, left, right, previous, next, start, end
       - step 3: use `second.requestFocus()` to gain focus
+
+### Announcement examples
+- "Label, double tap to activate"
+- "Label, (plus other content in cell), double tap to activate" (grouping)
+- "Selected, Label, double tap to activate" (selected state)
+- "Label, dimmed" (disabled state)
