@@ -48,7 +48,8 @@ settings:
 ## iOS
 
 ### Name
-- Programmatic name describes the purpose of the control.
+- Programmatic name describes the purpose of the alert.
+- For alerts and modals, the programmatic name is the title of the alert/modal.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 
@@ -73,7 +74,8 @@ settings:
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- Group alert text to make the announcements logica
+- If you are implementing a native alert, do not modify native grouping logic
+- If you require a custom alert, follow the steps below.
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -86,20 +88,22 @@ settings:
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State 
+- Modals, or action sheets in iOS, that have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
+- Usually no one button is disabled in native alerts and action sheets.
+
 - **UIKit**  
+  - For custom alerts or action sheets, follow below.
   - For enabled: Set `isEnabled` to `true`.
   - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
-    - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
+  - For custom alerts or action sheets, follow below.
   - For selected, use `accessibilityAddTraits(.isSelected)`.
   - For disabled, use view modifier `disabled()`.
 
 ### Focus
-- Use the device's default focus functionality. 
-- Consider how focus should be managed between child elements and their parent views.
-- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
+- Use the default focus functionality of the native alert or modal
+- The screen reader focus **must** be confined within the alert or modal. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal.
+- If implementing a custom alert, follow below.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -115,13 +119,7 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
 
-- "Label, button"
-- "Label, (other content in cell), button" (grouping)
-- "Label, button, selected" (selected state)
-- "Label, selected" (selected state)
-- "Label, dimmed" (disabled state)
 
 ## Android
 
