@@ -39,7 +39,10 @@ settings:
 
 - Modal dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks, usually appearing over an existing screen
 - Use native alerts when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Options to close the modal for the screen reader user:  An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item.  Two/three finger swipe.  A close button.
+- Options to close the modal for the screen reader user:  
+  - An invisible close button announced for the screen reader only, which can be in the swipe order after the last menu item
+  - Two/three finger swipe
+  - A close button
 - Drawers usually have a handle or button to be focused by the screen reader to expand and collapse them. Tapping outside the modal to close can not be the only option for screen reader users
 
 ## iOS
@@ -48,41 +51,34 @@ settings:
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-- When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
-  - **Incorrect announcement:** "Submit button, Button"
-  - **Correct announcement:** "Submit, Button"
-- Placeholder text is NOT the programmatic name
 
 - **UIKit**
-  - You can programmatically set the visible label with `setTitle()`.
-    - The button’s title will overwrite the button’s `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
+  - The visible label is the programmatic name of the alert.
+  - If a visible label is not applicable in your case, set the alert's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
+  - The visible label is the programmatic name of the alert.
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- When using non-native controls (custom controls), roles will need to be manually coded.
+- Required: Screen reader user is confined inside the modal, communicating an alert/modal is present
 
 - **UIKit**
-  - Use `UIButton`
-  - If necessary, set `accessibilityTraits` to `.button`.
+  - Use `UIAlertController` and add actions per your use case
 - **SwiftUI**
-  - Use native `Button` view
-  - If necessary, use view modifier `accessibilityAddTraits(.isButton)` to assign the role as Button.
+  - Use view modifier `alert(_:isPresented:presenting:actions:message:)`
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- Group visible label with button, if applicable, to provide a programmatic name for the button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
+- Group alert text to make the announcements logica
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
   2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
-  - If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
+  - If frame does not exist due to custom alert, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
     - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
