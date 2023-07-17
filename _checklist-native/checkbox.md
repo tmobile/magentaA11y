@@ -15,13 +15,13 @@ mobile gestures:
   swipe: |
     Focus moves to the element, expresses its name, role, state
   doubletap: |
-    Checkbox toggles between checked and unchecked states.
+    Checkbox toggles between checked and unchecked states
 
 screenreader:
   name:  |
     Name describes the purpose of the control and matches the visible label
   role:  |
-    Identifies itself as a Check box in Android and a Button in iOS
+    Identifies itself as a Check box in Android and a Button or checkbox in iOS
   group: |
     Visible label can be grouped with the check box in a single swipe
   state: |
@@ -29,18 +29,16 @@ screenreader:
 
 settings:
   text resize: |
-    Text can resize up to 200% without losing information
+    Text label can resize up to 200% without losing information
 
 ---
+## iOS
 
-## Developer notes
+### Developer notes
 - A check box lets the user choose between two opposite states, actions or values  
 - You should use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
 - A check box should just toggle between checked and unchecked.  It should not automatically navigate the user to another field or screen when activated, as that may cause a change of context.  Revealing new information on the same screen as a result of activating a checkbox is usually ok, as it is not a change of context.
 - Name, Role, State must be announced when focus is on the control. Announcing the label in a separate swipe before the checkbox does not meet this requirement.
-
-
-## iOS
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -120,12 +118,18 @@ settings:
 ### Announcement examples
 - Appending checkbox to label:
 - "Label checkbox, checked, button"
-- "Label checkbox, not checked, button"  (not checked or unselected are acceptable)
+- "Label checkbox, not checked, button"  (not checked or "unselected" are acceptable)
 - Not appending to label:
 - "Label, checked, button"
-- "Label, not checked, button"  (both "not checked" or unselected are acceptable)
+- "Label, not checked, button"  (both "not checked" or "unselected" are acceptable)
 
 ## **Android**
+
+### Developer notes
+- A check box lets the user choose between two opposite states, actions or values  
+- You should use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
+- A check box should just toggle between checked and unchecked.  It should not automatically navigate the user to another field or screen when activated, as that may cause a change of context.  Revealing new information on the same screen as a result of activating a checkbox is usually ok, as it is not a change of context.
+- Name, Role, State must be announced when focus is on the control. Announcing the label in a separate swipe before the checkbox does not meet this requirement.
 
 #### Code example
 {% highlight kotlin %}
