@@ -118,7 +118,11 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-### Announcement examples
+### Native Alert announcement examples
+- Three separate focus areas
+    - "alert, title" when alert appears with an audible ping.
+    - "Body content"
+    - "CTA, button"
 
 
 ## Android
@@ -204,4 +208,9 @@ AlertDialog(
 )
 {% endhighlight %}
 
-### Announcement examples
+### Announcement examples - Announcements vary by device
+- "Title, body copy, CTA button, double tap to activate"  TalkBack often announces the entire alert altogether in one announcement while focus is on the CTA.
+-  Alerts can also be announced in several swipes, separating content.
+    - "Title"
+    - "Body copy"
+    - "CTA button, double tap to activate" 
