@@ -123,3 +123,85 @@ settings:
 
 ## Android
 
+### Name
+- Programmatic name describes the purpose of the alert dialog
+- For alerts and modals, the programmatic name is the title of the alert/modal.
+
+- **Android Views**
+  - Use Android view component `AlertDialog` for the alert, its default accessibility behavior will cover the programmatic name by using the title text.
+- **Android Compose** 
+  - Use composable `AlertDialog` which uses the title as the programmatic name
+
+### Role
+- Required: Screen reader user is confined inside a modal, communicating an alert/modal is present.
+
+- **Android Views**
+  - Android view component `AlertDialog` has the dialog role defined
+- **Android Compose** 
+  - Composable `AlertDialog` has dialog role defined
+
+### Groupings
+- If you are implementing a native alert, do not modify native grouping logic
+- If you require a custom alert, follow the steps below.
+
+- **Android Views**
+  - `ViewGroup`
+  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+- **Android Compose** 
+  - `Modifier.semantics(mergeDescendants = true) {}` for the child elements grouping/merging
+  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
+
+### State
+- Follow button state guidance if applicable
+- Modals that have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
+- **Android View**  
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`
+- **Android Compose**
+  - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
+  - Disabled:  `Button(enabled = false)` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+
+### Focus
+- Use the default focus functionality of the native alert or modal
+- The screen reader focus **must** be confined within the modal /alert /dialog/ drawer. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal
+- Android sometimes initially focuses on the CTAs in the alert, not the text or title
+- Android often takes one swipe to bring focus inside the modal
+
+- **Android View**
+	- `importantForAccessibility` makes the element visible to the Accessibility API
+	- `android:focusable`
+	- `android=clickable`
+	- Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+	- `nextFocusDown`
+	- `nextFocusUp`
+	- `nextFocusRight`
+	- `nextFocusLeft`
+	- `accessibilityTraversalBefore` (or after)
+	- To move screen reader focus to newly revealed content: `Type_View_Focused`
+	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+	- To hide controls: `Important_For_Accessibility_false`
+- **Android Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+  - *Example:* To customize the focus events behaviour
+      - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+      - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+      - focus order accepts following values: up, down, left, right, previous, next, start, end
+      - step 3: use `second.requestFocus()` to gain focus
+
+### Code Example
+- **Android Compose**
+{% highlight kotlin %}
+AlertDialog(
+    onDismissRequest = {},
+    title = { Text(text = "Title") },
+    text = { Text(text = "Message") },
+    confirmButton = { Button(onClick = { }) { Text(text = "Confirm") } },
+    dismissButton = { Button(onClick = { }) { Text(text = "Dismiss") } }
+)
+{% endhighlight %}
+
+### Announcement examples
