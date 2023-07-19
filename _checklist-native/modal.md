@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Alert / Modal Dialog"
+title:  "Modal"
 categories: notifications
 
 keyboard:
