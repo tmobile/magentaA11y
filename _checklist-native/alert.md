@@ -1,13 +1,13 @@
 ---
 layout: entry
-title:  "Alert Dialog"
+title:  "Alert"
 categories: notifications
 
 keyboard:
   tab or arrow keys: |
-    Focus visibly moves, confined within the dialog
+    Focus visibly moves, confined within the alert
   escape: |
-    The dialog closes and returns focus to the button that launched it
+    The alert closes and returns focus to the button that launched it
   space: |
     Any buttons or links are activated on iOS and Android
   enter: |
@@ -15,7 +15,7 @@ keyboard:
 
 mobile:
   swipe: |
-    Focus moves, confined within the dialog
+    Focus moves, confined within the alert
   doubletap: |
     This typically activates most elements (alternative custom actions may be implemented)
   group: |
@@ -23,11 +23,11 @@ mobile:
     
 screenreader:
   name:  |
-    The dialog describes its purpose or title if any (On launch with iOS. Often with first swipe on Android or intial focus is on CTA)
+    The alert describes its purpose or title if any (On launch with iOS. Often with first swipe on Android or intial focus is on CTA)
   role:  |
-    May identify itself as a modal, dialog, drawer, sidebar, panel, popover, menu or alert. Confining the user within the modal communicates the context to the screen reader user that there is a modal present
+    May identify itself as an alert.  Confining the user within the modal communicates the context to the screen reader user that there is an alert present
   state: |
-    When open, other content is inert. Expands/collapses, closes/opens states are typically announced for a menu, drawer, sidebar, panel or popover
+    When open, other content is inert
 
 settings:
   text resize: |
@@ -37,19 +37,22 @@ settings:
 
 ## Native Element
 
-- Modal dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks, usually appearing over an existing screen
+- Alerts/Modals inform users about a critical or time sensitive information, usually appearing over an existing screen
 - Use native alerts when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Options to close the modal for the screen reader user:  An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item.  Two/three finger swipe.  A close button.
-- Drawers usually have a handle or button to be focused by the screen reader to expand and collapse them. Tapping outside the modal to close can not be the only option for screen reader users
+- Options to close the modal for the screen reader user:
+    - An invisible close button announced for the screen reader only
+    - Two/three finger swipe (Android only)
+    - A close button or CTA
+- Tapping outside the modal to close can not be the only option for screen reader users
 
 ### Name
 
-- Title (optional) of alert/modal matches the visible text title in the alert, if any
+- Title (optional) of alert matches the visible text title in the alert, if any
 
 ### Role
 
 - "alert" role is optional. Haptics are optional.   
-- Required: Screen reader user is confined inside a modal, communicating an alert/modal is present  
+- Required: Screen reader user is confined inside an alert, communicating an alert is present  
   
 
 ### Groupings
