@@ -47,6 +47,15 @@ Keyboard testing consists of a few keyboard commands to interact with web experi
 
   <tr>
     <th scope="row">
+      <span class="keyboard-key">Arrows</span>
+    </th>
+    <td>
+      Should scroll the screen or interact with form fields
+    </td>
+  </tr>
+  
+  <tr>
+    <th scope="row">
       <span class="keyboard-key">Tab</span>
     </th>
     <td>
@@ -88,16 +97,7 @@ Keyboard testing consists of a few keyboard commands to interact with web experi
     <td>
       Should close or dismiss widgets like dialogs
     </td>
-  </tr> 
-
-  <tr>
-    <th scope="row">
-      <span class="keyboard-key">Arrows</span>
-    </th>
-    <td>
-      Should scroll the screen or interact with form fields
-    </td>
-  </tr> 
+  </tr>  
   
   </tbody>
 </table>
