@@ -15,6 +15,28 @@ $( ".expander-toggle" ).click(function() {
     }
 });
 
+// Expander toggle pass example from How to Test Links & Buttons
+$(".expander-toggle-pass").click(function() {
+    var panel = $(this).next(".expander-content");
+    if (panel.is(":visible")) {
+      panel.slideUp();
+      $(this).attr("aria-expanded", "false");
+    } else {
+      panel.slideDown();
+      $(this).attr("aria-expanded", "true");
+    }
+  });
+
+// Expander toggle fail example from How to Test Links & Buttons
+$(".expander-toggle-fail").click(function() {
+    var panel = $(this).next(".expander-content");
+    if (panel.is(":visible")) {
+      panel.slideUp();
+    } else {
+      panel.slideDown();
+    }
+  });
+
 // Submit vote
 $("#submit-response").click(function() {
     if($('.alert').hasClass('enabled')) {
@@ -442,3 +464,103 @@ $("#spam").on('change', function() {
         $('#hint-spam-message').append('Spam preferences saved');
     }, 1000);
 });
+
+//Handling jump links from How to Test Links & Buttons
+function scrollToTop() {
+    // Programmatically set the focus on the link target element
+    const targetElement = $('#top-text');
+    targetElement.focus();
+  }
+
+  // Add a click event listener to the link using jQuery
+ $('#return-to-top-link').on('click', scrollToTop);
+
+// Handling modal dialogs from How to Test Links & Buttons
+var passModal = $("#passModal");
+var linkButtonPass = $("#modalFromLinkPass");
+var closeButtonPass = $("#closePassModal");
+var failModal = $("#failModal");
+var linkButtonFail = $("#modalFromLinkFail");
+var closeButtonFail = $("#closeFailModal");
+var isModalOpen = false;
+
+// Open passModal when the link is clicked
+linkButtonPass.click(function (e) {
+  e.preventDefault();
+  openModal(passModal, closeButtonPass);
+});
+
+// Open failModal when the link is clicked
+linkButtonFail.click(function (e) {
+  e.preventDefault();
+  openModal(failModal, closeButtonFail);
+});
+
+// Close the modal when the close button is clicked
+closeButtonPass.click(function () {
+  closeModal(passModal, linkButtonPass);
+});
+
+// Close the failModal when the close button is clicked
+closeButtonFail.click(function () {
+  closeModal(failModal, linkButtonFail);
+});
+
+// Close the modal when clicking outside the modal content
+$(window).click(function (e) {
+  if ((e.target === passModal[0] || e.target === failModal[0]) && isModalOpen) {
+    closeModal(passModal, linkButtonPass);
+    closeModal(failModal, linkButtonFail);
+  }
+});
+
+// Prevent modal from closing when clicking inside the modal-content
+$(".modal-content").click(function (e) {
+  e.stopPropagation();
+});
+
+// Close modal when pressing the Escape key
+$(document).keyup(function (e) {
+  if (e.key === "Escape" && isModalOpen) {
+    closeModal(passModal, linkButtonPass);
+    closeModal(failModal, linkButtonFail);
+  }
+});
+
+function openModal(targetModal, closeButton) {
+  targetModal.css("display", "block");
+  targetModal.attr("aria-hidden", "false");
+  //closeButton.focus();
+  targetModal.on("keydown", trapFocus);
+  isModalOpen = true;
+  setTimeout(function() {
+    // Set focus after a delay of 1000 milliseconds
+    targetModal.focus();
+  }, 100);
+}
+
+function closeModal(targetModal, linkButton) {
+  targetModal.css("display", "none");
+  targetModal.attr("aria-hidden", "true");
+  linkButton.focus();
+  targetModal.off("keydown", trapFocus);
+  isModalOpen = false;
+}
+
+function trapFocus(e) {
+  var targetModal = $(e.target).closest(".modal");
+  var focusableElements = targetModal.find('a[href], button, textarea, input, select').filter(':visible');
+  var firstFocusable = focusableElements.first();
+  var lastFocusable = focusableElements.last();
+
+  if (e.key === "Tab") {
+    if (e.shiftKey && document.activeElement === firstFocusable[0]) {
+      e.preventDefault();
+      lastFocusable.focus();
+    } else if (!e.shiftKey && document.activeElement === lastFocusable[0]) {
+      e.preventDefault();
+      firstFocusable.focus();
+    }
+  }
+}
+

@@ -114,3 +114,66 @@ dialog {
 .no-dialog dialog[open] {
   display: block;
 }
+
+//How to Test Links & Buttons modal dialogs
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  position: relative;
+}
+
+button.close-modal {
+  all: unset;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  border: none; 
+  background: none; 
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  z-index: 2;
+  &:before,
+  &:after {
+    background-image: none;
+}
+}
+
+button.close-modal:hover,
+button.close-modal:focus,
+button.close-modal:active {
+  all: unset;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 2px solid #000000;
+  border: none; 
+  background: none; 
+  position: absolute;
+  top: 10px; 
+  right: 10px;
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  z-index: 2; 
+  &:before,
+  &:after {
+    background-image: none;
+}
+}
