@@ -117,6 +117,14 @@ Automated scanning must be complemented with a manual review of the page.
       <p style="color:#0FE000">This text does NOT pass contrast</p>
     </td>
   </tr>  
+   <tr>
+    <td>
+      <p style="color:#009999; font-size: 18pt">This text is large enough that it only has to meet a 3:1 color ratio</p>
+    </td>
+    <td>
+      <p style="color:#009999">This text is the same color but smaller, and fails to meet a 4.5:1 color ratio</p>
+    </td>
+  </tr> 
   </tbody>
 </table>
 
@@ -218,13 +226,13 @@ Automated scanning must be complemented with a manual review of the page.
   <tr>
     <td>
 <img 
-src="/assets/images/examples/color-swatch-with-label.png" 
-alt="color swatch radio set with text labels"/>
+src="/assets/images/examples/accessible-pie-chart-example.png" 
+alt="pie chart example with each slice labeled so it is accessible to color blind users"/>
     </td>   
     <td>
   <img
-    src="/assets/images/examples/color-swatch-no-label.png"
-    alt="color swatch radio set with no text labels">
+    src="/assets/images/examples/inaccessible-pie-chart-example.png"
+    alt="pie chart example that is inaccessible to color blind users because it uses a side legend to label the slices">
     </td>
   </tr>  
   </tbody>
