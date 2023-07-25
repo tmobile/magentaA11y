@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+
+<div class="container">
+  <h1 class="h-alpha">
+    {{ page.title | escape }}
+  </h1>
+</div>
+<div class="container post-content">
+  {{ content }}
+</div>
+<div class="container">
+  <form>
+    <div class="success-criteria-maker">
+      <div class="checklist-container">
+        {% assign categories = site.checklist-android | map: 'categories' | join: ',' | split: ',' | uniq %}
+        {% for category in site.android-categories-order %}
+        <details id="{{ category | escape }}-details" class="checklist-details" open>
+          <summary id="{{ category | escape }}-category-title">
+            {{ category | capitalize }}
+          </summary>
+          <ul>
+            {% for page in site.checklist-android %}
+            {% include checklist-loop.html %}
+            {% endfor %}
+          </ul>
+        </details>
+        {% endfor %}
+      </div>
+      {% include criteria-textarea.html %}
+    </div>
+  </form>
+</div>

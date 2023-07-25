@@ -39,6 +39,12 @@ collections:
   checklist-native:
     output: true
     permalink: /:collection/:name/
+  checklist-ios:
+    output: true
+    permalink: /:collection/:name/
+  checklist-android:
+    output: true
+    permalink: /:collection/:name/
   demos:
     output: true
     permalink: /:collection/:name/
@@ -50,6 +56,16 @@ web-categories-order:
 - form
 - footer
 native-categories-order:
+- controls
+- notifications
+ios-categories-order:
+- content
+- inputs
+- controls
+- pickers
+- indicators
+- modals
+android-categories-order:
 - controls
 - notifications
 video-demos:
