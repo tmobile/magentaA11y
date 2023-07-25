@@ -24,7 +24,7 @@ screenreader:
   group: |
     Hints or errors are read after the label (Ex: Password formatting)
   state: |
-    It expresses if the password is being shown and if applicable required, disabled
+    It expresses if the password is being shown and if applicable: required, disabled / dimmed / unavailable
 
 gherkin-keyboard: 
   - when:  |
