@@ -13,11 +13,18 @@
         href="{{ site.baseurl }}/web/">Web
       </a>
     </li>
-    <li class="native alpha">
+    <li class="ios alpha">
       <a
-        {% if page.url== "/native/" %} aria-current="page" {% endif %}
-        {% if page.url contains "native/" %} class="current" {% endif %}
-        href="{{ site.baseurl }}/native/">Native
+        {% if page.url== "/ios/" %} aria-current="page" {% endif %}
+        {% if page.url contains "ios/" %} class="current" {% endif %}
+        href="{{ site.baseurl }}/ios/">iOS
+      </a>
+    </li>
+    <li class="android alpha">
+      <a
+        {% if page.url== "/android/" %} aria-current="page" {% endif %}
+        {% if page.url contains "android/" %} class="current" {% endif %}
+        href="{{ site.baseurl }}/android/">Android
       </a>
     </li>
     <li class="native bravo">
