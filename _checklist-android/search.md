@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Menu"
-categories: selection
+title:  "Search"
+categories: navigation
 
 keyboard:
   tab or arrow keys: |

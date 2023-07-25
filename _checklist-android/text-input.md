@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Text input"
-categories: controls
+categories: inputs
 
 keyboard:
   tab, arrow keys or ctl-tab: |

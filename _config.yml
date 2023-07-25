@@ -66,8 +66,12 @@ ios-categories-order:
 - indicators
 - modals
 android-categories-order:
-- controls
-- notifications
+- actions
+- communication
+- containment
+- navigation
+- selection
+- inputs
 video-demos:
 - title: iOS Voiceover Safari
   directory: ios/

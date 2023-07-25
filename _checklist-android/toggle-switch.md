@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Toggle switch"
-categories: controls
+categories: selection
 
 keyboard:
   tab or arrow keys: |

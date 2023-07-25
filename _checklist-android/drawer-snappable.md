@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Drawer / Snappable / Sheet"
-categories: controls
+title:  "Bottom sheet"
+categories: containment
 
 keyboard:
   tab and arrow keys: |

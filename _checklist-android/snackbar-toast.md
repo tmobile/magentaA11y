@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Toast snackbar banner"
-categories: notifications
+categories: communication
 
 keyboard:
   tab: |

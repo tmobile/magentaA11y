@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Button"
-categories: actions
+title:  "Badge"
+categories: communication
 
 
 keyboard:

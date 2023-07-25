@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Carousel"
-categories: controls
+categories: containment
 
 keyboard:
  tab or arrow keys: |

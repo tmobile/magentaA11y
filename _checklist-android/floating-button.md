@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Button"
+title:  "Floating button"
 categories: actions
 
 

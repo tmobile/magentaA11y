@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Checkbox"
+title:  "Time picker"
 categories: selection
 
 keyboard:

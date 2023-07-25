@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Button"
+title:  "Segmented button"
 categories: actions
 
 

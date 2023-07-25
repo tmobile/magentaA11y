@@ -1,7 +1,7 @@
 ---
 layout: entry
-title:  "Alert / Modal Dialog"
-categories: notifications
+title:  "Dialog"
+categories: containment
 
 keyboard:
   tab or arrow keys: |

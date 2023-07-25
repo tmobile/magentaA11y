@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Radio button"
-categories: controls
+categories: selection
 
 keyboard:
   tab and arrow keys: |

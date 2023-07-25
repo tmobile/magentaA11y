@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Range slider"
-categories: controls
+categories: selection
 
 keyboard:
   tab: |
