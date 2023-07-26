@@ -46,36 +46,34 @@ settings:
 - Tapping outside the modal to close can not be the only option for screen reader users when the modal covers other content
 
 ### Name
-- Programmatic name describes the purpose of the alert.
-- For alerts and modals, the programmatic name is the title of the alert/modal.
+- Programmatic name describes the purpose of the modal.
+- For modals, the programmatic name is the title of the modal.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 
 - **UIKit**
-  - The visible label is the programmatic name of the alert.
-  - If a visible label is not applicable in your case, set the alert's `accessibilityLabel` to the label of your choice.
+  - The visible label of the content is the programmatic name of the modal.
+  - If a visible label is not applicable in your case, set the modal's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
-  - The visible label is the programmatic name of the alert.
+  - The visible label of the content is the programmatic name of the modal.
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
-  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- Required: Screen reader user is confined inside the modal, communicating an alert/modal is present
+- Required: Screen reader user is confined inside the modal, communicating a modal is present
 
 - **UIKit**
-  - Use `UIAlertController` and add actions per your use case
+  - Set the `modalPresentationStyle` of the `UIViewController` to a `UIModalPresentationStyle` of your choice
 - **SwiftUI**
-  - Use view modifier `alert(_:isPresented:presenting:actions:message:)`
-  - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
+  - Use view modifier for modal, such as `.sheet`, `.fullScreenCover`, `.popover`. Apply view modifiers to adjust the size of the modal accordingly.
 
 ### Groupings
-- If you are implementing a native alert, do not modify native grouping logic
-- If you require a custom alert, follow the steps below.
+- Within the modal, ensure the content is following logical reading order. Follow suggested accessibility guidance for content containing buttons, links, etc.
 
 - **UIKit**
+  - Since a modal is a presentation of another view, follow logical grouping and reading order within the view.
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
   2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
   - If frame does not exist due to custom alert, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
@@ -83,25 +81,23 @@ settings:
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 - **SwiftUI**
+  - Since a modal is a presentation of another view, follow logical grouping and reading order within the view.
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State 
 - Modals, or action sheets in iOS, that have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
-- Usually no one button is disabled in native alerts and action sheets.
+- Usually no one button is disabled in action sheets.
 
 - **UIKit**  
-  - For custom alerts or action sheets, follow below.
-  - For enabled: Set `isEnabled` to `true`.
-  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+  - When the modal appears, the initial focus on the Close button will imply to the user that they are in a modal.
+  - For disabled content within the modal: Set the content's `isEnabled` to `false`. Announcement for disabled is "Dimmed".
 - **SwiftUI**
-  - For custom alerts or action sheets, follow below.
-  - For selected, use `accessibilityAddTraits(.isSelected)`.
-  - For disabled, use view modifier `disabled()`.
+  - When the modal appears, the initial focus on the Close button will imply to the user that they are in a modal.
+  - For disabled content, use view modifier `disabled()`.
 
 ### Focus
-- Use the default focus functionality of the native alert or modal
-- The screen reader focus **must** be confined within the alert or modal. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal.
-- If implementing a custom alert, follow below.
+- Use the default focus functionality of the modal
+- The screen reader focus **must** be confined within the alert or modal. When the modal appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -121,7 +117,6 @@ settings:
     - Close button "Close, button"
     - Or
     - Invisible button at the top of the screen default announcement: "Double tap to close modal"
-
 
 ## Android
 
