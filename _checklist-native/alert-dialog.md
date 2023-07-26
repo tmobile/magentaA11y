@@ -118,7 +118,7 @@ settings:
 
 ### Name
 - Programmatic name describes the purpose of the alert dialog
-- For alerts and modals, the programmatic name is the title of the alert/modal.
+- For alerts, the programmatic name is the title of the alert.
 
 - **Android Views**
   - Use Android view component `AlertDialog` for the alert, its default accessibility behavior will cover the programmatic name by using the title text.
@@ -126,7 +126,7 @@ settings:
   - Use composable `AlertDialog` which uses the title as the programmatic name
 
 ### Role
-- Required: Screen reader user is confined inside a modal, communicating an alert/modal is present.
+- Required: Screen reader user is confined inside an alert, communicating an alert is present.
 
 - **Android Views**
   - Android view component `AlertDialog` has the dialog role defined
@@ -146,7 +146,6 @@ settings:
 
 ### State
 - Follow button state guidance if applicable
-- Modals that have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
 - **Android View**  
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`
@@ -156,10 +155,8 @@ settings:
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
 
 ### Focus
-- Use the default focus functionality of the native alert or modal
-- The screen reader focus **must** be confined within the modal /alert /dialog/ drawer. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal
-- Android sometimes initially focuses on the CTAs in the alert, not the text or title
-- Android often takes one swipe to bring focus inside the modal
+- Use the default focus functionality of the native alert
+- The screen reader focus **must** be confined within the alert. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the alert
 
 - **Android View**
 	- `importantForAccessibility` makes the element visible to the Accessibility API
@@ -188,12 +185,13 @@ settings:
 ### Code Example
 - **Android Compose**
 {% highlight kotlin %}
+// Alert should not allow auto-dismiss on touching outside of the dialog view, a user action is required by displaying the Alert.
 AlertDialog(
     onDismissRequest = {},
     title = { Text(text = "Title") },
     text = { Text(text = "Message") },
     confirmButton = { Button(onClick = { }) { Text(text = "Confirm") } },
-    dismissButton = { Button(onClick = { }) { Text(text = "Dismiss") } }
+    dismissButton = { Button(onClick = { }) { Text(text = "Cancel") } }
 )
 {% endhighlight %}
 
