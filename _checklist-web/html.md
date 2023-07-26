@@ -47,7 +47,7 @@ settings:
 
 ### Validate your code
 
-Use the [HTML validator](https://validator.w3.org/nu/) as the foundation for ensuring your page works for everyone.
+Use [HTML validation](https://validator.w3.org/nu/) as the foundation for ensuring your page works for everyone.
 
 ## Code examples
 
@@ -62,11 +62,13 @@ This affects the screenreader pronunciation.
 
 ### Give your page a unique title
 
-If the URL changes, your page needs title unique to that page.
+- Each page must have unique `<title>` in the `<head>`
+  - This includes single page dynamic apps _if_ the URI changes during the user journey
+- Do not use the `|` pipe character as a divider (it is read by screen readers)
 
 {% highlight html %}
 <head>
-  <title>Page title</title>
+  <title>Page title - Website title</title>
 </head>
 {% endhighlight %}
 
