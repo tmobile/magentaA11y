@@ -90,9 +90,6 @@
     -webkit-appearance: none;
     appearance: none;
 
-    &:hover {
-    }
-
     option {
       font-weight: normal;
     }
@@ -108,3 +105,89 @@
     display: none;
   }
 }
+
+//styling for How to Test Forms select elements
+$select-border-color: #ccc;
+$select-background-color: #f8f8f8;
+$select-color: #333;
+
+.testSelects {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: darken($select-color, 20%);
+  }
+
+  select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid $select-border-color;
+    border-radius: 5px;
+    background: $select-background-color;
+    color: $select-color;
+    font-size: 16px;
+    line-height: 1.3;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        outline: 2px solid #000000;
+    }
+    
+
+    &::-ms-expand {
+      display: none; // Hide the default dropdown arrow in IE
+    }
+
+    option {
+      font-weight: normal; // Reset the bold style for options in Firefox
+    }
+  }
+}
+
+
+
+.select-button-group {
+  display: flex;
+  align-items: center;
+}
+
+.testSubmitButton {
+  all: unset;
+  margin-left: 10px; /* Adjust this value as per your needs */
+  background-color: #e20074; /* Green background */
+  border: none; /* Remove border */
+  color: white; /* White text color */
+  padding: 10px 24px; /* Padding to increase size of button */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer; /* Add a hand cursor on hover over button */
+
+  &:focus {
+    outline: 2px solid #000000;
+  }
+
+  &[aria-disabled="true"]{
+    background-color: #ccc; 
+    &:before {
+      background-image: none;
+    }
+    &:after {
+      background-image: none;
+
+    }
+    cursor: not-allowed;
+  }
+}
+
+
+
+

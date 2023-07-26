@@ -564,3 +564,35 @@ function trapFocus(e) {
   }
 }
 
+//How to test Forms change of context examples
+
+$('#selectPass').change(function() {
+    $('#submitSelectPassSelection').attr('aria-disabled', 'false');
+});
+
+$('#submitSelectPassSelection').click(function(e) {
+    e.preventDefault();
+    if ($(this).attr('aria-disabled') === 'true') {
+        return;  // Ignore click if button is disabled
+    }
+    $('#selectPass').hide();
+    $(this).hide();
+    $('#messagePass').show();
+});
+
+$('#selectFail').change(function() {
+    $(this).hide();
+    $('#messageFail').show();
+});
+
+//How to test Forms error message example
+$('#goodErrorInputSubmit').click(function(e) {
+    e.preventDefault();
+    $('#goodErrorInputError').show();
+    $('#goodErrorInput').focus();
+});
+
+$('#badErrorInputSubmit').click(function(e) {
+    e.preventDefault();
+    $('#badErrorInputError').show();
+});

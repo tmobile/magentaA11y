@@ -80,3 +80,64 @@ input[type="checkbox"] {
 .hint-checkbox {
   padding: 1rem;
 }
+
+/*Examples for How to test forms - checkboxes */
+
+        /* Hide the default checkboxes */
+        .native-checkbox {
+            display: none;
+        }
+
+        /* Custom checkbox style with visible label */
+        .custom-checkbox-label {
+          display: inline-flex;
+          align-items: center;
+          cursor: pointer;
+      }
+
+      .custom-checkbox {
+          width: 20px;
+          height: 20px;
+          background-color: #f1f1f1;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          margin-right: 8px;
+          position: relative;
+      }
+
+      /* Show a checkmark using a pseudo-element */
+      .custom-checkbox::before {
+          content: "";
+          width: 10px;
+          height: 5px;
+          border: 2px solid #2196F3;
+          border-top: none;
+          border-right: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          opacity: 0;
+      }
+
+      /* Show the checkmark when the checkbox is checked */
+      input[type="checkbox"]:checked + .custom-checkbox::before {
+          opacity: 1;
+      }
+
+      /* Style for the inaccessible checkbox (hidden for screen readers and keyboard navigation) */
+      .inaccessible-checkbox {
+          width: 20px;
+          height: 20px;
+          background-color: #f1f1f1;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          margin-right: 8px;
+          position: relative;
+      }
+
+      /* Visually hide the inaccessible checkbox from screen readers and keyboard navigation */
+      .inaccessible-checkbox input[type="checkbox"] {
+          position: absolute;
+          left: -9999px;
+      }
