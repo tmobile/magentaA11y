@@ -65,7 +65,7 @@ settings:
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- Required: Screen reader user is confined inside the modal, communicating an alert/modal is present
+- Required: Screen reader user is confined inside the alert, communicating an alert is present
 
 - **UIKit**
   - Use `UIAlertController` and add actions per your use case
@@ -74,45 +74,35 @@ settings:
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- If you are implementing a native alert, do not modify native grouping logic
-- If you require a custom alert, follow the steps below.
+- For a native alert, do not modify native grouping logic
 
 - **UIKit**
-  1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
-  2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
-  - If frame does not exist due to custom alert, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
-    - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
-  - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
-  - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
+  - Use `UIAlertController` grouping and ordering as is
 - **SwiftUI**
-  - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
+  - Use the native alert's grouping and ordering as is
 
 ### State 
-- Modals, or action sheets in iOS, that have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
-- Usually no one button is disabled in native alerts and action sheets.
+- Alerts that have an open/close state must be announced. Add logic and announcement to the programmatic name for the state
+- Usually no one button is disabled in native alerts.
 
 - **UIKit**  
-  - For custom alerts or action sheets, follow below.
-  - For enabled: Set `isEnabled` to `true`.
-  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+  - When the focus lands on the alert's title, it is implied to the user that the alert is open.
 - **SwiftUI**
-  - For custom alerts or action sheets, follow below.
-  - For selected, use `accessibilityAddTraits(.isSelected)`.
-  - For disabled, use view modifier `disabled()`.
+  - When the focus lands on the alert's title, it is implied to the user that the alert is open.
 
 ### Focus
-- Use the default focus functionality of the native alert or modal
-- The screen reader focus **must** be confined within the alert or modal. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal.
-- If implementing a custom alert, follow below.
+- Use the default focus functionality of the alert
+- The screen reader focus **must** be confined within the alert. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the alert.
 
 - **UIKit**
+  - If needed, follow the below for focus management.
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
     - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
-  - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
   - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
 - **SwiftUI**
+  - If needed, follow the below for focus management.
   - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
@@ -123,7 +113,6 @@ settings:
     - "alert, title" when alert appears with an audible ping.
     - "Body content"
     - "CTA, button"
-
 
 ## Android
 
