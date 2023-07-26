@@ -23,24 +23,27 @@ mobile:
     
 screenreader:
   name:  |
-    Purpose of menu is clear
+    Interactive options within the menu should follow button guidance.  The name should match the visible text
   role:  |
-    May identify itself as a menu, sidebar or panel. 
+    Triggering element should announce as button
   state: |
-    Typically, when open, other content is inert. Expands/collapses, closes/opens states are announced for a menu, sidebar or panel
+    Typically, when open, other content is inert. Expands/collapses, closes/opens states are announced on the elements that close or open the menu
 
 settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
-
 ## Developer notes
 
 - A menu is a container for a list of items
 - Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Options to close the menu for the screen reader user:  An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item.  Two/three finger swipe to close (Android).  A close button.
-- Confining the user within the menu communicates the context to the screen reader user that there is a menu or modal present. If menu hides content underneath it, the screen reader focus should be confined within the menu.
-- Tapping outside the modal to close cannot be the only option for screen reader users
+- Options to close the menu for the screen reader user:
+  - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item
+  - Two/three finger swipe to close (Android)
+  - A close button
+  - Swiping back to the element that opened menu
+- Confining the user within the menu communicates the context to the screen reader user that there is a menu present. If menu hides content underneath it, the screen reader focus should be confined within the menu.
+- Tapping outside the menu to close cannot be the only option for screen reader users
 
 ### Name
 
