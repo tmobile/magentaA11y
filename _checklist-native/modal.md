@@ -131,25 +131,26 @@ settings:
 - Tapping outside the modal to close can not be the only option for screen reader users when the modal covers other content
   
 ### Name
-- Programmatic name describes the purpose of the alert dialog
-- For alerts and modals, the programmatic name is the title of the alert/modal.
+- Programmatic name describes the purpose of the modal
+- By default, the programmatic name is the title of the modal.
 
 - **Android Views**
-  - Use Android view component `AlertDialog` for the alert, its default accessibility behavior will cover the programmatic name by using the title text.
+  - Use Android view component `AlertDialog` for the modal, its default accessibility behavior will cover the programmatic name by using the title text.
 - **Android Compose** 
-  - Use composable `AlertDialog` which uses the title as the programmatic name
+  - Use composable `AlertDialog`, `ModalBottomSheet` or other native composable as modal. A title view need to used as the programmatic name.
 
 ### Role
-- Required: Screen reader user is confined inside a modal, communicating an alert/modal is present.
+- Required: Screen reader user is confined inside a modal, communicating an modal is present.
 
 - **Android Views**
-  - Android view component `AlertDialog` has the dialog role defined
+  - Android view component `AlertDialog` has the dialog role defined for using as modal
 - **Android Compose** 
-  - Composable `AlertDialog` has dialog role defined
+  - Composable `AlertDialog` has default role defined
+  - Composable `ModalBottomSheet` has default role defined
 
 ### Groupings
-- If you are implementing a native alert, do not modify native grouping logic
-- If you require a custom alert, follow the steps below.
+- If you are implementing a native modal, do not modify native grouping logic
+- If you require a custom modal, follow the steps below.
 
 - **Android Views**
   - `ViewGroup`
@@ -170,9 +171,9 @@ settings:
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
 
 ### Focus
-- Use the default focus functionality of the native alert or modal
-- The screen reader focus **must** be confined within the modal /alert /dialog/ drawer. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal
-- Android sometimes initially focuses on the CTAs in the alert, not the text or title
+- Use the default focus functionality of the modal
+- The screen reader focus **must** be confined within the modal. When the modal appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal
+- Android initially focuses on the CTA ("Close" button) in the modal, not the text or title unless the close CTA is not designed at the first focus order in modal
 - Android often takes one swipe to bring focus inside the modal
 
 - **Android View**
@@ -201,14 +202,36 @@ settings:
 
 ### Code Example
 - **Android Compose**
+
 {% highlight kotlin %}
+// Use AlerDialog as Modal with onDismissRequest action that enable dialog dismiss when user touch outside the dialog modal
 AlertDialog(
-    onDismissRequest = {},
+    onDismissRequest = { onDismiss(true) },
     title = { Text(text = "Title") },
     text = { Text(text = "Message") },
     confirmButton = { Button(onClick = { }) { Text(text = "Confirm") } },
-    dismissButton = { Button(onClick = { }) { Text(text = "Dismiss") } }
+    dismissButton = { Button(onClick = { }) { Text(text = "Cancel") } }
 )
+// Example on using ModalBottomSheet as Modal
+ModalBottomSheet(
+    onDismissRequest = { openBottomSheet = false },
+    sheetState = bottomSheetState,
+    windowInsets = windowInsets
+) {
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+        Button(
+          onClick = {
+              scope.launch { bottomSheetState.hide() }.invokeOnCompletion {
+                  if (!bottomSheetState.isVisible) {
+                      openBottomSheet = false
+                  }
+              }
+            }
+        ) {
+            Text("Close")
+        }
+    }
+}
 {% endhighlight %}
 
 ### Modal announcements
