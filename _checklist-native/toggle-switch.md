@@ -32,15 +32,15 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
-## Developer Notes
+## iOS
+
+### Developer Notes
 
 - A switch, or toggle, has two mutually exclusive states — on and off
 - You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
 - A switch should just toggle on or off. It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context. Revealing new information on the same screen as a result of activating a toggle is usually not a change of context.
 - Name, Role, State must be announced when focus is on the control, if it is isolated in the table row. Announcing the label before the switch does not meet this requirement.
-
-## iOS
-
+  
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
@@ -74,8 +74,8 @@ settings:
 - Group label with data to ensure reading order is logical. (Not label, label, data, data).
 
 - **UIKit**
-  1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
-  2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
+  - Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
+  - Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
   - If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
     - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
@@ -116,10 +116,20 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
+- Swiping to label and toggle group, "Label, switch button, on/off, double tap to toggle settings".
+- Double tapping toggle, "on/off".
 
 
 ## Android
 
+### Developer Notes
+
+- A switch, or toggle, has two mutually exclusive states — on and off
+- You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
+- A switch should just toggle on or off. It should not automatically navigate the user to another field or screen when toggled, as that would most likely cause a change of context. Revealing new information on the same screen as a result of activating a toggle is usually not a change of context.
+- Name, Role, State must be announced when focus is on the control, if it is isolated in the table row. Announcing the label before the switch does not meet this requirement.
+
+  
 ### Name
 
 - Name describes purpose while focus is on the control (or on the whole table row)
@@ -229,4 +239,6 @@ Row(
 
 
 ### Announcement examples
+- Swiping to label and switch group, "Label, on/off switch, double tap to toggle".
+- Double tapping switch, "Double tapping, Label, on/off switch, on/off".
 
