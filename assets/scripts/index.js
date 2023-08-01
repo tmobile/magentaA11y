@@ -227,23 +227,27 @@ $(".simp  .previous").click(function(){
 $("#test-case-wrapper").on('toggle', function() {
     $("body").toggleClass('test-case-open');
 
-    $('img').after('<button tabindex="-1" id="img" class="test-case-flag">Image</button>');
+    $("nav a").before('<button type="button" tabindex="-1" id="link" class="test-case-flag good">Link</button>');
 
-    $("a").after('<button tabindex="-1" id="link" class="test-case-flag">Link</button>');
+    $("nav").after('<button type="button" tabindex="-1" id="nav" class="test-case-flag good">Navigation</button>');
 
-    $("nav").after('<button tabindex="-1" id="nav" class="test-case-flag">Navigation</button>');
+    $("main a").before('<button type="button" tabindex="-1" id="link" class="test-case-flag">Link</button>');
+
+    $('img').before('<button type="button" tabindex="-1" id="img" class="test-case-flag">Image</button>');
     
-    $(".expander-toggle").after('<button tabindex="-1" id="expander" class="test-case-flag">Expander</button>');
+    $(".expander-toggle").before('<button type="button" tabindex="-1" id="expander" class="test-case-flag">Expander</button>');
 
-    $(".fake-radio").first().after('<button tabindex="-1" id="radio" class="test-case-flag">Radio input</button>');
+    $(".fake-radio").first().after('<button type="button" tabindex="-1" id="fake-radio" class="test-case-flag">Radio group</button>');
     
+    $("#submit-response").after('<button type="button" tabindex="-1" id="button" class="test-case-flag">Button</button>');
+
+
     $(".test-case-flag").click(function() {
         // Close all details
         $(".acceptance-criteria").removeAttr("open");
         // Get the id
-    
         var id = $(this).attr('id');
-        // Find the corresponding details
+        // Find the corresponding details and
         // open the details
         $('#' + id + '-details').prop('open', true);
     });  

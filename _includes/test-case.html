@@ -1,9 +1,9 @@
 <details id="test-case-wrapper" class="test-case-wrapper">
   <summary>
-    What to test on this page
+    GenA11y
   </summary>
 
-  <details class="acceptance-criteria" id="nav-details">
+  <details class="acceptance-criteria" id="nav-details" open>
     <summary>
       Navigation
     </summary>
@@ -499,13 +499,180 @@
 
   </details>
 
-  <details class="acceptance-criteria" id="radio-details">
+  <details class="acceptance-criteria" id="fake-radio-details">
     <summary>
-      Radio input
+      Radio group
     </summary>
     <div class="">
       <p class="" itemprop="name">
         <strong>Given that</strong> I am on a page with a Radio button
+      </p>
+
+      <div id="step1" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+        <h3 class="h-charlie" itemprop="name">
+          <step-number>1 </step-number>Keyboard for mobile &amp; desktop
+        </h3>
+
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use the tab key to move focus to a radio group
+
+              <strong>I SEE</strong> focus is strongly visually indicated on the first unselected option or the selected option
+
+            </li>
+          
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>THEN</strong> when I use the spacebar to activate the radio button
+
+              <strong>I SEE</strong> the radio button with focus change state to selected.
+
+              </li>
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>THEN</strong> when I use the arrow keys to focus radio button
+
+              <strong>I SEE</strong> the state is changed
+
+              </li>
+          
+        </ul>
+      </div>
+      
+
+
+      <div id="step2" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+        <h3 class="h-charlie">
+          <step-number>2</step-number>
+          Desktop screenreader
+        </h3>
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use a desktop screenreader (NVDA, JAWS, VoiceOver) 
+              <strong>AND</strong>  
+              
+                I use the tab key to move focus to a radio group
+
+                <ul>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">Its label and purpose is clear
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It identifies itself as a radio option
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">Each option has an associated label and the radio group name
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It expresses its state (selected, checked, disabled)
+</span>
+                    </li>
+                  
+                </ul>
+                
+            </li>
+          
+
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>THEN</strong> when I use the spacebar to activate the radio button
+
+              <strong>I HEAR</strong> 
+              <span class="lowercase">the radio button with focus change state to selected.
+</span>
+            </li>
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>THEN</strong> when I use the arrow keys to focus radio button
+
+              <strong>I HEAR</strong> 
+              <span class="lowercase">the state is changed
+</span>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div id="step3" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
+
+        <h3 class="h-charlie">
+          <step-number>3 </step-number>Mobile screenreader
+        </h3>
+        <ul class="gherkin-list">
+          
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+              <strong>WHEN</strong> I use a mobile screenreader (Talkback, VoiceOver) 
+              <strong>AND</strong> 
+              
+                I swipe to focus on a radio button
+
+                <ul>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">Its label and purpose is clear
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It identifies itself as a radio option
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">Each option has an associated label and the radio group name
+</span>
+                    </li>
+                  
+                    <li>
+                      <strong>I HEAR</strong>
+                      <span class="lowercase">It expresses its state (selected, checked, disabled)
+</span>
+                    </li>
+                  
+                </ul>
+                
+            </li>
+          
+          
+             
+              <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/HowToDirection">
+                <strong>THEN</strong> when I doubletap with the radio in focus
+
+                <strong>I HEAR</strong> <span class="lowercase">the state is changed
+</span>
+              </li>
+            
+          
+        </ul>
+      </div>
+    </div>
+
+
+  </details>
+
+  <details class="acceptance-criteria" id="button-details">
+    <summary>
+      Button
+    </summary>
+    <div class="">
+      <p class="" itemprop="name">
+        <strong>Given that</strong> I am on a page with a button
       </p>
 
       <div id="step1" itemprop="step" itemscope="" itemtype="http://schema.org/HowToStep">
