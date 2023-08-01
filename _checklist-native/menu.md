@@ -126,45 +126,49 @@ TODO: For Debbie
 ## Android
 
 ### Name
-- Name describes the purpose of the control
-- Programmatic name matches the visible text label (if any)
+- Name describes the purpose of the control (Ex: opens settings menu or closes menu), with additional label description if needed.
 
 - **Android Views**
   - `android:text` XML attribute
-  - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
+  - Use `contentDescription`, depending on type of view and for elements (icons) without a visible label
   - `contentDescription` overrides `android:text`
   - Use `labelFor` attribute to associate the visible label with the control
-- **Android Compose**
-  - Compose uses semantics properties to pass information to accessibility services.
-  - The built-in Button composable will fill the semantics properties with information inferred from the composable by default.
-  - Optional: use `contentDescription` for a more descriptive name to override the default visible label of the button text.
+- **Jetpack Compose**
+  - Compose uses semantics properties to pass information to accessibility services
+  - The built-in `DropdownMenuItem` composable will fill the semantics properties with information inferred from the composable by default
+  - Optional: use `contentDescription` for a more descriptive name to override the default text label of the `DropdownMenuItem` composable
   - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Role
+- Required: Screen reader user is confined inside a menu, communicating a modal is present if hiding content underneath it
 - When not using native controls (custom controls), roles will need to be manually coded.
 - **Android Views**
-  - Standard button or ImageButton
-- **Android Compose**
-  - Standard `Button` composable
+  - `android.view.Menu`
+- **Jetpack Compose**
+  - `DropdownMenu`, `ExposedDropdownMenuBox`
 
 ### Groupings
-- Group visible label with button (if applicable) to provide a programmatic name for the button
+- Visible label, if any, is grouped with the menu button in a single swipe
 - Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
 - **Android Views**
   - `ViewGroup`
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
-- **Android Compose**
-  - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
+- **Jetpack Compose**
+  - When use built-in Composable `DropdownMenuItem` in `DropdownMenu`, then it has the default grouping with the elements inside.
+  - Use `Modifier.semantics(mergeDescendants = true) {}` when work on the customized menu items
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
+- Expandable menus
+  - State must be announced - expands/collapses, opens/closes. Add logic and announcement to the programmatic name for the state
+  - If "opens" or "closes" is not included in the name, the expands/collapses state must be announced
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
-- **Android Compose**
-  - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
-  - Disabled:  `Button(enabled = false)` announces as disabled
+- **Jetpack Compose**
+  - Active: default state is active and enabled. Use `DropdownMenuItem(enabled = true)` to specify explicitly
+  - Disabled:  `DropdownMenuItem(enabled = false)` announces as disabled
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
   - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
 
@@ -189,7 +193,7 @@ TODO: For Debbie
   - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
   - To hide controls: `importantForAccessibility=false`
   - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
@@ -199,26 +203,25 @@ TODO: For Debbie
     - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
     - focus order accepts following values: up, down, left, right, previous, next, start, end
     - step 3: use `second.requestFocus()` to gain focus
-
-### Custom Accessibility Action
-- When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
-- Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
-- The Button class by default supplies all the necessary semantics to make it fully accessible.
-
-- **Android Views**
-  - step 1: Create an accessibility service
-  - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
-  - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
-
-- **Android Compose**
-  - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
-  - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
   
+### Code Example
+- **Jetpack Compose**
+{% highlight kotlin %}
+var expanded by remember { mutableStateOf(false) }
+DropdownMenu(
+    expanded = expanded,
+    onDismissRequest = { expanded = false }
+) {
+    DropdownMenuItem(
+        text = { Text("Settings") },
+        onClick = { /* Handle settings! */ },
+        leadingIcon = {
+            Icon(
+                Icons.Outlined.Settings,
+                contentDescription = null
+            )
+        })
+}
+{% endhighlight %}
+
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label
-  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
-  
-- "Label, button, double tap to activate"
-- "Label, (other content in cell), button, double tap to activate" (grouping)
-- "Label, button, selected, double tap to activate" (selected state)
-- "Label, disabled" (disabled state)
