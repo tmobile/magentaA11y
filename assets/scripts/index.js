@@ -237,6 +237,9 @@ $("#test-case-wrapper").on('toggle', function() {
     
     $(".expander-toggle").before('<button type="button" tabindex="-1" id="expander" class="test-case-flag">Expander</button>');
 
+    $(".heading").after('<button type="button" tabindex="-1" id="heading" class="test-case-flag">Heading</button>');
+
+
     $(".fake-radio").first().after('<button type="button" tabindex="-1" id="fake-radio" class="test-case-flag">Radio group</button>');
     
     $("#submit-response").after('<button type="button" tabindex="-1" id="button" class="test-case-flag">Button</button>');
