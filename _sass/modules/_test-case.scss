@@ -25,7 +25,6 @@ details.test-case-wrapper {
     overflow: scroll;
   }
 
-
   step-number {
     margin-left: 0;
     margin-right: .5rem;
@@ -33,14 +32,17 @@ details.test-case-wrapper {
     
   details {
     margin-bottom: 0 !important;
+    border-radius: 0;
     summary {
       margin-bottom: -1rem;
+
     }
 
     &[open] {
       margin-bottom: 1rem;
       summary {
         margin-bottom: 1rem;
+
       }
     }
 

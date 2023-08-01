@@ -229,7 +229,7 @@ $("#test-case-wrapper").on('toggle', function() {
 
     $("nav a").before('<button type="button" tabindex="-1" id="link" class="test-case-flag good">Link</button>');
 
-    $("nav").after('<button type="button" tabindex="-1" id="nav" class="test-case-flag good">Navigation</button>');
+    $("nav").after('<button type="button" tabindex="-1" id="navigation" class="test-case-flag good">Navigation</button>');
 
     $("main a").before('<button type="button" tabindex="-1" id="link" class="test-case-flag">Link</button>');
 
@@ -252,7 +252,7 @@ $("#test-case-wrapper").on('toggle', function() {
         var id = $(this).attr('id');
         // Find the corresponding details and
         // open the details
-        $('#' + id + '-details').prop('open', true);
+        $('#' + id + '-instructions').prop('open', true);
     });  
 });
 
