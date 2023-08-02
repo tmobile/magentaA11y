@@ -102,7 +102,7 @@ settings:
 
 ### Focus
 - Use the device's default focus functionality. 
-- Focus should be confined within the menu, which can include the butto nthat opened it, if content underneath is hidden.
+- Focus should be confined within the menu, which can include the button that opened it, if content underneath is hidden.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - When a menu is closed, the focus should return to the triggering element
 - An invisible close button can be implemented to close the menu. Ensure this button is in the swipe order, if implemented.
