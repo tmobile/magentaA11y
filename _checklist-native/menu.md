@@ -15,7 +15,7 @@ keyboard:
 
 mobile:
   swipe: |
-    Focus moves, confined within the menu
+    Focus moves, confined within the menu.  Two finger swipe anywhere often dismisses menu (Android only)
   doubletap: |
     Activates interactive elements
   group: |
@@ -23,9 +23,9 @@ mobile:
     
 screenreader:
   name:  |
-    Interactive options within the menu should follow button guidance.  The name should match the visible text
+    Interactive options within the menu should follow button guidance.  The name should match the visible text for those buttons
   role:  |
-    Triggering element should announce as button
+    May identify itself as a menu, popover or modal. Confining the user within the menu communicates the context to the screen reader user that there is a modal present
   state: |
     Typically, when open, other content is inert. Expands/collapses, closes/opens states are announced on the elements that close or open the menu
 
@@ -33,19 +33,19 @@ settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
-## Developer notes
+
+## iOS
+
+### Developer notes
 
 - A menu is a container for a list of items
 - Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
 - Options to close the menu for the screen reader user:
-  - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item
-  - Two/three finger swipe to close (Android)
+  - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item 
   - A close button
   - Swiping back to the element that opened menu
-- Confining the user within the menu communicates the context to the screen reader user that there is a menu present. If menu hides content underneath it, the screen reader focus should be confined within the menu.
+- If menu hides content underneath it, the screen reader focus should be confined within the menu.
 - Tapping outside the menu to close cannot be the only option for screen reader users
-
-## iOS
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -120,10 +120,26 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
+- Options for announcements below depend on framework and versions. Announcement order can vary.  "Menu" in label is optional, but recommended.
 
-TODO: For Debbie
+- "Label menu, button"
+- "Label, button"  (without recommended "menu" announcement)
+- "Label menu, dimmed, button" (disabled state)
+- "Dismiss context menu, button" (Invisible button in swipe past the last item in menu)
 
 ## Android
+
+### Developer notes
+
+- A menu is a container for a list of items
+- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Options to close the menu for the screen reader user:
+  - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item
+  - Two/three finger swipe to close
+  - A close button
+  - Swiping back to the element that opened menu
+- If menu hides content underneath it, the screen reader focus should be confined within the menu.
+- Tapping outside the menu to close cannot be the only option for screen reader users
 
 ### Name
 - Name describes the purpose of the control (Ex: opens settings menu or closes menu), with additional label description if needed.
@@ -225,3 +241,9 @@ DropdownMenu(
 {% endhighlight %}
 
 ### Announcement examples
+- Options for announcements below depend on framework and versions. Announcement order can vary.  
+
+- "Open navigation drawer, button, double tap to activate"
+- "More options, button, double tap to activate"
+- "Open main menu, button, double tap to activate"
+- "More options button, disabled" (disabled state)
