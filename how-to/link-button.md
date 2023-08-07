@@ -293,6 +293,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
 - When the user clicks a link, they are taken to a different location in the site.
   - Either another page or even another area of the same page
 - A link can look like a big shiny button but it must be coded as `<a>` link
+- An interactive link should have a valid href value so it can receive keyboard focus.<br>For example `<a href="/some-page">...</a>`.
 
 ### If it does something, it's a `<button>`
 
