@@ -39,7 +39,7 @@ settings:
 ## Developer notes
 
 - Clickable text that navigates the user outside the app (ex: opens a browser)
-- If your framework does not have a native link, develop the element as a native button, even if the control visibly looks like a link. This will cue the screen reader the action will keep them within the app, specifically the in-app browser. 
+- If your framework does not have a native link, develop the element as a native button, even if the control visibly looks like a link. This will cue the screen reader that the action will keep them within the app, specifically the in-app browser. 
 - When accessing an in-line link that is inside a paragraph, the focus should be around the paragraph container. Double-tap to activate the link is an expected behavior. 
   - A link from within a paragraph does not have standalone focus. (There can be only one active link in the paragraph)
 - Links can also be focused separately within a paragraph or sentence.  Since this would require 3 swipes to get through the sentence, this is not optimal.
@@ -63,6 +63,10 @@ settings:
 
 - **UIKit**
   - Since UIKit does not have a native link, develop using `UIButton`
+    - If using a `UIButton` is not suitable for your use case, you may try the following strategies:
+      - Use a `UITextView` with a `NSAttributedString` with a `.link` attribute, OR
+      - Use a `UILabel` or related view and apply a `UITapGestureRecognizer`
+      - **Note:** The more complex your custom control is, the more complex the accessibility implementation can be
   - Set `accessibilityTraits` to `.link`.
   - Stylize the text to appear as a link
 - **SwiftUI**
@@ -101,13 +105,14 @@ settings:
 - When the in-app browser is closed, the focus should return to the triggering element.
 
 - **UIKit**
-  - Implement focus ring to be around the paragraph container, so that double-tapping the paragraph will activate the in-line link, given that there is one link inside the program.
+  - Implement focus ring to be around the paragraph container, so that double-tapping the container will activate the in-line link, given that there is only one link inside the container.
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
     - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
   - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
 - **SwiftUI**
+  - Implement focus ring to be around the paragraph container, so that double-tapping the container will activate the in-line link, given that there is only one link inside the container.
   - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.

@@ -22,9 +22,9 @@ screenreader:
   role:  |
     It identifies itself as a text input
   group: |
-     Hints or errors are read after the label (Ex: Password formatting)
+    Hints or errors are read after the label (Ex: Password formatting)
   state: |
-    If applicable, it expresses its state (required, disabled / dimmed / unavailable) and it is indicated if the password is being shown
+    It expresses if the password is being shown and if applicable: required, disabled / dimmed / unavailable
 
 gherkin-keyboard: 
   - when:  |

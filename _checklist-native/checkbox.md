@@ -61,6 +61,10 @@ settings:
 
 - **UIKit**
   - Since there is no native checkbox in UIKit, implementing a custom checkbox may be necessary using `UIButton`, `UISwitch`, `UIControl`, or another class.
+    - Extend from one of the UIKit native controls above. A common control for custom checkboxes to extend from is the `UIButton`, but choose the native control that best fits your use case.
+    - Provide your own checked and unchecked checkbox images
+    - Implement action handlers for your custom checkbox
+    - Set accessibility properties accordingly
   - If necessary, set `accessibilityTraits` to `.button`. Be sure to set the accessibility value to either "Checked" or "Unchecked" to indicate that this control behaves as a checkbox.
   - An alternative to setting the accessibility trait to `.button` is removing and hiding the accessibility trait using `accessibilityTraits.remove(:)`. Then, append ", Checkbox" to the programmatic name
 - **SwiftUI**

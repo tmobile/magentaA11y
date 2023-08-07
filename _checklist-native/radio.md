@@ -127,7 +127,6 @@ settings:
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
 - "Label, button"
 - "Label, button, selected" (selected state)
-- "Label, selected" (selected state)
 - "Label, dimmed" (disabled state)
 - "Label, dimmed, button" (disabled state)
 
