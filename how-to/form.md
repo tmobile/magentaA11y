@@ -20,7 +20,7 @@ Checkboxes allow users to select one or more options from a list. Keyboard and s
 {% include /examples/input-checkbox.html %}
 </example>
 
-## <step-number>3</step-number> Radio buttons
+## <step-number>3</step-number> Radio Buttons
 {: .divider }
 Radio buttons allow users to select a single option from a list. Only one radio button in a group should be be selectable at a time. Keyboard and screen reader users should be able to focus on the group of radio buttons using the tab key. Arrow keys move focus between each radio option. Options can be automatically selected as they receive focus with the arrow keys, or they can be selected using the space key. Pressing tab navigates aways from the radio group. 
 <example>
@@ -39,9 +39,9 @@ Radio buttons allow users to select a single option from a list. Only one radio 
 </fieldset>
 </example>
 
-## <step-number>4</step-number> Select dropdowns
+## <step-number>4</step-number> Select Fields
 {: .divider }
-Select dropdowns allow users to select one or more options from an expandable list of options. Keyboard and screen reader users should be able to focus on the select using their tab key. The space key expands the list of options, the arrow keys traverse the options, and the space or enter keys make a selection. Escape collapses the list. 
+Select fields allow users to select one or more options from an expandable list of options. Keyboard and screen reader users should be able to focus on the select using their tab key. The space key expands the list of options, the arrow keys traverse the options, and the space or enter keys make a selection. Escape collapses the list. 
 <example>
 {% include /examples/input-select.html %}
 </example>
