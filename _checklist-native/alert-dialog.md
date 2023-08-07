@@ -5,9 +5,9 @@ categories: notifications
 
 keyboard:
   tab or arrow keys: |
-    Focus visibly moves, confined within the dialog
+    Focus visibly moves, confined within the alert
   escape: |
-    The dialog closes and returns focus to the button that launched it
+    The alert closes and returns focus to the element that launched it or to a logical place 
   space: |
     Any buttons or links are activated on iOS and Android
   enter: |
@@ -15,37 +15,35 @@ keyboard:
 
 mobile:
   swipe: |
-    Focus moves, confined within the dialog
+    Focus moves, confined within the alert
   doubletap: |
-    This typically activates most elements (alternative custom actions may be implemented)
+    This typically activates most elements
   group: |
     n/a
     
 screenreader:
   name:  |
-    The dialog describes its purpose or title if any (On launch with iOS. Often with first swipe on Android or intial focus is on CTA)
+   Interactive elements within the alert should follow button guidance. The name should match the visible text for those buttons  
   role:  |
-    May identify itself as a modal, dialog, drawer, sidebar, panel, popover, menu or alert. Confining the user within the modal communicates the context to the screen reader user that there is a modal present
+    May identify itself as a modal, dialog or alert. Confining the user within the alert communicates the context to the screen reader user that there is a modal present
   state: |
-    When open, other content is inert. Expands/collapses, closes/opens states are typically announced for a menu, drawer, sidebar, panel or popover
+   n/a
 
 settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
 
-
-## Native Element
-
-- Modal dialogs inform users about a task and can contain critical information, require decisions, or involve multiple tasks, usually appearing over an existing screen
-- Use native alerts when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Options to close the modal for the screen reader user:  
-  - An invisible close button announced for the screen reader only, which can be in the swipe order after the last menu item
-  - Two/three finger swipe
-  - A close button
-- Drawers usually have a handle or button to be focused by the screen reader to expand and collapse them. Tapping outside the modal to close can not be the only option for screen reader users
-
 ## iOS
+
+### Developer Notes
+
+- An alert gives users critcal information they need right away, usually appearing over an existing screen
+- Use native alerts when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Options to close the alert for the screen reader user:  
+  - A close button
+  - CTA
+- Tapping outside the alert to close cannot be the only option for screen reader users
 
 ### Name
 - Programmatic name describes the purpose of the alert.
@@ -108,13 +106,23 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-### Native Alert announcement examples
+### Announcement examples
 - Three separate focus areas
-    - "alert, title" when alert appears with an audible ping.
+    - "Alert, title"  (When alert appears with an audible ping)
     - "Body content"
     - "CTA, button"
 
 ## Android
+
+### Developer Notes
+
+-An alert gives users ciritcal information they need right away, usually appearing over an existing screen
+- Use native alerts when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Options to close the modal for the screen reader user:  
+  - Two/three finger swipe
+  - A close button
+  - CTA
+  - Tapping outside the alert to close cannot be the only option for screen reader users
 
 ### Name
 - Programmatic name describes the purpose of the alert dialog
@@ -195,9 +203,10 @@ AlertDialog(
 )
 {% endhighlight %}
 
-### Announcement examples - Announcements vary by device
-- "Title, body copy, CTA button, double tap to activate"  TalkBack often announces the entire alert altogether in one announcement while focus is on the CTA.
--  Alerts can also be announced in several swipes, separating content.
-    - "Title"
+### Announcement examples - Announcements vary by device and version.  
+- TalkBack often announces the entire alert altogether in one announcement while focus is on the CTA.  
+- "Title, body copy, CTA button, double tap to activate" 
+-  Alerts can also be announced in several swipes, separating content. Initial focus can be on the first element.
+    - "Title"  (if any)
     - "Body copy"
     - "CTA button, double tap to activate" 
