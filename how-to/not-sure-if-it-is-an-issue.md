@@ -137,7 +137,7 @@ Make it easy for others to review and fix your issue.
     <li>The URL where the image is located</li>
     <li>A description of the image and its location on the page</li>
     <li>The accessibility concern (ex: "missing alt attribute")</li>
-    <li>Who it impacts. Which users are impacted by the barrier and why</li>
+    <li>Who it impacts - which users are impacted by the barrier and why</li>
     <li>A snippet of the corresponding code</li>
     <li>Screenshots of the images (ensure the screenshot has context - don't crop too tight)</li>
     <li>A good/fixed snippet of the corresponding code</li>
