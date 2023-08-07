@@ -131,7 +131,17 @@ Make it easy for others to review and fix your issue.
   You discovered an image of a product that is not announcing for screen readers on the home page because it is missing an alt attribute.
 
   <h3>What to do</h3>
-  You want to clearly capture the exact steps to recreate the issue in your organizations bug tracking system. You provide: the URL where the image is located; a description of the image and its location on the page; the accessibility concern (ex: "missing alt attribute"); screenshots of the image as well as the corresponding code.
+  You want to clearly capture the exact steps to recreate the issue in your organizations bug tracking system.
+  
+  <ul>
+    <li>The URL where the image is located</li>
+    <li>A description of the image and its location on the page</li>
+    <li>The accessibility concern (ex: "missing alt attribute")</li>
+    <li>Who it impacts. Which users are impacted by the barrier and why</li>
+    <li>A snippet of the corresponding code</li>
+    <li>Screenshots of the images (ensure the screenshot has context - don't crop too tight)</li>
+    <li>A good/fixed snippet of the corresponding code</li>
+  </ul>
 
   While it is always helpful to provide screenshots, your issue should be written clear enough that they are not needed by someone reading the details of the bug.    
 
