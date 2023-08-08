@@ -5,7 +5,7 @@ categories: notifications
 
 keyboard:
   tab: |
-    Focus visibly moves in logical order to the toast
+    Focus visibly moves in logical order to the snackbar
   space: |
     Any elements inside are activated on iOS and Android
   enter: |
@@ -13,50 +13,40 @@ keyboard:
 
 mobile:
   swipe: |
-    Focus moves within the toast
+    Focus moves within the snackbar
   doubletap: |
-    Activates elements within the toast
+    Activates elements within the snackbar
 
 screenreader:
   name:  |
-    The element announces its purpose or title
+    Any interactive element announces its purpose or title
   role:  |
-    Identifies itself as a button in iOS and "double tap to activate" in Android
+    Any interactive element dentifies itself as a button in iOS and "double tap to activate" in Android
   group: |
-    When closed, focus returns to a logical place in the page
+    n/a
   state: |
-    Toast remains open until closed by user
+    n/a
 
 settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
+## Android
 
-## Developer notes
-  
-- Snackbars provide lightweight feedback about an operation
-- A brief message appears at the bottom of the screen on mobile
-- Snackbars appear above all other elements on screen
-- Display one at a time
-- A snack bar or toast can be timed to disappear, since the message is not critical
-- A message must be announced dynamically when it appears, but focus should not move to it
-- If the snackbar persists, it should be in the swipe order for the screen reader user and tab order for the keyboard user
-- All text in the snackbar must be announced by the screen reader
+### Developer notes
 
-### Name
-N/A
-
-### Role
-N/A
-
-### Groupings
-N/A
-
-### State
-N/A
+- Snackbars and Toasts provide lightweight feedback about an operation
+- They show a brief non-critical message at the bottom of the screen on mobile
+- Snackbar or toast must be dynamically announced by the screen reader without moving focus to it
+- Display only one at a time
+- A Snackbar or toast can be timed to disappear, since the message is not critical information
+- If the Snackbar persists, it should be in the swipe order for the screen reader user and tab order for the keyboard user
+- All text in the Snackbar and Toast must be announced by the screen reader
+- A Snackbar can contain an interactive element. Please follow the Native Button guidance for the CTA
+- Toasts do not contain an interactive element
 
 ### Focus
-- For Jetpack Compose Snackbar, when there is action available, the default accessibility behavior let screen reader read the message and the action but no focus on either of them.
+- For Jetpack Compose Snackbar, when there is an action available, the default accessibility behavior allows screen reader to dynamically read the message and the action
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
