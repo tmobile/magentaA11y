@@ -15,15 +15,17 @@ input[type="radio"].tab {
     @include ripple(#fff, #eee, center, center);
     padding: .5rem .75rem;
     column-gap: .5rem;
-    row-gap: .25rem;
     position: relative;
     border-radius: .5rem;
     grid-template-columns: 1fr;
+    row-gap: .25rem;
+
     text-align: center;
     @include break($break-small) {
       grid-template-columns: 1.5rem 1fr;
       padding: .75rem;
       text-align: left;
+      row-gap: 0rem;
     }
     &:first-of-type {
       text-indent: 0rem;
