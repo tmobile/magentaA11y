@@ -298,15 +298,10 @@ Select fields allow users to select one or more options from an expandable list 
   <tbody>
   <tr>
     <td>
-    <div>
       <label for="goodErrorInput">Submit for a good error</label>
       <input aria-describedby="goodErrorInputError" type="text" id="goodErrorInput"/>
-      <div id="goodErrorInputError" style="display: none; color: #E02D00;">
-        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
-    <path fill="#E02D00" d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0l-6.7 11.667c-.451.778.091 1.767.98 1.767h13.4c.889 0 1.43-.99.98-1.768L8.982 1.566z"/>
-    <path fill="white" d="M9.002 6.99a1 1 0 0 0-2 0v2.012a1 1 0 0 0 2 0V6.99z"/>
-    <path fill="white" d="M8.982 11.977a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-</svg> I announce with the input</div>
+      <div id="goodErrorInputError" style="display: none;">
+         I announce with the input
       </div>
       <button id="goodErrorInputSubmit" class="button" type="submit">Submit</button>
     </td>
@@ -314,11 +309,8 @@ Select fields allow users to select one or more options from an expandable list 
     <div>
       <label for="badErrorInput">Submit for a bad error</label>
       <input type="text" id="badErrorInput"/>
-      <div id="badErrorInputError" style="display: none; color: #E02D00;"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
-    <path fill="#E02D00" d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0l-6.7 11.667c-.451.778.091 1.767.98 1.767h13.4c.889 0 1.43-.99.98-1.768L8.982 1.566z"/>
-    <path fill="white" d="M9.002 6.99a1 1 0 0 0-2 0v2.012a1 1 0 0 0 2 0V6.99z"/>
-    <path fill="white" d="M8.982 11.977a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-</svg> I do not announce with the input</div>
+      <div id="badErrorInputError" style="display: none; color: #E02D00;">
+        I do not announce with the input</div>
       </div>
       <button id="badErrorInputSubmit" class="button" type="submit">Submit</button>
     </td>
