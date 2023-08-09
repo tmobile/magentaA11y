@@ -86,16 +86,12 @@ Select fields allow users to select one or more options from an expandable list 
   <tbody>
   <tr>
     <td>
-     <div style="display:inline-flex; align-items:center">
         <input type="checkbox" id="accessibleCheckbox">
         <label for="accessibleCheckbox">Accessible Checkbox</label>
-        </div>
     </td>
     <td>
-    <div style="display:inline-flex; align-items:center">
         <input style="display:none" type="checkbox" id="inaccessibleCheckbox">
         <label for="inaccessibleCheckbox">Inaccessible Checkbox</label>
-        </div>
     </td>
   </tr>  
   </tbody>
@@ -186,7 +182,7 @@ Select fields allow users to select one or more options from an expandable list 
   <tr>
     <td>
       <div >* = required field</div>
-      <label style="margin-right:8px" for="userLastnamePass">* Last name</label>
+      <label for="userLastnamePass">* Last name</label>
       <input aria-required="true" type="text" id="userLastnamePass"/>
     </td>
     <td>
@@ -215,7 +211,7 @@ Select fields allow users to select one or more options from an expandable list 
   <legend>
     Choose a properly grouped day
   </legend>
-  <div style="text-align:left">
+  <div>
   <input type="radio" name="dayPass" id="fridayRadioPass">
   <label for="fridayRadioPass">Friday</label>
 
@@ -225,22 +221,24 @@ Select fields allow users to select one or more options from an expandable list 
   <input type="radio" name="dayPass" id="sundayRadioPass" checked>
   <label for="sundayRadioPass">Sunday</label>
   </div>
-</fieldset>
-    </td>
-    <td>
-   <fieldset>
-   <div class="legend"> Choose an incorrectly grouped day</div>
-   <div style="text-align:left">
-    <input type="radio" name="dayFail" id="fridayRadioFail">
-  <label for="fridayRadioFail">Friday</label>
-
-  <input type="radio" name="dayFail" id="saturdayRadioFail">
-  <label for="saturdayRadioFail">Saturday</label>
-
-  <input type="radio" name="dayFail" id="sundayRadioFail" checked>
-  <label for="sundayRadioFail">Sunday</label>
-  </div>
   </fieldset>
+      </td>
+      <td>
+    <fieldset>
+    <div class="legend">
+      Choose an incorrectly grouped day
+    </div>
+    <div>
+      <input type="radio" name="dayFail" id="fridayRadioFail">
+      <label for="fridayRadioFail">Friday</label>
+
+      <input type="radio" name="dayFail" id="saturdayRadioFail">
+      <label for="saturdayRadioFail">Saturday</label>
+
+      <input type="radio" name="dayFail" id="sundayRadioFail" checked>
+      <label for="sundayRadioFail">Sunday</label>
+    </div>
+    </fieldset>
     </td>
   </tr>  
   </tbody>
@@ -259,25 +257,25 @@ Select fields allow users to select one or more options from an expandable list 
   <tbody>
   <tr>
     <td>
-    <div style="text-align:left">
+    <div>
         <input type="checkbox"
            id="deltaCheckboxCard"
            aria-describedby="descDelta" >
     <label for="deltaCheckboxCard">
       Delta
     </label>
-    <div class="extended-description"
+    <div class="hint"
          id="descDelta">
       Delta is the fourth letter of the NATO alphabet.
     </div>
     </div>
     </td>
     <td>
-    <div style="text-align:left">
+    <div>
     <input type="checkbox"
            id="echoCheckboxCard">    
     <label for="echoCheckboxCard">Echo</label>
-    <div class="extended-description"
+    <div class="hint"
          id="descriptionEcho">
       Echo is the fifth letter of the NATO alphabet.
     </div>
@@ -300,7 +298,7 @@ Select fields allow users to select one or more options from an expandable list 
   <tbody>
   <tr>
     <td>
-    <div style="text-align:left">
+    <div>
       <label for="goodErrorInput">Submit for a good error</label>
       <input aria-describedby="goodErrorInputError" type="text" id="goodErrorInput"/>
       <div id="goodErrorInputError" style="display: none; color: #E02D00;">
@@ -310,10 +308,10 @@ Select fields allow users to select one or more options from an expandable list 
     <path fill="white" d="M8.982 11.977a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 </svg> I announce with the input</div>
       </div>
-      <button style="margin-top: 5px;" id="goodErrorInputSubmit" class="button" type="submit">Submit</button>
+      <button id="goodErrorInputSubmit" class="button" type="submit">Submit</button>
     </td>
     <td>
-    <div style="text-align:left">
+    <div>
       <label for="badErrorInput">Submit for a bad error</label>
       <input type="text" id="badErrorInput"/>
       <div id="badErrorInputError" style="display: none; color: #E02D00;"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
@@ -322,7 +320,7 @@ Select fields allow users to select one or more options from an expandable list 
     <path fill="white" d="M8.982 11.977a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 </svg> I do not announce with the input</div>
       </div>
-      <button style="margin-top: 5px;" id="badErrorInputSubmit" class="button" type="submit">Submit</button>
+      <button id="badErrorInputSubmit" class="button" type="submit">Submit</button>
     </td>
   </tr>  
   </tbody>
