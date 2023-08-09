@@ -60,10 +60,14 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   <tbody>
   <tr>
     <td>
-      <button onclick="alert('I work!')">Try me!</button>
+      <button onclick="alert('This works with a keyboard and a mouse')">
+        Show alert
+      </button>
     </td>
     <td>
-      <div class="button" type="button" tabindex="0">Try me!</div>
+      <div class="button" type="button" tabindex="0" onmouseup="alert('This only works with a mouse')">
+        Show alert
+      </div>
     </td>
   </tr>  
       <tr>
@@ -114,20 +118,12 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   <tbody>
       <tr>
     <td>
-<button class="play-button" aria-label="play">
-<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
-  <circle cx="25" cy="25" r="23" fill="none" stroke="#000"/>
-  <polygon points="20,15 35,25 20,35" fill="#000"/>
-</svg>
-</button>
+      <button class="icon-button play" aria-label="play">
+      </button>
     </td>
     <td>
-<button class="play-button">
-<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
-  <circle cx="25" cy="25" r="23" fill="none" stroke="#000"/>
-  <polygon points="20,15 35,25 20,35" fill="#000"/>
-</svg>
-</button>
+      <button class="icon-button play">
+      </button>
     </td>
   </tr> 
   <tr>
@@ -190,13 +186,13 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
     </li>
     <li>
       <a href="/how-to-test/">
-        How to test
+        Testing
       </a>
     </li>
     <li>
       <a href="/how-to-test/link-button/" 
          aria-current="page">
-        Links & buttons
+        Links
       </a>
     </li>
   </ol>
@@ -212,12 +208,12 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
     </li>
     <li>
       <a href="/how-to-test/">
-        How to test
+        Testing
       </a>
     </li>
     <li>
       <a href="/how-to-test/link-button/">
-        Links & buttons
+        Links
       </a>
     </li>
   </ol>
@@ -227,7 +223,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tbody>
 </table>
 
-### ✓ Ensure jump links or same-page links move focus correctly for screen reader and keyboard users
+### ✓ Ensure skip to & same-page links move focus for screen reader and keyboard users
 
 <table class="column-2">
   <thead>
@@ -250,7 +246,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tbody>
 </table>
 
-### ✓ Ensure controls are programmed and announced correctly as links OR buttons based on their function and purpose regardless of visual design
+### ✓ Ensure controls are announced correctly as links OR buttons based on their function and purpose regardless of visual design
 
 <table class="column-2">
   <thead>
@@ -264,10 +260,10 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   <tbody>
   <tr>
     <td>
-    <button onclick = "location.href='https://www.magentaa11y.com/'" role="link">Home</button>
+      <a href="https://www.magentaa11y.com/" class="button">Home</a>
     </td>
     <td>
-    <button onclick = "location.href='https://www.magentaa11y.com/'">Home</button>
+      <button onclick = "location.href='https://www.magentaa11y.com/'">Home</button>
     </td>
   </tr> 
   <tr>

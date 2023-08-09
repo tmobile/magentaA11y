@@ -7,7 +7,7 @@ $("#copy").click(function(){
 });
 
 // Expander toggle
-$( ".expander-toggle" ).click(function() {
+$( ".expander-toggle").click(function() {
     if( $(this).attr('aria-expanded') == 'false' ) {
         $(this).attr('aria-expanded', 'true').next(".expander-content" ).addClass('visible').attr('aria-hidden', 'false');
     } else if( $(this).attr('aria-expanded') == 'true' ) {
@@ -17,11 +17,10 @@ $( ".expander-toggle" ).click(function() {
 
 // Expander toggle fail example from How to Test Links & Buttons
 $(".expander-toggle-fail").click(function() {
-    var panel = $(this).next(".expander-content");
-    if (panel.is(":visible")) {
-        panel.slideUp();
-    } else {
-        panel.slideDown();
+    if( $(this).hasClass('expanded') ) {
+        $(this).removeClass('expanded').next(".expander-content" ).removeClass('visible');
+    } else if( !$(this).hasClass('expanded') ) {
+        $(this).addClass('expanded').next(".expander-content" ).addClass('visible');
     }
 });
 
