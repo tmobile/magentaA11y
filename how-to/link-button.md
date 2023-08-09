@@ -4,7 +4,7 @@ title: Links & Buttons
 permalink: /how-to-test/link-button/
 ---
 
-<span tabindex="-1" id="top-text">Testing links and buttons is essential to ensuring a site is accessible and functional for all users.</span>
+Testing links and buttons is essential to ensuring a site is accessible and functional for all users.
 
 ## <step-number>1</step-number> How to test
 {: .divider }
@@ -75,7 +75,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
       <a href="https://www.magentaa11y.com/">Magentaa11y home</a>
     </td>
     <td>
-      <a tabindex="0">Magentaa11y home</a>
+      <a tabindex="0" onmouseup = "location.href='https://www.magentaa11y.com/'">Magentaa11y home</a>
     </td>
   </tr> 
   </tbody>
@@ -86,19 +86,19 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
 <table class="column-2">
   <thead>
     <th scope="col">
-      Pass
+      Preferred
     </th>
     <th scope="col">
-      Fail
+      Disabled but not focusable
     </th>
   </thead>
   <tbody>
   <tr>
     <td>
-      <button aria-disabled="true">I am disabled and focusable</button>
+      <button aria-disabled="true">Save</button>
     </td>
     <td>
-      <button disabled>I am disabled and NOT focusable</button>
+      <button disabled>Save</button>
     </td>
   </tr>  
   </tbody>
@@ -157,20 +157,20 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
     <td>
 <div class="expander-group">
   <button class="expander-toggle" aria-expanded="false">
-    I announce my state
+    More details
   </button>
   <div class="expander-content">
-    Did you hear "expanded" or "collapsed"?
+    This button expressed its state as expanded or collapsed
   </div>
 </div>
     </td>
     <td>
 <div class="expander-group">
   <button class="expander-toggle-fail">
-    I do NOT announce my state
+    More details
   </button>
   <div class="expander-content">
-    This button is not conveying it's state at all.
+    This button is not conveying it's state.
   </div>
 </div>
     </td>
@@ -237,7 +237,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   <tbody>
   <tr>
     <td>
-    <a id="return-to-top-link" href="#top-text">Return to top</a>
+    <a id="return-to-top-link" href="#content">Return to top</a>
     </td>
     <td>
     <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Return to top</a>

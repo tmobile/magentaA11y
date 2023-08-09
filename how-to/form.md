@@ -47,9 +47,9 @@ Select fields allow users to select one or more options from an expandable list 
 </example>
 
 ## <step-number>5</step-number> What to test for
-{: .divider }
 
-## ✓ Ensure forms have persistent visible labels
+### ✓ Ensure forms have persistent visible labels
+
 <table class="column-2">
   <thead>
     <th scope="col">
@@ -60,23 +60,20 @@ Select fields allow users to select one or more options from an expandable list 
     </th>
   </thead>
   <tbody>
-  <tr>
-    <td>
-    <div style="display:inline-flex; align-items:center">
-      <label style="margin-right:8px" for="persistentLabel">Persistent label</label>
-      <input type="text" id="persistentLabel"/>
-      </div>
-    </td>
-    <td>
-    <div style="display:inline-flex; align-items:center">
-      <input type="text" placeholder="Impersistent label"/>
-      </div>
-    </td>
-  </tr>  
+    <tr>
+      <td>
+        <label for="persistentLabel">Persistent label</label>
+        <input type="text" id="persistentLabel"/>
+      </td>
+      <td>
+        <input type="text" placeholder="Impersistent label"/>
+      </td>
+    </tr>
   </tbody>
 </table>
 
-## ✓ Ensure forms can receive tab focus and have focus indicators
+### ✓ Ensure forms can receive tab focus and have focus indicators
+
 <table class="column-2">
   <thead>
     <th scope="col">
@@ -117,16 +114,12 @@ Select fields allow users to select one or more options from an expandable list 
   <tbody>
   <tr>
     <td>
-  <div style="display:inline-flex; align-items:center">
       <label style="margin-right:8px" for="passContrast">My border passes contrast</label>
       <input type="text" id="passContrast"/>
-      </div>
     </td>
     <td>
- <div style="display:inline-flex; align-items:center">
       <label style="margin-right:8px" for="failContrast">My border fails contrast</label>
       <input style="border:1px solid #00BD1F" type="text" id="failContrast"/>
-      </div>
     </td>
   </tr>  
   </tbody>
@@ -156,7 +149,7 @@ Select fields allow users to select one or more options from an expandable list 
     <option value="2">Two</option>
     <option value="3">Three</option>
   </select>
-<button aria-disabled="true" class="testSubmitButton" id="submitSelectPassSelection" type="submit">Submit</button>
+  <button aria-disabled="true" class="button" id="submitSelectPassSelection" type="submit">Submit</button>
   <div role="alert" id="messagePass" style="display: none;">This was an expected submission!</div>
   </div>
 </div>
@@ -192,18 +185,14 @@ Select fields allow users to select one or more options from an expandable list 
   <tbody>
   <tr>
     <td>
-    <p style="text-align:left">* = required field</p>
-    <div style="display:inline-flex; align-items:center">
+      <div >* = required field</div>
       <label style="margin-right:8px" for="userLastnamePass">* Last name</label>
       <input aria-required="true" type="text" id="userLastnamePass"/>
-      </div>
     </td>
     <td>
     <br>
-    <div style="display:inline-flex; align-items:center">
-      <label style="margin-right:8px; color: red;" for="userLastnameFail">Last name</label>
+      <label style="color: red;" for="userLastnameFail">Last name</label>
       <input type="text" id="userLastnameFail"/>
-      </div>
     </td>
   </tr>  
   </tbody>

@@ -105,22 +105,22 @@ Keyboard testing consists of a few keyboard commands to interact with web experi
 ## <step-number>3</step-number> What to test for
 {: .divider }
 
-## ✓ Ensure all mouse functionality is present for keyboard
+### ✓ Ensure all mouse functionality is present for keyboard
 Identify functionality within the experience that can be operated with a mouse or pointing device. Ensure this content can be accessed with they keyboard alone.
 
-## ✓ Ensure there is a highly visible visual indication of keyboard focus
+### ✓ Ensure there is a highly visible visual indication of keyboard focus
 Keyboard users need to understand where they are in the interface at all times. The visual indication of keyboard focus (focus ring) should be highly visible and have a color contrast ratio of 3:1 against the background.
 
-## ✓ Ensure that there are no keyboard traps
+### ✓ Ensure that there are no keyboard traps
 Ensure that while navigating the experience, you do not encounter situations where you are not able to move forward or backward with the keyboard alone.
 
-## ✓ Verify that the focus order is logical
+### ✓ Verify that the focus order is logical
 In an English-based experience, keyboard focus should move top-to-bottom and left-to-right in a logical order. Ensure focus is not jumping around the experience in a way that makes it hard to understand the content.
 
-## ✓ On focus does not create a change of context
+### ✓ On focus does not create a change of context
 Ensure that when an interactive element receives keyboard focus that a change of context is not initiated without warning of such behavoir. An example of change of context is a page load or web form submission.
 
-## ✓ Test for skip links
+### ✓ Test for skip links
 Where there are large chunks of repeated content, ensure that there are skip links present for keboard users. For example, on a site with a large site navigation system, the first focusable element in the page should be a link that allows users to jump to the main content of the site.
 
 ## Video Example
