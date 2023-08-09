@@ -236,35 +236,3 @@ button {
     }
   }
 }
-
-
-//How Test Links & button examples
-.bad-contrast-button:hover {
-  color: #e20074;
-}
-
-.play-button {
-  padding: 0px;
-  all: unset;
-}
-.play-button:hover {
-  all: unset;
-}
-.play-button:focus {
-  all: unset;
-  outline: auto;
-}
-
-
-.play-button:hover polygon {
-  fill: #e20074;  
-}
-.play-button:focus-visible polygon {
-  fill: #e20074; 
-}
-.play-button:hover circle {
-  stroke: #e20074; 
-}
-.play-button:focus-visible circle {
-  stroke: #e20074; 
-}

@@ -50,7 +50,7 @@ Select fields allow users to select one or more options from an expandable list 
 {: .divider }
 
 ## ✓ Ensure forms have persistent visible labels
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -77,7 +77,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure forms can receive tab focus and have focus indicators
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -105,7 +105,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure forms meet color contrast requirements
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -133,7 +133,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure interating with a form doesn't automatically or unexpectedly change context on the page without informing users
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -180,7 +180,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure required and/or optional forms are clearly indicated and announced as such 
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -210,7 +210,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure related form fields are announced as grouped together
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -240,7 +240,7 @@ Select fields allow users to select one or more options from an expandable list 
     </td>
     <td>
    <fieldset>
-   <h3 style="1px dotted #ccc"> Choose an incorrectly grouped day</h3>
+   <div class="legend"> Choose an incorrectly grouped day</div>
    <div style="text-align:left">
     <input type="radio" name="dayFail" id="fridayRadioFail">
   <label for="fridayRadioFail">Friday</label>
@@ -258,7 +258,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure any associated instructions or helper text is announced when tabbing to a form
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -299,7 +299,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure there is proper error handling for required fields
-<table class="comparison">
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -321,7 +321,7 @@ Select fields allow users to select one or more options from an expandable list 
     <path fill="white" d="M8.982 11.977a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 </svg> I announce with the input</div>
       </div>
-      <button style="margin-top: 5px;" id="goodErrorInputSubmit" class="testSubmitButton" type="submit">Submit</button>
+      <button style="margin-top: 5px;" id="goodErrorInputSubmit" class="button" type="submit">Submit</button>
     </td>
     <td>
     <div style="text-align:left">
@@ -333,7 +333,7 @@ Select fields allow users to select one or more options from an expandable list 
     <path fill="white" d="M8.982 11.977a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
 </svg> I do not announce with the input</div>
       </div>
-      <button style="margin-top: 5px;" id="badErrorInputSubmit" class="testSubmitButton" type="submit">Submit</button>
+      <button style="margin-top: 5px;" id="badErrorInputSubmit" class="button" type="submit">Submit</button>
     </td>
   </tr>  
   </tbody>

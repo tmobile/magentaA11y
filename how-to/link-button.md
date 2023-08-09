@@ -16,8 +16,8 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
 
 ## <step-number>2</step-number> What to test for
 {: .divider }
-## ✓ Ensure each link and button receives focus and has a visible focus indicator
-<table class="comparison">
+### ✓ Ensure each link and button receives focus and has a visible focus indicator
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -45,8 +45,10 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tr> 
   </tbody>
 </table>
-## ✓ Ensure buttons and links can be activated with the `enter` key and that buttons can also be activated with the `space` key
-<table class="comparison">
+
+### ✓ Ensure buttons and links can be activated with the `enter` key and that buttons can also be activated with the `space` key
+
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -74,8 +76,10 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tr> 
   </tbody>
 </table>
-## ✓ Ensure disabled controls are focusable but not actionable, and have an `aria-disabled="true"` attribute
-<table class="comparison">
+
+### ✓ Ensure disabled controls are focusable but not actionable, and have an `aria-disabled="true"` attribute
+
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -95,8 +99,10 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tr>  
   </tbody>
 </table>
-## ✓ Ensure all links and buttons have clear labels and that all graphical controls have accurate `aria-label` attributes 
-<table class="comparison">
+
+### ✓ Ensure all links and buttons have clear labels and that all graphical controls have accurate `aria-label` attributes 
+
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -138,8 +144,10 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tr>  
   </tbody>
 </table>
-## ✓ Ensure screen readers accurately announce any button or link state that is conveyed visually 
-<table class="comparison">
+
+### ✓ Ensure screen readers accurately announce any button or link state that is conveyed visually 
+
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -152,7 +160,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   <tr>
     <td>
 <div class="expander-group">
-  <button class="expander-toggle-pass" aria-expanded="false">
+  <button class="expander-toggle" aria-expanded="false">
     I announce my state
   </button>
   <div class="expander-content">
@@ -182,13 +190,13 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
     </li>
     <li>
       <a href="/how-to-test/">
-        How to Test
+        How to test
       </a>
     </li>
     <li>
-      <a style="font-weight:bolder; text-shadow: 1px 0;" href="/how-to-test/link-button/" 
+      <a href="/how-to-test/link-button/" 
          aria-current="page">
-        Links & Buttons
+        Links & buttons
       </a>
     </li>
   </ol>
@@ -204,12 +212,12 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
     </li>
     <li>
       <a href="/how-to-test/">
-        How to Test
+        How to test
       </a>
     </li>
     <li>
-      <a style="font-weight:bolder; text-shadow: 1px 0" href="/how-to-test/link-button/">
-        Links & Buttons
+      <a href="/how-to-test/link-button/">
+        Links & buttons
       </a>
     </li>
   </ol>
@@ -219,8 +227,9 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tbody>
 </table>
 
-## ✓ Ensure jump links or same-page links move focus correctly for screen reader and keyboard users
-<table class="comparison">
+### ✓ Ensure jump links or same-page links move focus correctly for screen reader and keyboard users
+
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -241,8 +250,9 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
   </tbody>
 </table>
 
-## ✓ Ensure controls are programmed and announced correctly as links OR buttons based on their function and purpose regardless of visual design
-<table class="comparison">
+### ✓ Ensure controls are programmed and announced correctly as links OR buttons based on their function and purpose regardless of visual design
+
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -288,6 +298,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
 
 ## <step-number>3</step-number> What's the difference between a link and a button?
 {: .divider }
+
 ### If it goes somewhere, it's `<a>` link.
 
 - When the user clicks a link, they are taken to a different location in the site.

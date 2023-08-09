@@ -158,36 +158,5 @@ $select-color: #333;
   align-items: center;
 }
 
-.testSubmitButton {
-  all: unset;
-  margin-left: 10px; /* Adjust this value as per your needs */
-  background-color: #e20074; /* Green background */
-  border: none; /* Remove border */
-  color: white; /* White text color */
-  padding: 10px 24px; /* Padding to increase size of button */
-  text-align: center; /* Center the text */
-  text-decoration: none; /* Remove underline */
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer; /* Add a hand cursor on hover over button */
-
-  &:focus {
-    outline: 2px solid #000000;
-  }
-
-  &[aria-disabled="true"]{
-    background-color: #ccc; 
-    &:before {
-      background-image: none;
-    }
-    &:after {
-      background-image: none;
-
-    }
-    cursor: not-allowed;
-  }
-}
-
-
 
 

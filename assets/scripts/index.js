@@ -15,27 +15,15 @@ $( ".expander-toggle" ).click(function() {
     }
 });
 
-// Expander toggle pass example from How to Test Links & Buttons
-$(".expander-toggle-pass").click(function() {
-    var panel = $(this).next(".expander-content");
-    if (panel.is(":visible")) {
-      panel.slideUp();
-      $(this).attr("aria-expanded", "false");
-    } else {
-      panel.slideDown();
-      $(this).attr("aria-expanded", "true");
-    }
-  });
-
 // Expander toggle fail example from How to Test Links & Buttons
 $(".expander-toggle-fail").click(function() {
     var panel = $(this).next(".expander-content");
     if (panel.is(":visible")) {
-      panel.slideUp();
+        panel.slideUp();
     } else {
-      panel.slideDown();
+        panel.slideDown();
     }
-  });
+});
 
 // Submit vote
 $("#submit-response").click(function() {

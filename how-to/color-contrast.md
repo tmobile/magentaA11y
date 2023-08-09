@@ -98,8 +98,8 @@ Automated scanning must be complemented with a manual review of the page.
 ## <step-number>3</step-number> What to test for
 {: .divider }
 
-## ✓ Ensure text has sufficient contrast to the background color
-<table class="comparison">
+### ✓ Ensure text has sufficient contrast to the background color
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -128,8 +128,8 @@ Automated scanning must be complemented with a manual review of the page.
   </tbody>
 </table>
 
-## ✓ Ensure text over images and color gradients has sufficient contrast
-<table class="comparison" style="background: /assets/images/background/assistive-technology-bg.png">
+### ✓ Ensure text over images and color gradients has sufficient contrast
+<table class="column-2" style="background: /assets/images/background/assistive-technology-bg.png">
   <thead>
     <th scope="col">
       Pass
@@ -168,8 +168,8 @@ Automated scanning must be complemented with a manual review of the page.
   </tbody>
 </table>
 
-## ✓ Ensure that the different states of user interface components have sufficient contrast
-<table class="comparison">
+### ✓ Ensure that the different states of user interface components have sufficient contrast
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -190,8 +190,8 @@ Automated scanning must be complemented with a manual review of the page.
   </tbody>
 </table>
 
-## ✓ Ensure meaningful graphical objects have sufficient contrast to their background
-<table class="comparison">
+### ✓ Ensure meaningful graphical objects have sufficient contrast to their background
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
@@ -212,8 +212,8 @@ Automated scanning must be complemented with a manual review of the page.
   </tbody>
 </table>
 
-## ✓ Ensure color alone is not used to convey information
-<table class="comparison">
+### ✓ Ensure color alone is not used to convey information
+<table class="column-2">
   <thead>
     <th scope="col">
       Pass
