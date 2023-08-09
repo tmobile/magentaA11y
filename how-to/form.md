@@ -134,35 +134,29 @@ Select fields allow users to select one or more options from an expandable list 
   <tbody>
   <tr>
     <td>
-    <div class="testSelects">
-  <label for="selectPass">
-    Select a number
-  </label>
-  <div class="select-button-group">
-  <select id="selectPass">
-    <option value="None" selected disabled>Select a number</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
-  <button aria-disabled="true" class="button" id="submitSelectPassSelection" type="submit">Submit</button>
-  <div role="alert" id="messagePass" style="display: none;">This was an expected submission!</div>
-  </div>
-</div>
+      <label for="selectPass">
+        Select a number
+      </label>
+      <select id="selectPass">
+        <option value="None" selected disabled>Select a number</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <button aria-disabled="true" class="button" id="submitSelectPassSelection" type="submit">Submit</button>
+      <div role="alert" id="messagePass" style="display: none;">This was an expected submission!</div>
     </td>
     <td>
-    <div class="testSelects">
-  <label for="selectFail">
-    Select a number
-  </label>
-  <select id="selectFail">
-    <option value="None" selected disabled>Select a number</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
-  <div id="messageFail" style="display: none;">This was an unexpected submission!</div>
-  </div>
+      <label for="selectFail">
+        Select a number
+      </label>
+      <select id="selectFail">
+        <option value="None" selected disabled>Select a number</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <div id="messageFail" style="display: none;">This was an unexpected submission!</div>
     </td>
   </tr>  
   </tbody>
@@ -186,7 +180,6 @@ Select fields allow users to select one or more options from an expandable list 
       <input aria-required="true" type="text" id="userLastnamePass"/>
     </td>
     <td>
-    <br>
       <label style="color: red;" for="userLastnameFail">Last name</label>
       <input type="text" id="userLastnameFail"/>
     </td>
@@ -231,10 +224,8 @@ Select fields allow users to select one or more options from an expandable list 
     <div>
       <input type="radio" name="dayFail" id="fridayRadioFail">
       <label for="fridayRadioFail">Friday</label>
-
       <input type="radio" name="dayFail" id="saturdayRadioFail">
       <label for="saturdayRadioFail">Saturday</label>
-
       <input type="radio" name="dayFail" id="sundayRadioFail" checked>
       <label for="sundayRadioFail">Sunday</label>
     </div>
@@ -245,6 +236,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure any associated instructions or helper text is announced when tabbing to a form
+
 <table class="column-2">
   <thead>
     <th scope="col">
@@ -286,6 +278,7 @@ Select fields allow users to select one or more options from an expandable list 
 </table>
 
 ## ✓ Ensure there is proper error handling for required fields
+
 <table class="column-2">
   <thead>
     <th scope="col">
@@ -300,7 +293,7 @@ Select fields allow users to select one or more options from an expandable list 
     <td>
       <label for="goodErrorInput">Submit for a good error</label>
       <input aria-describedby="goodErrorInputError" type="text" id="goodErrorInput"/>
-      <div id="goodErrorInputError" style="display: none;">
+      <div id="goodErrorInputError" style="display: none; color: #E02D00;">
          I announce with the input
       </div>
       <button id="goodErrorInputSubmit" class="button" type="submit">Submit</button>
