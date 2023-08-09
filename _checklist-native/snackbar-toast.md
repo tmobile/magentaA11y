@@ -21,7 +21,7 @@ screenreader:
   name:  |
     Any interactive element announces its purpose or title
   role:  |
-    Any interactive element dentifies itself as a button in iOS and "double tap to activate" in Android
+    Any interactive element identifies itself as a button in iOS and "double tap to activate" in Android
   group: |
     n/a
   state: |
