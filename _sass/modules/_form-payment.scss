@@ -1,0 +1,89 @@
+
+
+input[name='cvc'] {
+  width: 4rem;
+  font-family: monospace;
+}
+
+input[name='ccmonth'] {
+  width: 2.5rem;
+  border-radius: 2px 0 0 2px;
+  margin-right: 0 !important;
+  box-shadow: none;
+  font-family: monospace;
+}
+input[name='ccyear'] {
+  width: 2.5rem;
+  border-left: none;
+  border-radius: 0 2px 2px 0 ;
+  margin-left: 0 !important;
+  box-shadow: none;
+  font-family: monospace;
+}
+
+.card-number-container {
+  display: grid;
+  max-width: 22rem;
+
+  label {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  button {
+    width: auto;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 .5rem 0 0;
+    color: $color-text;
+    margin: -1rem 1.25rem 0 0 !important;
+    grid-row: 2;
+    grid-column: 1;
+    place-self: center end;
+    border: none;
+    
+    &:before,
+    &:after {
+      background: none;
+      display: none;
+    }
+
+    &:before  {
+      position: relative;
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      inset: auto !important;
+      opacity: 1;
+      transform: rotate(0);
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='100pt' height='100pt' version='1.1' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath d='m57.602 54.102c0 3.3125-2.6445 6-5.9023 6-3.2578 0-5.8984-2.6875-5.8984-6 0-3.3164 2.6406-6 5.8984-6 3.2578 0 5.9023 2.6836 5.9023 6'/%3E%3Cpath d='m76.898 35.199h-7.8008c-0.80078 0-1.5-0.39844-1.8984-1.1992l-2.3984-4.8008c-1-2.1016-3.1016-3.3984-5.5-3.3984h-15.402c-2.3008 0-4.3984 1.3008-5.5 3.3984l-3 6h-9c-4.5 0-8.1016 3.6016-8.1016 8.1016l0.003906 24.699c0 4.5 3.6016 8.1016 8.1016 8.1016h50.5c4.5 0 8.1016-3.6016 8.1016-8.1016l-0.003906-24.602c0-4.5-3.6016-8.1992-8.1016-8.1992zm-11.098 18.902c0 8.1016-6.3008 14.602-14.199 14.602-7.8984 0-14.199-6.6016-14.199-14.602 0-8.1016 6.3008-14.602 14.199-14.602 7.8984 0 14.199 6.5 14.199 14.602z'/%3E%3C/g%3E%3C/svg%3E");      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  input[name='cardnumber'] {
+    grid-row: 2;
+    grid-column: 1;
+    font-family: monospace;
+  }
+
+  .secure-icon {
+    grid-row: 3;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='100pt' height='100pt' version='1.1' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m75.66 40.578c-0.21094-0.011719-4.9492-0.011719-5.2305 0-0.078126 0-0.14844 0.011719-0.21875 0.011719-0.011719-1.1484 0.19141-6.9609 0.039062-8.8789-0.69922-9.2617-8.7812-17.039-18.391-17.711-0.60156-0.039062-1.2109-0.058594-1.7891-0.058594-5.2383 0-9.8398 1.6797-13.68 5-3.8086 3.2891-6.2891 8.1211-6.6211 12.898-0.12109 1.7109 0.039063 7.5586 0.039063 8.75h-5.3203c-1.0195 0-1.8398 0.78906-1.8398 1.7695v41.961c0 0.98047 0.82031 1.7695 1.8398 1.7695h51.039c1.0195 0 1.8398-0.78906 1.8398-1.7695l0.003906-41.969c-0.011719-0.92969-0.75-1.7031-1.7109-1.7734zm-13.969-0.14844v0.14062h-23.363c0-0.30078-0.011719-0.58984-0.011719-0.87891-0.070312-4.9102-0.12109-8.7891 1.6211-11.711 2.1094-3.5195 5.6211-5.6094 9.6289-5.7305 0.14062 0 0.28125-0.011719 0.42188-0.011719 4.0703 0 7.6602 1.9805 9.8516 5.4219 2.0117 3.168 1.9414 7.1992 1.8516 12.77z' fill='%23676767'/%3E%3C/svg%3E");    padding-left: 1.5rem;
+    background-position: left top;
+    background-size: 1.125rem 1.125rem;
+    background-repeat: no-repeat;
+  }
+
+}
+
+.expiry-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+

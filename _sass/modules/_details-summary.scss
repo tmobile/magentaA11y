@@ -52,8 +52,7 @@ details {
       background-repeat: no-repeat;
       transform: rotate(0deg);
       box-shadow:  0 0 0rem .325rem transparent;
-      transition: box-shadow .2s;
-      
+      transition: box-shadow .2s, transform .5s;
     }
     
     // &:after {
@@ -111,7 +110,7 @@ details {
       &:before {
         content: '';
         background-position: center center;
-        transform: rotate(180deg);
+        transform: rotate(-180deg);
 
       }
       // &:after {
@@ -136,7 +135,7 @@ details {
     @include regular;
 
     summary {
-      padding: 1.25rem .5rem 1rem 3rem;
+      padding: .5rem .5rem .5rem 0;
       font-size: 1rem;
       margin: 0;
       @include headline;
@@ -144,7 +143,7 @@ details {
 
       &:before {
         content: '';
-        top: .625rem;
+        top: 0rem;
         left: 0rem !important; 
       }
       &:after {

@@ -254,7 +254,7 @@ button {
     &:before,
     &:after {
       display: none;
-    }
+    } 
 
     &:hover {
     }
@@ -268,7 +268,17 @@ button {
       background-repeat: no-repeat;
       background-position: center center;
     }
-
   }
+ &.inline-link {
+  padding: 0rem;
+  margin: 0;
+  line-height: auto;;
+  background: none;
+  color: $color-text;
+  text-decoration: underline;
 
+  &:before,
+  &:after {
+    display: none;
+  }
 }

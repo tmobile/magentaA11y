@@ -15,11 +15,16 @@ input[type="submit"] {
   -webkit-tap-highlight-color: rgba(0,0,0,0); // Remove iOS highlight that interferes with ripple effect
   margin: 0  0 .5rem 0;
   font-size: 1rem;
-  padding: .5rem;
+  padding: .75rem .5rem;
   border: .125rem solid $color-input-border;
   border-radius: 2px;
   box-shadow: 0 0 0px 3px #fff;
   outline-offset: -1px;
+
+  &:hover {
+    border: .125rem solid darken($color-input-border, 50);
+  }
+
 }
 
 input[type="text"],
@@ -42,6 +47,10 @@ input[type="password"] {
 label {
   display: block;
   margin: 0 0 .5rem 0;
+  position: relative;
+  @include clearfix;
+
+  
   span {
     font-size: .75rem;
     display: inline-block;
@@ -64,14 +73,14 @@ fieldset,
   margin: 0rem 0 calc(2rem + 3px) 0;
   border-radius: 1rem;
   background: #fff;
-  display: grid;
-  // box-shadow: 0 1px 2px 1px rgba(#000, .05);
   @include float;
   transition: .8s;
+  position: relative;
 
   fieldset {
     box-shadow: none !important;
     display: block;
+    margin-bottom: 0;
     legend {
       background: none;
       font-size: 1rem;
@@ -95,11 +104,15 @@ fieldset,
     margin: 0 1rem 1rem 1rem;
     display: block;
   }
+  input[type="text"] {
+    width: calc(100% - 2rem);
+  }
+
 
   input[type="radio"],
   input[type="checkbox"] {
     &:last-of-type + label {
-      border-radius: 0 0 1rem 1rem;
+      // border-radius: 0 0 1rem 1rem;
     }
   }
 
@@ -133,12 +146,12 @@ legend,
   padding: 1.5rem 1rem 1.5rem 1rem;
   width: 100%;
   font-size: 1.25rem;
-  float: left;
   background: #fff;
   position: relative;
   @include clearfix;
   border-bottom: 1px dotted $color-border-gray;
   border-radius: 1rem 1rem 0 0;
+
   span {
     font-size: .75rem;
     display: inline-block;
