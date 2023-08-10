@@ -79,12 +79,13 @@ nav.menu {
         background-color: $color-brand-primary;
         color: #fff;
         @include regular;
-        margin-right: .25rem; 
+        margin-right: .25rem;
+        margin-left: -.125rem;
         padding-left: 1rem;
         padding-right: 1rem;
         transition: .2s;
-        border-radius: 50%;
-        box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 $color-brand-primary;
+        border-radius: 3rem;
+        box-shadow: 0 0 0 0 $color-brand-primary;
 
         &:after {
           display: none;
@@ -97,7 +98,7 @@ nav.menu {
           @include regular;
         }
         &:hover {
-          box-shadow: inset 0 0 0rem .25rem rgba($color-focus,.0), 0 -.5rem 0 0rem $color-brand-primary;
+          box-shadow: 0 0 0 .25rem $color-brand-primary;
         }
       }
       &.bravo {
