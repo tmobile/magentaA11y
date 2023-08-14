@@ -15,7 +15,9 @@
   <meta name="twitter:image" content="{{ site.url }}/assets/favicon/og-preview.png">
   <meta name="theme-color" content="#e20074">
 
-  <title>{{ page.title }}
+  <title>
+    {% assign page_title = page.seoTitle %}
+    {{ page_title | default: page.title }}
     {% if page.collection == "checklist-web" %} - Web accessibility checklist {% endif %}
     {% if page.collection == "checklist-native" %} - Native app accessibility checklist {% endif %}
     - {{ site.title }}

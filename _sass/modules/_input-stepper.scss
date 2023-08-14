@@ -25,15 +25,17 @@
     grid-column: 2 / span 1;
     grid-row: 2;
     min-width: 4rem;
+    border-radius: 2px;
     justify-self: stretch;
     font-family: monospace;
     line-height: 3rem;
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    background-color: #fff;
+    background-color:#fff;
     z-index: 2;
     pointer-events: none;
+    
     &:after {
       justify-self: stretch;
       display: block;
@@ -51,12 +53,12 @@
     margin: 0px;
     padding: 0;
     border: none;
-
     grid-column: 2 / span 1;
     grid-row: 2;
     justify-self: stretch;
     font-family: monospace;
     transition: 0s;
+    z-index: 1;
 
     &:focus {
       outline: .25rem solid rgba($color-focus, .5);

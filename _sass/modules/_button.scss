@@ -236,13 +236,47 @@ button {
     }
   }
 
-  &.inline-link {
+  &.icon-button {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    padding: 0rem;
+    margin-bottom: 0rem;
+    line-height: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 2px;
+    color: #fff;
+    width: 3rem;
+    height: 3rem;
+    &:before,
+    &:after {
+      display: none;
+    } 
+
+    &:hover {
+    }
+    &:focus {
+      @include focus;
+    }
+
+    &.play {
+      background-image: var(--icon-play-dark);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+   &.inline-link {
     padding: 0rem;
     margin: 0;
     line-height: auto;;
     background: none;
     color: $color-text;
     text-decoration: underline;
+  
     &:before,
     &:after {
       display: none;

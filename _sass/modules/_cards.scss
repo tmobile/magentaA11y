@@ -7,7 +7,7 @@
   padding: 0;
   @include break($break-small) {
     grid-template-columns: 1fr 1fr;
-    }
+  }
 
   &.home {
     @include break($break-mid) {
@@ -73,7 +73,15 @@
       z-index: 99;
       position: relative;
     }
-
+    a {
+      .secondary-text {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: $color-brand-primary;
+        @include headline;
+      }
+    }
     a.display {
       display: block;
       margin: 0px auto;
@@ -122,14 +130,6 @@
       svg {
         display: block;
         margin: 1rem auto 0px auto;
-      }
-
-      span {
-        display: block;
-        font-size: 1rem;
-        font-weight: normal;
-        color: $color-brand-primary;
-        @include headline;
       }
     }
 

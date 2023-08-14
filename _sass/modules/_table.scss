@@ -66,6 +66,17 @@ table {
     padding: 0;
   }
 
+  &.column-2 {
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 3rem;
+    td, 
+    th {
+      width: 50%;
+      vertical-align: top;
+    }
+  }
+
   &.comparison {
     position: relative;
     text-align: center;
