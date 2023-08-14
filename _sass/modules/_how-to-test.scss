@@ -101,6 +101,7 @@
       a {
         @extend .h-alpha;
         margin: 0;
+        padding-top: 1.5rem;
         &:before {
           width: 128px;
           height: 128px;
