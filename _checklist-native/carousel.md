@@ -164,3 +164,111 @@ settings:
 #### Announcements
   - “In list” or “Showing slides x of y” are common announcements to give screen readers layout context
   - “Custom actions available.  Swipe up or down to change slides” – common custom actions announcement
+
+
+## Android
+
+### Name
+- Programmatic name describes the purpose of the carousel.
+- Each item in the carousel has a name that describes the purpose of the control and matches any visible label/all text and image descriptions within item.  
+
+- **Android View**  
+  - `android:text` XML attribute
+  - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label.
+  - `contentDescription` overrides `android:text`    
+  - Use `labelFor` attribute to associate the visible label to the control
+
+- **Jetpack Compose**
+  - If no visible label, use compose modifier semantics `contentDescription`.
+  - If any icons or images need to be hidden for accessibility talkback, use compose modifier semantics `invisibleToUser()`
+
+### Role 
+- The native Pager component will handle the built-in accessibility behavior
+- Each item in the carousel can have the independent role and accessibility trait. For example, if the item is clickable, the role should be `button`.
+
+- **Android View**
+  - ViewPager
+  - CarouselView
+- **Jetpack Compose**
+  - Compose foundation `HorizontalPager` and `VerticalPager`
+
+### Groupings
+- Group visible label with the carousel, if applicable.
+- Group the title and any description with each item in the carousel
+- If the item in carousel is clickable, use compose modifier `clickable` which will group the child elements automatically.
+- If the item in carousel has multi-actions, then spilt the action out of the group with proper focus order on each actions.
+- **Android View**
+  - `ViewGroup`
+  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+- **Jetpack Compose** 
+  - `Modifier.semantics(mergeDescendants = true) {}` for the child elements grouping/merging
+  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
+
+### State
+- Indicate where the item is in the carousel by announcing the position/index out of the total number of items. (see Announcements below)
+- Indicate the action state if applicable
+
+- **Android View**
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`
+  - Announcement: disabled
+- **Jetpack Compose** 
+  - Active: default state is active and enabled. Use `Button(enabled = true)` or `clickable {enabled = true}` to specify explicitly
+  - Disabled:  `Button(enabled = false)` or `clickable {enabled = false}` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+
+### Focus
+- Each slide/element in the carousel should be in the view area when it is being announced
+- Consider how focus should be managed between child elements and their parent views.
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
+
+- **Android View**
+	- `importantForAccessibility` makes the element visible to the Accessibility API
+	- `android:focusable`
+	- `android=clickable`
+	- Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+	- `nextFocusDown`
+	- `nextFocusUp`
+	- `nextFocusRight`
+	- `nextFocusLeft`
+	- `accessibilityTraversalBefore` (or after)
+	- To move screen reader focus to newly revealed content: `Type_View_Focused`
+	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+	- To hide controls: `Important_For_Accessibility_false`
+	- For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+- **Jetpack Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+  - *Example:* To customize the focus events behaviour
+      - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+      - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+      - focus order accepts following values: up, down, left, right, previous, next, start, end
+      - step 3: use `second.requestFocus()` to gain focus
+
+### Code Example
+- **Jetpack Compose**
+{% highlight kotlin %}
+// Example of Compose horizontal pager with single page snapping
+val state = rememberPagerState { 10 }
+HorizontalPager(
+    state = state,
+    modifier = Modifier.fillMaxSize(),
+) { pageIndex ->
+    Box(
+        modifier = Modifier
+            .padding(10.dp)
+            .background(Color.Blue)
+            .fillMaxWidth()
+            .aspectRatio(1f),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(text = pageIndex.toString(), fontSize = 32.sp)
+    }
+}
+{% endhighlight %}
+
+
+### Announcements
+
