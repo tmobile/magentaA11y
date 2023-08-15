@@ -55,14 +55,15 @@ settings:
 
 ### Name
 - Programmatic name describes the purpose of the carousel.
+- Append ", Carousel" to the programmatic name to announce the role, since the carousel is custom and does not have a native role assigned
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 - Placeholder text is NOT the programmatic name
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The button’s title will overwrite the button’s `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
+    - The carousel's title will overwrite the carousel's `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the carousel's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
@@ -71,19 +72,24 @@ settings:
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- When using non-native controls (custom controls), roles will need to be manually coded.
+- Since there is no native carousel component, a custom carousel must be implemented.
+- The carousel itself has its own role indicated by appending ", Carousel" to the programmatic name.
+- Each item in the carousel has its own independent role or accessibility trait. For example, if the item is interactive, the role will be `.button`.
 
 - **UIKit**
-  - Use `UIButton`
-  - If necessary, set `accessibilityTraits` to `.button`.
+  - A common method of implementing a carousel involves using `UICollectionView` and its corresponding protocols. Each item of the carousel is a `UICollectionViewCell`.
+  - Set the `accessibilityTraits` of the overall carousel role to `.adjustable`, and then append ", Carousel" to the programmatic name to notify the user of the role
+  - An individual item of the carousel will have its own role that is dependent on whether it is interactive. Assign the role that best fits your use case.
 - **SwiftUI**
-  - Use native `Button` view
-  - If necessary, use view modifier `accessibilityAddTraits(.isButton)` to assign the role as Button.
+  - As there are different ways to implement a carousel, use your best judgment for your use case.
+  - Append ", Carousel" to the programmatic name for the overall carousel
+  - An individual item of the carousel will have its own role that is dependent on whether it is interactive. Assign the role that best fits your use case.
+  - Use view modifier `accessibilityAddTraits(:)` to add traits.
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- Group visible label with button, if applicable, to provide a programmatic name for the button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
+- Group visible label with the carousel, if applicable.
+- Group the title and any description with each item in the carousel.
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -95,21 +101,18 @@ settings:
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
-### State 
-- **UIKit**  
-  - For enabled: Set `isEnabled` to `true`.
+### State
+- Indicate where the item is in the carousel by announcing the position/index out of the total number of items. (see Announcements below)
+
+- **UIKit**
   - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
-    - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
-  - For selected, use `accessibilityAddTraits(.isSelected)`.
   - For disabled, use view modifier `disabled()`.
 
 ### Focus
 - Use the device's default focus functionality. 
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -123,3 +126,41 @@ settings:
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
+
+#### Custom Gestures
+- The expected experience is that when users swipe left or right, they are navigating from one section of the screen to another. When users swipe up or down on the carousel, the user is scrolling through the carousel
+
+- **UIKit**
+  - First, ensure that the accessibility trait of the carousel is `.adjustable`.
+  - Then, you are able to take advantage of the `accessibilityIncrement` and `accessibilityDecrement` methods
+
+  ```swift
+  override func accessibilityIncrement() {
+      // Move forward one item
+
+  }
+
+  override func accessibilityDecrement() {
+      // Move backward one item
+
+  }
+  ```
+
+- **SwiftUI**
+  - There are many approaches to applying custom gestures to a component
+  - One suggestion is to use `.accessibilityAdjustableAction` with a `switch` statement for the `direction`, and changing the index of the cell depending on whether the direction is `.increment` or `.decrement`
+    - "Incrementing" should move to the next item
+    - "Decrementing" should move to the previous item
+
+    ```swift
+    .accessibilityAdjustableAction { direction in
+        switch direction {
+        case .increment:
+            // Go to next page
+
+        case .decrement:
+            // Go to previous page
+
+        }
+    }
+    ```
