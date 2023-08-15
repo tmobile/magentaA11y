@@ -27,34 +27,97 @@
       row-gap: .5rem;
       justify-items: start;
       margin: 0;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 48px;
+        height: 48px;
+        position: relative;
+        grid-row: 1;
+        justify-self: start;
+        align-self: start;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        background-image: var(--icon-keyboard-dark);
+      }
+      &.icon-keyboard {
+        &:before {
+          content: 'Start here';
+          font-size: 1rem;
+          color: $color-brand-primary;
+          width: 176px !important;
+          height: 176px !important;
+          background-image: var(--icon-keyboard-dark);
+        }
+      }
+      &.icon-alert {
+        &:before {
+          background-image: var(--icon-alert-black);
+        }
+      }
+      &.icon-speaker {
+        &:before {
+          background-image: var(--icon-speaker-dark);
+        }
+      }
+      &.icon-form {
+        &:before {
+          background-image: var(--icon-form-dark);
+        }
+      }
+      &.icon-link {
+        &:before {
+          background-image: var(--icon-link-dark);
+        }
+      }
+      &.icon-contrast {
+        &:before {
+          background-image: var(--icon-contrast-dark);
+        }
+      }
+      &.icon-alert {
+        &:before {
+          background-image: var(--icon-alert-black);
+        }
+      }
+      &.icon-alert {
+        &:before {
+          background-image: var(--icon-alert-black);
+        }
+      }
+
     }
-    svg {
-      max-width: 48px;
-      justify-self: start;
-      align-self: start;
-    }
-    span {
+    
+    .title {
       align-self: end;
       justify-self: start;
-
     }
 
     &.emphasized {
       grid-column: span 2;
       grid-row: span 2;
-
       a {
         @extend .h-alpha;
         margin: 0;
-
+        padding-top: 1.5rem;
+        &:before {
+          width: 128px;
+          height: 128px;
+        }
       }
-      svg {
-        max-width: 128px;
-      }
-
     }
   }
 }
+
+
+
+
+
+
+
+
 
 //How Test Links & button examples
 .bad-contrast-button:hover {
