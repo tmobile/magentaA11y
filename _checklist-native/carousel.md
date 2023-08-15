@@ -4,12 +4,12 @@ title:  "Carousel"
 categories: controls
 
 keyboard:
- tab or arrow keys: |
+ tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the next item
  spacebar: |
-    Activates interactive slide on iOS and Android
+    Activates button or interactive slide on iOS and Android
  enter: |
-    Activates interactive slide on Android
+    Activates button or interactive slide on Android
           
 mobile:
   swipe rt: |
@@ -25,14 +25,14 @@ mobile:
     
 screenreader: 
   name:  |
-    Purpose of each item is clear and matches visible text. "In list" is often announced in Android.  Index is often announced in Android and iOS
+    Purpose of each item is clear and matches visible text. "In list" is often announced in Android.  Index should be announced in Android and iOS
   role:  |
     Identifies as a button in iOS and "double tap to activate" in Android
     Identifies as "adjustable" with custom actions (iOS)
   group: |
     n/a
   state: |
-    Expresses its state (disabled/dimmed)
+    Expresses a button's state (disabled/dimmed)
 
 settings:
   text resize: |
@@ -41,15 +41,12 @@ settings:
 
 ## Developer notes
 
-- A list of related content items as a horizontal slideshow
-- There are a variety of implementation alternatives for a carousel. At least one of the options above for navigating through the elements/slides must be available
-- Slides cannot automatically rotate through carousel unless there is a pause/stop button
-- If there is a visible indication of what slide the user is on with pagination dots or tabs, each slide should announce the index of the slide (“1 of 3") and dots do not get focused or announced in the swipe order
-- "In list" or "Showing slides x of y" are common announcements to give screen readers layout context
-- Alternate implementation to swiping through carousel: Change the slides with interactive page control dots and dynamically announce all the content in the slide along with page index. 
-- The implementation choice would depend on the number of carousel slides/elements.  Swiping right through the slides of a very large number of slides to get to the next element past the carousel would be a terrible user experience.  A container for the carousel and alternate gestures for navigation inside the container should be considered on large carousels
+- A carousel is a list of related content items as a horizontal slideshow
+- There are a variety of implementation alternatives for a carousel. At least one of the options in the above success criteria for navigating through the elements/slides must be available
+- Slides cannot automatically start rotating through carousel unless there is a pause/stop button
+- Consider the number of slides/elements in carousel when choosing implementation.  Swiping right through the slides of a very large number of slides to get to the next element past the carousel would not be a good user experience.  Custom actions/gestures for navigation through the slides should be considered on large carousels.  Then, if the user wants to bypass all the slides, they would simply swipe right to the next element past the carousel.
+- Alternate implementation to swiping through carousel: Change the slides with interactive page control dots and dynamically announce all the content in the slide along with page index.
 - Consider accessibility requirements when chosing a plug-in or widget
-- If swiping with two or three fingers (Android and iOS, respectively) is used to rotate through the carousel, announce "page x of y" upon swiping to next screen.
  
 ## iOS
 
@@ -164,3 +161,6 @@ settings:
         }
     }
     ```
+#### Announcements
+  - “In list” or “Showing slides x of y” are common announcements to give screen readers layout context
+  - “Custom actions available.  Swipe up or down to change slides” – common custom actions announcement
