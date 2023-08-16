@@ -13,19 +13,19 @@ keyboard:
           
 mobile:
   swipe rt: |
-    Focus moves to the next slide (Android and iOS) 
+    Focus moves to the next element 
   3 finger swipe: | 
     Focus moves to the next slide (iOS)
   2 finger swipe: | 
     Focus moves to the next slide (Android)
   1 finger swipe up or down or other custom actions: |
-    Focus moves to the next slide
+    Focus moves to the next slide on iOS
   doubletap: |
     Activates the button
     
 screenreader: 
   name:  |
-    Purpose of each item is clear and matches visible text. "In list" is often announced in Android.  Index should be announced in Android and iOS
+    Purpose of each item is clear and matches visible text.  Index should be announced in Android and iOS
   role:  |
     Identifies as a button in iOS and "double tap to activate" in Android
     Identifies as "adjustable" with custom actions (iOS)
@@ -44,16 +44,16 @@ settings:
 - A carousel is a list of related content items as a horizontal slideshow
 - There are a variety of implementation alternatives for a carousel. At least one of the options in the above success criteria for navigating through the elements/slides must be available
 - Slides cannot automatically start rotating through carousel unless there is a pause/stop button
-- Consider the number of slides/elements in carousel when choosing implementation.  Swiping right through the slides of a very large number of slides to get to the next element past the carousel would not be a good user experience.  Custom actions/gestures for navigation through the slides should be considered on large carousels.  Then, if the user wants to bypass all the slides, they would simply swipe right to the next element past the carousel.
-- Alternate implementation to swiping through carousel: Change the slides with interactive page control dots and dynamically announce all the content in the slide along with page index.
-- Consider accessibility requirements when chosing a plug-in or widget
+- Consider the number of slides/elements in carousel when choosing implementation.  Swiping right through the slides of a very large number of slides to get to the next element past the carousel would not be a good user experience. Custom actions/gestures for navigation through the slides should be considered on large carousels on iOS.  Then, if the user wants to bypass all the slides, they would simply swipe right to the next element past the carousel
+- The container on Android also offers the user a way to bypass all the slides
+- Alternate implementation to swiping through carousel: Change the slides with interactive page control dots and dynamically announce all the content in the slide along with page index (without focus on slides)
  
 ## iOS
 
 ### Name
-- Programmatic name describes the purpose of the carousel.
+- Programmatic name of any interactive element describes it's purpose
 - Append ", Carousel" to the programmatic name to announce the role, since the carousel is custom and does not have a native role assigned
-- If visible text label exists, the programmatic name should match the visible text label.
+- If visible text label exists for an interactive component, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 - Placeholder text is NOT the programmatic name
 
@@ -161,16 +161,20 @@ settings:
         }
     }
     ```
-#### Announcements
-  - “In list” or “Showing slides x of y” are common announcements to give screen readers layout context
+### Announcements
+  - “In list” or “Showing slides x of y” are common announcements to give screen readers context of layout
   - “Custom actions available.  Swipe up or down to change slides” – common custom actions announcement
 
 
 ## Android
+- When navigating to a carousel using assistive technology, it should first focus on the entire carousel container
+- Each carousel may have a different number of items, so the label reads out the total amount of items and the current item in focus
+- Then, activating the carousel container focuses on the first carousel item
+- Two finger swipe rt or left navigates through the slides putting focus on the next slide in the order
 
 ### Name
-- Programmatic name describes the purpose of the carousel.
-- Each item in the carousel has a name that describes the purpose of the control and matches any visible label/all text and image descriptions within item.  
+- Programmatic name of any interactive element describes it's purpose.
+- Each item in the carousel, if interactive, has a name that describes the purpose of the control and matches any visible label/all text and image descriptions within item.  
 
 - **Android View**  
   - `android:text` XML attribute
@@ -271,4 +275,5 @@ HorizontalPager(
 
 
 ### Announcements
-
+  - “In list” or “Showing slides x of y” are common announcements to give screen readers layout context when landing on carousel container
+  - “Swipe right with two fingers to change slides” – common navigation announcement
