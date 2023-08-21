@@ -53,9 +53,9 @@ native-categories-order:
 - controls
 - notifications
 video-demos:
-- title: iOS Voiceover Safari
+- title: iOS Voiceover
   directory: ios/
-- title: Android Talkback Chrome
+- title: Android Talkback
   directory: android/
 - title: Windows Jaws Chrome
   directory: jaws/
