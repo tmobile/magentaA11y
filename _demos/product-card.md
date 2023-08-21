@@ -1,5 +1,5 @@
 ---
-layout: demo
+layout: full-width
 title:  "Product card"
 ---
 {::nomarkdown}
