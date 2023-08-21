@@ -1,14 +1,14 @@
 name: Lighthouse CI
 on: push
-jobs:
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3.5.3
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v10
-        with:
-          configPath: './lighthouserc.json'
-#           uploadArtifacts: true # save results as an action artifacts
-#           serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
-#           serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
+ jobs:
+ lighthouse:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v3.5.3
+     - name: Audit URLs using Lighthouse
+       uses: treosh/lighthouse-ci-action@v10
+       with:
+         configPath: './lighthouserc.json'
+          uploadArtifacts: true # save results as an action artifacts
+          serverBaseUrl: ${{ secrets.LHCI_SERVER_URL }}
+          serverToken: ${{ secrets.LHCI_SERVER_TOKEN }}
