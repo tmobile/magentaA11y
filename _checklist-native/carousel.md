@@ -124,7 +124,7 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-#### Custom Gestures
+### Custom Gestures
 - The expected experience is that when users swipe left or right, they are navigating from one section of the screen to another. When users swipe up or down on the carousel, the user is scrolling through the carousel
 
 - **UIKit**
