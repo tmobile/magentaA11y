@@ -5,7 +5,7 @@ categories: controls
 order: 1
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys, or Ctrl+tab: |
     Focus visibly moves to the link
   spacebar: |
     Activates on iOS and Android
@@ -15,8 +15,8 @@ keyboard:
 mobile:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
-  rotor/lcm: |
-    Links can be navigated to and activated from the Rotor/Local Context Menu or by focus/double tap.  Only one way is required.
+  rotor/TalkBack menu: |
+    Links can be navigated to and activated from the Rotor/TalkBack menu or by focus/double tap.  Only one way is required. Known issue: Links do not currently appear in iOS Rotor.
   doubletap: |
     Activates the link
 
@@ -39,7 +39,7 @@ settings:
 
 ### **Developer Notes**
 
-- Clickable text that navigates the user outside of the app to a web page. (ex: opens an web browser)
+- Clickable link that navigates the user outside of the app to a web page. (ex: opens a web browser)
 - When accessing an in-line link that is inside a paragraph with a screen reader, the focus should be around the paragraph container.
 - To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
 - There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
@@ -106,7 +106,7 @@ settings:
 - Use the device's default focus functionality. 
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When the in-app browser is closed, the focus should return to the triggering element.
+- When a link is closed, the focus should return to the triggering element.
 
 - **UIKit**
   - Implement focus ring to be around the paragraph container, so that double-tapping the container will activate the in-line link, given that there is only one link inside the container.
@@ -148,7 +148,7 @@ settings:
   - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of “Learn more” that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as “Learn more about accessible controls".
 
 ### Role
-- Ensure screen reader users can navigate to links from the Local Context Menu and Rotor
+- Ensure screen reader users can navigate to links from the TalkBack menu
 - Role is automatically announced if a native component is used
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
@@ -190,6 +190,7 @@ settings:
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading
 - When a menu, picker, or modal is closed, the focus should return to the triggering element
+- When a link is closed, the focus should return to the triggering element.
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
