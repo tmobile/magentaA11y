@@ -16,7 +16,7 @@ mobile:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
   rotor/TalkBack menu: |
-    Links can be navigated to and activated from the Rotor/TalkBack menu or by focus/double tap.  Only one way is required. Known issue: Links do not currently appear in iOS Rotor.
+    Links can be navigated to and activated from the Rotor/TalkBack menu or by focus/double tap.  Only one way is required. Known issue: Links do not currently appear in iOS Rotor. This does not apply to SwiftUI and Jetpack Compose currently.
   doubletap: |
     Activates the link
 
@@ -189,8 +189,7 @@ settings:
 - Consider how focus should be managed between child elements and their parent views or containers
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading
-- When a menu, picker, or modal is closed, the focus should return to the triggering element
-- When a link is closed, the focus should return to the triggering element.
+- When a link is closed, the focus should return to the triggering element
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
