@@ -356,3 +356,15 @@ $select-color: #333;
   // display: flex;
   // align-items: center;
 }
+
+
+.how-to-test-checklist-item {
+  box-shadow: 0 .5rem .75rem 0 rgba(#000, .04), 0 0 1rem 0 rgba(#ccc, .08);
+  padding: 0.4em 1em;
+  background: #fff; 
+  border-radius: 1em;
+  margin-bottom: 1em;
+  .column-2 {
+    margin-bottom: 1em;
+  }
+}
