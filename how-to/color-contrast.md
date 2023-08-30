@@ -98,37 +98,41 @@ Automated scanning must be complemented with a manual review of the page.
 ## <step-number>3</step-number> What to test for
 {: .divider }
 
-### ✓ Ensure text has sufficient contrast to the background color
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <p>This text passes contrast</p>
-    </td>
-    <td>
-      <p style="color:#0FE000">This text does NOT pass contrast</p>
-    </td>
-  </tr>  
-   <tr>
-    <td>
-      <p style="color:#009999; font-size: 18pt">This text is large enough that it only has to meet a 3:1 color ratio</p>
-    </td>
-    <td>
-      <p style="color:#009999">This text is the same color but smaller, and fails to meet a 4.5:1 color ratio</p>
-    </td>
-  </tr> 
-  </tbody>
-</table>
+<div class="how-to-test-checklist-item">
+<h3>✓ Ensure text has sufficient contrast to the background color</h3>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <p>This text passes contrast</p>
+      </td>
+      <td>
+        <p style="color:#0FE000">This text does NOT pass contrast</p>
+      </td>
+    </tr>  
+    <tr>
+      <td>
+        <p style="color:#009999; font-size: 18pt">This text is large enough that it only has to meet a 3:1 color ratio</p>
+      </td>
+      <td>
+        <p style="color:#009999">This text is the same color but smaller, and fails to meet a 4.5:1 color ratio</p>
+      </td>
+    </tr> 
+    </tbody>
+  </table>
+</div>
 
-### ✓ Ensure text over images and color gradients has sufficient contrast
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure text over images and color gradients has sufficient contrast</h3>
+  <strong>Note:</strong> All of the text must have sufficient color contrast.
 <table class="column-2" style="background: /assets/images/background/assistive-technology-bg.png">
   <thead>
     <th scope="col">
@@ -167,76 +171,86 @@ Automated scanning must be complemented with a manual review of the page.
   </tr>  
   </tbody>
 </table>
+</div>
 
-### ✓ Ensure that the different states of user interface components have sufficient contrast
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <button>This button passes on hover</button>
-    </td>
-    <td>
-      <button class="bad-contrast-button">This button does NOT pass on hover</button>
-    </td>
-  </tr>  
-  </tbody>
-</table>
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure that the different states of user interface components have sufficient contrast</h3>
+  <p><strong>Note:</strong> Default state, keyboard focus state, and hover state</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <button>This button passes on hover</button>
+      </td>
+      <td>
+        <button class="bad-contrast-button">This button does NOT pass on hover</button>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
 
-### ✓ Ensure meaningful graphical objects have sufficient contrast to their background
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <span style="font-size:54px;">↻</span>
-    </td>
-    <td>
-      <span style="color:#0FE000; font-size:54px;">↻</span>
-    </td>
-  </tr>  
-  </tbody>
-</table>
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure meaningful graphical objects have sufficient contrast to their background</h3>
+  <p><strong>Note:</strong> 3:1 color contrast ratio</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <span style="font-size:54px;">↻</span>
+      </td>
+      <td>
+        <span style="color:#0FE000; font-size:54px;">↻</span>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
 
-### ✓ Ensure color alone is not used to convey information
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-<img 
-src="/assets/images/examples/accessible-pie-chart-example.png" 
-alt="pie chart example with each slice labeled so it is accessible to color blind users"/>
-    </td>   
-    <td>
-  <img
-    src="/assets/images/examples/inaccessible-pie-chart-example.png"
-    alt="pie chart example that is inaccessible to color blind users because it uses a side legend to label the slices">
-    </td>
-  </tr>  
-  </tbody>
-</table>
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure color alone is not used to convey information</h3>
+  <p><strong>Note:</strong> Use of additional visual cues that do not rely on color alone</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+  <img 
+  src="/assets/images/examples/accessible-pie-chart-example.png" 
+  alt="pie chart example with each slice labeled so it is accessible to color blind users"/>
+      </td>   
+      <td>
+    <img
+      src="/assets/images/examples/inaccessible-pie-chart-example.png"
+      alt="pie chart example that is inaccessible to color blind users because it uses a side legend to label the slices">
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
 
 ## Related WCAG
 - 1.4.3 Contrast

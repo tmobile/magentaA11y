@@ -48,268 +48,288 @@ Select fields allow users to select one or more options from an expandable list 
 
 ## <step-number>5</step-number> What to test for
 
-### ✓ Ensure forms have persistent visible labels
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure forms have persistent visible labels</h3>
+  <p><strong>Note:</strong> A <code>placeholder</code> does not count as a visually persistant label</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <label for="persistentLabel">Persistent label</label>
+          <input type="text" id="persistentLabel"/>
+        </td>
+        <td>
+          <input type="text" placeholder="Impersistent label"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure forms can receive keyboard focus and have focus indicators</h3>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
     <tr>
       <td>
-        <label for="persistentLabel">Persistent label</label>
-        <input type="text" id="persistentLabel"/>
+          <input type="checkbox" id="accessibleCheckbox">
+          <label for="accessibleCheckbox">Accessible Checkbox</label>
       </td>
       <td>
-        <input type="text" placeholder="Impersistent label"/>
+          <input style="display:none" type="checkbox" id="inaccessibleCheckbox">
+          <label for="inaccessibleCheckbox">Inaccessible Checkbox</label>
       </td>
-    </tr>
-  </tbody>
-</table>
+    </tr>  
+    </tbody>
+  </table>
+</div>
 
-### ✓ Ensure forms can receive tab focus and have focus indicators
-
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-        <input type="checkbox" id="accessibleCheckbox">
-        <label for="accessibleCheckbox">Accessible Checkbox</label>
-    </td>
-    <td>
-        <input style="display:none" type="checkbox" id="inaccessibleCheckbox">
-        <label for="inaccessibleCheckbox">Inaccessible Checkbox</label>
-    </td>
-  </tr>  
-  </tbody>
-</table>
-
-## ✓ Ensure forms meet color contrast requirements
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <label style="margin-right:8px" for="passContrast">My border passes contrast</label>
-      <input type="text" id="passContrast"/>
-    </td>
-    <td>
-      <label style="margin-right:8px" for="failContrast">My border fails contrast</label>
-      <input style="border:1px solid #00BD1F" type="text" id="failContrast"/>
-    </td>
-  </tr>  
-  </tbody>
-</table>
-
-## ✓ Ensure interating with a form doesn't automatically or unexpectedly change context on the page without informing users
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <label for="selectPass">
-        Select a number
-      </label>
-      <select id="selectPass">
-        <option value="None" selected disabled>Select a number</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <button aria-disabled="true" class="button" id="submitSelectPassSelection" type="submit">Submit</button>
-      <div role="alert" id="messagePass" style="display: none;">This was an expected submission!</div>
-    </td>
-    <td>
-      <label for="selectFail">
-        Select a number
-      </label>
-      <select id="selectFail">
-        <option value="None" selected disabled>Select a number</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <div id="messageFail" style="display: none;">This was an unexpected submission!</div>
-    </td>
-  </tr>  
-  </tbody>
-</table>
-
-## ✓ Ensure required and/or optional forms are clearly indicated and announced as such 
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <div >* = required field</div>
-      <label for="userLastnamePass">* Last name</label>
-      <input aria-required="true" type="text" id="userLastnamePass"/>
-    </td>
-    <td>
-      <label style="color: red;" for="userLastnameFail">Last name</label>
-      <input type="text" id="userLastnameFail"/>
-    </td>
-  </tr>  
-  </tbody>
-</table>
-
-## ✓ Ensure related form fields are announced as grouped together
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-<fieldset>
-  <legend>
-    Choose a properly grouped day
-  </legend>
-  <div>
-  <input type="radio" name="dayPass" id="fridayRadioPass">
-  <label for="fridayRadioPass">Friday</label>
-
-  <input type="radio" name="dayPass" id="saturdayRadioPass">
-  <label for="saturdayRadioPass">Saturday</label>
-
-  <input type="radio" name="dayPass" id="sundayRadioPass" checked>
-  <label for="sundayRadioPass">Sunday</label>
-  </div>
-  </fieldset>
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure forms meet color contrast requirements</h3>
+    <p><strong>Note:</strong> Form field keyboard focus states and form field borders must meet WCAG's 3:1 color contrast ratio minimum</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <label style="margin-right:8px" for="passContrast">My border passes contrast</label>
+        <input type="text" id="passContrast"/>
       </td>
       <td>
-    <fieldset>
-    <div class="legend">
-      Choose an incorrectly grouped day
-    </div>
+        <label style="margin-right:8px" for="failContrast">My border fails contrast</label>
+        <input style="border:1px solid #00BD1F" type="text" id="failContrast"/>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
+
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure interating with a form doesn't automatically or unexpectedly change context on the page without informing users</h3>
+  <p><strong>Note:</strong> Forms should have submit buttons so the change of context is initiated by the user.</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <label for="selectPass">
+          Select a number
+        </label>
+        <select id="selectPass">
+          <option value="None" selected disabled>Select a number</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <button aria-disabled="true" class="button" id="submitSelectPassSelection" type="submit">Submit</button>
+        <div role="alert" id="messagePass" style="display: none;">This was an expected submission!</div>
+      </td>
+      <td>
+        <label for="selectFail">
+          Select a number
+        </label>
+        <select id="selectFail">
+          <option value="None" selected disabled>Select a number</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <div id="messageFail" style="display: none;">This was an unexpected submission!</div>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
+
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure required and/or optional forms are clearly indicated and announced as such</h3>
+  <p><strong>Note:</strong> Use of * or "required" in the field label in addition to <code>aria-required="true"</code> or <code>required</code> attributes help communicate to screen reader users the required nature of the field.</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <div >* denotes required field</div>
+        <label for="userLastnamePass">* Last name</label>
+        <input aria-required="true" type="text" id="userLastnamePass"/>
+      </td>
+      <td>
+        <label style="color: red;" for="userLastnameFail">Last name</label>
+        <input type="text" id="userLastnameFail"/>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
+
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure related form fields are announced as grouped together</h3>
+  <p><strong>Note:</strong> Valid use of <code>fieldset</code> is a good method for grouping form fields.</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+  <fieldset>
+    <legend>
+      Choose a properly grouped day
+    </legend>
     <div>
-      <input type="radio" name="dayFail" id="fridayRadioFail">
-      <label for="fridayRadioFail">Friday</label>
-      <input type="radio" name="dayFail" id="saturdayRadioFail">
-      <label for="saturdayRadioFail">Saturday</label>
-      <input type="radio" name="dayFail" id="sundayRadioFail" checked>
-      <label for="sundayRadioFail">Sunday</label>
+    <input type="radio" name="dayPass" id="fridayRadioPass">
+    <label for="fridayRadioPass">Friday</label>
+
+    <input type="radio" name="dayPass" id="saturdayRadioPass">
+    <label for="saturdayRadioPass">Saturday</label>
+
+    <input type="radio" name="dayPass" id="sundayRadioPass" checked>
+    <label for="sundayRadioPass">Sunday</label>
     </div>
     </fieldset>
-    </td>
-  </tr>  
-  </tbody>
-</table>
-
-## ✓ Ensure any associated instructions or helper text is announced when tabbing to a form
-
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-    <div>
-        <input type="checkbox"
-           id="deltaCheckboxCard"
-           aria-describedby="descDelta" >
-    <label for="deltaCheckboxCard">
-      Delta
-    </label>
-    <div class="hint"
-         id="descDelta">
-      Delta is the fourth letter of the NATO alphabet.
-    </div>
-    </div>
-    </td>
-    <td>
-    <div>
-    <input type="checkbox"
-           id="echoCheckboxCard">    
-    <label for="echoCheckboxCard">Echo</label>
-    <div class="hint"
-         id="descriptionEcho">
-      Echo is the fifth letter of the NATO alphabet.
-    </div>
-    </div>
-    </td>
-  </tr>  
-  </tbody>
-</table>
-
-## ✓ Ensure there is proper error handling for required fields
-
-<table class="column-2">
-  <thead>
-    <th scope="col">
-      Pass
-    </th>
-    <th scope="col">
-      Fail
-    </th>
-  </thead>
-  <tbody>
-  <tr>
-    <td>
-      <label for="goodErrorInput">Submit for a good error</label>
-      <input aria-describedby="goodErrorInputError" type="text" id="goodErrorInput"/>
-      <div id="goodErrorInputError" style="display: none; color: #E02D00;">
-         I announce with the input
+        </td>
+        <td>
+      <fieldset>
+      <div class="legend">
+        Choose an incorrectly grouped day
       </div>
-      <button id="goodErrorInputSubmit" class="button" type="submit">Submit</button>
-    </td>
-    <td>
-    <div>
-      <label for="badErrorInput">Submit for a bad error</label>
-      <input type="text" id="badErrorInput"/>
-      <div id="badErrorInputError" style="display: none; color: #E02D00;">
-        I do not announce with the input</div>
+      <div>
+        <input type="radio" name="dayFail" id="fridayRadioFail">
+        <label for="fridayRadioFail">Friday</label>
+        <input type="radio" name="dayFail" id="saturdayRadioFail">
+        <label for="saturdayRadioFail">Saturday</label>
+        <input type="radio" name="dayFail" id="sundayRadioFail" checked>
+        <label for="sundayRadioFail">Sunday</label>
       </div>
-      <button id="badErrorInputSubmit" class="button" type="submit">Submit</button>
-    </td>
-  </tr>  
-  </tbody>
-</table>
+      </fieldset>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
+
+
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure any associated instructions or helper text is announced when tabbing to a form</h3>
+  <p><strong>Note:</strong> Use of <code>aria-describedby</code> programmatically associates nearby text with form fields.</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+      <div>
+          <input type="checkbox"
+            id="deltaCheckboxCard"
+            aria-describedby="descDelta" >
+      <label for="deltaCheckboxCard">
+        Delta
+      </label>
+      <div class="hint"
+          id="descDelta">
+        Delta is the fourth letter of the NATO alphabet.
+      </div>
+      </div>
+      </td>
+      <td>
+      <div>
+      <input type="checkbox"
+            id="echoCheckboxCard">    
+      <label for="echoCheckboxCard">Echo</label>
+      <div class="hint"
+          id="descriptionEcho">
+        Echo is the fifth letter of the NATO alphabet.
+      </div>
+      </div>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
+
+<div class="how-to-test-checklist-item">
+  <h3>✓ Ensure there is proper error handling for required fields</h3>
+  <p><strong>Note:</strong> When error text is not programmatically associated by use of <code>aria-describedby</code> they may not be discovered by screen reader users.</p>
+  <table class="column-2">
+    <thead>
+      <th scope="col">
+        Pass
+      </th>
+      <th scope="col">
+        Fail
+      </th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <label for="goodErrorInput">Submit for a good error</label>
+        <input aria-describedby="goodErrorInputError" type="text" id="goodErrorInput"/>
+        <div id="goodErrorInputError" style="display: none; color: #E02D00;">
+          I announce with the input
+        </div>
+        <button id="goodErrorInputSubmit" class="button" type="submit">Submit</button>
+      </td>
+      <td>
+      <div>
+        <label for="badErrorInput">Submit for a bad error</label>
+        <input type="text" id="badErrorInput"/>
+        <div id="badErrorInputError" style="display: none; color: #E02D00;">
+          I do not announce with the input</div>
+        </div>
+        <button id="badErrorInputSubmit" class="button" type="submit">Submit</button>
+      </td>
+    </tr>  
+    </tbody>
+  </table>
+</div>
 
 ## Related WCAG
 - 1.3.1 Info and Relationships
