@@ -46,14 +46,10 @@ settings:
 
 ### Name
 - Programmatic name describes the purpose of the control.
-- If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-- When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
-  - **Incorrect announcement:** "Submit button, Button"
-  - **Correct announcement:** "Submit, Button"
-- Placeholder text is NOT the programmatic name
+- Ensure that the button that activates the sheet has a programmatic name. The sheet does not have one as it is implied by the button's programmatic name.
 
 - **UIKit**
+  - Set the programmatic name of the button that activates the sheet.
   - You can programmatically set the visible label with `setTitle()`.
     - The button’s title will overwrite the button’s `accessibilityLabel`.
   - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
@@ -61,14 +57,15 @@ settings:
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
-  - If no visible label, use view modifier `accessibilityLabel(_:)`.
+  - Set the programmatic name of the button that activates the sheet.
+  - If there is no visible label, use view modifier `accessibilityLabel(_:)`.
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 - **UIKit**
-  - Use `UIButton`
+  - Use `UIButton` for the button that activates the sheet.
   - If necessary, set `accessibilityTraits` to `.button`.
 - **SwiftUI**
   - Use native `Button` view
