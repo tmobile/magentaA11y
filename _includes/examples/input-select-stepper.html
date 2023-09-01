@@ -1,14 +1,13 @@
 <div class="stepper">
-  <label for="stepper-cowbell">
-    How much cowbell?
+  <label for="stepper">
+    Quantity
   </label>
-  <div class="stepper-overlay"
-       id="stepper-overlay" 
-       data-selected="1"
-       aria-hidden="true">
-    <!-- Covers the select to ensure uniform styles -->
-  </div>
-  <select id="stepper-cowbell"
+  <button class="button minus">
+    <span class="hidden">
+      Decrease Quantity
+    </span>
+  </button>
+  <select id="stepper"
           name="stepper-input"
           min="1"
           max="11"
@@ -25,14 +24,11 @@
     <option label="10">10</option>
     <option label="11">11</option>
   </select>
-  <div class="button minus" aria-hidden="true">
+  <button class="button plus">
     <span class="hidden">
-      Less cowbell
+      Increase Quantity
     </span>
-  </div>
-  <div class="button plus" aria-hidden="true">
-    <span class="hidden">
-      More cowbell
-    </span>
-  </div>
+  </button>
+  <!-- live container -->
+  <div aria-live="polite" class="hidden" id="stepper-status-target"></div>
 </div>

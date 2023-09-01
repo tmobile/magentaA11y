@@ -42,7 +42,11 @@
       content: ''attr(data-selected)'';
     }
   }
-
+  select[name="stepper-input"] {
+    padding: 0.75rem 2rem 0.75rem 0.5rem !important;
+    border: 2px solid #c5c5c5;
+  }
+  /*
   select[name="stepper-input"] {
     display: inline;
     position: relative;
@@ -66,4 +70,6 @@
       transition: .2s;
     }
   }
+  */
+
 }
