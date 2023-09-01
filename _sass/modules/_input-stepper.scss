@@ -42,28 +42,9 @@
       content: ''attr(data-selected)'';
     }
   }
-
   select[name="stepper-input"] {
-    display: inline;
-    position: relative;
-    height: 3rem;
-    appearance: none;
-    overflow: visible;
-    background: none;
-    margin: 0px;
-    padding: 0;
-    border: none;
-    grid-column: 2 / span 1;
-    grid-row: 2;
-    justify-self: stretch;
-    font-family: monospace;
-    transition: 0s;
-    z-index: 1;
-
-    &:focus {
-      outline: .25rem solid rgba($color-focus, .5);
-      outline-offset: 0rem;
-      transition: .2s;
-    }
+    padding: 0.75rem 2rem 0.75rem 0.5rem !important;
+    border: 2px solid #c5c5c5;
   }
+
 }
