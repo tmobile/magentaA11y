@@ -148,7 +148,6 @@ if ( $('dialog').length ) {
 }
 
 // Stepper
-// TODO: Grab label for field to make live container update dynamic to the field without hardcoding a message
 const 
     $stepper = $(".stepper"),
     stepperLabel = $stepper.find("label").text(),
