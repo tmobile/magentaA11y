@@ -4,35 +4,35 @@ title:  "Carousel"
 categories: controls
 
 keyboard:
- tab or arrow keys: |
+ tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the next item
  spacebar: |
-    Activates interactive slide on iOS and Android
+    Activates button or interactive slide on iOS and Android
  enter: |
-    Activates interactive slide on Android
+    Activates button or interactive slide on Android
           
 mobile:
   swipe rt: |
-    Focus moves to the next slide (Android and iOS) 
+    Focus moves to the next element 
   3 finger swipe: | 
     Focus moves to the next slide (iOS)
   2 finger swipe: | 
     Focus moves to the next slide (Android)
   1 finger swipe up or down or other custom actions: |
-    Focus moves to the next slide
+    Focus moves to the next slide on iOS
   doubletap: |
     Activates the button
     
 screenreader: 
   name:  |
-    Purpose of each item is clear and matches visible text. "In list" is often announced in Android.  Index is often announced in Android and iOS
+    Purpose of each item is clear and matches visible text.  Index should be announced in Android and iOS
   role:  |
     Identifies as a button in iOS and "double tap to activate" in Android
     Identifies as "adjustable" with custom actions (iOS)
   group: |
     n/a
   state: |
-    Expresses its state (disabled/dimmed)
+    Expresses a button's state (disabled/dimmed)
 
 settings:
   text resize: |
@@ -41,74 +41,192 @@ settings:
 
 ## Developer notes
 
-- A list of related content items as a horizontal slideshow
-- There are a variety of implementation alternatives for a carousel. At least one of the options above for navigating through the elements/slides must be available
-- Slides cannot automatically rotate through carousel unless there is a pause/stop button
-- If there is a visible indication of what slide the user is on with pagination dots or tabs, each slide should announce the index of the slide (“1 of 3") and dots do not get focused or announced in the swipe order
-- "In list" or "Showing slides x of y" are common announcements to give screen readers layout context
-- Alternate implementation to swiping through carousel: Change the slides with interactive page control dots and dynamically announce all the content in the slide along with page index. 
-- The implementation choice would depend on the number of carousel slides/elements.  Swiping right through the slides of a very large number of slides to get to the next element past the carousel would be a terrible user experience.  A container for the carousel and alternate gestures for navigation inside the container should be considered on large carousels
-- Consider accessibility requirements when chosing a plug-in or widget
-- If swiping with two or three fingers (Android and iOS, respectively) is used to rotate through the carousel, announce "page x of y" upon swiping to next screen.
+- A carousel is a list of related content items as a horizontal slideshow
+- There are a variety of implementation alternatives for a carousel. At least one of the options in the above success criteria for navigating through the elements/slides must be available
+- Slides cannot automatically start rotating through carousel unless there is a pause/stop button
+- Consider the number of slides/elements in carousel when choosing implementation.  Swiping right through the slides of a very large number of slides to get to the next element past the carousel would not be a good user experience. Custom actions/gestures for navigation through the slides should be considered on large carousels on iOS.  Then, if the user wants to bypass all the slides, they would simply swipe right to the next element past the carousel
+- The container on Android also offers the user a way to bypass all the slides
+- Alternate implementation to swiping through carousel: Change the slides with interactive page control dots and dynamically announce all the content in the slide along with page index (without focus on slides)
  
-
+## iOS
 
 ### Name
+- Programmatic name of any interactive element describes it's purpose
+- Append ", Carousel" to the programmatic name to announce the role, since the carousel is custom and does not have a native role assigned
+- If visible text label exists for an interactive component, the programmatic name should match the visible text label.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+- Placeholder text is NOT the programmatic name
 
-- Each item in the carousel has a name that describes the purpose of the control and matches any visible label/all text and image descriptions within item.  
-  
-- **iOS Tips**
-  - Set a label in Interface Builder in the Identity Inspector
-  - Group visible text label and the control in the same view container: `accessibilityFrameInContainerSpace`
-  - `setTitle( )` method
-  - If no visible label, use `accessibilityLabel` on control
-  - `Hint` is used sparingly and if the results of interacting with it are not obvious from the control's label.
-  - Match visible label, if any
-  - To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector
-  - If hiding visible label, use `accessibilityLabel` on control
-- **Android Tips**  
+- **UIKit**
+  - You can programmatically set the visible label with `setTitle()`.
+    - The carousel's title will overwrite the carousel's `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the carousel's `accessibilityLabel` to the label of your choice.
+    - To do this in Interface Builder, set the label using the Identity Inspector
+  - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
+  - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+- **SwiftUI**
+  - If no visible label, use view modifier `accessibilityLabel(_:)`.
+  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
+
+### Role
+- Since there is no native carousel component, a custom carousel must be implemented.
+- The carousel itself has its own role indicated by appending ", Carousel" to the programmatic name.
+- Each item in the carousel has its own independent role or accessibility trait. For example, if the item is interactive, the role will be `.button`.
+
+- **UIKit**
+  - A common method of implementing a carousel involves using `UICollectionView` and its corresponding protocols. Each item of the carousel is a `UICollectionViewCell`.
+  - Set the `accessibilityTraits` of the overall carousel role to `.adjustable`, and then append ", Carousel" to the programmatic name to notify the user of the role
+  - An individual item of the carousel will have its own role that is dependent on whether it is interactive. Assign the role that best fits your use case.
+- **SwiftUI**
+  - As there are different ways to implement a carousel, use your best judgment for your use case.
+  - Append ", Carousel" to the programmatic name for the overall carousel
+  - An individual item of the carousel will have its own role that is dependent on whether it is interactive. Assign the role that best fits your use case.
+  - Use view modifier `accessibilityAddTraits(:)` to add traits.
+  - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
+
+### Groupings
+- Group visible label with the carousel, if applicable.
+- Group the title and any description with each item in the carousel.
+
+- **UIKit**
+  1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
+  2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
+  - If frame does not exist due to custom button, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
+    - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
+  - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
+  - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
+- **SwiftUI**
+  - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
+
+### State
+- Indicate where the item is in the carousel by announcing the position/index out of the total number of items. (see Announcements below)
+
+- **UIKit**
+  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+- **SwiftUI**
+  - For disabled, use view modifier `disabled()`.
+
+### Focus
+- Use the device's default focus functionality. 
+- Consider how focus should be managed between child elements and their parent views.
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
+
+- **UIKit**
+  - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
+    - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
+  - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
+  - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
+  - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
+- **SwiftUI**
+  - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
+    - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
+    - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
+  - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
+
+### Custom Gestures
+- The expected experience is that when users swipe left or right, they are navigating from one section of the screen to another. When users swipe up or down on the carousel, the user is scrolling through the carousel
+
+- **UIKit**
+  - First, ensure that the accessibility trait of the carousel is `.adjustable`.
+  - Then, you are able to take advantage of the `accessibilityIncrement` and `accessibilityDecrement` methods
+
+  ```swift
+  override func accessibilityIncrement() {
+      // Move forward one item
+
+  }
+
+  override func accessibilityDecrement() {
+      // Move backward one item
+
+  }
+  ```
+
+- **SwiftUI**
+  - There are many approaches to applying custom gestures to a component
+  - One suggestion is to use `.accessibilityAdjustableAction` with a `switch` statement for the `direction`, and changing the index of the cell depending on whether the direction is `.increment` or `.decrement`
+    - "Incrementing" should move to the next item
+    - "Decrementing" should move to the previous item
+
+    ```swift
+    .accessibilityAdjustableAction { direction in
+        switch direction {
+        case .increment:
+            // Go to next page
+
+        case .decrement:
+            // Go to previous page
+
+        }
+    }
+    ```
+### Announcements
+  - “In list” or “Showing slides x of y” are common announcements to give screen readers context of layout
+  - “Custom actions available.  Swipe up or down to change slides” – common custom actions announcement
+
+
+## Android
+- When navigating to a carousel using assistive technology, it should first focus on the entire carousel container
+- Each carousel may have a different number of items, so the label reads out the total amount of items and the current item in focus
+- Then, activating the carousel container focuses on the first carousel item
+- Two finger swipe rt or left navigates through the slides putting focus on the next slide in the order
+
+### Name
+- Programmatic name of any interactive element describes it's purpose.
+- Each item in the carousel, if interactive, has a name that describes the purpose of the control and matches any visible label/all text and image descriptions within item.  
+
+- **Android View**  
   - `android:text` XML attribute
   - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label.
   - `contentDescription` overrides `android:text`    
   - Use `labelFor` attribute to associate the visible label to the control
 
-### Role 
+- **Jetpack Compose**
+  - If no visible label, use compose modifier semantics `contentDescription`.
+  - If any icons or images need to be hidden for accessibility talkback, use compose modifier semantics `invisibleToUser()`
 
-- **iOS**
-  - Button
-  - Custom class `CarouselAccessibilityElement` 
-  - Optional: implement custom actions with `accessibilityTraits` set to `adjustable`.  Suggested for a carousel with a large number of slides.
-- **Android**
-  - ViewPager  or
+### Role 
+- The native Pager component will handle the built-in accessibility behavior
+- Each item in the carousel can have the independent role and accessibility trait. For example, if the item is clickable, the role should be `button`.
+
+- **Android View**
+  - ViewPager
   - CarouselView
+- **Jetpack Compose**
+  - Compose foundation `HorizontalPager` and `VerticalPager`
 
 ### Groupings
-
-n/a
+- Group visible label with the carousel, if applicable.
+- Group the title and any description with each item in the carousel
+- If the item in carousel is clickable, use compose modifier `clickable` which will group the child elements automatically.
+- If the item in carousel has multi-actions, then spilt the action out of the group with proper focus order on each actions.
+- **Android View**
+  - `ViewGroup`
+  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+- **Jetpack Compose** 
+  - `Modifier.semantics(mergeDescendants = true) {}` for the child elements grouping/merging
+  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
+- Indicate where the item is in the carousel by announcing the position/index out of the total number of items. (see Announcements below)
+- Indicate the action state if applicable
 
-- **iOS**  
-  - Active: `isEnabled` property
-  - Disabled: `UIAccessibilityTraitNotEnabled`
-  - Announcement: dimmed
-- **Android**
+- **Android View**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`
   - Announcement: disabled
+- **Jetpack Compose** 
+  - Active: default state is active and enabled. Use `Button(enabled = true)` or `clickable {enabled = true}` to specify explicitly
+  - Disabled:  `Button(enabled = false)` or `clickable {enabled = false}` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
 
 ### Focus
-- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Each slide/element in the carousel should be in the view area when it is being announced
+- Consider how focus should be managed between child elements and their parent views.
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 
-- **iOS**
-	- `accessibilityElementIsFocused`  
-	- `isAccessibilityElement` makes the element visible or not to the Accessibility API
-	- `accessibilityElementsHidden` indicates that the children elements of the target element are visible or not to the Accessibility API
-	- `accessibilityViewIsModal` contains the screen reader focus inside the Modal
-	- To move screen reader focus to newly revealed content: `UIAccessibilityLayoutChangedNotification`
-	- To NOT move focus, but dynamically announce new content: `UIAccessibilityAnnouncementNotification`
-- **Android**
+- **Android View**
 	- `importantForAccessibility` makes the element visible to the Accessibility API
 	- `android:focusable`
 	- `android=clickable`
@@ -122,3 +240,40 @@ n/a
 	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
 	- To hide controls: `Important_For_Accessibility_false`
 	- For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+- **Jetpack Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+  - *Example:* To customize the focus events behaviour
+      - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+      - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+      - focus order accepts following values: up, down, left, right, previous, next, start, end
+      - step 3: use `second.requestFocus()` to gain focus
+
+### Code Example
+- **Jetpack Compose**
+{% highlight kotlin %}
+// Example of Compose horizontal pager with single page snapping
+val state = rememberPagerState { 10 }
+HorizontalPager(
+    state = state,
+    modifier = Modifier.fillMaxSize(),
+) { pageIndex ->
+    Box(
+        modifier = Modifier
+            .padding(10.dp)
+            .background(Color.Blue)
+            .fillMaxWidth()
+            .aspectRatio(1f),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(text = pageIndex.toString(), fontSize = 32.sp)
+    }
+}
+{% endhighlight %}
+
+
+### Announcements
+  - “In list” or “Showing slides x of y” are common announcements to give screen readers layout context when landing on carousel container
+  - “Swipe right with two fingers to change slides” – common navigation announcement
