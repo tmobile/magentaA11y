@@ -176,13 +176,10 @@ settings:
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`
-  - Announcement: disabled
 
 - **Jetpack Compose**
-  - Active: default state is active and enabled. Use `RadioButton(enabled = true)` to specify explicitly
-  - Disabled:  `RadioButton(enabled = false)` announces as disabled
-  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
-  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
+  - Active: default state is active and enabled.
+  - Disabled: Use Compose modifier semantics `modifier = Modifier.semantics { disabled() }`
 
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus order
