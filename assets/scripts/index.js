@@ -147,12 +147,18 @@ if ( $('dialog').length ) {
     });
 }
 
-$("[name='stepper-input']").on('change', function() {
-    var overlay = $(this).parents(".stepper").find("#stepper-overlay");
-    var val = parseInt($(this).val());
-    $(this).attr('data-selected', val);
-    overlay.attr('data-selected', val);
-});
+// Stepper
+const 
+    $stepper = $(".stepper"),
+    stepperLabel = $stepper.find("label").text(),
+    $stepperStatusTarget = $stepper.find("#stepper-status-target");
+
+    function removeStepperLiveMessage(delay){
+        if(!delay){ delay = 2000; }
+        setTimeout(() => {
+            $stepperStatusTarget.html("");
+        }, delay);
+    }
 
 $(".minus").click(function(){
     var overlay = $(this).parents(".stepper").find("#stepper-overlay");
@@ -165,6 +171,8 @@ $(".minus").click(function(){
     inpt.val(val-1);
     inpt.attr('data-selected', val-1);
     overlay.attr('data-selected', val-1);
+    $stepperStatusTarget.html(stepperLabel + "updated, " + parseInt(val - 1));
+    removeStepperLiveMessage(2000);
 });
 
 $(".plus").click(function(){
@@ -176,6 +184,8 @@ $(".plus").click(function(){
     inpt.val(val+1);
     inpt.attr('data-selected', val+1);
     overlay.attr('data-selected', val+1);
+    $stepperStatusTarget.html(stepperLabel + "updated, " + parseInt(val + 1));
+    removeStepperLiveMessage(2000);
 });
 
 
