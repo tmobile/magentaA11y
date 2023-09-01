@@ -134,7 +134,7 @@ settings:
 - **Android View**
   - Use an interactive RecyclerView
   - Should be coded as a list, if more than one row
-- **Android Compose**
+- **Jetpack Compose**
   - Use regular `Column` for a table row with short list, and `LazyColumn` for the long list of items. For the row to behave as button role, use `modifier.clickable` with role of `role.Button`
 
 ### Groupings
@@ -144,7 +144,7 @@ settings:
 - **Android View**
   - ViewGroup
   - Set the container object's android:screenReaderFocusable attribute to true, and each inner object's android:focusable attribute to false. In doing so, accessibility services can present the inner elements' content descriptions/names, one after the other, in a single announcement.
-- **Android Compose**
+- **Jetpack Compose**
   - In `item` or `items` composable of the table, the `modifier.clickable` with the role of button will group the internal components automatically.
 
 ### State
@@ -153,7 +153,7 @@ settings:
   - Active: android:enabled=true
   - Disabled" android:enabled=false. Announcement: disabled
   - Announcement: Selected/ "not selected" for row with a checkmark
-- **Android Compose**
+- **Jetpack Compose**
   - Active: `enabled=true`
   - Disabled: `enabled=false`
 
@@ -173,7 +173,7 @@ settings:
   - To move screen reader focus to newly revealed content: Type_View_Focused
   - To NOT move focus, but announce new content: accessibilityLiveRegion
   - To hide controls: Important_For _Accessibility_NO
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
