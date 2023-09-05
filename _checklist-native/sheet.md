@@ -4,8 +4,8 @@ title:  "Sheet"
 categories: controls
 
 keyboard:
-  tab and arrow keys: |
-      Focus visibly moves to the sheet or first interactive element
+  tab, Ctr+tab and arrow keys: |
+      Focus visibly moves to the first interactive element
   spacebar: |
       Activates on iOS and Android
   enter: |
@@ -13,36 +13,34 @@ keyboard:
         
 mobile:
   swipe: |
-      Focus moves to the element, expresses its name, role, value & state (if applicable)
+      Focus moves to the first element, expresses its name, role, value & state (if applicable)
   doubletap: |
      Activates interactive elements
 
 screenreader:
   name:  |
-      Purpose is clear and matches any visible label
+      Purpose is clear
   role:  |
       Identifies itself as a button in iOS and "double tap to activate" in Android
   group: |
-      Visible label is grouped or associated with controls in a single swipe
+      n/a
   state: |
-      Expresses its state (expands/collapses or disabled/dimmed)
+      n/a
 
 settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
 
-## Developer notes
+## iOS
+
+### Developer notes
 - A sheet helps people perform a distinct task that’s related to the parent view without taking them away from their current context
 - Use native elements when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Most sheets appear as a card that partially covers the underlying content. 
-- The screen reader should be confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader does not have to be confined in it
-- Ensure there is a way to collapse or close the sheet for the screen reader (iOS)
-- Move screen reader focus into sheet when opened
-- A grabber is recommended but not required for Android if a two-finger swipe for the screen reader in any direction closes it
-
-
-## iOS
+- Most sheets appear as a modal that partially covers the underlying content
+- The screen reader is usually confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader can move out of it
+- Ensure there is a way to collapse or close the sheet for the screen reader.  Initial focus is to an invisible dismiss button in later versions.  
+- A grabber is used for sheets that expand/collapse. When implemented, the initial focus is on the grabber, then the next swipe is to the invisible dismiss button
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -118,16 +116,23 @@ settings:
 ### Announcement examples
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
 
-- "Label, button"
-- "Label, (other content in cell), button" (grouping)
-- "Label, button, selected" (selected state)
-- "Label, dimmed, button" (disabled state)
+- "Double tap to dismiss popu-up window, button"  (Invisible dismiss button- later versions)
+- "Close, button" (If Close X is available)
+- "Sheet grabber, button, double tap to exand the sheet"  (When focus is on the grabber)
 
 ## Android
 
+### Developer notes
+- A sheet helps people perform a distinct task that’s related to the parent view without taking them away from their current context
+- Use native elements when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Most sheets appear as a modal that partially covers the underlying content. 
+- The screen reader is usually confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader can move out of it
+- Swipe anywhere on the screen dismisses the sheet
+- A grabber is used for sheets that expand/collapse
+
 ### Name
 - Name describes the purpose of the control
-- Ensure that the button that activates the sheet has a programmatic name. The sheet does not have one as it is implied by the button's programmatic name.
+- Programmatic name matches the visible text label (if any)
 
 - **Android Views**
   - `android:text` XML attribute
@@ -143,43 +148,37 @@ settings:
 ### Role
 - When not using native controls (custom controls), roles will need to be manually coded.
 - **Android Views**
-  - `ModalBottomSheet`
-  - Grabber announces as "double tap to activate"
+  - Standard button or ImageButton
 - **Jetpack Compose**
-  - `ModalBottomSheet`
-  - `BottomSheetScaffold`
-  - When use the drag handle on top of the sheet from the native component then it will be announced as "collapse drag handle" with actions available (three fingers tapping to view). With no drag handle designed UI, a close button is required to be displayed and have the init focus whenever the sheet is triggered and showing.
+  - Standard `Button` composable
 
 ### Groupings
-- Group visible label with action (if applicable) to provide a programmatic name for the action
+- Group visible label with button (if applicable) to provide a programmatic name for the button
 - Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
-- **Android View**
-  - ViewGroup
-  - Set the container objects `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
+- **Android Views**
+  - `ViewGroup`
+  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
 - **Jetpack Compose**
   - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
 - **Android Views**
-  - Grabber, if any, announces as expands/collapses
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
 - **Jetpack Compose**
-  - Partial expanded bottom sheet: Drag handle, if any, announces as "collapse drag handle" with actions available in taleback menu (Expand/Dismiss)
-  - Full expanded bottom sheet: Drag handle, if any, announces as "expanded drag handle" with actions available in talkback menu (Collapse/Dismiss)
-  - Full expanded bottom sheet with no partial expanded state: Drag handle, if any, announces as "drag handle" with actions available in talkback menu (Dismiss)
-  - Fixed bottom sheet with Close button and no drag handle: Close button state:
-    - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
-    - Disabled:  `Button(enabled = false)` announces as disabled
-    - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+  - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
+  - Disabled:  `Button(enabled = false)` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
 
 ### Focus
-- When a sheet is closed, the focus should return to the triggering element.
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
-- Moving focus into the sheet when an action opens it makes it clear to the screen reader user that there is a sheet available
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
+- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
+- When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -206,53 +205,21 @@ settings:
     - focus order accepts following values: up, down, left, right, previous, next, start, end
     - step 3: use `second.requestFocus()` to gain focus
 
-### Code example
-- **Jetpack Compose**
-{% highlight kotlin %}
-var openBottomSheet by rememberSaveable { mutableStateOf(false) }
-val scope = rememberCoroutineScope()
-val bottomSheetState = rememberModalBottomSheetState()
-Button(onClick = { openBottomSheet = !openBottomSheet }) {
-    Text(text = "Show Bottom Sheet")
-}
-if (openBottomSheet) {
-    ModalBottomSheet(
-        onDismissRequest = { openBottomSheet = false },
-        sheetState = bottomSheetState
-    ) {
-        Column(modifier = Modifier.fillMaxWidth()) {
-            OutlinedButton(
-                modifier = Modifier.align(Alignment.CenterHorizontally).semantics {
-                    disabled()
-                },
-                // Note: If you provide logic outside of onDismissRequest to remove the sheet,
-                // you must additionally handle intended state cleanup, if any.
-                onClick = {
-                    scope.launch { bottomSheetState.hide() }.invokeOnCompletion {
-                        if (!bottomSheetState.isVisible) {
-                            openBottomSheet = false
-                        }
-                    }
-                }
-            ) {
-                Text("Hide Bottom Sheet")
-            }
-            LazyColumn {
-                items(50) {
-                    ListItem(
-                        headlineContent = { Text("Sheet item /$it") },
-                        leadingContent = {
-                            Icon(
-                                Icons.Default.Star,
-                                contentDescription = "Localized description"
-                            )
-                        }
-                    )
-                }
-            }
-        }
-    }
-}
-{% endhighlight %}
+### Custom Accessibility Action
+- When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
+- Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
+- The Button class by default supplies all the necessary semantics to make it fully accessible.
 
+- **Android Views**
+  - step 1: Create an accessibility service
+  - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
+  - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
+
+- **Jetpack Compose**
+  - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
+  - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
+  
 ### Announcement examples
+  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
+  
+- "Sheet grabber, expands, double tap to activate"
