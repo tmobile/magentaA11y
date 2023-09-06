@@ -44,7 +44,7 @@ settings:
 
 ### Name
 - Programmatic name describes the purpose of the control.
-- Ensure that the button that activates the sheet has a programmatic name. The sheet does not have one as it is implied by the button's programmatic name.
+- Ensure that the button that activates the sheet has a programmatic name. The sheet does not have its own programmatic name as it is implied by the button's programmatic name.
 
 - **UIKit**
   - Set the programmatic name of the button that activates the sheet.
@@ -60,19 +60,21 @@ settings:
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- When using non-native controls (custom controls), roles will need to be manually coded.
+- Assign a role to the button that activates the sheet
+- The role of the sheet is implied when the sheet opens, and the initial focus lands on the invisible dismiss button.
 
 - **UIKit**
   - Use `UIButton` for the button that activates the sheet.
+  - Use `UISheetPresentationController` to implement the sheet.
   - If necessary, set `accessibilityTraits` to `.button`.
 - **SwiftUI**
-  - Use native `Button` view
-  - If necessary, use view modifier `accessibilityAddTraits(.isButton)` to assign the role as Button.
+  - Use native `Button` view for the button that activates the sheet
+  - Use native `sheet` view modifier for implementation of the sheet
+  - If necessary, use view modifier `accessibilityAddTraits(.isButton)` to assign the role for the button that activates the sheet.
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- Group visible label with button, if applicable, to provide a programmatic name for the button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
+- Follow logical order when grouping elements inside the sheet
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -84,21 +86,24 @@ settings:
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
-### State 
-- **UIKit**  
-  - For enabled: Set `isEnabled` to `true`.
-  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+### State
+- The state of the sheet is implied when the sheet opens, and the initial focus lands on the invisible dismiss button.
+- For a sheet with adjustable height, the action to increase sheet height or decrease sheet height must be announced when the user is interacting with the sheet grabber.
+
+- **UIKit**
+  - The accessibility label or value must be updated with each interaction with the sheet grabber to adjust the sheet height.
+  - For enabled state of the button that activates the sheet: Set `isEnabled` to `true`.
+  - For disabled state of the button that activates the sheet: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
-  - For selected, use `accessibilityAddTraits(.isSelected)`.
-  - For disabled, use view modifier `disabled()`.
+  - The open and closed state of the sheet is implied when the user's initial focus is on the invisible dismiss button, and when the user closes the sheet with the invisible dismiss button.
+  - For disabled state of the button that activates the sheet, use view modifier `disabled()`.
 
 ### Focus
-- Use the device's default focus functionality. 
-- Consider how focus should be managed between child elements and their parent views.
-- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
+- Use the device's default focus functionality.
+- When the sheet is closed, the focus should return to the triggering element.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -115,10 +120,9 @@ settings:
 
 ### Announcement examples
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
-
-- "Double tap to dismiss popu-up window, button"  (Invisible dismiss button- later versions)
+- "Double tap to dismiss pop-up window, button"  (Invisible dismiss button- later versions)
 - "Close, button" (If Close X is available)
-- "Sheet grabber, button, double tap to exand the sheet"  (When focus is on the grabber)
+- "Sheet grabber, button, double tap to expand the sheet"  (When focus is on the grabber)
 
 ## Android
 
