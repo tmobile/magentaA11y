@@ -13,7 +13,7 @@ keyboard:
         
 mobile:
   swipe: |
-      Focus moves to the first element, expresses its name, role, value & state (if applicable)
+      Focus moves to the first element (hidden or not), expresses its name, role, value & state (if applicable)
   doubletap: |
      Activates interactive elements
 
@@ -40,7 +40,8 @@ settings:
 - Most sheets appear as a modal that partially covers the underlying content
 - The screen reader is usually confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader can move out of it
 - Ensure there is a way to collapse or close the sheet for the screen reader.  Initial focus is to an invisible dismiss button in later versions.  
-- A grabber is used for sheets that expand/collapse. When implemented, the initial focus is on the grabber, then the next swipe is to the invisible dismiss button
+- A grabber/card controller is used for sheets that expand/collapse. When implemented, the initial focus is on the grabber, then the next swipe focus is moved to the invisible dismiss button
+- A card controller button expands/collapses the sheet to cover half the screen or the whole screen.  After expanding or collapsing, only the name and state gets announced, not the full announcement.
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -88,10 +89,10 @@ settings:
 
 ### State
 - The state of the sheet is implied when the sheet opens, and the initial focus lands on the invisible dismiss button.
-- For a sheet with adjustable height, the action to increase sheet height or decrease sheet height must be announced when the user is interacting with the sheet grabber.
+- For a sheet with adjustable height, the action to increase sheet height or decrease sheet height must be announced when the user is interacting with the sheet grabber/card controller.
 
 - **UIKit**
-  - The accessibility label or value must be updated with each interaction with the sheet grabber to adjust the sheet height.
+  - The accessibility label or value must be updated with each interaction with the sheet grabber/card controller to adjust the sheet height.
   - For enabled state of the button that activates the sheet: Set `isEnabled` to `true`.
   - For disabled state of the button that activates the sheet: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
@@ -102,8 +103,9 @@ settings:
 ### Focus
 - Use the device's default focus functionality.
 - When the sheet is closed, the focus should return to the triggering element.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
+- Initial focus should land on the sheet grabber, if it exists. Then, the invisible dismiss button. Then, the implemented Close button, if it exists.
+- If the sheet grabber does not exist, the initial focus should land on the invisible dismiss button, and then the implemented Close button.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -122,8 +124,10 @@ settings:
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
 - "Double tap to dismiss pop-up window, button"  (Invisible dismiss button- later versions)
 - "Close, button" (If Close X is available)
-- "Sheet grabber, button, double tap to expand the sheet"  (When focus is on the grabber)
-
+- "Card controller, minimized, button, adjust the size of the card overlaying screen"  (When focus is on the card controller in minimized to go to half screen)
+- "Card controller, half screen, button, adjust the size of the card overlaying screen"  (When focus is on the card controller in half screen to go to full screen)
+- "Card controller, full screen, button, adjust the size of the card overlaying screen"  (When focus is on the card controller in full screen to minimize)
+  
 ## Android
 
 ### Developer notes
@@ -132,7 +136,8 @@ settings:
 - Most sheets appear as a modal that partially covers the underlying content. 
 - The screen reader is usually confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader can move out of it
 - Swipe anywhere on the screen dismisses the sheet
-- A grabber is used for sheets that expand/collapse
+- A grabber at the top of the sheet is used to expand/collapse if needed. When implemented, the initial focus is on the grabber.
+- A grabber expands/collapses the sheet to cover half the screen or the whole screen. Even though two finger swipe will expand the sheet, the user has to start the swipe with fingers on the drawer, which may be a challenge to those who cannot see the screen. Keyboard users would not be able to expand the sheet without the grabber.
 
 ### Name
 - Name describes the purpose of the control
@@ -180,9 +185,9 @@ settings:
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
+- When the sheet is closed, the focus should return to the triggering element.
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
+- Initial focus on the sheet should land on the grabber
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -226,4 +231,6 @@ settings:
 ### Announcement examples
   - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
   
-- "Sheet grabber, expands, double tap to activate"
+- "Sheet grabber, collapsed, double tap to activate"  (In minimized state)
+- "Sheet grabber, expanded, double tap to activate"  (In expanded state)
+  
