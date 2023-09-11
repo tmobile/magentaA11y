@@ -159,7 +159,7 @@ settings:
 - Disabled" android:enabled=false. Announcement: disabled
 - Announcement: Selected/ "not selected" for row with a checkmark
 
-**Android Compose**
+**Jetpack Compose**
 - Active: `enabled=true`
 - Disabled: `enabled=false`
 
