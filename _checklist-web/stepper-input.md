@@ -40,7 +40,7 @@ screenreader:
 
 gherkin-keyboard: 
   - when:  |
-      the tab key to move focus form fields
+      the tab key to move focus to the first interactive item
     result: |
       focus is strongly visually indicated
   - then:  |
