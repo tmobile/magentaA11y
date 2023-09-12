@@ -141,7 +141,7 @@ settings:
 
 ### Name
 - Name describes the purpose of the control
-- Programmatic name matches the visible text label (if any)
+- Ensure that the button that activates the sheet has a programmatic name. The sheet does not have one as it is implied by the button's programmatic name.
 
 - **Android Views**
   - `android:text` XML attribute
@@ -157,12 +157,15 @@ settings:
 ### Role
 - When not using native controls (custom controls), roles will need to be manually coded.
 - **Android Views**
-  - Standard button or ImageButton
+  - `ModalBottomSheet`
+  - Grabber announces as "double tap to activate"
 - **Jetpack Compose**
-  - Standard `Button` composable
+  - `ModalBottomSheet`
+  - `BottomSheetScaffold`
+  - When use the drag handle on top of the sheet from the native component then it will be announced as "collapse drag handle" with actions available (three fingers tapping to view). With no drag handle designed UI, a close button is required to be displayed and have the init focus whenever the sheet is triggered and showing.
 
 ### Groupings
-- Group visible label with button (if applicable) to provide a programmatic name for the button
+- Group visible label with action (if applicable) to provide a programmatic name for the action
 - Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
 - **Android Views**
@@ -174,17 +177,22 @@ settings:
 
 ### State
 - **Android Views**
+  - Grabber, if any, announces as expands/collapses
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
 - **Jetpack Compose**
-  - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
-  - Disabled:  `Button(enabled = false)` announces as disabled
-  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
-  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
+  - Partial expanded bottom sheet: Drag handle, if any, announces as "collapse drag handle" with actions available in taleback menu (Expand/Dismiss)
+  - Full expanded bottom sheet: Drag handle, if any, announces as "expanded drag handle" with actions available in talkback menu (Collapse/Dismiss)
+  - Full expanded bottom sheet with no partial expanded state: Drag handle, if any, announces as "drag handle" with actions available in talkback menu (Dismiss)
+  - Fixed bottom sheet with Close button and no drag handle: Close button state:
+    - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
+    - Disabled:  `Button(enabled = false)` announces as disabled
+    - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
 
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
+- Moving focus into the sheet when an action opens it makes it clear to the screen reader user that there is a sheet available
 - When the sheet is closed, the focus should return to the triggering element.
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Initial focus on the sheet should land on the grabber
@@ -214,23 +222,57 @@ settings:
     - focus order accepts following values: up, down, left, right, previous, next, start, end
     - step 3: use `second.requestFocus()` to gain focus
 
-### Custom Accessibility Action
-- When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
-- Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
-- The Button class by default supplies all the necessary semantics to make it fully accessible.
-
-- **Android Views**
-  - step 1: Create an accessibility service
-  - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
-  - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
-
+### Code example
 - **Jetpack Compose**
-  - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
-  - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
-  
+{% highlight kotlin %}
+var openBottomSheet by rememberSaveable { mutableStateOf(false) }
+val scope = rememberCoroutineScope()
+val bottomSheetState = rememberModalBottomSheetState()
+Button(onClick = { openBottomSheet = !openBottomSheet }) {
+    Text(text = "Show Bottom Sheet")
+}
+if (openBottomSheet) {
+    ModalBottomSheet(
+        onDismissRequest = { openBottomSheet = false },
+        sheetState = bottomSheetState
+    ) {
+        Column(modifier = Modifier.fillMaxWidth()) {
+            OutlinedButton(
+                modifier = Modifier.align(Alignment.CenterHorizontally).semantics {
+                    disabled()
+                },
+                // Note: If you provide logic outside of onDismissRequest to remove the sheet,
+                // you must additionally handle intended state cleanup, if any.
+                onClick = {
+                    scope.launch { bottomSheetState.hide() }.invokeOnCompletion {
+                        if (!bottomSheetState.isVisible) {
+                            openBottomSheet = false
+                        }
+                    }
+                }
+            ) {
+                Text("Hide Bottom Sheet")
+            }
+            LazyColumn {
+                items(50) {
+                    ListItem(
+                        headlineContent = { Text("Sheet item /$it") },
+                        leadingContent = {
+                            Icon(
+                                Icons.Default.Star,
+                                contentDescription = "Localized description"
+                            )
+                        }
+                    )
+                }
+            }
+        }
+    }
+}
+{% endhighlight %}
+
 ### Announcement examples
   - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
   
 - "Sheet grabber, collapsed, double tap to activate"  (In minimized state)
 - "Sheet grabber, expanded, double tap to activate"  (In expanded state)
-  
