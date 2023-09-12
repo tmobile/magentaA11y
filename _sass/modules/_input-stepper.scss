@@ -32,6 +32,11 @@
     opacity: 1;
   }
 
+  .plus[aria-disabled="true"]:before,
+  .minus[aria-disabled="true"]:before {
+    filter: invert(.7);
+  }
+
   .stepper-overlay {
     grid-column: 2 / span 1;
     grid-row: 2;

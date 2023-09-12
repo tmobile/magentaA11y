@@ -94,7 +94,7 @@ wcag:
 ## Code examples
 
 ### Speciality stepper integer input
-Before using this pattern, consider if using a plain [Select dropdown](https://www.magentaa11y.com/checklist-web/select/) which might be more clear and simple for all users. A select does everything that this stepper does, and with less code! Plus, a select is native and accessible out of the box.
+Before using this pattern, consider if using a plain [Select dropdown](https://www.magentaa11y.com/checklist-web/select/) might be more clear and simple for all users. A select does everything that this stepper does, and with less code! Plus, a select is native and accessible out of the box.
 
 This component is useful for small range increments. If the max count is more than 20, consider use of a [Text Input](http://127.0.0.1:4000/checklist-web/text-input/) field as this component will be cumbersome for people using a mouse.
 
@@ -117,5 +117,7 @@ This component is useful for small range increments. If the max count is more th
 - The value of the `select` element naturally communicates the updated value to screen reader users so the live container is not updated when that form element is interacted with.
 
 - The `button` `aria-label` values should be plain text and they should include context of what they affect when activated (typically the label for the `select`).  e.g. Increase Quantity, Add Quantity
+
+- <code>aria-disabled="true"</code> will be applied to the buttons when either end of the range is reached
 
 - Related alternative patterns: [Select dropdown](https://www.magentaa11y.com/checklist-web/select/) or an [ARIA Spinbutton](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).
