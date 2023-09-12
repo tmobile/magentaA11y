@@ -94,8 +94,9 @@ wcag:
 ## Code examples
 
 ### Speciality stepper integer input
+Before using this pattern, consider if using a plain [Select dropdown](https://www.magentaa11y.com/checklist-web/select/) which might be more clear and simple for all users. A select does everything that this stepper does, and with less code! Plus, a select is native and accessible out of the box.
 
-This component is useful for small-ish selections. If the max count is more than 20, this component will be cumbersome for people using a mouse.
+This component is useful for small range increments. If the max count is more than 20, consider use of a [Text Input](http://127.0.0.1:4000/checklist-web/text-input/) field as this component will be cumbersome for people using a mouse.
 
 {% highlight html %}
 {% include /examples/input-select-stepper.html %}
@@ -109,10 +110,12 @@ This component is useful for small-ish selections. If the max count is more than
 
 ## Developer notes
 
-This stepper example provides both `button` and `select` elements for users to change a value.
+- This stepper example provides both `button` and `select` elements for users to change a value.
 
-A non-visual live container with `aria-live="polite"` is present in the page at DOM load. When the `button` elements are activated, this non-visual live container is updated with dynamic content that screen reader users will hear announced as they increment or decrement the value. This dynamic text is then removed from the DOM after a few seconds (but not the actual container with `aria-live="polite"`) so the message is not discovered by screen reader users after interaction.
+- A non-visual live container with `aria-live="polite"` is present in the page at DOM load. When the `button` elements are activated, this non-visual live container is updated with dynamic content that screen reader users will hear announced as they increment or decrement the value. This dynamic text is then removed from the DOM after a few seconds (but not the actual container with `aria-live="polite"`) so the message is not discovered by screen reader users after interaction.
 
-The value of the `select` element naturally communicates the updated value to screen reader users so the live container is not updated when that form element is interacted with.
+- The value of the `select` element naturally communicates the updated value to screen reader users so the live container is not updated when that form element is interacted with.
 
-The `button` `aria-label` values should be plain text and they should include context of what they affect when activated (typically the label for the `select`).  e.g. Increase Quantity, Add Quantity
+- The `button` `aria-label` values should be plain text and they should include context of what they affect when activated (typically the label for the `select`).  e.g. Increase Quantity, Add Quantity
+
+- Related alternative patterns: [Select dropdown](https://www.magentaa11y.com/checklist-web/select/) or an [ARIA Spinbutton](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).

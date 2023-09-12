@@ -21,6 +21,17 @@
     justify-self: center;
   }
 
+  .plus[aria-disabled="true"]:hover:before, 
+  .minus[aria-disabled="true"]:hover:before,
+  .plus[aria-disabled="true"]:focus:before, 
+  .minus[aria-disabled="true"]:focus:before {
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 1;
+  }
+
   .stepper-overlay {
     grid-column: 2 / span 1;
     grid-row: 2;
