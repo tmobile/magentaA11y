@@ -51,7 +51,7 @@ settings:
   - Set the programmatic name of the button that activates the sheet.
   - You can programmatically set the visible label with `setTitle()`.
     - The button’s title will overwrite the button’s `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
+  - If a visible label is not applicable in this case, set the triggering button's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
@@ -62,12 +62,12 @@ settings:
 
 ### Role
 - Assign a role to the button that activates the sheet
-- The role of the sheet is implied when the sheet opens, and the initial focus lands on the invisible dismiss button.
+- The role of the sheet is implied when the sheet opens, and the initial focus lands on the invisible dismiss button (or sheet grabber, if it exists).
 
 - **UIKit**
   - Use `UIButton` for the button that activates the sheet.
   - Use `UISheetPresentationController` to implement the sheet.
-  - If necessary, set `accessibilityTraits` to `.button`.
+  - If necessary, set `accessibilityTraits` to `.button` for the button that activates the sheet.
 - **SwiftUI**
   - Use native `Button` view for the button that activates the sheet
   - Use native `sheet` view modifier for implementation of the sheet
@@ -90,27 +90,26 @@ settings:
 ### State
 - The state of the sheet is implied when the sheet opens, and the initial focus lands on the invisible dismiss button.
 - For a sheet with adjustable height, the action to increase sheet height or decrease sheet height must be announced when the user is interacting with the sheet grabber/card controller.
+- The accessibility label or value must be updated with each interaction with the sheet grabber/card controller to adjust the sheet height.
 
 - **UIKit**
-  - The accessibility label or value must be updated with each interaction with the sheet grabber/card controller to adjust the sheet height.
   - For enabled state of the button that activates the sheet: Set `isEnabled` to `true`.
   - For disabled state of the button that activates the sheet: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
-  - The open and closed state of the sheet is implied when the user's initial focus is on the invisible dismiss button, and when the user closes the sheet with the invisible dismiss button.
+  - The open and closed state of the sheet is implied when the user's initial focus is on the invisible dismiss button (or sheet grabber, if it exists), and when the user closes the sheet with the invisible dismiss button or developer-implemented close button, if it exists.
   - For disabled state of the button that activates the sheet, use view modifier `disabled()`.
 
 ### Focus
 - Use the device's default focus functionality.
 - When the sheet is closed, the focus should return to the triggering element.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus should land on the sheet grabber, if it exists. Then, the invisible dismiss button. Then, the implemented Close button, if it exists.
-- If the sheet grabber does not exist, the initial focus should land on the invisible dismiss button, and then the implemented Close button.
+- Initial focus should land on the sheet grabber, if it exists. Then, the invisible dismiss button. Then, the developer-implemented close button, if it exists.
+- If the sheet grabber does not exist, the initial focus should land on the invisible dismiss button, and then the implemented close button.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
     - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
-  - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
   - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
