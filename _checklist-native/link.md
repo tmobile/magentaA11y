@@ -157,7 +157,7 @@ settings:
   - URLSpan / ClickableSpan
   - Linkify Class
 
-- **Android Compose**
+- **Jetpack Compose**
   - Compose does not have native support on Link in Text, a customized linkable text need to be added into Text composable or use a `AndroidView` to bring the Android View with `Linkify` to build Compose composable
 
 ### Groupings
@@ -167,7 +167,7 @@ settings:
   - `ViewGroup`
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
 
-- **Android Compose** 
+- **Jetpack Compose** 
   - `Modifier.semantics(mergeDescendants = true) {}` for the child elements grouping/merging
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
@@ -176,13 +176,10 @@ settings:
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`
-  - Announcement: disabled
 
-- **Android Compose**
-  - Active: default state is active and enabled. Use `RadioButton(enabled = true)` to specify explicitly
-  - Disabled:  `RadioButton(enabled = false)` announces as disabled
-  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
-  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
+- **Jetpack Compose**
+  - Active: default state is active and enabled.
+  - Disabled: Use Compose modifier semantics `modifier = Modifier.semantics { disabled() }`
 
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus order
@@ -206,7 +203,7 @@ settings:
   - To hide controls: `Important_For_Accessibility_false`
   - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
   
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
@@ -218,7 +215,7 @@ settings:
     - step 3: use `second.requestFocus()` to gain focus
 
 ### Code Example
-- **Android Compose**
+- **Jetpack Compose**
 {% highlight kotlin %}
 /**
  * Custom Composable with AndroidView to support link in textView and the links accessibility features from talkback menu

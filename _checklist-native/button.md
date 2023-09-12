@@ -135,7 +135,7 @@ settings:
   - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
   - `contentDescription` overrides `android:text`
   - Use `labelFor` attribute to associate the visible label with the control
-- **Android Compose**
+- **Jetpack Compose**
   - Compose uses semantics properties to pass information to accessibility services.
   - The built-in Button composable will fill the semantics properties with information inferred from the composable by default.
   - Optional: use `contentDescription` for a more descriptive name to override the default visible label of the button text.
@@ -145,7 +145,7 @@ settings:
 - When not using native controls (custom controls), roles will need to be manually coded.
 - **Android Views**
   - Standard button or ImageButton
-- **Android Compose**
+- **Jetpack Compose**
   - Standard `Button` composable
 
 ### Groupings
@@ -155,7 +155,7 @@ settings:
 - **Android Views**
   - `ViewGroup`
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
@@ -163,7 +163,7 @@ settings:
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
-- **Android Compose**
+- **Jetpack Compose**
   - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
   - Disabled:  `Button(enabled = false)` announces as disabled
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
@@ -190,7 +190,7 @@ settings:
   - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
   - To hide controls: `importantForAccessibility=false`
   - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
@@ -211,7 +211,7 @@ settings:
   - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
   - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
 
-- **Android Compose**
+- **Jetpack Compose**
   - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
   - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
   

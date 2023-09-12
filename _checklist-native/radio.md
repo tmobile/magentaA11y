@@ -150,7 +150,7 @@ settings:
   - `contentDescription` overrides `android:text`
   - Use `labelFor` attribute to associate the visible label with the control (Best practice)
 
-- **Android Compose**
+- **Jetpack Compose**
   - Radiobutton compose class combined with Text is used
   - Recommended to use Row layout to allow for entire row to be selectable
   - Use the `click` on the row for selection event and nullify the `click` on the RadioButton.
@@ -165,7 +165,7 @@ settings:
   - Standard RadioButton with RadioGroup when applicable
   - Announced as: "Radio Button, double tap to toggle"
 
-- **Android Compose**
+- **Jetpack Compose**
   - Simple `RadioButton` composable.
   - In case of radio button group, use `Column(Modifier.selectableGroup())` to add radio buttons as child views.
   - Alternatively use checkbox composable in combination with `Row` or `Colum` and `toggleable(role = Role.RadioButton)`. Code example above.
@@ -183,7 +183,7 @@ settings:
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. 
   - In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
 
-- **Android Compose**
+- **Jetpack Compose**
   - Radiobutton can be combined with Text into either a Column or Row layout to get radio group-like behaviour so the entire layout is selectable.
   - To ensure correct accessibility behavior `Modifier.selectableGroup()` is essential.
   - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
@@ -199,7 +199,7 @@ settings:
   - on/off: `isChecked`, `setChecked`
   - Announcement: disabled, checked/not checked
 
-- **Android Compose**
+- **Jetpack Compose**
   - Active: default state is active and enabled. Use `RadioButton(enabled = true)` to specify explicitly
   - Disabled:  `RadioButton(enabled = false)` announces as disabled
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
@@ -226,7 +226,7 @@ settings:
   - To hide controls: `Important_For_Accessibility_false`
   - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
 
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state

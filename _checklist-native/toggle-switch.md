@@ -132,7 +132,7 @@ settings:
 	- `contentDescription` overrides `android:text`  
 	- Use `labelFor` attribute to associate the visible label with the control (Best practice)
 
-- **Android Compose**
+- **Jetpack Compose**
   - Use material3 `Switch` composable for the toggle switch and add the modifier `contentDescription` value for providing the content description if no separate text view for the switch.
   - When there is a text view in the row for the toggle switch, then group them as single composable, use the modifier `toggleable` with the role of `Switch`, then the accessibility focus can focus on the whole table row and pronounce the correct programmatic name and content description.
 
@@ -145,7 +145,7 @@ settings:
 	- Standard Switch widget when applicable
 	- "double tap to activate" or "double tap to toggle" is expected announcement
 
-- **Android Compose**
+- **Jetpack Compose**
   - Standart material `Switch` composable
   - Row with Switch and text view, use `Modifier.toggleable()` with role of `Switch`
 
@@ -157,7 +157,7 @@ settings:
 	- ViewGroup
 	- Set the container objects `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement
 
-- **Android Compose**
+- **Jetpack Compose**
   - Use with `Modifier.toggleable()` in the container will perform the grouping for the inside components automatically
 
 ### State
@@ -170,7 +170,7 @@ settings:
 	- on/off: `isChecked`, `setChecked`
 	- Announcement: disabled, on/off, "double tap to activate" or "double tap to toggle"
 
-- **Android Compose**
+- **Jetpack Compose**
 	- Active: `enabled=true`
 	- Disabled: `enabled=false`
 	- on: `checked=true` 
@@ -197,7 +197,7 @@ settings:
 	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
 	- To hide controls: `Important_For_Accessibility_false`
 
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
@@ -210,7 +210,7 @@ settings:
 
 ### Code Examples
 
-- **Android Compose**
+- **Jetpack Compose**
 {% highlight kotlin %}
 @Composable
 Row(
