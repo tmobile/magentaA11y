@@ -19,5 +19,5 @@ description: This basic web page demonstrates page structure, images, forms and 
 
 
 {::nomarkdown}
-{% include /examples/input-checkbox-radio.html %}
+{% include /examples/input-radio-styled-group.html %}
 {:/}
