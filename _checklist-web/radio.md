@@ -164,7 +164,7 @@ This custom button requires extra scripting work for roving tabindex and event l
 
 ### Radio mixed with interactive elements
 
-**Avoid** Avoid this pattern when possible! Radio groups are not supposed to consist of nested interactive elements. Radio button focus order is not what you may expect.
+**Avoid** this pattern when possible! Radio groups are not supposed to consist of nested interactive elements. Radio button focus order is not what you may expect.
 
 - By default, it is not expected behavior that each radio button can be tabbed to. This is how radio buttons naturally behave
 - As soon as a radio button is selected, the selected radio input receives focus first from the group. As a result screen reader users may not discover a nested control for an option if they start switching between radio buttons alone
