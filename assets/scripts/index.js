@@ -147,35 +147,81 @@ if ( $('dialog').length ) {
     });
 }
 
-$("[name='stepper-input']").on('change', function() {
-    var overlay = $(this).parents(".stepper").find("#stepper-overlay");
-    var val = parseInt($(this).val());
-    $(this).attr('data-selected', val);
-    overlay.attr('data-selected', val);
-});
+// Stepper
+const 
+    $stepper = $(".stepper"),
+    stepperLabel = $stepper.find("label").text(),
+    $stepperStatusTarget = $stepper.find("#stepper-status-target"),
+    $stepperMinButton = $(".minus"),
+    $stepperMaxButton = $(".plus");
 
-$(".minus").click(function(){
+    function removeStepperLiveMessage(delay){
+        if(!delay){ delay = 2000; }
+        setTimeout(() => {
+            $stepperStatusTarget.html("");
+        }, delay);
+    }
+
+    $("#stepper").on("change", function() {
+        // get the value of the select element
+        const value = parseInt($(this).val()),
+            min = parseInt($(this).attr("min")),
+            max = parseInt($(this).attr("max"));
+        if(value > min || value < max){
+            $stepperMaxButton.removeAttr("aria-disabled");
+            $stepperMinButton.removeAttr("aria-disabled");
+        }
+        if(value === min){
+            $stepperMinButton.attr("aria-disabled","true");
+            $stepperMaxButton.removeAttr("aria-disabled");
+        }
+        if(value === max){
+            $stepperMaxButton.attr("aria-disabled","true");
+            $stepperMinButton.removeAttr("aria-disabled");
+        }
+      });
+
+$stepperMinButton.click(function(){
     var overlay = $(this).parents(".stepper").find("#stepper-overlay");
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var min = $(this).parents(".stepper").find("[name=stepper-input]").attr('min');
+    var max = $(this).parents(".stepper").find("[name=stepper-input]").attr('max');
     var val = parseInt(inpt.val());
     if ( val < 1 ) inpt.val(val=1);
     if ( val < 1 ) inpt.attr('data-selected', '1');
-    if ( val == min ) return;
+    if ( val-1 == min ){
+        $stepperMinButton.attr("aria-disabled","true");
+    };
+    if( val-1 < max){
+        $stepperMaxButton.removeAttr("aria-disabled");
+    }
+    if ( val == min ){
+        return;
+    };
     inpt.val(val-1);
     inpt.attr('data-selected', val-1);
     overlay.attr('data-selected', val-1);
+    $stepperStatusTarget.html(stepperLabel + "updated, " + parseInt(val - 1));
+    removeStepperLiveMessage(2000);
 });
 
-$(".plus").click(function(){
+$stepperMaxButton.click(function(){
     var overlay = $(this).parents(".stepper").find("#stepper-overlay");
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var max = $(this).parents(".stepper").find("[name=stepper-input]").attr('max');
     var val = parseInt(inpt.val());
+    if(val+1 > 1){
+        $stepperMinButton.removeAttr("aria-disabled");
+    }
+    if(parseInt(val) === parseInt(max -1)){
+        $stepperMaxButton.attr("aria-disabled","true");
+    }
     if ( val == max ) return;
     inpt.val(val+1);
     inpt.attr('data-selected', val+1);
     overlay.attr('data-selected', val+1);
+    $stepperStatusTarget.html(stepperLabel + "updated, " + parseInt(val + 1));
+    removeStepperLiveMessage(2000);
 });
 
 
