@@ -1,43 +1,42 @@
 ---
 layout: entry
-title:  "Range slider"
+title:  "Slider"
 categories: controls
 
 keyboard:
-  tab: |
+  tab, Ctr+tab or arrow keys: |
     Focus moves visibly to the input
-  arrow-keys: |
+  rt and left arrow-keys: |
     Increase / decrease value one step
 
 mobile:
   swipe: |
     Focus moves to the input
-  iOs-swipe-up: |
-    Increase/decrease slider value one step
-  android-volume: |
+  Swipe-up/ swipe down: |
     Increase/decrease slider value one step
 
 screenreader:
   name:  |
-    Name describes the purpose of the control and matches the visible label - iOS only
+    Name describes the purpose of the control and matches the visible label
   role:  |
-    Identifies itself as "adjustable" in iOS and "seek control" in Android
+    Identifies itself as "adjustable" in iOS and "Slider" in Android
   group: |
-    Label is read with the input
+   n/a
   state: |
-    Expresses its current value
+    Expresses its current value, if applicable
 
 settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
 
-## Developer Notes
+## iOS
+
+### Developer Notes
 
 - A slider is a horizontal track with a control called a thumb, which you  
-  can slide with your finger to move between a minimum and maximum value
-
-## iOS
+  can slide with your finger to move between a minimum and maximum value (without using AT)
+- Use the rt and left arrow keys on the keyboard to change value.
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -71,9 +70,8 @@ settings:
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- Group visible label with button, if applicable, to provide a programmatic name for the button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
-
+- N/a
+  
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
   2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
@@ -114,14 +112,16 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
+- “name, value, adjustable, swipe one finger up or down to adjust the volume"
 
-- "Label, button"
-- "Label, (other content in cell), button" (grouping)
-- "Label, button, selected" (selected state)
-- "Label, dimmed, button" (disabled state)
 
 ## Android
+
+### Developer Notes
+
+- A slider is a horizontal track with a control called a thumb, which you  
+  can slide with your finger to move between a minimum and maximum value (without using AT)
+- Use the rt and left arrow keys on the keyboard to change value.
 
 ### Name
 - Name describes the purpose of the control
@@ -213,8 +213,7 @@ settings:
   - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
   
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label
-  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
+- "Value, name, slider, swipe up or swipe down to adjust"
   
 - "Label, button, double tap to activate"
 - "Label, (other content in cell), button, double tap to activate" (grouping)
