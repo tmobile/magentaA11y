@@ -1,8 +1,7 @@
 ---
 layout: entry
-title:  "Table row button"
+title:  "Table row/list item"
 categories: controls
-
 
 keyboard:
   tab: |
@@ -34,42 +33,45 @@ settings:
 ---
 
 ## General Notes
+A table row/list item can be created by using different types of native components in iOS and Android, such as iOS `List`, `Button`, `UITableView` and Android `RecyclerView`, `Column`, and `LazyColumn`. 
 
-- A scrolling, single-column row or list of rows that can be divided into sections or groups
-- You should use a native component rather than custom component, because it will announce the correct built-in screen reader output for free.
+In general, a table row/list item is an interactive item within a scrolling, single-column row or list of rows. The table row/list item can contain multiple elements inside it such as text, form inputs, buttons, etc. However, a table row/list item can also be a non-interactive element as well.
+
+You should use a native component rather than custom component, because it will have the correct name, role, and values associated with it for accessibility.
 
 ## iOS
 ### Developer Notes on Name, Role, Groupings, and State
 #### Name
-- Programmatic name describes the purpose of the control.
+The programmatic name describes the purpose of the control.
+
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-
-**UIKit**
 - The visible label is the programmatic name
   - If there is a description following the visible label, it must be announced before the role.
+
+**UIKit**
 - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
   - To do this in Interface Builder, set the label using the Identity Inspector
 - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
 - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 
 **SwiftUI**
-- The visible label is the programmatic name
-  - If there is a description following the visible label, it must be announced before the role.
 - If no visible label, use view modifier `accessibilityLabel(_:)`.
 - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 #### Role
-- When using non-native controls (custom controls), roles will need to be manually coded.
+When using non-native controls (custom controls), roles will need to be manually coded.
 
 **UIKit**
-- Implement a `UITableVIew`. Set the specific `UITableViewCell` as interactive or capable of a tap gesture.
+- Implement a [`UITableView`](https://developer.apple.com/documentation/uikit/uitableview) which is defined as "A view that presents data using rows in a single column."
+- If `UITableView` does not fit the use case, please use a `UIButton` and style as appropriate.
+- Set the specific `UITableViewCell` as interactive or capable of a tap gesture.
 - If user is redirected away from the app, set `accessibilityTraits` to `.link`.
 - If user is redirected to a screen within the app, set `accessibilityTraits` to `.button`.
 
 **SwiftUI**
-- Use native `List` view
-  - If using the `List` view is not suitable for your use case, you may implement as a `UIButton` and stylize the component as an interactable table row. Or you may make a fully custom table row from scratch that is interactable and redirects the user to the correct destination.
+- Use native [`List`](https://developer.apple.com/documentation/swiftui/list) view, defined as "A container that presents rows of data arranged in a single column, optionally providing the ability to select one or more members."
+  - If using the `List` view is not suitable for your use case, you may implement as a `Button` and stylize the component as an interactable table row. Or you may make a fully custom table row from scratch that is interactable and redirects the user to the correct destination.
 - If user is redirected away from the app, use view modifier `accessibilityAddTraits(.isButton)` to assign the role as Link.
 - If user is redirected away from the app, use view modifier `accessibilityAddTraits(.isLink)` to assign the role as Link.
 - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
@@ -92,7 +94,7 @@ settings:
 #### State 
 **UIKit**  
 - For enabled: Set `isEnabled` to `true`.
-- For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+- For disabled: Set `isEnabled` to `false`.
   - If necessary, you may change the accessibility trait of the table rows to `notEnabled`, but this may overwrite the current accessibility role of the table row.
 
 **SwiftUI**
@@ -100,13 +102,13 @@ settings:
 
 #### Focus
 - Use the device's default focus functionality. 
+- Focus ring must surround the table row
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
 - When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 **UIKit**
-- Focus ring must surround the table row
 - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
   - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
 - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
@@ -115,7 +117,6 @@ settings:
 - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
 
 **SwiftUI**
-- Focus ring must surround the table row
 - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
   - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
   - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
@@ -136,11 +137,13 @@ settings:
 - Add header trait to table rows that describe a section if needed and do not make header row interactive
 
 **Android View**
-- Use an interactive RecyclerView
+- Use an interactive [`RecyclerView`](https://developer.android.com/develop/ui/views/layout/recyclerview) which is used to display large datasets.
 - Should be coded as a list, if more than one row
 
 **Jetpack Compose**
-- Use regular `Column` for a table row with short list, and `LazyColumn` for the long list of items. For the row to behave as button role, use `modifier.clickable` with role of `role.Button`
+- Use regular [`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1)) for a table row with short list
+- Use [`LazyColumn`](https://developer.android.com/jetpack/compose/lists#lazy) for a long list of items
+- For the column to behave as button role, use `modifier.clickable` with role of `role.Button`
 
 #### Groupings
 - Group text label/ images/controls together in one swipe
@@ -155,9 +158,8 @@ settings:
 
 #### State
 **Android View**  
-- Active: android:enabled=true
-- Disabled" android:enabled=false. Announcement: disabled
-- Announcement: Selected/ "not selected" for row with a checkmark
+- Active: `android:enabled=true`
+- Disabled" `android:enabled=false`
 
 **Jetpack Compose**
 - Active: `enabled=true`
@@ -168,17 +170,17 @@ settings:
 - Consider how focus should be managed between child elements and their parent views.
 
 **Android View**
-- android:focusable=true
-- android=clickable=true
-- Implement an onClick( ) event handler for keyboard, not onTouch( )
-- nextFocusDown
-- nextFocusUp
-- nextFocusRight
-- nextFocusLeft
-- accessibilityTraversalBefore (or after)
-- To move screen reader focus to newly revealed content: Type_View_Focused
-- To NOT move focus, but announce new content: accessibilityLiveRegion
-- To hide controls: Important_For _Accessibility_NO
+- `android:focusable=true`
+- `android=clickable=true`
+- Implement an `onClick()` event handler for keyboard, not `onTouch()`
+- `nextFocusDown`
+- `nextFocusUp`
+- `nextFocusRight`
+- `nextFocusLeft`
+- `accessibilityTraversalBefore` (or after)
+- To move screen reader focus to newly revealed content: `Type_View_Focused`
+- To NOT move focus, but announce new content: `accessibilityLiveRegion`
+- To hide controls: `Important_For _Accessibility_NO`
 
 **Jetpack Compose**
 - `Modifier.focusTarget()` makes the component focusable
@@ -194,5 +196,5 @@ settings:
 #### Announcement examples
 - "Label, double tap to activate"
 - "Label, (plus other content in cell), double tap to activate" (grouping)
-- "Selected, Label, double tap to activate" (selected state)
+- "Selected, Label, double tap to activate" (selected state or row with a checkmark)
 - "Label, dimmed" (disabled state)
