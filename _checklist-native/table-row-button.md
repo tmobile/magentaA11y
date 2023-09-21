@@ -143,7 +143,7 @@ When using non-native controls (custom controls), roles will need to be manually
 **Jetpack Compose**
 - Use regular [`Column`](https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/package-summary#Column(androidx.compose.ui.Modifier,androidx.compose.foundation.layout.Arrangement.Vertical,androidx.compose.ui.Alignment.Horizontal,kotlin.Function1)) for a table row with short list
 - Use [`LazyColumn`](https://developer.android.com/jetpack/compose/lists#lazy) for a long list of items
-- For the column to behave as button role, use `modifier.clickable` with role of `role.Button`
+- For the row to behave as button role, use `modifier.clickable` with role of `role.Button`
 
 #### Groupings
 - Group text label/ images/controls together in one swipe
