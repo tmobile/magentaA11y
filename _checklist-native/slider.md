@@ -113,8 +113,9 @@ settings:
 - Use the rt and left arrow keys on the keyboard to change value.
 
 ### Name
-- Name describes the purpose of the control
-- Programmatic name matches the visible text label (if any)
+- Programmatic name describes the purpose of the control.
+- Since the slider has a native programmatic name, it is not necessary to group the slider with its visible text label (if it exists). It is fine to have the visible text label be read in a separate announcement from the slider's programmatic name.
+- If visible text label exists, the programmatic name should match the visible text label.
 
 - **Android Views**
   - `android:text` XML attribute
@@ -123,20 +124,20 @@ settings:
   - Use `labelFor` attribute to associate the visible label with the control
 - **Jetpack Compose**
   - Compose uses semantics properties to pass information to accessibility services.
-  - The built-in Button composable will fill the semantics properties with information inferred from the composable by default.
-  - Optional: use `contentDescription` for a more descriptive name to override the default visible label of the button text.
+  - The built-in Slider composable will fill the semantics properties with information inferred from the composable by default.
   - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Role
 - When not using native controls (custom controls), roles will need to be manually coded.
 - **Android Views**
-  - Standard button or ImageButton
+  - Seekbar class
+  - Slider class
 - **Jetpack Compose**
-  - Standard `Button` composable
+  - `Slider` composable
+  - `RangeSlider` composable
 
 ### Groupings
-- Group visible label with button (if applicable) to provide a programmatic name for the button
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
+- N/A
 
 - **Android Views**
   - `ViewGroup`
@@ -147,20 +148,19 @@ settings:
 
 ### State
 - **Android Views**
+  - By default, the value of the slider is announced. If not, set the `contentDescription` to the correct value.
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
 - **Jetpack Compose**
-  - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
-  - Disabled:  `Button(enabled = false)` announces as disabled
+  - By default, the value of the slider is announced. If not, set the `contentDescription` to the correct value.
+  - Active: default state is active and enabled. Use `Slider(enabled = true)` to specify explicitly
+  - Disabled:  `Slider(enabled = false)` announces as disabled
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
-  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
 
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -187,24 +187,17 @@ settings:
     - focus order accepts following values: up, down, left, right, previous, next, start, end
     - step 3: use `second.requestFocus()` to gain focus
 
-### Custom Accessibility Action
-- When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
-- Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
-- The Button class by default supplies all the necessary semantics to make it fully accessible.
-
-- **Android Views**
-  - step 1: Create an accessibility service
-  - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
-  - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
-
+### Code Example
 - **Jetpack Compose**
-  - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
-  - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
-  
+{% highlight kotlin %}
+var sliderPosition by remember { mutableStateOf(0f) }
+Column {
+    Slider(
+        modifier = Modifier.semantics { contentDescription = "Regular Slider Description" },
+        value = sliderPosition,
+        onValueChange = { sliderPosition = it })
+}
+{% endhighlight %}
+
 ### Announcement examples
 - "Value, name, slider, swipe up or swipe down to adjust"
-  
-- "Label, button, double tap to activate"
-- "Label, (other content in cell), button, double tap to activate" (grouping)
-- "Label, button, selected, double tap to activate" (selected state)
-- "Label, disabled" (disabled state)
