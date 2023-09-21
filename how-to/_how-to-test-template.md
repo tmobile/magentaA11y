@@ -20,7 +20,7 @@ permalink: /how-to-test/content-structure/
 
 ## Video Example
 {: .divider }
-{% include video-player.html filename = "/assets/media/video/how-to/some-video-here.mp4" title = "How to test with the keyboard" vtt="/assets/media/video/how-to/some-video-here.mp4.vtt" %}
+{% include video-player.html filename = "/assets/media/video/how-to/some-video-here.mp4" title = "Description of the video goes here" vtt="/assets/media/video/how-to/some-video-here.mp4.vtt" %}
 
 ## Related WCAG
 - x.x.x Some Success Criterion
