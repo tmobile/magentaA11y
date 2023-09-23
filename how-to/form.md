@@ -89,11 +89,11 @@ Select fields allow users to select one or more options from an expandable list 
     <tr>
       <td>
           <input type="checkbox" id="accessibleCheckbox">
-          <label for="accessibleCheckbox">Accessible Checkbox</label>
+          <label for="accessibleCheckbox">Accessible</label>
       </td>
       <td>
           <input style="display:none" type="checkbox" id="inaccessibleCheckbox">
-          <label for="inaccessibleCheckbox">Inaccessible Checkbox</label>
+          <label for="inaccessibleCheckbox">Inaccessible</label>
       </td>
     </tr>  
     </tbody>
@@ -143,26 +143,26 @@ Select fields allow users to select one or more options from an expandable list 
     <tr>
       <td>
         <label for="selectPass">
-          Select a number
+          Select a Nato phonetic letter
         </label>
         <select id="selectPass">
-          <option value="None" selected disabled>Select a number</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="None" selected disabled>Select a letter</option>
+          <option value="Alpha">Alpha</option>
+          <option value="Bravo">Bravo</option>
+          <option value="Charlie">Charlie</option>
         </select>
         <button aria-disabled="true" class="button" id="submitSelectPassSelection" type="submit">Submit</button>
         <div role="alert" id="messagePass" style="display: none;">This was an expected submission!</div>
       </td>
       <td>
         <label for="selectFail">
-          Select a number
+          Select a Nato phonetic letter
         </label>
         <select id="selectFail">
-          <option value="None" selected disabled>Select a number</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="None" selected disabled>Select a letter</option>
+          <option value="Alpha">Alpha</option>
+          <option value="Bravo">Bravo</option>
+          <option value="Charlie">Charlie</option>
         </select>
         <div id="messageFail" style="display: none;">This was an unexpected submission!</div>
       </td>
@@ -297,7 +297,7 @@ Select fields allow users to select one or more options from an expandable list 
 
 <div class="how-to-test-checklist-item">
   <h3>✓ Ensure there is proper error handling for required fields</h3>
-  <p><strong>Note:</strong> When error text is not programmatically associated by use of <code>aria-describedby</code> they may not be discovered by screen reader users.</p>
+  <p><strong>Note:</strong> Error messages should be announced for screen reader users when the form recives focus. Forms should also notify screen reader users if invalid content has been entered in a field.</p>
   <table class="column-2">
     <thead>
       <th scope="col">
