@@ -36,67 +36,56 @@ settings:
 
 ## Developer notes
 
-- A segmented control is a linear set of two or more segments, each of which functions as a mutually exclusive button
+- A segmented control is a horizontal set of two or more segments presented, each of which functions as a mutually exclusive button
 
 ### Name
-- Programmatic name describes the purpose of the control.
+- A programmatic name is assigned to each segment title
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The button’s title will overwrite the button’s `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
-    - To do this in Interface Builder, set the label using the Identity Inspector
+    - The segment's title will overwrite the segment’s `accessibilityLabel`.
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
-  - If no visible label, use view modifier `accessibilityLabel(_:)`.
-  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
+  - By default, the programmatic name is the visible text label of the segment
+  - If necessary, use view modifier `accessibilityLabel(_:)`.
+  - If a segment has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- When using non-native controls (custom controls), roles will need to be manually coded. Otherwise in native controls, they are automatically assigned.
-- Since menu items are interactive, it must be indicated to the user that they are interactive such as indicating that it is a button or it can be double-tapped to be selected. 
+- Since picker items are interactive, it must be indicated to the user that they are interactive such as indicating that it is a button or it can be double-tapped to be selected. 
 
 - **UIKit**
-  - Use `UIMenu`
+  - Use `UISegmentedControl`
 - **SwiftUI**
-  - Use native `Menu` view
+  - Use native `Picker` view
+  - Use `SegmentedPickerStyle`
 
 ### Groupings
-- Each menu item and its children are grouped together
-- Ensure logical reading order
+- N/A
 
 - **UIKit**
-  1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
-  2. Set `isAccessibilityElement` to `true` for the parent view. Then, adjust `accessibilityLabel` and `accessibilityTraits` accordingly.
-  - If frame does not exist due to custom menu, use `accessibilityFrameInContainer` to set the custom control’s frame to the parent view’s container or view of your choice.
-    - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
-  - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
-  - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
+  - Follow native grouping and order
 - **SwiftUI**
-  - Native `Menu` views are accessible by default
-  - If necessary, use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
+  - Follow native grouping and order
 
 ### State
-- In the case of expandable menus, state of the menu must be announced (i.e. expands/collapses, opens/closes). Add logic and announcements to the programmatic name for the state.
+- A state of the individual segments themselves are announced, which is either "Selected" or "Unselected"
+- The position of the segment out of the entire set must be announced.
 
 - **UIKit**
-  - If applicable, menu items should be announced whether they are selected/unselected, in the cases of radio buttons or checkboxes. 
-  - For enabled menu items: Set `isEnabled` to `true`.
+  - Segments should be announced whether they are selected/unselected.
   - For disabled menu items: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
-    - If necessary, you may change the accessibility trait of the menu item to `notEnabled`, but this may overwrite the current accessibility role of the menu item.
+    - If necessary, you may change the accessibility trait of the menu item to `notEnabled`, but this may overwrite the current accessibility role of the segmented control.
 - **SwiftUI**
-  - If applicable, menu items should be announced whether they are selected/unselected, in the cases of radio buttons or checkboxes. 
-  - For selected menu items, use `accessibilityAddTraits(.isSelected)`.
-  - For disabled menu items, use view modifier `disabled()`.
+  - By default, the "selected" state is announced and the position of the segment out of the set.
+  - For disabled, use view modifier `disabled()`.
 
 ### Focus
 - Use the device's default focus functionality. 
-- Focus should be confined within the menu, which can include the button that opened it, if content underneath is hidden.
+- Focus should be confined within the segmented control
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- When a menu is closed, the focus should return to the triggering element
-- An invisible close button can be implemented to close the menu. Ensure this button is in the swipe order, if implemented.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
