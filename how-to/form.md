@@ -297,7 +297,7 @@ Select fields allow users to select one or more options from an expandable list 
 
 <div class="how-to-test-checklist-item">
   <h3>✓ Ensure there is proper error handling for required fields</h3>
-  <p><strong>Note:</strong> Error messages should be announced for screen reader users when the form field recives focus. Forms should also notify screen reader users if invalid content has been entered in a field.</p>
+  <p><strong>Note:</strong> Error messages should be announced for screen reader users when the form field receives focus. Forms should also notify screen reader users if invalid content has been entered in a field.</p>
   <table class="column-2">
     <thead>
       <th scope="col">
