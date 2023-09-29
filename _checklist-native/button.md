@@ -5,7 +5,7 @@ categories: controls
 
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the button
   spacebar: |
     Activates on iOS and Android
@@ -34,11 +34,11 @@ settings:
 ---
 
 ## Developer notes
-- A button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort.
-- A button is a control that executes an action or navigates within the app. 
-  - To redirect users outside of the app, use links.
-- Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app.
-- Name, Role, State must be stated in a single announcement when focus is on the control.
+- A button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort
+- A button is a control that executes an action or navigates within the app 
+  - To redirect users outside of the app, use links
+- Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app
+- Name, Role, State must be stated in a single announcement when focus is on the control
 
 ## iOS
 
