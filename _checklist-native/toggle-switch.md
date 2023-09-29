@@ -4,7 +4,7 @@ title:  "Toggle switch"
 categories: controls
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the switch or table row with switch
   spacebar: |
     Activates on iOS and Android
@@ -36,9 +36,14 @@ settings:
 
 - A switch, or toggle, has two mutually exclusive states — on and off
 - You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
-- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label before the switch does not meet this requirement.
+- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label before the switch and not on the switch does not meet this requirement.
 
 ## iOS
+
+### Developer Notes
+- A switch, or toggle, has two mutually exclusive states — on and off
+- You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
+- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label before the switch and not on the switch does not meet this requirement
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -120,6 +125,11 @@ settings:
 - “Label, dimmed, switch button, off”  Disabled state
 
 ## Android
+
+### Developer Notes
+- A switch, or toggle, has two mutually exclusive states — on and off
+- You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
+- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label before the switch and not on the switch does not meet this requirement
 
 ### Name
 
