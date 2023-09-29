@@ -4,7 +4,7 @@ title:  "Picker / Spinner / Dropdown"
 categories: controls
 
 keyboard:
-  tab and arrow keys: |
+  tab, arrow keys or Ctl+tab: |
       Focus visibly moves to the picker
   spacebar: |
       Selects and opens the picker/spinner on iOS and Android
@@ -33,7 +33,6 @@ settings:
 ---
 
 ## Developer notes
-
 
 - Spinners and pickers provide a quick way to select one value from a set. Dropdowns/ Spinners/ Pickers all follow this page's guidance
 - Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
