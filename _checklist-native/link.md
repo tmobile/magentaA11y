@@ -5,7 +5,7 @@ categories: controls
 order: 1
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the link
   spacebar: |
     Activates on iOS and Android
@@ -39,11 +39,12 @@ settings:
 
 ### **Developer Notes**
 
-- Clickable text that navigates the user outside of the app to a web page. (ex: opens an web browser)
-- When accessing an in-line link that is inside a paragraph with a screen reader, the focus should be around the paragraph container.
-- To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
-- There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
-- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
+- Clickable text that navigates the user outside of the app to a URL (ex: opens a web browser)
+- When accessing an in-line link that is inside a paragraph with a screen reader, the focus could be around the paragraph container
+- To activate a link, screen reader users must double tap both inline links and links outside of paragraphs
+- There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph
+- WCAG 2.2 allows for inline link text font size at 24x24px
+- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive
 
 ### Name
 - Clickable text that describes the destination or purpose of the link
