@@ -5,9 +5,7 @@ categories: controls
 
 
 keyboard:
-  tab: |
-    Focus visibly moves to the button
-  arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the button
   spacebar: |
     Activates the button on iOS and Android
@@ -24,11 +22,11 @@ screenreader:
   name:  |
     Purpose is clear and matches visible label
   role:  |
-    Identifies as a button in iOS and "double tap to activate" in Android
-  group: |
-    n/a
+    Identifies as a button in iOS and button or "double tap to activate" in Android
+  value: |
+    Expresses the stepper value
   state: |
-    Expresses its state and stepper value (disabled/dimmed)
+    Expresses its state (disabled/dimmed)
 
 settings:
   text resize: |
