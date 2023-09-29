@@ -4,7 +4,7 @@ title:  "Range slider"
 categories: controls
 
 keyboard:
-  tab: |
+  tab, arrow keys or Ctl+tab: |
     Focus moves visibly to the input
   arrow-keys: |
     Increase / decrease value one step
@@ -12,19 +12,19 @@ keyboard:
 mobile:
   swipe: |
     Focus moves to the input
-  iOs-swipe-up: |
+  iOS-swipe-up/down: |
     Increase/decrease slider value one step
-  android-volume: |
+  android-volume or swipe up/down: |
     Increase/decrease slider value one step
 
 screenreader:
   name:  |
-    Name describes the purpose of the control and matches the visible label - iOS only
+    Name describes the purpose of the control and matches the visible label 
   role:  |
     Identifies itself as "adjustable" in iOS and "seek control" in Android
   group: |
-    Label is read with the input
-  state: |
+    Label is sometimes announced with the input
+  value: |
     Expresses its current value
 
 settings:
@@ -33,7 +33,6 @@ settings:
 ---
 
 ## Developer Notes
-
 
 - A slider is a horizontal track with a control called a thumb, which you  
   can slide with your finger to move between a minimum and maximum value
