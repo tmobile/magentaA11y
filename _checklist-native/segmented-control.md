@@ -4,7 +4,7 @@ title:  "Segmented Control / Tab"
 categories: controls
 
 keyboard:
-  tab: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the button
   arrow keys: |
     Navigate through group
