@@ -4,7 +4,7 @@ title:  "Modal"
 categories: notifications
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves, confined within the modal
   escape: |
     The modal closes and returns focus to the button that launched it
