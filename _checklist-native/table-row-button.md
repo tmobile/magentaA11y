@@ -1,11 +1,11 @@
 ---
 layout: entry
-title:  "Table row button"
+title:  "Table row/ Blade"
 categories: controls
 
 
 keyboard:
-  tab: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the button
   spacebar: |
     Activates the button on iOS and Android
@@ -36,7 +36,7 @@ settings:
 ## Developer notes
 
 - A scrolling, single-column row or list of rows that can be divided into sections or groups
-- You should use a native component rather than custom component, because it will announce the correct built-in screen reader output for free.
+- You should use a native component rather than custom component, because it will announce the correct built-in screen reader output for free
 
 ## iOS
 
