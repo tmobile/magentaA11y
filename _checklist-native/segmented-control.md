@@ -111,18 +111,11 @@ settings:
 
 ### Developer notes
 
-- A menu is a container for a list of items
-- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Options to close the menu for the screen reader user:
-  - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item
-  - Two/three finger swipe to close
-  - A close button
-  - Swiping back to the element that opened menu
-- If menu hides content underneath it, the screen reader focus should be confined within the menu.
-- Tapping outside the menu to close cannot be the only option for screen reader users
+- A segmented control is a horizontal linear set of two or more segments presented, each of which functions as a mutually exclusive button
 
 ### Name
-- Name describes the purpose of the control (Ex: opens settings menu or closes menu), with additional label description if needed.
+- A programmatic name is assigned to each segment title
+- If visible text label exists, the programmatic name should match the visible text label.
 
 - **Android Views**
   - `android:text` XML attribute
@@ -130,50 +123,46 @@ settings:
   - `contentDescription` overrides `android:text`
   - Use `labelFor` attribute to associate the visible label with the control
 - **Jetpack Compose**
+  - By default, the programmatic name is the visible text label of the segment
   - Compose uses semantics properties to pass information to accessibility services
-  - The built-in `DropdownMenuItem` composable will fill the semantics properties with information inferred from the composable by default
-  - Optional: use `contentDescription` for a more descriptive name to override the default text label of the `DropdownMenuItem` composable
+  - Optional: use `contentDescription` for a more descriptive name to override the default text label
   - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Role
-- Required: Screen reader user is confined inside a menu, communicating a modal is present if hiding content underneath it
-- When not using native controls (custom controls), roles will need to be manually coded.
+- Since the segmented control items are interactive, it must indicate the interaction of double-tap for segment selecting.
+- When not using native controls, roles will need to be manually coded
 - **Android Views**
-  - `android.view.Menu`
+  - Tabs
+  - Button or Image Button
 - **Jetpack Compose**
-  - `DropdownMenu`, `ExposedDropdownMenuBox`
+  - `TabRow`, `Tab`
+  - `Chip`
 
 ### Groupings
-- Visible label, if any, is grouped with the menu button in a single swipe
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
-
+- N/A
 - **Android Views**
-  - `ViewGroup`
-  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+  - Follow native component grouping
 - **Jetpack Compose**
-  - When use built-in Composable `DropdownMenuItem` in `DropdownMenu`, then it has the default grouping with the elements inside.
-  - Use `Modifier.semantics(mergeDescendants = true) {}` when work on the customized menu items
-  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
+  - Follow native component grouping
 
 ### State
-- Expandable menus
-  - State must be announced - expands/collapses, opens/closes. Add logic and announcement to the programmatic name for the state
-  - If "opens" or "closes" is not included in the name, the expands/collapses state must be announced
+- Selected state is announced as either "Selected" or "Unselected" for the control in group that is focused
+- The position of the segment out of the entire segment list must be announced.
+
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
+  - Selected: Announced as "selected"
 - **Jetpack Compose**
-  - Active: default state is active and enabled. Use `DropdownMenuItem(enabled = true)` to specify explicitly
-  - Disabled:  `DropdownMenuItem(enabled = false)` announces as disabled
+  - Active: default state is active and enabled. Use `Tab(enabled = true)` to specify explicitly
+  - Disabled:  `Tab(enabled = false)` announces as disabled
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
-  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
+  - Use `Tab(selected = <condition logic>)` to define selected state
 
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -203,27 +192,30 @@ settings:
 ### Code Example
 - **Jetpack Compose**
 {% highlight kotlin %}
-var expanded by remember { mutableStateOf(false) }
-DropdownMenu(
-    expanded = expanded,
-    onDismissRequest = { expanded = false }
-) {
-    DropdownMenuItem(
-        text = { Text("Settings") },
-        onClick = { /* Handle settings! */ },
-        leadingIcon = {
-            Icon(
-                Icons.Outlined.Settings,
-                contentDescription = null
+var tabIndex by remember { mutableStateOf(0) }
+val titles = listOf("Tab 1", "Tab 2", "Tab 3")
+Column {
+    TabRow(selectedTabIndex = tabIndex) {
+        titles.forEachIndexed { index, title ->
+            Tab(
+                selected = tabIndex == index,
+                onClick = { tabIndex = index },
+                text = { Text(text = title) }
             )
-        })
+        }
+    }
+    Box(modifier = Modifier
+        .fillMaxWidth()
+        .background(MaterialTheme.colorScheme.background)) {
+        Text(
+            modifier = Modifier.align(Alignment.Center),
+            text = "Tab ${tabIndex + 1} selected",
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.primary
+        )
+    }
 }
 {% endhighlight %}
 
 ### Announcement examples
 - Options for announcements below depend on framework and versions. Announcement order can vary.  
-
-- "Open navigation drawer, button, double tap to activate"
-- "More options, button, double tap to activate"
-- "Open main menu, button, double tap to activate"
-- "More options button, disabled" (disabled state)
