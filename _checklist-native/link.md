@@ -50,6 +50,7 @@ settings:
 - Programmatic name matches the visible text label
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
     - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of "Learn more" that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as "Learn more about accessible controls".
+    - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of "Learn more" that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as "Learn more about accessible controls".
 
 - **UIKit**
   - The link's visible text will overwrite the link's `accessibilityLabel`.
@@ -70,6 +71,7 @@ settings:
   - Set `accessibilityTraits` to `.link`.
   - Stylize the text to appear as a link
 
+
 - **SwiftUI**
   - Use native `Link` view
   - If necessary, use view modifier `accessibilityAddTraits(.isLink)` to assign the role as Link.
@@ -86,6 +88,7 @@ settings:
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 
+
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
   - After grouping the paragraph and the in-line link to form a single accessibility element, bind the link action to it.
@@ -94,10 +97,12 @@ settings:
 
 ### State 
 
+
 - **UIKit**  
   - For enabled: Set `isEnabled` to `true`.
   - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the link to `notEnabled`, but this may overwrite the current accessibility role of the link.
+
 
 - **SwiftUI**
   - For disabled, use view modifier `disabled()`.
@@ -116,6 +121,8 @@ settings:
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.
 
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.
+
 - **SwiftUI**
   - Implement focus ring to be around the paragraph container, so that double-tapping the container will activate the in-line link, given that there is only one link inside the container.
   - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
@@ -124,6 +131,7 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
+- Announcement order can vary
 - Announcement order can vary
 - "Label, link"
 - "All text in paragraph including url, link" (link in paragraph)
@@ -141,16 +149,30 @@ settings:
 - To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
 - There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
 - The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
+### Further reading
+- [UIAccessibilityTraits](https://developer.apple.com/documentation/uikit/uiaccessibilitytraits)
+
+## **Android**
+
+### **Developer Notes**
+
+- Clickable text that navigates the user outside of the app to a web page. (ex: opens an web browser)
+- When accessing an in-line link that is inside a paragraph with a screen reader, the focus should be around the paragraph container.
+- To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
+- There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
+- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
 
 ### Name
 - Clickable text that describes the destination or purpose of the link
 - Programmatic name matches the visible text label
+  - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of “Learn more” that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as “Learn more about accessible controls".
   - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of “Learn more” that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as “Learn more about accessible controls".
 
 ### Role
 - Ensure screen reader users can navigate to links from the TalkBack menu
 - Role is automatically announced if a native component is used
 - When using non-native controls (custom controls), roles will need to be manually coded.
+
 
 - **Android Views**
   - TextView - Announces as “link”
@@ -163,6 +185,7 @@ settings:
 ### Groupings
 - Link text can be grouped with paragraph text automatically to make a larger touch target, provided there is only one interactive link in view.
 
+
 - **Android Views**
   - `ViewGroup`
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
@@ -172,6 +195,7 @@ settings:
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
+
 
 - **Android Views**
   - Active: `android:enabled=true`
@@ -218,7 +242,7 @@ settings:
     - step 3: use `second.requestFocus()` to gain focus
 
 ### Code Example
-- **Android Compose**
+- **Jetpack Compose**
 {% highlight kotlin %}
 /**
  * Custom Composable with AndroidView to support link in textView and the links accessibility features from talkback menu
@@ -240,6 +264,9 @@ fun LinkText(
     )
 }
 {% endhighlight %}
+
+### Further reading
+- [App Links](https://developer.android.com/training/app-links)
 
 ### Further reading
 - [App Links](https://developer.android.com/training/app-links)

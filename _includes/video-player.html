@@ -5,5 +5,13 @@
       <video width="100%" controls tabindex="0" aria-label="{{ include.title }}" >
         <source src="{{ site.baseurl }}{{ include.filename }}" type="video/mp4">
         Your browser does not support HTML video.
+        {% if include.vtt %}
+        <track
+          label="English"
+          kind="subtitles"
+          srclang="en"
+          src="{{ include.vtt }}"
+          default />
+        {% endif %}
       </video>
   </video-container>

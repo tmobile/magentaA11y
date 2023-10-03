@@ -90,7 +90,7 @@ Carousels are worth testing against a normal scrolling format when people can ge
 ### Use semantic HTML
 
 This is one example of an accessible carousel wizard.
-- It is not the only way to build a carousel, but it meets all the critieria:
+- It is not the only way to build a carousel, but it meets all the criteria:
   - The group has a name
   - New slides titles are announced
   - Arrow keys advance the slides

@@ -171,7 +171,7 @@ Row(
   - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
   - `contentDescription` overrides `android:text`  
   - Use `labelFor` attribute to associate the visible label with the control (Best practice)
-- **Android Compose**
+- **Jetpack Compose**
   - By default, the simple checkbox composable is readout & focused separately from its label text, which makes it hard to understand the context. 
   - Use `Row` composable and `toggleable(role = Role.Checkbox)` with inner element as `Checkbox` composable (recommended practice) to have entire row including its label focused for selection, so it allows screenreader to read the name and role together. 
   - Optional: use `Modifier.semantics {  contentDescription = "" }` for a more descriptive name
@@ -182,7 +182,7 @@ Row(
 - **Android Views**
   - CheckBox Class
   - Announced as "checkbox"
-- **Android Compose**
+- **Jetpack Compose**
   - Simple checkbox composable. 
   - Alternatively use checkbox composable in combination with `Row` and `toggleable(role = Role.Checkbox)`. Code example above.
   - Announced as "checkbox"
@@ -194,7 +194,7 @@ Row(
   - ViewGroup
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
   -  use `labelFor`
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to importantForAccessibility when compared to android views.
   - To allow checkbox grouping, specify `onCheckedChange = null` on inner simple checkbox composable when combined with `Row` composable and `toggleable(value = checkedState.value, onValueChange = { checkedState.value = it })`. This makes the entire row group selectable including its label. 
   - `FocusRequester` can be used to request focus to individual components with in the group. More on FocusRequester in the focus section below.
@@ -205,7 +205,7 @@ Row(
 - **Android Views**
   - Active: `android:enabled=true`, `isChecked`, `setChecked`
   - Disabled: `android:enabled=false` announced as: "disabled"
-- **Android Compose**
+- **Jetpack Compose**
   - Checked: `Checkbox(checked = true)` announced as: "checked"
   - Enabled:  `Checkbox(enabled = true)` 
   - Disabled: `Checkbox(enabled = false)` announced as: "disabled"
@@ -232,7 +232,7 @@ Row(
      - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
      - To hide controls: `Important_For_Accessibility_false`
      - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
-  - **Android Compose**
+  - **Jetpack Compose**
     - `Modifier.focusTarget()` makes the component focusable
     - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
     - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state

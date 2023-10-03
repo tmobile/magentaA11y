@@ -2,7 +2,8 @@
   margin-bottom: 3rem;
   box-shadow: 0 0 5px 1px rgba(#000, .1);
 
-  .expander-toggle {
+  .expander-toggle,
+  .expander-toggle-fail {
     display: block;
     width: 100%;
     color: #222;
@@ -57,7 +58,8 @@
       }
     }
 
-    &[aria-expanded="true"] {
+    &[aria-expanded="true"],
+    &.expanded {
       border-bottom: 1px solid $color-border-gray;
       &:before {
         transform: rotate(180deg);

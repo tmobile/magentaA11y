@@ -164,26 +164,25 @@ This custom button requires extra scripting work for roving tabindex and event l
 
 ### Radio mixed with interactive elements
 
-**Avoid** placing interactive elements between radio buttons.
+**Avoid** this pattern when possible! Radio groups are not supposed to consist of nested interactive elements. Radio button focus order is not what you may expect.
 
-- Radio button focus order is not what you think it is.
-- When nothing is selected, tab order moves through as expected. 
-- However, as soon as a radio button is selected, the selected radio input receives focus first from the group. 
-
-#### Checkbox radio hack
-
-- This hack must be used very carefully on a case by case basis.
-- With great power comes great responsibility.
+- By default, it is not expected behavior that each radio button can be tabbed to. This is how radio buttons naturally behave
+- As soon as a radio button is selected, the selected radio input receives focus first from the group. As a result screen reader users may not discover a nested control for an option if they start switching between radio buttons alone
+- To try to mitigate screen reader users not discovering the nested controls, describe the fieldset / radiogroup with non-visual text. This can be done with <code>aria-describedby</code> on the <code>fieldset</code>. For example, "Edit controls are available which follow each radio button"
+- Ensure the nested controls also have additional context defined by <code>aria-describedby</code>. This will help screen reader users understand their purpose. 
+- Use of the same <code>name</code> attribute is important to link the radio buttons as a programmatic group
+- Keyboard functionality such as arrow up/down/left/right should change the selected radio button.
   
 {% highlight html %}
-{% include /examples/input-checkbox-radio.html %}
+{% include /examples/input-radio-styled-group.html %}
 {% endhighlight %}
 
 {::nomarkdown}
 <example>
-{% include /examples/input-checkbox-radio.html %}
+{% include /examples/input-radio-styled-group.html %}
 </example>
 {:/}
+
 
 ## Developer notes
 

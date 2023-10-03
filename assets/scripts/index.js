@@ -7,11 +7,20 @@ $("#copy").click(function(){
 });
 
 // Expander toggle
-$( ".expander-toggle" ).click(function() {
+$( ".expander-toggle").click(function() {
     if( $(this).attr('aria-expanded') == 'false' ) {
         $(this).attr('aria-expanded', 'true').next(".expander-content" ).addClass('visible').attr('aria-hidden', 'false');
     } else if( $(this).attr('aria-expanded') == 'true' ) {
         $(this).attr('aria-expanded', 'false').next(".expander-content" ).removeClass('visible').attr('aria-hidden', 'true');
+    }
+});
+
+// Expander toggle fail example from How to Test Links & Buttons
+$(".expander-toggle-fail").click(function() {
+    if( $(this).hasClass('expanded') ) {
+        $(this).removeClass('expanded').next(".expander-content" ).removeClass('visible');
+    } else if( !$(this).hasClass('expanded') ) {
+        $(this).addClass('expanded').next(".expander-content" ).addClass('visible');
     }
 });
 
@@ -138,35 +147,81 @@ if ( $('dialog').length ) {
     });
 }
 
-$("[name='stepper-input']").on('change', function() {
-    var overlay = $(this).parents(".stepper").find("#stepper-overlay");
-    var val = parseInt($(this).val());
-    $(this).attr('data-selected', val);
-    overlay.attr('data-selected', val);
-});
+// Stepper
+const 
+    $stepper = $(".stepper"),
+    stepperLabel = $stepper.find("label").text(),
+    $stepperStatusTarget = $stepper.find("#stepper-status-target"),
+    $stepperMinButton = $(".minus"),
+    $stepperMaxButton = $(".plus");
 
-$(".minus").click(function(){
+    function removeStepperLiveMessage(delay){
+        if(!delay){ delay = 2000; }
+        setTimeout(() => {
+            $stepperStatusTarget.html("");
+        }, delay);
+    }
+
+    $("#stepper").on("change", function() {
+        // get the value of the select element
+        const value = parseInt($(this).val()),
+            min = parseInt($(this).attr("min")),
+            max = parseInt($(this).attr("max"));
+        if(value > min || value < max){
+            $stepperMaxButton.removeAttr("aria-disabled");
+            $stepperMinButton.removeAttr("aria-disabled");
+        }
+        if(value === min){
+            $stepperMinButton.attr("aria-disabled","true");
+            $stepperMaxButton.removeAttr("aria-disabled");
+        }
+        if(value === max){
+            $stepperMaxButton.attr("aria-disabled","true");
+            $stepperMinButton.removeAttr("aria-disabled");
+        }
+      });
+
+$stepperMinButton.click(function(){
     var overlay = $(this).parents(".stepper").find("#stepper-overlay");
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var min = $(this).parents(".stepper").find("[name=stepper-input]").attr('min');
+    var max = $(this).parents(".stepper").find("[name=stepper-input]").attr('max');
     var val = parseInt(inpt.val());
     if ( val < 1 ) inpt.val(val=1);
     if ( val < 1 ) inpt.attr('data-selected', '1');
-    if ( val == min ) return;
+    if ( val-1 == min ){
+        $stepperMinButton.attr("aria-disabled","true");
+    };
+    if( val-1 < max){
+        $stepperMaxButton.removeAttr("aria-disabled");
+    }
+    if ( val == min ){
+        return;
+    };
     inpt.val(val-1);
     inpt.attr('data-selected', val-1);
     overlay.attr('data-selected', val-1);
+    $stepperStatusTarget.html(stepperLabel + "updated, " + parseInt(val - 1));
+    removeStepperLiveMessage(2000);
 });
 
-$(".plus").click(function(){
+$stepperMaxButton.click(function(){
     var overlay = $(this).parents(".stepper").find("#stepper-overlay");
     var inpt = $(this).parents(".stepper").find("[name=stepper-input]");
     var max = $(this).parents(".stepper").find("[name=stepper-input]").attr('max');
     var val = parseInt(inpt.val());
+    if(val+1 > 1){
+        $stepperMinButton.removeAttr("aria-disabled");
+    }
+    if(parseInt(val) === parseInt(max -1)){
+        $stepperMaxButton.attr("aria-disabled","true");
+    }
     if ( val == max ) return;
     inpt.val(val+1);
     inpt.attr('data-selected', val+1);
     overlay.attr('data-selected', val+1);
+    $stepperStatusTarget.html(stepperLabel + "updated, " + parseInt(val + 1));
+    removeStepperLiveMessage(2000);
 });
 
 
@@ -443,4 +498,136 @@ $("#spam").on('change', function() {
         $('#hint-spam').removeClass('inert').addClass('enabled');
         $('#hint-spam-message').append('Spam preferences saved');
     }, 1000);
+});
+
+//Handling jump links from How to Test Links & Buttons
+function scrollToTop() {
+    // Programmatically set the focus on the link target element
+    const targetElement = $('#top-text');
+    targetElement.focus();
+  }
+
+  // Add a click event listener to the link using jQuery
+ $('#return-to-top-link').on('click', scrollToTop);
+
+// Handling modal dialogs from How to Test Links & Buttons
+var passModal = $("#passModal");
+var linkButtonPass = $("#modalFromLinkPass");
+var closeButtonPass = $("#closePassModal");
+var failModal = $("#failModal");
+var linkButtonFail = $("#modalFromLinkFail");
+var closeButtonFail = $("#closeFailModal");
+var isModalOpen = false;
+
+// Open passModal when the link is clicked
+linkButtonPass.click(function (e) {
+  e.preventDefault();
+  openModal(passModal, closeButtonPass);
+});
+
+// Open failModal when the link is clicked
+linkButtonFail.click(function (e) {
+  e.preventDefault();
+  openModal(failModal, closeButtonFail);
+});
+
+// Close the modal when the close button is clicked
+closeButtonPass.click(function () {
+  closeModal(passModal, linkButtonPass);
+});
+
+// Close the failModal when the close button is clicked
+closeButtonFail.click(function () {
+  closeModal(failModal, linkButtonFail);
+});
+
+// Close the modal when clicking outside the modal content
+$(window).click(function (e) {
+  if ((e.target === passModal[0] || e.target === failModal[0]) && isModalOpen) {
+    closeModal(passModal, linkButtonPass);
+    closeModal(failModal, linkButtonFail);
+  }
+});
+
+// Prevent modal from closing when clicking inside the modal-content
+$(".modal-content").click(function (e) {
+  e.stopPropagation();
+});
+
+// Close modal when pressing the Escape key
+$(document).keyup(function (e) {
+  if (e.key === "Escape" && isModalOpen) {
+    closeModal(passModal, linkButtonPass);
+    closeModal(failModal, linkButtonFail);
+  }
+});
+
+function openModal(targetModal, closeButton) {
+  targetModal.css("display", "block");
+  targetModal.attr("aria-hidden", "false");
+  //closeButton.focus();
+  targetModal.on("keydown", trapFocus);
+  isModalOpen = true;
+  setTimeout(function() {
+    // Set focus after a delay of 1000 milliseconds
+    targetModal.focus();
+  }, 100);
+}
+
+function closeModal(targetModal, linkButton) {
+  targetModal.css("display", "none");
+  targetModal.attr("aria-hidden", "true");
+  linkButton.focus();
+  targetModal.off("keydown", trapFocus);
+  isModalOpen = false;
+}
+
+function trapFocus(e) {
+  var targetModal = $(e.target).closest(".modal");
+  var focusableElements = targetModal.find('a[href], button, textarea, input, select').filter(':visible');
+  var firstFocusable = focusableElements.first();
+  var lastFocusable = focusableElements.last();
+
+  if (e.key === "Tab") {
+    if (e.shiftKey && document.activeElement === firstFocusable[0]) {
+      e.preventDefault();
+      lastFocusable.focus();
+    } else if (!e.shiftKey && document.activeElement === lastFocusable[0]) {
+      e.preventDefault();
+      firstFocusable.focus();
+    }
+  }
+}
+
+//How to test Forms change of context examples
+
+$('#selectPass').change(function() {
+    $('#submitSelectPassSelection').attr('aria-disabled', 'false');
+});
+
+$('#submitSelectPassSelection').click(function(e) {
+    e.preventDefault();
+    if ($(this).attr('aria-disabled') === 'true') {
+        return;  // Ignore click if button is disabled
+    }
+    $('#selectPass').hide();
+    $(this).hide();
+    $('#messagePass').show();
+});
+
+$('#selectFail').change(function() {
+    $(this).hide();
+    $('#messageFail').show();
+});
+
+//How to test Forms error message example
+$('#goodErrorInputSubmit').click(function(e) {
+    e.preventDefault();
+    $('#goodErrorInputError').show();
+    $('#goodErrorInput').focus();
+});
+
+$('#badErrorInputSubmit').click(function(e) {
+    e.preventDefault();
+    $('#badErrorInputError').show();
 });

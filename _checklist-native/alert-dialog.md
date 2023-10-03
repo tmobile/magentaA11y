@@ -130,7 +130,7 @@ settings:
 
 - **Android Views**
   - Use Android view component `AlertDialog` for the alert, its default accessibility behavior will cover the programmatic name by using the title text.
-- **Android Compose** 
+- **Jetpack Compose** 
   - Use composable `AlertDialog` which uses the title as the programmatic name
 
 ### Role
@@ -138,7 +138,7 @@ settings:
 
 - **Android Views**
   - Android view component `AlertDialog` has the dialog role defined
-- **Android Compose** 
+- **Jetpack Compose** 
   - Composable `AlertDialog` has dialog role defined
 
 ### Groupings
@@ -148,7 +148,7 @@ settings:
 - **Android Views**
   - `ViewGroup`
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
-- **Android Compose** 
+- **Jetpack Compose** 
   - `Modifier.semantics(mergeDescendants = true) {}` for the child elements grouping/merging
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
@@ -157,7 +157,7 @@ settings:
 - **Android View**  
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`
-- **Android Compose**
+- **Jetpack Compose**
   - Active: default state is active and enabled. Use `Button(enabled = true)` to specify explicitly
   - Disabled:  `Button(enabled = false)` announces as disabled
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
@@ -179,7 +179,7 @@ settings:
 	- To move screen reader focus to newly revealed content: `Type_View_Focused`
 	- To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
 	- To hide controls: `Important_For_Accessibility_false`
-- **Android Compose**
+- **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
@@ -191,7 +191,7 @@ settings:
       - step 3: use `second.requestFocus()` to gain focus
 
 ### Code Example
-- **Android Compose**
+- **Jetpack Compose**
 {% highlight kotlin %}
 // Alert should not allow auto-dismiss on touching outside of the dialog view, a user action is required by displaying the Alert.
 AlertDialog(

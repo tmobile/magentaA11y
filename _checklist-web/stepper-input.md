@@ -6,30 +6,33 @@ categories: form
 
 keyboard:
   tab: |
-    Focus moves visibly to the select
+    Focus moves to either the select field or buttons
   enter or spacebar: |
-    If select is focused, expands the select and places focus on the currently selected option in the list. 
+    If select is focused, expands the select and places focus on the currently selected option in the list 
     If focus is in the options, collapses the select and keeps the currently selected option.
+    If focus is on one of the buttons, it will either increment or decrement the value
   arrow-keys: |
-    Moves focus to and selects the next option. 
+    If select is focused, moves focus to and selects the next option
   escape: |
-    If the select is displayed, collapses the select and moves focus to the button.
+    If the select is displayed, collapses the select and moves focus to the button
   home: |
-    If the select is displayed, moves focus to and selects the first option.
+    If the select is displayed, moves focus to and selects the first option
   end: |
-    If the select is displayed, moves focus to and selects the last option.e.
+    If the select is displayed, moves focus to and selects the last option
      
 mobile:
   swipe: |
-    Ignores +/- buttons, focus moves to the input, traverses list
+    Moves focus to each form control in the pattern
   double-tap: |
-    Opens select, selects option
-
+    If select is focused, opens select, selects option
+    If a button is focused, it will either increment or decrement the value
 screenreader:
   name:  |
-    Its purpose is clear (+/- buttons are ignored)
+    Button labels are clear and include context
+    The select field's visual label is announced
   role:  |
-    It identifies itself as a select, popup button, menu/submenu or listbox
+    For the select field it identifies itself as a select, popup button, menu/submenu or listbox
+    For the buttons they are identified as button
   group: |
     Its label is read with the input
   state: |
@@ -37,7 +40,7 @@ screenreader:
 
 gherkin-keyboard: 
   - when:  |
-      the tab key to move focus to the select (+/- buttons are ignored)
+      the tab key to move focus to the first interactive item
     result: |
       focus is strongly visually indicated
   - then:  |
@@ -48,14 +51,22 @@ gherkin-keyboard:
       the escape key when the select is open 
     result: |
       it collapses and focus moves to the select
+  - when:  |
+      the enter key is pressed on buttons
+    result: |
+      the value is incremented or decremented    
 
 gherkin-mobile:
   - when:  |
-      swipe to focus on the select (+/- buttons are ignored)
+      swipe to focus on the form fields
   - then:  |
       doubletap with the select in focus
     result: |
       the picker/spinner opens
+  - then:  |
+      doubletap with the button in focus
+    result: |
+      the value is incremented or decremented
 
 wcag:
   - name: Perceivable
@@ -69,6 +80,7 @@ wcag:
       - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
       - criteria: The focus indication has a 3:1 minimum contrast ratio against adjacent elements
       - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
+      - criteria: The form field label in the code contains the text that is visually presented
   - name: Understandable
     list:
       - criteria: Its purpose is clear in the context of the whole page
@@ -82,8 +94,9 @@ wcag:
 ## Code examples
 
 ### Speciality stepper integer input
+Before using this pattern, consider if using a plain [Select dropdown](https://www.magentaa11y.com/checklist-web/select/) might be more clear and simple for all users. A select does everything that this stepper does, and with less code! Plus, a select is native and accessible out of the box.
 
-This component is useful for small-ish selections. If the max count is more than 20, this component will be cumbersome for people using a mouse.
+This component is useful for small range increments. If the max count is more than 20, consider use of a [Text Input](http://127.0.0.1:4000/checklist-web/text-input/) field as this component will be cumbersome for people using a mouse.
 
 {% highlight html %}
 {% include /examples/input-select-stepper.html %}
@@ -97,13 +110,14 @@ This component is useful for small-ish selections. If the max count is more than
 
 ## Developer notes
 
-This example provides the simplest answer to a number input with a stepper control with minimal scripting.
+- This stepper example provides both `button` and `select` elements for users to change a value.
 
-Notice that the stepper buttons are hidden from the screen reader because it's a better user experience to simply use the native select.
+- A non-visual live container with `aria-live="polite"` is present in the page at DOM load. When the `button` elements are activated, this non-visual live container is updated with dynamic content that screen reader users will hear announced as they increment or decrement the value. This dynamic text is then removed from the DOM after a few seconds (but not the actual container with `aria-live="polite"`) so the message is not discovered by screen reader users after interaction. The content of this message dynamically created based on the <code>Label</code> for the <code>Select</code> and the current value of the <code>Select</code>. e.g. "Quantity updated, 4"
 
-Using a select also eliminates any issues with the update being read by the screenreader on button press.
+- The value of the `select` element naturally communicates the updated value to screen reader users so the live container is not updated when that form element is interacted with.
 
-### Notable failed prototype attempts
+- The `button` `aria-label` values should be plain text and they should include context of what they affect when activated (typically the label for the `select`).  e.g. Increase Quantity, Add Quantity
 
-- Do not use a `input type="number"` — NVDA doesn't support number inputs
-- Wrapping a `input type="text"` with `aria-live="assertive"` isn't reliably output across all screen readers on change events
+- <code>aria-disabled="true"</code> will be applied to the buttons when either end of the range is reached
+
+- Related alternative patterns: [Select dropdown](https://www.magentaa11y.com/checklist-web/select/) or an [ARIA Spinbutton](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).
