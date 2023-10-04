@@ -84,6 +84,8 @@ Typical Tidbit markup consists of an SVG icon, heading, paragraph text, and a li
 </example>
 {:/}
 
+***
+
 ### Name
 - The icon is an informative image and should have a text alternative of "Info"
 
