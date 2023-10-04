@@ -625,6 +625,7 @@ $('#goodErrorInputSubmit').click(function(e) {
     e.preventDefault();
     $('#goodErrorInputError').show();
     $('#goodErrorInput').focus();
+    $('#goodErrorInput').attr('aria-invalid', 'true');
 });
 
 $('#badErrorInputSubmit').click(function(e) {
