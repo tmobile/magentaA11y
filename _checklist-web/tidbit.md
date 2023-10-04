@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Tidbit"
-description: "How to code and test an accessible tidbit Web"
+description: "How to code and test an accessible tidbit for Web"
 categories: main
 
 keyboard:
