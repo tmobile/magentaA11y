@@ -116,6 +116,10 @@ Some images are implemented using inline <code>SVG</code>. Text alernatives for 
 </example>
 {:/}
 
+{% highlight html %}
+<img src="apple-iphone-15-pro.png" alt="Titanium Apple iPhone 15 Pro">
+{% endhighlight %}
+
 ## <step-number>5</step-number> Complex Images
 {: .divider }
 
