@@ -255,9 +255,6 @@ fun LinkText(
 ### Further reading
 - [App Links](https://developer.android.com/training/app-links)
 
-### Further reading
-- [App Links](https://developer.android.com/training/app-links)
-
 ### Announcement examples
 Options for announcements below depend on framework and versions. Announcement order can vary.  "Double tap to activate" hint announcement varies with implementation.
 
