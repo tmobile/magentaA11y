@@ -36,7 +36,7 @@ Automated scanning must be complemented with a manual review of the page. Manual
 - Open DevTools in your browser window (<span class="keyboard-key">F12</span>)
 - Right-click and select "Inspect" on the image in the page you want to test.
 
-## <step-number>3</step-number> Meaningful Images
+## <step-number>3</step-number> Informative Images
 {: .divider }
 - Check that the image owns an <code>alt</code> attribute.
 - Ensure that the <code>alt</code> attribute is present is not empty.
@@ -93,7 +93,7 @@ Some images are implemented using inline <code>SVG</code>. Text alernatives for 
 </example>
 {:/}
 
-- **Note:** Sometimes functional images may have empty or null alt attribute value <code>alt=""</code> and this is ok **if** what text would be the text alternative is moved to the parent control's label. For example, <code>aria-label="Download on the Apple App Store"</code>.
+- **Note:** Functional images can have empty or null alt attribute values <code>alt=""</code> if the text alternative is conveyed in the parent control's label. For example, <code>aria-label="Download on the Apple App Store"</code>.
 
 {% highlight html %}
 <button aria-label="Download on the Apple App Store">
@@ -209,7 +209,7 @@ Some images are implemented using inline <code>SVG</code>. Text alernatives for 
 
 <div class="how-to-test-checklist-item">
   <h3>✓ Ensure complex images have a text alternative</h3>
-  <p><strong>Note:</strong> The passing chart has a general text alternative describing what the image is but also references nearby text data for reference. <code>alt="Fruit chart, data below"</code>. The failing example owns an mpty alt attribute value which hides the image from screen reader users and does not provide an alternative.</p>
+  <p><strong>Note:</strong> The passing chart has a general text alternative describing what the image is but also references nearby text data for reference. <code>alt="Fruit chart, data below"</code>. The failing example owns an empty alt attribute value which hides the image from screen reader users and does not provide an alternative.</p>
   <table class="column-2">
     <thead>
       <th scope="col">
