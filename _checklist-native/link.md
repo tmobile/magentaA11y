@@ -149,23 +149,10 @@ settings:
 - To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
 - There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
 - The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
-### Further reading
-- [UIAccessibilityTraits](https://developer.apple.com/documentation/uikit/uiaccessibilitytraits)
-
-## **Android**
-
-### **Developer Notes**
-
-- Clickable text that navigates the user outside of the app to a web page. (ex: opens an web browser)
-- When accessing an in-line link that is inside a paragraph with a screen reader, the focus should be around the paragraph container.
-- To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
-- There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
-- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
 
 ### Name
 - Clickable text that describes the destination or purpose of the link
 - Programmatic name matches the visible text label
-  - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of “Learn more” that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as “Learn more about accessible controls".
   - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of “Learn more” that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as “Learn more about accessible controls".
 
 ### Role
