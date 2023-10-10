@@ -36,17 +36,19 @@ settings:
 
 ## Developer notes
 - There are several experiences for Captcha:  
-  - 1) An image in a table row, where the whole table row acts like a button.  
-  - 2) A single interactive element, like an image button
-  - 3) An audio challenge as an equivalent experience to the image challenge
+  - An image in a table row, where the whole table row acts like a button.  
+  - A single interactive element, like an image button
+  - An audio challenge as an equivalent experience to the image challenge
+
+When selecting the type of Captcha, do not limit the options to only <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html#dfn-cognitive-function-test"> cognitive function tests </a> (e.g. remembering or transcribing a word, or recognizing a picture the website provided).  When possible, When possible, leverage captcha or <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html#examples"> other solutions recommended by the W3C</a>.
 
 ### Name
 
 Experiences:  
 
-- 1) Alt text on the image that describes its purpose.
-- 2) Name describes the purpose of the control and matches any visible text in image
-- 3) Programmatic name of each interactive component in audio challenge is announced.
+- Alt text on the image that describes its purpose.
+- Name describes the purpose of the control and matches any visible text in image
+- Programmatic name of each interactive component in audio challenge is announced.
 
 Name describes the purpose of the control
 
@@ -73,17 +75,15 @@ Name describes the purpose of the control
 
 Experiences:  
 
-- 1) Identifies as an image
-- 2) Identifies as an image button
-- 3) Each interactive component in audio challenge identifies as a button or text field
+- Identifies as an image
+- Identifies as an image button
+- Each interactive component in audio challenge identifies as a button or text field
 
 ### Groupings
 
 Experiences:  
 
-- 1) If in a table row, group all text and elements in the table row, identifying each elements name. The whole table row should be in one swipe, announcing as "button" or "double tap to activate". There can be only one interactive element in a table row.
-- 2) n/a
-- 3) n/a
+- If in a table row, group all text and elements in the table row, identifying each elements name. The whole table row should be in one swipe, announcing as "button" or "double tap to activate". There can be only one interactive element in a table row.
 
 - **iOS**
   - accessibilityFrame
@@ -97,9 +97,9 @@ Experiences:
 
 Experiences:  
 
-- 1) If grouped in table row, it's possible for the whole row to have a dimmed/disabled state, or the captcha button disabled separately
-- 2) Image button can have a disabled state (dimmed/disabled)
-- 3) Buttons in audio challenge can have a disabled state (dimmed/disabled)
+- If grouped in table row, it's possible for the whole row to have a dimmed/disabled state, or the captcha button disabled separately
+- Image button can have a disabled state (dimmed/disabled)
+- Buttons in audio challenge can have a disabled state (dimmed/disabled)
 
 ### Focus
 
@@ -114,15 +114,13 @@ Experiences:
 Only manage focus when needed. Primarily, let the device manage default focus.  
 Consider how focus should be managed between child elements and their parent views.
 
-- **iOS Options**
+**iOS Options**
 - accessibilityElementIsFocused  
-  
 - isAccessibilityElement - Yes, if the element can respond to user input
 - To move screen reader focus to newly revealed content: UIAccessibilityLayoutChangedNotification
 - To NOT move focus, but announce new content: UIAccessibilityAnnouncementNotification
-- 
   
-- **Android Options**
+**Android Options**
 - android:focusable=true
 - android=clickable=true
 - Implement an onClick( ) event handler for keyboard, not onTouch( )

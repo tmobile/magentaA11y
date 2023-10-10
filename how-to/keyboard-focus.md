@@ -112,7 +112,7 @@ Keyboard testing consists of a few keyboard commands to interact with web experi
 
 <div class="how-to-test-checklist-item">
   <h3>✓ Ensure there is a highly visible visual indication of keyboard focus</h3>
-  <p>Keyboard users need to understand where they are in the interface at all times. The visual indication of keyboard focus (focus ring) should be highly visible and have a color contrast ratio of 3:1 against the background.</p>
+  <p>Keyboard users need to understand where they are in the interface at all times. The visual indication of keyboard focus (focus ring) should be highly visible and have a color contrast ratio of 3:1 against the background. Verify that overlap items (e.g. cookie banners, sticky footers, sticky headers, and non-modal dialogs) do not obscure the visual indicator. </p>
 </div>
 
 <div class="how-to-test-checklist-item">
