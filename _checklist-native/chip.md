@@ -23,7 +23,7 @@ screenreader:
   role:  |
     Identifies as a button and "double tap to activate" in Android
   group: |
-    Visible label (if any) is grouped or associated with the button in a single swipe
+    Visible label (if any) is grouped or associated with the chip in a single swipe
   state: |
     Expresses its state (selected/disabled/dimmed)
 
@@ -36,12 +36,57 @@ settings:
 
 ### Developer notes
 
+### Name
+- Name describes the purpose of the control
+- Programmatic name matches the visible text label (if any)
+
+- **Android Views**
+  - `android:text` XML attribute
+  - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
+  - `contentDescription` overrides `android:text`
+  - Use `labelFor` attribute to associate the visible label with the control
+- **Jetpack Compose**
+  - Compose uses semantics properties to pass information to accessibility services.
+  - The built-in Chip composable will fill the semantics properties with information inferred from the composable by default.
+  - Optional: use `contentDescription` for a more descriptive name to override the default visible label of the Chip text.
+  - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
+
+### Role
+- When not using native controls (custom controls), roles will need to be manually coded.
+- By default the role is button for chips with actions like AssistChip and SuggestionChip. If the chips are selectable as FilterChip or InputChip, the role is checkbox
+- **Android Views**
+  - Material `Chip`
+- **Jetpack Compose**
+  - `AssistChip`, `ElevatedAssistChip`
+  - `FilterChip`, `ElevatedFilterChip`
+  - `InputChip`
+  - `SuggestionChip`, `ElevatedSuggestionChip`
+
+### Groupings
+- Group visible labels in Chip (if applicable) to provide a programmatic name for the Chip
+- Group label with data to ensure reading order is logical.
+
+- **Android Views**
+  - `ViewGroup`
+  - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+- **Jetpack Compose**
+  - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
+  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
+
+### State
+- **Android Views**
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`. Announcement: disabled
+- **Jetpack Compose**
+  - Active: default state is active and enabled. Use `AssistChip(enabled = true)` to specify explicitly
+  - Disabled:  `AssistChip(enabled = false)` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
+
 ### Focus
-- For Jetpack Compose Snackbar, when there is an action available, the default accessibility behavior allows screen reader to dynamically read the message and the action
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -71,4 +116,15 @@ settings:
 ### Code Example
 - **Jetpack Compose**
 {% highlight kotlin %}
+AssistChip(
+    onClick = { /* Do something! */ },
+    label = { Text("Assist Chip") },
+    leadingIcon = {
+        Icon(
+            Icons.Filled.Settings,
+            contentDescription = "Localized description",
+            Modifier.size(AssistChipDefaults.IconSize)
+        )
+    }
+)
 {% endhighlight %}
