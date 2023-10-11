@@ -8,7 +8,7 @@ keyboard:
   arrow-keys: |
     The Tidbit scrolls into view
   tab-key: |
-    The focusable link receives keyboard focus - there is a highly visible focus ring
+    The focusable link (if present) receives keyboard focus - there is a highly visible focus ring
 
 mobile:
   swipe: |
@@ -27,6 +27,11 @@ gherkin-keyboard:
       the arrow keys
     result: |
       the Tidbit scrolls into view
+
+  - when:  |
+      the tab key
+    result: |
+      the focusable link (if present) receives keyboard focus - there is a highly visible focus ring
 
 gherkin-mobile:
   - when:  |
@@ -53,7 +58,6 @@ Typical Tidbit markup consists of an SVG icon, heading, paragraph text, and a li
 - <strong>Icon:</strong> Ensure that the info icon has a text alternative. Add <code>role="img"</code> and <code>aria-label="Info"</code> to the SVG.
 - <strong>Heading:</strong> Ensure the bold text that leads the Tidbit paragraph text is a heading element. Consider the hiearchy of the page when choosing the heading level.
 - <strong>Link:</strong> If the link in the Tidbit is a generic "Learn more" "More info" style link, ensure that it is programmatically associated with the nearby heading with <code>aria-describedby</code>. The <code>aria-describedby</code> value will the the <code>ID</code> found on the heading element at the top of the Tidbit.
-    - If for some reason the Tidbit does not have a heading but still has a link at the bottom of the Tidbit, it is required that the link text be meaningful and avoid use of "Learn more" "Read more" because there will be no programmatic association to any other nearby content to help build link purpose. For example, "Learn more about cats"
 
 ***
 
