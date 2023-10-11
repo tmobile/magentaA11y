@@ -14,7 +14,7 @@ There are many types of images. The type of image can be determined by the conte
 
 - **Functional Images:** Images that serve as links or buttons should have text alternatives that describe their function rather than just their appearance. For example, if you have an image of a printer icon that initiates a printing action, the alt text should convey this functionality, like "Print."
 
-- **Images of Text:** It's generally recommended to avoid putting text within images because it can be challenging for some users. However, if you must use images with text, ensure that the alt text contains the exact same words as the text within the image to maintain consistency.
+- **Images of Text:** Images of text should be avoided whenever possible. In fact, some images of text can violate [WCAG 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html). However, if you must use images with text, ensure that the alt text contains the exact same words as the text within the image to maintain consistency.
 
 - **Complex Images such as Graphs and Diagrams:** When using images to present complex data or detailed information, it's crucial to provide a comprehensive text description that conveys all the data and details found in the image. This allows individuals who cannot see the image to still access and understand its content.
 
@@ -33,14 +33,15 @@ Automated scanning tools, such as [WAVE](https://wave.webaim.org/), [Lighthouse]
 Automated scanning must be complemented with a manual review of the page. Manual image testing can test for alt text quality, ensuring that decorative images are hidden from assistive technology, all text found in images of text are present in alt text, and that functional images have the appropriate alt text.
 
 #### <strong>Getting started</strong>
-- Open DevTools in your browser window (<span class="keyboard-key">F12</span>)
+- Open Chrome DevTools in your browser window (<span class="keyboard-key">F12</span>)
 - Right-click and select "Inspect" on the image in the page you want to test.
 
 ## <step-number>3</step-number> Informative Images
 {: .divider }
 - Check that the image owns an <code>alt</code> attribute.
 - Ensure that the <code>alt</code> attribute is present is not empty.
-- The <code>alt</code> attribute value / description of the image should be accurate and succinct. It should not consist of information that is not imnportant or duplicates nearby text content.
+- Ensure that the alt attribute is present is not empty, such as <code>alt</code> or <code>alt=""</code>
+- The <code>alt</code> attribute value / description of the image should be accurate and succinct. The image alternative should not consist of information that duplicates nearby text content.
 
 {::nomarkdown}
 <example>
@@ -57,7 +58,7 @@ Automated scanning must be complemented with a manual review of the page. Manual
 
 
 ### SVG
-Some images are implemented using inline <code>SVG</code>. Text alernatives for these images can be defined by use of <code>role="img"</code> and <code>aria-label="I am the alt text"</code>. The <code>alt</code> attribute should not be on an element who's <code>role</code> is <code>role="img"</code> this is instead handled by <code>aria-label</code>. 
+Some images are implemented using inline <code>SVG</code>. Text alernatives for these images can be defined by use of <code>role="img"</code> and <code>aria-label="I am the alt text"</code>. The <code>alt</code> attribute should not be on an element whose <code>role</code> is <code>role="img"</code> this is instead handled by <code>aria-label</code>. 
 
 {% highlight html %}
 <svg role="img" aria-label="I am the alt text">...</svg>
@@ -107,6 +108,7 @@ Some images are implemented using inline <code>SVG</code>. Text alernatives for 
 
 - Sometimes text can't be easily created with HTML and CSS and an image must contain text. In this case, ensure the <code>alt</code> attribute is present and owns a value that includes <strong>all</strong> of the text found in the image. 
 - Typically, the text is the most important part of the image. There is no need for the image itself to be described unless it adds value to the content of the page. 
+- Consider logging a defect for [WCAG 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html) if it seems like there might be a viable workaround to add real text to the page vs. an image of text.
 
 {::nomarkdown}
 <example>
@@ -135,6 +137,27 @@ Some images are implemented using inline <code>SVG</code>. Text alernatives for 
     alt="Complex chart with nearby HTML table for text alternative">
 </example>
 {:/}
+
+{% highlight html %}
+  <img
+    src="/assets/images/examples/how-to-test-images-complex-data.png"
+    alt="Complex chart with nearby HTML table for text alternative">
+
+    <table>
+      <caption>NASDAQ: TMUS</caption>
+      <tr>
+        <th>Date</th>
+        <th>Price</th>
+        <!-- ... -->
+      </tr>
+      <tr>
+        <td>January 10</td>
+        <td>122.20</td>
+        <!-- ... -->
+      </tr>
+    </table>
+{% endhighlight %}
+
 
 ## <step-number>6</step-number> What to test for
 {: .divider }
