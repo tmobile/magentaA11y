@@ -4,7 +4,7 @@ title:  "Chip"
 categories: controls
 
 keyboard:
-  tab: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the chip
   space: |
     Any elements inside are activated on Android
@@ -23,7 +23,7 @@ screenreader:
   role:  |
     Identifies as a button and "double tap to activate" in Android
   group: |
-    Visible label (if any) is grouped or associated with the chip in a single swipe
+    n/a
   state: |
     Expresses its state (selected/disabled/dimmed)
 
@@ -35,6 +35,9 @@ settings:
 ## Android
 
 ### Developer notes
+- Chips are compact elements that represent an input, attribute, or action
+- Often, a list of chips/filters has one label identifying the purpose of the group
+- Touch target for each chip should meet a minimum of 48 x 48px
 
 ### Name
 - Name describes the purpose of the control
@@ -63,8 +66,7 @@ settings:
   - `SuggestionChip`, `ElevatedSuggestionChip`
 
 ### Groupings
-- Group visible labels in Chip (if applicable) to provide a programmatic name for the Chip
-- Group label with data to ensure reading order is logical.
+- Sometimes a visible label is provided.  Associate or group label with chip to provide a programmatic name
 
 - **Android Views**
   - `ViewGroup`
@@ -131,3 +133,6 @@ AssistChip(
 
 
 ### Announcements
+- "Selected, in-list filters, index, double tap to activate"   (selected state)
+- "Label, in-list filters, index, double tap to activate"   (unselected state) 
+- “In-list filters” does not always get announced on each chip
