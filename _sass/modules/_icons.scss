@@ -59,6 +59,8 @@ $icon-browser-dark: url("data:image/svg+xml,%3Csvg focusable='false' aria-hidden
 
 $icon-dialog-dark: url("data:image/svg+xml,%3Csvg focusable='false' aria-hidden='true' version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 94.8 86.5' style='enable-background:new 0 0 94.8 86.5;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D %3C/style%3E%3Cpath d='M76.7,7H11.1C5,7,0,12,0,18.1v55.6c0,6.1,5,11.1,11.1,11.1h65.6c6.1,0,11.1-5,11.1-11.1V18.1C87.8,12,82.8,7,76.7,7z M77.9,35.6l0,35.3c0,2.2-1.8,4-4,4H13.9c-2.2,0-4-1.8-4-4V33.7h0l0-12.8c0-2.2,1.8-4,4-4h60.1c2.2,0,4,1.8,4,4L77.9,35.6L77.9,35.6 z'/%3E%3Cg%3E%3Cpath d='M74.9,0c-5.3,0-10.3,2.1-14,5.8c-3.7,3.7-5.8,8.8-5.8,14c0,5.3,2.1,10.3,5.8,14c3.7,3.7,8.8,5.8,14,5.8 c5.3,0,10.3-2.1,14-5.8c3.7-3.7,5.8-8.8,5.8-14c0-5.3-2.1-10.3-5.8-14C85.3,2.1,80.2,0,74.9,0z'/%3E%3Cpath class='st0' d='M67.8,11.3L67.8,11.3c0.4,0,0.8,0.1,1,0.4l6.1,6.1l6.1-6.1c0.3-0.3,0.6-0.4,1-0.4c0.4,0,0.8,0.1,1,0.4 c0.3,0.3,0.4,0.6,0.4,1c0,0.4-0.1,0.7-0.4,1l-6.1,6.1l6.1,6.1v0c0.5,0.6,0.5,1.4,0,2c-0.3,0.3-0.6,0.4-1,0.4c-0.4,0-0.7-0.2-1-0.4 l-6.1-6.1l-6.1,6.1c-0.6,0.5-1.4,0.5-2,0c-0.5-0.6-0.5-1.4,0-2l6.1-6.1l-6.1-6.1v0c-0.3-0.3-0.4-0.6-0.4-1c0-0.4,0.1-0.7,0.4-1 C67.1,11.5,67.4,11.3,67.8,11.3L67.8,11.3z'/%3E%3C/g%3E%3C/svg%3E ");
 
+$icon-image-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' viewBox='0 0 512 512'%3E%3Cpath d='M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z'/%3E%3C/svg%3E");
+
 :root {
   --icon-on-white: #{$icon-on-white};
   --icon-on-dark: #{$icon-on-dark};
@@ -97,4 +99,5 @@ $icon-dialog-dark: url("data:image/svg+xml,%3Csvg focusable='false' aria-hidden=
   --icon-contrast-dark: #{$icon-contrast-dark};
   --icon-browser-dark: #{$icon-browser-dark};
   --icon-dialog-dark: #{$icon-dialog-dark};
+  --icon-image-dark: #{$icon-image-dark};
 }
