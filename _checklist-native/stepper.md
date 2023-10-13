@@ -5,7 +5,7 @@ categories: controls
 
 
 keyboard:
-  tab: |
+  tab, Ctr+tab or arrow keys: |
     Focus visibly moves to the button
   arrow keys: |
     Focus visibly moves to the button
@@ -35,10 +35,11 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
-## Developer notes- 
-A stepper is a two-segment control used to increase or decrease an incremental value
-
 ## iOS
+
+### Developer notes 
+- A stepper is a two-segment control used to increase or decrease an incremental value
+- When new value changes, it gets announced dynamically without moving focus from the increment/decrement button
 
 ### Name
 - Name includes the purpose and describes the item changing, matching any visible label and references the number shown between stepper (if visible).  
@@ -72,13 +73,17 @@ A stepper is a two-segment control used to increase or decrease an incremental v
 
 ### Announcements
 - Increment
-- - "Label, Increment, Button"
-- - if button is activated new value will announce
+  - "Label with current value, Increment, Button"
+  - if button is activated new value will announce
 - Decrement
-- - "Label, Decrement, Button"
-- - if button is activated new value will announce
+  - "Label with current value, Decrement, Button"
+  - if button is activated new value will announce
 
 ## Android
+
+### Developer notes 
+- A stepper is a two-segment control used to increase or decrease an incremental value
+- When new value changes, it gets announced dynamically without moving focus from the increment/decrement button
 
 ### Name
 - Name includes the purpose and describes the item changing, matching any visible label and references the number shown between stepper (if visible).
@@ -114,8 +119,8 @@ A stepper is a two-segment control used to increase or decrease an incremental v
 
 ### Announcements
 - Increment
-- - "Label, Increment, Double tap to activate"
-- - if button is activated new value will announce
+  - "Label with value, Increment, Double tap to activate"
+  - if button is activated new value will announce
 - Decrement
-- - "Label, Decrement, Double tap to activate"
-- - if button is activated new value will announce
+  - "Label with value, Decrement, Double tap to activate"
+  - if button is activated new value will announce
