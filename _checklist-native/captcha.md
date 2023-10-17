@@ -5,7 +5,7 @@ categories: controls
 
 
 keyboard:
-  tab: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the captcha
   spacebar: |
     Activates the captcha on iOS and Android
@@ -24,7 +24,7 @@ screenreader:
   role:  |
     Identifies itself as a button or image button, if interactive
   group: |
-    If in a table row, group with other elements (one interactive element per grouping)
+    n/a
   state: |
     Expresses its state (disabled/dimmed)
 
@@ -36,7 +36,7 @@ settings:
 
 ## Developer notes
 - There are several experiences for Captcha:  
-  - 1) An image in a table row, where the whole table row acts like a button.  
+  - 1) A non-interactive image in a table row, where the whole table row acts like a button.  
   - 2) A single interactive element, like an image button
   - 3) An audio challenge as an equivalent experience to the image challenge
 
