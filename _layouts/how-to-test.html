@@ -24,6 +24,22 @@ layout: default
             </li>
             <li>
               <a
+                {% if page.url== "/how-to-test/form/" %} aria-current="page" {% endif %}
+                {% if page.url == "/how-to-test/form/" %} class="current" {% endif %}
+                href="{{ site.baseurl }}/how-to-test/form/">
+                Forms
+              </a>
+            </li>
+            <li>
+              <a
+                {% if page.url== "/how-to-test/images/" %} aria-current="page" {% endif %}
+                {% if page.url == "/how-to-test/images/" %} class="current" {% endif %}
+                href="{{ site.baseurl }}/how-to-test/images/">
+                Images
+              </a>
+            </li>
+            <li>
+              <a
                 {% if page.url== "/how-to-test/screen-readers/" %} aria-current="page" {% endif %}
                 {% if page.url == "/how-to-test/screen-readers/" %} class="current" {% endif %}
                 href="{{ site.baseurl }}/how-to-test/screen-readers/">
@@ -49,14 +65,6 @@ layout: default
             <!-- 
             <li>
               <a
-                {% if page.url== "/how-to-test/image/" %} aria-current="page" {% endif %}
-                {% if page.url == "/how-to-test/image/" %} class="current" {% endif %}
-                href="{{ site.baseurl }}/how-to-test/image/">
-                Images
-              </a>
-            </li>
-            <li>
-              <a
                 {% if page.url== "/how-to-test/multimedia/" %} aria-current="page" {% endif %}
                 {% if page.url == "/how-to-test/multimedia/" %} class="current" {% endif %}
                 href="{{ site.baseurl }}/how-to-test/multimedia/">
@@ -72,14 +80,6 @@ layout: default
               </a>
             </li>
           -->
-            <li>
-              <a
-                {% if page.url== "/how-to-test/form/" %} aria-current="page" {% endif %}
-                {% if page.url == "/how-to-test/form/" %} class="current" {% endif %}
-                href="{{ site.baseurl }}/how-to-test/form/">
-                Forms
-              </a>
-            </li>
             <!-- 
             <li>
               <a

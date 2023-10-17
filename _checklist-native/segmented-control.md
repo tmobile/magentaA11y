@@ -4,7 +4,7 @@ title:  "Segmented Control / Tab"
 categories: controls
 
 keyboard:
-  tab: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the button
   arrow keys: |
     Navigate through group
@@ -35,73 +35,187 @@ settings:
 ---
 
 ## Developer notes
-- A segmented control is a linear set of two or more segments, each of which functions as a mutually exclusive button
 
-## iOS
+- A segmented control is a horizontal set of two or more segments presented, each of which functions as a mutually exclusive button
 
 ### Name
-- Name matches the inside tab text
-- setTitle( ) method
-- Set a label in Interface Builder in the Identity Inspector
-- accessibilityLabel
-- _(accessibilityLabel overrides setTitle)_  
+- A programmatic name is assigned to each segment title
+- If visible text label exists, the programmatic name should match the visible text label.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+
+- **UIKit**
+  - You can programmatically set the visible label with `setTitle()`.
+    - The segment's title will overwrite the segment’s `accessibilityLabel`.
+  - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
+  - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+- **SwiftUI**
+  - By default, the programmatic name is the visible text label of the segment
+  - If necessary, use view modifier `accessibilityLabel(_:)`.
+  - If a segment has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- UISegmentedControl  
+- Since picker items are interactive, it must be indicated to the user that they are interactive such as indicating that it is a button or it can be double-tapped to be selected. 
+
+- **UIKit**
+  - Use `UISegmentedControl`
+- **SwiftUI**
+  - Use native `Picker` view
+  - Use `SegmentedPickerStyle`
+
+### Groupings
+- N/A
+
+- **UIKit**
+  - Follow native grouping and order
+- **SwiftUI**
+  - Follow native grouping and order
 
 ### State
-- Selected state is announced for the control in group that is focused
-- Active: isEnabled property
-- Disabled: UIAccessibilityTraitNotEnabled. Announcement: dimmed
-- UIControlState or isSelected, UIAccessibilityTraitNotEnabled
+- A state of the individual segments themselves are announced, which is either "Selected" or "Unselected"
+- The position of the segment out of the entire set must be announced.
+
+- **UIKit**
+  - Segments should be announced whether they are selected/unselected.
+  - For disabled menu items: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+    - If necessary, you may change the accessibility trait of the menu item to `notEnabled`, but this may overwrite the current accessibility role of the segmented control.
+- **SwiftUI**
+  - By default, the "selected" state is announced and the position of the segment out of the set.
+  - For disabled, use view modifier `disabled()`.
 
 ### Focus
-- Only manage focus when needed. Primarily, let the device manage default focus.  
-- Consider how focus should be managed between child elements and their parent views.
-- accessibilityElementIsFocused  
-- isAccessibilityElement - Yes, if the element can respond to user input
-- To move screen reader focus to newly revealed content: UIAccessibilityLayoutChangedNotification
-- To NOT move focus, but announce new content: UIAccessibilityAnnouncementNotification
+- Use the device's default focus functionality. 
+- Focus should be confined within the segmented control
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 
-### Announcements
-- "Selected, Label, Button, x of x"
-- "Label, Button, x of x"
-- - optional, Not selected: Announced as "double tap to select" as hint
+- **UIKit**
+  - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
+    - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
+  - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
+  - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
+- **SwiftUI**
+  - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
+    - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
+    - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
+  - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
+
+### Announcement examples
+- Options for announcements below depend on framework and versions. Announcement order can vary.  "Menu" in label is optional, but recommended.
+
+- "Label menu, button"
+- "Label, button"  (without recommended "menu" announcement)
+- "Label menu, dimmed, button" (disabled state)
+- "Dismiss context menu, button" (Invisible button in swipe past the last item in menu)
 
 ## Android
 
+### Developer notes
+
+- A segmented control is a horizontal linear set of two or more segments presented, each of which functions as a mutually exclusive button
+
 ### Name
-- Name matches the inside tab text
-- android:text XML attribute
-- contentDescription
-- _(contentDescription overrides android:text)_
+- A programmatic name is assigned to each segment title
+- If visible text label exists, the programmatic name should match the visible text label.
+
+- **Android Views**
+  - `android:text` XML attribute
+  - Use `contentDescription`, depending on type of view and for elements (icons) without a visible label
+  - `contentDescription` overrides `android:text`
+  - Use `labelFor` attribute to associate the visible label with the control
+- **Jetpack Compose**
+  - By default, the programmatic name is the visible text label of the segment
+  - Compose uses semantics properties to pass information to accessibility services
+  - Optional: use `contentDescription` for a more descriptive name to override the default text label
+  - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Role
-- Tabs
-- Button or Image Button
+- Since the segmented control items are interactive, it must indicate the interaction of double-tap for segment selecting.
+- When not using native controls, roles will need to be manually coded
+- **Android Views**
+  - Tabs
+  - Button or Image Button
+- **Jetpack Compose**
+  - `TabRow`, `Tab`
+  - `Chip`
+
+### Groupings
+- N/A
+- **Android Views**
+  - Follow native component grouping
+- **Jetpack Compose**
+  - Follow native component grouping
 
 ### State
-- Selected state is announced for the control in group that is focused
-- Active: android:enabled=true
-- Disabled: android:enabled=false. Announcement: disabled
-- setSelected
-- Selected: Announced as "selected"
+- Selected state is announced as either "Selected" or "Unselected" for the control in group that is focused
+- The position of the segment out of the entire segment list must be announced.
+
+- **Android Views**
+  - Active: `android:enabled=true`
+  - Disabled: `android:enabled=false`. Announcement: disabled
+  - Selected: Announced as "selected"
+- **Jetpack Compose**
+  - Active: default state is active and enabled. Use `Tab(enabled = true)` to specify explicitly
+  - Disabled:  `Tab(enabled = false)` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+  - Use `Tab(selected = <condition logic>)` to define selected state
 
 ### Focus
-- Only manage focus when needed. Primarily, let the device manage default focus.  
-- Consider how focus should be managed between child elements and their parent views.
-- android:focusable=true
-- android=clickable=true
-- Implement an onClick( ) event handler for keyboard, not onTouch( )
-- nextFocusDown
-- nextFocusUp
-- nextFocusRight
-- nextFocusLeft
-- accessibilityTraversalBefore (or after)
-- To move screen reader focus to newly revealed content: Type_View_Focused
-- To NOT move focus, but announce new content: accessibilityLiveRegion
-- To hide controls: Important_For _Accessibility_NO
+- Only manage focus when needed. Primarily, let the device manage default focus
+- Consider how focus should be managed between child elements and their parent views
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 
-### Announcements
-- "Selected, Label, Tab, x of x"
-- "Label, Tab, x of x, Double tap to activte"
+- **Android Views**
+  - `importantForAccessibility` makes the element visible to the Accessibility API
+  - `android:focusable`
+  - `android=clickable`
+  - Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+  - `nextFocusDown`
+  - `nextFocusUp`
+  - `nextFocusRight`
+  - `nextFocusLeft`
+  - `accessibilityTraversalBefore` (or after)
+  - To move screen reader focus to newly revealed content: `Type_View_Focused`
+  - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+  - To hide controls: `importantForAccessibility=false`
+  - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+- **Jetpack Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+  - Example: To customize the focus events
+    - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+    - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+    - focus order accepts following values: up, down, left, right, previous, next, start, end
+    - step 3: use `second.requestFocus()` to gain focus
+  
+### Code Example
+- **Jetpack Compose**
+{% highlight kotlin %}
+var tabIndex by remember { mutableStateOf(0) }
+val titles = listOf("Tab 1", "Tab 2", "Tab 3")
+Column {
+    TabRow(selectedTabIndex = tabIndex) {
+        titles.forEachIndexed { index, title ->
+            Tab(
+                selected = tabIndex == index,
+                onClick = { tabIndex = index },
+                text = { Text(text = title) }
+            )
+        }
+    }
+    Box(modifier = Modifier
+        .fillMaxWidth()
+        .background(MaterialTheme.colorScheme.background)) {
+        Text(
+            modifier = Modifier.align(Alignment.Center),
+            text = "Tab ${tabIndex + 1} selected",
+            style = MaterialTheme.typography.titleMedium,
+            color = MaterialTheme.colorScheme.primary
+        )
+    }
+}
+{% endhighlight %}
+
+### Announcement examples
+- Options for announcements below depend on framework and versions. Announcement order can vary.  
