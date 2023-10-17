@@ -4,7 +4,7 @@ title:  "Sheet"
 categories: controls
 
 keyboard:
-  tab, Ctr+tab and arrow keys: |
+  tab, arrow keys or Ctl+tab: |
       Focus visibly moves to the first interactive element
   spacebar: |
       Activates on iOS and Android
@@ -39,9 +39,9 @@ settings:
 - Use native elements when at all possible vs a custom element, as it will handle expected behavior without additional development effort
 - Most sheets appear as a modal that partially covers the underlying content
 - The screen reader is usually confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader can move out of it
-- Ensure there is a way to collapse or close the sheet for the screen reader.  Initial focus is to an invisible dismiss button in later versions.  
-- A grabber/card controller is used for sheets that expand/collapse. When implemented, the initial focus is on the grabber, then the next swipe focus is moved to the invisible dismiss button
-- A card controller button expands/collapses the sheet to cover half the screen or the whole screen.  After expanding or collapsing, only the name and state gets announced, not the full announcement.
+- Ensure there is a way to collapse or close the sheet for the screen reader if covering other content.  Initial focus is to an invisible dismiss button in later versions  
+- A grabber/card controller is used for sheets that expand/collapse. When implemented, the initial focus can be on the grabber, then the next swipe focus is moved to the invisible dismiss button or close X
+- A card controller button expands/collapses the sheet to cover half the screen or the whole screen.  After expanding or collapsing, only the name and state gets announced, not the full announcement
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -135,8 +135,8 @@ settings:
 - Most sheets appear as a modal that partially covers the underlying content. 
 - The screen reader is usually confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader can move out of it
 - Swipe anywhere on the screen dismisses the sheet
-- A grabber at the top of the sheet is used to expand/collapse if needed. When implemented, the initial focus is on the grabber.
-- A grabber expands/collapses the sheet to cover half the screen or the whole screen. Even though two finger swipe will expand the sheet, the user has to start the swipe with fingers on the drawer, which may be a challenge to those who cannot see the screen. Keyboard users would not be able to expand the sheet without the grabber.
+- A grabber at the top of the sheet is used to expand/collapse if needed. When implemented, the initial focus is on the grabber
+- A grabber expands/collapses the sheet to cover half the screen or the whole screen. Even though two finger swipe will expand the sheet, the user has to start the swipe with fingers on the drawer, which may be a challenge to those who cannot see the screen. Keyboard users would not be able to expand the sheet without the grabber
 
 ### Name
 - Name describes the purpose of the control

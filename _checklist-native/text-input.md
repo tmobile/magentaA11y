@@ -4,16 +4,16 @@ title:  "Text input"
 categories: controls
 
 keyboard:
-  tab, arrow keys or ctl-tab: |
-    Focus visibly moves to and from the text input. 
+  tab, arrow keys or ctl+tab: |
+    Focus visibly moves to and from the text input 
   space bar: |
-    Places the user in editing mode inside the input.
+    Places the user in editing mode inside the input
           
 mobile:
   swipe: |
-    Focus moves to the element, expresses its name, role, and state-if disabled.
+    Focus moves to the element, expresses its name, role, input value and state-if disabled
   doubletap: |
-    Keyboard appears to edit.
+    Keyboard appears to edit
 
 screenreader:
   name:  |
@@ -30,26 +30,26 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
-## General Notes
-A text input field allows users to enter and edit text. On both Android and iOS devices, when a user enters "edit mode" in the text input, it will automatically bring up the native keyboard.
 
-Use a native text input control whenever possible versus programming a custom element. The native text input will automatically and correctly announce the role for a screen reader without additional development effort.
+## iOS
+### Developer Notes
+A text input field allows users to enter and edit text. On both Android and iOS devices, when a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
 
-For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control. Only announcing the label for the text input in the swipe before the input field does not meet this requirement.
+Use a native text input control whenever possible versus programming a custom element. The native text input will automatically and correctly announce the role for a screen reader without additional development effort
+
+For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control. Only announcing the label for the text input in the swipe before the input field does not meet this requirement
 
 ## Beware of "On Focus" Level A Violation
-Focus should never be sent to a text input field automatically from another component. The user must control navigating to and from a text input, or any other form input for that matter.
+Focus should never be sent to a text input field automatically from another component. The user must control navigating to and from a text input, or any other form input
 
 ## Label
-The label describes the purpose of the control. The label should be visible at all times. The programmatic or accessible name for the text input must match or include the same text as the visible text label.
+The label describes the purpose of the control. The label should be visible at all times. The programmatic or accessible name for the text input must match or include the same text as the visible text label
 
 For text input fields that are required (not optional), the programmatic label must specify that information, for example: "First name (required).
 
 ### Do not use placeholder text as the label
-Placeholder cannot be considered the visible label if it disappears at any point. Placeholder text must also meet color contrast minimum ratios.
+Placeholder cannot be considered the visible label if it disappears at any point. Placeholder text must also meet color contrast minimum ratios
 
-## iOS
-### Developer Notes on Name, Role, Groupings, and State
 #### Name
 Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name for the text input. If this happens, hide the visible text label from VoiceOver. Placeholder text should not be the programmatic name as placeholder text will often disappear.
 
@@ -120,11 +120,29 @@ Focus MUST return back to the text input field after the user is done editing th
 - “Label, value, text field, double tap to edit”  (value entered)
 - “Label, placeholder, text field, double tap to edit” (placeholder)
 - “Label, text field, double tap to edit”  (no placeholder or value)
-- "text field" or "editbox" can be announced prior to "adjustable", picker item or other controls.
+- "text field" or "editbox" is sometimes announced prior to "adjustable", picker item or other controls.
 - Announcement for disabled is "dimmed"
 
 ## Android
-### Developer Notes for Name, Role, Groupings & State
+
+### Developer Notes
+A text input field allows users to enter and edit text. On both Android and iOS devices, when a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
+
+Use a native text input control whenever possible versus programming a custom element. The native text input will automatically and correctly announce the role for a screen reader without additional development effort
+
+For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control. Only announcing the label for the text input in the swipe before the input field does not meet this requirement
+
+## Beware of "On Focus" Level A Violation
+Focus should never be sent to a text input field automatically from another component. The user must control navigating to and from a text input, or any other form input
+
+## Label
+The label describes the purpose of the control. The label should be visible at all times. The programmatic or accessible name for the text input must match or include the same text as the visible text label
+
+For text input fields that are required (not optional), the programmatic label must specify that information, for example: "First name (required).
+
+### Do not use placeholder text as the label
+Placeholder cannot be considered the visible label if it disappears at any point. Placeholder text must also meet color contrast minimum ratios
+
 #### Name
 **Android Views**
 - `android:text` XML attribute

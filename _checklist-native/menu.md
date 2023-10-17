@@ -4,7 +4,7 @@ title:  "Menu"
 categories: controls
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves, confined within the menu
   escape: |
     The menu closes and returns focus to the button that launched it
@@ -44,7 +44,7 @@ settings:
   - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item 
   - A close button
   - Swiping back to the element that opened menu
-- If menu hides content underneath it, the screen reader focus should be confined within the menu.
+- If menu hides content underneath it, the screen reader focus should be confined within the menu
 - Tapping outside the menu to close cannot be the only option for screen reader users
 
 ### Name

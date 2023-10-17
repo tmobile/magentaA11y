@@ -4,7 +4,7 @@ title:  "Snackbar/Toast"
 categories: notifications
 
 keyboard:
-  tab: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves in logical order to the snackbar
   space: |
     Any elements inside are activated on iOS and Android
@@ -15,7 +15,7 @@ mobile:
   swipe: |
     Focus moves within the snackbar
   doubletap: |
-    Activates elements within the snackbar
+    Activates any interactive elements within the snackbar
 
 screenreader:
   name:  |

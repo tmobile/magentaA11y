@@ -4,7 +4,7 @@ title:  "Radio button"
 categories: controls
 
 keyboard:
-  tab and arrow keys: |
+  tab, arrow keys or Ctl+tab: |
       Focus visibly moves to the radio button
   spacebar: |
       Activates on iOS and Android
@@ -13,7 +13,7 @@ keyboard:
         
 mobile:
   swipe: |
-      Focus moves to the element, expresses its name, role, state, and if disabled
+      Focus moves to the element, expresses its name, role, and state, if disabled
   doubletap: |
       Toggles the radio button state
 
@@ -29,16 +29,16 @@ screenreader:
 
 settings:
   text resize: |
-    Text can resize up to 200% without losing information
+    Text label can resize up to 200% without losing information
 ---
 
 ## iOS
 
 ### **Developer Notes**
 
-- Radio buttons allow a user to select one item from a predefined list of options.
-- A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is usually not a change of context.
-- Name, Role, State must be announced when focus is on the control. Announcing the label before the radio button does not meet this requirement.
+- Radio buttons allow a user to select one item from a predefined list of options
+- A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is usually not a change of context
+- Name, Role, State must be announced when focus is on the control. Announcing the label before the radio button does not meet this requirement
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -134,10 +134,10 @@ settings:
 
 ### **Developer Notes**
 
-- Radio buttons allow users to select an item from a predefined list of options.
-- Use a native element rather than a custom element because it will announce the correct built-in screen reader announcements without additional development effort.
--  A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is usually not a change of context.
-- Name, Role, State must be announced when focus is on the control. Announcing the label before the radio button does not meet this requirement.
+- Radio buttons allow users to select an item from a predefined list of options
+- Use a native element rather than a custom element because it will announce the correct built-in screen reader announcements without additional development effort
+-  A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is usually not a change of context
+- Name, Role, State must be announced when focus is on the control. Announcing the label before the radio button does not meet this requirement
 
 ### Name
 
