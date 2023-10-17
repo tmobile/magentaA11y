@@ -16,7 +16,9 @@ mobile:
 
 screenreader:
   name:  |
-    The screen reader announces the text alternative for the info icon "Info"
+    The screen reader announces the text alternative for the info icon "Info". 
+  description:  |
+    The screen reader announces the visual label for any nested controls and any additional context. e.g. "Learn more Cats are amazing creatures". Note: Some screen readers require different navigational techniques to get the additional context to announce.
   role:  |
     It identifies the info icon as an image and the Tidbit heading as a heading
   group: |
