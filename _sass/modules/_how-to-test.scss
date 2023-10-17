@@ -82,9 +82,9 @@
           background-image: var(--icon-alert-black);
         }
       }
-      &.icon-alert {
+      &.icon-image {
         &:before {
-          background-image: var(--icon-alert-black);
+          background-image: var(--icon-image-dark);
         }
       }
 
@@ -181,6 +181,22 @@
   }
 }
 
+/* How to test links and buttons visually disabled but actionable button */
+.visually-disabled {
+  color: $color-text;
+  background: $color-button-disabled;
+  &:before,
+  &:after {
+    background-image: var(--icon-chevron-gray);
+  }
+  cursor: pointer;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-text;
+    background: $color-button-disabled;
+  }
+}
 
 /*Examples for How to test forms - checkboxes */
 

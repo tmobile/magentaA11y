@@ -34,7 +34,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
         <button>I get focus!</button>
       </td>
       <td>
-        <button tabindex="-1">I do NOT get focus</button>
+        <div class="button">I do NOT get focus</div>
       </td>
     </tr>  
       <tr>
@@ -94,7 +94,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
         Preferred
       </th>
       <th scope="col">
-        Disabled but not focusable
+        Visually disabled but actionable
       </th>
     </thead>
     <tbody>
@@ -103,7 +103,7 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
         <button aria-disabled="true">Save</button>
       </td>
       <td>
-        <button disabled>Save</button>
+        <button class="visually-disabled" tabindex="-1" onmouseup="alert('This disabled button is still actionable for mouse and screen readers users!')">Save</button>
       </td>
     </tr>  
     </tbody>

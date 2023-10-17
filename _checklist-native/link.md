@@ -5,7 +5,7 @@ categories: controls
 order: 1
 
 keyboard:
-  tab, arrow keys or Ctl+tab: |
+  tab, arrow keys, or Ctrl+tab: |
     Focus visibly moves to the link
   spacebar: |
     Activates on iOS and Android
@@ -15,8 +15,8 @@ keyboard:
 mobile:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
-  rotor/lcm: |
-    Links can be navigated to and activated from the Rotor/Local Context Menu or by focus/double tap.  Only one way is required.
+  rotor/TalkBack menu: |
+    Links can be navigated to and activated from the Rotor/TalkBack menu or by focus/double tap.  Only one way is required. Known issue: Links do not currently appear in iOS Rotor. This does not apply to SwiftUI and Jetpack Compose currently.
   doubletap: |
     Activates the link
 
@@ -39,17 +39,17 @@ settings:
 
 ### **Developer Notes**
 
-- Clickable text that navigates the user outside of the app to a URL (ex: opens a web browser)
-- When accessing an in-line link that is inside a paragraph with a screen reader, the focus could be around the paragraph container
-- To activate a link, screen reader users must double tap both inline links and links outside of paragraphs
-- There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph
-- WCAG 2.2 allows for inline link text font size at 24x24px
-- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive
+- Clickable link that navigates the user outside of the app to a web page. (ex: opens a web browser)
+- When accessing an in-line link that is inside a paragraph with a screen reader, the focus should be around the paragraph container.
+- To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
+- There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
+- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
 
 ### Name
 - Clickable text that describes the destination or purpose of the link
 - Programmatic name matches the visible text label
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+    - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of "Learn more" that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as "Learn more about accessible controls".
     - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of "Learn more" that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as "Learn more about accessible controls".
 
 - **UIKit**
@@ -71,6 +71,7 @@ settings:
   - Set `accessibilityTraits` to `.link`.
   - Stylize the text to appear as a link
 
+
 - **SwiftUI**
   - Use native `Link` view
   - If necessary, use view modifier `accessibilityAddTraits(.isLink)` to assign the role as Link.
@@ -87,6 +88,7 @@ settings:
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 
+
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
   - After grouping the paragraph and the in-line link to form a single accessibility element, bind the link action to it.
@@ -95,10 +97,12 @@ settings:
 
 ### State 
 
+
 - **UIKit**  
   - For enabled: Set `isEnabled` to `true`.
   - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the link to `notEnabled`, but this may overwrite the current accessibility role of the link.
+
 
 - **SwiftUI**
   - For disabled, use view modifier `disabled()`.
@@ -107,7 +111,7 @@ settings:
 - Use the device's default focus functionality. 
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When the in-app browser is closed, the focus should return to the triggering element.
+- When a link is closed, the focus should return to the triggering element.
 
 - **UIKit**
   - Implement focus ring to be around the paragraph container, so that double-tapping the container will activate the in-line link, given that there is only one link inside the container.
@@ -115,6 +119,8 @@ settings:
     - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
   - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.
+
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.
 
 - **SwiftUI**
@@ -125,6 +131,7 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
+- Announcement order can vary
 - Announcement order can vary
 - "Label, link"
 - "All text in paragraph including url, link" (link in paragraph)
@@ -149,45 +156,51 @@ settings:
   - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of “Learn more” that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as “Learn more about accessible controls".
 
 ### Role
-- Ensure screen reader users can navigate to links from the Local Context Menu and Rotor
+- Ensure screen reader users can navigate to links from the TalkBack menu
 - Role is automatically announced if a native component is used
 - When using non-native controls (custom controls), roles will need to be manually coded.
+
 
 - **Android Views**
   - TextView - Announces as “link”
   - URLSpan / ClickableSpan
   - Linkify Class
 
-- **Jetpack Compose**
+- **Android Compose**
   - Compose does not have native support on Link in Text, a customized linkable text need to be added into Text composable or use a `AndroidView` to bring the Android View with `Linkify` to build Compose composable
 
 ### Groupings
 - Link text can be grouped with paragraph text automatically to make a larger touch target, provided there is only one interactive link in view.
 
+
 - **Android Views**
   - `ViewGroup`
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
 
-- **Jetpack Compose** 
+- **Android Compose** 
   - `Modifier.semantics(mergeDescendants = true) {}` for the child elements grouping/merging
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
 
+
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`
+  - Announcement: disabled
 
-- **Jetpack Compose**
-  - Active: default state is active and enabled.
-  - Disabled: Use Compose modifier semantics `modifier = Modifier.semantics { disabled() }`
+- **Android Compose**
+  - Active: default state is active and enabled. Use `RadioButton(enabled = true)` to specify explicitly
+  - Disabled:  `RadioButton(enabled = false)` announces as disabled
+  - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
+  - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
 
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus order
 - Consider how focus should be managed between child elements and their parent views or containers
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading
-- When a menu, picker, or modal is closed, the focus should return to the triggering element
+- When a link is closed, the focus should return to the triggering element
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -204,7 +217,7 @@ settings:
   - To hide controls: `Important_For_Accessibility_false`
   - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
   
-- **Jetpack Compose**
+- **Android Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
   - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
