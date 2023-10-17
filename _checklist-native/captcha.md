@@ -40,7 +40,7 @@ settings:
   - A single interactive element, like an image button
   - An audio challenge as an equivalent experience to the image challenge
 
-When selecting the type of Captcha, do not limit the options to only <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html#dfn-cognitive-function-test"> cognitive function tests </a> (e.g. remembering or transcribing a word, or recognizing a picture the website provided).  When possible, When possible, leverage captcha or <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html#examples"> other solutions recommended by the W3C</a>.
+When selecting the type of Captcha, do not limit the options to only <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html#dfn-cognitive-function-test"> cognitive function tests </a> (e.g. remembering or transcribing a word, or recognizing a picture the website provided).  When possible, leverage <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html#examples"> recommended techniques recommended by the W3C</a> such as email link authentication, 3rd party  authentication, or 2 factor authentication.
 
 ### Name
 
