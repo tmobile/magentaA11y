@@ -161,7 +161,7 @@ settings:
 - **Android Views**
   - `android.view.Menu`
 - **Jetpack Compose**
-  - `DropdownMenu`, `ExposedDropdownMenuBox`
+  - `DropdownMenu`, `DropdownMenuItem`
 
 ### Groupings
 - Visible label, if any, is grouped with the menu button in a single swipe
