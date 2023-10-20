@@ -160,9 +160,6 @@ settings:
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
-- Expandable menus
-  - State must be announced - expands/collapses, opens/closes. Add logic and announcement to the programmatic name for the state
-  - If "opens" or "closes" is not included in the name, the expands/collapses state must be announced
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
