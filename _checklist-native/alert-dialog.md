@@ -4,7 +4,7 @@ title:  "Alert Dialog"
 categories: notifications
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves, confined within the alert
   escape: |
     The alert closes and returns focus to the element that launched it or to a logical place 
@@ -204,7 +204,7 @@ AlertDialog(
 {% endhighlight %}
 
 ### Announcement examples - Announcements vary by device and version.  
-- TalkBack often announces the entire alert altogether in one announcement while focus is on the CTA.  
+- TalkBack sometimes announces the entire alert altogether in one announcement while focus is on the CTA.  
 - "Title, body copy, CTA button, double tap to activate" 
 -  Alerts can also be announced in several swipes, separating content. Initial focus can be on the first element.
     - "Title"  (if any)

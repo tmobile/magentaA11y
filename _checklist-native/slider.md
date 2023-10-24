@@ -12,7 +12,9 @@ keyboard:
 mobile:
   swipe: |
     Focus moves to the input
-  Swipe-up/ swipe down: |
+  iOS-swipe-up/down: |
+    Increase/decrease slider value one step
+  android-volume or swipe up/down: |
     Increase/decrease slider value one step
 
 screenreader:

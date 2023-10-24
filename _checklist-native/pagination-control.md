@@ -4,7 +4,7 @@ title:  "Pagination control"
 categories: controls
 
 keyboard:
-  tab or arrow keys: |
+  tab, arrow keys or Ctl+tab: |
     Focus visibly moves to control (when page control is focusable)
   arrow and space keys: |
     Brings next page into view when focus is on page control (iOS)

@@ -5,7 +5,7 @@ categories: controls
 
 
 keyboard:
-  tab: |
+  tab, Ctr+tab or arrow keys: |
     Focus visibly moves to the button
   arrow keys: |
     Focus visibly moves to the button
@@ -35,50 +35,82 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
-## Developer notes- 
-A stepper is a two-segment control used to increase or decrease an incremental value
-
 ## iOS
 
+### Developer notes 
+- A stepper is a two-segment control used to increase or decrease an incremental value
+- When new value changes, it gets announced dynamically without moving focus from the increment/decrement button
+
 ### Name
-- Name includes the purpose and describes the item changing, matching any visible label and references the number shown between stepper (if visible).  
-  
-- Container class {stepper + label}  
-- Set a label in Interface Builder in the Identity Inspector
-- Group visible text label and the control in the same view container: accessibilityFrameInContainerSpace or Stackview
-- setTitle( ) method
-- If no visible label, use accessibilityLabel on control
-- Hint is used only if the results of interacting with it are not obvious from the control's label.
-- Match visible label, if any
-- To hide labels from VoiceOver announcements, uncheck the Accessibility Enabled checkbox in the Identity Inspector
-- If hiding visible label, use accessibilityLabel on control
+- If visible text label exists, the programmatic name should match the visible text label.
+  - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+
+- **UIKit**
+  - You can programmatically set the visible label with `setTitle()`.
+    - The stepper's title will overwrite the segment’s `accessibilityLabel`.
+  - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
+  - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+- **SwiftUI**
+  - By default, the programmatic name is the visible text label of the segment
+  - If necessary, use view modifier `accessibilityLabel(_:)`.
+  - If a segment has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- UIStepper Class
-- UIAccessibilityTraitAdjustable must be linked to the  `accessibilityIncrement()`  and  `accessibilityDecrement() methods.`
+- The presence of the stepper buttons implies an interactive stepper component.
+- The stepper buttons themselves should be announced as "Button".
+
+- **UIKit**
+  - Use `UIStepper`
+- **SwiftUI**
+  - Use native `Stepper` view
+
+### Groupings
+- N/A
+
+- **UIKit**
+  - Follow native grouping and order
+- **SwiftUI**
+  - Follow native grouping and order
 
 ### State
-- Active: isEnabled property
-- Disabled: UIAccessibilityTraitNotEnabled
-- Announcement: dimmed
+- The stepper button's state should be announced as "Increment" or "Decrement".
+- The new value should be announced when the user activates one of the buttons.
+
+- **UIKit**
+  - For disabled stepper: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+    - If necessary, you may change the accessibility trait of the menu item to `notEnabled`, but this may overwrite the current accessibility role of the segmented control.
+- **SwiftUI**
+  - For disabled, use view modifier `disabled()`.
 
 ### Focus
-- Only manage focus when needed. Primarily, let the device manage default focus.  
-- Consider how focus should be managed between child elements and their parent views.
-- accessibilityElementIsFocused  
-- isAccessibilityElement - Yes, if the element can respond to user input
-- To move screen reader focus to newly revealed content: UIAccessibilityLayoutChangedNotification
-- To NOT move focus, but announce new content: UIAccessibilityAnnouncementNotification
+- Use the device's default focus functionality. 
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
+
+- **UIKit**
+  - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
+    - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
+  - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
+  - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
+- **SwiftUI**
+  - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
+    - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
+    - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
+  - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcements
 - Increment
-- - "Label, Increment, Button"
-- - if button is activated new value will announce
+  - "Label with current value, Increment, Button"
+  - if button is activated new value will announce
 - Decrement
-- - "Label, Decrement, Button"
-- - if button is activated new value will announce
+  - "Label with current value, Decrement, Button"
+  - if button is activated new value will announce
 
 ## Android
+
+### Developer notes 
+- A stepper is a two-segment control used to increase or decrease an incremental value
+- When new value changes, it gets announced dynamically without moving focus from the increment/decrement button
 
 ### Name
 - Name includes the purpose and describes the item changing, matching any visible label and references the number shown between stepper (if visible).
@@ -114,8 +146,8 @@ A stepper is a two-segment control used to increase or decrease an incremental v
 
 ### Announcements
 - Increment
-- - "Label, Increment, Double tap to activate"
-- - if button is activated new value will announce
+  - "Label with value, Increment, Double tap to activate"
+  - if button is activated new value will announce
 - Decrement
-- - "Label, Decrement, Double tap to activate"
-- - if button is activated new value will announce
+  - "Label with value, Decrement, Double tap to activate"
+  - if button is activated new value will announce
