@@ -54,14 +54,14 @@ settings:
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The button’s title will overwrite the button’s `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
+    - The menu's title will overwrite the menu's `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the menu's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
-  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
+  - If menu item has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
 - When using non-native controls (custom controls), roles will need to be manually coded. Otherwise in native controls, they are automatically assigned.
