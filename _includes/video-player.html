@@ -1,8 +1,12 @@
   <video-container>
-    {% if include.title %}
-      <h3>{{ include.title }}</h3>
+    {% if include.h3 %}
+      <h3>{{ include.h3 }}</h3>
       {% endif %}
-      <video width="100%" controls tabindex="0" aria-label="{{ include.title }}" >
+      
+      {% if include.h4 %}
+      <h4>{{ include.h4 }}</h4>
+      {% endif %}
+      <video width="100%" controls tabindex="0" aria-label="{{ include.h3 }}" >
         <source src="{{ site.baseurl }}{{ include.filename }}" type="video/mp4">
         Your browser does not support HTML video.
         {% if include.vtt %}

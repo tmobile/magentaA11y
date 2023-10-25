@@ -295,6 +295,7 @@ layout: default
     </div>
 
     <div class="post-content">
+      <!-- TO DO this is not outputting for native -->
       {% for video in site.video-demos limit:1 %}
         {% assign path = page.id | replace: page.slug , ""  | prepend: '/assets/media/video' | append: video.directory | append: page.slug | append: ".mp4"  %}
         {% assign file_exists = site.static_files | where: "path", path  %}
@@ -306,12 +307,28 @@ layout: default
       {% endfor %}
 
       <media-gallery>
+        <!-- to do comments needed to removed because they seem to be outputting in HTML -->
+        <!-- split out page slug string to get the category of /checklist-native or /checklist-web -->
+        {% assign split_out = '/' | append: page.slug %}
+        {% assign page_type = page.id | split: split_out %}
+        
+        <!-- for all categories defined in config.yml (ios, android, jaws, nvda, macos) -->
         {% for video in site.video-demos %}
-          {% assign path = page.id | replace: page.slug , ""  | prepend: '/assets/media/video' | append: video.directory | append: page.slug | append: ".mp4"  %}
-          {% assign file_exists = site.static_files | where: "path", path  %}
-          {% if file_exists.size != 0 %}
-            {% include video-player.html filename = path title = video.title %}
-          {% endif %}
+          <!-- for ALL static files (maybe there is a way to just look at assets?) -->
+          {% for file in site.static_files %}
+          <!-- trying to get regex to work instead of the long if statement I have but it's not working -->
+          <!-- {% assign regex_filter = '/^(?=.*\b' | append: page.slug | append: '\b)(?=.*\b' | append: page_type[0] | append: '\b)(?=.*\b' | append: video.directory | append: '\b).*$/' %}  -->
+   
+          <!-- will compare each file against whether it has the same page.slug (e.g. text-input) and the same page_type (e.g. checklist-native) and the same video.directory (android, ios, etc) -->
+            {% if file.path contains page.slug and file.path contains page_type[0] and file.path contains video.directory and file.size != 0 %}
+              {% if page_type[0] == "/checklist-native" %}
+                {% assign human_readable_basename = file.basename | split: '-' | join: " " | capitalize %}
+                {% include video-player.html filename = file.path h3 = video.title h4 = human_readable_basename %}
+              {% else %}
+                {% include video-player.html filename = file.path h3 = video.title %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
         {% endfor %}
       </media-gallery>
 
