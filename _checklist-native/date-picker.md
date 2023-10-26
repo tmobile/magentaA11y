@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Picker / Spinner / Dropdown"
+title:  "Date Picker"
 categories: controls
 
 keyboard:
@@ -34,11 +34,10 @@ settings:
 
 ## Developer notes
 
-- Spinners and pickers provide a quick way to select one value from a set. Dropdowns/ Spinners/ Pickers all follow this page's guidance
+- Spinners and pickers provide a quick way to select one value from a set. Spinners/ Pickers all follow this page's guidance
 - Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
 - Screen reader focus moves to the picker or spinner when it opens. Sometimes it takes one swipe to enter spinner on Android
 - "Picker item, adjustable" "swipe up or down to adjust the value" for custom actions on the picker are the common announcements on iOS. Done button closes picker and screen reader focus should move to the button that opened the picker
-- "Dropdown list" or "pop up window" often brings up a modal on Android.  Focus remains in modal or back to triggering button.  Swipe anywhere on screen with two fingers can close modal
 - The value or option that the user chose must be announced along with the name and role
 
 ### Name
@@ -71,7 +70,6 @@ settings:
   - DatePickerDialog 
   - TimePickerDialog
   - See native date or time pickers in Gmail or Settings to determine the specific device's swipe order and behavior (Ex: Gmail-Compose-Menu-Schedule send-Pick date & time)
-  - "pop up window" or "dropdown list" can be the role  
 
 ### Groupings
 
