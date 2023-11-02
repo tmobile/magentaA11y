@@ -7,15 +7,15 @@ keyboard:
   tab, arrow keys or Ctl+tab: |
       Focus visibly moves to the picker
   spacebar: |
-      Selects and opens the picker/spinner on iOS and Android
+      Selects and opens the picker on iOS and Android
   enter: |
-      Selects and opens the picker/spinner on Android
+      Selects and opens the picker on Android
         
 mobile:
   swipe: |
       Focus moves to the element, expresses its name, role, value & state (if applicable)
   doubletap: |
-     Selects and opens picker/spinner
+     Selects and opens picker
 
 screenreader:
   name:  |
@@ -23,7 +23,7 @@ screenreader:
   role:  |
       Identifies itself as a button in iOS and "double tap to activate" in Android
   group: |
-      Visible label is grouped or associated with the picker in a single swipe
+      Group visible label with control that opens picker
   state: |
       Expresses its state (disabled/dimmed)
 
@@ -35,12 +35,12 @@ settings:
 ## iOS
 
 ### Developer notes
-- Spinners and pickers provide a quick way to select one value from a set. Dropdowns/ Spinners/ Pickers all follow this page's guidance
-- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Screen reader focus moves to the picker or spinner when it opens. Sometimes it takes one swipe to enter spinner on Android
-- "Picker item, adjustable" "swipe up or down to adjust the value" for custom actions on the picker are the common announcements on iOS. Done button closes picker and screen reader focus should move to the button that opened the picker
-- "Dropdown list" or "pop up window" often brings up a modal on Android. Focus remains in modal or back to triggering button. Swipe anywhere on screen with two fingers can close modal
-- The value or option that the user chose must be announced along with the name and role
+- Use native pickers when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- The native calendar has a few circles for selected dates, but there are limitations in the colors resulting in insufficient color contrast minimum ratios, as well as the color for the days of the week
+- Natively, VoiceOver announces the disabled/unavailable dates as dimmed
+- The month is adjustable (swipe up or down to change) and can also be changed via the wheel picker with double tap
+- Arrow buttons to change the month and year and not in the swipe order for the screen reader, since there is an alternate way to change the dates
+
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -107,13 +107,25 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-
-- 
+- “Double tap to dismiss pop up window”  First invisible element (on later versions)
+- Header announces as a heading
+- “Close, button”  Close X button
+- “Month, button, adjustable, double tap to change month and year, swipe up or down with one finger to adjust the value”  Month and year button
+- “Day, Date, button”  Each date
+- “Selected, Day, Date, button”  Selected date
+- “Day, Date, dimmed, button”  Disabled or unavailable date
+ 
 
 ## Android
 
 ### Developer notes
 - Date pickers can display past, present, or future dates. Clearly indicate important dates, such as current and selected days. Follow common patterns, like a calendar view
+- Time/Date pickers can be two types: dial and input
+- They are modals that cover the main content, where TalkBack users should be confined in them
+- Swipe order in the picker goes through the three months shown, the three days shown and the three years shown
+- Swiping up and down in each column rotates through the options in the column
+- Initial focus in modal is often on one of the first elements and not necessarily the heading.
+
 
 ### Name
 - Name describes the purpose of the control
@@ -193,3 +205,8 @@ Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
 {% endhighlight %}
 
 ### Announcement examples
+- “Name, edit box, Double-tap and hold to long press.  Actions available, use Tap with 3 fingers to view” On Edit box to open TalkBack Actions menu
+- “Show date picker button, double tap to activate”  Down arrow to open picker
+- “Day, date”  Title or heading
+- “Option (day or date) button, Swipe up or swipe down to adjust.  Double tap to activate. Double tap and hold to long press”  On each day/date in column (Double tap and hold to long press will rotate quickly through the column)
+- “Cancel button, double tap to activate”  CTA with “Set” as the other action
