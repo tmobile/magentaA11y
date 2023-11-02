@@ -7,23 +7,23 @@ keyboard:
   tab, arrow keys or Ctl+tab: |
       Focus visibly moves to the picker
   spacebar: |
-      Selects and opens the picker/spinner on iOS and Android
+      Selects and opens the picker on iOS and Android
   enter: |
-      Selects and opens the picker/spinner on Android
+      Selects and opens the picker on Android
         
 mobile:
   swipe: |
-      Focus moves to the element, expresses its name, role, value & state (if applicable)
+      Focus moves to the element, expresses its name, role, value
   doubletap: |
-     Selects and opens picker/spinner
+     Selects and opens picker
 
 screenreader:
   name:  |
       Purpose is clear and matches any visible label
   role:  |
-      Identifies itself as a button in iOS and "double tap to activate" in Android
+      Identifies itself as a button/adjustable in iOS and "double tap to activate" in Android
   group: |
-      Visible label is grouped or associated with the picker in a single swipe
+      n/a
   state: |
       Expresses its state (disabled/dimmed)
 
@@ -35,16 +35,12 @@ settings:
 ## iOS
 
 ### Developer notes
-- Spinners and pickers provide a quick way to select one value from a set. Dropdowns/ Spinners/ Pickers all follow this page's guidance
-- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
-- Screen reader focus moves to the picker or spinner when it opens. Sometimes it takes one swipe to enter spinner on Android
-- "Picker item, adjustable" "swipe up or down to adjust the value" for custom actions on the picker are the common announcements on iOS. Done button closes picker and screen reader focus should move to the button that opened the picker
-- "Dropdown list" or "pop up window" often brings up a modal on Android. Focus remains in modal or back to triggering button. Swipe anywhere on screen with two fingers can close modal
-- The value or option that the user chose must be announced along with the name and role
+- Screen reader focus moves to the picker when it opens
+- "Picker item, adjustable" "swipe up or down to adjust the value" for custom actions on the picker are the common announcements. Done button closes picker and screen reader focus should move to the button that opened the picker
+
 
 ### Name
-- Programmatic name describes the purpose of the control.
-- It is the name of the element that opens the wheel picker.
+- Programmatic name describes the purpose of the control that opens the picker.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 - Placeholder text is NOT the programmatic name
@@ -106,14 +102,17 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-### Announcement examples
 
-- 
+
 
 ## Android
 
 ### Developer notes
 - Time pickers are modal and cover the main content. Users can select hours, minutes, or periods of time.
+- The clock or time picker toggles between two displays, the clock and a text input 
+- The TalkBack user should be confined in the modal
+- The native component supplies all the announcements for conformance.
+
 
 ### Name
 - Name describes the purpose of the control
@@ -202,3 +201,16 @@ TimePickerDialog(
 {% endhighlight %}
 
 ### Announcement examples
+- “Hour, Minutes and Period, Select Hours, Hour displayed, Double tap to select hours”  Then swipe to the hours on the clock.  Double tap on your selection.  Swipe back to the minutes display
+- “Minute, Double tap to select minutes”  Then swipe to the clock.  Swipe around the clock to select the minute.  Swipe back to the AM/PM display
+- “Selected, PM, Radio button, 2 of 2, Double tap to select”   Selected PM option
+- “Not selected, AM, Radio button, 1 of 2, Double tap to select”
+- “Switch to text input mode for the time input, button, Double tap to activate”  Set time modal is displayed  (Toggled option is “clock mode”)
+- “Set time”  Heading for the text input modal
+- “Type in time”  Visible text label for hour/minute text input
+- “Hour, Edit box for hour, Double tap to edit text”  Hour input.  User explores by touch until the keyboard is found and enters the text for the minutes and hours
+- “Colon”  Colon is announced to communicate a visible time display
+- “Minutes, Edit box for minute, Double tap to edit text"  “Hour” and “Minute” are announced because it is visually displayed
+- “Dropdown list, PM, Double tap to change”
+  - “Pop up window, checked, AM, In list, Double tap to select”  Pop up list
+- “Cancel, button, double tap to activate”  CTA (OK is other option)
