@@ -30,14 +30,15 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
-
-## iOS
-### Developer Notes
+## General Notes
 A text input field allows users to enter and edit text. On both Android and iOS devices, when a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
 
 Use a native text input control whenever possible versus programming a custom element. The native text input will automatically and correctly announce the role for a screen reader without additional development effort
 
 For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control. Only announcing the label for the text input in the swipe before the input field does not meet this requirement
+
+## iOS
+### Developer Notes
 
 ## Beware of "On Focus" Level A Violation
 Focus should never be sent to a text input field automatically from another component. The user must control navigating to and from a text input, or any other form input
