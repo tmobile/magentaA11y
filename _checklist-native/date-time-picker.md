@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Time/Date Picker"
+title:  "Date/Time Picker"
 categories: controls
 
 keyboard:
@@ -47,7 +47,7 @@ For iOS, VoiceOver generally moves focus to the picker options when it opens. A 
 
 **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The date picker's title will overwrite the date picker's `accessibilityLabel`.
+    - The triggering element's title will overwrite its's `accessibilityLabel`.
   - If a visible label is not applicable in this case, set the date picker's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
@@ -91,7 +91,7 @@ For iOS, VoiceOver generally moves focus to the picker options when it opens. A 
 - Use the device's default focus functionality. 
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When the date picker is closed, the focus should return to the triggering element.
+- When the picker is closed, the focus should return to the triggering element.
 
 **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`

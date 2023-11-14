@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Date Picker"
+title:  "Calendar Date Picker"
 categories: controls
 
 keyboard:
@@ -41,7 +41,6 @@ settings:
 - The month is adjustable (swipe up or down to change) and can also be changed via the wheel picker with double tap
 - Arrow buttons to change the month and year and not in the swipe order for the screen reader, since there is an alternate way to change the dates
 
-
 ### Name
 - Programmatic name describes the purpose of the control.
 - It is the name of the element that opens the date picker.
@@ -51,8 +50,8 @@ settings:
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The date picker's title will overwrite the date picker's `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the date picker's `accessibilityLabel` to the label of your choice.
+    - Setting the triggering element's title will overwrite its `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the trigger's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
@@ -79,10 +78,12 @@ settings:
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
-### State 
+### State
+- By default, disabled or unavailble dates are announced as dimmed
+
 - **UIKit**  
-  - For enabled: Set `isEnabled` to `true`.
-  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+  - For enabled trigger element: Set `isEnabled` to `true`.
+  - For disabled trigger element: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
   - For disabled, use view modifier `disabled()`.
@@ -114,7 +115,6 @@ settings:
 - “Day, Date, button”  Each date
 - “Selected, Day, Date, button”  Selected date
 - “Day, Date, dimmed, button”  Disabled or unavailable date
- 
 
 ## Android
 
@@ -125,7 +125,6 @@ settings:
 - Swipe order in the picker goes through the three months shown, the three days shown and the three years shown
 - Swiping up and down in each column rotates through the options in the column
 - Initial focus in modal is often on one of the first elements and not necessarily the heading.
-
 
 ### Name
 - Name describes the purpose of the control
