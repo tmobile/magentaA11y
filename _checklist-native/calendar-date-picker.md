@@ -79,7 +79,7 @@ settings:
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State
-- By default, disabled or unavailble dates are announced as dimmed
+- By default, disabled or unavailable dates are announced as dimmed
 
 - **UIKit**  
   - For enabled trigger element: Set `isEnabled` to `true`.
