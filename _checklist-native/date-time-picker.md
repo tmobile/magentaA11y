@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Date/Time Picker"
+title:  "Time/Date Picker"
 categories: controls
 
 keyboard:
@@ -32,12 +32,15 @@ settings:
     Text can resize up to 200% without losing information
 ---
 ## General Notes
-This entry describes native pickers that allow a user to set information such as a date or time. There may be more uses for such picker inputs as well.
+This entry describes native pickers that allow a user to set information such as a time or date. There may be more uses for such picker inputs as well.
 
 ## iOS
 
 ### Developer notes
-For iOS, VoiceOver generally moves focus to the picker options when it opens. A "Done" button closes picker, and screen reader focus should move back to the button that opened the picker originally.
+- For iOS, VoiceOver generally moves focus to the picker options when it opens
+- A "Done" button closes picker
+- Screen reader focus should move back to the button that opened the picker originally
+- At first swipe to the input, it may announce as a textfield, but once clicked on you will hear "adjustable" and now you will be inside the time/date picker
 
 #### Name
 - Programmatic name describes the purpose of the control that opens the picker.
@@ -108,8 +111,8 @@ For iOS, VoiceOver generally moves focus to the picker options when it opens. A 
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 #### Announcement examples
-- "Birthday, button, activate to choose type, actions available"
-- "November, picker item, adjustable"
+- For button that opens time/date picker: "Birthday, button, activate to choose type, actions available"
+- Value is announced along with role when picker opens: "November, picker item, adjustable"
 - Announcement for disabled state is "dimmed"
 
 ## Android
