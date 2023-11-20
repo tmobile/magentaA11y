@@ -367,5 +367,5 @@ Use a screen reader, such as [NVDA](https://www.nvaccess.org/) (for Windows) or 
 
 ## Resources
 - [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/)
-- [WebAIM: Buttons](https://webaim.org/techniques/buttons/)
+- [WebAIM: Buttons](https://webaim.org/techniques/forms/controls#button)
 
