@@ -137,7 +137,7 @@ Keyboard testing consists of a few keyboard commands to interact with web experi
 
 ## Video Example
 {: .divider }
-{% include video-player.html filename = "/assets/media/video/how-to/how-to-keyboard.mp4" title = "How to test with the keyboard" vtt="/assets/media/video/how-to/how-to-keyboard.mp4.vtt" %}
+{% include video-player.html filename = "/assets/media/video/how-to-test/how-to-keyboard.mp4" title = "How to test with the keyboard" vtt="/assets/media/video/how-to-test/how-to-keyboard.mp4.vtt" %}
 
 <hr>
 
