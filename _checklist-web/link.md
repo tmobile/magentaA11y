@@ -103,7 +103,7 @@ This semantic HTML contains all accessibility features by default.
 ### Name links logically
 
 - **Do not** use a heading with a generic link below. 
-- Instead, make the heading a link.
+- Instead, make the heading a link or programmatically associate the link with the heading using <code>aria-describedby</code>.
 
 {% highlight html %}
 <h3>About our coffee subscriptions</h3>
@@ -112,6 +112,19 @@ This semantic HTML contains all accessibility features by default.
    Learn more
 </div>
 {% endhighlight %}{: .bad-example}
+
+{% highlight html %}
+<h3><a href="/about/">About our coffee subscriptions</a></h3>
+<p>Get the best coffee delivered to your door</p>
+{% endhighlight %}{: .good-example}
+
+{% highlight html %}
+<h3 id="unique-id">About our coffee subscriptions</h3>
+<p>Get the best coffee delivered to your door</p>
+<a href="/about/" aria-describedby="unique-id">
+   Learn more
+</div>
+{% endhighlight %}{: .good-example}
 
 ### Making a link with no `href` focusable
 
@@ -199,12 +212,6 @@ Sometimes the design will call for multiple links with the same text label. In a
 {% endhighlight %}
 
 ### Complex examples
-
-- **Don't** wrap large blocks of content or nest other interactive components inside a link.
-- This complex example uses a simple link and references product information using `aria-describedby`
-- This allows the link to be read first (without the repetition of the image alt text) and then the screen reader will read the related product information (colors, pricing).
-- The HTML is **written in logical order** for the screen reader and CSS grid layout is used to re-arrange the elements visually.
-- No Javascript is used, this example uses well supported CSS only techniques
 
 <example>
 {% include /examples/product.html %}

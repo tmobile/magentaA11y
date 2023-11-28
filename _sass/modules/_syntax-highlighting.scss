@@ -38,6 +38,19 @@ pre {
   }
   &.bad-example {
     position: relative;
+    margin-top: 1em;
+    &::before {
+      content: "Bad example";
+      position: absolute;
+      top: -21px;
+      right: 0;
+      background: firebrick;
+      color: #fff;
+      padding: 3px 10px;
+      font-size: .7em;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
     &::after {
       content: '';
       display: block;
@@ -49,7 +62,6 @@ pre {
       background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHElEQVQYV2P4//+/FBbMgI4ZhohCbBhD81BQCAD6ay/4Sj20ZAAAAABJRU5ErkJggg==);
     }
   }
-
 
   .c     { color: #676767; font-style: italic } // Comment
   .err   { color: #a61717; background-color: #e3d2d2 } // Error
