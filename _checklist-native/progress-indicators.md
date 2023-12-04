@@ -3,7 +3,6 @@ layout: entry
 title:  "Progress Indicators" 
 categories: controls 
 
-
 keyboard:
   tab, arrow keys or Ctl+tab: |
     tbd
@@ -33,6 +32,11 @@ settings:
     tbd
 ---
 
+<!-- 
+    iOS: https://developer.apple.com/design/human-interface-guidelines/progress-indicators
+    Android: https://m2.material.io/components/progress-indicators/android
+-->
+
 ## iOS
 
 <!-- 
@@ -49,7 +53,7 @@ Enter Developer Notes for iOS, add additional information if needed
 Enter information for iOS Name, update information below with appropriate details, or remove details not needed
 -->
 ### Name
-- [todo] Aren't these decorative?
+- [todo]
 
 <!-- 
 Enter information for iOS Name using UIKIT, update below with appropriate details, replace _component with new component name or appropriate description
@@ -69,7 +73,7 @@ Enter information for iOS Name using SwiftUI, update below with appropriate deta
 Enter information for iOS Role, update information below with appropriate details, or remove details not needed
 -->
 ### Role
-- [todo] Aren’t these decorative?
+- [todo]
 
 <!-- 
 Enter information for iOS Name using UIKIT, update below with appropriate details, replace _component with new component name or appropriate description
@@ -112,7 +116,7 @@ Enter information for iOS State, update below with appropriate details, replace 
 Enter information for iOS State for UIKit, update below with appropriate details, replace _component with new component name or appropriate description
 -->
 - **UIKit**  
-    - [todo] Aren’t these decorative?
+    - [todo]
 
 <!-- 
 Enter information for iOS State for SwiftUI, update below with appropriate details, replace _component with new component name or appropriate description
@@ -152,18 +156,19 @@ Enter Developer Notes for Android, add additional information if needed
 -->
 ## Developer notes
 - Progress indicators express an unspecified wait time or display the length of a process.
+- Progress indicators inherit accessibility support from the ProgressBar class in the framework. 
 
 <!-- 
 Enter information for Android Name, update information below with appropriate details, or remove details not needed
 -->
 ### Name
-- ...
+- [todo]
 
 <!-- 
 Enter information for Android Name for Android Views, update information below with appropriate details, or remove details not needed
 -->
 - **Android Views**
-  - ...
+  - [todo] `progressIndicator.contentDescription = contentDescription`
 
 <!-- 
 Enter information for Android Name for Jetpack Compose, update information below with appropriate details, or remove details not needed
