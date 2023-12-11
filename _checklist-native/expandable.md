@@ -1,12 +1,12 @@
 ---
 layout: entry
-title:  " _component " 
+title:  "Expandable region" 
 categories: controls 
 
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to the _component
+    Focus visibly moves to the expandable region
   spacebar: |
     Activates on iOS and Android
   enter: |
@@ -16,17 +16,17 @@ mobile:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
   doubletap: |
-    Activates the _component
+    Activates the expandable region
     
 screenreader: 
   name:  |
     Purpose is clear and matches visible label
   role:  |
-    Identifies as a _component in iOS and _component or "double tap to activate" in Android
+    Identifies as a expandable region in iOS and expandable region or "double tap to activate" in Android
   group: |
-    Visible label is grouped or associated with the _component in a single swipe
+    Visible label is grouped or associated with the expandable region in a single swipe
   state: |
-    Expresses its state (disabled/dimmed)
+    Expresses its state (expanded/collapsed)
 
 settings:
   text resize: |
@@ -51,12 +51,12 @@ Enter information for iOS Name, update information below with appropriate detail
 - Placeholder text is NOT the programmatic name
 
 <!-- 
-Enter information for iOS Name using UIKIT, update below with appropriate details, replace _component with new component name or appropriate description
+Enter information for iOS Name using UIKIT, update below with appropriate details, replace expandable region with new component name or appropriate description
 -->
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The _component title will overwrite the _component `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the _component `accessibilityLabel` to the label of your choice.
+    - The expandable region title will overwrite the expandable region `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the expandable region `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
@@ -75,24 +75,22 @@ Enter information for iOS Role, update information below with appropriate detail
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 <!-- 
-Enter information for iOS Name using UIKIT, update below with appropriate details, replace _component with new component name or appropriate description
+Enter information for iOS Name using UIKIT, update below with appropriate details, replace expandable region with new component name or appropriate description
 -->
 - **UIKit**
-  - 
-  - 
+  -   Use `UIButton`
 
 <!-- 
 Enter information for iOS Name using SwiftUI, update below with appropriate details
 -->
 - **SwiftUI**
-  - 
-  - 
+  - Use native `DisclosureGroup` view
 
 <!-- 
-Enter information for iOS Groupings, update below with appropriate details, replace _component with new component name or appropriate description
+Enter information for iOS Groupings, update below with appropriate details, replace expandable region with new component name or appropriate description
 -->
 ### Groupings
-- Group visible label with _component, if applicable, to provide a programmatic name for the _component.
+- Group visible label with expandable region, if applicable, to provide a programmatic name for the expandable region.
 - Group label with data to ensure reading order is logical. (Not label, label, data, data).
 
 <!--
@@ -108,24 +106,23 @@ Enter information for iOS Groupings using SwiftUI, update below with appropriate
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 <!-- 
-Enter information for iOS State, update below with appropriate details, replace _component with new component name or appropriate description
+Enter information for iOS State, update below with appropriate details, replace expandable region with new component name or appropriate description
 -->
 ### State 
 
 <!-- 
-Enter information for iOS State for UIKit, update below with appropriate details, replace _component with new component name or appropriate description
+Enter information for iOS State for UIKit, update below with appropriate details, replace expandable region with new component name or appropriate description
 -->
 - **UIKit**  
-  - For enabled: Set `isEnabled` to `true`.
-  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
-    - If necessary, you may change the accessibility trait of the _component to `notEnabled`, but this may overwrite the current accessibility role of the _component.
+  - For collapsed: Set...
+  - For exapanded: Set...
 
 <!-- 
-Enter information for iOS State for SwiftUI, update below with appropriate details, replace _component with new component name or appropriate description
+Enter information for iOS State for SwiftUI, update below with appropriate details, replace expandable region with new component name or appropriate description
 -->
 - **SwiftUI**
-  - For selected, use `accessibilityAddTraits(.isSelected)`.
-  - For disabled, use view modifier `disabled()`.
+  - For collapsed..
+  - For expanded...
 
 <!-- 
 Enter information for iOS Focus, update below with appropriate details
@@ -205,13 +202,13 @@ Enter information for Android Role, update information below with appropriate de
 Enter information for Android Role for Android Views, update information below with appropriate details
 -->
 - **Android Views**
-  - 
+  - use native `Button`
 
 <!-- 
 Enter information for Android Role for Jetpack Compose, update information below with appropriate details
 -->
 - **Jetpack Compose**
-  - 
+  - use foundation views to create an expandable list ([Source](https://proandroiddev.com/expandable-lists-in-jetpack-compose-b0b78c767b4))
 
 <!-- 
 Enter information for Android Groupings, update information below with appropriate details, or remove details not needed
@@ -242,14 +239,15 @@ Enter information for Android State, update information below with appropriate d
 Enter information for Android State for Android Views, update information below with appropriate details, or remove details not needed
 -->
 - **Android Views**
-  - Active: `android:enabled=true`
-  - Disabled: `android:enabled=false`. Announcement: disabled
+  - Expanded:
+  - Collapsed:
 
 <!-- 
 Enter information for Android State for Jetpack Compose, update information below with appropriate details, or remove details not needed
 -->
 - **Jetpack Compose**
- - 
+  - Expanded:
+  - Collapsed:
 
 <!-- 
 Enter information for Android Focus, update information below with appropriate details, or remove details not needed
