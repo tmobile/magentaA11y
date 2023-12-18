@@ -35,6 +35,7 @@ settings:
 <!-- 
     iOS: https://developer.apple.com/design/human-interface-guidelines/progress-indicators
     Android: https://m2.material.io/components/progress-indicators/android
+    Android - Newer: https://m3.material.io/components/progress-indicators/overview
 -->
 
 ## iOS
@@ -70,84 +71,17 @@ Enter information for iOS Name using SwiftUI, update below with appropriate deta
 
 
 <!-- 
-Enter information for iOS Role, update information below with appropriate details, or remove details not needed
--->
-### Role
-- [todo]
-
-<!-- 
-Enter information for iOS Name using UIKIT, update below with appropriate details, replace _component with new component name or appropriate description
--->
-- **UIKit**
-  - 
-  - 
-
-<!-- 
-Enter information for iOS Name using SwiftUI, update below with appropriate details
--->
-- **SwiftUI**
-  - 
-  - 
-
-<!-- 
-Enter information for iOS Groupings, update below with appropriate details, replace _component with new component name or appropriate description
--->
-### Groupings
-- [todo] I don't believe there is grouping with this component
-
-<!--
-Enter information for iOS Groupings using UIKit, update below with appropriate details
--->
-- **UIKit**
-  - 
-  - 
-<!--
-Enter information for iOS Groupings using SwiftUI, update below with appropriate details
--->
-- **SwiftUI**
-  - ...
-
-<!-- 
-Enter information for iOS State, update below with appropriate details, replace _component with new component name or appropriate description
--->
-### State 
-
-<!-- 
-Enter information for iOS State for UIKit, update below with appropriate details, replace _component with new component name or appropriate description
--->
-- **UIKit**  
-    - [todo]
-
-<!-- 
-Enter information for iOS State for SwiftUI, update below with appropriate details, replace _component with new component name or appropriate description
--->
-- **SwiftUI**
-  - ...
-
-<!-- 
 Enter information for iOS Focus, update below with appropriate details
 -->
 ### Focus
-- ...
-
-<!-- 
-Enter information for iOS Focus using UIKit, update below with appropriate details
--->
-- **UIKit**
-  - ...
-
-<!-- 
-Enter information for iOS Focus using SwiftUI, update below with appropriate details
---> 
-- **SwiftUI**
-  - ...
+- Focus does not move to the progress indicator when it appears, but screen reader users should be able to discover it if navigating within the screen while it is present.
 
 
 <!-- 
 Enter information for iOS VoiceOver announcements for the specific component, update below with appropriate details and announcement examples
 --> 
 ### Announcement examples
-- 
+- "Loading"
 
 ## Android
 
@@ -155,6 +89,8 @@ Enter information for iOS VoiceOver announcements for the specific component, up
 Enter Developer Notes for Android, add additional information if needed
 -->
 ## Developer notes
+- In Material Design, there are two types of progress indicators: Determinate and Indeterminate.
+- Progress indicators visually surface the status of an operation.
 - Progress indicators express an unspecified wait time or display the length of a process.
 - Progress indicators inherit accessibility support from the ProgressBar class in the framework. 
 
@@ -174,99 +110,14 @@ Enter information for Android Name for Android Views, update information below w
 Enter information for Android Name for Jetpack Compose, update information below with appropriate details, or remove details not needed
 -->
 - **Jetpack Compose**
-  - ...
+  - `LinearProgressIndicator` or `CircularProgressIndicator` Use either the [LinearProgressIndicator](https://developer.android.com/reference/com/google/android/material/progressindicator/LinearProgressIndicator) or [CircularProgressIndicator](https://developer.android.com/reference/com/google/android/material/progressindicator/CircularProgressIndicator) composables and pass a value for the progress parameter.
 
-<!-- 
-Enter information for Android Role, update information below with appropriate details, or remove details not needed
--->
-### Role
-- ...
-
-<!-- 
-Enter information for Android Role for Android Views, update information below with appropriate details
--->
-- **Android Views**
-  - 
-
-<!-- 
-Enter information for Android Role for Jetpack Compose, update information below with appropriate details
--->
-- **Jetpack Compose**
-  - 
-
-<!-- 
-Enter information for Android Groupings, update information below with appropriate details, or remove details not needed
--->
-### Groupings
-- ...
-
-<!-- 
-Enter information for Android Groupings using Android Views, update information below with appropriate details, or remove details not needed
--->
-- **Android Views**
-  - ...
-
-<!-- 
-Enter information for Android Groupings using Jetpack Compose, update information below with appropriate details, or remove details not needed
--->
-- **Jetpack Compose**
-  - ...
-
-<!-- 
-Enter information for Android State, update information below with appropriate details, or remove details not needed
--->
-### State
-
-<!-- 
-Enter information for Android State for Android Views, update information below with appropriate details, or remove details not needed
--->
-- **Android Views**
-  - ...
-
-<!-- 
-Enter information for Android State for Jetpack Compose, update information below with appropriate details, or remove details not needed
--->
-- **Jetpack Compose**
- - 
 
 <!-- 
 Enter information for Android Focus, update information below with appropriate details, or remove details not needed
 -->
 ### Focus
-- ...
+- Focus does not move to the progress indicator when it appears, but screen reader users should be able to discover it if navigating within the screen while it is present.
 
-<!-- 
-Enter information for Android Focus for Android Views, update information below with appropriate details, or remove details not needed
--->
-- **Android Views**
-  - ...
-
-<!-- 
-Enter information for Android Focus for Jetpack Compose, update information below with appropriate details, or remove details not needed
--->
-- **Jetpack Compose**
-  - ...
-
-<!-- 
-Enter information for Android Custom Accessibility Action, update information below with appropriate details, or remove details not needed
--->
-### Custom Accessibility Action
-- ...
-
-<!-- 
-Enter information for Android Custom Accessibility Action for Android Views, update information below with appropriate details, or remove details not needed
--->
-- **Android Views**
- - 
-
-<!-- 
-Enter information for Android Custom Accessibility Action for Jetpack Compose, update information below with appropriate details, or remove details not needed
--->
-- **Jetpack Compose**
-  - ...
-
-<!-- 
-Enter information for Android TalkBack announcements for the specific component, update below with appropriate details and announcement examples
--->   
 ### Announcement examples
-- 
+- "Loading"
