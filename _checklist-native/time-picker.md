@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Wheel Picker"
+title:  Time Picker"
 categories: controls
 
 keyboard:
