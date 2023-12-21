@@ -54,7 +54,7 @@ Enter Developer Notes for iOS, add additional information if needed
 Enter information for iOS Name, update information below with appropriate details, or remove details not needed
 -->
 ### Name
-- [todo]
+- The label for the Progress Indicator should be meaningful. e.g. "Loading"
 
 <!-- 
 Enter information for iOS Name using UIKIT, update below with appropriate details, replace _component with new component name or appropriate description
@@ -98,7 +98,7 @@ Enter Developer Notes for Android, add additional information if needed
 Enter information for Android Name, update information below with appropriate details, or remove details not needed
 -->
 ### Name
-- [todo]
+- The label for the Progress Indicator should be meaningful. e.g. "Loading"
 
 <!-- 
 Enter information for Android Name for Android Views, update information below with appropriate details, or remove details not needed
