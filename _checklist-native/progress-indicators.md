@@ -5,31 +5,35 @@ categories: controls
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    tbd
+    Progress Indicators are not keyboard focusable components.
   spacebar: |
-    tbd
+    Progress Indicators are not keyboard focusable components.
   enter: |
-    tbd
+    Progress Indicators are not keyboard focusable components.
+
+mobile:
+  swipe: |
+      Focus moves to the element, expresses its name e.g. "Loading"
           
 mobile gestures:
   swipe: |
-    tbd
+    Progress Indicators are not swipeable components.
   doubletap: |
-    tbd
+    Progress Indicators are not interactive components.
     
 screenreader: 
   name:  |
-    tbd
+    A meaningful label e.g. "Loading"
   role:  |
-    tbd
+    The Progress Indicator does not have a role
   group: |
-    tbd
+    The Progress Indicator is not grouped
   state: |
-    tbd
+    The Progress Indicator does not have a state
 
 settings:
   text resize: |
-    tbd
+    The Progress Indicator does not respond to text resize
 ---
 
 <!-- 
