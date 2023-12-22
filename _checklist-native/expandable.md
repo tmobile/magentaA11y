@@ -32,6 +32,10 @@ settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
+## General
+- An expandable region is a view that shows items in a two-level list; groups which can individually be expanded to show its children.
+- The expand/collapses indicator (caret) is never focused separately.  As part of a table row/list view, the label, images and other non-interactive content in the row are usually announced together. The caret shows the state, which should be announced as part of the whole row announcement.
+- When the row is activated to expand, the focus stays on that row and does not automatically move to the new content.
 
 ## iOS
 
@@ -48,8 +52,6 @@ Enter information for iOS Name, update information below with appropriate detail
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-- Placeholder text is NOT the programmatic name
-
 <!-- 
 Enter information for iOS Name using UIKIT, update below with appropriate details, replace expandable region with new component name or appropriate description
 -->
@@ -131,8 +133,6 @@ Enter information for iOS Focus, update below with appropriate details
 - Use the device's default focus functionality. 
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 <!-- 
 Enter information for iOS Focus using UIKit, update below with appropriate details
@@ -256,8 +256,6 @@ Enter information for Android Focus, update information below with appropriate d
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 <!-- 
 Enter information for Android Focus for Android Views, update information below with appropriate details, or remove details not needed
