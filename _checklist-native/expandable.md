@@ -43,7 +43,7 @@ settings:
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- Name, Role, State must be stated in a single announcement when focus is on the control area or whole row (caret icon should never gain focus alone).
 
 <!-- 
 Enter information for iOS Name, update information below with appropriate details, or remove details not needed
@@ -167,7 +167,7 @@ Enter information for iOS VoiceOver announcements for the specific component, up
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+-  Name, Role, State must be stated in a single announcement when focus is on the control area or whole row (caret icon should never gain focus alone).
 
 <!-- 
 Enter information for Android Name, update information below with appropriate details, or remove details not needed
