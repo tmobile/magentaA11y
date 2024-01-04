@@ -25,7 +25,7 @@ It is crucial to **test with only the keyboard first**, without the screen reade
 ### Browsers
 
 - Any major browser (Chrome, Safari, Firefox) is acceptable for keyboard testing.
-- Note: In Safari, you'll have to activate tab in Preferences » Advanced » Press Tab
+- <strong>Note:</strong> In Safari, you'll have to activate tab in `Safari > Settings > Press Tab to highlight each item on a webpage`
 
 ## <step-number>2</step-number> How to test
 {: .divider }
