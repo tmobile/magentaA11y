@@ -23,6 +23,8 @@ screenreader:
     Hints or errors (ex: chars remaining) are read after the label, related inputs include a group name (ex: Contact us)
   state: |
     If applicable, it expresses its state (required, disabled / dimmed / unavailable)
+  status: |
+    Character counter updates dynamically after keypress and a short delay
 
 gherkin-keyboard: 
   - when:  |
@@ -58,16 +60,16 @@ wcag:
       - criteria: Conveys the correct semantic role 
       - criteria: Expresses its state (if applicable)
       - criteria: Meets criteria across platforms, devices and viewports
+      - criteria: Status messages are announced by screen readers
 ---
 
 ## Code examples
 
 ### Use semantic HTML
 
-This semantic HTML contains all accessibility features by default.
-
+- <strong>Note:</strong> There are two containers in the HTML that have the same counter content. One of them is hidden from screen readers by use of `aria-hidden="true"` and the other visually hidden container's content is dynamically updated after a slight pause. This is to ensure the screen reader does not interrupt the announcement of the key pressed with the announcement of the dynamic counter text update.
 - **Delay the update** for dynamic counters
-  - Use `setTimeout`to allow the accessibility tree and screen reader time to update in a logical fashion
+  - Use `setTimeout`to allow the accessibility tree and screen reader time to update in a logical fashion e.g. 1500ms
 - **Do not** reference the `role="status"` element with aria-describedby
   - This causes a bug in VoiceOver 
 
@@ -75,13 +77,17 @@ This semantic HTML contains all accessibility features by default.
 const textarea = document.getElementById('message');
 if(textarea) {
     const chars = document.getElementById('currentChars');
+    const srOutputTarget = document.getElementById('sr-counter-target');
     textarea.addEventListener("input", event => {
         const target = event.currentTarget;
         const maxLength = target.getAttribute("maxlength");
         const currentLength = target.value.length;
+        // update the visible counter text
+        chars.innerHTML = maxLength - currentLength;
+        // update the visually hidden counter text
         setTimeout(function() {
-            chars.innerHTML = maxLength - currentLength;
-        }, 10);
+            srOutputTarget.innerHTML = maxLength - currentLength;
+        },1000);
     });
 }
 {% endhighlight %}

@@ -455,14 +455,16 @@ $(document).on('change', '#cowbell-range-value', function() {
 const textarea = document.getElementById('message');
 if(textarea) {
     const chars = document.getElementById('currentChars');
+    const srOutputTarget = document.getElementById('sr-counter-target');
     textarea.addEventListener("input", event => {
         const target = event.currentTarget;
         const maxLength = target.getAttribute("maxlength");
         // const currentLength = target.value.replace(/\r(?!\n)|\n(?!\r)/g, "\r\n").length;
         const currentLength = target.value.length;
+        chars.innerHTML = maxLength - currentLength;
         setTimeout(function() {
-            chars.innerHTML = maxLength - currentLength;
-        }, 10);
+            srOutputTarget.innerHTML = maxLength - currentLength;
+        },1000);
     });
 }
 
