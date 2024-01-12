@@ -85,20 +85,7 @@ Alerts are dynamic content that is injected into the page when it changes and a 
 - Use `role="alert"` for elements injected into the page
 
 ### Focus
-- Focus does move to the element when the alert appears
+- Focus does not move to the element when the alert appears
 
-## Design notes
-
-- Perceivable
-  - Type size is no smaller than 16px
-  - The text has a 4.5:1 minimum contrast ratio
-  - Color is not used as the only means of conveying information
-- Operable
-  - The clickable/tappable target areas are no smaller than 44x44px
-  - The focus indication has a minimum area equal to the width of the element and 2px in height
-  - The focus state has a 3:1 minimum contrast ratio between the default and focused states
-  - The focus indication has a 3:1 minimum contrast ratio against adjacent elements
-- Understandable
-  - The alert purpose should be clear in the context of the whole page
-- Robust
-  - Meets criteria across platforms, devices and viewports
+## Further reading
+[WCAG 4.1.3 Status Messages (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html)

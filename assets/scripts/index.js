@@ -45,7 +45,7 @@ $("#show-error").click(function() {
     } else {
         $('#favorite-nato-alert').removeClass('inert').addClass('enabled');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('#favorite-nato-error').append('The correct answer is Charlie');
+            $('#favorite-nato-error').append('Warning: The correct answer is Charlie');
         }, 25);
     }
 });
@@ -70,7 +70,7 @@ $('#show-alert-notification').click(function() {
     } else {
         $('#alert-notification').removeClass('inert').addClass('enabled');
         setTimeout(function(){ // Allows NVDA to catch up to the alert being back in the DOM
-            $('#alert-notification').append('Your account has been updated');
+            $('#alert-notification').append('Success: Your account has been updated');
         }, 25);
     }
 });
