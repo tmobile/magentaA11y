@@ -40,7 +40,7 @@ In general, a table row/list item is an interactive item within a scrolling, sin
 You should use a native component rather than custom component, because it will have the correct name, role, and values associated with it for accessibility.
 
 ## iOS
-### Developer Notes on Name, Role, Groupings, and State
+### Developer Notes
 #### Name
 The programmatic name describes the purpose of the control.
 
@@ -129,7 +129,7 @@ When using non-native controls (custom controls), roles will need to be manually
 - "Label, dimmed, button" (disabled state)
 
 ## Android
-### Developer Notes on Name, Role, Groupings, and State
+### Developer Notes
 #### Name
 - Name describes the purpose of the control and matches the visible label, which can all be grouped together in the table row in an accessibility label
 
