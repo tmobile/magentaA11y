@@ -1,12 +1,12 @@
 ---
 layout: entry
 title:  "Table" 
-categories: controls 
+categories: common patterns
 
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to the _component
+    Focus visibly moves to the first interactive element in table, if any
   spacebar: |
     Activates on iOS and Android
   enter: |
@@ -14,17 +14,21 @@ keyboard:
           
 mobile gestures:
   swipe: |
-    Focus moves to the element, expresses its name, role (state, if applicable)
+    Focus moves to the first element in table 
   doubletap: |
-    Activates the _component
+    Activates any interactive element
     
 screenreader: 
+  heading:  |
+    Visible table title that describes table’s purpose is announced
+  column header:  |
+    Each column header is announced with each row cell beneath it, along with cell data
+  row header:  |
+    If applicable, each row header is announced with each cell in row, along with cell data
   name:  |
-    Purpose is clear and matches visible label
+    Purpose of any interactive element is clear and matches visible label
   role:  |
-    Identifies as a _component in iOS and _component or "double tap to activate" in Android
-  group: |
-    Visible label is grouped or associated with the _component in a single swipe
+    Most interactive elements identify as a button in iOS and "double tap to activate" in Android
   state: |
     Expresses its state (disabled/dimmed)
 
@@ -39,7 +43,13 @@ settings:
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- Table headers can be announced left to right in the heading row along with “heading” if necessary to add context.  This is optional, as each column header will be announced with each cell in column. 
+- If there is no content in the data cell, announce anything that gives the user this information, such as “not applicable” or “empty cell” along with the column header.
+- Generally, all content in cell is announced together, including an interactive element, if any.
+- If a table row is deleted, screen reader focus should be managed to the most logical place 
+- All column headers must have a visible label that describes column (text or icon)
+- If rows have multiple identical buttons like delete or edit, the programmatic name must be unique for each row (Address delete, Phone delete)
+- Text must enlarge to 200% in each cell
 
 <!-- 
 Enter information for iOS Name, update information below with appropriate details, or remove details not needed
@@ -161,8 +171,6 @@ Enter information for iOS Focus using SwiftUI, update below with appropriate det
 <!-- 
 Enter information for iOS VoiceOver announcements for the specific component, update below with appropriate details and announcement examples
 --> 
-### Announcement examples
-- 
 
 ## Android
 
@@ -170,7 +178,13 @@ Enter information for iOS VoiceOver announcements for the specific component, up
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- Table headers can be announced left to right in the heading row along with “heading” if necessary to add context.  This is optional, as each column header will be announced with each cell in column. 
+- If there is no content in the data cell, announce anything that gives the user this information, such as “not applicable” or “empty cell” along with the column header.
+- Generally, all content in cell is announced together, including an interactive element, if any.
+- If a table row is deleted, screen reader focus should be managed to the most logical place 
+- All column headers must have a visible label that describes column (text or icon)
+- If rows have multiple identical buttons like delete or edit, the programmatic name must be unique for each row (Address delete, Phone delete)
+- Text must enlarge to 200% in each cell
 
 <!-- 
 Enter information for Android Name, update information below with appropriate details, or remove details not needed
@@ -249,7 +263,7 @@ Enter information for Android State for Android Views, update information below 
 Enter information for Android State for Jetpack Compose, update information below with appropriate details, or remove details not needed
 -->
 - **Jetpack Compose**
- - 
+- 
 
 <!-- 
 Enter information for Android Focus, update information below with appropriate details, or remove details not needed
@@ -304,7 +318,7 @@ Enter information for Android Custom Accessibility Action, update information be
 Enter information for Android Custom Accessibility Action for Android Views, update information below with appropriate details, or remove details not needed
 -->
 - **Android Views**
- - 
+- 
 
 <!-- 
 Enter information for Android Custom Accessibility Action for Jetpack Compose, update information below with appropriate details, or remove details not needed
@@ -316,5 +330,3 @@ Enter information for Android Custom Accessibility Action for Jetpack Compose, u
 <!-- 
 Enter information for Android TalkBack announcements for the specific component, update below with appropriate details and announcement examples
 -->   
-### Announcement examples
-- 
