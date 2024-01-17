@@ -1,33 +1,24 @@
 ---
 layout: entry
-title:  " _component " 
-categories: controls 
+title:  "Field Errors" 
+categories: common patterns
 
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to the _component
-  spacebar: |
-    Activates on iOS and Android
-  enter: |
-    Activates on Android
-          
+    N/A
+         
 mobile gestures:
   swipe: |
-    Focus moves to the element, expresses its name, role (state, if applicable)
-  doubletap: |
-    Activates the _component
-    
+    May focus the error message or field in error
+   
 screenreader: 
-  name:  |
-    Purpose is clear and matches visible label
-  role:  |
-    Identifies as a _component in iOS and _component or "double tap to activate" in Android
-  group: |
-    Visible label is grouped or associated with the _component in a single swipe
-  state: |
-    Expresses its state (disabled/dimmed)
+  Error message:  |
+    “Error” is usually announced as alt text for an error icon and the error message announcement follow it.
 
+group: |
+    Group elements that are logical, like the error icon and the error message to minimize swipes
+ 
 settings:
   text resize: |
     Text can resize up to 200% without losing information
@@ -39,7 +30,11 @@ settings:
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- An error message tells the user what and how they need to fix to finish the screen’s action
+- Validation for a user input field can be in various ways.  So, the focus on the error field and timing of the announcement can vary.  The error message the appears on the screen must be communicated to the screen reader user 
+- Screen reader focus can move to the field in error upon validation or when CTA is activated, or upon leaving field
+- Announcement should include “Error” or similar language, the name of the field in error, data entered and error message
+- If multiple errors appear on the screen when CTA triggers validation, the focus should move to the first field in error
 
 <!-- 
 Enter information for iOS Name, update information below with appropriate details, or remove details not needed
@@ -47,7 +42,7 @@ Enter information for iOS Name, update information below with appropriate detail
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognition.
 - Placeholder text is NOT the programmatic name
 
 <!-- 
@@ -162,7 +157,8 @@ Enter information for iOS Focus using SwiftUI, update below with appropriate det
 Enter information for iOS VoiceOver announcements for the specific component, update below with appropriate details and announcement examples
 --> 
 ### Announcement examples
-- 
+- "Error. Password, Password is not correct, text field, required, yyyzzz”  (Icon description, field name, error message, role, asterisk, data entered)
+
 
 ## Android
 
@@ -170,7 +166,12 @@ Enter information for iOS VoiceOver announcements for the specific component, up
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- An error message tells the user what and how they need to fix to finish the screen’s action
+- Validation for a user input field can be in various ways.  So, the focus on the error field and timing of the announcement can vary.  
+- The error message the appears on the screen must be communicated to the screen reader user 
+- Screen reader focus can move to the field in error upon validation or when CTA is activated, or upon leaving field
+- Announcement should include “Error” or similar language, the name of the field in error, data entered and error message
+- If multiple errors appear on the screen when CTA triggers validation, the focus should move to the first field in error
 
 <!-- 
 Enter information for Android Name, update information below with appropriate details, or remove details not needed
@@ -249,7 +250,7 @@ Enter information for Android State for Android Views, update information below 
 Enter information for Android State for Jetpack Compose, update information below with appropriate details, or remove details not needed
 -->
 - **Jetpack Compose**
- - 
+- 
 
 <!-- 
 Enter information for Android Focus, update information below with appropriate details, or remove details not needed
@@ -304,7 +305,7 @@ Enter information for Android Custom Accessibility Action, update information be
 Enter information for Android Custom Accessibility Action for Android Views, update information below with appropriate details, or remove details not needed
 -->
 - **Android Views**
- - 
+- 
 
 <!-- 
 Enter information for Android Custom Accessibility Action for Jetpack Compose, update information below with appropriate details, or remove details not needed
@@ -316,5 +317,5 @@ Enter information for Android Custom Accessibility Action for Jetpack Compose, u
 <!-- 
 Enter information for Android TalkBack announcements for the specific component, update below with appropriate details and announcement examples
 -->   
-### Announcement examples
-- 
+### Announcement examples (Order and content may vary with device and OS)
+- "Editing, yyyzzz, edit box, password, error, password is not correct, actions available”  (edit mode, data entered, role, filed name, icon description, error message, extra actions)
