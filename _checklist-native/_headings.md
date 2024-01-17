@@ -6,27 +6,15 @@ categories: common patterns
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to the _component
-  spacebar: |
-    Activates on iOS and Android
-  enter: |
-    Activates on Android
-          
+    N/A
+         
 mobile gestures:
   swipe: |
-    Focus moves to the element, expresses its name, role (state, if applicable)
-  doubletap: |
-    Activates the _component
-    
+    Focus moves to and from the heading
+   
 screenreader: 
-  name:  |
-    Purpose is clear and matches visible label
-  role:  |
-    Identifies as a _component in iOS and _component or "double tap to activate" in Android
-  group: |
-    Visible label is grouped or associated with the _component in a single swipe
-  state: |
-    Expresses its state (disabled/dimmed)
+  text heading:  |
+    “Heading” is announced following the heading text
 
 settings:
   text resize: |
@@ -39,7 +27,11 @@ settings:
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- Headings give the screen reader user context of the sections on the screen at a glance.  By using the Rotor, the screen reader user can navigate just by headings for this quick glance, if it is coded correctly.
+- A heading should describe a section, not just look like a heading because it is large or bold font.
+- The title of a screen should announce as a heading by default
+- Text can announce as a heading as well as a button
+  
 
 <!-- 
 Enter information for iOS Name, update information below with appropriate details, or remove details not needed
@@ -47,7 +39,7 @@ Enter information for iOS Name, update information below with appropriate detail
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognition.
 - Placeholder text is NOT the programmatic name
 
 <!-- 
@@ -162,7 +154,8 @@ Enter information for iOS Focus using SwiftUI, update below with appropriate det
 Enter information for iOS VoiceOver announcements for the specific component, update below with appropriate details and announcement examples
 --> 
 ### Announcement examples
-- 
+- "Categories, heading”
+
 
 ## Android
 
@@ -170,7 +163,9 @@ Enter information for iOS VoiceOver announcements for the specific component, up
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- Headings give the screen reader user context of the sections on the screen at a glance.  By using the TalkBack Menu, the screen reader user can navigate just by headings for this quick glance, if it is coded correctly.
+- A heading should describe a section, not just look like a heading because it is large or bold font.
+- Text can announce as a heading as well as a button
 
 <!-- 
 Enter information for Android Name, update information below with appropriate details, or remove details not needed
@@ -249,7 +244,7 @@ Enter information for Android State for Android Views, update information below 
 Enter information for Android State for Jetpack Compose, update information below with appropriate details, or remove details not needed
 -->
 - **Jetpack Compose**
- - 
+- 
 
 <!-- 
 Enter information for Android Focus, update information below with appropriate details, or remove details not needed
@@ -304,7 +299,7 @@ Enter information for Android Custom Accessibility Action, update information be
 Enter information for Android Custom Accessibility Action for Android Views, update information below with appropriate details, or remove details not needed
 -->
 - **Android Views**
- - 
+- 
 
 <!-- 
 Enter information for Android Custom Accessibility Action for Jetpack Compose, update information below with appropriate details, or remove details not needed
@@ -317,4 +312,4 @@ Enter information for Android Custom Accessibility Action for Jetpack Compose, u
 Enter information for Android TalkBack announcements for the specific component, update below with appropriate details and announcement examples
 -->   
 ### Announcement examples
-- 
+- "Categories, heading”
