@@ -6,31 +6,22 @@ categories: common patterns
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to the _component
-  spacebar: |
-    Activates on iOS and Android
-  enter: |
-    Activates on Android
-          
+    N/A
+         
 mobile gestures:
   swipe: |
-    Focus moves to the element, expresses its name, role (state, if applicable)
-  doubletap: |
-    Activates the _component
-    
+    Focus moves to and from the animation if in the swipe order
+   
 screenreader: 
-  name:  |
-    Purpose is clear and matches visible label
-  role:  |
-    Identifies as a _component in iOS and _component or "double tap to activate" in Android
-  group: |
-    Visible label is grouped or associated with the _component in a single swipe
-  state: |
-    Expresses its state (disabled/dimmed)
+  Focus:  |
+    If meaningful, animation is focused and its meaning announced via alt text
+
+group: |
+  Group any label and associated animation to minimize swipes
 
 settings:
   text resize: |
-    Text can resize up to 200% without losing information
+    N/A
 ---
 
 ## iOS
@@ -39,7 +30,13 @@ settings:
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- A non-interactive animation is a technique by which still images are manipulated to create moving images 
+- Animations can affect users with motion disabilities.  Guidance is to keep animations to 5 seconds or less
+- Animations that flash can also have a deadly affect to users with epilepsy.  Guidance is to keep flashing to 3 seconds per second
+- Ensure animations that are meaningful have alt text assigned
+- Animations cannot stop and start again unless screen is refreshed or similar
+- If a stop/pause button next to the animation is provided, the animation can run more than 5 seconds
+- Loading icon animation is exempt from the 5 second guidance
 
 <!-- 
 Enter information for iOS Name, update information below with appropriate details, or remove details not needed
@@ -47,7 +44,7 @@ Enter information for iOS Name, update information below with appropriate detail
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognition.
 - Placeholder text is NOT the programmatic name
 
 <!-- 
@@ -161,8 +158,7 @@ Enter information for iOS Focus using SwiftUI, update below with appropriate det
 <!-- 
 Enter information for iOS VoiceOver announcements for the specific component, update below with appropriate details and announcement examples
 --> 
-### Announcement examples
-- 
+
 
 ## Android
 
@@ -170,7 +166,13 @@ Enter information for iOS VoiceOver announcements for the specific component, up
 Enter Developer Notes for iOS, add additional information if needed
 -->
 ## Developer notes
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- A non-interactive animation is a technique by which still images are manipulated to create moving images 
+- Animations can affect users with motion disabilities.  Guidance is to keep animations to 5 seconds or less
+- Animations that flash can also have a deadly affect to users with epilepsy.  Guidance is to keep flashing to 3 seconds per second
+- Ensure animations that are meaningful have alt text assigned
+- Animations cannot stop and start again unless screen is refreshed or similar
+- If a stop/pause button next to the animation is provided, the animation can run more than 5 seconds
+- Loading icon animation is exempt from the 5 second guidance
 
 <!-- 
 Enter information for Android Name, update information below with appropriate details, or remove details not needed
@@ -249,7 +251,7 @@ Enter information for Android State for Android Views, update information below 
 Enter information for Android State for Jetpack Compose, update information below with appropriate details, or remove details not needed
 -->
 - **Jetpack Compose**
- - 
+- 
 
 <!-- 
 Enter information for Android Focus, update information below with appropriate details, or remove details not needed
@@ -304,7 +306,7 @@ Enter information for Android Custom Accessibility Action, update information be
 Enter information for Android Custom Accessibility Action for Android Views, update information below with appropriate details, or remove details not needed
 -->
 - **Android Views**
- - 
+- 
 
 <!-- 
 Enter information for Android Custom Accessibility Action for Jetpack Compose, update information below with appropriate details, or remove details not needed
@@ -316,5 +318,5 @@ Enter information for Android Custom Accessibility Action for Jetpack Compose, u
 <!-- 
 Enter information for Android TalkBack announcements for the specific component, update below with appropriate details and announcement examples
 -->   
-### Announcement examples
-- 
+
+
