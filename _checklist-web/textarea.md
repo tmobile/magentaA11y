@@ -67,8 +67,9 @@ wcag:
 
 ### Use semantic HTML
 
-- <strong>Note:</strong> There are two containers in the HTML that have the same counter content. One of them is hidden from screen readers by use of `aria-hidden="true"` and the other visually hidden container's content is dynamically updated after a slight pause. This is to ensure the screen reader does not interrupt the announcement of the key pressed with the announcement of the dynamic counter text update.
-- **Delay the update** for dynamic counters
+- There are two containers in the HTML that have the same counter content. One of them is hidden from screen readers by use of `aria-hidden="true"` and the other visually hidden container's content is dynamically updated after a slight pause. This is to ensure the screen reader does not interrupt the announcement of the key pressed with the announcement of the dynamic counter text update.
+- While the visible counter text container is hidden with `aria-hidden="true"` it is still programmatically associated with the textarea by use of `aria-describedby`. This will ensure the text will be announced when the textarea receives focus.  
+- **Delay the update** for dynamic `role="status"` counter
   - Use `setTimeout`to allow the accessibility tree and screen reader time to update in a logical fashion e.g. 1500ms
 - **Do not** reference the `role="status"` element with aria-describedby
   - This causes a bug in VoiceOver 
