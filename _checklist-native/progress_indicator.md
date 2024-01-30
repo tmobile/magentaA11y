@@ -22,9 +22,11 @@ screenreader:
     Purpose is clear (ex: "Step 6 of 7. Account")
   role:  |
     Identifies itself as a button or dropdown
-  group: |
+  
+group: |
     Group elements that help make the announcement logical
-  state: |
+
+state: |
     Expresses its state if disabled (disabled/dimmed)
 
 settings:
@@ -52,14 +54,13 @@ settings:
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
-  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
 - When using non-native controls (custom controls), roles may need to be manually coded.
 - **UIKit**
-  - Use UIPageControl
-  - If necessary, set `accessibilityTraits` to `.adjustable`
+  - Use `UIProgressView` or `UIActivityIndicatorView`
 - **SwiftUI**
+  - Use `ProgressView`
 
 ### Groupings
 - Group visible label with button, if applicable, to provide a programmatic name for the button
@@ -86,15 +87,12 @@ settings:
 
 ### Focus
 - Use the device's default focus functionality. 
-- Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
     - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
-  - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
   - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
@@ -132,9 +130,9 @@ settings:
 ### Role
 - When not using native controls (custom controls), roles may need to be manually coded.
 - **Android Views**
-  - TabLayout with ViewPager
+  - `public class ProgressBar`
 - **Jetpack Compose**
-
+  - `LinearProgressIndicator` or `CircularProgressIndicator composables
 
 ### Groupings
 - Group visible label with button (if applicable) to provide a programmatic name for the button
@@ -145,7 +143,7 @@ settings:
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
 - **Jetpack Compose**
   - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
-  - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
+  - `FocusRequester.createRefs()` helps to request focus to inner elements within the group
 
 ### State
 - **Android Views**
