@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Web view" 
-categories: common-patterns
+categories: patterns
 
 
 keyboard:
