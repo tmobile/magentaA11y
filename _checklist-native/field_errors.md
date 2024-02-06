@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Field Errors" 
-categories: common patterns
+categories: common-patterns
 
 
 keyboard:
