@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Headings" 
-categories: common-patterns
+categories: patterns
 
 
 keyboard:

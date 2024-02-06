@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Table" 
-categories: common-patterns
+categories: patterns
 
 
 keyboard:
