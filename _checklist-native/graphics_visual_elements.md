@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Graphics/Visual Elements" 
-categories: common-patterns 
+categories: patterns 
 
 
 keyboard:

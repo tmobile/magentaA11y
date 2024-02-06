@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Strike-Through" 
-categories: common-patterns 
+categories: patterns 
 
 
 keyboard:
