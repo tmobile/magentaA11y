@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Animation" 
-categories: common patterns
+categories: common-patterns
 
 
 keyboard:
