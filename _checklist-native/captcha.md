@@ -33,8 +33,6 @@ settings:
    n/a
 ---
 
-#### Note: Announcements and video example are not available for this control.
-
 ## iOS
 
 ### Developer notes
@@ -46,7 +44,7 @@ settings:
 - Captcha is not common in native apps, as there are other options for authentication
 
 ### Name
-- Experiences:  
+- Experiences (refer to number above):  
   - 1 Alt text on the image that describes its purpose.
   - 2 Name describes the purpose of the control and matches any visible text in image
   - 3 Programmatic name of each interactive component in audio challenge is announced
@@ -64,7 +62,7 @@ settings:
   - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
- - Experiences:  
+ - Experiences (refer to number above):  
    - 1 Identifies as an image
    - 2 Identifies as an image button
    - 3 Each interactive component in audio challenge identifies as a button or text field
@@ -86,11 +84,12 @@ settings:
     - You can also unionize two frames with `frame.union` (i.e. `titleLabel.frame.union(subtitleLabel.frame)`).
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
+
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State
-- Experiences:  
+- Experiences (refer to number above):  
   - 1 If grouped in table row, it's possible for the whole row to have a dimmed/disabled state, or the captcha button disabled separately
   - 2 Image button can have a disabled state (dimmed)
   - 3 Buttons in audio challenge can have a disabled state (dimmed)
@@ -105,7 +104,7 @@ settings:
 
 
 ### Focus
-- Experiences:  
+- Experiences (refer to number above):  
   - 1 Focus is on the whole table row. There should be no focus on any single element, if the whole table row is grouped together, as long as there is only one interactive element per row.
   - 2 The image button receives focus by swipe or touch
   - 3 Each element in audio challenge receives focus by swipe or touch. User is confined inside a modal, if presented
@@ -138,7 +137,7 @@ settings:
 - Captcha is not common in apps, as there are other options for authentication
   
 ### Name  
-- Experiences:  
+- Experiences (refer to number above):  
   - 1 Alt text on the image that describes its purpose.
   - 2 Name describes the purpose of the control and matches any visible text in image
   - 3 Programmatic name of each interactive component in audio challenge is announced
@@ -155,7 +154,7 @@ settings:
   - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Role
-- Experiences:
+- Experiences (refer to number above):
   - 1 Identifies as an image
   - 2 Identifies as an image button
   - 3 Each interactive component in audio challenge identifies as a button or edit box
@@ -176,7 +175,7 @@ settings:
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
-- Experiences:  
+- Experiences (refer to number above):  
   - 1 If grouped in table row, it's possible for the whole row to have a disabled state, or the captcha button disabled separately
   - 2 Image button can have a disabled state (disabled)
   - 3 Buttons in audio challenge can have a disabled state (disabled)
@@ -191,7 +190,7 @@ settings:
   - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
 
 ### Focus
-- Experiences:  
+- Experiences (refer to number above):  
   - 1 Focus is on the whole table row. There should be no focus on any single element, if the whole table row is grouped together, as long as there is only one interactive element per row.
   - 2 The image button receives focus by swipe or touch
   - 3 Each element in audio challenge receives focus by swipe or touch. User is confined inside a modal, if presented
