@@ -38,7 +38,7 @@ settings:
 - A check box lets the user choose between two opposite states, actions or values  
 - You should use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
 - A check box should just toggle between checked and unchecked.  It should not automatically navigate the user to another field or screen when activated, as that may cause a change of context.  Revealing new information on the same screen as a result of activating a checkbox is usually ok, as it is not a change of context
-- Name, Role, State must be announced when focus is on the control. Announcing the label in a separate swipe before the checkbox does not meet this requirement
+- Name, Role, State must be announced when focus is on the control. Announcing the label only in a separate swipe before the checkbox does not meet this requirement
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -72,7 +72,6 @@ settings:
 
 ### Groupings
 - Group visible label with checkbox, if applicable, to provide a programmatic name for the checkbox.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
 - Group the units such that the label, role, and state of the checkbox is announced in a single announcement.
 
 - **UIKit**
@@ -103,8 +102,6 @@ settings:
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen. It should not stay in the bottom navigation bar.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -133,7 +130,7 @@ settings:
 - A check box lets the user choose between two opposite states, actions or values  
 - You should use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
 - A check box should just toggle between checked and unchecked.  It should not automatically navigate the user to another field or screen when activated, as that may cause a change of context.  Revealing new information on the same screen as a result of activating a checkbox is usually ok, as it is not a change of context.
-- Name, Role, State must be announced when focus is on the control. Announcing the label in a separate swipe before the checkbox does not meet this requirement.
+- Name, Role, State must be announced when focus is on the control. Announcing the label only in a separate swipe before the checkbox does not meet this requirement.
 
 #### Code example
 {% highlight kotlin %}
