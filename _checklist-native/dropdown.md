@@ -42,11 +42,11 @@ settings:
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognition
 - When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
   - **Incorrect announcement:** "Submit button, Button"
   - **Correct announcement:** "Submit, Button"
-- Placeholder text is NOT the programmatic name
+- Placeholder or value text is NOT the programmatic name
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
@@ -72,7 +72,6 @@ settings:
 
 ### Groupings
 - Group visible label with button, if applicable, to provide a programmatic name for the button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -125,7 +124,7 @@ settings:
 ### Developer notes
 - A dropdown or spinner is a button that opens a list of options.  When an option is chosen, it displays in the field (replaces the current option or placeholder)
 - The screen reader focus moves directly to first option in dropdown/spinner upon double-tapping the dropdown button and focus is confined in the list.  Focus can go back to the triggering dropdown/spinner button, displaying the new option
-- There must be a visible label for the dropdown field that is not a placeholder and it describes the purpose of the dropdown/spinner.
+- There must be a visible label for the dropdown field that is not a placeholder or item chosen and it describes the purpose of the dropdown/spinner.
 
 ### Name
 - Name describes the purpose of the control, with additional label description if needed.
@@ -152,7 +151,6 @@ settings:
 
 ### Groupings
 - Visible label, if any, is grouped with the dropdown item in a single swipe
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
 - **Android Views**
   - `ViewGroup`
