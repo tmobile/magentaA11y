@@ -5,7 +5,7 @@ categories: notifications
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves, confined within the modal
+    Focus visibly moves to any interactive element
   escape: |
     The modal closes and returns focus to the button that launched it
   space: |
@@ -46,8 +46,7 @@ settings:
 - Tapping outside the modal to close can not be the only option for screen reader users when the modal covers other content
 
 ### Name
-- Programmatic name describes the purpose of the modal.
-- For modals, the programmatic name is the title of the modal.
+- Programmatic name describes the purpose of any interactive element in the modal or the title of the modal
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 
@@ -70,8 +69,7 @@ settings:
   - Use view modifier for modal, such as `.sheet`, `.fullScreenCover`, `.popover`. Apply view modifiers to adjust the size of the modal accordingly.
 
 ### Groupings
-- Within the modal, ensure the content is following logical reading order. Follow suggested accessibility guidance for content containing buttons, links, etc.
-
+- Group content to minimize swipes and give context to the user
 - **UIKit**
   - Since a modal is a presentation of another view, follow logical grouping and reading order within the view.
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -98,6 +96,8 @@ settings:
 ### Focus
 - Use the default focus functionality of the modal
 - The screen reader focus **must** be confined within the alert or modal. When the modal appears, the initial focus should be to a logical place or to where the default focus is for the device within the modal.
+- Within the modal, ensure the content is following logical reading order. Follow suggested accessibility guidance for content containing buttons, links, etc.
+
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -131,8 +131,7 @@ settings:
 - Tapping outside the modal to close can not be the only option for screen reader users when the modal covers other content
   
 ### Name
-- Programmatic name describes the purpose of the modal
-- By default, the programmatic name is the title of the modal.
+- Programmatic name describes the purpose of the modal or any interactive element
 
 - **Android Views**
   - Use Android view component `AlertDialog` for the modal, its default accessibility behavior will cover the programmatic name by using the title text.
