@@ -6,7 +6,7 @@ categories: common patterns
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to all interactive controls
+    Focus visibly moves to any interactive controls
   spacebar: |
     Activates on iOS and Android
   enter: |
@@ -37,7 +37,7 @@ settings:
 ## iOS
 
 ### Developer notes
-- Maps, charts and other graphics must have a text equivalent, if the graphic is not interactive for the screen reader.  All information in the graphic must be conveyed to the screen reader user
+- Maps, charts and other graphics must have a text equivalent, if the graphic is not interactive for the screen reader.  All information in the graphic must be conveyed to the screen reader user.  This is often done with a list view.  Adding a toggle between map and list view is a common text alternative for a graphic.
 - Even if it is not interactive, it is suggested to put the map in the swipe order and add a label/name to identify it to the screen reader user.  For some screen reader users, identifying the graphic adds context and meaningful information
 - If the graphic is interactive to the screen reader user, consider the grouping of information and swipe order to make it understandable and logical
 - If an image does not convey meaning or is used for styling purposes, like a line separator, do not add alt text and skip it in the swipe order for the screen reader user.
