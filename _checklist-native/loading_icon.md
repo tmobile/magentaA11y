@@ -34,8 +34,8 @@ settings:
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The _component title will overwrite the _component `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the _component `accessibilityLabel` to the label of your choice.
+    - The loading icon title will overwrite the loading icon `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the loading icon `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
