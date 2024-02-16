@@ -48,16 +48,16 @@ settings:
 ### Name
 - Programmatic name describes the purpose of any interactive element in the modal or the title of the modal
 - If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognition.
 
 - **UIKit**
-  - The visible label of the content is the programmatic name of the modal.
+  - The visible label for any interactive element is the programmatic name for it.
   - If a visible label is not applicable in your case, set the modal's `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
 - **SwiftUI**
-  - The visible label of the content is the programmatic name of the modal.
+  - The visible label for any interactive element is the programmatic name for it.
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
 
 ### Role
@@ -83,8 +83,8 @@ settings:
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State 
-- Modals, or action sheets in iOS, that have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
-- Usually no one button is disabled in action sheets.
+- Modals that may have an open/close or expands/collapses state must be announced. Add logic and announcement to the programmatic name for the state
+
 
 - **UIKit**  
   - When the modal appears, the initial focus on the Close button will imply to the user that they are in a modal.
@@ -234,5 +234,5 @@ ModalBottomSheet(
 {% endhighlight %}
 
 ### Modal announcements
-- Initial focus areas 
+- Initial focus area example: 
     - Close button "Close, button, double tap to activate"
