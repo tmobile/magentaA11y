@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Segmented Control / Tab"
+title:  "Segmented Control / Tabs"
 categories: controls
 
 keyboard:
@@ -37,24 +37,25 @@ settings:
 ## Developer notes
 
 - A segmented control is a horizontal set of two or more segments presented, each of which functions as a mutually exclusive button
+- Once a tab has been selected, the focus should remain in the tab group on the selected tab.  The user swipes through the tab group and the content revealed by the tab action should be the first swipe out of the tab group.
 
 ### Name
-- A programmatic name is assigned to each segment title
-- If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
+- A programmatic name is assigned to each segment title and tab
+- If visible text label exists, the programmatic name should match the visible text label
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The segment's title will overwrite the segment’s `accessibilityLabel`.
-  - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
-  - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+    - The segment's title will overwrite the segment’s `accessibilityLabel`
+
 - **SwiftUI**
-  - By default, the programmatic name is the visible text label of the segment
+  - By default, the programmatic name is the visible text label of the segment/tab
   - If necessary, use view modifier `accessibilityLabel(_:)`.
-  - If a segment has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
+  - Use `.accessibilityLabel(label for group)` to announce the group label for the tabs when the first tab is in focus
+  - If a segment has decorative icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- Since picker items are interactive, it must be indicated to the user that they are interactive such as indicating that it is a button or it can be double-tapped to be selected. 
+- Since picker items are interactive, it must be indicated to the user that they are interactive such as indicating that it is a button or it can be double-tapped to be selected.
+- "Tab" or "Button" usually indicate the role 
 
 - **UIKit**
   - Use `UISegmentedControl`
@@ -72,10 +73,10 @@ settings:
 
 ### State
 - A state of the individual segments themselves are announced, which is either "Selected" or "Unselected"
-- The position of the segment out of the entire set must be announced.
+- The position of the segment out of the entire set (index) must be announced.
 
 - **UIKit**
-  - Segments should be announced whether they are selected/unselected.
+  - Segments should be announced whether they are selected/unselected.  Often, the button announcement and the absence of "unselected" is assumed to be unselected
   - For disabled menu items: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the menu item to `notEnabled`, but this may overwrite the current accessibility role of the segmented control.
 - **SwiftUI**
@@ -100,21 +101,21 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- Options for announcements below depend on framework and versions. Announcement order can vary.  "Menu" in label is optional, but recommended.
-
-- "Label menu, button"
-- "Label, button"  (without recommended "menu" announcement)
-- "Label menu, dimmed, button" (disabled state)
-- "Dismiss context menu, button" (Invisible button in swipe past the last item in menu)
+- Options for announcements below depend on framework and versions. Announcement order can vary.  Index in label is recommended.
+- "Favorite apps"  (Group label)
+- "Favorite apps, Selected, Weather, button, one of three" (Group label, state, button label, role, index) (Selected, on first tab only)
+- "Photos, button, 2 of 3"  (Button label, role, index) (not selected)
+- "Clock, dimmed, button, 3 of 3" (Button label, disabled state, role, index)
 
 ## Android
 
 ### Developer notes
 
-- A segmented control is a horizontal linear set of two or more segments presented, each of which functions as a mutually exclusive button
+- A segmented control is a horizontal set of two or more segments presented, each of which functions as a mutually exclusive button
+- Once a tab has been selected, the focus should remain in the tab group on the selected tab.  The user swipes through the tab group and the content revealed by the tab action should be the first swipe out of the tab group.
 
 ### Name
-- A programmatic name is assigned to each segment title
+- A programmatic name is assigned to each segment title and tab
 - If visible text label exists, the programmatic name should match the visible text label.
 
 - **Android Views**
@@ -218,4 +219,6 @@ Column {
 {% endhighlight %}
 
 ### Announcement examples
-- Options for announcements below depend on framework and versions. Announcement order can vary.  
+- Options for announcements below depend on device framework and versions. Announcement order can vary.  
+- "Top apps, Selected, Kids, tab, 1 of 4"  (Group label, state, button label, role, index) (Selected)
+- "Weather, tab, 2 of 4, double tap to activate" (Button label, role, index, hint) (Not selected)
