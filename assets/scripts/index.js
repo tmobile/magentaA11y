@@ -669,36 +669,36 @@ function formValidationDemo() {
             }
         },
         highlight: function(element) {
-            $(element).attr('aria-invalid', 'true');
+            $(element).attr("aria-invalid", "true");
         },
         unhighlight: function(element) {
-            $(element).removeAttr('aria-invalid');
+            $(element).removeAttr("aria-invalid");
         }
     });
 
     // Manually validate and remove errors on focusout if fixed
     if(cleanupErrors){
-        $('input, textarea', $loginForm).on('focusout', function() {
+        $("input, textarea", $loginForm).on("focusout", function() {
             var validator = $loginForm.validate();
             var element = $(this);
-    
+
             if (element.val()) { // Only validate if there's a value
                 validator.element(element); // Validate the specific element
-    
-                if (!element.hasClass('error')) { // If no error, remove previous errors
-                    var $errorSpan = element.next('span'); // Find the next sibling span.error element
+
+                if (!element.hasClass("error")) { // If no error, remove previous errors
+                    var $errorSpan = element.next("span"); // Find the next sibling span.error element
                     if ($errorSpan.length) { // Check if the error span exists
                         $errorSpan.remove(); // Remove the error span
                     }
-                    element.removeAttr('aria-invalid'); // Remove aria-invalid
-                    element.removeAttr('aria-describedby'); // Remove aria-describedby
+                    element.removeAttr("aria-invalid"); // Remove aria-invalid
+                    element.removeAttr("aria-describedby"); // Remove aria-describedby
                 }
             } 
         });
     }
 
     // Add submit event listener
-    $loginForm.on('submit', function(event) {
+    $loginForm.on("submit", function(event) {
         // Check if the form is valid
         if ($loginForm.valid()) {
             // If form is valid, show alert
