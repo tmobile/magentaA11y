@@ -225,10 +225,6 @@ textarea {
   box-shadow: none;
 }
 
-input.full-width-minus-2 {
-  width: calc(100% - 2rem);
-}
-
 input[type="file"] {
   @extend .hidden;
   + label {
