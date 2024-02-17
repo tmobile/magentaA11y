@@ -634,3 +634,81 @@ $('#badErrorInputSubmit').click(function(e) {
     e.preventDefault();
     $('#badErrorInputError').show();
 });
+
+// form validation demo 
+var $loginForm = $("#demo-form-validation");
+
+if ($loginForm.length > 0) {
+    formValidationDemo();
+}
+
+function formValidationDemo() {
+
+    const $svgErrorIcon = "<svg class=\"error-icon\" role=\"img\" aria-label=\"Error\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z\"/></svg>";
+    const cleanupErrors = true;
+
+    $loginForm.validate({
+        errorElement: "span", // define the error wrapper - no double label
+        onfocusout: false, // Disable validation on blur
+        onkeyup: false, // Disable validation while typing
+        focusInvalid: true, // Focus on the first invalid field
+        rules: {
+            "first-name": "required",
+            "last-name": "required",
+            "email-address": {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            "first-name": $svgErrorIcon + "First name is a required field",
+            "last-name": $svgErrorIcon + "Last name is a required field",
+            "email-address": {
+                required: $svgErrorIcon + "Email address is a required field",
+                email: $svgErrorIcon + "Please enter a valid email address"
+            }
+        },
+        highlight: function(element) {
+            $(element).attr('aria-invalid', 'true');
+        },
+        unhighlight: function(element) {
+            $(element).removeAttr('aria-invalid');
+        }
+    });
+
+    // Manually validate and remove errors on focusout if fixed
+    if(cleanupErrors){
+        $('input, textarea', $loginForm).on('focusout', function() {
+            var validator = $loginForm.validate();
+            var element = $(this);
+    
+            if (element.val()) { // Only validate if there's a value
+                validator.element(element); // Validate the specific element
+    
+                if (!element.hasClass('error')) { // If no error, remove previous errors
+                    var $errorSpan = element.next('span'); // Find the next sibling span.error element
+                    if ($errorSpan.length) { // Check if the error span exists
+                        $errorSpan.remove(); // Remove the error span
+                    }
+                    element.removeAttr('aria-invalid'); // Remove aria-invalid
+                    element.removeAttr('aria-describedby'); // Remove aria-describedby
+                }
+            } 
+        });
+    }
+
+    // Add submit event listener
+    $loginForm.on('submit', function(event) {
+        // Check if the form is valid
+        if ($loginForm.valid()) {
+            // If form is valid, show alert
+            alert("Form is valid. Submitting...");
+            event.preventDefault();
+        }
+        else {
+            // If form is not valid, prevent default form submission
+            event.preventDefault();
+        }
+    });
+
+}

@@ -77,6 +77,25 @@ fieldset,
   transition: .8s;
   position: relative;
 
+  input.error, .error:focus-visible {
+    border-color: $color-error-red;
+  }
+
+  span.error {
+    display: block;
+    padding-left: 1rem;
+    color: $color-error-red;
+  }
+
+  span.error svg.error-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    margin-right: .3em;
+    fill: $color-error-red;
+    margin-top: -4px;
+  }
+
   fieldset {
     box-shadow: none !important;
     display: block;
@@ -202,8 +221,12 @@ textarea {
   display: inline-block;
   font-size: 1rem;
   resize: none;
-  width: calc(100%) - 2rem;
+  width: calc(90% - 2rem);
   box-shadow: none;
+}
+
+input.full-width-minus-2 {
+  width: calc(100% - 2rem);
 }
 
 input[type="file"] {
@@ -246,6 +269,9 @@ input[type="file"] {
   color: $color-gray-dark;
   display: block;
   border-radius: 2px;
+  &.margin-top-1 {
+    margin-top: 1rem;
+  }
 }
 
 i {
@@ -255,5 +281,12 @@ i {
 @for $i from 1 through 100 {
   input[maxlength="#{$i}"] {
     max-width: #{$i + 1}rem;
+  }
+}
+
+#demo-form-validation {
+  *:focus {
+    outline-offset: 2px;
+    transition: none;
   }
 }

@@ -1,0 +1,39 @@
+<form id="demo-form-validation" novalidate>
+    <fieldset aria-describedby="form-desc" style="padding-bottom: 1em;">
+        <legend><h2 style="margin-bottom: 0;">Customer Feedback</h2></legend>
+        <div class="hint margin-top-1" id="form-desc">
+            <p>This is the form intro text. This text helps describe the form for users. Additional helper text is below. </p>
+            <p style="padding-bottom: 0;">Required fields are marked with an asterisk (*).</p>
+        </div>
+            <label for="first-name">First Name *</label>
+            <input type="text" name="first-name" id="first-name" autocomplete="given-name" required>
+
+            <label for="last-name">Last Name *</label>
+            <input type="text" name="last-name" id="last-name" autocomplete="family-name" required>
+
+            <label for="email-address">Email Address *</label>
+            <input class="full-width-minus-2" type="email" name="email-address" id="email-address" autocomplete="email" required>
+
+            <label for="message">
+                Your feedback
+            </label>
+            <textarea name="message" id="message" maxlength="50"></textarea>
+
+            <button id="show-error">
+                Submit
+            </button>
+    </fieldset>
+</form>
+
+<h2>UX / Accessibility Requirements</h2>
+<ul>
+    <li>Helper text at the top of the form indicating how required fields are marked with asterisk *</li>
+    <li>Submit button is always interactive</li>
+    <li>Errors only appear after form submission</li>
+    <li>Errors do not automatically appear while user is typing or moves away from a field with their input device</li>
+    <li>Upon submission, keyboard focus moves to the first field with the error</li>
+    <li>Errors are programmatically associated with <code>aria-describedby</code> pointing to a unique ID found on the element wrapping the error message</li>
+    <li>Required fields have the <code>required</code> attribute</li>
+    <li>Form fields with errors have <code>aria-invalid="true"</code></li>
+    <li>Optionally, errors that have been fixed by the user can be removed a the user moves away from a field with their input device</li>
+</ul>
