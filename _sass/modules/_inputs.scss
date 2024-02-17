@@ -269,9 +269,6 @@ input[type="file"] {
   color: $color-gray-dark;
   display: block;
   border-radius: 2px;
-  &.margin-top-1 {
-    margin-top: 1rem;
-  }
 }
 
 i {
@@ -281,12 +278,5 @@ i {
 @for $i from 1 through 100 {
   input[maxlength="#{$i}"] {
     max-width: #{$i + 1}rem;
-  }
-}
-
-#demo-form-validation {
-  *:focus {
-    outline-offset: 2px;
-    transition: none;
   }
 }
