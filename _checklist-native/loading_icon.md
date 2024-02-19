@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Loading Icon" 
-categories: common patterns
+categories: patterns
 
 
 keyboard:
