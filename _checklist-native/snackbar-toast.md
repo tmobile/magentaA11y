@@ -5,7 +5,7 @@ categories: notifications
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves in logical order to the snackbar
+    Focus visibly moves in logical order to the snackbar, if there is an interactive element in the snackbar
   space: |
     Any elements inside are activated on iOS and Android
   enter: |
@@ -23,7 +23,7 @@ screenreader:
   role:  |
     Any interactive element identifies itself as a button in iOS and "double tap to activate" in Android
   group: |
-    n/a
+    Group elements needed to ensure the content is understandable
   state: |
     n/a
 
@@ -31,6 +31,24 @@ settings:
   text resize: |
     Text can resize up to 200% without losing information
 ---
+## iOS
+- There is no native snackbar or toast element for iOS.  The notes below are suggestions and accessibility guidance.
+
+### Developer notes
+
+- Snackbars and Toasts provide lightweight feedback about an operation
+- They show a brief non-critical message at the bottom of the screen on mobile
+- Snackbar or toast must be dynamically announced by the screen reader without moving focus to it
+- Display only one at a time
+- A Snackbar or toast can be timed to disappear, since the message is not critical information
+- If the Snackbar persists, it should be in the swipe order for the screen reader user and tab order for the keyboard user
+- All text in the Snackbar and Toast must be announced by the screen reader
+- A Snackbar can contain an interactive element. Please follow the Native Button guidance for the CTA
+- Toasts do not contain an interactive element
+
+### Dynamic Announcement example
+- "Copied to clipboard"  (Non-critical information in timed-to-disappear snackbar)
+
 ## Android
 
 ### Developer notes
@@ -47,10 +65,7 @@ settings:
 
 ### Focus
 - For Jetpack Compose Snackbar, when there is an action available, the default accessibility behavior allows screen reader to dynamically read the message and the action
-- Only manage focus when needed. Primarily, let the device manage default focus
-- Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -98,3 +113,6 @@ Scaffold(
     }
 )
 {% endhighlight %}
+
+### Dynamic Announcement example
+- "Copied to clipboard"  (Non-critical information in timed-to-disappear snackbar)
