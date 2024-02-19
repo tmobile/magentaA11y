@@ -16,7 +16,7 @@ mobile:
 
 screenreader:
   name:  |
-    The screen reader announces the text alternative for the info icon "Info". 
+    The screen reader announces the text alternative for the info icon "Info","Error", "Caution". 
   description:  |
     The screen reader announces the visual label for any nested controls and any additional context. e.g. "Learn more Cats are amazing creatures". Note: Some screen readers require different navigational techniques to get the additional context to announce.
   role:  |
@@ -92,8 +92,35 @@ Typical Tidbit markup consists of an SVG icon, heading, paragraph text, and a li
 
 ***
 
+## Tidbit - Error example
+{% highlight html %}
+{%- include /examples/tidbit-error.html -%}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/tidbit-error.html %}
+</example>
+{:/}
+
+## Tidbit - Caution example
+{% highlight html %}
+{%- include /examples/tidbit-caution.html -%}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/tidbit-caution.html %}
+</example>
+{:/}
+
+### Developer notes
+- Ensure the SVG icon has a meaningful text alternative. e.g. <code>aria-label="Error"</code> or <code>aria-label="Caution"</code>
+
+***
+
 ### Name
-- The icon is an informative image and should have a text alternative of "Info"
+- The icon is an informative image and should have a text alternative of "Info", "Error", "Caution"
 
 ### Role
 - The "i" icon is an image due to the use of <code>role="img"</code> on the SVG.

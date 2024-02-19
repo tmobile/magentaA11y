@@ -6,7 +6,19 @@
 	padding: 1em;
 	background: #fff;
 	border-left: 4px solid #000;
-	.icon {
+    &.error {
+        border-color: $tdds-critical-300;
+        background: $tdds-critical-100;
+    }
+    &.caution {
+        border-color: $tdds-caution-200;
+        background-color: $tdds-caution-100;
+    }
+    &.error .icon svg {
+        fill: $tdds-critical-300;
+    }
+    &.caution .icon svg {
+        fill: $tdds-caution-200-darkened;
     }
 	h2 { 
         margin: 0; 
