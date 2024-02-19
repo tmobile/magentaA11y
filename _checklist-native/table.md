@@ -7,7 +7,6 @@ categories: common patterns
 keyboard:
   tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the first interactive element in table
-
 spacebar: |
     Activates on iOS and Android
 enter: |
@@ -20,7 +19,7 @@ mobile gestures:
     Activates any interactive element
     
 screenreader: 
-  heading:  |
+  label:  |
     Visible table title that describes table’s purpose is announced
   column header:  |
     Each column header is announced with each row cell beneath it, along with cell data
@@ -41,16 +40,20 @@ settings:
 ## iOS
 
 ### Developer notes
-- Table headers can be announced left to right in the heading row along with “heading” if necessary to add context.  This is optional, as each column header will be announced with each cell in column. 
+- A container that presents rows of data arranged in one or more columns that may include interactive elements
+- A table is composed of table rows (see table row button component)
+- A table with columns and rows is not common in mobile because of the small viewport.  
+- Table headers can be announced left to right in the heading row along with “heading”.  This is optional and duplicative, as each column header will be announced with each cell in every column. 
 - If there is no content in the data cell, announce anything that gives the user this information, such as “not applicable” or “empty cell” along with the column header.
 - Generally, all content in cell is announced together, including an interactive element, if any.
 - If a table row is deleted, screen reader focus should be managed to the most logical place 
 - All column headers must have a visible label that describes column (text or icon)
-- If rows have multiple identical buttons like delete or edit, the programmatic name must be unique for each row (Address delete, Phone delete)
+- If rows have multiple identical buttons like delete or edit, the programmatic name must be unique for each row (Delete address, Delete phone, etc)
 - Ensure scrolling is supported, if needed
 - Text must enlarge to 200% in each cell
 
-### See the Details section for a specific control for interactivity guidance
+### See the Details section for a specific control for interactive guidance
+
 - **UIKit**
   -  Use `UITableViewController` object to manage a table view
   - Use `TableColumn` for tables with more than one column
@@ -84,27 +87,28 @@ settings:
 ## Android
 
 ### Developer notes
-- Table headers can be announced left to right in the heading row along with “heading” if necessary to add context.  This is optional, as each column header will be announced with each cell in column. 
+- A container that presents rows of data arranged in one or more columns that may include interactive elements
+- A table is composed of table rows (see table row button component)
+- A table with columns and rows is not common in mobile because of the small viewport.  
+- Table headers can be announced left to right in the heading row along with “heading”.  This is optional and duplicative, as each column header will be announced with each cell in every column. 
 - If there is no content in the data cell, announce anything that gives the user this information, such as “not applicable” or “empty cell” along with the column header.
 - Generally, all content in cell is announced together, including an interactive element, if any.
 - If a table row is deleted, screen reader focus should be managed to the most logical place 
 - All column headers must have a visible label that describes column (text or icon)
-- If rows have multiple identical buttons like delete or edit, the programmatic name must be unique for each row (Address delete, Phone delete)
+- If rows have multiple identical buttons like delete or edit, the programmatic name must be unique for each row (Delete address, Delete phone, etc)
 - Ensure scrolling is supported, if needed
 - Text must enlarge to 200% in each cell
 
-### See the Details section for a specific control for interactivity guidance
+### See the Details section for a specific control for interactive guidance
 - **Android Views**
   -  `TableLayout` and `TableRow`
 - **Jetpack Compose**
   -  Use `Column` and `Row`
 
-
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
