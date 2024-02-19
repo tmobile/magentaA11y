@@ -7,7 +7,7 @@ keyboard:
   tab, arrow keys or Ctl+tab: |
     Focus visibly moves to the chip
   space: |
-    Any elements inside are activated on Android
+    Any elements inside are activated on iOS and Android
   enter: |
     Any elements inside are activated on Android
 
@@ -19,9 +19,9 @@ mobile:
 
 screenreader:
   name:  |
-    Purpose is clear and matches visible label
+    Purpose is clear and matches the group visible label or chip label
   role:  |
-    Identifies as a button and "double tap to activate" in Android
+    Identifies as a button in iOS and "double tap to activate" or checkbox in Android
   group: |
     n/a
   state: |
@@ -29,19 +29,36 @@ screenreader:
 
 settings:
   text resize: |
-    This element is exempt from text resizing requirements
+    Text label can resize up to 200% without losing information
 ---
+## iOS
+There is no native chip element for iOS.  The notes below are suggestions and accessibility guidance.
+
+### Developer notes
+- Chips are compact elements that represent an input, attribute, or small actions on a current screen
+- Often, a list of chips/filters has one label identifying the purpose of the group
+- Because the group label conveys the purpose, the value text label for a chip that is a dropdown, identifies the chip
+- The chip can announce as a checkbox, button or dropdown
+- Touch target for each chip should meet a minimum of 48 x 48px
+
+### Role
+- See Button, Dropdown or checkbox components for guidance
+  
+### Announcement example  (will vary with implementation)
+- "Selected, label, filter, button, list start"   (selected state)
+- "Not selected, label, filter, button"   (unselected state) 
 
 ## Android
 
 ### Developer notes
-- Chips are compact elements that represent an input, attribute, or action
+- Chips are compact elements that represent an input, attribute, or small actions on a current screen
 - Often, a list of chips/filters has one label identifying the purpose of the group
+- Because the group label conveys the purpose, the value or choice text label identifies the chip
+- The chip can announce as a checkbox, button or dropdown
 - Touch target for each chip should meet a minimum of 48 x 48px
 
 ### Name
-- Name describes the purpose of the control
-- Programmatic name matches the visible text label (if any)
+-   Programmatic name describes the purpose of the control and matches the visible label, if there is one
 
 - **Android Views**
   - `android:text` XML attribute
@@ -132,7 +149,7 @@ AssistChip(
 {% endhighlight %}
 
 
-### Announcements
-- "Selected, in-list filters, index, double tap to activate"   (selected state)
-- "Label, in-list filters, index, double tap to activate"   (unselected state) 
+### Announcement example  (will vary with implementation, version and device)
+- "Selected, label, index, checkbox"   (selected state)
+- "Not selected, label, double tap to select filter, checkbox, double tap to toggle"   (unselected state) 
 - “In-list filters” does not always get announced on each chip

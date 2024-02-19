@@ -1,12 +1,12 @@
 ---
 layout: entry
-title:  "Button"
-categories: controls
+title:  "Sidebar Navigation Menu" 
+categories: controls 
 
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to the button
+    Focus visibly moves to the first interactive element in the menu
   spacebar: |
     Activates on iOS and Android
   enter: |
@@ -16,13 +16,13 @@ mobile gestures:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
   doubletap: |
-    Activates the button
+    Activates the menu item
     
 screenreader: 
   name:  |
     Purpose is clear and matches visible label
   role:  |
-    Identifies as a button in iOS and button or "double tap to activate" in Android
+    Usually identifies as a button in iOS and button or "double tap to activate" in Android
   group: |
     Visible label is grouped or associated with the button in a single swipe
   state: |
@@ -36,44 +36,50 @@ settings:
 ## iOS
 
 ## Developer notes
-- A button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort
-- A button is a control that executes an action or navigates within the app 
-  - To redirect users outside of the app, use links
-- Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app
-- Name, Role, State must be stated in a single announcement when focus is on the control
-  
+- A sidebar can help people navigate your app, providing quick access to top-level collections of content
+- Consider using a tab bar instead of a sidebar for a phone app, as it can require a lot of horizontal space, especially in Portrait orientation
+- Name, Role, State must be stated in a single announcement when focus is on any button in the menu
+- Inform the screen reader user of the open/close actions on the elements that perform those actions
+- Ensure the screen reader user can close the menu
+- If the secondary pane of the split view is not available to the non-screen reader user, the screen reader user should be confined in the menu
+- Ensure focus order is logical
+- Use headings when appropriate
+- If dropdowns are a part of the menu, group the label with the caret
+- Images don’t usually need alt text, if their meaning is in the text label next to them
+
+
 ### Name
-- Programmatic name describes the purpose of the control.
-- If visible text label exists, the programmatic name should match the visible text label.
-    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-- When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
-  - **Incorrect announcement:** "Submit button, Button"
-  - **Correct announcement:** "Submit, Button"
+- Name describes the purpose of the control
+- Programmatic name matches the visible text label
+- Name sometimes includes the state (opens menu), state being currently closed
+    - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognition.
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The button’s title will overwrite the button’s `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the button's `accessibilityLabel` to the label of your choice.
+    - The button title will overwrite the button `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the button `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
+
 - **SwiftUI**
   - If no visible label, use view modifier `accessibilityLabel(_:)`.
-  - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
+
 
 ### Role
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 - **UIKit**
-  - Use `UIButton`
-  - If necessary, set `accessibilityTraits` to `.button`.
+  - Use `UISplitViewController`
+  - Use `UICollectionLayoutListConfiguration.Appearance`   
+  - For other elements in a menu, follow guidance for Buttons or Dropdowns                         
+
 - **SwiftUI**
-  - Use native `Button` view
-  - If necessary, use view modifier `accessibilityAddTraits(.isButton)` to assign the role as Button.
-  - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
+  - Use a list inside a `NavigationView` 
+  - For other elements in a menu, follow guidance for Buttons or Dropdowns
 
 ### Groupings
-- Group visible label with button, if applicable, to provide a programmatic name for the button and not duplicate the name announcement
+- Group visible label with button or dropdown, if applicable, to provide a programmatic name for the control
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -86,6 +92,8 @@ settings:
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State 
+- Inform the screen reader of the state of opens and closes on the button that performs this action
+
 - **UIKit**  
   - For enabled: Set `isEnabled` to `true`.
   - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
@@ -94,12 +102,13 @@ settings:
   - For selected, use `accessibilityAddTraits(.isSelected)`.
   - For disabled, use view modifier `disabled()`.
 
+
 ### Focus
-- Use the device's default focus functionality. 
-- Consider how focus should be managed between child elements and their parent views.
-- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading, except when changing between navigation tabs
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
+- Use the device's default focus functionality 
+- Consider how focus should be managed between child elements and their parent views
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus to interactive elements
+- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading
+- When a menu or modal is closed, the focus should return to the triggering element
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -107,63 +116,71 @@ settings:
   - Use `accessibilityViewIsModal` to contain the screen reader focus inside the modal.
   - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
-  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
+  - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements. 
+
 - **SwiftUI**
   - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-### Announcement examples
-- Options for announcements below depend on implementation. Announcement order can vary.
 
-- "Label, button"
-- "Label, (other content in cell), button" (grouping)
-- "Label, button, selected" (selected state)
-- "Label, dimmed, button" (disabled state)
+### Announcement example for Google Meet
+- “More options, button” (Image label, action)
+- “Close menu, button” (Invisible button label, action)
 
 ## Android
 
 ## Developer notes
-- A button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort
-- A button is a control that executes an action or navigates within the app 
-  - To redirect users outside of the app, use links
-- Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app
-- Name, Role, State must be stated in a single announcement when focus is on the control
+- The navigation drawer component is a slide-in menu that lets users navigate to various sections of your app
+- The navigation drawer can appear as a modal, over the top of content.  Ensure the screen reader user is confined in the modal
+- Two finger swipe to the left anywhere on the screen closes menu
+- Name, Role, State must be stated in a single announcement when focus is on any button in the menu
+- Inform the screen reader user of the open/close actions on the elements that perform those actions
+- Ensure focus order is logical
+- Use headings when appropriate
+- If dropdowns are a part of the menu, group the label with the caret
+- Images don’t usually need alt text, if their meaning is in the text label next to them
 
 ### Name
 - Name describes the purpose of the control
-- Programmatic name matches the visible text label (if any)
+- Programmatic name matches the visible text label
+- Name sometimes includes the state (opens menu), state being currently closed
 
 - **Android Views**
   - `android:text` XML attribute
   - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
   - `contentDescription` overrides `android:text`
   - Use `labelFor` attribute to associate the visible label with the control
+
 - **Jetpack Compose**
   - Compose uses semantics properties to pass information to accessibility services.
-  - The built-in Button composable will fill the semantics properties with information inferred from the composable by default.
-  - Optional: use `contentDescription` for a more descriptive name to override the default visible label of the button text.
   - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Role
 - When not using native controls (custom controls), roles will need to be manually coded.
+
 - **Android Views**
-  - Standard button or ImageButton
+  - Use `DrawerLayout` with two child views: a `NavHostFragment` to contain the main content and a `NavigationView` for the contents of the navigation drawer
+
 - **Jetpack Compose**
-  - Standard `Button` composable
+  - Use 1ModalNavigationDrawer` composable
+
 
 ### Groupings
-- Visible label can be grouped with button (if applicable) to provide a programmatic name for the button and not duplicate the name announcement
+- Group visible label with button or dropdown, if applicable, to provide a programmatic name for the control
 
 - **Android Views**
   - `ViewGroup`
   - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+
 - **Jetpack Compose**
   - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
+ - Inform the screen reader of the state of opens and closes the on the button that performs this action
+
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
@@ -176,9 +193,9 @@ settings:
 ### Focus
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
-- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading), except when changing between navigation tabs
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management to interactive elements
+- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
+- When a menu or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -194,6 +211,7 @@ settings:
   - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
   - To hide controls: `importantForAccessibility=false`
   - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+
 - **Jetpack Compose**
   - `Modifier.focusTarget()` makes the component focusable
   - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
@@ -205,25 +223,7 @@ settings:
     - focus order accepts following values: up, down, left, right, previous, next, start, end
     - step 3: use `second.requestFocus()` to gain focus
 
-### Custom Accessibility Action
-- When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
-- Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
-- The Button class by default supplies all the necessary semantics to make it fully accessible.
-
-- **Android Views**
-  - step 1: Create an accessibility service
-  - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
-  - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
-
-- **Jetpack Compose**
-  - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
-  - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
-  
-### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from "button" in the label
-  - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
-  
-- "Label, button, double tap to activate"
-- "Label, (other content in cell), button, double tap to activate" (grouping)
-- "Label, button, selected, double tap to activate" (selected state)
-- "Label, disabled" (disabled state)
+### Announcement example for Google Meet Navigation Drawer
+  - “Open navigation menu, button, double tap to activate”  (menu button collapsed)
+  - “Google Meet, in list, 3 items” (Menu label, list announcement, number of items in list)
+  - Left swipe with two fingers anywhere on screen to dismiss menu

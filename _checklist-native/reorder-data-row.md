@@ -91,3 +91,61 @@ settings:
 - "Remove, English US, button" (Option to delete row - Delete button appears and announces as "Delete, button"
 - "Reorder, English, button, draggable, double tap and hold, wait for the sound, then drag to rearrange" (on three-line reorder button)
 - "Moved below Spanish"  (After double tap and hold and two-click sound is heard, slowly drag up or down, waiting for the row above or below to announce. Continue to slowly move up or down until moved to the desired location.  Lift finger to complete task)
+
+
+## Android
+
+### Developer notes
+- There is no specific native component for Reordering rows in Android.  The experience is simply tap with three fingers to show custom actions (with screen reader on), double tap Actions and choose 1) Move down, 2) Move up, 3) Move to bottom, 4) Move to top or 5) Remove.  
+- These are implemented as buttons.  Please see the Button component for guidance.
+  
+### Focus
+- Only manage focus when needed. Primarily, let the device manage default focus
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
+
+
+- **Android Views**
+  - `importantForAccessibility` makes the element visible to the Accessibility API
+  - `android:focusable`
+  - `android=clickable`
+  - Implement an `onClick( )` event handler for keyboard, as well as `onTouch( )`
+  - `nextFocusDown`
+  - `nextFocusUp`
+  - `nextFocusRight`
+  - `nextFocusLeft`
+  - `accessibilityTraversalBefore` (or after)
+  - To move screen reader focus to newly revealed content: `Type_View_Focused`
+  - To NOT move focus, but dynamically announce new content: `accessibilityLiveRegion`(set to polite or assertive)
+  - To hide controls: `importantForAccessibility=false`
+  - For a `ViewGroup`, set `screenReaderFocusable=true` and each inner object’s attribute to keyboard focus (`focusable=false`)
+
+- **Jetpack Compose**
+  - `Modifier.focusTarget()` makes the component focusable
+  - `Modifier.focusOrder()` needs to be used in combination with FocusRequesters to define focus order
+  - `Modifier.onFocusEvent()`, `Modifier.onFocusChanged()` can be used to observe the changes to focus state
+  - `FocusRequester` allows to request focus to individual elements with in a group of merged descendant views
+  - Example: To customize the focus events
+    - step 1: define the focus requester prior. `val (first, second) = FocusRequester.createRefs()`
+    - step 2: update the modifier to set the order. `modifier = Modifier.focusOrder(first) { this.down = second }`
+    - focus order accepts following values: up, down, left, right, previous, next, start, end
+    - step 3: use `second.requestFocus()` to gain focus
+
+
+### Custom Accessibility Action
+- When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
+- Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
+- The Button class by default supplies all the necessary semantics to make it fully accessible.
+
+- **Android Views**
+  - step 1: Create an accessibility service
+  - step 2: Add the `FLAG_REQUEST_ACCESSIBILITY_BUTTON` flag in an AccessibilityServiceInfo object's `android:accessibilityFlags` attribute
+  - step 3: To have a custom service register for the button's custom action callbacks, use `registerAccessibilityButtonCallback()`
+
+- **Jetpack Compose**
+  - List of custom accessibility actions can be defined relatively easily in compose compared to Views using customActions. 
+  - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
+
+### Announcement examples
+- "Actions available.  Please tap with three fingers to view" (Brings the TalkBack menu into view)
+- "TalkBack menu.  Actions, in list, double tap to activate" (Usually first item in the TalkBack menu)
+- "Actions, Move down, in list, double tap to activate" (Performs chosen action)
