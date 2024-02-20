@@ -26,7 +26,7 @@ screenreader:
 
 settings:
   text resize: |
-    N/A for web views and native navigation bar text
+    N/A only for web view sections and native navigation bar text
 ---
 
 ## iOS
@@ -34,12 +34,14 @@ settings:
 ### Developer notes
 - A webview is a portion of a webpage, usually html code, incorporated seamlessly into the app’s UI
 - Sometimes a hidden web element is announced 
-- An obvious sign that you are in a webview are web-only accessibility announcements such as a “landmark” or a heading level
+- An obvious sign that you are in a webview is web-only accessibility announcements such as a “landmark” or a heading level
 - A common use for web views is if the content changes often
+- Sometimes the container that includes the web view may announce seperately, which is usually ok
 - A “Link” announcement in web views usually navigates the user to a new screen.  In a native app “link” usually means the action will open a browser on your phone
-- External Blue Tooth keyboard testing can be erratic and inconsistent on web views
+- External Blue Tooth keyboard testing can be erratic and inconsistent on web views, which is a known issue
 - Enlarging text from Accessibility settings does not work on the web view sections of the screen
 
+### Role
 - **UIKit and SwiftUI**
 - `WKWebView`
 
@@ -69,12 +71,14 @@ settings:
 ### Developer notes
 - A webview is a portion of a webpage, usually html code, incorporated seamlessly into the app’s UI
 - Sometimes a hidden web element is announced 
-- An obvious sign that you are in a webview are web-only accessibility announcements such as a “landmark” or a heading level
+- An obvious sign that you are in a webview is web-only accessibility announcements such as a “landmark” or a heading level
 - A common use for web views is if the content changes often
+- Sometimes the container that includes the web view may announce seperately, which is usually ok 
 - A “Link” announcement in web views usually navigates the user to a new screen.  In a native app “link” usually means the action will open a browser on your phone
 - External Blue Tooth keyboard testing can be erratic and inconsistent on web views
 - Enlarging text from Accessibility settings does not work on the web view sections of the screen
 
+### Role
 - **Android Views**
 - `public class WebView`
 
