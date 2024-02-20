@@ -13,7 +13,7 @@ keyboard:
         
 mobile:
   swipe: |
-      Focus moves to the element, expresses its name, role, value & state (if applicable)
+      Focus moves to the element, expresses its name, role, value & state (expanded or collapsed)
   doubletap: |
      Selects and opens Dropdown
 
@@ -25,7 +25,7 @@ screenreader:
   group: |
       Visible label is grouped or associated with the Dropdown in a single swipe
   state: |
-      Expresses its state (disabled/dimmed)
+      Expresses its state (disabled/dimmed). Expanded/collapsed states are announced on the elements that close or open the dropdown
 
 settings:
   text resize: |
@@ -34,10 +34,17 @@ settings:
 
 ## iOS
 
+There is no native dropdown element for iOS.  The notes below are suggestions and accessibility guidance.
+
 ### Developer notes
-- A dropdown is a button that opens a list of options.  When an option is chosen, it displays in the field (replaces the current option)
-- The screen reader focus moves directly to first option in dropdown upon double tapping the dropdown button and is confined in the list.  Sometimes, a hidden "dismiss context menu" button after the last item is available to close it.  Focus can go back to the triggering dropdown button, displaying the new option
-- There must be a visible label for the dropdown field that is not a placeholder and it describes the purpose of the dropdown.  The screen reader focus also remains confined in the dropdown list
+- A dropdown is a button that opens a list of options.  When an option is chosen, it displays in the field as the value
+- The difference between a menu and dropdown is a menu item performs an action when activated.  A dropdown item only replaces the current option
+- The screen reader focus moves directly to first option in dropdown upon double tapping the dropdown button and is confined in the list.
+- Sometimes, a hidden "dismiss context menu" button after the last item is available to close it.
+- Focus should go back to the triggering dropdown button, displaying the new option
+- There must be a visible label for the dropdown field that is not a placeholder and it describes the purpose of the dropdown.
+- The screen reader focus also remains confined in the dropdown list
+- The state of expanded or collapsed should be announced
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -61,6 +68,7 @@ settings:
 
 ### Role
 - When using non-native controls (custom controls), roles will need to be manually coded.
+- One option is to use a table view and a button inside a UIStackView
 
 - **UIKit**
   - Use `UIButton`
@@ -72,7 +80,6 @@ settings:
 
 ### Groupings
 - Group visible label with button, if applicable, to provide a programmatic name for the button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -84,14 +91,18 @@ settings:
 - **SwiftUI**
   - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
-### State 
-- **UIKit**  
-  - For enabled: Set `isEnabled` to `true`.
-  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
-    - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
+### State
+- In the case of expandable dropdowns, state of the dropdown must be announced (i.e. expanded/collapsed). Add logic and announcements to the programmatic name for the state.
+
+- **UIKit**
+  - If applicable, dropdown items should be announced whether they are selected/unselected, in the cases of radio buttons or checkboxes. 
+  - For enabled dropdown items: Set `isEnabled` to `true`.
+  - For disabled dropdown items: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+    - If necessary, you may change the accessibility trait of the dropdown item to `notEnabled`, but this may overwrite the current accessibility role of the dropdown item.
 - **SwiftUI**
-  - For selected, use `accessibilityAddTraits(.isSelected)`.
-  - For disabled, use view modifier `disabled()`.
+  - If applicable, dropdown items should be announced whether they are selected/unselected, in the cases of radio buttons or checkboxes. 
+  - For selected dropdown items, use `accessibilityAddTraits(.isSelected)`.
+  - For disabled dropdown items, use view modifier `disabled()`.
 
 ### Focus
 - Use the device's default focus functionality. 
@@ -115,17 +126,22 @@ settings:
 
 ### Announcement examples
 
-- "Label, option chosen, button" (Dropdown list button)
-- "Label, button" (Options in list that populate dropdown field)
-- "Dismiss context menu"  (Optional Hidden button that closes dropdown)
+- "Button label, chosen option label, button, collapsed"  (Button that opens dropdown with selected option from dropdown and state)
+- "Selected, chosen option label, button" (Selected option in dropdown list)
+- "Label, button" (Other options in list that populate dropdown)
+- "Dismiss context menu, button"  (Optional Hidden button that closes dropdown)
 
 
 ## Android
 
 ### Developer notes
 - A dropdown or spinner is a button that opens a list of options.  When an option is chosen, it displays in the field (replaces the current option or placeholder)
-- The screen reader focus moves directly to first option in dropdown/spinner upon double-tapping the dropdown button and focus is confined in the list.  Focus can go back to the triggering dropdown/spinner button, displaying the new option
-- There must be a visible label for the dropdown field that is not a placeholder and it describes the purpose of the dropdown/spinner.
+- The screen reader focus moves directly to first option in dropdown/spinner upon double tapping the dropdown button and is confined in the list.
+- Sometimes, a hidden "dismiss context menu" button after the last item is available to close it.
+- Focus should go back to the triggering dropdown/spinner button, displaying the new option
+- There must be a visible label for the dropdown field that is not a placeholder and it describes the purpose of the dropdown.
+- The screen reader focus also remains confined in the dropdown list
+- The state of expanded or collapsed should be announced
 
 ### Name
 - Name describes the purpose of the control, with additional label description if needed.
@@ -151,8 +167,7 @@ settings:
   - `ExposedDropdownMenuBox`, `ExposedDropdownMenu`, `DropdownMenuItem`
 
 ### Groupings
-- Visible label, if any, is grouped with the dropdown item in a single swipe
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
+- Visible label, if any, is grouped with the dropdown item in a single swipe as an option for a programmatic name for the spinner
 
 - **Android Views**
   - `ViewGroup`
@@ -164,6 +179,9 @@ settings:
   - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
+- Expandable dropdowns
+  - State must be announced - expands/collapses, opens/closes. Add logic and announcement to the programmatic name for the state
+  - If "opens" or "closes" is not included in the name, the expanded/collapsed state must be announced
 - **Android Views**
   - Active: `android:enabled=true`
   - Disabled: `android:enabled=false`. Announcement: disabled
@@ -244,5 +262,6 @@ ExposedDropdownMenuBox(
 {% endhighlight %}
 
 ### Announcement examples (vary with devices and OS)
-- "Label, button, selected option, in list, index, double tap to activate"  (Opens drop down menu)
-- "Label, double tap to activate"  (List item)
+- "Label, button, selected option label, in list, collapsed, double tap to activate"  (Opens drop down menu)
+- "Selected, selected option label, index, double tap to activate"  (Selected list item)
+- "Other option label, double tap to activate"  (Other list item)
