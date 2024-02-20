@@ -1,7 +1,7 @@
 <fieldset class="checkbox-radio-group" aria-describedby="styled-radio-group-helper-text">
   <legend>Choose your payment method:</legend>
   <!-- Visually hidden helper text describing fieldset -->
-  <!-- This text should only be present in the DOM if the radio group has nested controls. shiding it with CSS display: none; is not enough to hide it from screen readers -->
+  <!-- This text should only be present in the DOM if the radio group has nested controls. Hiding it with CSS display: none; is not enough to hide it from screen readers. Ensure aria-describedby on the fieldset does not point to an ID that is not in the DOM -->
   <span class="hidden" id="styled-radio-group-helper-text">
     Edit controls are available which follow each radio button
   </span>
