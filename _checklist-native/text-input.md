@@ -37,17 +37,17 @@ settings:
 - A text input field allows users to enter and edit text.
 - When a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
 - Use a native text input control whenever possible versus programming a custom element.
- - The native text input will automatically and correctly announce the role for a screen reader without additional development effort
+  - The native text input will automatically and correctly announce the role for a screen reader without additional development effort
 - For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control.
- - Only announcing the label for the text input in the swipe before the input field does not meet this requirement
+  - Only announcing the label for the text input in the swipe before the input field does not meet this requirement
 - Beware of "On Focus" Level A Violation
- - Focus should never be sent to a text input field automatically from another component
- - The user must control navigating to and from a text input, or any other form input (radio button, dropdown, etc)
+  - Focus should never be sent to a text input field automatically from another component
+  - The user must control navigating to and from a text input, or any other form input (radio button, dropdown, etc)
 - Label
- - Describes the purpose of the control
- - The label should be visible at all times
- - The programmatic or accessible name for the text input must match or include the same text as the visible text label
- - For text input fields that are required (not optional), the programmatic label must include that information, for example: "First name (required).
+  - Describes the purpose of the control
+  - The label should be visible at all times
+  - The programmatic or accessible name for the text input must match or include the same text as the visible text label
+  - For text input fields that are required (not optional), the programmatic label must include that information, for example: "First name (required).
 
 #### Placeholder Text
 - Placeholder cannot be considered the visible label if it disappears at any point
@@ -136,17 +136,17 @@ Group the visible label with the text input field, if applicable, to provide a p
 - A text input field allows users to enter and edit text.
 - When a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
 - Use a native text input control whenever possible versus programming a custom element.
- - The native text input will automatically and correctly announce the role for a screen reader without additional development effort
+  - The native text input will automatically and correctly announce the role for a screen reader without additional development effort
 - For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control.
- - Only announcing the label for the text input in the swipe before the input field does not meet this requirement
+  - Only announcing the label for the text input in the swipe before the input field does not meet this requirement
 - Beware of "On Focus" Level A Violation
- - Focus should never be sent to a text input field automatically from another component
- - The user must control navigating to and from a text input, or any other form input (radio button, dropdown, etc)
+  - Focus should never be sent to a text input field automatically from another component
+  - The user must control navigating to and from a text input, or any other form input (radio button, dropdown, etc)
 - Label
- - Describes the purpose of the control
- - The label should be visible at all times
- - The programmatic or accessible name for the text input must match or include the same text as the visible text label
- - For text input fields that are required (not optional), the programmatic label must include that information, for example: "First name (required).
+  - Describes the purpose of the control
+  - The label should be visible at all times
+  - The programmatic or accessible name for the text input must match or include the same text as the visible text label
+  - For text input fields that are required (not optional), the programmatic label must include that information, for example: "First name (required).
 
 #### Placeholder Text
 - Placeholder cannot be considered the visible label if it disappears at any point
