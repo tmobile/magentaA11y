@@ -16,7 +16,7 @@ mobile:
 
 screenreader:
   name:  |
-    The screen reader announces the text alternative for the info icon "Info","Error", "Caution". 
+    The screen reader announces the text alternative for the info icon. Such as "Info","Error", "Caution". 
   description:  |
     The screen reader announces the visual label for any nested controls and any additional context. e.g. "Learn more Cats are amazing creatures". Note: Some screen readers require different navigational techniques to get the additional context to announce.
   role:  |
