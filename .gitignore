@@ -3,7 +3,6 @@ _config.yml
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
 CNAME
 Icon[
 ]
