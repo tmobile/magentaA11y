@@ -22,7 +22,9 @@
         margin-top: 1em;
         p:last-of-type { padding-bottom: 0; }
     }
-    
+    span.error {
+        margin-top: -.5em;
+    }
   }
 
   .demo-validation-code-example figure {

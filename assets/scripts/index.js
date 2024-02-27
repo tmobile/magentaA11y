@@ -649,9 +649,7 @@ function formValidationDemo() {
 
     $loginForm.validate({
         errorElement: "span", // define the error wrapper - no double label
-        onfocusout: false, // Disable validation on blur
         onkeyup: false, // Disable validation while typing
-        focusInvalid: true, // Focus on the first invalid field
         rules: {
             "first-name": "required",
             "last-name": "required",
@@ -659,6 +657,9 @@ function formValidationDemo() {
                 required: true,
                 email: true
             }
+        },
+        onfocusout: function(element) {
+            this.element(element);  
         },
         messages: {
             "first-name": $svgErrorIcon + "First name is a required field",
