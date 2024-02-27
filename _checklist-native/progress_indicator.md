@@ -19,7 +19,7 @@ mobile gestures:
     
 screenreader: 
   name:  |
-    Purpose is clear (ex: "Step 6 of 7. Account")
+    Purpose is clear (ex: "Step 6 of 7, Account")
   role:  |
     Identifies itself as a button or dropdown
   
@@ -39,7 +39,7 @@ settings:
 
 - A control or graphic that shows the status of a process in real time
 - If the meaning of the process bar graphic is visible in text near it, for example, 66% of 100% or step 2 of 3 underneath a progress bar, then the graphic should be ignored by the screen reader to avoid duplication of announcements.  Or group the graphic with the text in one swipe.  The visible text also helps users with various disabilities to interpret the graphic
-- If the progress bar is not interactive, it is in the swipe order for the screen reader and its text description is announced
+- If the progress bar is interactive, it is in the swipe order for the screen reader and its text description is announced
 - The graphic must meet color contrast ratios for the sections that are currently active
 
   
@@ -64,7 +64,6 @@ settings:
 
 ### Groupings
 - Group visible label with button, if applicable, to provide a programmatic name for the button
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -104,7 +103,7 @@ settings:
 
 ### Announcements
   - "Step 3 of 4”  (Text, non-interactive)
-  - “Step 3 of 4, button” (Label of button)
+  - “Step 3 of 4, button” (Label and role of button)
 
 
 ## Android
@@ -112,7 +111,7 @@ settings:
 
 - A control or graphic that shows the status of a process in real time
 - If the meaning of the process bar graphic is visible in text near it, for example, 66% of 100% or step 2 of 3 underneath a progress bar, then the graphic should be ignored by the screen reader to avoid duplication of announcements.  Or group the graphic with the text in one swipe.  The visible text also helps users with various disabilities to interpret the graphic
-- If the progress bar is not interactive, it is in the swipe order for the screen reader and its text description is announced
+- If the progress bar is interactive, it is in the swipe order for the screen reader and its text description is announced
 - The graphic must meet color contrast ratios for the sections that are currently active
   
 ### Name  
@@ -136,7 +135,6 @@ settings:
 
 ### Groupings
 - Group visible label with button (if applicable) to provide a programmatic name for the button
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
 - **Android Views**
   - `ViewGroup`
@@ -160,7 +158,6 @@ settings:
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 - Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -203,4 +200,4 @@ settings:
 
 ### Announcements
   - "Step 3 of 4”  (Text, non-interactive)
-  - “Step 3 of 4, button, double tap to activate” (Label of button)
+  - “Step 3 of 4, button, double tap to activate” (Label, role and hint)

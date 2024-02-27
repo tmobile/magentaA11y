@@ -11,7 +11,7 @@ keyboard:
           
 mobile:
   swipe: |
-    Focus moves to the element, expresses its name, role, input value and state-if disabled
+    Focus moves to the element, expresses its name, role, input value and state- if disabled
   doubletap: |
     Keyboard appears to edit
 
@@ -30,32 +30,35 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
-## General Notes
-A text input field allows users to enter and edit text. On both Android and iOS devices, when a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
 
-Use a native text input control whenever possible versus programming a custom element. The native text input will automatically and correctly announce the role for a screen reader without additional development effort
-
-For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control. Only announcing the label for the text input in the swipe before the input field does not meet this requirement
 
 ## iOS
 ### Developer Notes
+- A text input field allows users to enter and edit text.
+- When a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
+- Use a native text input control whenever possible versus programming a custom element.
+  - The native text input will automatically and correctly announce the role for a screen reader without additional development effort
+- For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control.
+  - Only announcing the label for the text input in the swipe before the input field does not meet this requirement
+- Beware of "On Focus" Level A Violation
+  - Focus should never be sent to a text input field automatically from another component
+  - The user must control navigating to and from a text input, or any other form input (radio button, dropdown, etc)
+- Label
+  - Describes the purpose of the control
+  - The label should be visible at all times
+  - The programmatic or accessible name for the text input must match or include the same text as the visible text label
+  - For text input fields that are required (not optional), the programmatic label must include that information, for example: "First name (required).
 
-## Beware of "On Focus" Level A Violation
-Focus should never be sent to a text input field automatically from another component. The user must control navigating to and from a text input, or any other form input
+#### Placeholder Text
+- Placeholder cannot be considered the visible label if it disappears at any point
+- Placeholder text must also meet color contrast minimum ratios
+- Placeholder text should not be considered the programmatic name, as it is considered as mostly instructions and not the purpose of the text field
 
-## Label
-The label describes the purpose of the control. The label should be visible at all times. The programmatic or accessible name for the text input must match or include the same text as the visible text label
-
-For text input fields that are required (not optional), the programmatic label must specify that information, for example: "First name (required).
-
-### Do not use placeholder text as the label
-Placeholder cannot be considered the visible label if it disappears at any point. Placeholder text must also meet color contrast minimum ratios
-
-#### Name
-Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name for the text input. If this happens, hide the visible text label from VoiceOver. Placeholder text should not be the programmatic name as placeholder text will often disappear.
+### Name
+Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name for the text input. If this happens, hide the visible text label from VoiceOver. 
 
 **UIKit**
-  - Set the visible label with `setTitle()`. Note: this will overwrite the button’s `accessibilityLabel`.
+- Set the visible label with `setTitle()`. Note: this will overwrite the button’s `accessibilityLabel`.
 - If a visible label is not applicable, set the button's `accessibilityLabel` to the label of your choice.
   - To do this in Interface Builder, set the label using the Identity Inspector.
 - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`.
@@ -65,7 +68,7 @@ Setting a programmatic name while a visible text label exists may cause VoiceOve
 - `TextField` has a built-in label parameter, but it is inside the field itself, which may not be ideal for some use cases. In this case, you may create a separate label and combine it with the `TextField` to create a new accessibility element. Then, apply the programmatic name with `accessibilityLabel(_:)`.
 - If there is no built-in label parameter, such as with `TextEditor`, combine the separate label with the `TextEditor` into a new accessibility element, and apply the programmatic name with `accessibilityLabel(_:)` to the entire element as a whole.
 
-#### Role
+### Role
 When using non-native controls (custom controls), roles will need to be manually coded.
 
 **UIKit**
@@ -76,7 +79,7 @@ When using non-native controls (custom controls), roles will need to be manually
 - Use native `TextField` or `TextEditor` view
 - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.
 
-#### Groupings
+### Groupings
 Group the visible label with the text input field, if applicable, to provide a programmatic name for the field.
 
 **UIKit**
@@ -90,7 +93,7 @@ Group the visible label with the text input field, if applicable, to provide a p
 **SwiftUI**
 - Use view modifier `accessibilityElement(children: .combine)` to merge label and field into a new accessibilityElement.
 
-#### State 
+### State 
 **UIKit** 
 - Active: use `isEnabled` to `true`.
 - Disabled: use `isEnabled` to `false`.
@@ -100,8 +103,11 @@ Group the visible label with the text input field, if applicable, to provide a p
 - Active: use `accessibilityAddTraits(.isSelected)`.
 - Disabled: use view modifier `disabled()`.
 
-#### Focus
-Focus MUST return back to the text input field after the user is done editing the field and dismissing the keyboard.
+### Focus
+- Focus must return back to the text input field after the user is done editing the field and dismissing the keyboard
+- Only manage focus when needed. Primarily, let the device manage default focus
+- Consider how focus should be managed between child elements and their parent views
+- External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
 
 **UIKit**
 - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -117,7 +123,7 @@ Focus MUST return back to the text input field after the user is done editing th
   - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
 - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-### Announcement Examples
+#### Announcement Examples
 - “Label, value, text field, double tap to edit”  (value entered)
 - “Label, placeholder, text field, double tap to edit” (placeholder)
 - “Label, text field, double tap to edit”  (no placeholder or value)
@@ -127,24 +133,27 @@ Focus MUST return back to the text input field after the user is done editing th
 ## Android
 
 ### Developer Notes
-A text input field allows users to enter and edit text. On both Android and iOS devices, when a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
+- A text input field allows users to enter and edit text.
+- When a user enters "edit mode" in the text input, it will automatically bring up the native keyboard
+- Use a native text input control whenever possible versus programming a custom element.
+  - The native text input will automatically and correctly announce the role for a screen reader without additional development effort
+- For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control.
+  - Only announcing the label for the text input in the swipe before the input field does not meet this requirement
+- Beware of "On Focus" Level A Violation
+  - Focus should never be sent to a text input field automatically from another component
+  - The user must control navigating to and from a text input, or any other form input (radio button, dropdown, etc)
+- Label
+  - Describes the purpose of the control
+  - The label should be visible at all times
+  - The programmatic or accessible name for the text input must match or include the same text as the visible text label
+  - For text input fields that are required (not optional), the programmatic label must include that information, for example: "First name (required).
 
-Use a native text input control whenever possible versus programming a custom element. The native text input will automatically and correctly announce the role for a screen reader without additional development effort
+#### Placeholder Text
+- Placeholder cannot be considered the visible label if it disappears at any point
+- Placeholder text must also meet color contrast minimum ratios
+- Placeholder text should not be considered the programmatic name, as it is considered as mostly instructions and not the purpose of the text field
 
-For a screen reader, the Name, Role, and State of the text input must be announced when focus is on the control. Only announcing the label for the text input in the swipe before the input field does not meet this requirement
-
-## Beware of "On Focus" Level A Violation
-Focus should never be sent to a text input field automatically from another component. The user must control navigating to and from a text input, or any other form input
-
-## Label
-The label describes the purpose of the control. The label should be visible at all times. The programmatic or accessible name for the text input must match or include the same text as the visible text label
-
-For text input fields that are required (not optional), the programmatic label must specify that information, for example: "First name (required).
-
-### Do not use placeholder text as the label
-Placeholder cannot be considered the visible label if it disappears at any point. Placeholder text must also meet color contrast minimum ratios
-
-#### Name
+### Name
 **Android Views**
 - `android:text` XML attribute
 - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements without a visible label.
@@ -152,10 +161,10 @@ Placeholder cannot be considered the visible label if it disappears at any point
 - Use `labelFor` attribute to associate the visible label to the control
 
 **Jetpack Compose**
-- Compose Material Component `TextField` has a default `label` parameter built for displaying as both hint (placeholder) and floating label when the user tap on the TextField, the semantics uses this label value for programmatic name.
-- If no `label` parameter designed in your `TextField`, like a search TextField with a search icon as the placeholder, in this case, use modifier semantics to setup `contendescription` value for programmatic name
+- Compose Material Component `TextField` has a default `label` parameter built for displaying as both hint (placeholder) and floating label when the user taps on the TextField, the semantics uses this label value for programmatic name.
+- If no `label` parameter is designed in your `TextField`, like a search TextField with a search icon as the placeholder, in this case, use modifier semantics to setup `contentdescription` value for programmatic name
 
-#### Role
+### Role
 When not using native controls (custom controls), roles will need to be manually coded.
 
 **Android View**
@@ -164,8 +173,8 @@ When not using native controls (custom controls), roles will need to be manually
 **Jetpack Composew**
 - Standard `TextField` Composable
 
-#### Groupings
-Group text field and persistent visible text label together in one swipe.
+### Groupings
+Group text field and persistent visible text label together in one swipe, if not associated with it programmatically.
 
 **Android View**
 - `ViewGroup`
@@ -175,7 +184,7 @@ Group text field and persistent visible text label together in one swipe.
 - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views.
 - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
-#### State
+### State
 **Android View**
 - Active: `android:enabled=true`
 - Disabled: `android:enabled=false`
@@ -184,13 +193,11 @@ Group text field and persistent visible text label together in one swipe.
 - Active: Set `enabled = true` in `TextField` composable
 - Disabled: Set `enabled = false` in `TextField` composable
 
-#### Focus
+### Focus
+- Focus must return back to the edit box after the user is done editing the field and dismissing the keyboard
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
-- When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen, not stay in the bottom nav bar.
-- When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 **Android View**
 - `importantForAccessibility` makes the element visible to the Accessibility API
@@ -218,7 +225,7 @@ Group text field and persistent visible text label together in one swipe.
   - focus order accepts following values: up, down, left, right, previous, next, start, end
   - step 3: use `second.requestFocus()` to gain focus
 
-### Announcement Examples
+#### Announcement Examples
 - “Edit box, Label, double tap to edit text”  (no value)
 - “Value, Edit box, Label, double tap to edit text” (value entered)
-- Announcement for disabled is "disabled"
+- "Disabled"  (disabled state)

@@ -7,8 +7,6 @@ categories: controls
 keyboard:
   tab, Ctr+tab or arrow keys: |
     Focus visibly moves to the button
-  arrow keys: |
-    Focus visibly moves to the button
   spacebar: |
     Activates the button on iOS and Android
   enter: |
@@ -25,10 +23,10 @@ screenreader:
     Purpose is clear and matches visible label
   role:  |
     Identifies as a button in iOS and "double tap to activate" in Android
-  group: |
-    n/a
+  value: |
+    Express the stepper value dynamically when it has visibly changed and when value is in focus
   state: |
-    Expresses its state and stepper value (disabled/dimmed)
+    Expresses its state (disabled/dimmed)
 
 settings:
   text resize: |
@@ -40,6 +38,7 @@ settings:
 ### Developer notes 
 - A stepper is a two-segment control used to increase or decrease an incremental value
 - When new value changes, it gets announced dynamically without moving focus from the increment/decrement button
+- Announcing the label when appropriate with the value gives the screen reader users and users with memory challenges context
 
 ### Name
 - If visible text label exists, the programmatic name should match the visible text label.
@@ -101,17 +100,20 @@ settings:
 ### Announcements
 - Increment
   - "Label with current value, Increment, Button"
-  - if button is activated new value will announce
+  - if button is activated new value will dynamically announce
 - Decrement
   - "Label with current value, Decrement, Button"
-  - if button is activated new value will announce
+  - if button is activated new value will dynamically announce
 
 ## Android
+
+There is no native stepper element for Android.  The notes below are suggestions and accessibility guidance.
 
 ### Developer notes 
 - A stepper is a two-segment control used to increase or decrease an incremental value
 - When new value changes, it gets announced dynamically without moving focus from the increment/decrement button
-
+- Announcing the label when appropriate with the value gives the screen reader users and users with memory challenges context
+  
 ### Name
 - Name includes the purpose and describes the item changing, matching any visible label and references the number shown between stepper (if visible).
 
@@ -147,7 +149,7 @@ settings:
 ### Announcements
 - Increment
   - "Label with value, Increment, Double tap to activate"
-  - if button is activated new value will announce
+  - if button is activated new value will dynamically announce
 - Decrement
   - "Label with value, Decrement, Double tap to activate"
-  - if button is activated new value will announce
+  - if button is activated new value will dynamically announce

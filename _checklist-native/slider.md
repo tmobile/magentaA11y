@@ -12,7 +12,7 @@ keyboard:
 mobile:
   swipe: |
     Focus moves to the input
-  iOS-swipe-up/down: |
+  iOS and Android-swipe-up/down: |
     Increase/decrease slider value one step
   android-volume or swipe up/down: |
     Increase/decrease slider value one step
@@ -23,13 +23,13 @@ screenreader:
   role:  |
     Identifies itself as "adjustable" in iOS and "Slider" in Android
   group: |
-   n/a
+    Group label with control, when possible to give the slider a programmatic name
   state: |
     Expresses its current value, if applicable
 
 settings:
   text resize: |
-    Text can resize up to 200% without losing information
+    Text label can resize up to 200% without losing information
 ---
 
 ## iOS
@@ -38,7 +38,7 @@ settings:
 
 - A slider is a horizontal track with a control called a thumb, which you  
   can slide with your finger to move between a minimum and maximum value (without using AT)
-- Use the right and left arrow keys on the keyboard to change value.
+- If there are labels beneath the slider that adds more context than just the changing value, add this info to each value
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -90,14 +90,14 @@ settings:
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
 
 - **UIKit**
-  - The visible text label should have a separate focus from the slider itself.
+  - Natively, the visible text label has a separate focus from the slider itself.
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
     - **Note:** You may need to adjust the programmatic name, role, state, and/or value after doing this, as this action may overwrite previously configured accessibility.
   - To move screen reader focus to newly revealed content, use `UIAccessibility.post(notification:argument:)` that takes in `.screenChanged` and the newly revealed content as the parameter arguments.
   - To NOT move focus, but dynamically announce new content: use `UIAccessibility.post(notification:argument:)` that takes in `.announcement` and the announcement text as the parameter arguments.
   - `UIAccessibilityContainer` protocol: Have a table of elements that defines the reading order of the elements.  
 - **SwiftUI**
-  - The visible text label should have a separate focus from the slider itself.
+  - Natively, the visible text label has a separate focus from the slider itself.
   - For general focus management that impacts both screen readers and non-screen readers, use the property wrapper `@FocusState` to assign an identity of a focus state.
     - Use the property wrapper `@FocusState` in conjunction with the view modifier `focused(_:)` to assign focus on a view with `@FocusState` as the source of truth.
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
@@ -112,7 +112,7 @@ settings:
 
 - A slider is a horizontal track with a control called a thumb, which you  
   can slide with your finger to move between a minimum and maximum value (without using AT)
-- Use the rt and left arrow keys on the keyboard to change value.
+- If there are labels beneath the slider that adds more context than just the changing value, add this info to each value
 
 ### Name
 - Programmatic name describes the purpose of the control.

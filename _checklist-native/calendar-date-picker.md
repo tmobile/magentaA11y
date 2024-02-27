@@ -36,6 +36,7 @@ settings:
 
 ### Developer notes
 - Use native pickers when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Calendar image often needs alt text and is sometimes grouped with the label of the field
 - The native calendar has a few circles for selected dates, but there are limitations in the colors resulting in insufficient color contrast minimum ratios, as well as the color for the days of the week
 - Natively, VoiceOver announces the disabled/unavailable dates as dimmed
 - The month is adjustable (swipe up or down to change) and can also be changed via the wheel picker with double tap
@@ -46,7 +47,7 @@ settings:
 - It is the name of the element that opens the date picker.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-- Placeholder text is NOT the programmatic name
+- Placeholder or value text is NOT the programmatic name
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
@@ -91,7 +92,7 @@ settings:
 ### Focus
 - Use the device's default focus functionality. 
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
+- Initial focus on a screen should land in a logical place, such as back button, screen title, close button, first text field, or first heading.
 - When the date picker is closed, the focus should return to the triggering element.
 
 - **UIKit**
@@ -108,13 +109,13 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- “Double tap to dismiss pop up window”  First invisible element (on later versions)
+- “Double tap to dismiss pop up window”  (First invisible element) (on later versions)
 - Header announces as a heading
-- “Close, button”  Close X button
-- “Month, button, adjustable, double tap to change month and year, swipe up or down with one finger to adjust the value”  Month and year button
-- “Day, Date, button”  Each date
-- “Selected, Day, Date, button”  Selected date
-- “Day, Date, dimmed, button”  Disabled or unavailable date
+- “Close, button”  (Close X button)
+- “Month, button, adjustable, double tap to change month and year, swipe up or down with one finger to adjust the value”  (Month and year button)
+- “Day, Date, button”  (Each date)
+- “Selected, Day, Date, button”  (Selected date)
+- “Day, Date, dimmed, button”  (Disabled or unavailable date)
 
 ## Android
 
@@ -124,7 +125,7 @@ settings:
 - They are modals that cover the main content, where TalkBack users should be confined in them
 - Swipe order in the picker goes through the three months shown, the three days shown and the three years shown
 - Swiping up and down in each column rotates through the options in the column
-- Initial focus in modal is often on one of the first elements and not necessarily the heading.
+- Initial focus in modal can often be one of the first elements and not necessarily the heading.
 
 ### Name
 - Name describes the purpose of the control
@@ -169,6 +170,7 @@ settings:
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
+  
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
   - `android:focusable`
@@ -204,8 +206,8 @@ Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
 {% endhighlight %}
 
 ### Announcement examples
-- “Name, edit box, Double-tap and hold to long press.  Actions available, use Tap with 3 fingers to view” On Edit box to open TalkBack Actions menu
-- “Show date picker button, double tap to activate”  Down arrow to open picker
-- “Day, date”  Title or heading
-- “Option (day or date) button, Swipe up or swipe down to adjust.  Double tap to activate. Double tap and hold to long press”  On each day/date in column (Double tap and hold to long press will rotate quickly through the column)
-- “Cancel button, double tap to activate”  CTA with “Set” as the other action
+- “Name, edit box, Double-tap and hold to long press.  Actions available, use Tap with 3 fingers to view”  (On Edit box to open TalkBack Actions menu)
+- “Show date picker button, double tap to activate”  (Down arrow to open picker)
+- “Day, date”  (Title or heading)
+- “Option (day or date) button, Swipe up or swipe down to adjust.  Double tap to activate. Double tap and hold to long press”  (On each day/date in column) (Double tap and hold to long press will rotate quickly through the column)
+- “Cancel button, double tap to activate”  (CTA with “Set” as the other action)

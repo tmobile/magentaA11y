@@ -29,7 +29,7 @@ screenreader:
 
 settings:
   text resize: |
-    Text can resize up to 200% without losing information
+    Text label can resize up to 200% without losing information
 ---
 
 ## Developer Notes
@@ -43,14 +43,14 @@ settings:
 ### Developer Notes
 - A switch, or toggle, has two mutually exclusive states — on and off
 - You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
-- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label before the switch and not on the switch does not meet this requirement
+- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label in the swipe before the switch and not on the switch does not meet this requirement
+- Generally, in a table row, the label, any images and switch are grouped together in one swipe
 
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
 - When naming a switch, do not add "switch" or "button" to the programmatic name.
-- Placeholder text is NOT the programmatic name
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
@@ -75,7 +75,6 @@ settings:
 
 ### Groupings
 - Group visible label with switch, if applicable, to provide a programmatic name for the switch.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -99,10 +98,10 @@ settings:
   - For disabled, use view modifier `disabled()`.
 
 ### Focus
-- Use the device's default focus functionality. 
+- Use the device's default focus functionality.
+- Screen reader focus should be around the entire tablerow/blade when there is one interactive element (switch)   
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
 
 - **UIKit**
 	- Focus should be around the entire row that has the switch
@@ -120,16 +119,17 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- “Label, off, double tap to toggle setting”     On or off
-- “Label, off, switch button, double tap to toggle setting”   On or off
-- “Label, dimmed, switch button, off”  Disabled state
+- “Label, off, double tap to toggle setting” (On or off)
+- “Label, off, switch button, double tap to toggle setting” (On or off)
+- “Label, dimmed, switch button, off” (Disabled state)
 
 ## Android
 
 ### Developer Notes
 - A switch, or toggle, has two mutually exclusive states — on and off
 - You should implement a native switch when at all possible vs a custom switch, as it will automatically and correctly announce the role without additional development effort
-- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label before the switch and not on the switch does not meet this requirement
+- Name, Role, State must be announced by the screen reader when focus is on the control, if it is isolated in the table row. Announcing the label in the swipe before the switch and not on the switch does not meet this requirement
+- Generally, in a table row, the label, any images and switch are grouped together in one swipe
 
 ### Name
 
@@ -240,5 +240,5 @@ Row(
 
 
 ### Announcement examples
-- “On, “label”, Switch, double tap to toggle”   On or Off
-- “Off, “label”, Switch, disabled”    Disabled state
+- “On, label, Switch, double tap to toggle” (On or Off)
+- “Off, label, Switch, disabled”  (Disabled state)

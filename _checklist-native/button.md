@@ -33,15 +33,15 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
+## iOS
+
 ## Developer notes
 - A button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort
 - A button is a control that executes an action or navigates within the app 
   - To redirect users outside of the app, use links
 - Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app
 - Name, Role, State must be stated in a single announcement when focus is on the control
-
-## iOS
-
+  
 ### Name
 - Programmatic name describes the purpose of the control.
 - If visible text label exists, the programmatic name should match the visible text label.
@@ -49,7 +49,6 @@ settings:
 - When naming a button, do not add "button" to the programmatic name (label). Assigning "Button" as the role will handle this announcement.
   - **Incorrect announcement:** "Submit button, Button"
   - **Correct announcement:** "Submit, Button"
-- Placeholder text is NOT the programmatic name
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
@@ -74,8 +73,7 @@ settings:
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- Group visible label with button, if applicable, to provide a programmatic name for the button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
+- Group visible label with button, if applicable, to provide a programmatic name for the button and not duplicate the name announcement
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -100,7 +98,7 @@ settings:
 - Use the device's default focus functionality. 
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
+- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading, except when changing between navigation tabs
 - When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
@@ -117,7 +115,7 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
+- Options for announcements below depend on implementation. Announcement order can vary.
 
 - "Label, button"
 - "Label, (other content in cell), button" (grouping)
@@ -125,6 +123,13 @@ settings:
 - "Label, dimmed, button" (disabled state)
 
 ## Android
+
+## Developer notes
+- A button is accessible by default prior to customization. Use the native button when at all possible to avoid additional development effort
+- A button is a control that executes an action or navigates within the app 
+  - To redirect users outside of the app, use links
+- Even if the control visibly looks like a link, implement the control as a button to cue the screen reader that the action will keep them within the app
+- Name, Role, State must be stated in a single announcement when focus is on the control
 
 ### Name
 - Name describes the purpose of the control
@@ -149,8 +154,7 @@ settings:
   - Standard `Button` composable
 
 ### Groupings
-- Group visible label with button (if applicable) to provide a programmatic name for the button
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
+- Visible label can be grouped with button (if applicable) to provide a programmatic name for the button and not duplicate the name announcement
 
 - **Android Views**
   - `ViewGroup`
@@ -173,7 +177,7 @@ settings:
 - Only manage focus when needed. Primarily, let the device manage default focus
 - Consider how focus should be managed between child elements and their parent views
 - External keyboard tab order often follows the screen reader focus, but sometimes needs focus management
-- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading)
+- Initial focus on a screen should land in a logical place (back button, screen title, first text field, first heading), except when changing between navigation tabs
 - When a menu, picker or modal is closed, the focus should return to the triggering element.
 
 - **Android Views**
@@ -216,7 +220,7 @@ settings:
   - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
   
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label
+- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from "button" in the label
   - **Note:** When the user has hints turned on in settings, "double tap to activate" will announce at the end of most interactive controls.  Testing should be done with hints turned on to ensure the user understands a control is interactive by hearing either "button" or "double tap to activate" or both.  Announcements on Android devices vary slightly due to manufacturer.
   
 - "Label, button, double tap to activate"

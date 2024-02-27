@@ -5,7 +5,7 @@ categories: controls
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    Focus visibly moves to control (when page control is focusable)
+    Focus visibly moves to interactive elements
   arrow and space keys: |
     Brings next page into view when focus is on page control (iOS)
   arrow keys and space/enter: |
@@ -22,7 +22,7 @@ mobile:
     
 screenreader: 
   name:  |
-    The page index (X of X)
+    The page index (X of X) and heading of slide
   role:  |
     Identifies as "adjustable" or button in iOS, "In horizontal pager" in Android
   group: |
@@ -42,8 +42,9 @@ settings:
 - There are a variety of implementation alternatives for a page control:  
   - The screen reader focus may remain on the page control when it is focused and the user interacts with it.  Custom actions can be implemented on the dots so that the screen reader user can swipe rt or left past the page control to navigate through the screen.  If there are many pages, having to swipe through all of them to get to the rest of the screen may not be a good user experience
   - Swiping right or left to change the pages while focus is on the page control is acceptable, if there are not too many pages.  Index of the page (2 of 4) must be announced
-  - Navigating through the pages while focus is not on images or slides is acceptable.  Index must be announced while on each slide and then pagination dots do not need to be focused by the screen reader
+  - Navigating through the pages while focus is not on images or slides is acceptable.  Index must be announced while on each slide.  Then, pagination dots do not need to be focused by the screen reader, eliminating a redundant experience
 - Pagination control must not change automatically to the next page/dot
+- Ensure the external Blue tooth keyboard user can navigate through the slides/screens
   
 ### Name
 - **UIKit**
@@ -67,7 +68,6 @@ settings:
 
 ### Groupings
  - Group visible label with button, if applicable, to provide a programmatic name for the button
- - Group label with data to ensure reading order is logical. (Not label, label, data, data)
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -93,7 +93,6 @@ settings:
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 - Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -109,8 +108,8 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcements
-  - "Page three of three, adjustable, swipe up or down with one finger to adjust the value"  Focus is on pagination dots, custom actions have been implemented and the dots are interactive
-  - “ Images, text, page 1 of 3, button”  Swipe right or left to navigate through slides and announcement includes meaningful content on the page and text, plus the index.  Pagination dots are not focusable.
+  - "Page three of three, adjustable, swipe up or down with one finger to adjust the value"  (Focus is on pagination dots, custom actions have been implemented and the dots are interactive)
+  - “Images, text, page 1 of 3, button”  (Swipe right or left to navigate through slides and announcement includes meaningful content on the page and text, plus the index.  Pagination dots are not focusable.)
 
 
 ## Android
@@ -120,9 +119,10 @@ settings:
 - There are a variety of implementation alternatives for a page control:  
   - The screen reader focus may remain on the page control when it is focused and the user interacts with it.  Custom actions can be implemented on the dots so that the screen reader user can swipe right or left past the page control to navigate through the screen.  If there are many pages, having to swipe through all of them to get to the rest of the screen may not be a good user experience
   - Swiping rt or left to change the pages while focus is on the page control is acceptable, if there are not too many pages.  Index of the page (2 of 4) must be announced
-  - Navigating through the pages while focus is not on images or slides is acceptable.  Index must be announced while on each slide and then pagination dots do not need to be focused by the screen reader
-- If a container around the entire screen is the page control, there is usually no programmatic name.  But it announces the page index and possibly "in horizontal pager" or other information that tells the screen reader user they are within a page experience.  Often the focus moves to a logical place in the new content
+  - Navigating through the pages while focus is not on images or slides is acceptable.  Index must be announced while on each slide. Then, pagination dots do not need to be focused by the screen reader, eliminating a redundant experience
+- If a container around the entire screen is the page control, there is usually no programmatic name.  But it announces the page index and possibly "in horizontal pager" or other information that tells the screen reader user they are within a page experience.  The focus should move to a logical place in the new content
 - Pagination control must not change automatically to the next page/dot
+- Ensure the external Blue tooth keyboard user can navigate through the slides/screens
   
 ### Name  
 - **Android Views**  
@@ -211,6 +211,6 @@ settings:
   - Example: `modifier = Modifier.semantics { customActions = listOf(CustomAccessibilityAction(label = "", action = { true }))}`
 
 ### Announcements
-  - "Label, page three of three, List, out of grid pager”   If focus is on pagination dots and they are not interactive
-  - “Text, images, in horizontal pager”  When focus is in body of page.  Swipe up and right (or left) with two fingers to change page
-  - “ Images, text, page 1 of 3, list, double tap to activate”  Swipe rt or left to navigate through slides and announcement includes meaningful content on the page and text, plus the index.  Pagination dots are not focusable.
+  - "Label, page three of three, List, out of grid pager”   (If focus is on pagination dots and they are not interactive)
+  - “Text, images, in horizontal pager”  (When focus is in body of page.  Swipe up and right (or left) with two fingers to change page)
+  - “Images, text, page 1 of 3, list, double tap to activate”  (Swipe rt or left to navigate through slides and announcement includes meaningful content on the page and text, plus the index.  Pagination dots are not focusable.)

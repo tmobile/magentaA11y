@@ -2,7 +2,6 @@
 layout: entry
 title:  "Link"
 categories: controls
-order: 1
 
 keyboard:
   tab, arrow keys, or Ctrl+tab: |
@@ -16,7 +15,7 @@ mobile:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
   rotor/TalkBack menu: |
-    Links can be navigated to and activated from the Rotor/TalkBack menu or by focus/double tap.  Only one way is required. Known issue: Links do not currently appear in iOS Rotor. This does not apply to SwiftUI and Jetpack Compose currently.
+    Links can be navigated to and activated from the Rotor/TalkBack menu or by focus/double tap.  Only one way is required. Known issue: Links do not currently appear in iOS Rotor using SwiftUI. 
   doubletap: |
     Activates the link
 
@@ -39,14 +38,14 @@ settings:
 
 ### **Developer Notes**
 
-- Clickable link that navigates the user outside of the app to a web page. (ex: opens a web browser)
-- When accessing an in-line link that is inside a paragraph with a screen reader, the focus should be around the paragraph container.
-- To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
+- Actionable link that navigates the user outside of the app to a web page. (ex: opens a web browser)
+- When accessing an in-line link that is inside a paragraph with a screen reader, the focus is usually around the paragraph container.
+- To activate a link, screen reader users can double tap both inline links and links outside of paragraphs.
 - There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
 - The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
 
 ### Name
-- Clickable text that describes the destination or purpose of the link
+- Interactive text that describes the destination or purpose of the link
 - Programmatic name matches the visible text label
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
     - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of "Learn more" that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as "Learn more about accessible controls".
@@ -132,7 +131,6 @@ settings:
 
 ### Announcement examples
 - Announcement order can vary
-- Announcement order can vary
 - "Label, link"
 - "All text in paragraph including url, link" (link in paragraph)
 - "Label, dimmed, link" (disabled)
@@ -144,14 +142,14 @@ settings:
 
 ### **Developer Notes**
 
-- Clickable text that navigates the user outside of the app to a web page. (ex: opens an web browser)
-- When accessing an in-line link that is inside a paragraph with a screen reader, the focus should be around the paragraph container.
+- Actionable text that navigates the user outside of the app to a web page. (ex: opens an web browser)
+- When accessing an in-line link that is inside a paragraph with a screen reader, the focus can be around the paragraph container.
 - To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
 - There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
 - The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
 
 ### Name
-- Clickable text that describes the destination or purpose of the link
+- Interactive text that describes the destination or purpose of the link
 - Programmatic name matches the visible text label
   - **Note:** If adding context to a generic link, ensure the visible text for the link is the first part of the label and it matches the visible text. For example, a link the has a visual label of “Learn more” that is not part of a paragraph may need a label with greater context in the code so it is announced by a screen reader as “Learn more about accessible controls".
 
@@ -256,11 +254,11 @@ fun LinkText(
 - [App Links](https://developer.android.com/training/app-links)
 
 ### Announcement examples
-Options for announcements below depend on framework and versions. Announcement order can vary.  "Double tap to activate" hint announcement varies with implementation.
+Options for announcements below depend on device framework and versions. Announcement order can vary.  "Double tap to activate" hint announcement varies with implementation.
 
 - "Label, link"
 - "Label, link, double tap to activate"
-- "Label, double tap to activate, links available, tap with three fingers to view"
+- "Label, double tap to activate, links available, tap with three fingers to view" (TalkBack menu appears)
 - "All text in paragraph including link name, links available, tap with three fingers to view" (link in paragraph)
 - "Text in sentence, link name, link, remainder of sentence, double tap to activate, links available, tap with three fingers to view" (link in sentence with separate link focus)
 - "Label, disabled" (disabled)
