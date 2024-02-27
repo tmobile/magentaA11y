@@ -5,21 +5,21 @@ categories: controls
 
 keyboard:
   tab: |
-    Focus visibly moves to the button
+    Focus visibly moves to the row/blade, if interactive
   spacebar: |
-    Activates the button on iOS and Android
+    Activates the row/blade on iOS and Android
   enter: |
-    Activates the button on Android
+    Activates the row/blade on Android
           
 mobile:
   swipe: |
     Focus moves to the element, expresses its state, if applicable
   doubletap: |
-    Activates the button
+    Activates the row/blade
     
 screenreader: 
   name:  |
-    Purpose is clear and matches visible label
+    Purpose is clear and matches the visible label
   role:  |
     Identifies as a button in iOS and "double tap to activate" in Android
   group: |
@@ -32,15 +32,16 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
-## General Notes
-A table row/list item can be created by using different types of native components in iOS and Android, such as iOS `List`, `Button`, `UITableView` and Android `RecyclerView`, `Column`, and `LazyColumn`. 
-
-In general, a table row/list item is an interactive item within a scrolling, single-column row or list of rows. The table row/list item can contain multiple elements inside it such as text, form inputs, buttons, etc. However, a table row/list item can also be a non-interactive element as well.
-
-You should use a native component rather than custom component, because it will have the correct name, role, and values associated with it for accessibility.
-
 ## iOS
 ### Developer Notes
+- A table row/list item can be created by using different types of native components in iOS, such as iOS `List`, `Button`, `UITableView` 
+- In general, a table row/list item can be a single interactive row or an interactive item within a scrolling, single-column row or list of rows. The table row/list item can contain multiple elements inside it such as text, images, icons, form inputs, buttons, etc.
+ - However, a table row/list item can also be a non-interactive element as well.
+- Generally, all items in the row are grouped together, ie., the caret is not focused separately
+- If there are two interactive elements, there will be two focusable areas.
+ - Often, the first focus is around the whole row, but will activate only the first interactive element
+- You should use a native component rather than custom component, because it will have the correct name, role, and values associated with it for accessibility.
+
 #### Name
 The programmatic name describes the purpose of the control.
 
@@ -77,8 +78,9 @@ When using non-native controls (custom controls), roles will need to be manually
 - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 #### Groupings
-- Group visible label with table row, if applicable, to provide a programmatic name for the table row.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
+- Group text label/ images/controls together in one swipe
+- Only one interactive control can be in the swipe   
+
 
 **UIKit**
 1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -105,8 +107,6 @@ When using non-native controls (custom controls), roles will need to be manually
 - Focus ring must surround the table row
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
 
 **UIKit**
 - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -124,17 +124,26 @@ When using non-native controls (custom controls), roles will need to be manually
 
 #### Announcement examples
 - "Label, button"  
-- "Label, (plus other content in cell), button" (grouping)
+- "Label, (plus other content in cell), button" (grouping - all in one focusable area)
 - "Label, button, selected" (selected state)
 - "Label, dimmed, button" (disabled state)
 
 ## Android
+
 ### Developer Notes
+- A table row/list item can be created by using different types of native components in Android, such as `RecyclerView`, `Column`, and `LazyColumn`. 
+- In general, a table row/list item can be a single interactive row or an interactive item within a scrolling, single-column row or list of rows. The table row/list item can contain multiple elements inside it such as text, images, icons, form inputs, buttons, etc.
+ - However, a table row/list item can also be a non-interactive element as well
+- Generally, all items in the row are grouped together, ie., the caret is not focused separately
+- If there are two interactive elements, there will be two focusable areas
+ - Often, the first focus is around the whole row, but will activate only the first interactive element
+- You should use a native component rather than custom component, because it will have the correct name, role, and values associated with it for accessibility.
+
 #### Name
 - Name describes the purpose of the control and matches the visible label, which can all be grouped together in the table row in an accessibility label
 
 #### Role
-- Add header trait to table rows that describe a section if needed and do not make header row interactive
+- Add header trait to table rows that describe a section if needed, usually not interactive
 
 **Android View**
 - Use an interactive [`RecyclerView`](https://developer.android.com/develop/ui/views/layout/recyclerview) which is used to display large datasets.
@@ -166,8 +175,10 @@ When using non-native controls (custom controls), roles will need to be manually
 - Disabled: `enabled=false`
 
 #### Focus
-- Only manage focus when needed. Primarily, let the device manage default focus.  
+- Use the device's default focus functionality. 
+- Focus ring must surround the table row
 - Consider how focus should be managed between child elements and their parent views.
+- External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
 
 **Android View**
 - `android:focusable=true`
@@ -195,6 +206,6 @@ When using non-native controls (custom controls), roles will need to be manually
 
 #### Announcement examples
 - "Label, double tap to activate"
-- "Label, (plus other content in cell), double tap to activate" (grouping)
+- "Label, (plus other content in cell), double tap to activate" (grouping - all in one focusable area)
 - "Selected, Label, double tap to activate" (selected state or row with a checkmark)
 - "Label, dimmed" (disabled state)

@@ -36,14 +36,15 @@ settings:
 
 ### Developer notes
 - Screen reader focus moves to the picker when it opens
-- "Picker item, adjustable" "swipe up or down to adjust the value" for custom actions on the picker are the common announcements. Done button closes picker and screen reader focus should move to the button that opened the picker
-
+- "Picker item, adjustable" "swipe up or down to adjust the value" for custom actions on the picker are the common announcements
+- Swipe right or left navigates to other columns in picker
+- Done button closes picker and screen reader focus should return to the button that opened the picker
 
 ### Name
 - Programmatic name describes the purpose of the control that opens the picker.
 - If visible text label exists, the programmatic name should match the visible text label.
     - **Note:** Setting a programmatic name while a visible text label exists may cause VoiceOver to duplicate the announcement of the name. If this happens, hide the visible text label from VoiceOver recognization.
-- Placeholder text is NOT the programmatic name
+- Placeholder text or value is not the programmatic name
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
@@ -78,7 +79,8 @@ settings:
 ### State 
 - **UIKit**  
   - For enabled: Set `isEnabled` to `true`.
-  - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
+  - For disabled: Set `isEnabled` to `false`.
+    - Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
 - **SwiftUI**
   - For disabled, use view modifier `disabled()`.
@@ -86,7 +88,6 @@ settings:
 ### Focus
 - Use the device's default focus functionality. 
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
 - When the date picker is closed, the focus should return to the triggering element.
 
 - **UIKit**
@@ -102,16 +103,21 @@ settings:
     - Use the property wrapper `@FocusState`in conjunction with the view modifier `focused(_:equals:)` to assign focus on a view, when the view is equal to a specific value.
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
-
-
+### Announcement examples  (Contacts - date)
+- “Add birthday, button" (button name and role that opens picker)
+- Often, "collapsed or expanded" states are added to the button that opens the picker
+- "February, picker item, adjustable, swipe up or down with one finger to adjust the value" (focus is on first picker item or previously selected item)
+  - Native pickers do not always show a Done button on the keyboard.  So, swiping backwards to edit another field closes the picker
 
 ## Android
 
 ### Developer notes
-- Time pickers are modal and cover the main content. Users can select hours, minutes, or periods of time.
+- Time pickers are modal and cover the main content
+- Users can select hours, minutes, or periods of time
 - The clock or time picker toggles between two displays, the clock and a text input 
 - The TalkBack user should be confined in the modal
-- The native component supplies all the announcements for conformance.
+- The native component supplies all the announcements for conformance
+- Done button closes picker and screen reader focus should return to the button that opened the picker
 
 
 ### Name

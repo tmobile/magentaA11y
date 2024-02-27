@@ -13,7 +13,7 @@ keyboard:
         
 mobile:
   swipe: |
-      Focus moves to the element, expresses its name, role, and state, if disabled
+      Focus moves to the element, expresses its name, role, and state
   doubletap: |
       Toggles the radio button state
 
@@ -37,8 +37,8 @@ settings:
 ### **Developer Notes**
 
 - Radio buttons allow a user to select one item from a predefined list of options
-- A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is usually not a change of context
-- Name, Role, State must be announced when focus is on the control. Announcing the label before the radio button does not meet this requirement
+- A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is ok, as it is usually not a change of context
+- Name, Role, State must be announced when focus is on the control. Announcing the label in the swipe before the radio button does not meet this requirement
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -72,8 +72,7 @@ settings:
 
 ### Groupings
 - Group visible label with radio button, if applicable, to provide a programmatic name for the radio button.
-- Group label with data to ensure reading order is logical. (Not label, label, data, data).
-- Group the units such that the label, role, and state of the checkbox is announced in a single announcement.
+- Group the units such that the label, role, and state of the radio button is announced in a single announcement.
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -105,9 +104,7 @@ settings:
 - Use the device's default focus functionality. 
 - Consider how focus should be managed between child elements and their parent views.
 - External keyboard tab order often follows the screen reader focus, but sometimes this functionality requires additional development to manage focus.
-- Initial focus on a screen should land in a logical place, such as back button, screen title, first text field, or first heading.
-- When a bottom navigation bar element is activated, the next screen's initial focus should move to the top of the screen. It should not stay in the bottom navigation bar.
-- When a menu, picker, or modal is closed, the focus should return to the triggering element.
+- When a bottom navigation bar element is activated, the next screen's initial focus should stay in the bottom navigation bar. 
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -127,7 +124,6 @@ settings:
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
 - "Label, button"
 - "Label, button, selected" (selected state)
-- "Label, dimmed" (disabled state)
 - "Label, dimmed, button" (disabled state)
 
 ## **Android**
@@ -136,8 +132,8 @@ settings:
 
 - Radio buttons allow users to select an item from a predefined list of options
 - Use a native element rather than a custom element because it will announce the correct built-in screen reader announcements without additional development effort
--  A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is usually not a change of context
-- Name, Role, State must be announced when focus is on the control. Announcing the label before the radio button does not meet this requirement
+-  A radio button should toggle between selected and unselected states. It should not automatically navigate the user to another field or screen when selected, as that may cause a change of context. Revealing new information on the same screen as a result of activating a radio button is ok, as it is usually not a change of context
+- Name, Role, State must be announced when focus is on the control. Announcing the label in the swipe before the radio button does not meet this requirement
 
 ### Name
 
@@ -241,5 +237,5 @@ settings:
 ### Announcement examples 
 - "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
 - "Checked, label, radio button, double tap to toggle" (selected state)
-- "Not checked, label, radio button, double tap to toggle"
-- "Not checked, label, radio button, double tap to select"
+- "Not checked, label, radio button, double tap to toggle" (unselected state)
+- "Not checked, label, radio button, double tap to select" (unselected state)

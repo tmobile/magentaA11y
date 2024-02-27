@@ -13,7 +13,7 @@ keyboard:
         
 mobile:
   swipe: |
-      Focus moves to the first element (hidden or not), expresses its name, role, value & state (if applicable)
+      Focus moves to the first element (hidden or not), expresses its name, role, value & state
   doubletap: |
      Activates interactive elements
 
@@ -40,8 +40,9 @@ settings:
 - Most sheets appear as a modal that partially covers the underlying content
 - The screen reader is usually confined in the sheet/drawer if it covers underlining content. If a sheet does not cover other content, the screen reader can move out of it
 - Ensure there is a way to collapse or close the sheet for the screen reader if covering other content.  Initial focus is to an invisible dismiss button in later versions  
-- A grabber/card controller is used for sheets that expand/collapse. When implemented, the initial focus can be on the grabber, then the next swipe focus is moved to the invisible dismiss button or close X
+- A grabber/card controller is used for sheets that expand/collapse. When implemented, the initial focus can be on the grabber, then the next swipe focus is moved to the invisible dismiss button or close X. 
 - A card controller button expands/collapses the sheet to cover half the screen or the whole screen.  After expanding or collapsing, only the name and state gets announced, not the full announcement
+- Keyboard users would not be able to expand the sheet without the grabber
 
 ### Name
 - Programmatic name describes the purpose of the control.
@@ -75,7 +76,7 @@ settings:
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- Follow logical order when grouping elements inside the sheet
+- Group elements together logically to better understand the context of the screen
 
 - **UIKit**
   1. Ensure that the child elements of the overarching view you want to group in has their `isAccessibilityElement` properties set to false.
@@ -120,7 +121,7 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- "button" in announcements below comes from the accessibility services most of the time when a native component is used, not from the label. Options for announcements below depend on framework and versions. Announcement order can vary.
+- Announcement order can vary.
 - "Double tap to dismiss pop-up window, button"  (Invisible dismiss button- later versions)
 - "Close, button" (If Close X is available)
 - "Card controller, minimized, button, adjust the size of the card overlaying screen"  (When focus is on the card controller in minimized to go to half screen)
@@ -164,8 +165,7 @@ settings:
   - When use the drag handle on top of the sheet from the native component then it will be announced as "collapse drag handle" with actions available (three fingers tapping to view). With no drag handle designed UI, a close button is required to be displayed and have the init focus whenever the sheet is triggered and showing.
 
 ### Groupings
-- Group visible label with action (if applicable) to provide a programmatic name for the action
-- Group label with data to ensure reading order is logical. (Not label, label, data, data)
+- Group elements together logically to better understand the context of the screen
 
 - **Android Views**
   - `ViewGroup`
