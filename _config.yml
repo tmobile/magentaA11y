@@ -52,6 +52,7 @@ web-categories-order:
 native-categories-order:
 - controls
 - notifications
+- patterns
 video-demos:
 - title: iOS Voiceover
   directory: ios/

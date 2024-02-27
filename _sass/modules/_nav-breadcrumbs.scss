@@ -1,10 +1,14 @@
 .breadcrumbs {
+
   background-color: #fff;
   
   ol {
-    display: flex;
     margin: 0;
     padding: 1rem;
+
+    @include break($break-small) {
+      display: flex;
+    }
 
     li {
       list-style-type: none;
@@ -12,11 +16,15 @@
       padding: 0;
       a {
         display: flex;
-        padding: .5rem 0 .5rem .75rem;
+        padding: .9rem 0 .9rem .75rem;
         position: relative;
         text-decoration: none;
-        background: #eee;
         line-height: 1rem;
+
+        @include break($break-small) {
+          background: #eee;
+          padding: .5rem 0 .5rem .75rem;
+        }
 
         &:after {
           content: '';
@@ -33,20 +41,24 @@
         &:hover,
         &:focus-visible {
           text-decoration: underline;
-          background-color: $color-gray-light;
           color: $color-text;
           z-index: 9;
           &:after {
             background-image: var(--icon-chevron-dark);
+          }
+          @include break($break-small) {
+            background-color: $color-gray-light;
           }
         }
 
       }
 
       &:first-of-type {
-        a {
-          border-radius: .5rem 0 0 .5rem;
-          padding-left: 1rem;
+        @include break($break-small) {
+          a {
+            border-radius: .5rem 0 0 .5rem;
+            padding-left: 1rem;
+          }
         }
       }
 

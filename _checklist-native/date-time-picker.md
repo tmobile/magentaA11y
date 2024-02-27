@@ -16,12 +16,13 @@ mobile:
       Focus moves to the element, expresses its name, role, value
   doubletap: |
      Selects and opens picker
-
+  swipe up or down: |
+      Focus moves to next item in picker (iOS) or next item in column (Android), expresses its name, role 
 screenreader:
   name:  |
       Purpose is clear and matches any visible label
   role:  |
-      Identifies itself as a button/adjustable in iOS and "double tap to activate" in Android
+      Identifies itself as a button/adjustable in iOS and button or "double tap to activate" in Android
   group: |
       n/a
   state: |
@@ -118,7 +119,10 @@ This entry describes native pickers that allow a user to set information such as
 ## Android
 
 ### Developer notes
-Time pickers in Android are often created as a modal that covers over top of the main app content. Users can select hours, minutes, or periods of time. The clock or time picker toggles between two displays, the clock and a text input. For this component, a TalkBack screen reader user should be confined inside the modal and not reach the content behind it. The native component `TimePickerDialog` and `TimePicker` will supply the name, role, and state required for conformance.
+- Time pickers in Android are often created as a modal that covers over top of the main app content. Users can select hours, minutes, or periods of time. 
+- The clock or time picker toggles between two displays, the clock and a text input.
+- For this component, a TalkBack screen reader user should be confined inside the modal and not reach the content behind it.
+- The native component `TimePickerDialog` and `TimePicker` will supply the name, role, and state required for conformance.
 
 #### Name
 The name should describe the purpose of the control.

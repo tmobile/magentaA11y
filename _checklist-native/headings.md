@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Headings" 
-categories: common patterns
+categories: patterns
 
 
 keyboard:
@@ -28,13 +28,14 @@ settings:
 - A heading should describe a section, not just look like a heading because it is large or bold font.
 - The title of a screen should announce as a heading by default
 - Text can announce as a heading as well as a button
+- Following Apple's guidelines for font sizes for headings, the maximum size for the larger size heading may be less than 200%
 
 ### Accessibility Trait
 - **UIKit**
 - Use `isHeader: AccessibilityTraits` 
 
 - **SwiftUI**
-- Use `.accessibilityAddTraits(.isHeader)
+- Use `.accessibilityAddTraits(.isHeader)`
 
 ### Focus
 - Use the device's default focus functionality. 

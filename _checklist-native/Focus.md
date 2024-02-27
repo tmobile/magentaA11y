@@ -1,7 +1,7 @@
 ---
 layout: entry
 title:  "Focus" 
-categories: common patterns
+categories: patterns
 
 
 keyboard:
