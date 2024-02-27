@@ -1,0 +1,32 @@
+#demo-form-validation {
+    *:focus {
+      outline-offset: 2px;
+      transition: none;
+    }
+    fieldset {
+        padding-bottom: 1em;
+        @media(min-width: $break-mid){
+            max-width: 70%;
+            input {
+                max-width: 30rem;
+            }
+            input[type="email"]{
+                width: calc(100% - 2rem);
+            }
+        }
+    }
+    legend h2 {
+        margin-bottom: 0;
+    }
+    #form-desc {
+        margin-top: 1em;
+        p:last-of-type { padding-bottom: 0; }
+    }
+    span.error {
+        margin-top: -.5em;
+    }
+  }
+
+  .demo-validation-code-example figure {
+    max-width: 100%;
+  }

@@ -1,0 +1,26 @@
+<form id="demo-form-validation" novalidate>
+    <fieldset aria-describedby="form-desc">
+        <legend><h2>Customer Feedback</h2></legend>
+        <div class="hint" id="form-desc">
+            <p>This is the form intro text. This text helps describe the form for users. Additional helper text is below. </p>
+            <p>Required fields are marked with an asterisk (*).</p>
+        </div>
+            <label for="first-name">First Name *</label>
+            <input type="text" name="first-name" id="first-name" autocomplete="given-name" required>
+
+            <label for="last-name">Last Name *</label>
+            <input type="text" name="last-name" id="last-name" autocomplete="family-name" required>
+
+            <label for="email-address">Email Address *</label>
+            <input type="email" name="email-address" id="email-address" autocomplete="email" required>
+
+            <label for="message">
+                Your feedback
+            </label>
+            <textarea name="message" id="message" maxlength="50"></textarea>
+
+            <button id="show-error">
+                Submit
+            </button>
+    </fieldset>
+</form>
