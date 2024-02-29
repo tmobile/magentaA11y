@@ -68,23 +68,8 @@ wcag:
 
 ## Code examples
 
-### Use semantic HTML
 
-- This semantic HTML contains all accessibility features by default with no scripting required.
-- It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_details-summary.scss) to create the expanded/collapsed indicator, no Javascript.
-
-
-{% highlight html %}
-{% include /examples/details-summary.html %}
-{% endhighlight %}
-
-{::nomarkdown}
-<example>
-{% include /examples/details-summary.html %}
-</example>
-{:/}
-
-### Use semantic HTML where possible
+### Custom Expander Accordion (ARIA Disclosure Widget)
 This custom expander uses a semantic button with `aria-expanded` with additional scripting to toggle content and states.
 
 {% highlight html %}
@@ -100,11 +85,12 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 
 ## Developer notes
 
+**Note:** Due to known accessibility support issues in recent versions of iOS, the `<details>` is not recommended for expander accordions. The ARIA Disclosure Widget has very robust support.
+
 ### Name
 - Inner text must describe the purpose
 
 ### Role
-- `<details>` identifies as details
 - Native button identifies as button by default
 - Use `role="button"` for custom elements
 
@@ -112,7 +98,7 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 - You *can* use `aria-controls="popupId"`, but it is not well supported
 
 ### State
-- Menus or expanders use `aria-expanded="true/false"` 
+- Expanders use `aria-expanded="true/false"` 
 
 ### Focus
 - Focus must be visible
@@ -121,5 +107,6 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 
 - [Nielsen Norman Group study](https://www.nngroup.com/articles/accordion-icons/): The caret icon most clearly indicated to users that it would open an accordion in place, rather than linking directly to a new page.
 - Not all users will notice there is hidden content or understand how these work. For this reason, you should only use them in specific situations and if user research supports it.
+- [ARIA Disclosure Widget](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)
 
 
