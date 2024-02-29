@@ -85,5 +85,35 @@
   }
 }
 
+// Temp: Details Summary Fix
+// Using disclosure in place of details for now while iOS bug fades
+.temp-details-summary-fix {
 
+  * {
+    outline-offset: -3px;
+  }
 
+  &.expander-group {
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+  .expander-toggle {
+    transition: none;
+    @include ripple;
+  }
+  .expander-toggle[aria-expanded="true"] {
+    border-radius: 1rem 1rem 0 0;
+  }
+  .expander-toggle[aria-expanded="false"] {
+    border-radius: 1rem;
+  }
+  .expander-content {
+    padding: 0;
+    border-radius: 0 0 1rem 1rem;
+    max-height: none;
+  }
+  .input-checkbox-item:last-of-type {
+    border-radius: 0;
+  }
+}
+// END Temp: Details Summary Fix
