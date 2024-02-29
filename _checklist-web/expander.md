@@ -82,6 +82,13 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 </example>
 {:/}
 
+## Native expander (details/summary)
+On focus, the details/summary element must identify its name, role and state.
+
+{::nomarkdown}
+{% include /examples/details-summary.html %}
+{:/}
+
 
 ## Developer notes
 
