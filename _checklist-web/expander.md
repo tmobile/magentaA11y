@@ -83,9 +83,10 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 {:/}
 
 ## Native expander (details/summary)
-On focus, the details/summary element must identify its name, role and state.
+- This semantic HTML contains all accessibility features by default with no scripting required.
+- It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_details-summary.scss) to create the expanded/collapsed indicator, no Javascript.
 
-**Note:** Due to known accessibility support issues in recent versions of iOS, the `<details>` is not recommended for expander accordions. Instead, we recommend use of an ARIA Disclosure widget which has very robust support.
+**Note:** Due to known accessibility support issues in recent versions of iOS, `<details>` is not recommended for expander accordions. We recommend the use of an ARIA Disclosure Widget which has very robust support.
 
 {% highlight html %}
 {% include /examples/details-summary.html %}
