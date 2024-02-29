@@ -85,14 +85,18 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 ## Native expander (details/summary)
 On focus, the details/summary element must identify its name, role and state.
 
+**Note:** Due to known accessibility support issues in recent versions of iOS, the `<details>` is not recommended for expander accordions. Instead, we recommend use of an ARIA Disclosure widget which has very robust support.
+
+{% highlight html %}
+{% include /examples/details-summary.html %}
+{% endhighlight %}
+
 {::nomarkdown}
 {% include /examples/details-summary.html %}
 {:/}
 
 
 ## Developer notes
-
-**Note:** Due to known accessibility support issues in recent versions of iOS, the `<details>` is not recommended for expander accordions. The ARIA Disclosure Widget has very robust support.
 
 ### Name
 - Inner text must describe the purpose
