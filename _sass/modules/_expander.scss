@@ -75,7 +75,7 @@
     border-top: none;
     border-radius: 0 0 2px 2px;
 
-    &.visible {
+    &[aria-hidden="false"] {
       display: block;
     }
 
