@@ -114,8 +114,21 @@ Typical Tidbit markup consists of an SVG icon, heading, paragraph text, and a li
 </example>
 {:/}
 
+
+## Tidbit - Success example
+{% highlight html %}
+{%- include /examples/tidbit-success.html -%}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/tidbit-success.html %}
+</example>
+{:/}
+
 ### Developer notes
-- Ensure the SVG icon has a meaningful text alternative. e.g. <code>aria-label="Error"</code> or <code>aria-label="Caution"</code>
+- Ensure the SVG icon has a meaningful text alternative. e.g. <code>aria-label="Error"</code>, <code>aria-label="Caution"</code>, <code>aria-label="Success"</code>
+
 
 ***
 

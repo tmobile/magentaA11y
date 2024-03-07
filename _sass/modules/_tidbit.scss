@@ -14,11 +14,18 @@
         border-color: $tdds-caution-200;
         background-color: $tdds-caution-100;
     }
+    &.success {
+        border-color: $tdds-success-100;
+        background-color: $tdds-success-100;
+    }
     &.error .icon svg {
         fill: $tdds-critical-300;
     }
     &.caution .icon svg {
         fill: $tdds-caution-200-darkened;
+    }
+    &.success .icon svg {
+        fill: $tdds-success-300;
     }
 	h2 { 
         margin: 0; 
