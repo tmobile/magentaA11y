@@ -68,7 +68,7 @@ wcag:
 
 ## Code examples
 
-### Use semantic HTML
+### Checkbox variant
 
 - This semantic HTML contains all accessibility features by default. 
 - Placing the show password checkbox ahead of the password input increases discoverability for screen reader users.
@@ -84,6 +84,26 @@ wcag:
 </example>
 {:/}
 
+
+### Button variant
+- The button leads the input so screen reader and keyboard only users can change the state before interacting with the field.
+- Two containers consisting of the same non-visual text is used separately for a description on the toggle button and a live region to automatically update screen readers of the field type change.
+  - The button is describedby by non-visual text in the code via <code>aria-describedby</code>. This container owns CSS <code>display: none;</code>. While we can still reference it on the toggle button via <code>aria-describedby</code> pointing to its <code>ID</code> it won't be discovered if screen reader users are navigating the form in browse mode. 
+  - The Live Region is seperately presenting the same state text but this text is removed from the DOM after a short pause so screen readers users don't also discover this redundant text. Due to screen reader support issues, we can't completely hide it from screen readers as that impacts the live announcement support of the live region.
+- When the toggle button is activated its description is updated and the state is automatically announced by the screen reader. "Password is currently visible".
+- The password field type toggles between type of <code>password</code> and <code>text</code>.
+
+{% highlight html %}
+{% include /examples/input-password-with-button.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-password-with-button.html %}
+</example>
+{:/}
+
+
 ## Developer notes
 
 ### Name
@@ -91,10 +111,13 @@ wcag:
 - Use `aria-label="Input name"` as a last resort if a `<label>` can't be used
 
 ### Role
-- Identifies as some kind of secure input
+- Identifies as some kind of secure input [or text when toggled to text]
 
 ### State
 - The show password checkbox must indicate its state on focus
+- If using Live Region to communicate state:
+  - Provide non-visual state text programmatically associated with the visibility toggle via <code>aria-describedby</code>. This container can own <code>aria-hidden="true"</code> or CSS <code>display: none;</code> so it is not discovered by screen reader users.
+  - If you use a Live Region ensure it does not own <code>aria-hidden="true"</code> or CSS <code>display: none;</code> as that impacts screen reader support. Remove contents after a small timeout so screen reader users do not discover its contents.
 
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input
