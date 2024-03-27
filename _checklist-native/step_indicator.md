@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Progress indicator"
+title:  "Step indicator"
 categories: controls
 
 keyboard:
@@ -37,9 +37,9 @@ settings:
 ## iOS
 ### Developer notes
 
-- A control or graphic that shows the status of a process in real time
-- If the meaning of the process bar graphic is visible in text near it, for example, 66% of 100% or step 2 of 3 underneath a progress bar, then the graphic should be ignored by the screen reader to avoid duplication of announcements.  Or group the graphic with the text in one swipe.  The visible text also helps users with various disabilities to interpret the graphic
-- If the progress bar is interactive, it is in the swipe order for the screen reader and its text description is announced
+- A control or graphic that shows the status or steps of a process in real time
+- If the meaning of the step indicator graphic is visible in text near it, for example, 66% of 100% or step 2 of 3 underneath a progress bar, then the graphic should be ignored by the screen reader to avoid duplication of announcements.  Or group the graphic with the text in one swipe.  The visible text also helps users with various disabilities to interpret the graphic
+- If the step indicator is interactive, it is in the swipe order for the screen reader and its text description is announced
 - The graphic must meet color contrast ratios for the sections that are currently active
 
   
@@ -110,8 +110,8 @@ settings:
 ### Developer notes
 
 - A control or graphic that shows the status of a process in real time
-- If the meaning of the process bar graphic is visible in text near it, for example, 66% of 100% or step 2 of 3 underneath a progress bar, then the graphic should be ignored by the screen reader to avoid duplication of announcements.  Or group the graphic with the text in one swipe.  The visible text also helps users with various disabilities to interpret the graphic
-- If the progress bar is interactive, it is in the swipe order for the screen reader and its text description is announced
+- If the meaning of the step indicator graphic is visible in text near it, for example, 66% of 100% or step 2 of 3 underneath a progress bar, then the graphic should be ignored by the screen reader to avoid duplication of announcements.  Or group the graphic with the text in one swipe.  The visible text also helps users with various disabilities to interpret the graphic
+- If the step indicator is interactive, it is in the swipe order for the screen reader and its text description is announced
 - The graphic must meet color contrast ratios for the sections that are currently active
   
 ### Name  
