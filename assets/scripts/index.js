@@ -9,9 +9,9 @@ $("#copy").click(function(){
 // Expander toggle
 $( ".expander-toggle").click(function() {
     if( $(this).attr('aria-expanded') == 'false' ) {
-        $(this).attr('aria-expanded', 'true').next(".expander-content" ).addClass('visible').attr('aria-hidden', 'false');
+        $(this).attr('aria-expanded', 'true').next(".expander-content" ).attr('aria-hidden', 'false');
     } else if( $(this).attr('aria-expanded') == 'true' ) {
-        $(this).attr('aria-expanded', 'false').next(".expander-content" ).removeClass('visible').attr('aria-hidden', 'true');
+        $(this).attr('aria-expanded', 'false').next(".expander-content" ).attr('aria-hidden', 'true');
     }
 });
 
@@ -314,6 +314,7 @@ var $checkboxes = $(".checkbox-item-controls :checkbox");
 var $tabs = $(".tabs :radio");
 
 var $details = $(".checklist-container details");
+var $accordions = $(".checklist-container button");
 
 var $button = $("#checkbox-container button");
 
@@ -334,6 +335,10 @@ function updateStorage(){
     formValues[this.id] = this.open;
   });
 
+  $accordions.each(function(){
+    formValues[this.id] = (this.getAttribute('aria-expanded') === "true");
+  });
+
   localStorage.setItem("formValues", JSON.stringify(formValues));
 //   console.log($tabs);
 }
@@ -350,11 +355,17 @@ $details.on("toggle", function() {
     updateStorage();
 });
 
+$accordions.on("click", function() {
+    updateStorage();
+});
+
 // On page load set the values stored
 $.each(formValues, function(key, value) {
     if(key) { // Check to see if key is populated
         $("#" + key).prop('open', value); 
         $("#" + key).prop('checked', value);
+        $("#" + key).attr('aria-expanded', value); // accordion support
+        $("#" + key + " + .expander-content").attr('aria-hidden', !value);
         // console.log(key, value);
     }
 });
