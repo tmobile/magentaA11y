@@ -1,6 +1,6 @@
 ---
 layout: entry
-title:  "Loading Icon" 
+title:  "Loading spinner" 
 categories: patterns
 
 
@@ -10,7 +10,7 @@ keyboard:
          
 mobile gestures:
   swipe: |
-    Focus can move to the loading icon, but it should not be necessary because “loading” is announced dynamically
+    Focus can move to the loading spinner, but it should not be necessary because “loading” is announced dynamically
    
 screenreader: 
   Name:  |
@@ -24,18 +24,18 @@ settings:
 ## iOS
 
 ### Developer notes
-- A loading icon communicates that a screen or page is loading.  The screen reader is informed by hearing “loading” or anything similar, to understand that they should wait to continue
-- The screen reader user should not have to swipe to the icon.  It should be dynamically announced
-- Screen reader focus on the icon is optional
+- A loading spinner communicates that a screen or page is loading.  The screen reader is informed by hearing “loading” or anything similar, to understand that they should wait to continue
+- The screen reader user should not have to swipe to the loading spinner.  It should be dynamically or programmatically announced
+- Screen reader focus on the loading spinner is optional
 - If the screen takes a long time to load, the announcement for loading may happen again
 
 ### Name
-- Programmatic name describes the purpose of the icon
+- Programmatic name describes the purpose of the loading spinner
 
 - **UIKit**
   - You can programmatically set the visible label with `setTitle()`.
-    - The loading icon title will overwrite the loading icon `accessibilityLabel`.
-  - If a visible label is not applicable in this case, set the loading icon `accessibilityLabel` to the label of your choice.
+    - The loading spinner title will overwrite the loading spinner `accessibilityLabel`.
+  - If a visible label is not applicable in this case, set the loading spinner `accessibilityLabel` to the label of your choice.
     - To do this in Interface Builder, set the label using the Identity Inspector
   - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
   - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector.
@@ -45,7 +45,7 @@ settings:
 
 
 ### Focus
-- The screen reader user should not have to swipe to the icon to announce “Loading” 
+- The screen reader user should not have to swipe to the loading spinenr to announce “Loading” 
 
 - **UIKit**
   - If VoiceOver is not reaching a particular element, set the element's `isAccessibilityElement` to `true`
@@ -67,26 +67,26 @@ settings:
 ## Android
 
 ### Developer notes
-- A loading icon communicates that a screen or page is loading.  The screen reader is informed by hearing “loading” or anything similar, to understand that they should wait to continue
-- The screen reader user should not have to swipe to the icon.  It should be dynamically announced
-- Screen reader focus on the icon is optional
+- A loading spinner communicates that a screen or page is loading.  The screen reader is informed by hearing “loading” or anything similar, to understand that they should wait to continue
+- The screen reader user should not have to swipe to the loading spinner.  It should be dynamically or programmatically announced
+- Screen reader focus on the loading spinner is optional
 - If the screen takes a long time to load, the announcement for loading may happen again
 
 ### Name
-- Name describes the purpose of the icon
+- Name describes the purpose of the loading spinner
 
 - **Android Views**
   - `android:text` XML attribute
   - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
   - `contentDescription` overrides `android:text`
-  - Use `labelFor` attribute to associate the visible label with the control
+  - Use `labelFor` attribute to associate the visible label with the element
 
 - **Jetpack Compose**
   - Compose uses semantics properties to pass information to accessibility services.
   - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Focus
-- The screen reader user should not have to swipe to the icon to announce “Loading” 
+- The screen reader user should not have to swipe to the loading spinner to announce “Loading” 
 
 - **Android Views**
   - `importantForAccessibility` makes the element visible to the Accessibility API
