@@ -8,7 +8,7 @@ keyboard:
   tab, arrow keys or Ctl+tab: |
     N/A
          
-mobile gestures:
+mobile:
   swipe: |
     N/A
    

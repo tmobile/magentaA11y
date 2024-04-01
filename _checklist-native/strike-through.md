@@ -6,7 +6,7 @@ categories: patterns
 keyboard:
   N/A
          
-mobile gestures:
+mobile:
   swipe: |
     Focus moves to the strike-through text
     
