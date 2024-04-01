@@ -12,7 +12,7 @@ spacebar: |
 enter: |
     Activates on Android
           
-mobile gestures:
+mobile:
   swipe: |
     Focus moves to the first element in table 
   doubletap: |

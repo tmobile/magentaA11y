@@ -12,7 +12,7 @@ keyboard:
   enter: |
     Activates on Android
           
-mobile gestures:
+mobile:
   swipe: |
     Focus moves to any interactive control, expresses its name, role, or to graphic and expresses name
   doubletap: |

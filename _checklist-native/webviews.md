@@ -12,7 +12,7 @@ keyboard:
   enter: |
     Activates on Android
          
-mobile gestures:
+mobile:
   swipe: |
      Focus moves to the element, expresses its name, role (state, if applicable)
   doubletap: |

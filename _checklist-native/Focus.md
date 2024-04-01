@@ -11,7 +11,7 @@ keyboard:
     Is clearly shown around controls in a logical order
 
           
-mobile gestures:
+mobile:
   swipe: |
     Initial focus moves to a logical place on screen, then to all meaningful images, text and controls
   Doubletap: |

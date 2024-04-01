@@ -8,7 +8,7 @@ keyboard:
   tab, arrow keys or Ctl+tab: |
     Focus can visibly move to the reorder control, but cannot be activated  
           
-mobile gestures:
+mobile:
   swipe: |
     Focus moves to the control, expresses its name, role, state (if applicable)
   Doubletap and hold: |

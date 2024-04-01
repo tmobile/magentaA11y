@@ -12,7 +12,7 @@ keyboard:
   enter: |
     Activates CTA on Android
           
-mobile gestures:
+mobile:
   swipe: |
     Focus moves to the tidbit or tidbit CTA, expresses its name, role
   doubletap: |
