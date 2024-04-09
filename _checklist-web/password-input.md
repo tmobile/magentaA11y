@@ -92,6 +92,9 @@ wcag:
   - The Live Region is separately presenting the same state text but this text is removed from the DOM after a short pause so screen readers users don't also discover this redundant text. 
 - When the toggle button is activated its description is updated and the state is automatically announced by the screen reader. "Password is currently visible".
 - The password field type toggles between type of <code>password</code> and <code>text</code>.
+- If using Live Region to communicate state:
+  - Provide non-visual state text programmatically associated with the visibility toggle via <code>aria-describedby</code>. This container can own <code>aria-hidden="true"</code> or CSS <code>display: none;</code> so it is not discovered by screen reader users.
+  - If you use a Live Region ensure it does not own <code>aria-hidden="true"</code> or CSS <code>display: none;</code> as that impacts screen reader support. Remove contents after a small timeout so screen reader users do not discover its contents.
 
 {% highlight html %}
 {% include /examples/input-password-with-button.html %}
@@ -115,9 +118,6 @@ wcag:
 
 ### State
 - The show password checkbox must indicate its state on focus
-- If using Live Region to communicate state:
-  - Provide non-visual state text programmatically associated with the visibility toggle via <code>aria-describedby</code>. This container can own <code>aria-hidden="true"</code> or CSS <code>display: none;</code> so it is not discovered by screen reader users.
-  - If you use a Live Region ensure it does not own <code>aria-hidden="true"</code> or CSS <code>display: none;</code> as that impacts screen reader support. Remove contents after a small timeout so screen reader users do not discover its contents.
 
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input
