@@ -89,7 +89,7 @@ wcag:
 - The button leads the input so screen reader and keyboard only users can change the state before interacting with the field.
 - Two containers consisting of the same non-visual text is used separately for a description on the toggle button and a live region to automatically update screen readers of the field type change.
   - The button is describedby by non-visual text in the code via <code>aria-describedby</code>. This container owns CSS <code>display: none;</code>. While we can still reference it on the toggle button via <code>aria-describedby</code> pointing to its <code>ID</code> it won't be discovered if screen reader users are navigating the form in browse mode. 
-  - The Live Region is seperately presenting the same state text but this text is removed from the DOM after a short pause so screen readers users don't also discover this redundant text. Due to screen reader support issues, we can't completely hide it from screen readers as that impacts the live announcement support of the live region.
+  - The Live Region is separately presenting the same state text but this text is removed from the DOM after a short pause so screen readers users don't also discover this redundant text. 
 - When the toggle button is activated its description is updated and the state is automatically announced by the screen reader. "Password is currently visible".
 - The password field type toggles between type of <code>password</code> and <code>text</code>.
 
