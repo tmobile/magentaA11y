@@ -721,8 +721,8 @@ passwordButtonVariant.each(function(idx, item) {
     const $parent = item,
           $btn = $(item).find("button")[0],
           $inputField = $(item).find("input[type='password']"),
-          $liveRegion = $(item).find("#password-state-status"),
-          $toggleHint = $(item).find("#password-visiblity-toggle-status"),
+          $liveRegion = $(item).find("#password-state-status");
+          // $toggleHint = $(item).find("#password-visiblity-toggle-status"),
           statusMessage = {
               hiddenPass: "Password is currently hidden",
               visiblePass: "Password is currently visible"
@@ -730,7 +730,7 @@ passwordButtonVariant.each(function(idx, item) {
 
     function updateLiveregion(target,hintTarget,el,msg){
         setTimeout(function() {
-            hintTarget.html(msg);
+            // hintTarget.html(msg);
             el.innerHTML = msg;
             target.append(el);
         }, 400);
@@ -745,18 +745,18 @@ passwordButtonVariant.each(function(idx, item) {
 
         // clear the state containers to make room for update
         $liveRegion.html("");
-        $toggleHint.html("");
+        // $toggleHint.html("");
         
         if (curState === "false" || curState === null) {
             // show pass
             $parent.setAttribute("data-show-password", "true");
             $inputField.prop("type", "text");
-            updateLiveregion($liveRegion,$toggleHint,liveRegionEl,statusMessage.visiblePass);
+            updateLiveregion($liveRegion,liveRegionEl,statusMessage.visiblePass);
         } else {
             // hide pass
             $parent.setAttribute("data-show-password", "false");
             $inputField.prop("type", "password");
-            updateLiveregion($liveRegion,$toggleHint,liveRegionEl,statusMessage.hiddenPass);
+            updateLiveregion($liveRegion,liveRegionEl,statusMessage.hiddenPass);
         }
     });
 });
