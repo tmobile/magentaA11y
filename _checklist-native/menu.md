@@ -39,7 +39,7 @@ settings:
 ### Developer notes
 
 - A menu is a container for a list of items
-- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Use native app menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
 - Options to close the menu for the screen reader user:
   - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item 
   - A close button
@@ -64,13 +64,13 @@ settings:
   - If menu item has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`.
 
 ### Role
-- When using non-native controls (custom controls), roles will need to be manually coded. Otherwise in native controls, they are automatically assigned.
+- When using non-native controls (custom controls), roles will need to be manually coded. Otherwise in native app controls, they are automatically assigned.
 - Since menu items are interactive, it must be indicated to the user that they are interactive such as indicating that it is a button or it can be double-tapped to be selected. 
 
 - **UIKit**
   - Use `UIMenu`
 - **SwiftUI**
-  - Use native `Menu` view
+  - Use native app `Menu` view
 
 ### Groupings
 - Each menu item and its children are grouped together
@@ -84,7 +84,7 @@ settings:
   - Use `shouldGroupAccessibilityElement` for a precise order if the native order should be disrupted.
   - Use `shouldGroupAccessibilityChildren` to indicate whether VoiceOver must group its children views. This allows making unique vocalizations or define a particular reading order for a part of the page.
 - **SwiftUI**
-  - Native `Menu` views are accessible by default
+  - Native app `Menu` views are accessible by default
   - If necessary, use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State
@@ -132,7 +132,7 @@ settings:
 ### Developer notes
 
 - A menu is a container for a list of items
-- Use native menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Use native app menus when at all possible vs a custom element, as it will handle expected behavior without additional development effort
 - Options to close the menu for the screen reader user:
   - An invisible close button announced for the screen reader only, can be in the swipe order after the last menu item
   - Two/three finger swipe to close
