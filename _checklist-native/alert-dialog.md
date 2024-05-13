@@ -72,7 +72,7 @@ settings:
   - If applicable, use view modifier `accessibilityRemoveTraits(:)` to remove unwanted traits.  
 
 ### Groupings
-- For a native alert, do not modify native grouping logic
+- For a native app alert, do not modify native grouping logic
 
 - **UIKit**
   - Use `UIAlertController` grouping and ordering as is
@@ -142,7 +142,7 @@ settings:
   - Composable `AlertDialog` has dialog role defined
 
 ### Groupings
-- If you are implementing a native alert, do not modify native grouping logic
+- If you are implementing a native app alert, do not modify native grouping logic
 - If you require a custom alert, follow the steps below.
 
 - **Android Views**
@@ -163,7 +163,7 @@ settings:
   - Alternatively can use `modifier = Modifier.semantics { disabled() }` to announce as disabled
 
 ### Focus
-- Use the default focus functionality of the native alert
+- Use the default focus functionality of the native app alert
 - The screen reader focus **must** be confined within the alert. When the alert appears, the initial focus should be to a logical place or to where the default focus is for the device within the alert
 
 - **Android View**
