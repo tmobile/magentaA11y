@@ -159,7 +159,7 @@ There is no native dropdown element for iOS.  The notes below are suggestions an
 
 ### Role
 - Required: Screen reader user is confined inside a dropdown when it opens
-- When not using native controls (custom controls), roles will need to be manually coded.
+- When not using native app controls (custom controls), roles will need to be manually coded.
 - **Android Views**
   - `Spinner` Class
   - "pop up window" or "dropdown list" can be the role  
