@@ -42,7 +42,7 @@ settings:
 - When accessing an in-line link that is inside a paragraph with a screen reader, the focus is usually around the paragraph container.
 - To activate a link, screen reader users can double tap both inline links and links outside of paragraphs.
 - There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
-- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
+- The correct execution of native app controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
 
 ### Name
 - Interactive text that describes the destination or purpose of the link
@@ -59,7 +59,7 @@ settings:
   - If necessary, use view modifier `accessibilityLabel(_:)` to change the `accessibilityLabel`.
 
 ### Role
-- When using non-native controls (custom controls), roles will need to be manually coded.
+- When using non-native app controls (custom controls), roles will need to be manually coded.
 
 - **UIKit**
   - Since UIKit does not have a native link, develop using `UIButton`
@@ -146,7 +146,7 @@ settings:
 - When accessing an in-line link that is inside a paragraph with a screen reader, the focus can be around the paragraph container.
 - To activate a link, screen reader users must double tap both inline links and links outside of paragraphs.
 - There should only be a single inline link inside of a paragraph. Screen readers can only access the first link in the paragraph.
-- The correct execution of native controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
+- The correct execution of native app controls informs assistive technologies, such as voice control, screen readers, and switch access, that the element is interactive.
 
 ### Name
 - Interactive text that describes the destination or purpose of the link
@@ -155,7 +155,7 @@ settings:
 
 ### Role
 - Ensure screen reader users can navigate to links from the TalkBack menu
-- Role is automatically announced if a native component is used
+- Role is automatically announced if a native app component is used
 - When using non-native controls (custom controls), roles will need to be manually coded.
 
 
