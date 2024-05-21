@@ -199,7 +199,7 @@ Enter information for Android Name for Jetpack Compose, update information below
 Enter information for Android Role, update information below with appropriate details, or remove details not needed
 -->
 ### Role
-- When not using native controls (custom controls), roles will need to be manually coded.
+- When not using native app controls (custom controls), roles will need to be manually coded.
 
 <!-- 
 Enter information for Android Role for Android Views, update information below with appropriate details

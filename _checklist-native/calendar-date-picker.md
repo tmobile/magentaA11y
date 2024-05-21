@@ -35,7 +35,7 @@ settings:
 ## iOS
 
 ### Developer notes
-- Use native pickers when at all possible vs a custom element, as it will handle expected behavior without additional development effort
+- Use native app pickers when at all possible vs a custom element, as it will handle expected behavior without additional development effort
 - Calendar image often needs alt text and is sometimes grouped with the label of the field
 - The native calendar has a few circles for selected dates, but there are limitations in the colors resulting in insufficient color contrast minimum ratios, as well as the color for the days of the week
 - Natively, VoiceOver announces the disabled/unavailable dates as dimmed

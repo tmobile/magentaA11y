@@ -36,7 +36,7 @@ settings:
 
 ### Developer notes
 - A check box lets the user choose between two opposite states, actions or values  
-- You should use a native control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
+- You should use a native app control when at all possible vs a custom element, as it will automatically and correctly announce the role without additional development effort
 - A check box should just toggle between checked and unchecked.  It should not automatically navigate the user to another field or screen when activated, as that may cause a change of context.  Revealing new information on the same screen as a result of activating a checkbox is usually ok, as it is not a change of context
 - Name, Role, State must be announced when focus is on the control. Announcing the label only in a separate swipe before the checkbox does not meet this requirement
 

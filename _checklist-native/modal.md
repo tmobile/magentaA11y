@@ -148,7 +148,7 @@ settings:
   - Composable `ModalBottomSheet` has default role defined
 
 ### Groupings
-- If you are implementing a native modal, do not modify native grouping logic
+- If you are implementing a native app modal, do not modify native grouping logic
 - If you require a custom modal, follow the steps below.
 
 - **Android Views**
