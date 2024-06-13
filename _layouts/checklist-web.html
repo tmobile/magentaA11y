@@ -18,16 +18,20 @@ layout: default
 
         {% assign categories =  ordered_pages | map: 'categories' | join: ','  | split: ',' | uniq  %}
         {% for category in site.web-categories-order %}
-          <details id="{{ category | escape }}-details" class="checklist-details" open>
-            <summary id="{{ category | escape }}-category-title">
-              <h3><span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span></h3>
-            </summary>
-            <ul>
-              {% for page in ordered_pages %}
-              {% include checklist-loop.html %}
-              {% endfor %}
-            </ul>
-          </details>
+          <div class="checklist-details fake-details">
+            <div class="expander-group temp-details-summary-fix">
+              <button type="button" class="expander-toggle" aria-expanded="true" id="{{ category | escape }}-details" class="checklist-details">
+                <strong><span aria-hidden="true">&lt;</span>{{ category | escape }}<span aria-hidden="true">&gt;</span></strong>
+              </button>
+              <div class="expander-content visible" aria-hidden="false">
+                <ul>
+                  {% for page in ordered_pages %}
+                  {% include checklist-loop.html %}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div><!-- .expander-group -->           
+          </div><!-- .checklist-details -->
         {% endfor %}
       </div>
       {% include criteria-textarea.html %}
