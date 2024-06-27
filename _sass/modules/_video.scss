@@ -12,6 +12,7 @@ media-gallery {
 
 video {
   margin-bottom: 2rem;
+  min-height: 10rem;
   &::-webkit-media-controls {
   }
 }
