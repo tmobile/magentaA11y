@@ -65,6 +65,10 @@ wcag:
 
 ---
 
+<!---
+Note: We've backup up details/summary videos in media/video/checklist-web while we wait for greater browser/screen reader support.
+-->
+
 
 ## Code examples
 
