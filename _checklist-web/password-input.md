@@ -88,7 +88,7 @@ wcag:
 ### Button variant
 - The button leads the input so screen reader and keyboard-only users can change the state before interacting with the field.
 - The password field type toggles between type of <code>password</code> and <code>text</code>.
-- A live region `role="status"` is used to automatically announce  to screen readers the current visibility state of the password value. For example, "Password is currently visible".
+- A live region `role="status"` is used to automatically announce to screen reader users the current visibility  of the password value. For example, "Password is currently visible".
   - Avoid adding <code>aria-hidden="true"</code> or CSS <code>display: none;</code> to the live region container that receives the dynamic update as this may impact screen reader support. 
   - Ensure the dynamic text, that is added to the live region, is removed from the DOM after a short amount of time so screen reader users do not encounter this text while navigating beyond the form field.
 
