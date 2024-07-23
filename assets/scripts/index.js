@@ -724,3 +724,50 @@ function formValidationDemo() {
     });
 
 }
+
+// password button variant
+const passwordButtonVariant = $(".password-container.button-variant");
+
+passwordButtonVariant.each(function(idx, item) {
+    const $parent = item,
+          $btn = $(item).find("button")[0],
+          $inputField = $(item).find("input[type='password']"),
+          $liveRegion = $(item).find("#password-state-status");
+          // $toggleHint = $(item).find("#password-visiblity-toggle-status"),
+          statusMessage = {
+              hiddenPass: "Password is currently hidden",
+              visiblePass: "Password is currently visible"
+          };
+
+    function updateLiveregion(target,hintTarget,el,msg){
+        setTimeout(function() {
+            // hintTarget.html(msg);
+            el.innerHTML = msg;
+            target.append(el);
+        }, 400);
+        setTimeout(function(){
+            target.html("");
+        },1500);
+    }
+
+    $btn.addEventListener("click", (e) => {
+        const curState = $parent.getAttribute("data-show-password"),
+              liveRegionEl = document.createElement('span');
+
+        // clear the state containers to make room for update
+        $liveRegion.html("");
+        // $toggleHint.html("");
+        
+        if (curState === "false" || curState === null) {
+            // show pass
+            $parent.setAttribute("data-show-password", "true");
+            $inputField.prop("type", "text");
+            updateLiveregion($liveRegion,liveRegionEl,statusMessage.visiblePass);
+        } else {
+            // hide pass
+            $parent.setAttribute("data-show-password", "false");
+            $inputField.prop("type", "password");
+            updateLiveregion($liveRegion,liveRegionEl,statusMessage.hiddenPass);
+        }
+    });
+});

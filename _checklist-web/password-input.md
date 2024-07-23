@@ -68,7 +68,7 @@ wcag:
 
 ## Code examples
 
-### Use semantic HTML
+### Checkbox variant
 
 - This semantic HTML contains all accessibility features by default. 
 - Placing the show password checkbox ahead of the password input increases discoverability for screen reader users.
@@ -84,6 +84,27 @@ wcag:
 </example>
 {:/}
 
+
+### Button variant
+- The button leads the input so screen reader and keyboard-only users can change the state before interacting with the field.
+- The password field type toggles between type of <code>password</code> and <code>text</code>.
+- A live region `role="status"` is used to automatically announce to screen reader users the current visibility  of the password value. For example, "Password is currently visible".
+  - Avoid adding <code>aria-hidden="true"</code> or CSS <code>display: none;</code> to the live region container that receives the dynamic update as this may impact screen reader support. 
+  - Ensure the dynamic text, that is added to the live region, is removed from the DOM after a short amount of time so screen reader users do not encounter this text while navigating beyond the form field.
+
+
+
+{% highlight html %}
+{% include /examples/input-password-with-button.html %}
+{% endhighlight %}
+
+{::nomarkdown}
+<example>
+{% include /examples/input-password-with-button.html %}
+</example>
+{:/}
+
+
 ## Developer notes
 
 ### Name
@@ -91,7 +112,7 @@ wcag:
 - Use `aria-label="Input name"` as a last resort if a `<label>` can't be used
 
 ### Role
-- Identifies as some kind of secure input
+- Identifies as some kind of secure input [or text when toggled to text]
 
 ### State
 - The show password checkbox must indicate its state on focus
