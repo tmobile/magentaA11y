@@ -7,7 +7,7 @@ order: 9
 
 keyboard:
   skip-links: |
-    Focus moves directly to the footer
+    If a skip link points to the footer, focus moves directly to the footer
   tab: |
     Links and buttons within the footer are focusable
 

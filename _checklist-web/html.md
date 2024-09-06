@@ -8,8 +8,6 @@ order: 0
 keyboard:
   tab: |
     Enters the page and visibly focuses only interactive elements
-  zoom: |
-    Content zooms up to 200%
 
 mobile:
   swipe: |
@@ -29,7 +27,7 @@ gherkin-keyboard:
   - when:  |
       the keyboard to open a new web page
     result: |
-      the page has a unique logical title in the browser tab
+      a highly noticeable visual indication of keyboard focus on focusable controls
 
 gherkin-mobile:
   - when:  |
@@ -40,8 +38,8 @@ gherkin-mobile:
       content is accessible in landscape or portrait orientation
 
 settings:
-  zoom/pinch: |
-    text can resize up to 200% without losing information
+  zoom: |
+    Text can be zoomed to 200% and the page can be zoomed to 400% without a loss of content or two-dimensional scrolling
 ---
 ## Developer notes
 
