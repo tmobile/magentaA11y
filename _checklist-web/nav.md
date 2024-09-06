@@ -7,9 +7,9 @@ order: 2
 
 keyboard:
   skip-links: |
-    Focus moves directly to the nav element
+    Focus moves directly to the nav element or the first focusable control in the nav
   tab: |
-    Focus moves to Links and buttons within the nav
+    Focus moves to controls within the nav
 
 mobile:
   swipe: |
@@ -25,9 +25,9 @@ screenreader:
 
 gherkin-keyboard: 
   - when:  |
-      the arrow keys to browse the navigation menu
+      tab is used to browse the navigation menu
     result: |
-      the screen scrolls through the page
+      focusable controls receive keyboard focus
 
 gherkin-mobile:
   - when:  |
