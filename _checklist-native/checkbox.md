@@ -21,9 +21,9 @@ screenreader:
   name:  |
     Name describes the purpose of the control and matches the visible label
   role:  |
-    Identifies itself as a Check box in Android and a Button or checkbox in iOS
+    Identifies itself as a checkbox in Android and a Button or checkbox in iOS
   group: |
-    Visible label can be grouped with the check box in a single swipe
+    Visible label can be grouped with the checkbox in a single swipe
   state: |
     Expresses its state (disabled/dimmed, checked, not checked, selected, unselected)
 

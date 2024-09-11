@@ -12,7 +12,7 @@ keyboard:
     Activates button or interactive slide on Android
           
 mobile:
-  swipe rt: |
+  swipe right: |
     Focus moves to the next element 
   3 finger swipe: | 
     Focus moves to the next slide (iOS)
