@@ -7,11 +7,11 @@ categories: nav header
 
 keyboard:
   tab: |
-    Focus moves visibly to the search text input and search button
+    Focus moves to the search text input and search button [if present] and there is a highly visible visual indication of keyboard focus
   space: |
     Search button is activated
   enter: |
-    Search is activated
+    Search is activated [if present]
 
 mobile:
   swipe: |
@@ -31,9 +31,9 @@ gherkin-keyboard:
   - when:  |
       the tab key to move focus to a search input
     result: |
-      focus is strongly visually indicated
+      there is a highly visible visual indication of keyboard focus
   - then:  |
-      the tab key to move focus to the search submit button
+      the tab key to move focus to the search submit button [if present]
     result: |
       the button is focused
   - then:  |
