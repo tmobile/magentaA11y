@@ -27,7 +27,7 @@ gherkin-keyboard:
   - when:  |
       the tab key to enter the web browser window
     result: |
-      focus is strongly visually indicated on interactive components
+      that there is a highly visible visual indication of keyboard focus on interactive controls within the header
 
 gherkin-mobile:
   - when:  |
