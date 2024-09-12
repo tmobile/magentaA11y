@@ -9,7 +9,7 @@ keyboard:
   skip-links: |
     Focus moves directly to the nav element or the first focusable control in the nav
   tab: |
-    Focus moves to controls within the nav
+    Focus moves to controls within the nav and there is a highly visible visual indication of keyboard focus
 
 mobile:
   swipe: |
@@ -27,7 +27,7 @@ gherkin-keyboard:
   - when:  |
       tab is used to browse the navigation menu
     result: |
-      focusable controls receive keyboard focus
+      that there is a highly visible visual indication of keyboard focus on interactive controls within the navigation region
 
 gherkin-mobile:
   - when:  |
