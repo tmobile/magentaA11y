@@ -54,11 +54,9 @@ gherkin-mobile:
 
 ---
 
-## Do not autoplay
+### Autoplay can be very disruptive or hurt people
 
 Let people choose if they're subjected to video content.
-
-### Autoplay can be very disruptive or hurt people
 
 - For people using a screen reader, it unexpectedly interferes with their ability to hear/control their machine  
 - For people with cognitive differences, it can make it impossible to focus
@@ -66,9 +64,7 @@ Let people choose if they're subjected to video content.
 
 ### Is it ever okay?
 
-- Media with audio must absolutely **never** autoplay
-- Just because a video contains controls to stop the video doesn't mean it's okay to autoplay
-  - [**Example**: When is it okay for video _and_ audio to autoplay?](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+- Media with audio must not autoplay
 - Silent video can autoplay under these conditions:
   - It must stop after 5 seconds 
   - The video features accessible controls
