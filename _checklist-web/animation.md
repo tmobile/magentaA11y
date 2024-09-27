@@ -49,6 +49,10 @@ gherkin-mobile:
       doubletap to activate control
     result: |
       the intended action occurs
+  - then:  |
+      when animation is focused
+    result: |
+      I HEAR An alternative method of consumption or interaction is available
 
 settings:
   reduced motion: |
@@ -76,9 +80,10 @@ wcag:
 ---
 ## Developer notes
 
-### Animations (like gifs) can be accessible if:
+### Animations (like animated gifs or animated SVG) can be accessible if:
 - it automatically stops after 5 seconds or 
 - if users are presented with an intuitive way to pause it
+- it has alt text or an alternative method of consumption is available
 
 ## Code examples
 
