@@ -64,15 +64,21 @@ This custom main element requires extra attributes.
 
 ### Name
 - Typically doesn't have a name other than its role.
+- If a page has multiple `<main>` landmarks, then each should have a unique programmatic label.
+  - Use `aria-label="Content name"` when there is not a visible content label.
+  - `aria-labelledby="content-id"` can be used when the content label is a visible heading or existing page text.
+
 
 ### Role
 
 - Identifies itself as a main landmark
 - If a non-semantic element must be used (like a `<div>`) use `role="main"`.
 
+
 ### Group
 
 - must contain the main content of the page.
+- Ideally appears only once per Web page.
 
 ### Focus
 
