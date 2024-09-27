@@ -122,5 +122,6 @@ When building maps, add a search or filtering feature for those who can't use a 
   - Examples:
     - A map of phone coverage areas includes a search function
     - A chart embedded as an image includes a table of the data
+    - A graphic showing phone plan benefits is followed by an unordered list of the benefits below a plan name heading.
 
 
