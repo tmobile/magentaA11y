@@ -110,6 +110,8 @@ This custom header requires extra attributes.
   - Title major sections with `<h2>`
     - Subsections with `<h3>`
       - It should be rare that `<h4>` and beyond is required.
+      - Repeating patterns of headings are allowed so long as they follow a logical sequence  (example: `<h2>`,`<h3>`,`<h2>`,`<h3>`)
+      - Avoid increasing heading levels by more than one level at a time (e.g., do not skip from `<h2>` to `<h4>`)
 
 
 
