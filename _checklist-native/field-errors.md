@@ -6,15 +6,16 @@ categories: patterns
 
 keyboard:
   tab, arrow keys or Ctl+tab: |
-    N/A
+    Error message are not usually focusable and will not receive focus when using the keyboard
          
 mobile:
   swipe: |
-    N/A
+    Error message are not usually focusable and will not receive focus when navigating via swipe
    
 screenreader: 
   Error message:  |
-    “Error” is usually announced as alt text for an error icon and the error message announcement follows it
+    “Error” is usually announced as alt text for an error icon and the error message announcement follows it.
+    Error message will be announced when user enters the text field with the error.
 
 group: |
     Group elements that are logical, like the error icon and the error message
