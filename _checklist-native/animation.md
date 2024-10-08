@@ -8,7 +8,7 @@ keyboard:
   tab, arrow keys or Ctl+tab: |
     N/A
          
-mobile::
+mobile:
   swipe: |
     Focus moves to and from the animation if in the swipe order
    
