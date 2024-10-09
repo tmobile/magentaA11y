@@ -34,7 +34,9 @@ settings:
     This element is exempt from text resizing requirements
 ---
 
-## Developer notes
+## iOS
+
+### Developer notes
 
 - A segmented control is a horizontal set of two or more segments presented, each of which functions as a mutually exclusive button
 - Once a tab has been selected, the focus should remain in the tab group on the selected tab.  The user swipes through the tab group and the content revealed by the tab action should be the first swipe out of the tab group.

@@ -29,7 +29,7 @@ settings:
 ## Developer notes
 - A non-interactive animation is a technique by which still images are manipulated to create moving images 
 - Animations can affect users with motion disabilities.  Guidance is to keep animations to 5 seconds or less
-- Animations that flash can also have a deadly affect to users with epilepsy.  Guidance is to keep flashing to 3 seconds per second
+- Animations that flash can also have a deadly affect to users with epilepsy.  Guidance is to keep flashing to no more than 3 times per second
 - Ensure animations that are meaningful have alt text assigned
 - Animations cannot stop and start again unless screen is refreshed or similar
 - If a stop/pause button next to the animation is provided, the animation can run more than 5 seconds
@@ -75,7 +75,7 @@ settings:
 ## Developer notes
 - A non-interactive animation is a technique by which still images are manipulated to create moving images 
 - Animations can affect users with motion disabilities.  Guidance is to keep animations to 5 seconds or less
-- Animations that flash can also have a deadly affect to users with epilepsy.  Guidance is to keep flashing to 3 seconds per second
+- Animations that flash can also have a deadly affect to users with epilepsy.  Guidance is to keep flashing to no more than 3 times per second
 - Ensure animations that are meaningful have alt text assigned
 - Animations cannot stop and start again unless screen is refreshed or similar
 - If a stop/pause button next to the animation is provided, the animation can run more than 5 seconds
