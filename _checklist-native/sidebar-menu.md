@@ -11,12 +11,18 @@ keyboard:
     Activates on iOS and Android
   enter: |
     Activates on Android
+  if close button present: |
+    Activate the close button and focus should return to the triggering element
           
 mobile:
   swipe: |
     Focus moves to the element, expresses its name, role (state, if applicable)
   doubletap: |
     Activates the menu item
+  Two-finger swipe to the left anywhere on the screen closes the menu: |
+    Activates close on Android
+  if close button present: |
+    Double tap to activate the close button and focus should return to the triggering element
     
 screenreader: 
   name:  |
