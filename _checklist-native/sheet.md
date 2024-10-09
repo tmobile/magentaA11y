@@ -7,9 +7,11 @@ keyboard:
   tab, arrow keys or Ctl+tab: |
       Focus visibly moves to the first interactive element
   spacebar: |
-      Activates on iOS and Android
+      If Grabber is available, spacebar activates on iOS and Android and will either expand or minimize sheet.
+      Spacebar will also activate any other interactive element in the sheet.
   enter: |
-      Activates on Android
+      If Grabber is available, enter activates on Android and will either expand or minimize sheet.
+      Enter will also activate any other interactive element in the sheet.
         
 mobile:
   swipe: |
