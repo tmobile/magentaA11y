@@ -10,12 +10,16 @@ keyboard:
     Any elements inside are activated on iOS and Android
   enter: |
     Any elements inside are activated on Android
+  When no interactive element is in the snackbar: |
+    Dynamically announced, without moving focus to it
 
 mobile:
   swipe: |
     Focus moves within the snackbar
   doubletap: |
     Activates any interactive elements within the snackbar
+  When no interactive element is in the snackbar: |
+    Dynamically announced, without moving focus to it
 
 screenreader:
   name:  |
