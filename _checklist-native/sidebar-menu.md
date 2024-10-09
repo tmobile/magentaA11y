@@ -164,7 +164,7 @@ settings:
   - Use `DrawerLayout` with two child views: a `NavHostFragment` to contain the main content and a `NavigationView` for the contents of the navigation drawer
 
 - **Jetpack Compose**
-  - Use 1ModalNavigationDrawer` composable
+  - Use `ModalNavigationDrawer` composable
 
 
 ### Groupings
