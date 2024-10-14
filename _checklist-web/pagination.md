@@ -29,7 +29,7 @@ gherkin-keyboard:
   - then:  |
       the tab key to move focus to a link in the nav and use the enter key
     result: |
-      my browser goes to the intended location
+      my browser goes to the intended location or the page is dynamically updated and I'm notified about this change in the UI
 
 gherkin-mobile:
   - when:  |
@@ -37,7 +37,7 @@ gherkin-mobile:
   - then:  |
       doubletap with the link in focus
     result: |
-      my browser goes to the intended location
+      my browser goes to the intended location or the screen is dynamically updated and I'm notified about this change in the UI
 
 wcag:
   - name: Perceivable
