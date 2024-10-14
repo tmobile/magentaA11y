@@ -9,15 +9,15 @@ keyboard:
   tab: |
     Focus moves to the search text input and search button [if present] and there is a highly visible visual indication of keyboard focus
   space: |
-    Search button is activated
+    Search button is activated [if present]
   enter: |
     Search is activated [if present]
 
 mobile:
   swipe: |
-    Focus moves to the search text input and search button
+    Focus moves to the search text input and search button [if present]
   doubletap: |
-    Search button is activated
+    Search button is activated [if present]
 
 screenreader:
   name:  |
@@ -55,9 +55,8 @@ wcag:
   - name: Operable
     list:
       - criteria: Is keyboard operable
-      - criteria: Any click/tap target area is no smaller than 44x44px
+      - criteria: Any click/tap target area is ideally no smaller than 44x44px
       - criteria: The disabled and focus states have a 3:1 minimum contrast ratio against default
-      - criteria: The focus indication has a minimum area equal to the width of the element and 2px in height
       - criteria: A search submit button is also available and meets button design criteria
   - name: Understandable
     list:
