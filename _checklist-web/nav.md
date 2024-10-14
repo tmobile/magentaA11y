@@ -19,9 +19,9 @@ mobile:
 
 screenreader:
   name:  |
-    It indicates its role AND IF multiple navigations are present (ex: Main navigation, Site map, Breadcrumbs), the name of the navigation
+    it indicates its role AND IF multiple navigations are present (ex: Main navigation, Site map, Breadcrumbs), the name of the navigation
   role:  |
-    It is discoverable with screenreader shortcuts as a navigation landmark
+    it is discoverable with screenreader shortcuts as a navigation landmark
 
 gherkin-keyboard: 
   - when:  |
