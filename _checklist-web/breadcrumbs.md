@@ -7,7 +7,7 @@ order: 1
 
 keyboard:
   tab: |
-    Focus visibly moves to the link
+    Focus moves to the link and there is a highly visible visual indication of keyboard focus
   enter: |
     Activates the link
 
@@ -31,7 +31,7 @@ gherkin-keyboard:
   - when:  |
       the tab key to move focus to a link
     result: |
-      focus is strongly visually indicated
+      there is a highly visible visual indication of keyboard focus
   - then:  |
       the enter key to activate the link
     result: |
@@ -63,7 +63,7 @@ wcag:
   - name: Robust
     list:
       - criteria: Meets criteria across platforms, devices and viewports
-      - criteria: Conveys the correct semantic role
+      - criteria: Conveys the correct semantic role and current state is announced
 ---
 
 ## Code example

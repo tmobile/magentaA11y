@@ -13,15 +13,13 @@ mobile:
   swipe: |
     Focus moves to the inputs inside the form
   keyboard: |
-    Keyboard appears
+    Keyboard appears when interacting with text fields
 
 screenreader:
   name:  |
     If multiple forms are present (Ex: Search, Sign in, Newsletter subscription), the form must have a name
   role:  |
     It is discoverable with screenreader shortcuts as a form landmark along with its name
-  mode:  |
-    the screenreader switch from browse shortcuts to forms shortcuts
 
 gherkin-keyboard: 
   - when:  |

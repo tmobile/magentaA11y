@@ -27,7 +27,7 @@ gherkin-keyboard:
   - when:  |
       the tab key to move focus to a link
     result: |
-      focus is strongly visually indicated
+      there is a highly visible visual indication of keyboard focus
   - then:  |
       the enter key to activate the link
     result: |
