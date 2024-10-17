@@ -202,7 +202,7 @@ This custom button requires extra scripting work for roving tabindex and event l
     - `<legend>` must describe the group's purpose
     - Each `<label>` must include `for="input-id"` to be associated with its input
 - Custom elements
-    - Use `role="radiogroup"` to take the palace of fieldset
+    - Use `role="radiogroup"` to take the place of fieldset
     - Use `aria-labelledby="label-id"` to associate an element as a label
     - `aria-label="Group purpose"` can also be used if there's no label with an ID
 
