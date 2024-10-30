@@ -118,3 +118,7 @@ This custom header requires extra attributes.
 ### Focus
 - Headings must not receive focus
 - Arrow keys will browse headings (not the tab key)
+
+## Further Reading
+- [WCAG 1.3.1 Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships)
+- [WCAG 2.4.6 Headings and Labels (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels)
