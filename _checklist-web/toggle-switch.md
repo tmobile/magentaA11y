@@ -149,7 +149,7 @@ This custom switch requires extra attributes and keyboard event listeners.
     - `<legend>` should describe the group's purpose
     - Each `<label>` must include `for="input-id"` to be associated with its input
 - Custom elements
-    - Use `role="group"` in the palace of fieldset
+    - Use `role="group"` in the place of fieldset
     - Use `aria-labelledby="label-id"` to associate an element as a label
     - `aria-label="Group purpose"` can also be used if there's no label with an ID
 
