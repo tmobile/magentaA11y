@@ -32,6 +32,9 @@ settings:
     Text can resize up to 200% without losing information
 ---
 
+## General Notes
+This entry describes the native app table row/list item component but does not address text-based ordered or unordered lists. Text-based ordered or unordered lists should not be identified as a defect found in native app platforms as there is not an equivalent component in the native app space.
+
 ## iOS
 ### Developer Notes
 - A table row/list item can be created by using different types of native components in iOS, such as iOS `List`, `Button`, `UITableView` 
