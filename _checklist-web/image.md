@@ -87,3 +87,7 @@ If you are using a `<use />` element, add `aria-hidden="true"` to it.
 ## Further reading
 - This page owes a lot to this exhaustive blog post: [Contextually Marking up accessible images and SVGs by Scott O'Hara](https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html)
 - [W3C Image decision tree](https://www.w3.org/WAI/tutorials/images/decision-tree/)
+- [WCAG 1.1.1 Non-text Content (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content)
+- [WCAG SC 1.4.5 Images of Text (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text)
+- [WCAG SC 2.2.2 Pause, Stop, Hide (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html)
+
