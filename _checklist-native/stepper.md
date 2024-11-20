@@ -20,7 +20,7 @@ mobile:
     
 screenreader: 
   name:  |
-    Purpose is clear (example: Increment, Increase or Decrement or Decrease)
+    Purpose is clear (example: Increment or Increase, Decrement or Decrease)
   role:  |
     Identifies as a button in iOS and "double tap to activate" in Android
   value: |
