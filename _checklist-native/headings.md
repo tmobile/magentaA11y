@@ -24,11 +24,12 @@ settings:
 ## iOS
 
 ### Developer notes
-- Headings give the screen reader user context of the sections on the screen at a glance.  By using the Rotor, the screen reader user can navigate just by headings for this quick glance, if it is coded correctly.
+- Headings give the screen reader user context of the sections on the screen at a glance. By using the Rotor, the screen reader user can navigate just by headings for this quick glance, if it is coded correctly.
 - A heading should describe a section, not just look like a heading because it is large or bold font.
 - The title of a screen should announce as a heading by default
 - Text can announce as a heading as well as a button
 - Following Apple's guidelines for font sizes for headings, the maximum size for the larger size heading may be less than 200%
+- iOS supports multiple heading levels through the [accessibility API](https://developer.apple.com/documentation/swiftui/view/accessibilityheading(_:)); however, we recommend continuing to use the default heading level as noted below. 
 
 ### Accessibility Trait
 - **UIKit**
