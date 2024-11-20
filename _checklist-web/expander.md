@@ -125,4 +125,6 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 - Not all users will notice there is hidden content or understand how these work. For this reason, you should only use them in specific situations and if user research supports it.
 - [ARIA Disclosure Widget](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/)
 
-
+## Further Reading
+- [WCAG 2.1.1 Keyboard (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard)
+- [WCAG 4.1.2 Name, Role, Value (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value)
