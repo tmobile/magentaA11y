@@ -8,7 +8,7 @@ order: 1
 
 keyboard:
   tab: |
-    Focus moves to the skip link
+    Focus moves to the skip link and there is a visual indication of keyboard focus
   enter: |
     Activates the link, focus/tabindex moves directly to the targeted element
 
