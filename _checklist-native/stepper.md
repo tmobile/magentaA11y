@@ -20,7 +20,7 @@ mobile:
     
 screenreader: 
   name:  |
-    Purpose is clear and matches visible label
+    Purpose is clear (example: Increment or Increase, Decrement or Decrease)
   role:  |
     Identifies as a button in iOS and "double tap to activate" in Android
   value: |
@@ -147,9 +147,9 @@ There is no native stepper element for Android.  The notes below are suggestions
 - To hide controls: Important_For _Accessibility_NO
 
 ### Announcements
-- Increment
-  - "Label with value, Increment, Double tap to activate"
+- Increment or Increase
+  - "Label with value, Increment or Increase, Double tap to activate"
   - if button is activated new value will dynamically announce
-- Decrement
-  - "Label with value, Decrement, Double tap to activate"
+- Decrement or Decrease
+  - "Label with value, Decrement or Decrease, Double tap to activate"
   - if button is activated new value will dynamically announce
