@@ -39,19 +39,20 @@ gherkin-mobile:
       use features that trigger the toast snackbar
 ---
 
-## Don't use toast snackbars
+## Rethining Toast Snackbars
 
-It's **exceedingly rare** this is a good design choice. 
+Toast snackbars might seem like an easy way to provide feedback, but they’re often not the best fit for accessible and user-friendly design. Here’s why:
 
-- Snackbars are a custom HTML construct and have no semantic meaning. 
-- They add auditory noise to the screen reader experience and are difficult to browse if the message was missed.
-- As such, like [tooltips](/checklist-web/tooltip/), it is difficult to define precise acceptance criteria.
+- Accessibility Limitations: Because snackbars are custom HTML elements, they lack semantic meaning and can be challenging for assistive technologies like screen readers.
+- Missed Messages: If a user doesn’t catch a snackbar in time, it’s difficult to go back and review the information.
+- Auditory Clutter: For screen readers, snackbars can create unnecessary noise, especially if they appear frequently or unexpectedly.
+- Unclear Rules: Like tooltips, snackbars are tricky to define and test consistently in design criteria.
 
 ### Instead use an inline element to indicate a change
 
-- Inject a success message _in proximity_ to the updated control
-- Place undo/edit buttons in easy to find locations for keyboard users
-- Utilize a confirmation screen on exit
+- Inline Feedback: Inject a success message _in proximity_ to the updated control
+- Accessible Undo/Redo Options: Place these buttons in clear, easy-to-navigate locations.
+- Thoughtful Confirmations: Use a confirmation screen for critical actions or when users are exiting an important flow.
 
 {::nomarkdown}
 <example>
@@ -60,19 +61,21 @@ It's **exceedingly rare** this is a good design choice.
 {:/}
 
 
-### Never use toast snackbars for:
+### When Toast Snackbars Don’t Work:
+There are certain scenarios where snackbars simply aren’t the right tool:
 
-- Critical or irrevocable functionality like:
-    - Time sensitive actions (ex: Unsend this message)
-    - Confirmation of choices (ex: Are you sure you want to send payment?)
-    - Blocking error messages
-- On page load messaging/alerts
-  - Performing unexpected actions or alerts on page load is confusing to people using a screenreader
+- Critical or Irreversible Actions: For example, “Unsend this message” or “Confirm payment.” These require deliberate, visible feedback
+- Blocking Error Messages: Important errors should grab attention and provide clear guidance—not rely on a fleeting message.
+- Page-Load Alerts: Automatically showing messages on page load can confuse users, particularly those using screen readers.
 
 ### Timing
 
-- It is preferable to not let a toast snackbar time out. 
-- If the snackbar must dismiss automatically, it is preferred that [timing be adjustable (WCAG 2.2.1)](https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
+If you find a situation where a toast snackbar is truly necessary:
+
+- Avoid auto-dismiss wherever possible.
+- If dismissal must be automatic, make sure the [timing is adjustable to meet WCAG 2.2.1 standards]
+  (https://www.w3.org/WAI/WCAG21/Understanding/timing-adjustable.html).
+  
 
 ## Only use toast snackbars to _reinforce_ updates
 
