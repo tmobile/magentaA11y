@@ -39,7 +39,7 @@ gherkin-mobile:
       use features that trigger the toast snackbar
 ---
 
-## Rethining Toast Snackbars
+## Rethinking Toast Snackbars
 
 Toast snackbars might seem like an easy way to provide feedback, but they’re often not the best fit for accessible and user-friendly design. Here’s why:
 
