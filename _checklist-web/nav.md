@@ -126,4 +126,6 @@ When there is more than one navigation element, they must have a name.
 
 - When skip links are used, add `tabindex="-1"` so that focus can move to the `nav` element, (not just bring it into view).
 
-
+## Further Reading
+- [WCAG 3.2.3 Consistent Navigation (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation)
+- [WCAG 4.1.2 Name, Role, Value (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value)
