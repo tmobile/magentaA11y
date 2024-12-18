@@ -226,3 +226,8 @@ This custom button requires extra scripting work for roving tabindex and event l
 - [Support for Marking Radio Buttons Required, Invalid - Adrian Roselli](https://adrianroselli.com/2022/02/support-for-marking-radio-buttons-required-invalid.html)
 
 
+## Further Reading
+- [WCAG 1.3.1 Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships)
+- [WCAG 2.1.1 Keyboard (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard)
+- [WCAG 3.3.2 Labels or Instructions (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions) 
+- [WCAG 4.1.2 Name, Role, Value (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value)
