@@ -7,9 +7,9 @@ order: 2
 
 keyboard:
   skip-links: |
-    Focus moves directly to the nav element
+    Focus moves directly to the nav element or the first focusable control in the nav
   tab: |
-    Focus moves to Links and buttons within the nav
+    Focus moves to controls within the nav and there is a highly visible visual indication of keyboard focus
 
 mobile:
   swipe: |
@@ -19,15 +19,15 @@ mobile:
 
 screenreader:
   name:  |
-    It indicates its role AND IF multiple navigations are present (ex: Main navigation, Site map, Breadcrumbs), the name of the navigation
+    it indicates its role AND IF multiple navigations are present (ex: Main navigation, Site map, Breadcrumbs), the name of the navigation
   role:  |
-    It is discoverable with screenreader shortcuts as a navigation landmark
+    it is discoverable with screenreader shortcuts as a navigation landmark
 
 gherkin-keyboard: 
   - when:  |
-      the arrow keys to browse the navigation menu
+      tab is used to browse the navigation menu
     result: |
-      the screen scrolls through the page
+      that there is a highly visible visual indication of keyboard focus on interactive controls within the navigation region
 
 gherkin-mobile:
   - when:  |
