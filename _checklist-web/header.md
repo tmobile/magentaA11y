@@ -9,10 +9,8 @@ keyboard:
   skip-links: |
     Focus moves directly to the header or navigation
   tab: |
-    Nothing, headings are not focusable unless they are actionable
-  arrow-keys: |
-    Headings are browsed
-
+    Nothing, headers are not typically in the tab order
+    
 mobile:
   swipe: |
     Focus moves directly to the header or navigation
@@ -29,7 +27,7 @@ gherkin-keyboard:
   - when:  |
       the tab key to enter the web browser window
     result: |
-      focus is strongly visually indicated on interactive components
+      that there is a highly visible visual indication of keyboard focus on interactive controls within the header
 
 gherkin-mobile:
   - when:  |

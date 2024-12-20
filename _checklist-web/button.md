@@ -7,7 +7,7 @@ order: 1
 
 keyboard:
   tab: |
-    Focus visibly moves to the button.
+    Focus moves to the button and there is a highly visible visual indication of keyboard focus
   spacebar: |
     Activates the button.
   enter: |
@@ -33,7 +33,7 @@ gherkin-keyboard:
   - when:  |
       the tab key to move focus to a button
     result: |
-      focus is strongly visually indicated
+      there is a highly visible visual indication of keyboard focus
   - then:  |
       the spacebar and/or enter key to activate the button
     result: |
