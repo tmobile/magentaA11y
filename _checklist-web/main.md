@@ -85,4 +85,5 @@ This custom main element requires extra attributes.
 - Can be targeted with a skip link, but isn't focusable with the tab key
 - Use `tabindex="-1"` to make the main targetable with a skip link.
 
-
+## Further Reading
+- [WCAG 1.3.1 Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html)
