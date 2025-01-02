@@ -34,16 +34,28 @@ wcag:
 settings:
   text resize: |
     Text can resize up to 200% without losing information.  Text in images do not resize.
+    
 ---
 
-## Decorative images
-There are times that images and icons shouldn't be read because it would be repetitive or not add any value to the existing page content. These types of images are generally included for purely stylistic purposes and don't impart any meaning to the rest of the content on the page. Or, the image or icon's visual information may be already given using adjacent text and so would be repetitive for a screen reader user. 
+## General
+If images are only decorative, or if the information they convey is already provided by nearby text, they should be ignored by screen readers and removed from the swipe order. This helps people who have low vision or are blind. 
 
+### Examples
+- A caret icon is included within a table row/list item/blade. This icon should not be read by a screen reader or be in the swipe order. Instead it should be grouped with the relevant, adjacent text. In this case the text before it acts as a label. The caret icon is simply there for visual reinforcement. 
+- A battery icon is next to "Battery" text. This icon should not be read by a screen reader or be in the swipe order. Instead it should be grouped with the relevant, adjacent text.
+- An image is used as a decorative design element to break up a page or visually introduce a new section. This image may not need to be read by a screen reader, be in the swipe order, or be grouped with adjacent text.
 
 ## iOS
 
 ### Developer notes
-- If an image does not convey meaning or is used for styling purposes, do not add alt text and skip it in the swipe order for the screen reader user.
+If an image does not convey meaning or is used for styling purposes, do not add alt text and skip it in the swipe order for the screen reader user.
+
+- **SwiftUI**
+  - use the modifier `.accessibilityHidden(true)` to hide an icon or image from VoiceOver, Full Keyboard Access, and switch control.
+
+- **UIKit**
+  - use `Image(decorative: "pencil")` to hide the icon or image from screen readers
+  - use `image.isAccessibilityElement = false` so that it is not focusable
 
 ### Focus
 - Decorative images and icons should be skipped in the swipe order. 
@@ -56,4 +68,4 @@ There are times that images and icons shouldn't be read because it would be repe
   - Use `android:importantForAccessibility="no"`
 
 - **Jetpack Compose**
-  - Set contentDescription to null for decorative elements.
+  - Set `contentDescription` to null for decorative elements.
