@@ -6,34 +6,26 @@ categories: patterns
 
 keyboard:
   arrow keys: |
-    Screenreader ignores the image completely
+    Image does not receive focus
           
 mobile:
   swipe: |
     The screenreader ignores the image completely
-    
-screenreader:
-  role:  |
-    The image is ignored
 
-gherkin-keyboard: 
-  - when:  |
-      the arrow keys to browse to an image
-    result: |
-      the image is skipped and ignored
+# gherkin-keyboard: 
+#   - when:  |
+#       the arrow keys to browse to an image
+#     result: |
+#       the image is skipped and ignored
 
-gherkin-mobile:
-  - when:  |
-      swipe to browse to an image
+# gherkin-mobile:
+#   - when:  |
+#       swipe to browse to an image
 
-wcag:
-  - name: Perceivable
-    list:
-      - criteria: All non-text content that is purely for decoration or which repeats existing on-screen text nearby should be ignored and skipped over by screen readers.
-
-settings:
-  text resize: |
-    Text can resize up to 200% without losing information.  Text in images do not resize.
+# wcag:
+#   - name: Perceivable
+#     list:
+ #      - criteria: All non-text content that is purely for decoration or which repeats existing on-screen text nearby should be ignored and skipped over by screen readers.
     
 ---
 
