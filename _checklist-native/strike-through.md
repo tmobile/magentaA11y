@@ -61,7 +61,7 @@ settings:
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- "Amount was $57 and is now $27"  (Strike-through on $57 grouped with updated price of #27)
+- "Amount was $57 and is now $27"  (Strike-through on $57 grouped with updated price of $27)"
 
 ## Android
 
@@ -109,4 +109,4 @@ settings:
     - step 3: use `second.requestFocus()` to gain focus
 
 ### Announcement examples 
-- "Amount was $57 and is now $27"  (Strike-through on $57 grouped with updated price of #27)
+- "Amount was $57 and is now $27"  (Strike-through on $57 grouped with updated price of $27)"
