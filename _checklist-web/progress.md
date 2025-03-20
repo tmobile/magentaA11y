@@ -136,3 +136,10 @@ This example dynamically injects progress updates that will be read by a screen 
 ## Reference
 
 - MagentaA11y applies [WCAG Graphics Contrast Guidelines](https://www.w3.org/WAI/GL/low-vision-a11y-tf/wiki/Graphics_Contrast)
+
+## Further Reading
+- [WCAG 1.1.1 Non-text Content (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html)
+- [WCAG 1.3.1 Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships)
+- [WCAG 1.4.11 Non-text Contrast (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html)
+- [WCAG 4.1.2 Name, Role, Value (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/name-role-value)
+- 
