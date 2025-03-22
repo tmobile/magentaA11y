@@ -13,13 +13,13 @@ keyboard:
 
 mobile:
   swipe: |
-    Focus moves within main area
+    Focus moves within the main area
 
 screenreader:
   role:  |
     It is discoverable with screenreader shortcuts as main landmark
   group: |
-    It contains the content portion of the page starting with the H1
+    It contains the content portion of the page ideally starting with the H1
 
 gherkin-keyboard: 
   - when:  |
@@ -29,7 +29,7 @@ gherkin-keyboard:
 
 gherkin-mobile:
   - when:  |
-      swipe to elements in the header
+      swipe to elements in the page
 
 ---
 
