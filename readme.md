@@ -1,82 +1,179 @@
-# About MagentaA11y
+# MagentaA11y V2
 
-MagentaA11y is a tool built to simplify the process of accessibility testing. 
+## Table of Contents
 
-We wanted to build an intuitive way for product teams to define "done" in a way that ensures accessible experiences work for everyone.
+- [Getting Started](#getting-started)
+- [Creating a PR](#creating-a-pr)
+- [Available Scripts](#available-scripts)
+- [Key Features](#key-features)
+- [Deployment](#deployment)
+- [Optimize Video Assets](#optimize-video-assets)
 
-It uses Jekyll with a custom theme as a CMS and relies on markdown for entry creation.
+---
 
-## Disclaimer
+## Getting Started
 
-- This is not a comprehensive list of all of the WCAG success criteria or techniques required to become WCAG compliant and should not be used as such.
-- Adherence to this list also does not guarantee that a digital asset will be free from accessibility issues or complaints.
+### Prerequisites
 
-## Using MagentaA11y
+- **Node.js**: Ensure you have [Node.js](https://nodejs.org/) installed. It is recommended to use the latest LTS version.
 
-Product owners, designers, developers or testers can use the checklist builder to collect testing instructions for web or native app components.
+### Installation
 
-These testing criteria are displayed in markdown format for easy copying/pasting into project management tools like Jira.
+To set up the application, clone the repository and install dependencies:
 
-### Testing instructions includes:
+```bash
+git clone https://github.com/KArbeRes/MagentaA11yV2.git
+cd MagentaA11yV2
+npm install
+```
 
-- How to test with keyboard
-- How to test with screen reader
-- How to test with a screen reader on a mobile device
-- Link to the full entry
+---
 
-### Each entry contains:
+## Creating a PR
 
-- Video demos with recommended screen reader browser pairings
-- Code examples
-- Developer notes
-- Links to official [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) and [WAI-ARIA](https://www.w3.org/WAI/standards-guidelines/aria/) documentation
+- start in the main branch, you can check you are there by running `git branch`
+- Run a `git fetch` to ensure you have the latest
+- If there is new code, pull it down: `git pull origin main`
+- Start a new branch, I recommend using the issue number, such as `ARC-101--details` or the feat/fix/revert/chore/style convention such as `fix--lindsay-400-menu`:
+  - feat or feature: (new feature for the user, not a new feature for build script)
+  - fix: (bug fix for the user, not a fix to a build script)
+  - docs: (changes to the documentation)
+  - style: (formatting, missing semi colons, etc; no production code change)
+  - refactor: (refactoring production code, eg. renaming a variable)
+  - test: (adding missing tests, refactoring tests; no production code change)
+  - chore: (updating grunt tasks etc; no production code change)
+- Create the new branch with `git checkout -b ARC-101--criteria-button`
 
-## Contribute 
+### Pushing your work
 
-MagentaA11y is built and maintained by the [T-Mobile Accessibility Resource Center](https://github.com/tmobile/magentaA11y/graphs/contributors). 
+While you are working, make sure you to pull and rebase on main as you go:
 
-### Here are some ways to contribute:
+- `git fetch`
+- `git rebase origin/main`
 
-- Add a concise [demo video](/demos/) using a screen reader that's not yet covered.
-- Add an entry for a component that is not included.
-- Fix a typo or edit for consistent language.
+To push your work:
 
-## JSON Integration
+- `git diff .` // check what has changed in all the files you worked on
+- `git add .` // adds all new files
+- `git commit -m "fix: x message with updates"` // add commit message
+- `git push origin ARC101--criteria-button`
 
-You can integrate MagentaA11y acceptance criteria into your own tools using these JSON feeds:
+## Available Scripts
 
-- [Web Acceptance Criteria JSON](/criteria-web.json)
-- [Native App Acceptance Criteria JSON](/criteria-native.json)
+### Development
 
-## MagentaA11y.com accessibility
+- **`npm start`**: Starts the app in development mode.
 
-MagentaA11y holds itself accountable to following a layered testing strategy.
+  - Automatically generates navigation buttons and icons.
+  - Accessible at [http://localhost:3000](http://localhost:3000).
 
-### CI process
+### Building and Deployment
 
-[Lighthouse CI](https://github.com/treosh/lighthouse-ci-action) triggers warnings for performance and SEO  and errors for accessibility on key pages and rendered templates.
+- **`npm run build`**: Builds the app for production, optimizing all assets.
+- **`npm run deploy`**: Deploys the app to GitHub Pages.
 
-{% highlight json %}
-{% include_relative lighthouserc.json %}
-{% endhighlight %}
+### Utility Scripts
 
-### Results tracking
+- **`npm run generate-icons`**: Generates React components for all SVG icons and updates type definitions.
+- **`npm run generate-faveicons`**: Creates favicon assets.
+- **`npm run create-md`**: Updates side navigation buttons dynamically.
 
-Results are uploaded to a [Heroku based](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/recipes/heroku-server/README.md) [LHCI server for tracking](https://aqueous-fortress-57504.herokuapp.com/app/projects)
-- Installation note: to deploy, use git push heroku HEAD:main
+### Markdown Generation Script
 
-## Local installation instructions
+- **`npm run create-md`**: Generates structured Markdown files using predefined templates.
 
-A11yEngineer is a Jekyll based site hosted by Github Pages. Follow Github's instructions for installing locally.
+### Parse Markdown file updates
 
-- [Clone the open source repo from T-Mobile](https://github.com/tmobile/magentaA11y)
-- [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll)
-- Helpful links for installing Jekyll with Ruby 3.0
-  - [Install Ruby 3.0 · macOS Big Sur or Catalina for Intel or Apple Silicon](https://mac.install.guide/ruby/3.html)
-  - [Install Ruby 3.0 · macOS Big Sur or Catalina with Homebrew for Intel or Apple Silicon](https://mac.install.guide/ruby/13.html)
-  - Note: Ruby 3.0 will require WEBrick
-    - Add `gem "webrick"` to  Gemfile
+- **`npm run parse-md-files`**: Generates updates to Markdown files.
 
-## License
+#### What the Script Does
 
-MagentaA11y is [open sourced by T-Mobile](https://opensource.t-mobile.com/) and released under the Apache 2.0 License.
+1. **Creates Markdown files**:
+   Based on the third argument, it inserts either a _"criteria"_ or _"how-to-test"_ accessibility testing template.
+2. **Supports content categorization**: Sections for **Android/iOS Developer Notes, Video embeds**, and more.
+3. **Avoids overwriting existing files**: If a file already exists, the script exits safely without making changes.
+
+#### Running the Script
+
+```bash
+npm run create-md -- <filename> "<relative-path>" <template-type>
+```
+
+- `<filename>`: Name of the Markdown file to generate (without `.md`).
+- `<relative-path>`: Folder path under `public/content/documentation/`.
+- `<template-type>`: Must be either `criteria` or `how-to-test`.
+
+#### Examples
+
+```bash
+npm run create-md -- textarea "native/controls" criteria
+```
+
+```bash
+npm run create-md -- "images" "how-to-test/components" how-to-test
+```
+
+> 🗂️ When running the `create-md` script, files are saved to the `public/content/documentation` directory.  
+> The relative path you provide is resolved within this base directory.
+
+### Markdown File Structure
+
+All documentation Markdown files should be stored under the following structure:
+
+```
+public/content/documentation/<section>/<category>/<filename>.md
+```
+
+- `<section>` could be something like `native`, `web`, or `how-to-test`
+- `<category>` groups related content such as `components`, `notifications`, or any custom grouping
+- `<filename>.md` is the name of the actual Markdown file
+
+📁 This structure helps the app dynamically parse and render content correctly in the UI. The script `create-md` automatically respects and creates this structure based on the path you provide.
+
+These commands will create:
+
+```
+public/content/documentation/native/controls/textarea.md
+```
+
+```
+public/content/documentation/how-to-test/components/images.md
+```
+
+- If the category folder, such as "inputs", does not exist, it will be created.
+- If the file already exists, the script will **exit with an error** to prevent accidental overwrites.
+
+---
+
+## Deployment
+
+The app is deployed via GitHub Pages. Follow these steps to deploy:
+
+1. Ensure GitHub Pages is enabled in your repository settings.
+2. Update the `homepage` field in `package.json`:
+
+   ```json
+   "homepage": "https://<username>.github.io/<repository-name>"
+   ```
+
+3. Run:
+
+   ```bash
+   npm run deploy
+   ```
+
+   Your application will be live at:
+
+   ```
+   https://<username>.github.io/<repository-name>
+   ```
+
+   https://karberes.github.io/MagentaA11yV2/#/home
+
+---
+
+## Support
+
+For issues, suggestions, or contributions, please open a GitHub issue or submit a pull request.
+
+---

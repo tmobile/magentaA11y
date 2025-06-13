@@ -1,0 +1,20 @@
+.MagentaA11y {
+  --content-padding: 0 var(--magentaa11y-spacing-size-32)
+    var(--magentaa11y-spacing-size-32) var(--magentaa11y-spacing-size-32);
+
+  &__criteria-container {
+    display: flex;
+    width: -webkit-fill-available;
+  }
+
+  &__criteria-content {
+    padding: var(--content-padding);
+    width: -webkit-fill-available;
+    overflow: auto;
+  }
+
+  @media (max-width: 768px) {
+    --content-padding: 0 var(--magentaa11y-spacing-size-16)
+      var(--magentaa11y-spacing-size-16) var(--magentaa11y-spacing-size-16);
+  }
+}

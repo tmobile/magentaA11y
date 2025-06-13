@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopNav Component - Snapshot Test matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MagentaA11y__navbar"
+    data-theme="dark"
+  >
+    <div
+      class="MagentaA11y__brand"
+    >
+      <a
+        aria-current="page"
+        aria-label="Magenta A11y - Home"
+        class="MagentaA11y__brand--name active"
+        href="/home"
+      >
+        A11y
+      </a>
+    </div>
+    <button
+      aria-controls="main"
+      aria-expanded="false"
+      aria-label="Menu"
+      class="MagentaA11y-icon-button"
+      data-size="small"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.50003 17.6344V16.1345H20.5V17.6344H3.50003ZM3.50003 12.7498V11.2499H20.5V12.7498H3.50003ZM3.50003 7.86521V6.36523H20.5V7.86521H3.50003Z"
+        />
+      </svg>
+    </button>
+    <nav
+      aria-label="main"
+      class="MagentaA11y__navbar__nav"
+    >
+      <ul
+        class="MagentaA11y__nav-items"
+      >
+        <li
+          class="MagentaA11y__nav-items--item"
+        >
+          <a
+            class="MagentaA11y__nav-items--link"
+            href="/web-criteria/component/overview"
+          >
+            <span
+              class="MagentaA11y__nav-items--label"
+            >
+              Web Criteria
+            </span>
+          </a>
+        </li>
+        <li
+          class="MagentaA11y__nav-items--item"
+        >
+          <a
+            class="MagentaA11y__nav-items--link"
+            href="/native-criteria/controls/overview"
+          >
+            <span
+              class="MagentaA11y__nav-items--label"
+            >
+              Native App Criteria
+            </span>
+          </a>
+        </li>
+        <li
+          class="MagentaA11y__nav-items--item"
+        >
+          <a
+            class="MagentaA11y__nav-items--link"
+            href="/about"
+          >
+            <span
+              class="MagentaA11y__nav-items--label"
+            >
+              About Us
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</DocumentFragment>
+`;

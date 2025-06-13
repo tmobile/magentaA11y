@@ -1,0 +1,101 @@
+.MagentaA11y-accordion {
+  --headline-font: var(--magentaa11y-typeset-body-md-strong);
+  --headline-caret-icon: url("../../../assets/svgs/chevron-down.svg");
+  --headline-caret-color: var(--color-text-heading);
+  --headline-text-color: var(--color-text-heading);
+  --body-font: var(--magentaa11y-typeset-body-sm-normal);
+  --body-text-color: var(--color-text-primary);
+
+  max-width: 1096px;
+
+  &__headline {
+    overflow: hidden; // so the caret transition doesn't cause the focus outline to expand
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: start;
+    padding-block: var(--magentaa11y-spacing-size-16);
+    border: none;
+    cursor: pointer;
+
+    &[aria-expanded="true"] {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    &::after {
+      content: "";
+      -webkit-mask: var(--headline-caret-icon);
+      mask: var(--headline-caret-icon);
+      -webkit-mask-position: center center;
+      mask-position: center center;
+      background-color: var(--headline-caret-color);
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: relative;
+      right: 0;
+      height: 24px;
+      width: 24px;
+      min-height: 24px;
+      min-width: 24px;
+      transition: transform 0.3s ease-in-out;
+
+      @media (forced-colors: active) {
+        background-color: buttontext;
+      }
+    }
+
+    &--text {
+      flex: 1;
+      margin-right: var(--magentaa11y-spacing-size-16);
+      font: var(--headline-font);
+      color: var(--headline-text-color);
+    }
+
+    svg {
+      fill: var(--headline-icon-color);
+      margin-right: var(--magentaa11y-spacing-size-8);
+
+      @media (forced-colors: active) {
+        fill: buttonText;
+      }
+    }
+
+    &:hover {
+      --headline-text-color: var(--color-text-hovered);
+      --headline-caret-color: var(--color-secondary);
+    }
+  }
+
+  &__body {
+    display: none;
+    color: var(--body-text-color);
+    font: var(--body-font);
+  }
+
+  &__heading:has(&__headline[aria-expanded="true"]) + &__body {
+    display: block;
+    animation: expand-accordion 250ms ease-in-out;
+  }
+
+  @media (min-width: 769px) {
+    --body-font: var(--magentaa11y-typeset-body-md-normal);
+  }
+
+  @media (min-width: 1400px) {
+    --headline-font: var(--magentaa11y-typeset-body-lg-strong);
+  }
+}
+
+@keyframes expand-accordion {
+  0% {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

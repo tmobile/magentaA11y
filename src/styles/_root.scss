@@ -1,0 +1,22 @@
+@use "./base-tokens" as *;
+@use "./material-override" as *;
+@use "./color-tokens" as *;
+@use "./fonts" as *;
+@use "./color-tokens" as *;
+@use "./foundation-colors" as *;
+
+:root {
+  @include foundation-colors;
+  @include base-tokens;
+  @include font-tokens;
+  @include material-overrides;
+  @include color-tokens(light);
+}
+
+[data-theme="dark"] {
+  @include foundation-colors;
+  @include base-tokens;
+  @include font-tokens;
+  @include material-overrides;
+  @include color-tokens(dark);
+}

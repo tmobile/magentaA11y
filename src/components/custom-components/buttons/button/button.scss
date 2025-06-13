@@ -1,0 +1,142 @@
+.Magentaa11y-button {
+  --button-padding: var(--magentaa11y-spacing-size-12)
+    var(--magentaa11y-spacing-size-16);
+  --button-min-height: var(--magentaa11y-spacing-size-48);
+  --button-min-width: 110px;
+  --button-max-width: 424px;
+  --button--cursor: pointer;
+  --button--border-width: 0;
+
+  font: var(--magentaa11y-typeset-body-lg-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: break-word;
+  background: var(--button--bg);
+  border-width: var(--button--border-width);
+  border-color: var(--button--border-color);
+  border-style: var(--button--border-style);
+  border-radius: var(--magentaa11y-border-radius-size-4);
+  color: var(--button--text-color);
+  padding: var(--button-padding);
+  min-block-size: var(--button-min-height);
+  min-inline-size: var(--button-min-width);
+  max-inline-size: var(--button-max-width);
+  overflow: hidden;
+  height: fit-content;
+  width: fit-content;
+  cursor: var(--button--cursor);
+
+  &.Magentaa11y-button--primary {
+    --button--bg: var(--button-default);
+    --button--text-color: var(--button-text-color);
+    --button--border-color: none;
+    --button--border-style: none;
+    --button--cursor: pointer;
+    --icon-color: var(--button-text-color);
+
+    &:hover {
+      --button--bg: var(--button-hover);
+      --button--text-color: var(--button-text-hover);
+      --icon-color: var(--button-text-hover);
+    }
+
+    &:active {
+      --button--bg: var(--button-pressed);
+      --button--text-color: var(--button-text-pressed);
+      --icon-color: var(--button-text-pressed);
+    }
+
+    &[aria-disabled="true"],
+    &[disabled],
+    &.visually-disabled {
+      --button--bg: var(--button-disabled);
+      --button--text-color: var(--button-disabled-text);
+      --icon-color: var(--button-disabled-text);
+      --button--cursor: not-allowed;
+    }
+  }
+
+  &.Magentaa11y-button--secondary {
+    --button--text-color: var(--button-secondary-color);
+    --button--border-color: var(--button-secondary-color);
+    --icon-color: var(--button-secondary-color);
+    --button--border-width: var(--magentaa11y-border-weight-size-2);
+    --button--bg: none;
+    --button--transition: none;
+    --button--border-style: solid;
+    --button--cursor: pointer;
+    --button-padding: 10px 14px;
+
+    &:hover {
+      --button--text-color: var(--button-secondary-hover);
+      --button--bg: var(--button-secondary-color);
+      --button--border-color: var(--button-secondary-color);
+      --icon-color: var(--button-secondary-hover);
+    }
+
+    &:active {
+      --button--text-color: var(--button-secondary-pressed-text);
+      --button--bg: var(--button-secondary-pressed);
+      --button--border-color: var(--button-secondary-pressed);
+      --icon-color: var(--button-secondary-pressed-text);
+      --button--transition: var(--button--transition), border 100ms ease-in;
+    }
+  }
+
+  &.Magentaa11y-button--tertiary {
+    --button--bg: none;
+    --button--transition: none;
+    --button--cursor: pointer;
+    --button-min-width: initial;
+    --button-max-width: initial;
+    --button--text-color: var(--button-tertiary-color);
+    --icon-color: var(--button-tertiary-color);
+
+    padding: 10px 0;
+
+    &[data-size="small"] {
+      --button-min-height: var(--magentaa11y-spacing-size-48);
+      --button-padding: 13px 0;
+    }
+
+    &:hover {
+      --button--text-color: var(--button-tertiary-color-hover);
+      --icon-color: var(--button-tertiary-color-hover);
+    }
+
+    &:active {
+      --button--text-color: var(--button-tertiary-color-pressed);
+      --icon-color: var(--button-tertiary-color-pressed);
+      --button--transition: color 100ms ease-in;
+    }
+  }
+
+  svg {
+    flex: none;
+    fill: var(--icon-color);
+    margin-inline-end: var(--magentaa11y-spacing-size-8);
+
+    @media (forced-colors: active) {
+      --icon-color: buttontext;
+    }
+  }
+
+  span {
+    color: inherit;
+  }
+
+  &[data-size="small"] {
+    --button-min-height: 36px;
+    --button-padding: var(--magentaa11y-spacing-size-8)
+      var(--magentaa11y-spacing-size-16);
+
+    font: var(--magentaa11y-typeset-body-md-strong);
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🔍 Running tests before commit..."
+npm test -- --watchAll=false --silent
+
+echo "📄 Parsing markdown files..."
+npm run parse-md-files
+
+echo "🔍 Checking for changes after parsing markdown files..."
+if ! git diff --quiet; then
+  echo "❌ Changes detected after running parse-md-files. Please commit the updated files."
+  exit 1
+fi
+
+echo "✅ No changes detected. Moving on..."
+
+echo "🔍 Running SCSS lint check..."
+npm run lint:scss
+if [ $? -ne 0 ]; then
+  echo "❌ SCSS linting failed. Please fix the errors before committing."
+  exit 1
+fi
+
+# Check if there are any large MP4 files being added or modified
+LARGE_MP4_FILES=$(git diff --cached --name-only --diff-filter=ACMRT | grep -E "\.mp4$" | xargs -I{} du -m {} 2>/dev/null | awk '$1 > 40 {print $2}')
+
+if [ -n "$LARGE_MP4_FILES" ]; then
+  echo "🎬 Large MP4 files detected (>40MB). Converting to WebM format..."
+  echo "Found: $LARGE_MP4_FILES"
+  
+  # Make the script executable if it's not already
+  chmod +x src/scripts/convert-videos-to-webm.sh
+  
+  # Run the conversion script
+  ./src/scripts/convert-videos-to-webm.sh
+  
+  # Check if the conversion created any new files
+  if [ $? -eq 0 ] && [ -n "$(git ls-files --others --exclude-standard | grep -E "\.webm$")" ]; then
+    echo "⚠️ Videos were converted to WebM format! Please stage the new WebM files and remove the large MP4 files before committing."
+    echo "You can do this with:"
+    echo "git add path/to/new/webm/files"
+    echo "git rm path/to/large/mp4/files"
+    exit 1
+  fi
+fi
+
+echo "✅ All checks passed. Proceeding with the commit..."

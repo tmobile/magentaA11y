@@ -1,0 +1,92 @@
+/* Base styles for code blocks */
+pre {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+  border-radius: 6px;
+  background-color: var(--color-code-block); /* Adapts to theme */
+  overflow-x: auto;
+  color: var(--color-on-tertiary); /* Adapts to theme */
+}
+
+code {
+  font-family: monospace;
+  color: var(--color-text-secondary);
+
+}
+
+:not(pre) > code {
+  background: var(--color-background-secondary);
+  padding: 0.15em 0.33em 0.1em;
+  border: solid var(--color-background-tertiary);
+  border-width: 1px;
+  border-radius: 8px;
+}
+
+/* Syntax Highlighting with hljs classes */
+
+// /* Base text color */
+// .hljs {
+//   color: var(--color-text-primary); /* Main text color */
+// }
+
+/* Tags (e.g., <header>) */
+.hljs-tag {
+  color: var(--color-on-background); /* Primary color for tags */
+  font-weight: bold;
+}
+
+/* Tag names (e.g., header, nav, ul) */
+.hljs-name {
+  color: var(--color-caution); /* Secondary color for tag names */
+}
+
+/* Tag attributes (e.g., id, class) */
+.hljs-attr {
+  color: var(--color-info); /* Tertiary color for attributes */
+}
+
+/* Attribute values (e.g., "example-header") */
+.hljs-string {
+  color: var(--color-on-tertiary); /* Light color for attribute values */
+  font-weight: normal;
+}
+
+/* Comments */
+.hljs-comment {
+  color: var(--color-text-secondary); /* Muted color for comments */
+
+}
+
+/* Punctuation (e.g., <> and =) */
+.hljs-punctuation {
+  color: var(--color-outline); /* Neutral color for punctuation */
+}
+
+/* Operators, such as `=` */
+.hljs-operator {
+  color: var(--color-error); /* Error color for operators */
+}
+
+/* Keywords */
+.hljs-keyword {
+  color: var(--color-secondary-container); /* Accent color for keywords */
+  font-weight: bold;
+}
+
+/* HTML entity or URL */
+.hljs-entity,
+.hljs-url {
+  color: var(--color-link); /* Link color for entities and URLs */
+}
+
+/* Functions and properties */
+.hljs-function,
+.hljs-property {
+  color: var(--color-secondary); /* Function and property colors */
+}
+
+/* Numbers */
+.hljs-number {
+  color: var(--color-secondary); /* Secondary color for numbers */
+}

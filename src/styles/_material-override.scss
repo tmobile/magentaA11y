@@ -1,0 +1,89 @@
+@mixin material-overrides {
+  // Primary colors
+  --md-sys-color-primary: var(--color-primary); // Alias for primary color
+  --md-sys-color-on-primary: var(--color-on-primary);
+  --md-sys-color-primary-container: var(--color-primary-container);
+  --md-sys-color-on-primary-container: var(--color-on-primary-container);
+
+  // Secondary colors
+  --md-sys-color-secondary: var(--color-secondary);
+  --md-sys-color-on-secondary: var(--color-on-secondary);
+  --md-sys-color-secondary-container: var(--color-secondary-container);
+  --md-sys-color-on-secondary-container: var(--color-on-secondary-container);
+
+  // Tertiary colors
+  --md-sys-color-tertiary: var(--color-tertiary);
+  --md-sys-color-on-tertiary: var(--color-on-tertiary);
+  --md-sys-color-tertiary-container: var(--color-tertiary-container);
+  --md-sys-color-on-tertiary-container: var(--color-on-tertiary-container);
+
+  // Error colors
+  --md-sys-color-error: var(--color-error);
+  --md-sys-color-on-error: var(--color-on-error);
+  --md-sys-color-error-container: var(--color-error-container);
+  --md-sys-color-on-error-container: var(--color-on-error-container);
+
+  // Background and Surface
+  --md-sys-color-background: var(--color-background);
+  --md-sys-color-on-background: var(--color-on-background);
+  --md-sys-color-surface: var(--color-surface);
+  --md-sys-color-on-surface: var(--color-on-surface);
+  --md-sys-color-surface-variant: var(--color-surface-variant);
+  --md-sys-color-on-surface-variant: var(--color-on-surface-variant);
+
+  // Additional surfaces
+  --md-sys-color-surface-bright: var(--color-surface-bright);
+  --md-sys-color-surface-dim: var(--color-surface-dim);
+  --md-sys-color-surface-container: var(--color-surface-container);
+  --md-sys-color-surface-container-lowest: var(
+    --color-surface-container-lowest
+  );
+  --md-sys-color-surface-container-low: var(--color-surface-container-low);
+  --md-sys-color-surface-container-high: var(--color-surface-container-high);
+  --md-sys-color-surface-container-highest: var(
+    --color-surface-container-highest
+  );
+
+  // Outline and Shadow
+  --md-sys-color-outline: var(--color-outline);
+  --md-sys-color-outline-variant: var(--color-outline-variant);
+
+  // Inverse colors
+  --md-sys-color-inverse-surface: var(--color-inverse-surface);
+  --md-sys-color-inverse-on-surface: var(--color-inverse-on-surface);
+  --md-sys-color-inverse-primary: var(--color-inverse-primary);
+
+  // Shadow
+  --md-sys-color-shadow: rgb(0 0 0 / 25%);
+  --md-sys-color-scrim: rgb(0 0 0 / 50%);
+
+  // Primary Tabs
+  --md-primary-tab-container-color: var(--color-on-primary);
+  --md-primary-tab-active-label-text-color: var(--color-text-heading);
+  --md-primary-tab-active-focus-label-text-color: var(--color-text-heading);
+  --md-primary-tab-active-hover-label-text-color: var(--color-on-tertiary);
+
+  // Buttons
+  --md-filled-button-label-text-color: var(
+    --magentaa11y-color-brand-grayscale-white
+  );
+  --md-filled-button-icon-color: var(--magentaa11y-color-brand-grayscale-white);
+  --md-filled-button-pressed-icon-color: var(
+    --magentaa11y-color-brand-grayscale-white
+  );
+  --md-filled-button-hover-icon-color: var(
+    --magentaa11y-color-brand-grayscale-white
+  );
+  --md-filled-button-focus-icon-color: var(
+    --magentaa11y-color-brand-grayscale-white
+  );
+  --md-filled-button-focus-label-text-color: var(
+    --magentaa11y-color-brand-grayscale-white
+  );
+  --md-filled-button-pressed-label-text-color: var(
+    --magentaa11y-color-brand-grayscale-white
+  );
+  --md-filled-button-hover-label-text-color: var(
+    --magentaa11y-color-brand-grayscale-white
+  );
+}

@@ -1,0 +1,179 @@
+@use "./styles/root" as *;
+@use "./styles/utilities" as *;
+@use "./styles/md-styles" as *;
+
+html {
+  background-color: var(--color-background);
+}
+
+/* General Resets */
+body {
+  margin: 0;
+  font-family: var(--magentaa11y-font-family-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/* Text Styling */
+body,
+p,
+li,
+span,
+a,
+div,
+textarea,
+input,
+button {
+  color: var(--color-text-primary); /* Default text color */
+  font-family: var(--magentaa11y-font-family-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--magentaa11y-font-family-header);
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+/* Line Heights */
+h1 {
+  line-height: var(--magentaa11y-line-height-50);
+}
+
+h2 {
+  line-height: var(--magentaa11y-line-height-43);
+}
+
+h3,
+h4,
+h5 {
+  line-height: var(--magentaa11y-line-height-34);
+}
+
+h6 {
+  line-height: var(--magentaa11y-line-height-30);
+}
+
+p,
+li,
+ul,
+ol {
+  line-height: var(--magentaa11y-line-height-24);
+}
+
+ul,
+ol {
+  padding-left: var(--magentaa11y-spacing-size-20);
+  margin: 0 0 1em 1em;
+}
+
+/* Inputs, Buttons, and Textareas */
+textarea,
+input,
+button {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 3px solid var(--color-input-border);
+}
+
+pre {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  padding: 2em;
+  overflow-x: auto;
+  border-radius: 4px;
+  width: -webkit-fill-available;
+}
+
+video {
+  aspect-ratio: 3/2;
+  width: 70%;
+  display: flex;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* General Text Wrapping */
+body,
+p,
+li,
+span,
+a,
+div,
+textarea,
+input,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+td,
+th,
+table {
+  word-wrap: break-word; /* Allows long words to break and wrap to the next line */
+  word-break: break-word; /* Breaks long unbreakable words at any point (for legacy compatibility) */
+  overflow-wrap: break-word; /* Modern equivalent to word-wrap */
+}
+
+th {
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+table {
+  margin-bottom: var(--magentaa11y-spacing-size-48);
+  border-collapse: collapse;
+  width: 100%;
+
+  caption {
+    font-size: 1.25rem;
+    margin: 0 0 1rem;
+    font-family: var(--magentaa11y-font-family-display);
+    font-weight: var(--magentaa11y-font-weight-extrabold);
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  thead > tr {
+    border-bottom: solid 3px var(--color-input-border);
+  }
+
+  tbody > tr:not(:last-child) {
+    border-bottom: solid 1px var(--color-input-border);
+  }
+
+  img {
+    height: 2rem;
+    width: 2rem;
+    display: block;
+    margin: 0 auto 0.25rem;
+    filter: var(--img-svgs);
+  }
+}
+
+svg {
+  fill: var(--color-on-tertiary);
+}
+
+:focus-visible {
+  outline: 0.5rem auto Highlight;
+  outline: -webkit-focus-ring-color auto 10px;
+  outline-offset: -2px;
+}

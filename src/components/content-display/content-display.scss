@@ -1,0 +1,79 @@
+.MagentaA11y__nav-display {
+  --nav-display-gap: 36px;
+  --title-font: var(--magentaa11y-typeset-display-md-xtrastrong);
+  --sub-lists-flex-direction: row;
+  --intro-padding: var(--magentaa11y-spacing-size-32);
+  --intro-gap: var(--magentaa11y-line-height-16);
+  --criteria-button-visibility: none;
+  --tab-width: fit-content;
+  --content-actions-flex-direction: row;
+  --nav-display-content-gap: var(--magentaa11y-spacing-size-24);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--nav-display-gap);
+  max-width: 1280px;
+  margin: auto;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--intro-gap);
+    text-align: center;
+    padding: var(--intro-padding) 0;
+    border-bottom: var(--magentaa11y-border-weight-size-1) solid
+      var(--color-background-tertiary);
+
+    p {
+      margin: 0;
+      font: var(--magentaa11y-typeset-headline-sm-strong);
+    }
+  }
+
+  &__title {
+    font: var(--title-font);
+  }
+
+  &__subtitle {
+    line-height: normal;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--nav-display-content-gap);
+  }
+
+  &__content-actions {
+    display: flex;
+    flex-direction: var(--content-actions-flex-direction);
+    gap: var(--magentaa11y-spacing-size-24);
+    justify-content: space-between;
+
+    md-tabs {
+      width: var(--tab-width);
+    }
+
+    &__buttons {
+      display: flex;
+      gap: var(--magentaa11y-spacing-size-24);
+      justify-content: space-between;
+    }
+  }
+
+  @media (max-width: 768px) {
+    --nav-display-gap: var(--magentaa11y-spacing-size-24);
+    --title-font: var(--magentaa11y-typeset-headline-xxl-xtrastrong);
+    --sub-lists-flex-direction: column;
+    --tab-width: 100%;
+    --intro-padding-bottom: var(--magentaa11y-spacing-size-24);
+    --intro-gap: var(--magentaa11y-line-height-20);
+    --nav-display-content-gap: var(--magentaa11y-spacing-size-16);
+    --content-actions-flex-direction: column;
+    --criteria-button-visibility: flex;
+  }
+
+  #criteria-button {
+    display: var(--criteria-button-visibility);
+  }
+}

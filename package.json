@@ -1,0 +1,84 @@
+{
+  "name": "magentaa11y_v2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://KArbeRes.github.io/MagentaA11yV2",
+  "dependencies": {
+    "@emotion/styled": "^11.13.0",
+    "@material/web": "^2.2.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^27.5.2",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "classnames": "^2.5.1",
+    "graphql": "^16.9.0",
+    "highlight.js": "^11.10.0",
+    "lit": "^3.2.1",
+    "mdast-util-gfm-table": "^2.0.0",
+    "mdast-util-to-markdown": "^2.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "5.0.1",
+    "rehype-highlight": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
+    "sass": "^1.79.4",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "generate-faveicons": "npx tsx src/scripts/generateFaveIcons.ts",
+    "parse-md-files": "npx tsx src/scripts/parseMDFiles.ts",
+    "generate-icons": "npx tsx src/scripts/generateIcons.ts",
+    "create-md": "bash src/scripts/createMarkdown.sh",
+    "start": "npm run parse-md-files && npm run generate-icons && react-scripts start",
+    "build": "npm run lint && npm run generate-faveicons && npm run parse-md-files && react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "print-tree": "tree -I 'node_modules'",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:scss": "stylelint '**/*.scss'",
+    "fix:scss": "stylelint '**/*.scss' --fix",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/favicons": "^7.0.2",
+    "@types/node": "^22.9.3",
+    "concurrently": "^9.1.0",
+    "favicons": "^7.2.0",
+    "gh-pages": "^6.2.0",
+    "husky": "^8.0.0",
+    "stylelint": "^16.19.1",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.11.1",
+    "tsx": "^4.19.2"
+  }
+}
