@@ -1,0 +1,53 @@
+.hidden-visually {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}
+
+.hidden {
+  display: none !important;
+}
+
+$text-alignments: left, center, right, justify, start, end;
+
+@each $align in $text-alignments {
+  .text-#{$align} {
+    text-align: $align;
+  }
+}
+
+$width-percentages: 25, 50, 75, 100;
+
+@each $width in $width-percentages {
+  .w-#{$width} {
+    width: #{$width + '%'};
+  }
+}
+
+$alignments: (left, center, right, justify);
+
+@each $align in $alignments {
+  .text-#{$align} {
+    text-align: $align;
+  }
+}
+
+// @mixin ripple( #fff, #eee, 10%, center) {
+//   background-position: $position-x $position-y;
+//   transition: background 1s;
+//   &:hover {
+//     background: radial-gradient(circle , transparent 1%, 1%) 15000%;
+//   }
+//   &:active {
+//     background-color: #eee;
+//     background-size: 100%;
+//     transition: background 0s;
+//   }
+// }

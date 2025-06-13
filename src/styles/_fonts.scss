@@ -1,0 +1,148 @@
+@font-face {
+  font-family: TeleNeo;
+  src: url("../assets/fonts/teleneo/web-v1.7/teleneoweb-regular.woff2")
+      format("woff2"),
+    url("../assets/fonts/teleneo/web-v1.7/teleneoweb-regular.woff2")
+      format("woff");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TeleNeo;
+  src: url("../assets/fonts/teleneo/web-v1.7/teleneoweb-bold.woff2")
+      format("woff2"),
+    url("../assets/fonts/teleneo/web-v1.7/teleneoweb-bold.woff2") format("woff");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TeleNeo;
+  src: url("../assets/fonts/teleneo/web-v1.7/teleneoweb-extrabold.woff2")
+      format("woff2"),
+    url("../assets/fonts/teleneo/web-v1.7/teleneoweb-extrabold.woff2")
+      format("woff");
+  font-weight: 800; /* Extra Bold */
+  font-style: normal;
+}
+
+@mixin font-tokens {
+  --magentaa11y-font-family-body: blinkmacsystemfont, -apple-system, roboto,
+    helvetica, "Segoe UI", arial, sans-serif; /* Used for body copy */
+
+  --magentaa11y-font-family-display: teleneo; /* Reserved for headline display */
+  --magentaa11y-font-family-header: teleneo; /* Reserved for headers */
+  --magentaa11y-font-weight-extrabold: 800; /* This weight value is 800. It is used for our header copy. */
+  --magentaa11y-font-weight-semibold: 600; /* This weight value is 600. It is used for our body copy. */
+  --magentaa11y-font-weight-bold: bold; /* This weight value is 700. It is used for our header copy. */
+  --magentaa11y-font-weight-regular: normal; /* This weight value is 400. It is used for our header and body copy. */
+  --magentaa11y-typeset-body-xs-strong: var(--magentaa11y-font-weight-semibold)
+    var(--magentaa11y-font-size-11) / var(--magentaa11y-line-height-15)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-xs-normal: var(--magentaa11y-font-weight-regular)
+    var(--magentaa11y-font-size-11) / var(--magentaa11y-line-height-15)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-sm-strong: var(--magentaa11y-font-weight-semibold)
+    var(--magentaa11y-font-size-12) / var(--magentaa11y-line-height-16)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-sm-normal: var(--magentaa11y-font-weight-regular)
+    var(--magentaa11y-font-size-12) / var(--magentaa11y-line-height-16)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-md-strong: var(--magentaa11y-font-weight-semibold)
+    var(--magentaa11y-font-size-14) / var(--magentaa11y-line-height-18)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-md-normal: var(--magentaa11y-font-weight-regular)
+    var(--magentaa11y-font-size-14) / var(--magentaa11y-line-height-18)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-lg-strong: var(--magentaa11y-font-weight-semibold)
+    var(--magentaa11y-font-size-16) / var(--magentaa11y-line-height-20)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-lg-normal: var(--magentaa11y-font-weight-regular)
+    var(--magentaa11y-font-size-16) / var(--magentaa11y-line-height-20)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-xl-strong: var(--magentaa11y-font-weight-semibold)
+    var(--magentaa11y-font-size-18) / var(--magentaa11y-line-height-22)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-xl-normal: var(--magentaa11y-font-weight-regular)
+    var(--magentaa11y-font-size-18) / var(--magentaa11y-line-height-22)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-xxl-strong: var(--magentaa11y-font-weight-semibold)
+    var(--magentaa11y-font-size-20) / var(--magentaa11y-line-height-24)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-body-xxl-normal: var(--magentaa11y-font-weight-regular)
+    var(--magentaa11y-font-size-20) / var(--magentaa11y-line-height-24)
+    var(--magentaa11y-font-family-body);
+  --magentaa11y-typeset-headline-xs-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-20) / var(--magentaa11y-line-height-22)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-xs-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-20) / var(--magentaa11y-line-height-22)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-sm-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-24) / var(--magentaa11y-line-height-26)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-sm-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-24) / var(--magentaa11y-line-height-26)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-md-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-28) / var(--magentaa11y-line-height-30)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-md-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-28) / var(--magentaa11y-line-height-30)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-lg-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-32) / var(--magentaa11y-line-height-34)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-lg-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-32) / var(--magentaa11y-line-height-34)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-xl-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-40) / var(--magentaa11y-line-height-43)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-xl-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-40) / var(--magentaa11y-line-height-43)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-xxl-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-48) / var(--magentaa11y-line-height-50)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-headline-xxl-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-48) / var(--magentaa11y-line-height-50)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-display-sm-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-52) / var(--magentaa11y-line-height-57)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-display-sm-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-52) / var(--magentaa11y-line-height-57)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-display-md-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-60) / var(--magentaa11y-line-height-63)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-display-md-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-60) / var(--magentaa11y-line-height-63)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-display-lg-xtrastrong: var(
+      --magentaa11y-font-weight-extrabold
+    )
+    var(--magentaa11y-font-size-68) / var(--magentaa11y-line-height-71)
+    var(--magentaa11y-font-family-display);
+  --magentaa11y-typeset-display-lg-strong: var(--magentaa11y-font-weight-bold)
+    var(--magentaa11y-font-size-68) / var(--magentaa11y-line-height-71)
+    var(--magentaa11y-font-family-display);
+}

@@ -1,0 +1,161 @@
+@mixin base-link-styles {
+  color: var(--color-on-tertiary);
+  text-decoration: none;
+}
+
+@mixin nav-item-link {
+  font: var(--magentaa11y-typeset-body-lg-strong);
+  transition: box-shadow 0.3s ease;
+  padding: var(--magentaa11y-spacing-size-8);
+
+  &.active {
+    box-shadow: inset 0 -5px 0 0 var(--color-primary);
+  }
+}
+
+.MagentaA11y__navbar {
+  --nav-items-flex-direction: row;
+
+  background-color: var(--color-on-primary);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--magentaa11y-spacing-size-16) var(--magentaa11y-spacing-size-40);
+
+  button[aria-expanded="false"] + &__nav {
+    display: none;
+  }
+
+  button[aria-expanded="true"] + &__nav {
+    --nav-items-flex-direction: column;
+
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: var(--magentaa11y-spacing-size-40)
+      var(--magentaa11y-spacing-size-24);
+    background-color: var(--color-background);
+    z-index: 2;
+  }
+}
+
+.MagentaA11y__brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--magentaa11y-spacing-size-8);
+
+  &--logo {
+    width: 27px;
+    height: 27px;
+  }
+
+  &--name {
+    @include base-link-styles;
+    
+    font: var(--magentaa11y-typeset-headline-lg-xtrastrong);
+    line-height: var(--magentaa11y-spacing-size-40);
+    margin: 0;
+    text-align: center;
+    position: relative;
+    height: max-content;
+    height: -webkit-max-content;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 50px;
+    letter-spacing: 0.1px;
+    gap: 4px;
+
+    @media (max-width: 960px) {
+      font: var(--magentaa11y-typeset-headline-md-xtrastrong);
+    }
+
+    &::before {
+      content: "Magenta";
+      color: var(--color-primary);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url("../../../assets/svgs/brand-logo-white.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: var(--magentaa11y-spacing-size-40);
+      height: var(--magentaa11y-spacing-size-40);
+
+      @media (max-width: 960px) {
+        width: var(--magentaa11y-spacing-size-36);
+        height: var(--magentaa11y-spacing-size-36);
+      }
+    }
+  }
+}
+
+.MagentaA11y__nav-items {
+  list-style-type: none;
+  display: flex;
+  flex-direction: var(--nav-items-flex-direction);
+  gap: var(--magentaa11y-spacing-size-16);
+  margin: 0;
+  padding: 0;
+
+  &--link {
+    @include base-link-styles;
+    @include nav-item-link;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &--label {
+    color: var(---color-on-tertiary);
+  }
+
+  &--icon {
+    display: inherit;
+    align-items: center;
+    position: relative;
+    padding-inline-end: var(--magentaa11y-spacing-size-8);
+
+    &[data-count]:not([data-count=""], [data-count*="e"], [data-count*="."]) {
+      &::before {
+        content: attr(data-count);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        background-color: var(--color-primary);
+        width: max-content;
+        min-width: var(--magentaa11y-spacing-size-18);
+        height: var(--magentaa11y-spacing-size-18);
+        border-radius: var(--magentaa11y-border-radius-size-10);
+        font: var(--magentaa11y-typeset-body-xs-strong);
+        bottom: var(--magentaa11y-spacing-size-12);
+        left: var(--magentaa11y-spacing-size-12);
+        padding: 1px 3px;
+      }
+
+      /* When data-count is exactly '0', show a small badge with no content */
+      &[data-count="0"]::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        min-width: 8px;
+        min-height: 8px;
+        padding: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 936px) {
+  .MagentaA11y__navbar {
+    padding: var(--magentaa11y-spacing-size-16);
+  }
+}

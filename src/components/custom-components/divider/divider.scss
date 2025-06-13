@@ -1,0 +1,33 @@
+.MagentaA11y-divider {
+  --divider-bg: var(--magentaa11y-color-fill-divider-default);
+
+  background-color: var(--divider-bg);
+  width: var(--divider-width);
+  height: var(--divider-height);
+
+  &[data-orientation="horizontal"] {
+    --divider-width: 100%;
+    --divider-height: var(--magentaa11y-border-weight-size-1);
+  }
+
+  &[data-orientation="vertical"] {
+    --divider-width: var(--magentaa11y-border-weight-size-1);
+    --divider-height: 100%;
+  }
+
+  &--branded {
+    --divider-bg: var(--magentaa11y-color-fill-divider-brand);
+
+    &[data-orientation="horizontal"] {
+      --divider-height: var(--magentaa11y-border-weight-size-3);
+    }
+
+    &[data-orientation="vertical"] {
+      --divider-width: var(--magentaa11y-border-weight-size-3);
+    }
+  }
+
+  &--strong {
+    --divider-bg: var(--magentaa11y-color-fill-divider-strong);
+  }
+}

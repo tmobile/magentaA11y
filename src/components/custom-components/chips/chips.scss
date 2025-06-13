@@ -1,0 +1,282 @@
+/* stylelint-disable no-descending-specificity */
+
+/* TODO: Temporarily disabled the "no-descending-specificity" rule to save time. 
+   Error received: 
+   "Expected selector '.MagentaA11y-chip__label' to come before selector '.MagentaA11y-chip-container input[type="checkbox"]:checked + .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg .MagentaA11y-chip__label'"
+   When we have time, reorder the selectors to resolve the issue properly. */
+
+%magenta-a11y-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@mixin legend() {
+  font-family: TeleNeo, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+@mixin selected-chip-styles {
+  --text-color: var(--magentaa11y-color-text-chips-selected);
+  --icon-color: var(--magentaa11y-color-fill-chips-icon-selected);
+  --background-color: var(--magentaa11y-color-fill-chips-selected);
+  --border: var(--magentaa11y-border-weight-size-2) solid
+    var(--magentaa11y-color-fill-chips-selected);
+}
+
+@mixin svg-styles(
+  $margin-position: null,
+  $spacing: null,
+  $is-visible: false,
+  $svg-size: null
+) {
+  svg {
+    transition: all 0.2s ease-in-out;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+
+    @if $is-visible {
+      fill: var(--icon-color);
+      visibility: visible;
+
+      @if is-null($svg-size) {
+        width: $svg-size;
+        height: $svg-size;
+      }
+    }
+
+    @if $margin-position == start {
+      margin-inline-start: $spacing;
+    } @else if $margin-position == end {
+      margin-inline-end: $spacing;
+    }
+  }
+}
+
+.MagentaA11y-chip-container {
+  --svg-size: 24px;
+
+  display: flex;
+  position: relative;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    @extend %magenta-a11y-visually-hidden;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &:checked {
+      + .MagentaA11y-chip {
+        .MagentaA11y-chip__label--wrapper {
+          @include selected-chip-styles;
+          @include svg-styles(
+            end,
+            var(--magentaa11y-spacing-size-8),
+            true,
+            var(--svg-size)
+          );
+        }
+      }
+    }
+  }
+
+  button {
+    @include svg-styles(
+      start,
+      var(--magentaa11y-spacing-size-8),
+      true,
+      var(--svg-size)
+    );
+
+    &:active {
+      .MagentaA11y-chip {
+        .MagentaA11y-chip__label--wrapper {
+          @include selected-chip-styles;
+        }
+      }
+    }
+
+    .MagentaA11y-chip {
+      .MagentaA11y-chip__label--wrapper {
+        .MagentaA11y-chip__label {
+          .MagentaA11y-chip__label--text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.MagentaA11y-chip {
+  --chip-font-weight: var(--magentaa11y-typeset-body-md-strong);
+  --label-line-height: var(--magentaa11y-line-height-24);
+  --label-padding: var(--magentaa11y-spacing-size-4)
+    var(--magentaa11y-spacing-size-16);
+  --strikethrough-width: 55px;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font: var(--chip-font-weight);
+  padding: var(--magentaa11y-spacing-size-4);
+  white-space: nowrap;
+
+  &__label {
+    background-color: var(--background-color);
+    border: var(--border);
+    border-radius: var(--magentaa11y-border-radius-size-24);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    line-height: var(--label-line-height);
+    padding: var(--label-padding);
+    transition: all 0.2s ease-in-out;
+
+    @include svg-styles;
+
+    &--wrapper {
+      --icon-color: var(--magentaa11y-color-fill-chips-icon-default);
+      --text-color: var(--magentaa11y-color-text-chips-default);
+      --background-color: transparent;
+      --border: var(--magentaa11y-border-weight-size-2) solid
+        var(--magentaa11y-color-border-chips-default);
+
+      border-radius: var(--magentaa11y-border-radius-size-24);
+      margin-block: 2px;
+    }
+
+    &--sr-only {
+      @extend %magenta-a11y-visually-hidden;
+    }
+  }
+
+  &--unavailable {
+    .MagentaA11y-chip__label--wrapper {
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        border-bottom: var(--magentaa11y-border-weight-size-2) solid
+          var(--text-color);
+        width: var(--strikethrough-width);
+        position: absolute;
+        transform: rotate(45deg);
+        top: 50%;
+        left: calc(50% - var(--magentaa11y-spacing-size-24));
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  @media (pointer: fine) {
+    &:hover,
+    input[type="checkbox"]:checked + &:hover,
+    input[type="checkbox"]:checked + &.force-hover,
+    input[type="radio"]:not(:checked) + &:hover,
+    input[type="radio"]:not(:checked) + &.force-hover {
+      .MagentaA11y-chip__label--wrapper {
+        --background-color: var(--magentaa11y-color-fill-chips-hover);
+        --border: var(--magentaa11y-border-weight-size-2) solid
+          var(--background-color);
+        --text-color: var(--magentaa11y-color-text-chips-hover);
+        --icon-color: var(--magentaa11y-color-fill-chips-icon-hover);
+      }
+    }
+  }
+}
+
+.MagentaA11y-chips {
+  --magentaa11y-spacing-size-6: 6px;
+
+  display: flex;
+  overflow-x: auto;
+  align-self: center;
+
+  &__legend {
+    @include legend;
+  }
+
+  button {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    -webkit-appearance: none;
+  }
+
+  &[data-size="xs"] {
+    .MagentaA11y-chip {
+      --chip-font-weight: var(--magentaa11y-typeset-body-xs-strong);
+      --label-line-height: 12px;
+      --label-padding: var(--magentaa11y-spacing-size-4)
+        var(--magentaa11y-spacing-size-12);
+    }
+
+    .MagentaA11y-chip-container {
+      --svg-size: 12px;
+    }
+  }
+
+  fieldset {
+    display: flex;
+    border-width: 0;
+    margin: 0;
+    padding: 0 0 0.8rem;
+
+    &:has(> .MagentaA11y-chip-container > button) {
+      flex-wrap: wrap;
+      min-width: 0;
+
+      .MagentaA11y-chip-container,
+      .MagentaA11y-chip__label--wrapper,
+      button {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+// Styles for selected chips in  Windows High Contrast Mode
+// The stylings above are currently overriden by Windows' High Contrast Mode
+// Without the styles below, it won't be possible to distinguish a selected chip from an unselected one in High Contrast Mode
+@media (forced-colors: active) {
+  .MagentaA11y-chip-container {
+    input[type="checkbox"]:checked
+      + .MagentaA11y-chip
+      .MagentaA11y-chip__label--wrapper
+      svg,
+    button > .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg {
+      fill: fieldtext;
+    }
+
+    input:checked + .MagentaA11y-chip .MagentaA11y-chip__label--wrapper {
+      &::before {
+        border-bottom-color: selecteditem;
+      }
+
+      .MagentaA11y-chip__label {
+        border-color: selecteditem;
+        text-decoration: underline;
+      }
+    }
+  }
+}

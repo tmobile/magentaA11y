@@ -1,0 +1,20 @@
+@mixin base-inline-link {
+  --link--color: var(--color-on-tertiary);
+
+  color: var(--link--color);
+  display: inline-block;
+  font: inherit;
+  text-decoration: underline;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@mixin base-link {
+  padding: var(--magentaa11y-spacing-size-16) var(--magentaa11y-spacing-size-24);
+  letter-spacing: 0.1px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

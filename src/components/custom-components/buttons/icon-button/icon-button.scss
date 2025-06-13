@@ -1,0 +1,117 @@
+@mixin high-contrast-icon-button-colors {
+  @media (forced-colors: active) {
+    --icon-color: buttontext;
+
+    &[aria-disabled="true"] {
+      --icon-color: graytext;
+
+      &[data-background="primary"]::after,
+      &[data-background="secondary"]::after {
+        border: var(--tdds-border-weight-size-1) solid graytext;
+      }
+    }
+
+    &[data-background="secondary"]::after {
+      border: var(--tdds-border-weight-size-1) solid buttonborder;
+    }
+  }
+}
+
+.MagentaA11y-icon-button {
+  --icon-color: var(--color-icons);
+  --icon-size: 24px;
+  --button-background-size: 48px;
+  --button-padding: 0px;
+  --button-cursor: pointer;
+  --button-background-color: transparent;
+
+  position: relative;
+  border: none;
+  background-color: transparent;
+
+  &:hover:not([aria-disabled="true"]) {
+    --icon-color: var(--color-icons-hover);
+    --button-background-color: var(--color-icon-button-hover);
+  }
+
+  &:active:not([aria-disabled="true"]) {
+    --icon-color: var(--color-icons);
+    --button-background-color: var(--color-icon-button-pressed);
+  }
+
+  &[aria-disabled="true"] {
+    --icon-color: var(--color-surface-disabled);
+    --button-cursor: not-allowed;
+  }
+
+  .MagentaA11y-badge {
+    --badge-background-color: var(--color-primary);
+    --badge-text-color: var(--color-text-on-primary);
+
+    position: absolute;
+    top: 6px;
+    right: 7px;
+    background-color: var(--badge-background-color);
+    border-radius: 10px;
+    height: 8px;
+    width: 8px;
+    z-index: 1;
+
+    @media (forced-colors: active) {
+      --badge-background-color: ButtonFace;
+
+      border: 1px solid ButtonText;
+    }
+
+    &--number {
+      color: var(--badge-text-color);
+      font: var(--magentaa11y-typeset-body-xs-strong);
+      display: flex;
+      justify-content: center;
+      align-items: normal;
+      padding: 1px 3px;
+      top: 4px;
+      left: 25px;
+      right: unset;
+      height: 18px;
+      min-width: 18px;
+      width: max-content;
+    }
+  }
+
+  &[data-size="small"] {
+    --icon-size: 20px;
+    --button-background-size: 40px;
+    --button-padding: var(--tdds-spacing-size-4);
+  }
+
+  display: grid;
+  place-items: center center;
+  grid-template-columns: max-content;
+  grid-template-rows: max-content;
+  padding: var(--button-padding);
+  cursor: var(--button-cursor);
+
+  svg {
+    fill: var(--icon-color);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 1;
+    transition: fill 200ms ease-out;
+  }
+
+  &::after {
+    content: "";
+    background-color: var(--button-background-color);
+    width: var(--button-background-size);
+    height: var(--button-background-size);
+    border-radius: 50%;
+    grid-row: 1;
+    grid-column: 1;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  @include high-contrast-icon-button-colors;
+}

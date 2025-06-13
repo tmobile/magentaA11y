@@ -1,0 +1,15 @@
+@use "@material/web/menu/_menu.scss" as *;
+
+.MagentaA11y {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.MagentaA11y--content,
+main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  min-height: 100vh;
+}

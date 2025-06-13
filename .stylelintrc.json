@@ -1,0 +1,13 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "color-no-invalid-hex": true,
+    "scss/dollar-variable-pattern": null,
+    "selector-class-pattern": null,
+    "scss/load-no-partial-leading-underscore": null,
+    "custom-property-pattern": null,
+    "value-no-vendor-prefix": null,
+    "property-no-vendor-prefix": null ,
+    "media-feature-range-notation": "prefix"
+  }
+}

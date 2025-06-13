@@ -1,18 +1,3 @@
 {
-  "cSpell.ignoreWords": [
-    "Talkback"
-  ],
-  "cSpell.words": [
-    "doubletap",
-    "endraw",
-    "inpt",
-    "inputmode",
-    "nomarkdown",
-    "progressbar",
-    "screenreader",
-    "targetable",
-    "Triplett",
-    "wcag",
-    "WCAG"
-  ]
+    "svg.preview.background": "transparent"
 }

@@ -1,0 +1,53 @@
+@use '../../../styles/links' as *;
+
+.MagentaA11y--footer {
+  --footer-flex-direction: row;
+
+  display: flex;
+  flex-direction: var(--footer-flex-direction);
+  justify-content: space-around;
+  gap: var(--magentaa11y-spacing-size-24);
+  background-color: var(--footer-background-color);
+  padding: var(--magentaa11y-spacing-size-64) var(--magentaa11y-spacing-size-24)
+    var(--magentaa11y-spacing-size-96) var(--magentaa11y-spacing-size-8);
+
+  &__nav-list {
+    width: 100%;
+
+    h2,
+    a {
+      color: var(--footer-text-color);
+    }
+
+    h2 {
+      padding: var(--magentaa11y-spacing-size-4)
+        var(--magentaa11y-spacing-size-16);
+      font: var(--magentaa11y-typeset-body-lg-strong);
+    }
+
+    a {
+      @include base-link;
+
+      font: var(--magentaa11y-typeset-body-sm-strong);
+      padding: var(--magentaa11y-spacing-size-4)
+        var(--magentaa11y-spacing-size-24);
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--magentaa11y-spacing-size-4);
+    }
+  }
+
+  @media (max-width: 768px) {
+    --footer-flex-direction: column;
+  }
+
+  .MagentaA11y-divider {
+    margin: var(--magentaa11y-spacing-size-8) 0;
+  }
+}
