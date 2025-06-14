@@ -1,9 +1,9 @@
 {
-  "name": "magentaa11y_v2",
+  "name": "magentaa11y",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "https://KArbeRes.github.io/MagentaA11yV2",
+  "homepage": "www.magentaa11y.com",
   "dependencies": {
     "@emotion/styled": "^11.13.0",
     "@material/web": "^2.2.0",
