@@ -7,30 +7,42 @@
     <meta name="theme-color" content="#f6288f" />
     <meta
       name="description"
-      content="MagentaA11y is a tool built to simplify the process of accessibility testing."
-    />
+      content="The accessibility acceptance criteria testing generator by T-Mobile’s Accessibility Resource Center" />
 
     <script>
-      if (!window.location.hash && window.location.pathname !== "/") {
+      if (!window.location.hash && window.location.pathname !== '/') {
         let path = window.location.pathname;
-        window.location.replace(window.location.origin + "/#" + path);
+        window.location.replace(window.location.origin + '/#' + path);
       }
+    </script>
+
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QCM7NRB02Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-QCM7NRB02Q');
     </script>
 
     <!-- Enable iOS standalone mode -->
     <meta name="mobile-web-app-capable" content="yes" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+      content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="MagentaA11y" />
+
+    <meta property="og:title" content="" />
 
     <!-- Apple Touch Icon -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="%PUBLIC_URL%/app-assets/apple-touch-icon.png"
-    />
+      href="%PUBLIC_URL%/app-assets/apple-touch-icon.png" />
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -39,48 +51,39 @@
     <link
       rel="apple-touch-startup-image"
       href="%PUBLIC_URL%/app-assets/apple-touch-startup-image-640x1136.png"
-      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
-    />
+      media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" />
     <link
       rel="apple-touch-startup-image"
       href="%PUBLIC_URL%/app-assets/apple-touch-startup-image-750x1334.png"
-      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
-    />
+      media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" />
     <link
       rel="apple-touch-startup-image"
       href="%PUBLIC_URL%/app-assets/apple-touch-startup-image-828x1792.png"
-      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
-    />
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" />
     <link
       rel="apple-touch-startup-image"
       href="%PUBLIC_URL%/app-assets/apple-touch-startup-image-1125x2436.png"
-      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
-    />
+      media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" />
     <link
       rel="apple-touch-startup-image"
       href="%PUBLIC_URL%/app-assets/apple-touch-startup-image-1242x2688.png"
-      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
-    />
+      media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" />
     <link
       rel="apple-touch-startup-image"
       href="%PUBLIC_URL%/app-assets/apple-touch-startup-image-1536x2048.png"
-      media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)"
-    />
+      media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" />
     <link
       rel="apple-touch-startup-image"
       href="%PUBLIC_URL%/app-assets/apple-touch-startup-image-2048x1536.png"
-      media="(device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
-    />
+      media="(device-width: 1024px) and (device-height: 768px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
 
     <!-- Google Fonts for Material Typography -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
 
     <!-- Import map to load Material Web components from esm.run CDN -->
     <script type="importmap">
@@ -93,8 +96,8 @@
 
     <!-- Load all Material Web components and typography styles -->
     <script type="module">
-      import "@material/web/all.js";
-      import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+      import '@material/web/all.js';
+      import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
       document.adoptedStyleSheets = [
         ...document.adoptedStyleSheets,
         typescaleStyles.styleSheet,
