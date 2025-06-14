@@ -34,5 +34,10 @@ export const usePageTitle = () => {
     }
 
     document.title = `${pageTitle} | Magentaa11y`;
+
+    const ogTitleMeta = document.querySelector('meta[property="og:title"]');
+    if (ogTitleMeta) {
+      ogTitleMeta.setAttribute('content', pageTitle);
+    }
   }, [location]);
 };
