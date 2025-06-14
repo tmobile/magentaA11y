@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "homepage": "www.magentaa11y.com",
+  "homepage": "https://www.magentaa11y.com/",
   "dependencies": {
     "@emotion/styled": "^11.13.0",
     "@material/web": "^2.2.0",
