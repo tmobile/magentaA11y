@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Get the current path (excluding domain, including leading slash)
+      const currentPath = window.location.pathname;
+
+      if (!window.location.hash) {
+        // Check if MagentaA11yV2 is in the path
+        if (currentPath.includes("MagentaA11yV2")) {
+          // Split the path at MagentaA11yV2
+          const pathParts = currentPath.split("MagentaA11yV2");
+          // Take everything after MagentaA11yV2 as the hash route
+          const hashPath = pathParts[1] || "/";
+
+          // Redirect to MagentaA11yV2 with the rest as hash
+          window.location.replace("/MagentaA11yV2/#" + hashPath);
+        } else {
+          // If MagentaA11yV2 is not in the path, use the standard redirect
+          window.location.replace("/#" + currentPath);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <p>
+      If you're not redirected automatically,
+      <a href="/MagentaA11yV2/#/">click here</a>.
+    </p>
+  </body>
+</html>
