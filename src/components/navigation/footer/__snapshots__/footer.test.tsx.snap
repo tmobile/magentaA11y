@@ -110,19 +110,9 @@ exports[`Footer Component - Snapshot Test matches the snapshot 1`] = `
         >
           <a
             class=""
-            href="/how-to-test-criteria/components/overview"
+            href="/how-to-test-criteria/type/overview"
           >
-            Components
-          </a>
-        </li>
-        <li
-          role="listitem"
-        >
-          <a
-            class=""
-            href="/how-to-test-criteria/page-level/overview"
-          >
-            Page Level
+            Type
           </a>
         </li>
       </ul>

@@ -113,13 +113,13 @@ export const explicitPathMappings: PathMap = {
   "/checklist-native/table": "/native-criteria/patterns/table",
   "/checklist-native/tidbit": "/native-criteria/patterns/tidbit",
   "/checklist-native/webviews": "/native-criteria/patterns/webview",
-  "/how-to-test/keyboard-focus": "/how-to-test-criteria/components/keyboard-&-focus",
-  // "/how-to-test/form": "/how-to-test-criteria/components/keyboard-&-focus",
-  "/how-to-test/images": "/how-to-test-criteria/components/images",
-  // "/how-to-test/screen-readers": "/how-to-test-criteria/components/screen-readers",
-  "/how-to-test/link-button": "/how-to-test-criteria/components/links-&-buttons",
-  "/how-to-test/color-contrast": "/how-to-test-criteria/components/color-contrast",
-  "/how-to-test/not-sure-if-it-is-an-issue": "/how-to-test-criteria/components/not-sure-if-it-is-an-issue",
+  "/how-to-test/keyboard-focus": "/how-to-test-criteria/type/keyboard-&-focus",
+  // "/how-to-test/form": "/how-to-test-criteria/type/keyboard-&-focus",
+  "/how-to-test/images": "/how-to-test-criteria/type/images",
+  // "/how-to-test/screen-readers": "/how-to-test-criteria/type/screen-readers",
+  "/how-to-test/link-button": "/how-to-test-criteria/type/links-&-buttons",
+  "/how-to-test/color-contrast": "/how-to-test-criteria/type/color-contrast",
+  "/how-to-test/not-sure-if-it-is-an-issue": "/how-to-test-criteria/type/not-sure-if-it-is-an-issue",
 };
 
 export function getRedirectPath(path: string): string | null {
