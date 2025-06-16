@@ -44,7 +44,7 @@ How to test a webview
 
    - Text resize: N/A only for webview sections and native navigation bar text
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/webview](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/webview)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/webview](https://www.magentaa11y.com/#/native-criteria/patterns/webview)
 
 ## Gherkin
 
@@ -83,7 +83,7 @@ GIVEN THAT I am on a screen with a webview
    - WHEN I have increased text size in device settings
       - THEN text resize is N/A for webview sections and native navigation bar text 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/webview](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/webview)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/webview](https://www.magentaa11y.com/#/native-criteria/patterns/webview)
 
 ## iOS Developer Notes
 ### General Notes

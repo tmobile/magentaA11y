@@ -28,7 +28,7 @@ const PageLayout: React.FC = () => {
     { label: 'Web Criteria', href: '/web-criteria' },
     { label: 'Native App Criteria', href: '/native-criteria' },
     { label: 'How to test', href: '/how-to-test' },
-    { label: 'About us', href: '/about-us' },
+    // { label: 'About us', href: '/about-us' },
     {
       label: 'My criteria',
       href: '/my-criteria',

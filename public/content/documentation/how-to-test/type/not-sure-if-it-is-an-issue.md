@@ -29,7 +29,7 @@ By combining both approaches, we can identify and address accessibility barriers
       On the web page you are testing you encounter a toggle switch that does not work with the left and right arrow keys like you believe it should.
 
       <h3>What to do</h3>
-      To verify if arrow key support is expected for toggles on the web, you can first check MagentaA11y. Locate the <a href="https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/toggle-switch">Toggle Switch</a> component page and review the How to test section. Arrow key support is not mentioned so this is not a requirement for toggle Switch components and so this is not an accessibility issue. 
+      To verify if arrow key support is expected for toggles on the web, you can first check MagentaA11y. Locate the <a href="https://www.magentaa11y.com/#/web-criteria/component/toggle-switch">Toggle Switch</a> component page and review the How to test section. Arrow key support is not mentioned so this is not a requirement for toggle Switch components and so this is not an accessibility issue. 
       </div>
       </div>
 
@@ -136,7 +136,7 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <!-- TODO: When the folder structure for "how to test" is updated, these two links will need to be updated -->
 
-      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test [Keyboard & focus](https://www.magentaa11y.com/MagentaA11yV2#/how-to-test/page-level/keyboard-&-focus/) and [Screen readers](https://www.magentaa11y.com/MagentaA11yV2#/how-to-test/page-level/screen-readers/) for guidance on system settings and methodology. 
+      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test [Keyboard & focus](https://www.magentaa11y.com/#/how-to-test-criteria/type/keyboard-&-focus/) and [Screen readers](https://www.magentaa11y.com/#/how-to-test-criteria/type/screen-readers/) for guidance on system settings and methodology. 
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">

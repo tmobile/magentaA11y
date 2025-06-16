@@ -22,7 +22,7 @@ How to test a list
    - Role: It identifies itself as a list
    - Group: It declares the number of items in the list
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/list](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/list)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/list](https://www.magentaa11y.com/#/web-criteria/component/list)
 
 ## Gherkin
 
@@ -52,7 +52,7 @@ GIVEN THAT I am on a page with a list
       - I HEAR it identifies itself as a list
       - I HEAR it declares the number of items in the list
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/list](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/list)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/list](https://www.magentaa11y.com/#/web-criteria/component/list)
 
 ## Developer Notes
 

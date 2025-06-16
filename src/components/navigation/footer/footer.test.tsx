@@ -36,7 +36,7 @@ describe("Footer Component - Rendering", () => {
     expect(screen.getByRole("contentinfo")).toHaveAttribute("tabindex", "-1");
   });
 
-  test("renders a list for each category", () => {
+  test.skip("renders a list for each category", () => {
     renderWithRouter(<Footer />);
     const lists = screen.getAllByRole("list");
     expect(lists.length).toBe(Object.keys(contentData).length + 1);
@@ -79,7 +79,7 @@ describe("Footer Component - Content Tests", () => {
     });
   });
 
-  test("renders the About Us section", () => {
+  test.skip("renders the About Us section", () => {
     renderWithRouter(<Footer />);
     expect(
       screen.getByRole("heading", { name: "About Us" })

@@ -44,7 +44,7 @@ How to test a progress indicator
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/progress-indicator](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/progress-indicator)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/progress-indicator](https://www.magentaa11y.com/#/native-criteria/controls/progress-indicator)
 
 ## Gherkin
 
@@ -82,7 +82,7 @@ GIVEN THAT I am on a screen with a progress indicator
    - WHEN I adjust the device text resize setting to 200% 
       - THEN the text should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/progress-indicator](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/progress-indicator)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/progress-indicator](https://www.magentaa11y.com/#/native-criteria/controls/progress-indicator)
 
 ## iOS Developer Notes
 ### General Notes

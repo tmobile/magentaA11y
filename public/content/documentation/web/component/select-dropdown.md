@@ -69,7 +69,7 @@ How to test a select dropdown
 
       - State: It indicates which option is selected and if disabled/dimmed/unavailable
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/select-dropdown](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/select-dropdown)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/select-dropdown](https://www.magentaa11y.com/#/web-criteria/component/select-dropdown)
 
 ## Gherkin
 
@@ -113,7 +113,7 @@ GIVEN THAT I am on a page with a select dropdown
 
       - THEN when I doubletap with the select in focus I HEAR the options can be selected
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/select-dropdown](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/select-dropdown)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/select-dropdown](https://www.magentaa11y.com/#/web-criteria/component/select-dropdown)
 
 ## Code examples
 

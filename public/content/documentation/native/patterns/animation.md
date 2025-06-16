@@ -35,7 +35,7 @@ How to test an animation
 
    - Text resize: N/A
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/animation](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/animation)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/animation](https://www.magentaa11y.com/#/native-criteria/patterns/animation)
 
 ## Gherkin
 
@@ -66,7 +66,7 @@ GIVEN THAT I am on a screen with an animation
    - WHEN I have increased text size in device settings
       - THEN text resize interaction is N/A 
  
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/animation](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/animation)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/animation](https://www.magentaa11y.com/#/native-criteria/patterns/animation)
 
 ## iOS Developer Notes
 ### General Notes

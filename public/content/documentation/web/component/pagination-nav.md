@@ -22,7 +22,7 @@ How to test a pagination nav
    - Name: The pagination nav has a logical name ("pagination")
    - Role: The nav landmark is discoverable with screenreader shortcuts
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/pagination-nav](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/pagination-nav)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/pagination-nav](https://www.magentaa11y.com/#/web-criteria/component/pagination-nav)
 
 ## Gherkin
 
@@ -54,7 +54,7 @@ GIVEN THAT I am on a page with a pagination nav
    - THEN when I doubletap with the link in focus I HEAR my browser goes to the intended location
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/pagination-nav](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/pagination-nav)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/pagination-nav](https://www.magentaa11y.com/#/web-criteria/component/pagination-nav)
 
 ## Code examples
 

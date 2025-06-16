@@ -46,7 +46,7 @@ How to test a toggle switch
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/toggle-switch](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/toggle-switch)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/toggle-switch](https://www.magentaa11y.com/#/native-criteria/controls/toggle-switch)
 
 ## Gherkin
 
@@ -87,7 +87,7 @@ GIVEN THAT I am on a screen with a toggle switch
    - WHEN the text resize setting is increased up to 200% 
       - THEN the text within the toggle switch or table row with a toggle switch should remain readable without losing information or functionality 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/toggle-switch](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/toggle-switch)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/toggle-switch](https://www.magentaa11y.com/#/native-criteria/controls/toggle-switch)
 
 ## iOS Developer Notes
 ### General Notes

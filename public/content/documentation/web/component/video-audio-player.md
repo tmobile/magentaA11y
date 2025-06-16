@@ -27,7 +27,7 @@ How to test a video/audio player
    - Group: Audio content never autoplays
    - State: It expresses it state if applicable (pressed, expanded, disabled)
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/video-audio-player](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/video-audio-player)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/video-audio-player](https://www.magentaa11y.com/#/web-criteria/component/video-audio-player)
 
 ## Gherkin
 
@@ -70,7 +70,7 @@ GIVEN THAT I am on a page with a video/audio player
    - Then when I doubletap with the video control in focus I HEAR the intended action occurs
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/video-audio-player](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/video-audio-player)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/video-audio-player](https://www.magentaa11y.com/#/web-criteria/component/video-audio-player)
 
 ## Developer notes
 

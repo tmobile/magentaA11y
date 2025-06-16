@@ -25,7 +25,7 @@ How to test an expander accordion
    - Role: It identifies its role of a button or details
    - State: It expresses its state (expanded/collapsed)
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/expander-accordion](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/expander-accordion)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/expander-accordion](https://www.magentaa11y.com/#/web-criteria/component/expander-accordion)
 
 ## Gherkin
 
@@ -58,7 +58,7 @@ GIVEN THAT I am on a page with an expander accordion
       - I HEAR it expresses its state (expanded/collapsed)
    - THEN when I doubletap with the button in focus I HEAR the intended action occurs
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/expander-accordion](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/expander-accordion)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/expander-accordion](https://www.magentaa11y.com/#/web-criteria/component/expander-accordion)
 
 ## Code examples
 

@@ -25,7 +25,7 @@ How to test a number input
    - Group: Hints or errors are read after the label, related inputs include a group name (Ex: Enter your personal information)
    - State: If applicable, it expresses its state (required, disabled / dimmed / unavailable)
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/number-input](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/number-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/number-input](https://www.magentaa11y.com/#/web-criteria/component/number-input)
 
 ## Gherkin
 
@@ -62,7 +62,7 @@ GIVEN THAT I am on a page with a number input field
       - I HEAR if applicable, it expresses its state (required, disabled / dimmed / unavailable)
    - THEN when I enter a number I HEAR the numeric keypad is revealed
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/number-input](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/number-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/number-input](https://www.magentaa11y.com/#/web-criteria/component/number-input)
 
 ## Code examples
 

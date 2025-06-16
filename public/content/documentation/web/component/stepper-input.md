@@ -32,7 +32,7 @@ How to test a stepper input
    - Group: Its label is read with the input.
    - State: It indicates when the select is expanded/collapsed, indicates which option is selected.
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/stepper-input](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/stepper-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/stepper-input](https://www.magentaa11y.com/#/web-criteria/component/stepper-input)
 
 ## Gherkin
 
@@ -71,14 +71,14 @@ GIVEN THAT I am on a page with a stepper input
    - THEN when I doubletap with the select in focus I HEAR the picker/spinner opens
    - THEN when I doubletap with the button in focus I HEAR the value is incremented or decremented
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/stepper-input](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/stepper-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/stepper-input](https://www.magentaa11y.com/#/web-criteria/component/stepper-input)
 
 ## Code examples
 
 ### Speciality stepper integer input
-Before using this pattern, consider if using a plain [select dropdown](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/select/) might be more clear and simple for all users. A `<select>` does everything that the stepper input does, and with less code. Additionally, a `<select>` is a native HTML component and inherently accessible.
+Before using this pattern, consider if using a plain [select dropdown](https://www.magentaa11y.com/#/web-criteria/component/select/) might be more clear and simple for all users. A `<select>` does everything that the stepper input does, and with less code. Additionally, a `<select>` is a native HTML component and inherently accessible.
 
-The stepper input component is useful for *small range increments*. If the max character count is more than 20, consider use of a [text Input](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/text-input/) field as this component will be cumbersome for people using a mouse.
+The stepper input component is useful for *small range increments*. If the max character count is more than 20, consider use of a [text Input](https://www.magentaa11y.com/#/web-criteria/component/text-input/) field as this component will be cumbersome for people using a mouse.
 
 ```html
 <div>
@@ -182,4 +182,4 @@ The stepper input component is useful for *small range increments*. If the max c
 
    - The buttons will need `aria-disabled="true"` applied when either end of the range is reached.
 
-   - Related alternative patterns: [Select dropdown](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/select/) or an [WAI-ARIA Spin Button](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).
+   - Related alternative patterns: [Select dropdown](https://www.magentaa11y.com/#/web-criteria/component/select/) or an [WAI-ARIA Spin Button](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).

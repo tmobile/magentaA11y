@@ -22,7 +22,7 @@ How to test an iframe
    - Name: The title of the iframe is read if the iframe contains content 
    - Group: If the iframe does not contain content, the iframe is ignored
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/iframe](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/iframe)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/iframe](https://www.magentaa11y.com/#/web-criteria/component/iframe)
 
 ## Gherkin
 
@@ -49,7 +49,7 @@ GIVEN THAT I am on a page with an iframe
       - I HEAR if the iframe does not contain content, the iframe is ignored
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/iframe](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/iframe)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/iframe](https://www.magentaa11y.com/#/web-criteria/component/iframe)
 
 ## Code examples
 

@@ -20,7 +20,7 @@ How to test a separator / horizontal rule
 
    - Name: The element is skipped entirely. It is completely inert.
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/separator-horizontal-rule](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/separator-horizontal-rule)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/separator-horizontal-rule](https://www.magentaa11y.com/#/web-criteria/component/separator-horizontal-rule)
 
 ## Gherkin
 
@@ -46,7 +46,7 @@ GIVEN THAT I am on a page with a separator / horizontal rule
    - I swipe to the separator
       - I HEAR the element is skipped entirely. It is completely inert.
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/separator-horizontal-rule](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/separator-horizontal-rule)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/separator-horizontal-rule](https://www.magentaa11y.com/#/web-criteria/component/separator-horizontal-rule)
 
 ## Developer notes
 

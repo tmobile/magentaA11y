@@ -46,7 +46,7 @@ How to test a time picker
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/time-picker](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/time-picker)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/time-picker](https://www.magentaa11y.com/#/native-criteria/controls/time-picker)
 
 ## Gherkin
 
@@ -87,7 +87,7 @@ GIVEN THAT I am on a screen with a time picker
    - WHEN the text resize setting is increased up to 200% 
       - THEN the text within the time picker should remain readable without losing information or functionality 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/time-picker](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/time-picker)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/time-picker](https://www.magentaa11y.com/#/native-criteria/controls/time-picker)
 
 ## iOS Developer Notes
 ### General Notes

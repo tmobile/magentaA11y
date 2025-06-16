@@ -20,7 +20,7 @@ How to test a strikethrough element
 
       - Name: The content makes sense and is in a logical order
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/strikethrough-content](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/strikethrough-content)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/strikethrough-content](https://www.magentaa11y.com/#/web-criteria/component/strikethrough-content)
 
 ## Gherkin
 
@@ -46,7 +46,7 @@ GIVEN THAT I am on a page with strikethrough content
       - I swipe to browse the content
          - I HEAR the content makes sense and is in a logical order
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/strikethrough-content](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/strikethrough-content)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/strikethrough-content](https://www.magentaa11y.com/#/web-criteria/component/strikethrough-content)
 
 ## Developer notes
 

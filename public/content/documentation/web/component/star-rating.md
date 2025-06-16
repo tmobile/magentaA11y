@@ -26,7 +26,7 @@ How to test a star rating input
       - Group: Each option has an associated label and the radio group name
       - State: It expresses its state (selected, checked, disabled)
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/star-rating](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/star-rating)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/star-rating](https://www.magentaa11y.com/#/web-criteria/component/star-rating)
 
 ## Gherkin
 
@@ -64,7 +64,7 @@ GIVEN THAT I am on a star rating input
       - Then when I doubletap with the radio in focus I HEAR the state is changed
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/star-rating](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/star-rating)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/star-rating](https://www.magentaa11y.com/#/web-criteria/component/star-rating)
 
 
 

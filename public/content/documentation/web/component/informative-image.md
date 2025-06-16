@@ -21,7 +21,7 @@ How to test an informative image
    - Name: The content of the image alt text is clear 
    - Role: It identifies its role as an image or graphic     
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/informative-image](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/informative-image)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/informative-image](https://www.magentaa11y.com/#/web-criteria/component/informative-image)
 
 ## Gherkin
 
@@ -49,7 +49,7 @@ GIVEN THAT I am on a page with an informative image
       - I HEAR the content of the image alt text is clear 
       - I HEAR it identifies its role as an image or graphic 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/informative-image](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/informative-image)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/informative-image](https://www.magentaa11y.com/#/web-criteria/component/informative-image)
 
 ## Is this image decorative or informative?
 

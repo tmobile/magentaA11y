@@ -22,7 +22,7 @@ How to test a main landmark
    - Role: It is discoverable with screenreader shortcuts as main landmark
    - Group: It contains the content portion of the page starting with the H1
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/page-level/main-landmark](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/page-level/main-landmark)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/main-landmark](https://www.magentaa11y.com/#/web-criteria/page-level/main-landmark)
 
 ## Gherkin
 
@@ -52,7 +52,7 @@ GIVEN THAT I am on a page with a main landmark
       - I HEAR It contains the content portion of the page starting with the H1
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/page-level/main-landmark](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/page-level/main-landmark)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/main-landmark](https://www.magentaa11y.com/#/web-criteria/page-level/main-landmark)
 
 ## Code examples
 

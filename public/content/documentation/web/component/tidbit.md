@@ -24,7 +24,7 @@ How to test a tidbit
    - Role: It identifies the info icon as an image and the Tidbit heading as a heading.
    - Group: There is no grouping for the Tidbit.
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tidbit](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tidbit)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/tidbit](https://www.magentaa11y.com/#/web-criteria/component/tidbit)
 
 ## Gherkin
 
@@ -58,7 +58,7 @@ GIVEN THAT I am on a page with a tidbit
       - I HEAR it identifies the info icon as an image and the Tidbit heading as a heading
       - I HEAR there is no grouping for the Tidbit
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tidbit](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tidbit)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/tidbit](https://www.magentaa11y.com/#/web-criteria/component/tidbit)
 
 ## Code examples
 

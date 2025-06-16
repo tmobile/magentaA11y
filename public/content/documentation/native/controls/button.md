@@ -31,7 +31,7 @@ How to test a button
 
     - Text resize: Text can resize up to 200% without losing information
 
-Full information: https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/button
+Full information: https://www.magentaa11y.com/#/native-criteria/controls/button
 
 ## Gherkin
 ### #a11y - Native App Accessibility Acceptance Criteria
@@ -70,7 +70,7 @@ GIVEN THAT I am on a screen with a button
    - WHEN I adjust the device text resize setting to 200% 
       - THEN the text on the button should resize up to 200% without losing information 
 
-Full information: https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/button
+Full information: https://www.magentaa11y.com/#/native-criteria/controls/button
 
 ## Videos
 
