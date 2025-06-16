@@ -136,7 +136,7 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <!-- TODO: When the folder structure for "how to test" is updated, these two links will need to be updated -->
 
-      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test [Keyboard & focus](https://www.magentaa11y.com/#/how-to-test-criteria/type/keyboard-&-focus/) and [Screen readers](https://www.magentaa11y.com/#/how-to-test-criteria/type/screen-readers/) for guidance on system settings and methodology. 
+      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test [Keyboard & focus](/how-to-test-criteria/type/keyboard-&-focus) and [Screen readers](/how-to-test-criteria/type/screen-readers) for guidance on system settings and methodology. 
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">

@@ -26,7 +26,7 @@ How to test a toast snackbar
    - Group: If it is possible to close the toast, focus then returns to a logical place in the page
    - State: It remains open until closed by user
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/toast-snackbar](https://www.magentaa11y.com/#/web-criteria/component/toast-snackbar)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/toast-snackbar](/web-criteria/component/toast-snackbar)
 
 ## Gherkin
 
@@ -58,7 +58,7 @@ GIVEN THAT I am on a page with a toast snackbar
       - I HEAR if it is possible to close the toast, focus then returns to a logical place in the page
       - I HEAR it remains open until closed by user
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/toast-snackbar](https://www.magentaa11y.com/#/web-criteria/component/toast-snackbar)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/toast-snackbar](/web-criteria/component/toast-snackbar)
 
 ## Rethinking Toast Snackbars
 

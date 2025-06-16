@@ -26,7 +26,7 @@ How to test a range slider input
    - Group: Its label is read with the input
    - State: Its current value
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/range-slider](https://www.magentaa11y.com/#/web-criteria/component/range-slider)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/range-slider](/web-criteria/component/range-slider)
 
 ## Gherkin
 
@@ -61,7 +61,7 @@ GIVEN THAT I am on a page with a range slider input
       - I HEAR its current value
    - THEN when I swipe up/down in iOS or use the volume buttons in Android I HEAR the value is changed one step
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/range-slider](https://www.magentaa11y.com/#/web-criteria/component/range-slider)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/range-slider](/web-criteria/component/range-slider)
 
 ## Code examples
 

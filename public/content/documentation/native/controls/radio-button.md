@@ -30,7 +30,7 @@ How to test a radio button
 
    - Text resize: Text label can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/radio-button](https://www.magentaa11y.com/#/native-criteria/controls/radio-button)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/radio-button](/native-criteria/controls/radio-button)
 
 ## Gherkin
 
@@ -70,7 +70,7 @@ GIVEN THAT I am on a screen with a radio button
    - WHEN I adjust the device text resize setting to 200% 
       - THEN the text label should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/radio-button](https://www.magentaa11y.com/#/native-criteria/controls/radio-button)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/radio-button](/native-criteria/controls/radio-button)
 
 ## Videos
 

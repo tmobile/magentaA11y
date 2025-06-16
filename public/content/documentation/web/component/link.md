@@ -24,7 +24,7 @@ How to test a link
    - Role: It identifies itself as a link
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/link](https://www.magentaa11y.com/#/web-criteria/component/link)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/link](/web-criteria/component/link)
 
 ## Gherkin
 
@@ -56,7 +56,7 @@ GIVEN THAT I am on a page with a link
    - THEN when I doubletap with the link in focus I HEAR my browser goes somewhere
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/link](https://www.magentaa11y.com/#/web-criteria/component/link)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/link](/web-criteria/component/link)
 
 
 ## Links vs buttons

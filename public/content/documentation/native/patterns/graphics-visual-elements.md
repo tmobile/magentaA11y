@@ -46,7 +46,7 @@ How to test a graphic/visual element
 
    - Text resize: Text can resize up to 200% without losing information. Text in images do not resize
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/graphics-visual-elements](https://www.magentaa11y.com/#/native-criteria/patterns/graphics-visual-elements)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/graphics-visual-elements](/native-criteria/patterns/graphics-visual-elements)
 
 ## Gherkin
 
@@ -89,7 +89,7 @@ GIVEN THAT I am on a screen with a graphic/visual element
       - THEN text should resize up to 200% without losing information
          - AND text within images should not resize
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/graphics-visual-elements](https://www.magentaa11y.com/#/native-criteria/patterns/graphics-visual-elements)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/graphics-visual-elements](/native-criteria/patterns/graphics-visual-elements)
 
 ## iOS Developer Notes
 ### General Notes

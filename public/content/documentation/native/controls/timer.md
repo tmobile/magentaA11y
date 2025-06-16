@@ -28,7 +28,7 @@ How to test a timer
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/timer](https://www.magentaa11y.com/#/native-criteria/controls/timer)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/timer](/native-criteria/controls/timer)
 
 ## Gherkin
 
@@ -66,7 +66,7 @@ GIVEN THAT I am on a screen with a timer
    - WHEN a user adjusts text resizing settings up to 200% 
       - THEN all text must remain readable without loss of information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/timer](https://www.magentaa11y.com/#/native-criteria/controls/timer)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/timer](/native-criteria/controls/timer)
 
 ## iOS Developer Notes
 ### General Notes

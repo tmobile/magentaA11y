@@ -32,7 +32,7 @@ How to test a snackbar/toast
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/snackbar-toast](https://www.magentaa11y.com/#/native-criteria/notifications/snackbar-toast)
+Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/snackbar-toast](/native-criteria/notifications/snackbar-toast)
 
 ## Gherkin
 
@@ -77,7 +77,7 @@ GIVEN THAT I am on a screen with a snackbar/toast
       - THEN all text within the snackbar should remain fully readable
          - AND no content or functionality should be lost or cut off 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/snackbar-toast](https://www.magentaa11y.com/#/native-criteria/notifications/snackbar-toast)
+Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/snackbar-toast](/native-criteria/notifications/snackbar-toast)
 
 ## iOS Developer Notes
 

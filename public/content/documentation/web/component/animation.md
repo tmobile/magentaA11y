@@ -69,7 +69,7 @@ GIVEN THAT I am on a page with an animation
 
    - WHEN I use reduced motion THEN I see large motion, animations or effects are reduced or eliminated
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/animation](https://www.magentaa11y.com/#/web-criteria/component/animation)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/animation](/web-criteria/component/animation)
 
 ## Developer Notes
 

@@ -47,7 +47,7 @@ How to test a modal
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](https://www.magentaa11y.com/#/native-criteria/controls/segmented-control)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](/native-criteria/controls/segmented-control)
 
 ## Gherkin
 
@@ -88,7 +88,7 @@ GIVEN THAT I am on a screen with a modal
    - WHEN I have increased text size in device settings
         - THEN text should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](https://www.magentaa11y.com/#/native-criteria/controls/segmented-control)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](/native-criteria/controls/segmented-control)
 
 ## iOS Developer Notes
 ### General Notes

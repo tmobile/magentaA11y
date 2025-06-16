@@ -24,7 +24,7 @@ How to test a text input
    - Group: Hints or errors are read after the label, related inputs include a group name (Ex: Enter your personal information)
    - State: If applicable, it expresses its state (required, disabled / dimmed / unavailable)
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/text-input](https://www.magentaa11y.com/#/web-criteria/component/text-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/text-input](/web-criteria/component/text-input)
 
 ## Gherkin
 
@@ -56,7 +56,7 @@ GIVEN THAT I am on a page with a text input
       - I HEAR hints or errors are read after the label, related inputs include a group name (Ex: Enter your personal information)
       - I HEAR if applicable, it expresses its state (required, disabled / dimmed / unavailable)
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/text-input](https://www.magentaa11y.com/#/web-criteria/component/text-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/text-input](/web-criteria/component/text-input)
 
 ## Code examples
 

@@ -30,7 +30,7 @@ How to test a date picker dialog
    - Group: The launch button indicates it has a popup, menu or dialog; days are announced with month and year
    - State: Date options express state (pressed, selected, disabled/dimmed)
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](https://www.magentaa11y.com/#/web-criteria/web/date-picker)
+Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/web-criteria/web/date-picker)
 
 ## Gherkin
 
@@ -79,7 +79,7 @@ GIVEN THAT I am on a page with a date picker dialog
    - THEN when I swipe through the dialog I HEAR the date options and controls come into focus
    - THEN when I doubletap with the selection or button in focus I HEAR the intended action occurs
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](https://www.magentaa11y.com/#/web-criteria/web/date-picker)
+Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/web-criteria/web/date-picker)
 
 ## Developer Notes
 

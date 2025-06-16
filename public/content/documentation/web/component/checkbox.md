@@ -25,7 +25,7 @@ How to test a checkbox
    - Group: Hints or errors are read after the label and related inputs include a group name (ex: Account settings)
    - State: It expresses its state (checked/unchecked, disabled)
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/checkbox](https://www.magentaa11y.com/#/web-criteria/component/checkbox)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/checkbox](/web-criteria/component/checkbox)
 
 ## Gherkin
 
@@ -60,7 +60,7 @@ GIVEN THAT I am on a page with a checkbox
       - I HEAR it expresses its state (checked/unchecked, disabled)
    - THEN when I doubletap with the checkbox in focus I HEAR the state is changed
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/checkbox](https://www.magentaa11y.com/#/web-criteria/component/checkbox)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/checkbox](/web-criteria/component/checkbox)
 
 ## Code examples
 

@@ -28,7 +28,7 @@ How to test a header
 
    - Group: It typically contains the name and primary navigation of the website
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/complex-graphics](https://www.magentaa11y.com/#/web-criteria/component/complex-graphics)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/complex-graphics](/web-criteria/component/complex-graphics)
 
 ## Gherkin
 
@@ -63,7 +63,7 @@ GIVEN THAT I am on a page with a header landmark
    - I HEAR It typically contains the name and primary navigation of the website
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/complex-graphics](https://www.magentaa11y.com/#/web-criteria/component/complex-graphics)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/complex-graphics](/web-criteria/component/complex-graphics)
 
 ## Developer Notes
 

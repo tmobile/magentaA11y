@@ -47,7 +47,7 @@ How to test a segemented control / tabs
 
    - Text resize: This element is exempt from text resizing requirements
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](https://www.magentaa11y.com/#/native-criteria/controls/segmented-control)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](/native-criteria/controls/segmented-control)
 
 ## Gherkin
 
@@ -89,7 +89,7 @@ GIVEN THAT I am on a screen with a segemented control / tabs
    - WHEN I adjust the device text resize setting 
       - THEN this element remains exempt from text resizing requirements 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](https://www.magentaa11y.com/#/native-criteria/controls/segmented-control)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/segmented-control](/native-criteria/controls/segmented-control)
 
 ## iOS Developer Notes
 ### General Notes

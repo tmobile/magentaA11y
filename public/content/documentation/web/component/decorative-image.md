@@ -17,7 +17,7 @@ How to test a decorative image
 3. Listen to screenreader output on all devices
     - Role: The image is ignored
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/decorative-image](https://www.magentaa11y.com/#/web-criteria/component/decorative-image)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/decorative-image](/web-criteria/component/decorative-image)
 
 ## Gherkin
 
@@ -41,7 +41,7 @@ GIVEN THAT I am on a page with a decorative image
     - I swipe to browse to an image
       - I HEAR The image is ignored
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/decorative-image](https://www.magentaa11y.com/#/web-criteria/component/decorative-image)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/decorative-image](/web-criteria/component/decorative-image)
 
 ## Decorative images
 
