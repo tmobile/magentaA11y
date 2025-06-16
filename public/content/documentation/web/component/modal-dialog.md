@@ -29,7 +29,7 @@ How to test a modal dialog
    - Group: When closed, focus returns to the launch button.
    - State: When open, content behind the modal remains inert.
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/modal-dialog](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/modal-dialog)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/modal-dialog](https://www.magentaa11y.com/#/web-criteria/component/modal-dialog)
 
 ## Gherkin
 
@@ -73,7 +73,7 @@ GIVEN THAT I am on a page with a modal dialog
    - THEN when I swipe to move focus to the dismiss/close button AND THEN double tap on the close button I HEAR focus returns to the launch button
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/modal-dialog](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/modal-dialog)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/modal-dialog](https://www.magentaa11y.com/#/web-criteria/component/modal-dialog)
 
 ## Required attributes
 

@@ -44,7 +44,7 @@ How to test a checkbox
 
    - Text resize: Text label can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/checkbox](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/checkbox)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/checkbox](https://www.magentaa11y.com/#/native-criteria/controls/checkbox)
 
 ## Gherkin
 
@@ -84,7 +84,7 @@ GIVEN THAT I am on a screen with a checkbox
    - WHEN I adjust the device text resize setting to 200% 
       - THEN the text label should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/checkbox](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/checkbox)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/checkbox](https://www.magentaa11y.com/#/native-criteria/controls/checkbox)
 
 ## iOS Developer Notes
 ### General Notes

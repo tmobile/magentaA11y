@@ -21,7 +21,7 @@ How to test a hint, help, or error
    - Name: After the input name, the role and state is read. Then the hint, help, or error is read
    - Role: When it appears dynamically, an error is read automatically
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/help-hint-error](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/help-hint-error)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hint-error](https://www.magentaa11y.com/#/web-criteria/component/help-hint-error)
 
 ## Gherkin
 
@@ -49,7 +49,7 @@ GIVEN THAT I am on a page with a hint, help, or error
       - I HEAR after the input name, the role and state is read, THEN the hint, help, or error is read
       - I HEAR when it appears dynamically, an error is read automatically
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/help-hint-error](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/help-hint-error)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hint-error](https://www.magentaa11y.com/#/web-criteria/component/help-hint-error)
 
 ## Code examples
 

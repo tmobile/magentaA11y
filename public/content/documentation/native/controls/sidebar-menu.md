@@ -50,7 +50,7 @@ How to test a sidebar navigation menu
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/sidebar-menu](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/sidebar-menu)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/sidebar-menu](https://www.magentaa11y.com/#/native-criteria/controls/sidebar-menu)
 
 ## Gherkin
 
@@ -98,7 +98,7 @@ GIVEN THAT I am on a screen with a sidebar navigation menu
    - WHEN I adjust the device text resize setting to 200%
       - THEN the text should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/sidebar-menu](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/sidebar-menu)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/sidebar-menu](https://www.magentaa11y.com/#/native-criteria/controls/sidebar-menu)
 
 ## iOS Developer Notes
 ### General Notes

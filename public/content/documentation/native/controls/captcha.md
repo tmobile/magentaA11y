@@ -30,7 +30,7 @@ How to test a captcha
 
     - Text resize: n/a
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/captcha](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/captcha)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captcha](https://www.magentaa11y.com/#/native-criteria/controls/captcha)
 
 ## Gherkin
 
@@ -67,7 +67,7 @@ GIVEN THAT I am on a screen with a captcha
     - WHEN a user adjusts text resizing settings up to 200% 
         - THEN text resizing does not apply to the captcha functionality (n/a) 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/captcha](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/captcha)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captcha](https://www.magentaa11y.com/#/native-criteria/controls/captcha)
 
 ## iOS Developer Notes
 

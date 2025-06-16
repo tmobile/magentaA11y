@@ -24,7 +24,7 @@ How to test focus
    - Navigate: Focus moves left to right, top to bottom in a logical order
    - Visible focus indicator: Is clearly shown around content when tapped or with navigation gestures
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/focus](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/focus)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/focus](https://www.magentaa11y.com/#/native-criteria/patterns/focus)
 
 ## Gherkin
 
@@ -62,7 +62,7 @@ GIVEN THAT I am on a screen with focus
       - THEN the focus should visibly move to all controls without losing information 
          - AND a visible focus indicator should be clearly shown around controls in a logical order without losing information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/focus](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/focus)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/focus](https://www.magentaa11y.com/#/native-criteria/patterns/focus)
 
 ## iOS Developer Notes
 ### General Notes

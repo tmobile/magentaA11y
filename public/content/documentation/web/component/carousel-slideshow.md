@@ -29,7 +29,7 @@ How to test a carousel/slideshow
    - Reduced motion: Carousel does not auto-advance, motion transitions are disabled
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/carousel-slideshow](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/carousel-slideshow)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow](https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow)
 
 ## Gherkin
 
@@ -65,7 +65,7 @@ GIVEN THAT I am on a page with a carousel/slideshow
    - WHEN I use reduced motion THEN I see Carousel does not auto-advance, motion transitions are disabled
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/carousel-slideshow](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/carousel-slideshow)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow](https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow)
 
 ## Our General Advice
 

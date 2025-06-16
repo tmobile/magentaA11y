@@ -25,7 +25,7 @@ How to test a strike-through text
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/strike-through](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/strike-through)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/strike-through](https://www.magentaa11y.com/#/native-criteria/patterns/strike-through)
 
 ## Gherkin
 
@@ -56,7 +56,7 @@ GIVEN THAT I am on a screen with a strike-through text
    - WHEN I have increased text size in device settings 
       - THEN text should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/strike-through](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/strike-through)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/strike-through](https://www.magentaa11y.com/#/native-criteria/patterns/strike-through)
 
 ## iOS Developer Notes
 ### General Notes

@@ -46,7 +46,7 @@ How to test a carousel
       - Text resize: Text can resize up to 200% without losing information
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/carousel](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/carousel)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/carousel](https://www.magentaa11y.com/#/native-criteria/controls/carousel)
 
 ## Gherkin
 
@@ -93,7 +93,7 @@ GIVEN THAT I am on a screen with a carousel
     - WHEN a user adjusts text resizing settings up to 200% 
         - THEN all text must remain readable without loss of information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/carousel](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/carousel)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/carousel](https://www.magentaa11y.com/#/native-criteria/controls/carousel)
 
 ## iOS Developer Notes
 ### General Notes

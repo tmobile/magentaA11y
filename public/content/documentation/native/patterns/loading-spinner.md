@@ -24,7 +24,7 @@ How to test a loading spinner
 
    - Text resize: N/A
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/loading-spinner](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/loading-spinner)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/loading-spinner](https://www.magentaa11y.com/#/native-criteria/patterns/loading-spinner)
 
 ## Gherkin
 
@@ -55,7 +55,7 @@ GIVEN THAT I am on a screen with a loading spinner
    - WHEN I have increased text size in device settings
       - THEN text resize interaction is N/A 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/loading-spinner](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/patterns/loading-spinner)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/loading-spinner](https://www.magentaa11y.com/#/native-criteria/patterns/loading-spinner)
 
 ## iOS Developer Notes
 ### General Notes

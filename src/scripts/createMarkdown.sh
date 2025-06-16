@@ -42,7 +42,7 @@ esac
 
 # Generate dynamic URL path
 SLUG_PATH=$(echo "$RELATIVE_PATH/$1" | sed "s|^$SECTION/||" | sed 's|/|/|g')
-FULL_LINK="https://www.magentaa11y.com/MagentaA11yV2#/${CRITERIA_PREFIX}/${SLUG_PATH}"
+FULL_LINK="https://www.magentaa11y.com/#/${CRITERIA_PREFIX}/${SLUG_PATH}"
 
 # Check if the directory exists, if not create it
 if [ ! -d "$FULL_PATH" ]; then

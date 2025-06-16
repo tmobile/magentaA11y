@@ -32,7 +32,7 @@ How to test tabs
 
       - State: It expresses its state (selected/pressed/checked)
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tabs](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tabs)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/tabs](https://www.magentaa11y.com/#/web-criteria/component/tabs)
 
 ## Gherkin
 
@@ -80,7 +80,7 @@ GIVEN THAT I am on a page with tabs
 
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tabs](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/tabs)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/tabs](https://www.magentaa11y.com/#/web-criteria/component/tabs)
 
 ## Tab groups
 

@@ -28,7 +28,7 @@ How to test a step indicator
 
     - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/step-indicator](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/step-indicator)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/step-indicator](https://www.magentaa11y.com/#/native-criteria/controls/step-indicator)
 
 ## Gherkin
 
@@ -66,7 +66,7 @@ GIVEN THAT I am on a screen with a step indicator
    - WHEN I adjust the device text resize setting to 200%
       - THEN the text should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/step-indicator](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/step-indicator)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/step-indicator](https://www.magentaa11y.com/#/native-criteria/controls/step-indicator)
 
 ## iOS Developer Notes
 ### General Notes

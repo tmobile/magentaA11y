@@ -37,7 +37,7 @@ How to test a chip
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/chip](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/chip)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/chip](https://www.magentaa11y.com/#/native-criteria/controls/chip)
 
 ## Gherkin
 
@@ -76,7 +76,7 @@ GIVEN THAT I am on a screen with a chip
    - WHEN I adjust the device text resize setting to 200% 
       - THEN the text label should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/chip](https://www.magentaa11y.com/MagentaA11yV2#/native-criteria/controls/chip)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/chip](https://www.magentaa11y.com/#/native-criteria/controls/chip)
 
 ## iOS Developer Notes
 There is no native chip element for iOS.  The notes below are suggestions and accessibility guidance.

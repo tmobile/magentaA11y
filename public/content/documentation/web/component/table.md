@@ -22,7 +22,7 @@ How to test a table
    - Role: It identifies itself as a table
    - Group: Column headers and row headers are identified with screenreader shortcuts
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/table](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/table)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/table](https://www.magentaa11y.com/#/web-criteria/component/table)
 
 ## Gherkin
 
@@ -53,7 +53,7 @@ GIVEN THAT I am on a page with a table
       - I HEAR column headers and row headers are identified with screenreader shortcuts
 
 
-Full information: [https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/table](https://www.magentaa11y.com/MagentaA11yV2#/web-criteria/component/table)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/table](https://www.magentaa11y.com/#/web-criteria/component/table)
 
 
 ## Code examples
