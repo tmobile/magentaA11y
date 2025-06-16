@@ -22,7 +22,7 @@ How to test a alert notification
    - Name: The alert is read when it appears (BUT focus DOES NOT transfer automatically when the alert appears)
    - Role: It identifies itself as an alert
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/alert-notification](https://www.magentaa11y.com/#/web-criteria/component/alert-notification)
+Full information: https://www.magentaa11y.com/#/web-criteria/component/alert-notification
 
 ## Gherkin
 
