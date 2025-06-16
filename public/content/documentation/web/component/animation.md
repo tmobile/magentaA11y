@@ -29,7 +29,7 @@ How to test an animation
 4. Device OS Settings
    - Reduced motion: Large motion, animations or effects are reduced or eliminated
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/animation](https://www.magentaa11y.com/#/web-criteria/component/animation)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/animation](/web-criteria/component/animation)
 
 ## Gherkin
 
