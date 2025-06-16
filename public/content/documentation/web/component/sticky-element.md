@@ -21,7 +21,7 @@ How to test a sticky element
    - Group: Interactive elements are read in logical order in relation to the whole page
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/sticky-element](https://www.magentaa11y.com/#/web-criteria/component/sticky-element)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/sticky-element](/web-criteria/component/sticky-element)
 
 ## Gherkin
 
@@ -50,7 +50,7 @@ GIVEN THAT I am on a page with a sticky element
       - I HEAR Interactive elements are read in logical order in relation to the whole page
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/sticky-element](https://www.magentaa11y.com/#/web-criteria/component/sticky-element)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/sticky-element](/web-criteria/component/sticky-element)
 
 <!-- ## Developer Notes
 

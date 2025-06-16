@@ -23,7 +23,7 @@ How to test a heading
       - Role: It identifies itself as a heading and its level
       - Group: It is logically ordered, starting with a single h1, sections titled by h2, and subsections with h3
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/heading](https://www.magentaa11y.com/#/web-criteria/component/heading)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/heading](/web-criteria/component/heading)
 
 ## Gherkin
 
@@ -56,7 +56,7 @@ GIVEN THAT I am on a page with a heading
          - I HEAR it is logically ordered, starting with a single h1, sections titled by h2, and subsections with h3
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/heading](https://www.magentaa11y.com/#/web-criteria/component/heading)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/heading](/web-criteria/component/heading)
 
 ## Headings are not focusable with the tab key
 

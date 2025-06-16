@@ -25,7 +25,7 @@ How to test a skip link
    - Group: It is typically the first element in the page
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/skip-link](https://www.magentaa11y.com/#/web-criteria/page-level/skip-link)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/skip-link](/web-criteria/page-level/skip-link)
 
 ## Gherkin
 
@@ -60,7 +60,7 @@ GIVEN THAT I am on a page with a skip link
    - THEN when I doubletap with the link in focus I HEAR my focus moves directly to the targeted element
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/skip-link](https://www.magentaa11y.com/#/web-criteria/page-level/skip-link)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/skip-link](/web-criteria/page-level/skip-link)
 
 ## Code examples
 

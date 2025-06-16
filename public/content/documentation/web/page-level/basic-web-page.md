@@ -79,8 +79,8 @@ Landmarks give structure to the page for the screenreader user to be able to nav
 
 Each page must include:
 
-- [Header](https://www.magentaa11y.com/#/web-criteria/page-level/header-landmark)
-- [Nav](https://www.magentaa11y.com/#/web-criteria/page-level/navigation-landmark) 
+- [Header](/web-criteria/page-level/header-landmark)
+- [Nav](/web-criteria/page-level/navigation-landmark) 
 - [Main]() TODO
 - [Footer]() TODO
 

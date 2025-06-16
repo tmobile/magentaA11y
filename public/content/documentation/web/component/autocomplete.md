@@ -25,7 +25,7 @@ How to test an autocomplete input with listbox
    - Group: Its label is read and selected options are read
    - State: It indicates the value of the text input
      
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/autocomplete](https://www.magentaa11y.com/#/web-criteria/component/autocomplete)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/autocomplete](/web-criteria/component/autocomplete)
 
 ## Gherkin
 
@@ -63,7 +63,7 @@ GIVEN THAT I am on a page with an autocomplete input with listbox
    - THEN when I doubletap with the select in focus I HEAR the selected option is changed
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/autocomplete](https://www.magentaa11y.com/#/web-criteria/component/autocomplete)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/autocomplete](/web-criteria/component/autocomplete)
 
 ## Code Examples
 

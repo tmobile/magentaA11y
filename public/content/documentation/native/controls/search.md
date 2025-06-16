@@ -45,7 +45,7 @@ How to test a search
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/search](https://www.magentaa11y.com/#/native-criteria/controls/search)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/search](/native-criteria/controls/search)
 
 ## Gherkin
 
@@ -84,7 +84,7 @@ GIVEN THAT I am on a screen with a search
    - WHEN I adjust the device text resize setting to 200% 
       - THEN the text within the search field should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/search](https://www.magentaa11y.com/#/native-criteria/controls/search)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/search](/native-criteria/controls/search)
 
 ## iOS Developer Notes
 ### General Notes

@@ -45,7 +45,7 @@ How to test a text input
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/text-input](https://www.magentaa11y.com/#/native-criteria/controls/text-input)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/text-input](/native-criteria/controls/text-input)
 
 ## Gherkin
 
@@ -83,7 +83,7 @@ GIVEN THAT I am on a screen with a text input
    - WHEN I adjust the device text resize setting to 200%
       - THEN the text within the text input should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/text-input](https://www.magentaa11y.com/#/native-criteria/controls/text-input)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/text-input](/native-criteria/controls/text-input)
 
 ## iOS Developer Notes
 ### General Notes

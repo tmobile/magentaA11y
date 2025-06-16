@@ -22,7 +22,7 @@ How to test a progress indicator
    - Role: It identifies itself as some kind of progress indicator
    - State: It expresses its current value if it dynamically changes
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/progress-indicator](https://www.magentaa11y.com/#/web-criteria/component/progress-indicator)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/progress-indicator](/web-criteria/component/progress-indicator)
 
 ## Gherkin
 
@@ -52,7 +52,7 @@ GIVEN THAT I am on a page with a progress indicator
       - I HEAR it identifies itself as some kind of progress indicator
       - I HEAR it expresses its current value if it dynamically changes
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/progress-indicator](https://www.magentaa11y.com/#/web-criteria/component/progress-indicator)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/progress-indicator](/web-criteria/component/progress-indicator)
 
 ## Developer Notes
 

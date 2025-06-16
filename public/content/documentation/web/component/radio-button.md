@@ -32,7 +32,7 @@ How to test a radio button
 
       - State: It expresses its state (selected, checked, disabled)
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button](https://www.magentaa11y.com/#/web-criteria/form/radio-button)
+Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button](/web-criteria/form/radio-button)
 
 ## Gherkin
 
@@ -77,7 +77,7 @@ GIVEN THAT I am on a page with a radio button
       - THEN when I doubletap with the radio in focus I HEAR the state is changed
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button](https://www.magentaa11y.com/#/web-criteria/form/radio-button)
+Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button](/web-criteria/form/radio-button)
 
 ## Code examples
 

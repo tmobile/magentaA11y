@@ -25,7 +25,7 @@ How to test a textarea multiline input
    - State: If applicable, it expresses its state (required, disabled / dimmed / unavailable)
    - Status: Character counter updates dynamically after keypress and a short delay
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/textarea-multiline-input](https://www.magentaa11y.com/#/web-criteria/component/textarea-multiline-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/textarea-multiline-input](/web-criteria/component/textarea-multiline-input)
 
 ## Gherkin
 
@@ -58,7 +58,7 @@ GIVEN THAT I am on a page with a textarea multiline input
       - I HEAR Character counter updates dynamically after keypress and a short delay
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/textarea-multiline-input](https://www.magentaa11y.com/#/web-criteria/component/textarea-multiline-input)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/textarea-multiline-input](/web-criteria/component/textarea-multiline-input)
 
 
 

@@ -31,7 +31,7 @@ How to test a date time picker
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/inputs/date-time-picker](https://www.magentaa11y.com/#/native-criteria/inputs/date-time-picker)
+Full information: [https://www.magentaa11y.com/#/native-criteria/inputs/date-time-picker](/native-criteria/inputs/date-time-picker)
 
 ## Gherkin
 
@@ -74,7 +74,7 @@ GIVEN THAT I am on a screen with a date time picker
    - WHEN the user adjusts text resizing settings up to 200% 
       - THEN all text must remain readable without loss of information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/inputs/date-time-picker](https://www.magentaa11y.com/#/native-criteria/inputs/date-time-picker)
+Full information: [https://www.magentaa11y.com/#/native-criteria/inputs/date-time-picker](/native-criteria/inputs/date-time-picker)
 
 ## iOS Developer Notes
 ### General Notes

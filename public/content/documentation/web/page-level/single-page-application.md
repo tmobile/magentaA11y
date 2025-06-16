@@ -22,7 +22,7 @@ How to test a single page application (SPA)
    - Name: New content is announced or indicated 
    - Group: Browsing and focus starts consistently at top of new page content or top of page
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/single-page-application](https://www.magentaa11y.com/#/web-criteria/component/single-page-application)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/single-page-application](/web-criteria/component/single-page-application)
 
 ## Gherkin
 
@@ -52,7 +52,7 @@ GIVEN THAT I am on a page built with a SPA:
       - I HEAR new content is announced or indicated 
       - I HEAR browsing and focus starts consistently at top of new page content or top of page
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/single-page-application](https://www.magentaa11y.com/#/web-criteria/component/single-page-application)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/single-page-application](/web-criteria/component/single-page-application)
 
 ## Focus management & consistency
 

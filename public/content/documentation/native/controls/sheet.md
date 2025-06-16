@@ -31,7 +31,7 @@ Enter will also activate any other interactive element in the sheet.
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/sheet](https://www.magentaa11y.com/#/native-criteria/controls/sheet)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/sheet](/native-criteria/controls/sheet)
 
 ## Gherkin
 
@@ -78,7 +78,7 @@ GIVEN THAT I am on a screen with a sheet
    - WHEN I adjust the device text resize setting to 200%
       - THEN all text must remain readable without loss of information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/sheet](https://www.magentaa11y.com/#/native-criteria/controls/sheet)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/sheet](/native-criteria/controls/sheet)
 
 ## iOS Developer Notes
 ### General Notes

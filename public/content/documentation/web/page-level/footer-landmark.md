@@ -20,7 +20,7 @@ How to test a footer landmark
    - Role: It is discoverable with screenreader shortcuts as a footer or contentinfo landmark
    - Group: It typically contains copyright information, navigation links, and privacy statements.
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/footer](https://www.magentaa11y.com/#/web-criteria/page-level/footer)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/footer](/web-criteria/page-level/footer)
 
 ## Gherkin
 
@@ -46,7 +46,7 @@ GIVEN THAT I am on a page with a footer landmark
       - I HEAR It typically contains copyright information, navigation links, and privacy statements.
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/footer](https://www.magentaa11y.com/#/web-criteria/page-level/footer)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/footer](/web-criteria/page-level/footer)
 
 ## Code examples
 

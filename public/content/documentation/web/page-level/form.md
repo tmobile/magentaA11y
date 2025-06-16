@@ -24,7 +24,7 @@ How to test a web form for accessibility
    - Instructions: Presented before the form or inline, announced in order.
    - Errors: Errors are announced when inputs are invalid.
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/form](https://www.magentaa11y.com/#/web-criteria/page-level/form)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/form](/web-criteria/page-level/form)
 
 ## Gherkin
 
@@ -53,7 +53,7 @@ GIVEN THAT I am on a page with a web form
      - I HEAR It is discoverable with screenreader shortcuts as a form landmark along with its name
      - I HEAR the screenreader switch from browse shortcuts to forms shortcuts
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/form](https://www.magentaa11y.com/#/web-criteria/page-level/form)
+Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/form](/web-criteria/page-level/form)
 
 ## Building accessible forms
 

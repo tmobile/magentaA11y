@@ -24,7 +24,7 @@ How to test a decorative image or icon
 
    - Text resize: N/A
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/image-decorative](https://www.magentaa11y.com/#/native-criteria/patterns/image-decorative)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/image-decorative](/native-criteria/patterns/image-decorative)
 
 ## Gherkin
 
@@ -57,7 +57,7 @@ GIVEN THAT I am on a screen with a decorative image or icon
       - AND I swipe to browse to an image or icon
          - I HEAR the image or icon is ignored, N/A
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/image-decorative](https://www.magentaa11y.com/#/native-criteria/patterns/image-decorative)
+Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/image-decorative](/native-criteria/patterns/image-decorative)
 
 ## iOS Developer Notes
 ### General Notes

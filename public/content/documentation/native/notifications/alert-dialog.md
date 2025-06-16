@@ -47,7 +47,7 @@ How to test an alert dialog
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/alert-dialog](https://www.magentaa11y.com/#/native-criteria/notifications/alert-dialog)
+Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/alert-dialog](/native-criteria/notifications/alert-dialog)
 
 ## Gherkin
 
@@ -89,7 +89,7 @@ GIVEN THAT I am on a screen with an alert dialog
    - WHEN the text resize setting is increased up to 200% 
       - THEN the text within the alert should remain readable without losing information or functionality 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/alert-dialog](https://www.magentaa11y.com/#/native-criteria/notifications/alert-dialog)
+Full information: [https://www.magentaa11y.com/#/native-criteria/notifications/alert-dialog](/native-criteria/notifications/alert-dialog)
 
 ## iOS Developer Notes
 ### General Notes

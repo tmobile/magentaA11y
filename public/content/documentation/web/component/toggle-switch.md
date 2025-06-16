@@ -57,7 +57,7 @@ How to test a toggle switch
    - Group: Hints or errors are read after the label and related inputs include a group name (Ex: Account settings)
    - State: It expresses its state (on/off, checked/unchecked, disabled/dimmed)
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/toggle-switch](https://www.magentaa11y.com/#/web-criteria/component/toggle-switch)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/toggle-switch](/web-criteria/component/toggle-switch)
 
 ## Gherkin
 
@@ -92,7 +92,7 @@ GIVEN THAT I am on a page with a toggle switch
       - I HEAR it expresses its state (on/off, checked/unchecked, disabled/dimmed)
    - THEN when I doubletap with the switch in focus I HEAR the state is changed
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/toggle-switch](https://www.magentaa11y.com/#/web-criteria/component/toggle-switch)
+Full information: [https://www.magentaa11y.com/#/web-criteria/component/toggle-switch](/web-criteria/component/toggle-switch)
 
 ## Code examples
 

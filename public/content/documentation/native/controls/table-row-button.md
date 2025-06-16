@@ -46,7 +46,7 @@ How to test a table row button / list item
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/table-row-button](https://www.magentaa11y.com/#/native-criteria/controls/table-row-button)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/table-row-button](/native-criteria/controls/table-row-button)
 
 ## Gherkin
 
@@ -87,7 +87,7 @@ GIVEN THAT I am on a screen with a table row button / list item
    - WHEN the text resize setting is increased up to 200% 
       - THEN the text within the row or blade should remain readable without losing information or functionality 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/table-row-button](https://www.magentaa11y.com/#/native-criteria/controls/table-row-button)
+Full information: [https://www.magentaa11y.com/#/native-criteria/controls/table-row-button](/native-criteria/controls/table-row-button)
 
 ## iOS Developer Notes
 ### General Notes
