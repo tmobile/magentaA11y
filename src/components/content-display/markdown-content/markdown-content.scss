@@ -1,7 +1,7 @@
 @use "../../../styles/links" as *;
 
 .MagentaA11y__content-details {
-  --content-details-padding: var(--magentaa11y-spacing-size-24);
+  --content-details-padding: var(--magentaa11y-spacing-size-16) var(--magentaa11y-spacing-size-36);
   --content-details-header-font: var(--magentaa11y-typeset-body-xxl-strong);
   --content-details-label-font:  var(--magentaa11y-typeset-body-lg-strong);
   --external-links-background-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23e20074' d='M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h13.95v3H9v30h30V25.05h3V39q0 1.2-.9 2.1-.9.9-2.1.9Zm10.1-10.95L17 28.9 36.9 9H25.95V6H42v16.05h-3v-10.9Z'/%3E%3C/svg%3E");
