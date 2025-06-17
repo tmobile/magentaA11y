@@ -1,5 +1,5 @@
 import React from 'react';
-import TmoLogo from '../../assets/svgs/t-digit-logo.svg';
+// import TmoLogo from '../../assets/svgs/t-digit-logo.svg';
 import Cards from "../custom-components/cards/cards";
 import './home.scss';
 
@@ -35,9 +35,6 @@ const Home: React.FC = () => {
             <span>Unlock the power of accessibility</span>
             <span>MagentaA11y</span>
           </h1>
-          <div className="MagentaA11y--home-page__header--logo">
-            <img src={TmoLogo} alt="T-Mobile logo" />
-          </div>
         </div>
       </div>
       <div className="MagentaA11y--home-page__content MagentaA11y--home-page__content--beige">

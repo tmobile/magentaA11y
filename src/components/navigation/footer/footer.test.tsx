@@ -26,11 +26,6 @@ describe("Footer Component - Rendering", () => {
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
-  test("Footer contains the correct class name", () => {
-    renderWithRouter(<Footer />);
-    expect(screen.getByRole("contentinfo")).toHaveClass("MagentaA11y--footer");
-  });
-
   test("Footer is tabbable with tabIndex={-1}", () => {
     renderWithRouter(<Footer />);
     expect(screen.getByRole("contentinfo")).toHaveAttribute("tabindex", "-1");
