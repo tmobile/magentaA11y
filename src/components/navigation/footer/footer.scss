@@ -1,23 +1,32 @@
 @use '../../../styles/links' as *;
 
+footer {
+  background-color: var(--footer-background-color);
+
+  h2,
+  .date,
+  a {
+    color: var(--footer-text-color);
+  }
+
+  .date {
+    text-align: center;
+    font: var(--magentaa11y-typeset-body-sm-strong);
+  }
+}
+
 .MagentaA11y--footer {
   --footer-flex-direction: row;
 
   display: flex;
   flex-direction: var(--footer-flex-direction);
   justify-content: space-around;
-  gap: var(--magentaa11y-spacing-size-24);
-  background-color: var(--footer-background-color);
   padding: var(--magentaa11y-spacing-size-64) var(--magentaa11y-spacing-size-24)
-    var(--magentaa11y-spacing-size-96) var(--magentaa11y-spacing-size-8);
+    var(--magentaa11y-spacing-size-64) var(--magentaa11y-spacing-size-8);
+  gap: var(--magentaa11y-spacing-size-24);
 
   &__nav-list {
     width: 100%;
-
-    h2,
-    a {
-      color: var(--footer-text-color);
-    }
 
     h2 {
       padding: var(--magentaa11y-spacing-size-4)

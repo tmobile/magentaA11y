@@ -3,120 +3,128 @@
 exports[`Footer Component - Snapshot Test matches the snapshot 1`] = `
 <DocumentFragment>
   <footer
-    class="MagentaA11y--footer"
     tabindex="-1"
   >
     <div
-      class="MagentaA11y--footer__nav-list"
+      class="MagentaA11y--footer"
     >
-      <h2>
-        Web Criteria
-      </h2>
       <div
-        aria-hidden="true"
-        class="MagentaA11y-divider"
-        data-orientation="horizontal"
-        role="separator"
-      />
-      <ul
-        role="list"
+        class="MagentaA11y--footer__nav-list"
       >
-        <li
-          role="listitem"
+        <h2>
+          Web Criteria
+        </h2>
+        <div
+          aria-hidden="true"
+          class="MagentaA11y-divider"
+          data-orientation="horizontal"
+          role="separator"
+        />
+        <ul
+          role="list"
         >
-          <a
-            class=""
-            href="/web-criteria/component/overview"
+          <li
+            role="listitem"
           >
-            Component
-          </a>
-        </li>
-        <li
-          role="listitem"
+            <a
+              class=""
+              href="/web-criteria/component/overview"
+            >
+              Component
+            </a>
+          </li>
+          <li
+            role="listitem"
+          >
+            <a
+              class=""
+              href="/web-criteria/page-level/overview"
+            >
+              Page Level
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="MagentaA11y--footer__nav-list"
+      >
+        <h2>
+          Native Criteria
+        </h2>
+        <div
+          aria-hidden="true"
+          class="MagentaA11y-divider"
+          data-orientation="horizontal"
+          role="separator"
+        />
+        <ul
+          role="list"
         >
-          <a
-            class=""
-            href="/web-criteria/page-level/overview"
+          <li
+            role="listitem"
           >
-            Page Level
-          </a>
-        </li>
-      </ul>
+            <a
+              class=""
+              href="/native-criteria/controls/overview"
+            >
+              Controls
+            </a>
+          </li>
+          <li
+            role="listitem"
+          >
+            <a
+              class=""
+              href="/native-criteria/notifications/overview"
+            >
+              Notifications
+            </a>
+          </li>
+          <li
+            role="listitem"
+          >
+            <a
+              class=""
+              href="/native-criteria/patterns/overview"
+            >
+              Patterns
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="MagentaA11y--footer__nav-list"
+      >
+        <h2>
+          How To Test 
+        </h2>
+        <div
+          aria-hidden="true"
+          class="MagentaA11y-divider"
+          data-orientation="horizontal"
+          role="separator"
+        />
+        <ul
+          role="list"
+        >
+          <li
+            role="listitem"
+          >
+            <a
+              class=""
+              href="/how-to-test-criteria/type/overview"
+            >
+              Type
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div
-      class="MagentaA11y--footer__nav-list"
+    <p
+      class="date"
     >
-      <h2>
-        Native Criteria
-      </h2>
-      <div
-        aria-hidden="true"
-        class="MagentaA11y-divider"
-        data-orientation="horizontal"
-        role="separator"
-      />
-      <ul
-        role="list"
-      >
-        <li
-          role="listitem"
-        >
-          <a
-            class=""
-            href="/native-criteria/controls/overview"
-          >
-            Controls
-          </a>
-        </li>
-        <li
-          role="listitem"
-        >
-          <a
-            class=""
-            href="/native-criteria/notifications/overview"
-          >
-            Notifications
-          </a>
-        </li>
-        <li
-          role="listitem"
-        >
-          <a
-            class=""
-            href="/native-criteria/patterns/overview"
-          >
-            Patterns
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div
-      class="MagentaA11y--footer__nav-list"
-    >
-      <h2>
-        How To Test 
-      </h2>
-      <div
-        aria-hidden="true"
-        class="MagentaA11y-divider"
-        data-orientation="horizontal"
-        role="separator"
-      />
-      <ul
-        role="list"
-      >
-        <li
-          role="listitem"
-        >
-          <a
-            class=""
-            href="/how-to-test-criteria/type/overview"
-          >
-            Type
-          </a>
-        </li>
-      </ul>
-    </div>
+      © 2025 T-Mobile USA, Inc.
+    </p>
   </footer>
 </DocumentFragment>
 `;
