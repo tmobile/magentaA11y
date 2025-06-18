@@ -98,6 +98,9 @@ video {
   aspect-ratio: 3/2;
   width: 70%;
   display: flex;
+  margin-bottom: 4rem;
+  border: var(--magentaa11y-border-weight-size-2) solid var(--magentaa11y-color-brand-grayscale-600);
+  border-radius: var(--magentaa11y-border-radius-size-6);
 
   @media (max-width: 768px) {
     width: 100%;

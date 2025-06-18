@@ -39,15 +39,3 @@ $alignments: (left, center, right, justify);
   }
 }
 
-// @mixin ripple( #fff, #eee, 10%, center) {
-//   background-position: $position-x $position-y;
-//   transition: background 1s;
-//   &:hover {
-//     background: radial-gradient(circle , transparent 1%, 1%) 15000%;
-//   }
-//   &:active {
-//     background-color: #eee;
-//     background-size: 100%;
-//     transition: background 0s;
-//   }
-// }
