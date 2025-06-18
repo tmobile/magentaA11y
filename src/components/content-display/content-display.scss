@@ -61,7 +61,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 936px) {
     --nav-display-gap: var(--magentaa11y-spacing-size-24);
     --title-font: var(--magentaa11y-typeset-headline-xxl-xtrastrong);
     --sub-lists-flex-direction: column;
@@ -70,7 +70,10 @@
     --intro-gap: var(--magentaa11y-line-height-20);
     --nav-display-content-gap: var(--magentaa11y-spacing-size-16);
     --content-actions-flex-direction: column;
-    --criteria-button-visibility: flex;
+  }
+
+  @media (max-width: 620px) {
+    --criteria-button-visibility: flex; 
   }
 
   #criteria-button {
