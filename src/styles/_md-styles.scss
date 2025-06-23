@@ -533,7 +533,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
       &.success {
         background: var(--color-success);
-        color: white;
+        color: var(--color-text-on-primary);
 
           &::before {
             content:'';
