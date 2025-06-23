@@ -512,6 +512,23 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       grid-column: span 2;
     }
   }
+
+  .alert {
+    display: flex;
+    transition: 0.2s;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+      &.warning {
+        background: orange;
+      }
+
+      &.success {
+        background: green;
+        color: white;
+      }
+  }
+
 }
 
 .bad-example {

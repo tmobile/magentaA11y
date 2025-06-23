@@ -74,14 +74,14 @@ export const getMarkdownFunctionMap = (
   alertSuccess: () => {
     const alertDiv = document.getElementById('alertSuccessExample');
     if (alertDiv) {
-      alertDiv.innerHTML.length === 0 ? alertDiv.innerHTML = 'Success: Your account has been updated!' : alertDiv.innerHTML = '';
+      alertDiv.innerHTML.length === 0 ? alertDiv.innerHTML = '<p class="alert warning">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
     }
   },
 
   alertWarning: () => {
     const warningDiv = document.getElementById('favorite-character-error');
     if (warningDiv) {
-      warningDiv.innerHTML.length === 0 ? warningDiv.innerHTML = 'Warning: The correct answer is all of them' : warningDiv.innerHTML = '';
+      warningDiv.innerHTML.length === 0 ? warningDiv.innerHTML = '<p class="alert warning">Warning: The correct answer is all of them</p>' : warningDiv.innerHTML = '';
     }
   },
 
