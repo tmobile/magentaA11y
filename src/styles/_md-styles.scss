@@ -520,7 +520,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     margin-bottom: 1rem;
 
       &.warning {
-        background: orange;
+        background: var(--color-caution-container);
 
         &::before {
           content:'';
@@ -532,7 +532,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       }
 
       &.success {
-        background: green;
+        background: var(--color-success);
         color: white;
 
           &::before {
