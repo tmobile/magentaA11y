@@ -105,7 +105,7 @@ An alert is dynamic content that is injected into the page when it changes and a
       <!--- Use JS to inject the alert here -->
    </div>
 
-   <button data-fn="alertSuccess" id="show-alert-notification">
+   <button data-fn="alertSuccess" id="show-alert-notification" class="Magentaa11y-button Magentaa11y-button--primary">
    Save my settings
    </button>
 </example>
@@ -169,7 +169,7 @@ An alert is dynamic content that is injected into the page when it changes and a
       Example: Elmo, Big Bird, Cookie Monster
    </div>
 
-   <button data-fn="alertWarning" id="show-error">
+   <button data-fn="alertWarning" id="show-error" class="Magentaa11y-button Magentaa11y-button--primary">
    Toggle error
    </button>
 </example>
