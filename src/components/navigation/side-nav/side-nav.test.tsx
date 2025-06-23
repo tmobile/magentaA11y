@@ -8,7 +8,7 @@ import userEvent from '@testing-library/user-event';
 
 const renderWithProviders = (ui: React.ReactElement, isMobile = false) => {
   window.matchMedia = jest.fn().mockImplementation((query) => ({
-    matches: isMobile && query === '(max-width: 768px)',
+    matches: isMobile && query === '(max-width: 620px)',
     media: query,
     onchange: null,
     addListener: jest.fn(),

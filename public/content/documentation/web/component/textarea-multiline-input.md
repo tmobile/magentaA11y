@@ -73,7 +73,6 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/textarea
 - **Do not** reference the `role="status"` element with aria-describedby
   - This causes a bug in VoiceOver 
 
-<!-- TODO - make sure to adjust .hljs-keyword styling -->
 
 ```javascript
 const textarea = document.getElementById('message');

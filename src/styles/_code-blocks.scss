@@ -48,13 +48,13 @@ code {
 
 /* Attribute values (e.g., "example-header") */
 .hljs-string {
-  color: var(--color-on-tertiary); /* Light color for attribute values */
+  color: var(--color-error-container); /* Light color for attribute values */
   font-weight: normal;
 }
 
 /* Comments */
 .hljs-comment {
-  color: var(--color-text-secondary); /* Muted color for comments */
+  color: var(--color-success); /* Muted color for comments */
 
 }
 
@@ -70,7 +70,8 @@ code {
 
 /* Keywords */
 .hljs-keyword {
-  color: var(--color-secondary-container); /* Accent color for keywords */
+  /* Accent color for keywords */
+  color: var(--color-on-primary-container); 
   font-weight: bold;
 }
 
@@ -83,10 +84,10 @@ code {
 /* Functions and properties */
 .hljs-function,
 .hljs-property {
-  color: var(--color-secondary); /* Function and property colors */
+  color: var(--color-info); /* Function and property colors */
 }
 
 /* Numbers */
 .hljs-number {
-  color: var(--color-secondary); /* Secondary color for numbers */
+  color: var(--color-info); /* Secondary color for numbers */
 }
