@@ -74,7 +74,7 @@ export const getMarkdownFunctionMap = (
   alertSuccess: () => {
     const alertDiv = document.getElementById('alertSuccessExample');
     if (alertDiv) {
-      alertDiv.innerHTML.length === 0 ? alertDiv.innerHTML = '<p class="alert warning">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
+      alertDiv.innerHTML.length === 0 ? alertDiv.innerHTML = '<p class="alert success">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
     }
   },
 

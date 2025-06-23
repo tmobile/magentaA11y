@@ -521,11 +521,28 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
       &.warning {
         background: orange;
+
+        &::before {
+          content:'';
+          background: url("../assets/svgs/warning-filled.svg") no-repeat center center;
+          width: 1.25rem; 
+          height: auto;
+          margin-right: .5rem;
+        }
       }
 
       &.success {
         background: green;
         color: white;
+
+          &::before {
+            content:'';
+            background: url("../assets/svgs/checkmark.svg") no-repeat center center;
+            filter: invert(100%);
+            width: 1.25rem; 
+            height: auto;
+            margin-right: .5rem;
+        }
       }
   }
 
