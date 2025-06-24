@@ -78,20 +78,20 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 </div>
 ```
 
-<!-- TODO: This example needs more styles support
+<!-- TODO: This example needs more styles support -->
 
 <example>
-<div class="expander-group">
-  <button class="expander-toggle" aria-expanded="false">
-    About Sesame Street
-  </button>
-  <div class="expander-content">
-    Sesame Street is an American educational 
-    children's television series that combines 
-    live-action, sketch comedy, animation, and puppetry.
-  </div>
-</div>
-</example> -->
+   <div class="expander-group">
+   <button class="expander-toggle" aria-expanded="false">
+      About Sesame Street
+   </button>
+   <div class="expander-content">
+      Sesame Street is an American educational 
+      children's television series that combines 
+      live-action, sketch comedy, animation, and puppetry.
+   </div>
+   </div>
+</example>
 
 ## Native HTML expander accordion (details/summary)
    - This semantic HTML contains all accessibility features by default with no scripting required.
