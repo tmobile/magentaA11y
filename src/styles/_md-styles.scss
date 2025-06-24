@@ -529,23 +529,27 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     width: 100%;
   }
 
+  .expander-content {
+    display: none;
+    background: var(--color-on-primary);
+    padding: 1rem;
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+    margin-top: -.675rem;
+  }
+
+  .expander-content[aria-hidden="false"] {
+    display: block;
+  }
+
   details {
     background: var(--color-text-on-primary);
     border: none;
-    margin-bottom: calc(2rem + 2px);
     padding: 1rem;
     border-radius: 1rem;
     transition: .8s;
     text-align: left;
     width: 100%;
-  }
-
-  .expander-group .expander-content {
-    display: none;
-    background: #fff;
-    padding: 1rem;
-    border-top: none;
-    border-radius: 0 0 2px 2px;
   }
 
   summary  {
@@ -556,26 +560,21 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     display: none;
   }
 
-  details summary,
-  .fake-details summary,
+  details summary, 
   .expander-toggle {
     position: relative;
     display: grid;
     grid-template-columns: 4rem 1fr;
     align-items: center;
     padding: 1rem .5rem 1rem 0;
-    margin: calc(-1rem);
     border-radius: 1rem;
-    font-size: unset;
     font-size: 1.25rem;
     line-height: 1rem;
-    font-weight: bold;
     font-weight: normal;
     cursor: pointer;
   }
 
-  details summary::before, 
-  .fake-details summary::before,
+  details summary::before,
   .expander-toggle::before {
     content:'';
     background: url("../assets/svgs/chevron-down.svg") no-repeat center center;
@@ -599,15 +598,13 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     border: 2px solid var(--color-primary);
   }
 
-  details[open] summary::before, 
-  .fake-details[open] summary::before {
+  details[open] summary::before {
     content: '';
     background-position: center center;
     transform: rotate(-180deg);
   }
 
-  details[open] summary, 
-  .fake-details[open] summary {
+  details[open] summary {
     border-radius: 1rem 1rem 0 0;
     border-bottom: 1px solid var(--color-text-disabled);
     margin-bottom: 1rem;

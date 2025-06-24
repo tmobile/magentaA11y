@@ -200,4 +200,34 @@ export const getMarkdownFunctionMap = (
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
+
+  toggleExpander: () => {
+    const toggleButton = document.getElementById('expanderToggle');
+    const contentToToggle = document.getElementById('expanderContent');
+
+    if (!toggleButton || !contentToToggle) {
+      console.warn('Expander elements not found.');
+      return;
+    }
+
+    // Prevent attaching listener multiple times on same button
+    if (toggleButton.dataset.listenerAttached === 'true') return;
+    toggleButton.dataset.listenerAttached = 'true';
+
+    toggleButton.addEventListener('click', () => {
+      const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+      if (isExpanded) {
+        contentToToggle.setAttribute('aria-hidden', 'true');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        console.log("Collapsed");
+      } else {
+        contentToToggle.setAttribute('aria-hidden', 'false');
+        toggleButton.setAttribute('aria-expanded', 'true');
+        console.log("Expanded");
+      }
+    });
+  },
+
+
 });
