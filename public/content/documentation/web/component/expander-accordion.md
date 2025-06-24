@@ -79,17 +79,16 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 ```
 
 <!-- TODO: This example needs more styles support -->
-
 <example>
    <div class="expander-group">
-   <button class="expander-toggle" aria-expanded="false">
-      About Sesame Street
-   </button>
-   <div class="expander-content">
-      Sesame Street is an American educational 
-      children's television series that combines 
-      live-action, sketch comedy, animation, and puppetry.
-   </div>
+      <button class="expander-toggle" aria-expanded="false">
+         About Sesame Street
+      </button>
+      <div class="expander-content">
+         Sesame Street is an American educational 
+         children's television series that combines 
+         live-action, sketch comedy, animation, and puppetry.
+      </div>
    </div>
 </example>
 
@@ -111,14 +110,14 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 ```
 
 <example>
-<details>
-  <summary>
-    About Sesame Street
-  </summary>
-    Sesame Street is an American educational 
-    children's television series that combines 
-    live-action, sketch comedy, animation, and puppetry.
-</details>
+   <details>
+      <summary>
+         About Sesame Street
+      </summary>
+         Sesame Street is an American educational 
+         children's television series that combines 
+         live-action, sketch comedy, animation, and puppetry.
+   </details>
 </example>
 
 ## Developer notes

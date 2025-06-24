@@ -513,40 +513,114 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     }
   }
 
+  // expander accordion styles
   .expander-toggle {
-    display: block;
-    width: 100%;
-    color: var(-color-text-primary);
-    text-shadow: none;
-    margin: 0;
+    background: var(--color-text-on-primary);
+    border: none;
     border-radius: var(--magentaa11y-border-radius-size-2);
-    padding: 1.5rem 1rem;
+    display: block;
     font-size: 1.25rem;
+    padding: 1.5rem 1rem;
     line-height: .875rem;
+    margin: 0;
     position: relative;
     transition: .2s;
     text-align: left;
-    background: var(--color-text-on-primary);
+    width: 100%;
   }
 
-  // details summary:before, .fake-details summary:before {
-  //   content: '';
-  //   display: block;
-  //   position: relative;
-  //   justify-self: center;
-  //   width: 2.125rem;
-  //   height: 2.125rem;
-  //   border-radius: 2rem;
-  //   background-color: #eee;
-  //   background-image: ;
-  //   opacity: 1;
-  //   background-size: 1.25rem 1.25rem;
-  //   background-position: center center;
-  //   background-repeat: no-repeat;
-  //   transform: rotate(0deg);
-  //   box-shadow: 0 0 0 .325rem transparent;
-  //   transition: box-shadow .2s, transform .5s;
-  // }
+  details {
+    background: var(--color-text-on-primary);
+    border: none;
+    margin-bottom: calc(2rem + 2px);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: .8s;
+    text-align: left;
+    width: 100%;
+  }
+
+  .expander-group .expander-content {
+    display: none;
+    background: #fff;
+    padding: 1rem;
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+  }
+
+  summary  {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details summary,
+  .fake-details summary,
+  .expander-toggle {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    padding: 1rem .5rem 1rem 0;
+    margin: calc(-1rem);
+    border-radius: 1rem;
+    font-size: unset;
+    font-size: 1.25rem;
+    line-height: 1rem;
+    font-weight: bold;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  details summary::before, 
+  .fake-details summary::before,
+  .expander-toggle::before {
+    content:'';
+    background: url("../assets/svgs/chevron-down.svg") no-repeat center center;
+    display: block;
+    position: relative;
+    justify-self: center;
+    width: 2.125rem;
+    height: 2.125rem;
+    border-radius: 2rem;
+    background-color: var(--color-text-on-primary);
+    opacity: 1;
+    background-size: 1.25rem 1.25rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.1s ease-in-out;
+  }
+
+  details summary:hover::before, 
+  details summary:focus-visible::before,
+  .expander-toggle:hover::before {
+    border: 2px solid var(--color-primary);
+  }
+
+  details[open] summary::before, 
+  .fake-details[open] summary::before {
+    content: '';
+    background-position: center center;
+    transform: rotate(-180deg);
+  }
+
+  details[open] summary, 
+  .fake-details[open] summary {
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid var(--color-text-disabled);
+    margin-bottom: 1rem;
+    background-position: 10% center;
+    transition: background 0.1s;
+  }
+
+  details:not([open]) summary:active, 
+  details[open] summary:active {
+    background-color: var(--color-background-tertiary);
+    background-size: 100%;
+    transition: all 0.1s;
+  }
 
 }
 
