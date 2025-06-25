@@ -81,8 +81,8 @@ Each page must include:
 
 - [Header](/web-criteria/page-level/header-landmark)
 - [Nav](/web-criteria/page-level/navigation-landmark) 
-- [Main]() TODO
-- [Footer]() TODO
+- [Main](/web-criteria/page-level/main-landmark) 
+- [Footer](/web-criteria/page-level/footer-landmark)
 
 ```html
 <header>
