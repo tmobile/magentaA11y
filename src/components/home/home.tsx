@@ -5,12 +5,12 @@ import './home.scss';
 
 const cardContent = [
   {
-    "title": "Web accessibility checker",
+    "title": "Web accessibility criteria",
     "description": "Choose components to define your accessibility success criteria",
     "link": "/web-criteria/component/overview"
   },
   {
-    "title": "Native accessibility checker",
+    "title": "Native accessibility criteria",
     "description": "Choose components to define your accessibility success criteria",
     "link": "/native-criteria/controls/overview"
   },
