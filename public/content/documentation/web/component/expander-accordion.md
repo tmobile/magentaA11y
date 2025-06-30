@@ -81,10 +81,10 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 <!-- TODO: This example needs more styles support -->
 <example>
    <div class="expander-group">
-      <button data-fn="toggleExpander" id="expanderToggle" class="expander-toggle" aria-expanded="false">
+      <button data-fn="toggleExpander" id="expanderToggle" class="expander-toggle" aria-expanded="false" aria-controls="expander-content">
          About Sesame Street
       </button>
-      <div id="expanderContent" class="expander-content" aria-hidden="true">
+      <div id="expanderContent" class="expander-content">
          Sesame Street is an American educational 
          children's television series that combines 
          live-action, sketch comedy, animation, and puppetry.

@@ -210,22 +210,22 @@ export const getMarkdownFunctionMap = (
       return;
     }
 
-    // Prevent attaching listener multiple times on same button
+    // Prevent attaching multiple listeners
     if (toggleButton.dataset.listenerAttached === 'true') return;
     toggleButton.dataset.listenerAttached = 'true';
 
+    // Set initial state
+    contentToToggle.hidden = true;
+    toggleButton.setAttribute('aria-expanded', 'false');
+
+    // Attach toggle behavior
     toggleButton.addEventListener('click', () => {
       const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-
-      if (isExpanded) {
-        contentToToggle.setAttribute('aria-hidden', 'true');
-        toggleButton.setAttribute('aria-expanded', 'false');
-        console.log("Collapsed");
-      } else {
-        contentToToggle.setAttribute('aria-hidden', 'false');
-        toggleButton.setAttribute('aria-expanded', 'true');
-        console.log("Expanded");
-      }
+      toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+      contentToToggle.hidden = isExpanded;
+      console.log(isExpanded ? 'collapsed' : 'expanded');
+          toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+    contentToToggle.style.display = isExpanded ? 'none' : 'block';
     });
   },
 

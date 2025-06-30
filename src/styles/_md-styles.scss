@@ -538,8 +538,8 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     margin-top: -.675rem;
   }
 
-  .expander-content[aria-hidden="false"] {
-    display: block;
+  .expander-toggle[aria-expanded="true"]::before  {
+    transform: rotate(180deg);
   }
 
   details {
