@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.19e6f6b0.css",
+    "main.js": "/static/js/main.f270d40a.js",
+    "static/js/453.8bcc0cc4.chunk.js": "/static/js/453.8bcc0cc4.chunk.js",
+    "static/media/teleneoweb-bold.woff2": "/static/media/teleneoweb-bold.1b7fe473df0f87cc56a5.woff2",
+    "static/media/teleneoweb-regular.woff2": "/static/media/teleneoweb-regular.003938824a945c247da6.woff2",
+    "static/media/teleneoweb-extrabold.woff2": "/static/media/teleneoweb-extrabold.cc806106975453c2028b.woff2",
+    "static/media/brand-logo-white.svg": "/static/media/brand-logo-white.89a105aa5e733f20869d.svg",
+    "index.html": "/index.html",
+    "static/media/star-outlined.svg": "/static/media/star-outlined.ea81ad4276736adce200.svg",
+    "static/media/star-filled.svg": "/static/media/star-filled.7b5d5cfa6f74b7a13a5c.svg",
+    "static/media/chevron-down.svg": "/static/media/chevron-down.9683ff47cfce0b97f2e8.svg",
+    "static/media/chevron-right.svg": "/static/media/chevron-right.c7465c5cc689e553be2b.svg",
+    "static/media/bookmark-outlined.svg": "/static/media/bookmark-outlined.92bcfcdd1a5a462820989e78674011f8.svg",
+    "main.19e6f6b0.css.map": "/static/css/main.19e6f6b0.css.map",
+    "main.f270d40a.js.map": "/static/js/main.f270d40a.js.map",
+    "453.8bcc0cc4.chunk.js.map": "/static/js/453.8bcc0cc4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19e6f6b0.css",
+    "static/js/main.f270d40a.js"
+  ]
+}
