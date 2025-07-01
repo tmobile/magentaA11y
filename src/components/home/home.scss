@@ -1,10 +1,10 @@
 .MagentaA11y--home-page {
   --header-flex-direction: row;
-  --title-first-headline-font: var(--magentaa11y-typeset-headline-sm-strong);
+  --title-first-headline-font: var(--magentaa11y-typeset-display-lg-strong);
   --title-second-headline-font: var(
     --magentaa11y-typeset-display-lg-xtrastrong
   );
-  --header-max-height: 258px;
+  --header-max-height: 360px;
   --header-logo-width: fit-content;
   --logo-max-width: 410px;
   --logo-max-height: 350px;
@@ -30,7 +30,7 @@
     &--wrapper {
       display: flex;
       flex-direction: var(--header-flex-direction);
-      padding: var(--magentaa11y-spacing-size-24)
+      padding: var(--magentaa11y-spacing-size-48)
         var(--magentaa11y-spacing-size-40);
       max-height: 250px;
       max-width: 950px;
@@ -41,7 +41,6 @@
       align-items: center;
 
       @media (min-width: 768px) {
-        padding: 0;
         max-height: var(--header-max-height);
       }
     }
@@ -59,11 +58,23 @@
       }
 
       :first-child {
-        font: var(--title-first-headline-font);
+        font: var(--magentaa11y-typeset-display-4xl-strong);;
+        
       }
 
       :nth-child(2) {
-        font: var(--title-second-headline-font);
+        font: var(--magentaa11y-typeset-headline-md-strong);
+      }
+
+      @media (max-width: 768px) {
+        :first-child {
+          font: var(--magentaa11y-typeset-display-lg-xtrastrong);
+          
+        }
+
+        :nth-child(2) {
+          font: var(--magentaa11y-typeset-headline-sm-strong);
+        }
       }
     }
   }
