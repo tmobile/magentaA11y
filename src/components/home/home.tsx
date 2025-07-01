@@ -5,12 +5,12 @@ import './home.scss';
 
 const cardContent = [
   {
-    "title": "Web accessibility checker",
+    "title": "Web accessibility criteria",
     "description": "Choose components to define your accessibility success criteria",
     "link": "/web-criteria/component/overview"
   },
   {
-    "title": "Native accessibility checker",
+    "title": "Native accessibility criteria",
     "description": "Choose components to define your accessibility success criteria",
     "link": "/native-criteria/controls/overview"
   },
@@ -32,15 +32,15 @@ const Home: React.FC = () => {
       <div className="MagentaA11y--home-page__header">
         <div className="MagentaA11y--home-page__header--wrapper">
           <h1 className="MagentaA11y--home-page__header--title">
-            <span>Unlock the power of accessibility</span>
             <span>MagentaA11y</span>
+            <span>T-Mobile's accessibility toolkit, empowering developers, designers, and testers to build for everyone.</span>
           </h1>
         </div>
       </div>
       <div className="MagentaA11y--home-page__content MagentaA11y--home-page__content--beige">
         <div className='text-center'>
           <h2 className="MagentaA11y--home-page__content--header">Get Started</h2>
-          <p>Automatically generate test cases for Web, iOS, and Android components.</p>
+          <p>Select the tech stack you’re working with, choose your component, and copy and paste accessibility criteria into your user stories. </p>
         </div>
         <Cards items={cardContent} />
       </div>
