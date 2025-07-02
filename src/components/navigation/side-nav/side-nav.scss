@@ -34,7 +34,7 @@ nav {
     &--list {
       border-top: solid 1px var(--color-surface-variant);
 
-      @media (max-width: 768px) {
+      @media (max-width: 620px) {
         overflow-y: scroll;
       }
     }
@@ -88,7 +88,7 @@ nav {
       font: var(--magentaa11y-typeset-headline-xs-xtrastrong);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 620px) {
       --side-nav-width: 100%;
       --side-nav-max-width: 100%;
 

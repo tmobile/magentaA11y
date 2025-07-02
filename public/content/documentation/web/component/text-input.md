@@ -102,8 +102,6 @@ This semantic HTML contains all accessibility features by default.
        value="Bravo">
 ```
 
-<!-- TODO: The code examples will need styling updates to make look pretty  -->
-
 <example>
 <label for="second-nato-letter">
  The second NATO letter is: <span>Required</span>
@@ -132,8 +130,6 @@ This semantic HTML contains all accessibility features by default.
        readonly>
 ```
 
-<!-- TODO: The code examples will need styling updates to make look pretty  -->
-
 <example>
 <label for="first-nato-letter">
   The first NATO letter is:
@@ -158,8 +154,6 @@ This semantic HTML contains all accessibility features by default.
        value="Zulu"
        disabled>
 ```
-
-<!-- TODO: The code examples will need styling updates to make look pretty  -->
 
 <example>
 <label for="last-nato-letter">
@@ -188,8 +182,6 @@ This semantic HTML contains all accessibility features by default.
        readonly
        value="Delta">
 ```
-
-<!-- TODO: The code examples will need styling updates to make look pretty  -->
 
 <example>
 <label for="fourth-nato-letter">
@@ -220,8 +212,6 @@ This semantic HTML contains all accessibility features by default.
   We’ll never sell or share your information
 </div>
 ```
-
-<!-- TODO: The code examples will need styling updates to make look pretty  -->
 
 <example>
 <label for="email">
@@ -263,8 +253,6 @@ After the screenreader focuses on each input, it will read the group name "Enter
   <input type="text" id="username">
 </fieldset>
 ```
-
-<!-- TODO: The code examples will need styling updates to make look pretty  -->
 
 <example>
 <fieldset>
