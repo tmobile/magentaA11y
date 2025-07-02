@@ -534,12 +534,16 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     background: var(--color-on-primary);
     padding: 1rem;
     border-top: none;
-    border-radius: 0 0 2px 2px;
+    border-radius: 0 0 1rem 1rem;
     margin-top: -.675rem;
   }
 
   .expander-toggle[aria-expanded="true"]::before  {
     transform: rotate(180deg);
+  }
+
+  .expander-toggle[aria-expanded="true"] ~ .expander-content {
+    display: block;
   }
 
   details {

@@ -201,32 +201,24 @@ export const getMarkdownFunctionMap = (
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
-  toggleExpander: () => {
+  toggleExpander: (event) => {
+    // define variables
     const toggleButton = document.getElementById('expanderToggle');
     const contentToToggle = document.getElementById('expanderContent');
 
+    // check to see if there are any accordions at all
     if (!toggleButton || !contentToToggle) {
       console.warn('Expander elements not found.');
       return;
     }
 
-    // Prevent attaching multiple listeners
-    if (toggleButton.dataset.listenerAttached === 'true') return;
-    toggleButton.dataset.listenerAttached = 'true';
-
-    // Set initial state
-    contentToToggle.hidden = true;
-    toggleButton.setAttribute('aria-expanded', 'false');
-
-    // Attach toggle behavior
-    toggleButton.addEventListener('click', () => {
-      const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-      toggleButton.setAttribute('aria-expanded', String(!isExpanded));
-      contentToToggle.hidden = isExpanded;
-      console.log(isExpanded ? 'collapsed' : 'expanded');
-          toggleButton.setAttribute('aria-expanded', String(!isExpanded));
-    contentToToggle.style.display = isExpanded ? 'none' : 'block';
-    });
+    // Get current state
+    const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    
+    // Toggle the state - use only aria-expanded attribute 
+    const newExpandedState = !isExpanded;
+          toggleButton.setAttribute('aria-expanded', String(newExpandedState));
+    
   },
 
 
