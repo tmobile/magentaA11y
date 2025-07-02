@@ -26,12 +26,14 @@ const TopNav: React.FC<TopNavProps> = ({ navItems }) => {
   const viewportContext = useViewport();
   const location = useLocation();
   const [expanded, setExpanded] = useState(false);
+  const [current, setCurrent] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
   const notificationCount = navItems.filter((item) => item.withBadge).length;
 
   const handleMenuClick = () => {
     setExpanded((expanded) => !expanded);
+    setCurrent((current) => !current);
   };
 
   useEffect(() => {
@@ -139,7 +141,8 @@ const TopNav: React.FC<TopNavProps> = ({ navItems }) => {
                   className={classNames('MagentaA11y__nav-items--link', {
                     active: isActive,
                   })}
-                  {...(item.ariaLabel && { 'aria-label': item.ariaLabel })}>
+                  {...(item.ariaLabel && { 'aria-label': item.ariaLabel })}
+                  {...(isActive && { 'aria-current': 'page' })}>
                   {item.icon && (
                     <span
                       data-count={item.withBadge ? item.withBadge : ''}
