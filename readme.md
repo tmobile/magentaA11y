@@ -1,4 +1,4 @@
-# MagentaA11y V2
+# MagentaA11y
 
 ## Table of Contents
 
@@ -22,8 +22,8 @@
 To set up the application, clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/KArbeRes/MagentaA11yV2.git
-cd MagentaA11yV2
+git clone https://github.com/tmobile/magentaA11y.git
+cd magentaA11y
 npm install
 ```
 
@@ -113,7 +113,7 @@ npm run create-md -- textarea "native/controls" criteria
 npm run create-md -- "images" "how-to-test/components" how-to-test
 ```
 
-> 🗂️ When running the `create-md` script, files are saved to the `public/content/documentation` directory.  
+> 🗂️ When running the `create-md` script, files are saved to the `public/content/documentation` directory.
 > The relative path you provide is resolved within this base directory.
 
 ### Markdown File Structure
@@ -168,7 +168,7 @@ The app is deployed via GitHub Pages. Follow these steps to deploy:
    https://<username>.github.io/<repository-name>
    ```
 
-   https://karberes.github.io/MagentaA11yV2/#/home
+   https://tmobile.github.io/magentaA11y
 
 ---
 
