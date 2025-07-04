@@ -168,7 +168,7 @@ The app is deployed via GitHub Pages. Follow these steps to deploy:
    https://<username>.github.io/<repository-name>
    ```
 
-   https://tmobile.github.io/magentaA11y
+   https://www.magentaa11y.com/
 
 ---
 
