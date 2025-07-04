@@ -1,8 +1,8 @@
-# 📘 Markdown Guide for MagentaA11y V2
+# 📘 Markdown Guide for MagentaA11y
 
-This guide outlines how to structure and write Markdown files consumed by the MagentaA11y V2 app.
+This guide outlines how to structure and write Markdown files consumed by the MagentaA11y app.
 
-🛠️ New Markdown files can be generated via: `src/scripts/createMarkdown.sh`  
+🛠️ New Markdown files can be generated via: `src/scripts/createMarkdown.sh`
 Run the script using:
 
 ```bash
@@ -107,7 +107,7 @@ You can use custom HTML elements with attributes to enhance interactivity:
 Relative paths are resolved based on:
 
 ```
-/MagentaA11yV2/content/assets
+/MagentaA11y/content/assets
 ```
 
 ---
