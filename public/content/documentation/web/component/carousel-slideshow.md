@@ -35,7 +35,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/carousel
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a header
+How to test a carousel/slideshow
 
 GIVEN THAT I am on a page with a carousel/slideshow
 

@@ -6,6 +6,8 @@ How to test a button
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test a button
+
 1. Test keyboard only, then screen reader + keyboard actions
 
    - Tab: Focus visibly moves to the button.
@@ -28,6 +30,8 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/button](
 ## Gherkin
 
 ### #a11y - Web Accessibility Acceptance Criteria
+
+How to test a button
 
 GIVEN THAT I am on a page with a button
 

@@ -6,7 +6,7 @@ How to test a heading: h1, h2, h3, h4, h5, h6
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a heading
+How to test a heading: h1, h2, h3, h4, h5, h6
 
 1. Test keyboard only, then screen reader + keyboard actions
 
@@ -29,7 +29,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/heading]
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a heading
+How to test a heading: h1, h2, h3, h4, h5, h6
 
 GIVEN THAT I am on a page with a heading
 

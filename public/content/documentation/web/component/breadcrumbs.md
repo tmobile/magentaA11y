@@ -6,6 +6,8 @@ How to test breadcrumbs
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test breadcrumbs
+
 1. Keyboard & screen reader actions
    - Tab: Focus visibly moves to the link
    - Enter: Activates the link

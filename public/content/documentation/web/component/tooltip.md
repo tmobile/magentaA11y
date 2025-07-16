@@ -6,6 +6,8 @@ How to test a tooltip
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test a tooltip
+
 1. Test keyboard only, then screen reader + keyboard actions
 
    - Tab: Focus visibly moves to the tooltip button, and the tooltip appears.
@@ -29,6 +31,8 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/tooltip]
 ## Gherkin
 
 ### #a11y - Web Accessibility Acceptance Criteria
+
+How to test a tooltip
 
 GIVEN THAT I am on a page with a tooltip button
 
