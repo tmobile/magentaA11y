@@ -512,6 +512,40 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       grid-column: span 2;
     }
   }
+
+  .alert {
+    display: flex;
+    transition: 0.2s;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+      &.warning {
+        background: var(--color-caution-container);
+
+        &::before {
+          content:'';
+          background: url("../assets/svgs/warning-filled.svg") no-repeat center center;
+          width: 1.25rem; 
+          height: auto;
+          margin-right: .5rem;
+        }
+      }
+
+      &.success {
+        background: var(--color-success);
+        color: var(--color-text-on-primary);
+
+          &::before {
+            content:'';
+            background: url("../assets/svgs/checkmark.svg") no-repeat center center;
+            filter: invert(100%);
+            width: 1.25rem; 
+            height: auto;
+            margin-right: .5rem;
+        }
+      }
+  }
+
 }
 
 .bad-example {

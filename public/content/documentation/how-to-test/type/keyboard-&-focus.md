@@ -43,7 +43,7 @@ best practices.
     | Shift + Tab | Moves in reverse through the interface focusing on elements that are focusable. |
     | Enter       | Active links and buttons.|
     | Spacebar    | Activates buttons and interacts with form elements.|
-    | Escape      | Should close or dismiss widgets like dialogs .|
+    | Escape      | Should close or dismiss widgets like dialogs.|
                                                  
 3.  **What to test for**
 

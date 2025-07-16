@@ -16,7 +16,7 @@ export const ViewportProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isLargeTablet, setIsLargeTablet] = useState(false);
 
   useEffect(() => {
-    const mobileMediaQuery = window.matchMedia("(max-width: 768px)");
+    const mobileMediaQuery = window.matchMedia("(max-width: 620px)");
     const tabletMediaQuery = window.matchMedia("(max-width: 936px)");
 
     setIsMobile(mobileMediaQuery.matches);
