@@ -6,6 +6,8 @@ How to test an autocomplete input with listbox
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test an autocomplete input with listbox
+
 1. Test keyboard only, then screen reader + keyboard actions
 
    - Tab: Focus moves visibly to the text input

@@ -6,6 +6,8 @@ How to test a figure: maps, charts, and graphics
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test a figure: maps, charts, and graphics
+
 1. Keyboard & screen reader actions
    - Arrow-keys: Browse to content
    - Tab: Interactive figure controls are focusable
@@ -26,6 +28,8 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/figure](
 ## Gherkin
 
 ### #a11y - Web Accessibility Acceptance Criteria
+
+How to test a figure: maps, charts, and graphics
 
 GIVEN THAT I am on a page with a figure: maps, charts, and graphics
 

@@ -6,6 +6,8 @@ How to test a password input
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test a password input
+
 1. Test keyboard only, then screen reader + keyboard actions
    - Tab: Focus moves visibly to the input or show password checkbox
    - Spacebar: Toggles the show password checkbox

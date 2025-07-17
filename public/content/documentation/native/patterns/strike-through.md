@@ -1,12 +1,12 @@
 ## General Notes
 
-How to test a strike-through text
+How to test strike-through text
 
 ## Condensed
 
 ### #a11y - Native Accessibility Acceptance Criteria
 
-How to test a strike-through text
+How to test strike-through text
 
 1. Test keyboard only, then screen reader + keyboard actions
 
@@ -31,7 +31,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/strike
 
 ### #a11y - Native Accessibility Acceptance Criteria
 
-How to test a strike-through text
+How to test strike-through text
 
 GIVEN THAT I am on a screen with a strike-through text
 

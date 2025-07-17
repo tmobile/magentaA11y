@@ -1,12 +1,12 @@
 ## General Notes
 
-How to test a web form for accessibility.
+How to test a web form 
 
 ## Condensed
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a web form for accessibility
+How to test a web form
 
 1. Test keyboard only, then screen reader + keyboard actions
    - Skip-links: Not commonly used for form entry, but useful for jumping to a form landmark.
@@ -30,7 +30,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/form](/
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a web form for accessibility
+How to test a web form
 
 GIVEN THAT I am on a page with a web form
 
