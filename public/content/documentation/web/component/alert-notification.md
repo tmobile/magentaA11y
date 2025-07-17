@@ -6,7 +6,7 @@ How to test an alert notification
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a alert notification
+How to test an alert notification
 
 1. Test keyboard only, then screen reader + keyboard actions
 
@@ -28,7 +28,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/alert-no
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a alert notification
+How to test an alert notification
 
 GIVEN THAT I am on a page with a alert notification
 
