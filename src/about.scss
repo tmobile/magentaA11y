@@ -1,0 +1,28 @@
+.MagentaA11y--hero-container-wrapper {
+  width: 100%;
+}
+
+.MagentaA11y--hero-container {
+  padding-top: 72px;
+  margin: 0 auto;
+  max-width: 800px;
+
+  h1 {
+    line-height: 0.5;
+
+    @media (min-width: 768px) {
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+  }
+
+  span {
+    text-align: left !important;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+
