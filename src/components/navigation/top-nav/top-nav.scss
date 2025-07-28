@@ -47,35 +47,10 @@
   align-items: center;
   gap: var(--magentaa11y-spacing-size-8);
 
-  &--logo {
-    width: 27px;
-    height: 27px;
-  }
-
   &--name {
-    @include base-link-styles;
-    
-    font: var(--magentaa11y-typeset-headline-lg-xtrastrong);
-    line-height: var(--magentaa11y-spacing-size-40);
     margin: 0;
     text-align: center;
     position: relative;
-    height: max-content;
-    height: -webkit-max-content;
-    display: flex;
-    align-items: center;
-    padding: 0 0 0 50px;
-    letter-spacing: 0.1px;
-    gap: 4px;
-
-    @media (max-width: 960px) {
-      font: var(--magentaa11y-typeset-headline-md-xtrastrong);
-    }
-
-    &::before {
-      content: "Magenta";
-      color: var(--color-primary);
-    }
 
     &::after {
       content: "";
@@ -83,15 +58,16 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      background-image: url("../../../assets/svgs/brand-logo-white.svg");
+      background-image: url("../../../assets/svgs/Magenta11yLogoDT.svg");
       background-size: contain;
       background-repeat: no-repeat;
-      width: var(--magentaa11y-spacing-size-40);
-      height: var(--magentaa11y-spacing-size-40);
+      width: 297px;
+      height: 40px;
 
       @media (max-width: 960px) {
-        width: var(--magentaa11y-spacing-size-36);
-        height: var(--magentaa11y-spacing-size-36);
+        background-image: url("../../../assets/svgs/Magenta11yLogoSm.svg");
+        width: 176px;
+        height: 59px;
       }
     }
   }
