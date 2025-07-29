@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
-import Divider from 'components/custom-components/divider/divider';
-import { OrientationEnum } from 'components/custom-components/divider/divider.types';
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import contentData from 'shared/content.json';
-import { DocumentationCategory } from 'shared/types/shared-types';
+import Divider from "components/custom-components/divider/divider";
+import { OrientationEnum } from "components/custom-components/divider/divider.types";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import contentData from "shared/content.json";
+import { DocumentationCategory } from "shared/types/shared-types";
 
-import './footer.scss';
+import "./footer.scss";
 
 const currentYear = new Date();
 
@@ -18,9 +18,9 @@ const Footer: React.FC = () => {
           <div key={category} className="MagentaA11y--footer__nav-list">
             <h2>
               {category
-                .replace(/-/g, ' ')
-                .replace(/\b\w/g, (c) => c.toUpperCase())}{' '}
-              {category === DocumentationCategory.HOW_TO_TEST ? '' : 'Criteria'}
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, (c) => c.toUpperCase())}{" "}
+              {category === DocumentationCategory.HOW_TO_TEST ? "" : "Criteria"}
             </h2>
             <Divider orientation={OrientationEnum.HORIZONTAL} />
             <ul role="list">
@@ -35,17 +35,19 @@ const Footer: React.FC = () => {
           </div>
         ))}
         {/* TODO - also unskip test in footer.test.tsx */}
-        {/* <div className="MagentaA11y--footer__nav-list">
+        <div className="MagentaA11y--footer__nav-list">
           <h2>About Us</h2>
           <Divider orientation={OrientationEnum.HORIZONTAL} />
           <ul role="list">
             <li role="listitem">
-              <NavLink to={`/about`}>Contact Us</NavLink>
+              <NavLink to={`/about-us`}>Contact Us</NavLink>
             </li>
           </ul>
-        </div> */}
+        </div>
       </div>
-      <p className='date'>&copy; {currentYear.getFullYear()} T-Mobile USA, Inc.</p>
+      <p className="date">
+        &copy; {currentYear.getFullYear()} T-Mobile USA, Inc.
+      </p>
     </footer>
   );
 };
