@@ -11,7 +11,7 @@ best practices.
 
    **Test with your screen reader first**
 
-   Use a screen reader, such as [TalkBack](https://www.nvaccess.org/) (for Android) or [VoiceOver](https://www.apple.com/accessibility/mac/vision/) (for iOS)
+   Use a screen reader, such as [TalkBack](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845&sjid=10047972329698138905-NC) (for Android) or [VoiceOver](https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios) (for iOS)
 
    - Swipe with one finger anywhere on the screen to the right to navigate through the screen. Swipe left navigates backwards.
    - If custom actions are implemented, swipe up or down with one finger anywhere on the screen to perform action.
