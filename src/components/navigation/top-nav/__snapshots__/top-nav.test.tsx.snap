@@ -14,9 +14,7 @@ exports[`TopNav Component - Snapshot Test matches the snapshot 1`] = `
         aria-label="Magenta A11y - Home"
         class="MagentaA11y__brand--name active"
         href="/home"
-      >
-        A11y
-      </a>
+      />
     </div>
     <button
       aria-controls="main"
