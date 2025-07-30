@@ -118,14 +118,14 @@ If you are using a `<use />` element, add `aria-hidden="true"` to it.
 ### iOS VoiceOver
 
 <video controls>
-  <source src="media/video/web/informative-image/iOS-VoiceOver.mp4" type="video/webm">
+  <source src="media/video/web/informative-image/iOS-VoiceOver.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
 ### Windows JAWS Chrome
 
 <video controls>
-  <source src="media/video/web/informative-image/Windows-JAWS-Chrome.mp4" type="video/webm">
+  <source src="media/video/web/informative-image/Windows-JAWS-Chrome.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
