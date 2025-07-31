@@ -9,7 +9,7 @@ best practices.
 
 1. **How to test for links**
 
-   **Test with your screen reader first**
+   ### Test with your screen reader first
 
    Use a screen reader, such as [TalkBack](https://support.google.com/accessibility/android/topic/3529932?hl=en&ref_topic=9078845&sjid=10047972329698138905-NC) (for Android) or [VoiceOver](https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios) (for iOS)
 
@@ -21,7 +21,7 @@ best practices.
    - Activate Rotor or TalkBack menu to access a list of links to activate with double tap. (Only one way of accessing links is required: Focus within screen or in the context menus)
    - Note: Currently a known bug in iOS – links cannot be accessed from the Rotor using SwiftUI.
 
-   **Test with BlueTooth External keyboard second**
+   ### Test with BlueTooth External keyboard second
 
     Next, test with the BlueTooth external keyboard (without the screen reader turnedo on).
     Navigate through the page using one of the following keys to reach all links: 
@@ -31,11 +31,11 @@ best practices.
    - The `Ctrl+tab` and `Ctrl+shift tab` keys
    - Ensure links can be activated with the `space` key on iOS and for Android, `enter` key and `space` key both work separately.
 
-   **Test with BlueTooth External keyboard second**
+   ### Test with BlueTooth External keyboard second
 
    Lastly, test for enlarged text:
    - Go to Settings on your device and increase text size to 200%. 
-   - Refer to this document for instructions ( [suggested resource is an internal TMO link](https://tmobileusa.sharepoint.com/sites/arc/SitePages/Native-App-Testers.aspx#large-text) - what do we need/want out of this info that we also want open to the public? )
+   - Refer to this document for instructions ([suggested resource is an internal TMO link](https://tmobileusa.sharepoint.com/sites/arc/SitePages/Native-App-Testers.aspx#large-text) - what do we need/want out of this info that we also want open to the public?)
    - Ensure no text is cut off, overlaps, truncates or disappears 
    - Ensure functionality works as expected 
    - This does not apply to images of text or logos 
@@ -108,7 +108,6 @@ best practices.
 3. **What's the difference between a link and a button**
 
    ### If it opens a browser (ie: outside the app), it's a link.
-
    - A link can look like a big shiny button but it must be coded as a link.
 
    ### If the user stays within the app, it's a button
