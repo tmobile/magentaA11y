@@ -7,7 +7,7 @@ How to test a toggle switch
 ### iOS VoiceOver
 
 <video controls>
-  <source src="media/video/native/toggle-switch/toggle-switch_IosVoiceover.mp4" type="video/webm">
+  <source src="media/video/native/toggle-switch/toggle-switch_IosVoiceover.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
