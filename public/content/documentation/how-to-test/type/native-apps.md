@@ -21,26 +21,82 @@ best practices.
    - Activate Rotor or TalkBack menu to access a list of links to activate with double tap. (Only one way of accessing links is required: Focus within screen or in the context menus)
    - Note: Currently a known bug in iOS – links cannot be accessed from the Rotor using SwiftUI.
 
+   #### Screen reader shortcut one-time set up
+
+   ##### iOS VoiceOver
+
+   1. Open Settings
+   2. Choose Accessibility
+   3. Choose Accessibility Shortcut
+   4. Select VoiceOver
+   5. To start or stop VoiceOver, press the power button three times (no need to go to Settings each time to turn the screen reader on and off)
+
+   ##### TalkBack
+
+   1. Open Settings
+   2. Choose Accessibility
+   3. Choose Advanced Settings
+   4. Choose Volume up and down keys
+   5. Enable the toggle
+   6. To start or stop TalkBack, press both volume keys for 2-3 seconds (no need to go to Settings each time to turn the screen reader on and off)
+
+   ### iOS Rotor and Android TalkBack Menu
+   
+   #### iOS Rotor Set up
+
+   1. With VoiceOver on, using two fingers on the screen (many prefer to make a pinching-gesture and rotate on the screen), rotate fingers to hear the options available in the rotor
+   2. Keep rotating to cycle through the options, such as “headings”
+   3. With the rotor set to this option, you will be able to ues the single-finger swipe up or down to navigate through all the headings found on the screen. Note: (1) sing the single-finger swipe left or right is still available at any time. (2) Setting the rotor to other options will allow for the single-finger swipe up or down to navigate the user to that respective option.
+
+   #### Android TalkBack Menu (formally the Local Context Menu) Set up
+   
+   1. Tap once with three-fingers to access the TalkBack Menu
+   2. Actions and Links are the most common options to use, but others such as Activate Links, Expand Accordions, Navigate through a Carousel, and Delete Elements are available, too. 
+
    ### Test with BlueTooth External keyboard second
 
-    Next, test with the BlueTooth external keyboard (without the screen reader turnedo on).
-    Navigate through the page using one of the following keys to reach all links: 
+   Test with the BlueTooth external keyboard (without the screen reader turned on).
+
+   #### Setting up your BlueTooth external keyboard
+
+   Pair the external keyboard with your device as you would a computer. 
+
+   For iOS setup only:
+
+   1. Open Settings
+   2. Choose Accessibility
+   3. Choose Keyboards
+   4. Toggle on "Full Keyboard Access" 
+   
+   #### Navigating using your BlueTooth external keyboard
+    
+   ##### Navigate through the page using one of the following keys to reach all links: 
 
    - The `tab` and `shift tab` keys
    - The `arrow` keys
    - The `Ctrl+tab` and `Ctrl+shift tab` keys
    - Ensure links can be activated with the `space` key on iOS and for Android, `enter` key and `space` key both work separately.
 
-   ### Test with BlueTooth External keyboard second
+   ##### Lastly, test for enlarged text:
 
-   Lastly, test for enlarged text:
-   - Go to Settings on your device and increase text size to 200%. 
-   - Refer to this document for instructions ([suggested resource is an internal TMO link](https://tmobileusa.sharepoint.com/sites/arc/SitePages/Native-App-Testers.aspx#large-text) - what do we need/want out of this info that we also want open to the public?)
-   - Ensure no text is cut off, overlaps, truncates or disappears 
-   - Ensure functionality works as expected 
+   - Go to Settings on your device and increase text size to 200%
+      - In iOS, with "Larger Accessibility Sizes" toggled ON, move the text-size slider to the 9th tick from the left.
+         - Ensure no text in the app is cut off, overlaps, truncates, or disappears 
+      - Android, move the slide to the last tick to the right, the "largest" or "Huge" setting
+   - Ensure functionality works as expected; review accessibility acceptance criteria found on each component's individual page for testing steps 
+      - In iOS, Larger headings should adjust to Apple font size guidance
    - This does not apply to images of text or logos 
-   - Text in the top and bottom navigation bars do not increase in size 
-   - Text in a web view on iOS does not increase in size
+   - Text in the top and bottom navigation bars **do not** increase in size 
+   - Text in a WebView on iOS does not increase in size
+
+   ###### Developer note for Large Text
+
+   - Ensure containers enlarge as text enlarges (view constraints are set correctly)
+   - Set labels to textwrap
+   - Specify font weight when needed
+   - Specify font size and font scale when needed
+   - Do not disable scrolling
+   - Use preferred fonts for the platform when possible (designers will give the developers the font styles and sizes)
 
 2. **What to test for**
 
