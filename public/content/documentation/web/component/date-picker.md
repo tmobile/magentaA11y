@@ -114,7 +114,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/
 ### iOS VoiceOver
 
 <video controls>
-  <source src="media/video/web/date-picker/date-picker_IosVoiceOver.mp4" type="video/webm">
+  <source src="media/video/web/date-picker/date-picker_iOSVoiceover.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
