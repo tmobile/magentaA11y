@@ -5,7 +5,7 @@ const AboutUs: React.FC = () => {
   return (
     <div className="MagentaA11y-about">
       <div className="MagentaA11y-about__hero-container">
-        <h1 className="MagentaA11y-about__title MagentaA11y--color">
+        <h1 className="MagentaA11y-about__highlight">
           We Are <span className="MagentaA11y-about__title-highlight">MagentaA11y</span>
         </h1>
         <p className="MagentaA11y-about__tagline">Some catchy tagline for ARC</p>
