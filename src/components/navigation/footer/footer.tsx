@@ -34,7 +34,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         ))}
-        {/* TODO - also unskip test in footer.test.tsx */}
         <div className="MagentaA11y--footer__nav-list">
           <h2>About Us</h2>
           <Divider orientation={OrientationEnum.HORIZONTAL} />
