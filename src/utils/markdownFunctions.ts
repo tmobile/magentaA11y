@@ -74,7 +74,14 @@ export const getMarkdownFunctionMap = (
   alertSuccess: () => {
     const alertDiv = document.getElementById('alertSuccessExample');
     if (alertDiv) {
-      alertDiv.innerHTML.length === 0 ? alertDiv.innerHTML = '<p class="alert success">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
+      alertDiv.innerHTML === '' ? alertDiv.innerHTML = '<p class="alert success">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
+    }
+  },
+
+  hintHelpErrorAlertDemo: () => {
+    const warningDiv = document.getElementById('hint-help-error-alert');
+    if (warningDiv) {
+      warningDiv.innerHTML.length === 0 ? warningDiv.innerHTML = '<p class="alert warning">Warning: The correct answer is Cookie Monster!</p>' : warningDiv.innerHTML = '';
     }
   },
 

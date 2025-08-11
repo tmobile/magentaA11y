@@ -83,8 +83,6 @@ An alert is dynamic content that is injected into the page when it changes and a
 
 ### Basic notification
 
-<!-- TODO: Needs JS to update error message stylings -->
-
 ```html
 <div role="alert" 
      id="alert-notification" 
@@ -98,12 +96,11 @@ An alert is dynamic content that is injected into the page when it changes and a
 ```
 
 <example>
-   <div id="alertSuccessExample"
+   <!--- Use JS to inject the alert here --> 
+   <div 
+      id="alertSuccessExample"
       role="alert" 
-      id="alert-notification" 
-      class="notification inert">
-      <!--- Use JS to inject the alert here -->
-   </div>
+      class="notification inert"></div>
 
    <button data-fn="alertSuccess" id="show-alert-notification" class="Magentaa11y-button Magentaa11y-button--primary">
    Save my settings
@@ -111,8 +108,6 @@ An alert is dynamic content that is injected into the page when it changes and a
 </example>
 
 ### Error alert from an input field
-
-<!-- TODO: Needs to update warning stylings -->
 
 ```html
 <label for="favorite-sesame-street-character">
@@ -155,14 +150,13 @@ An alert is dynamic content that is injected into the page when it changes and a
          aria-describedby="favorite-character-error favorite-character-hint"
          required>
 
-   <div role="alert" 
+   <div
+      role="alert" 
       id="favorite-character-alert" 
       class="inert">
       <!--- Do not reference this alert element
             directly with aria-describedby -->
-      <div id="favorite-character-error" class="warning">
-         <!--- Use JS to inject the alert here -->
-      </div>     
+      <div id="favorite-character-error" class="warning"><!--- Use JS to inject the alert here --></div>     
    </div>
 
    <div class="hint" id="favorite-character-hint">
