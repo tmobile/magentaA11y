@@ -118,7 +118,7 @@ If you are using a `<use />` element, add `aria-hidden="true"` to it.
 ### iOS VoiceOver
 
 <video controls>
-  <source src="media/video/web/informative-image/iOS-VoiceOver.webm" type="video/webm">
+  <source src="media/video/web/informative-image/info-image_iOS-Voiceover.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
