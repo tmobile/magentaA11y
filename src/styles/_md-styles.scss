@@ -899,6 +899,40 @@ input.star:focus-visible + label {
     color: #e20074;
 }
 
+/* styling for progress indicator web demo */
+.progress {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  width: 100%;
+  height: 20px;
+  border-radius: 999px;
+  overflow: hidden;
+
+  // Track styles
+  &::-webkit-progress-bar {
+    background: linear-gradient(
+      to right,
+      #cfcfcf 0%,   // light gray left
+      #e4e2e2 60%, // mid gray
+      #b3b3b3 100% // darker gray right
+    );
+    border-radius: 999px;
+  }
+
+  // Fill styles (Chrome/Safari/Edge)
+  &::-webkit-progress-value {
+    background-color: #e20074;
+    border-radius: 999px;
+  }
+
+  // Firefox track fallback
+  &::-moz-progress-bar {
+    background-color: #e20074;
+    border-radius: 999px;
+  }
+}
+
 
 
 /* stylelint-enable no-descending-specificity */
