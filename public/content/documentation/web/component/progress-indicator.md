@@ -154,15 +154,15 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
 </div>
 ```
 
-<!-- TODO: the button should open this modal - should we add text in the loading modal that says you can use your ESCAPE key to close the modal for those who are unfamiliar?
+<!-- TODO: the button should open this modal - should we add text in the loading modal that says you can use your ESCAPE key to close the modal for those who are unfamiliar? -->
 
 <example>
 <!-- Use aria-busy if content doesn't all load at once
 <div id="really-slow-app" 
      aria-live="polite" 
-     aria-busy="false">
+     aria-busy="false"> -->
      
-  <button id="showModal">
+  <button class="Magentaa11y-button Magentaa11y-button--primary" id="showModal">
     Launch spinner
   </button>
 
@@ -182,7 +182,7 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
     </section>
   </dialog>
 </div>
-</example> -->
+</example>
 
 ### Inline dynamic loading waiting example
 
