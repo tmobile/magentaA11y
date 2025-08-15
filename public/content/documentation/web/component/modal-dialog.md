@@ -117,21 +117,25 @@ Since browser support for `<dialog>` is incomplete, if you plan to use the `<dia
 Some browsers require additional scripting. This simple example works in Chrome, but [may not work correctly in all browsers](https://caniuse.com/?search=dialog) such as Safari and Firefox.
 
 ```html
-   <button id="showModal">
+   <button data-fn="showModal" 
+         data-target="dialog-example-modal" 
+         id="showModal">
    Things you should know
    </button>
 
    <dialog role="dialog"
-         id="modal"
+         id="dialog-example-modal"
+         class="dialog"
          tabindex="-1"
          aria-modal="true"
          aria-labelledby="dialog-title">
-   <button type="button"
-            id="closeModal"
-            class="close">
-      <span class="hidden">Close</span>
+   <button aria-label="close" 
+         type="button" 
+         data-fn="closeModal" 
+         id="closeModal" 
+         class="close">
    </button>
-   <div class="dialog-content">
+   <div class="dialog__content">
       <h2 id="dialog-title" class="h-bravo">
          Things you should know
       </h2>
@@ -151,22 +155,21 @@ Some browsers require additional scripting. This simple example works in Chrome,
    </section>
    </dialog>
 ```
-<!-- TODO: The code sample example is not currently functional - fix needed.
+
 
 <example>
-   <button id="showModal">
+   <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showModal" data-target="dialog-example-modal" id="showModal">
    Things you should know
    </button>
 
    <dialog role="dialog"
-         id="modal"
+         id="dialog-example-modal"
+         class="dialog"
          tabindex="-1"
          aria-modal="true"
          aria-labelledby="dialog-title">
-   <button type="button"
-            id="closeModal"
-            class="close">
-      <span class="hidden">Close</span>
+         <div class="dialog__content">
+   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close">
    </button>
    <div class="dialog-content">
       <h2 id="dialog-title" class="h-bravo">
@@ -182,12 +185,12 @@ Some browsers require additional scripting. This simple example works in Chrome,
          <li>The modal's title is announced on launch.</li>
          <li>The screen reader cannot read content behind the dialog.</li>
       </ul>
-      <button type="submit">
+      <button class="Magentaa11y-button Magentaa11y-button--primary" type="submit" data-fn="closeModal">
          Continue
       </button>
-   </section>
+   </div>
    </dialog>
-</example> -->
+</example> 
 
 ## Further Reading
 - [WCAG 1.3.1 Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html)
