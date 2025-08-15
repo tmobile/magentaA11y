@@ -227,6 +227,111 @@ export const getMarkdownFunctionMap = (
           toggleButton.setAttribute('aria-expanded', String(newExpandedState));
     
   },
+// show/close modal functionality
+showModal: (event) => {
+  const trigger = event?.currentTarget as HTMLElement | null;
+  const targetId = trigger?.getAttribute('data-target') || 'modal';
+  const dlg = document.getElementById(targetId) as HTMLDialogElement | null;
+  if (!dlg) return;
+
+  // Remember where to return focus
+  const returnEl = trigger || (document.activeElement as HTMLElement | null);
+  if (returnEl) {
+    if (!returnEl.id) returnEl.id = `modal-trigger-${Math.random().toString(36).slice(2)}`;
+    dlg.setAttribute('data-return-focus', returnEl.id);
+  }
+
+  // Ensure ARIA
+  if (!dlg.getAttribute('role')) dlg.setAttribute('role', 'dialog');
+  if (!dlg.getAttribute('aria-modal')) dlg.setAttribute('aria-modal', 'true');
+
+  // --- Native modal path (preferred)
+  if (typeof dlg.showModal === 'function') {
+    // clear any legacy inline styles
+    dlg.style.removeProperty('display');
+    dlg.style.removeProperty('z-index');
+    dlg.removeAttribute('open');
+
+    if (!dlg.open) {
+      try { dlg.showModal(); } catch { /* already open */ }
+    }
+
+    // initial focus
+    const preferred = dlg.querySelector<HTMLElement>('[data-initial-focus],[autofocus]') || dlg;
+    requestAnimationFrame(() => preferred.focus());
+
+    // restore focus on close (wire once)
+    if (!dlg.dataset.restoreFocus) {
+      dlg.addEventListener('close', () => {
+        const id = dlg.getAttribute('data-return-focus');
+        if (id) document.getElementById(id)?.focus();
+        dlg.removeAttribute('data-return-focus');
+      });
+      dlg.dataset.restoreFocus = 'true';
+    }
+
+    // click outside to close 
+    if (!dlg.dataset.backdropClose) {
+      dlg.addEventListener('click', (e) => {
+        const r = dlg.getBoundingClientRect();
+        const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+        if (!inside) dlg.close();
+      });
+      dlg.dataset.backdropClose = 'true';
+    }
+    return;
+  }
+
+  // --- Fallback (non-modal)
+  dlg.style.display = 'block';
+  dlg.setAttribute('open', '');
+  if (!dlg.hasAttribute('tabindex')) dlg.setAttribute('tabindex', '-1');
+  dlg.focus();
+},
+
+closeModal: (event) => {
+  const target = event?.currentTarget as HTMLElement | null;
+
+  // Always prefer the real ancestor dialog the button lives in
+  let dlg = target?.closest('dialog') as HTMLDialogElement | null;
+
+  // Fallback to an explicit target id, then to 'modal'
+  if (!dlg) {
+    const id = target?.getAttribute('data-target') || 'modal';
+    dlg = document.getElementById(id) as HTMLDialogElement | null;
+  }
+  if (!dlg) return;
+
+  // Close natively if open; else ensure the fallback state is cleared
+  if (dlg.open && typeof dlg.close === 'function') {
+    try { dlg.close(); } catch { /* no-op */ }
+  } else {
+    dlg.removeAttribute('open');
+  }
+
+  // Clear any legacy inline visibility used by fallback path
+  dlg.style.removeProperty('display');
+
+  // Restore focus to the launcher
+  const id = dlg.getAttribute('data-return-focus');
+  if (id) document.getElementById(id)?.focus();
+  dlg.removeAttribute('data-return-focus');
+
+  // Prevent this click from bubbling into the page during the same tick
+  event?.stopPropagation?.();
+  event?.preventDefault?.();
+
+  // Safety check (helps catch ghost top-layer dialogs during dev)
+  // If something went wrong, this will close any stray open dialogs.
+  const stillOpen = document.querySelectorAll('dialog[open]');
+  if (stillOpen.length > 0) {
+    stillOpen.forEach((d) => {
+      try { (d as HTMLDialogElement).close?.(); } catch {}
+      (d as HTMLElement).style.removeProperty('display');
+      d.removeAttribute('open');
+    });
+  }
+},
 
 
 });

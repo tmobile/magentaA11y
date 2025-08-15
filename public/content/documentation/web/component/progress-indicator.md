@@ -162,24 +162,24 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
      aria-live="polite" 
      aria-busy="false"> -->
      
-  <button class="Magentaa11y-button Magentaa11y-button--primary" id="showModal">
+  <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showModal" id="showSpinnerModal" data-target="spinner-modal">
     Launch spinner
   </button>
 
   <dialog role="dialog"
-          class="takeover"
-          id="modal"
+          class="dialog"
+          id="spinner-modal"
           tabindex="-1"
           aria-modal="true"
-          aria-labelledby="modal-title">
-    <section>
+          aria-label="progress spinner">
+    <div class="dialog__content">
+   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close"></button>
       <div class="progress-spinner">
         <progress role="progressbar" 
                   id="modal-title" 
-                  tabindex="0" 
-                  aria-label="Loading">
+                  aria-label="Loading"></progress>
       </div>
-    </section>
+    </div>
   </dialog>
 </div>
 </example>
