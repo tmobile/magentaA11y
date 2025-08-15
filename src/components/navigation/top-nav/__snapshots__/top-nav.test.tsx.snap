@@ -11,7 +11,7 @@ exports[`TopNav Component - Snapshot Test matches the snapshot 1`] = `
     >
       <a
         aria-current="page"
-        aria-label="Magenta A11y - Home"
+        aria-label="Magenta A11y by T-Mobile - Home"
         class="MagentaA11y__brand--name active"
         href="/home"
       />
