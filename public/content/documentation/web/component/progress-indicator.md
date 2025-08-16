@@ -127,41 +127,29 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
    - If content is being loaded slowly behind the spinner inside an `aria-live` region, use `aria-busy="true"` to keep it from being announced until the update is complete.
 
 ```html
-<!-- Use aria-busy if content doesn't all load at once -->
 <div id="really-slow-app" 
      aria-live="polite" 
      aria-busy="false">
      
-  <button id="showModal">
-    Launch spinner
-  </button>
-
   <dialog role="dialog"
-          class="takeover"
-          id="modal"
+          class="dialog"
+          id="spinner-modal"
           tabindex="-1"
           aria-modal="true"
-          aria-labelledby="modal-title">
-    <section>
+          aria-label="progress spinner">
+    <div class="dialog__content">
+   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close"></button>
       <div class="progress-spinner">
         <progress role="progressbar" 
                   id="modal-title" 
-                  tabindex="0" 
-                  aria-label="Loading">
+                  aria-label="Loading"></progress>
       </div>
-    </section>
+    </div>
   </dialog>
 </div>
 ```
 
-<!-- TODO: the button should open this modal - should we add text in the loading modal that says you can use your ESCAPE key to close the modal for those who are unfamiliar? -->
-
 <example>
-<!-- Use aria-busy if content doesn't all load at once
-<div id="really-slow-app" 
-     aria-live="polite" 
-     aria-busy="false"> -->
-     
   <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showModal" id="showSpinnerModal" data-target="spinner-modal">
     Launch spinner
   </button>
@@ -193,44 +181,41 @@ This example dynamically injects progress updates that will be read by a screen 
    - `role="status"` has an implicit `aria-live="polite"` and `aria-atomic="true"`, meaning the entire content of the status will be read on each update
 
 ```html
-<div 
-  id="slow-app"
-  aria-live="polite">
-  
-  <button 
-    id="trigger-progressbar"
-    aria-describedby="progress-busy"
-    aria-disabled="false">
-      Save
-  </button>
-
-  <div class="progress-busy inert" role="status">
-    <span id="progress-busy">
-    </span> 
-  </div>
+<div id="slow-app">
+   <span class="btn-with-chip">
+      <button class="Magentaa11y-button Magentaa11y-button--primary"
+         id="trigger-progressbar"
+         type="button"
+         data-fn="startProgress"
+         data-chip="#progress-chip"     
+         aria-describedby="progress-busy"
+         aria-disabled="false">
+            Save
+      </button>
+      <span id="progress-chip" 
+         class="progress-chip" 
+         role="status" 
+         hidden>0%</span>
+   </span>
 </div>
 ```
-
-<!-- TODO: demo doesn't currently work
-
 <example>
-<div 
-  id="slow-app"
-  aria-live="polite">
-  
-  <button 
+<div id="slow-app">
+   <span class="btn-with-chip">
+      <button
+      class="Magentaa11y-button Magentaa11y-button--primary"
     id="trigger-progressbar"
+    type="button"
+    data-fn="startProgress"
+    data-chip="#progress-chip"     
     aria-describedby="progress-busy"
     aria-disabled="false">
-      Save
-  </button>
-
-  <div class="progress-busy inert" role="status">
-    <span id="progress-busy">
-    </span> 
-  </div>
+    Save
+      </button>
+      <span id="progress-chip" class="progress-chip" role="status" hidden>0%</span>
+      </span>
 </div>
-</example> -->
+</example>
 
 ## Further Reading
    - [WCAG 1.1.1 Non-text Content (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html)

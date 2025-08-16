@@ -1147,7 +1147,67 @@ input.star:focus-visible + label {
 }
 
 /* Native-only: hide when not open */
-:where(dialog).dialog:not([open]) { display: none !important; }
+:where(dialog).dialog:not([open]) { 
+  display: none !important; 
+}
+
+// Progress indicator chip styling
+#slow-app { 
+  display: inline-flex; 
+  align-items: center; gap: .75rem; 
+}
+
+.progress-chip {
+  display: inline-grid; place-items: center;
+  min-width: 4rem; height: 4rem; padding: 0 .5rem;
+  border-radius: 9999px;
+  background: #222; color: #fff; font-weight: 600;
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: -0.5rem;
+  transform: translate(50%, -50%);   /* anchor */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* pulse while busy */
+
+/* Move @keyframes to root level (outside any selector) */
+@keyframes chip-pulse {
+  0% {
+    transform: translate(50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 18%);
+  }
+
+  50% {
+    transform: translate(50%, -50%) scale(1.06);
+    box-shadow: 0 0 0 .45rem rgb(0 0 0 / 0%);
+  }
+
+  100% {
+    transform: translate(50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 0%);
+  }
+}
+
+.progress-chip.is-busy {
+  animation: chip-pulse 1000ms ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-chip.is-busy { animation: none; }
+}
+
+.btn-with-chip { 
+  position: relative; 
+  display: inline-block; 
+}
+
+/* respect the hidden attribute */
+.progress-chip[hidden] { 
+  display: none !important; 
+}
 
 
 /* stylelint-enable no-descending-specificity */

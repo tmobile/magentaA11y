@@ -228,7 +228,7 @@ export const getMarkdownFunctionMap = (
     
   },
 // show/close modal functionality
-showModal: (event) => {
+  showModal: (event) => {
   const trigger = event?.currentTarget as HTMLElement | null;
   const targetId = trigger?.getAttribute('data-target') || 'modal';
   const dlg = document.getElementById(targetId) as HTMLDialogElement | null;
@@ -287,9 +287,9 @@ showModal: (event) => {
   dlg.setAttribute('open', '');
   if (!dlg.hasAttribute('tabindex')) dlg.setAttribute('tabindex', '-1');
   dlg.focus();
-},
+  },
 
-closeModal: (event) => {
+  closeModal: (event) => {
   const target = event?.currentTarget as HTMLElement | null;
 
   // Always prefer the real ancestor dialog the button lives in
@@ -331,7 +331,81 @@ closeModal: (event) => {
       d.removeAttribute('open');
     });
   }
-},
+  },
 
+  // Progress indicator loading chip
+startProgress: (event) => {
+  const btn = event.currentTarget as HTMLButtonElement;
+  if (!btn || btn.disabled || btn.dataset.running === '1') return;
+  btn.dataset.running = '1';
+
+  const host =
+    (btn.closest('#slow-app') as HTMLElement) ||
+    (btn.parentElement as HTMLElement) ||
+    document.body;
+
+  const chip =
+    (host.querySelector('#progress-chip') as HTMLElement) ||
+    (document.querySelector('#progress-chip') as HTMLElement) ||
+    null;
+
+  const setBusy = (busy: boolean) => {
+    host.setAttribute('aria-busy', busy ? 'true' : 'false');
+    btn.disabled = busy;
+    btn.setAttribute('aria-disabled', busy ? 'true' : 'false');
+    if (chip) {
+      chip.hidden = !busy;                 // show only while busy
+      chip.classList.toggle('is-busy', busy); // pulse while busy
+    }
+  };
+
+  setBusy(true); // shows + pulses the chip
+
+  const steps = [10, 25, 50, 75];
+  const delays = [2000, 2000, 2000]; // ms between updates
+
+  // Kick off first update (chip itself announces via role="status")
+  if (chip) {
+    chip.removeAttribute('aria-label'); // ensure no leftover custom message
+    chip.textContent = '10%';
+  }
+
+  let t = 0;
+  for (let i = 1; i < steps.length; i++) {
+    t += delays[i - 1];
+    const pct = steps[i];
+    window.setTimeout(() => {
+      if (!chip) return;
+      chip.textContent = `${pct}%`; // role="status" will announce this change
+      // no aria-label during progress (avoid duplicate phrasing)
+    }, t);
+  }
+
+  // Finish: visually show "Done", but announce "Save complete"
+  t += 900;
+  window.setTimeout(() => {
+    if (chip) {
+      chip.classList.remove('is-busy');   // stop pulse
+      chip.textContent = 'Done';          // visual
+      chip.setAttribute('aria-label', 'Save complete'); // spoken
+    }
+
+    // re-enable immediately
+    host.setAttribute('aria-busy', 'false');
+    btn.disabled = false;
+    btn.setAttribute('aria-disabled', 'false');
+
+    // hide after a short linger
+    setTimeout(() => {
+      if (chip) {
+        chip.hidden = true;
+        chip.textContent = '0%';          // optional reset for next run
+        chip.removeAttribute('aria-label'); // cleanup
+      }
+      try { btn.focus(); } catch {}
+      delete btn.dataset.running;
+    }, 2000);
+  }, t);
+},
 
 });
