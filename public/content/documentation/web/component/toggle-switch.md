@@ -4,12 +4,17 @@ How to test a toggle switch
 
 ## Videos
 
-<!-- TODO: We don't have an Android Talkback example and should! -->
-
 ### iOS VoiceOver
 
 <video controls>
   <source src="media/video/web/toggle-switch/toggle-switch_IosVoiceOver.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+### Android Talkback
+
+<video controls>
+  <source src="media/video/web/toggle-switch/toggle-switch_Talkback.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
