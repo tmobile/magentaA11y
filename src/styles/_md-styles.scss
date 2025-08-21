@@ -623,6 +623,16 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     transition: all 0.1s;
   }
 
+  /* stylelint-disable no-duplicate-selectors */
+  @media (prefers-color-scheme: dark) {
+  details summary::before, 
+  .expander-toggle::before, 
+  details summary::before, 
+  .expander-toggle::before {
+    background-color: var(--color-text-primary);
+  }
+}
+
 }
 
 .bad-example {
@@ -780,6 +790,7 @@ input.star:focus-visible + label {
 .bad-contrast-button:hover {
     color: #e20074;
 }
+
 
 
 /* stylelint-enable no-descending-specificity */
