@@ -78,7 +78,6 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 </div>
 ```
 
-<!-- TODO: This example needs more styles support -->
 <example>
    <div class="expander-group">
       <button data-fn="toggleExpander" id="expanderToggle" class="expander-toggle" aria-expanded="false" aria-controls="expanderContent">
@@ -94,7 +93,7 @@ This custom expander uses a semantic button with `aria-expanded` with additional
 
 ## Native HTML expander accordion (details/summary)
    - This semantic HTML contains all accessibility features by default with no scripting required.
-   - It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_details-summary.scss) to create the expanded/collapsed indicator, no Javascript.
+   - It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/src/styles/_md-styles.scss) to create the expanded/collapsed indicator, no Javascript.
 
 **Note:** Due to known accessibility support issues in recent versions of iOS, `<details>` is not recommended for expander accordions. We recommend the use of an ARIA Disclosure Widget which has very robust support.
 
