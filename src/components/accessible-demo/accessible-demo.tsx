@@ -31,7 +31,7 @@ const AccessibleDemo: React.FC = () => {
             <div className="section group-4">
                 <div className="display-list">
                     <h3 className="h-delta center-text">
-                    <img src="{{ site.baseurl }}/assets/images/icons/icon-pointer.svg"
+                    <img src="/assets/images/icons/icon-pointer.svg"
                             role="img"
                             alt=""
                             className="icon icon-large" />
@@ -85,7 +85,7 @@ const AccessibleDemo: React.FC = () => {
         </section>
 
 
-        <section className="container section narrow accessible-summary">
+        <section className="container section accessible-summary">
             <h2 className="h-bravo">
                 Common questions
             </h2>
@@ -215,7 +215,7 @@ const AccessibleDemo: React.FC = () => {
             </details>
         </section>
 
-        <section className="container narrow">
+        <section className="container">
             <h2 id="favorites" className="h-bravo">
                 Survey: Which is your favorite screen reader
             </h2>
