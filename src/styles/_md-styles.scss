@@ -548,6 +548,8 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
 }
 
+// end example styles
+
 .bad-example {
   color: var(--color-error-container);
 
@@ -702,6 +704,31 @@ input.star:focus-visible + label {
 /* styling for example of a button with bad color contrast on hover for How to Test Color Contrast */
 .bad-contrast-button:hover {
     color: #e20074;
+}
+
+// accessible web page demo styles
+.h-alpha {
+  font-size: var(--magentaa11y-font-size-60);
+  margin: 0 0 1rem;
+}
+
+.h-bravo {
+  font-size: var(--magentaa11y-font-size-48);
+  margin: 2rem 0 1rem;
+}
+
+
+.h-delta {
+  font-size: var(--magentaa11y-font-size-32);
+  margin: 2rem 0 1rem;
+}
+
+section.container {
+  margin: 2rem 0 4rem;
+}
+
+.accessible-summary details {
+  padding: 1rem 0;
 }
 
 

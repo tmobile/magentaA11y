@@ -2,91 +2,90 @@ import React from "react";
 
 const AccessibleDemo: React.FC = () => {
   return (
-    <div>
-      <div className="billboard">
+    <div className="MagentaA11y--home-page__content">
+      <section className="container">
             <div className="container group-2-1">
                 <div>
                     <h1 className="h-alpha">Basic web page demo</h1>
-                    <p className="h-bravo subhead">
+                    <h2 className="MagentaA11y__nav-display__subtitle">
                         This basic web page demonstrates how a screen reader consumes headings, forms and interactive elements.
-                    </p>
+                    </h2>
                 </div>
                 <div className="lowlight center-text">
-                    <h2 className="h-delta">
+                    <h3 className="h-delta">
                         We want to know your favorite screen reader.
-                    </h2>
+                    </h3>
                     <a href="#favorites" className="button">
                         Screen reader survey
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
 
 
-        <div className="container">
+        <section className="container">
             <h2 className="h-bravo center-text">
                 Broad categories of disabilities
             </h2>
-        </div>
 
-        <div className="container section group-4">
-            <div className="display-list">
-                <h3 className="h-charlie center-text">
-                <img src="{{ site.baseurl }}/assets/images/icons/icon-pointer.svg"
-                        role="img"
-                        alt=""
-                        className="icon icon-large" />
-                Motor
-                </h3>
-                <p>
-                Not everyone uses a mouse or taps their screen.
-                Some people exclusively use a keyboard or custom switch input devices.
-                </p>
+            <div className="section group-4">
+                <div className="display-list">
+                    <h3 className="h-delta center-text">
+                    <img src="{{ site.baseurl }}/assets/images/icons/icon-pointer.svg"
+                            role="img"
+                            alt=""
+                            className="icon icon-large" />
+                    Motor
+                    </h3>
+                    <p>
+                    Not everyone uses a mouse or taps their screen.
+                    Some people exclusively use a keyboard or custom switch input devices.
+                    </p>
+                </div>
+
+                <div className="display-list">
+                    <h3 className="h-delta center-text">
+                    <img src="{{ site.baseurl }}/assets/images/icons/icon-vision.svg"
+                            role="img"
+                            alt=""
+                            className="icon icon-large" />
+                    Vision
+                    </h3>
+                    <p>
+                    People who are blind or low vision use the internet using a screen reader or extreme zoom tools.
+                    </p>
+                </div>
+
+                <div className="display-list">
+                    <h3 className="h-delta center-text">
+                    <img src="{{ site.baseurl }}/assets/images/icons/icon-hearing.svg"
+                            role="img"
+                            alt=""
+                            className="icon icon-large" />
+                    Hearing
+                    </h3>
+                    <p>
+                    Some people rely on captions or transcripts to consume audio or video.
+                    </p>
+                </div>
+
+                <div className="display-list">
+                    <h3 className="h-delta center-text">
+                    <img src="{{ site.baseurl }}/assets/images/icons/icon-brain.svg"
+                            role="img"
+                            alt=""
+                            className="icon icon-large" />
+                    Cognitive
+                    </h3>
+                    <p>
+                    There is a wide range of cognitive differences that can be accommodated by design and code.
+                    </p>
+                </div>
             </div>
+        </section>
 
 
-            <div className="display-list">
-                <h3 className="h-charlie center-text">
-                <img src="{{ site.baseurl }}/assets/images/icons/icon-vision.svg"
-                        role="img"
-                        alt=""
-                        className="icon icon-large" />
-                Vision
-                </h3>
-                <p>
-                People who are blind or low vision use the internet using a screen reader or extreme zoom tools.
-                </p>
-            </div>
-
-            <div className="display-list">
-                <h3 className="h-charlie center-text">
-                <img src="{{ site.baseurl }}/assets/images/icons/icon-hearing.svg"
-                        role="img"
-                        alt=""
-                        className="icon icon-large" />
-                Hearing
-                </h3>
-                <p>
-                Some people rely on captions or transcripts to consume audio or video.
-                </p>
-            </div>
-
-            <div className="display-list">
-                <h3 className="h-charlie center-text">
-                <img src="{{ site.baseurl }}/assets/images/icons/icon-brain.svg"
-                        role="img"
-                        alt=""
-                        className="icon icon-large" />
-                Cognitive
-                </h3>
-                <p>
-                There is a wide range of cognitive differences that can be accommodated by design and code.
-                </p>
-            </div>
-        </div>
-
-
-        <div className="container section narrow">
+        <section className="container section narrow accessible-summary">
             <h2 className="h-bravo">
                 Common questions
             </h2>
@@ -214,9 +213,9 @@ const AccessibleDemo: React.FC = () => {
                         </tbody>
                         </table>
             </details>
-        </div>
+        </section>
 
-        <div className="container narrow">
+        <section className="container narrow">
             <h2 id="favorites" className="h-bravo">
                 Survey: Which is your favorite screen reader
             </h2>
@@ -227,7 +226,7 @@ const AccessibleDemo: React.FC = () => {
                         Choose your favorite screen reader
                     </legend>
 
-                    <input type="radio" name="nato" id="alphaRadio" />
+                    <input type="radio" name="nato" id="alphaRadio" className="radio"/>
                     <label htmlFor="alphaRadio">VoiceOver for iOS</label>
 
                     <input type="radio" name="nato" id="bravoRadio" />
@@ -247,11 +246,11 @@ const AccessibleDemo: React.FC = () => {
                     <div id="response-message"></div>
                 </div>
 
-                <button type="button" id="submit-response">
+                <button type="button" id="submit-response" className="Magentaa11y-button Magentaa11y-button--primary">
                     Submit
                 </button>
             </form>
-        </div>
+        </section>
     </div>
   );
 };
