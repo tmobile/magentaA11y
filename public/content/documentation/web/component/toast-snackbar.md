@@ -78,7 +78,7 @@ Toast snackbars might seem like an easy way to provide feedback, but they’re o
 <example>
 <fieldset>
   <legend>Marketing preferences</legend>
-  <input data-fn="openToast" type="checkbox" role="switch" id="spam" aria-describedby="hint-spam-message">
+  <input class="switch" data-fn="openToast" type="checkbox" role="switch" id="spam" aria-describedby="hint-spam-message">
   <label for="spam">
    Send me constant spam
    </label>
