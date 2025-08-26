@@ -149,16 +149,16 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex + 1;
-  
+
     if (nextIndex < stepperSelect.options.length) {
       stepperSelect.selectedIndex = nextIndex;
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${nextIndex+1}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -173,10 +173,10 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex - 1;
-  
+
     if (currentIndex===0) {
       return; // do nothing if at 0
     } else if (nextIndex < stepperSelect.options.length) {
@@ -184,7 +184,7 @@ export const getMarkdownFunctionMap = (
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${currentIndex}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -200,4 +200,8 @@ export const getMarkdownFunctionMap = (
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
+
+  openToast: ()=> {
+    console.log('open toast');
+  }
 });
