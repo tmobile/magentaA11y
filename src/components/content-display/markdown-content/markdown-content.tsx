@@ -187,6 +187,54 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             return <button {...props}>{children}</button>;
           },
 
+          input: (props) => {
+            const fnKey = (props as Record<string, unknown>)?.['data-fn'] as
+              | string
+              | undefined;
+            const eventType =
+              ((props as Record<string, unknown>)?.['data-event'] as string) ||
+              'onChange';
+            const fn = fnKey && markdownFunctionMap[fnKey];
+
+            if (!fnKey || typeof fn !== 'function') {
+              return <input {...props} />;
+            }
+
+            // For inputs (checkboxes, radios, text), prefer onChange.
+            // Do NOT prevent default so the control state updates naturally.
+            switch (eventType) {
+              case 'onClick':
+                return (
+                  <input
+                    {...props}
+                    onClick={(e) => {
+                      // Call the mapped function; event type differs but is safe to pass along
+                      (fn as unknown as (ev: unknown) => void)(e);
+                    }}
+                  />
+                );
+              case 'onInput':
+                return (
+                  <input
+                    {...props}
+                    onInput={(e) => {
+                      (fn as unknown as (ev: unknown) => void)(e);
+                    }}
+                  />
+                );
+              case 'onChange':
+              default:
+                return (
+                  <input
+                    {...props}
+                    onChange={(e) => {
+                      (fn as unknown as (ev: unknown) => void)(e);
+                    }}
+                  />
+                );
+            }
+          },
+
           div: (props) => {
             const fnKey = (props as any)['data-fn'];
             const eventType = (props as any)['data-event'] || 'onClick';

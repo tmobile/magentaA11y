@@ -69,7 +69,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
         flex-direction: column-reverse;
       }
     }
-  
+
     .list {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -77,7 +77,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       column-gap: 2rem;
       padding: 0;
       margin: 0;
-  
+
       li {
         list-style-type: none;
         padding-left: 0;
@@ -91,14 +91,14 @@ example, /* stylelint-disable-line selector-type-no-unknown */
         }
       }
     }
-  
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border: 2px black solid;
     }
-  } 
+  }
 
   .switch {
     max-width: 450px;
@@ -161,7 +161,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       }
     }
   }
-  
+
   .stepper {
     display: inline-grid;
     grid-template-columns: 39px 1fr 39px;
@@ -194,20 +194,20 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       }
     }
   }
-  
+
   input[aria-disabled="true"],
   input[disabled] {
     background: var(--color-background-secondary);
   }
 
   // text input styles within examples
-  textarea, 
-  input[type="text"], 
-  input[type="email"], 
-  input[type="date"], 
-  input[type="tel"], 
-  input[type="number"], 
-  input[type="password"], 
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
   input[type="button"] {
     border: 2px solid var(--color-on-background);
     border-radius: 2px;
@@ -409,7 +409,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
         &::after {
           content: url("../assets/svgs/chevron-right.svg");
-          display: inline-block;  
+          display: inline-block;
           -webkit-mask: var(--headline-caret-icon);
           mask: var(--headline-caret-icon);
           -webkit-mask-position: center center;
@@ -466,7 +466,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
         background: var(--magentaa11y-color-brand-grayscale-400);
         font-weight: var(--magentaa11y-font-weight-bold);
       }
-      
+
       &.network {
         color: var(--magentaa11y-color-brand-grayscale-white);
         background: var(--magentaa11y-color-brand-grayscale-700);
@@ -578,7 +578,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     display: none;
   }
 
-  details summary, 
+  details summary,
   .expander-toggle {
     position: relative;
     display: grid;
@@ -610,7 +610,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     transition: all 0.1s ease-in-out;
   }
 
-  details summary:hover::before, 
+  details summary:hover::before,
   details summary:focus-visible::before,
   .expander-toggle:hover::before {
     border: 2px solid var(--color-primary);
@@ -630,7 +630,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     transition: background 0.1s;
   }
 
-  details:not([open]) summary:active, 
+  details:not([open]) summary:active,
   details[open] summary:active {
     background-color: var(--color-background-tertiary);
     background-size: 100%;
@@ -639,9 +639,9 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
   /* stylelint-disable no-duplicate-selectors */
   @media (prefers-color-scheme: dark) {
-    details summary::before, 
-    .expander-toggle::before, 
-    details summary::before, 
+    details summary::before,
+    .expander-toggle::before,
+    details summary::before,
     .expander-toggle::before {
       background-color: var(--color-text-primary);
     }
@@ -653,13 +653,22 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     padding: 1rem;
     margin-bottom: 1rem;
 
+    &.notification {
+      background-color:#078A14;
+      color:#fff;
+
+      &::before {
+        background-image:var(--icon-check-white)
+      }
+    }
+
       &.warning {
         background: var(--color-caution-container);
 
         &::before {
           content:'';
           background: url("../assets/svgs/warning-filled.svg") no-repeat center center;
-          width: 1.25rem; 
+          width: 1.25rem;
           height: auto;
           margin-right: .5rem;
         }
@@ -673,16 +682,16 @@ example, /* stylelint-disable-line selector-type-no-unknown */
             content:'';
             background: url("../assets/svgs/checkmark.svg") no-repeat center center;
             filter: invert(100%);
-            width: 1.25rem; 
+            width: 1.25rem;
             height: auto;
             margin-right: .5rem;
-          }
+        }
       }
   }
 
   .pagination li {
     display: inline;
-    
+
     a {
       font-weight: var(--magentaa11y-font-weight-semibold);
       color: var(--color-text-primary);
@@ -824,7 +833,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     // url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
     // background-size: contain;
     // background-position: 0, 2rem 0, 4rem 0, 6rem 0, 8rem 0;
-    
+
     // @media (prefers-color-scheme: dark) {
     //   filter: invert(1);
     // }
