@@ -202,6 +202,17 @@ export const getMarkdownFunctionMap = (
   },
 
   openToast: ()=> {
-    console.log('open toast');
+    const toast = document.getElementById('hint-spam');
+
+    /* setTimeout is to simulate a delay in the toast opening */
+    setTimeout(() => {
+      if(toast?.classList.contains('inert')){
+        toast?.classList.remove('inert');
+        toast?.classList.add('enabled');
+      } else {
+        toast?.classList.remove('enabled');
+        toast?.classList.add('inert');
+      }
+    }, 500)
   }
 });
