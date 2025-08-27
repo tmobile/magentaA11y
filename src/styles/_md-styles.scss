@@ -162,71 +162,6 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     }
   }
 
-  input.switch {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-
-    &:checked + label::before {
-      transform: translateX(18px);
-    }
-
-    &:checked + label::after {
-      background-color: var(--magentaa11y-color-fill-divider-brand);
-    }
-
-    &[aria-disabled="true"] + label::after,
-    &:disabled + label::after {
-      background-color: var(--color-surface-container-high);
-    }
-
-    &:focus-visible + label {
-      outline: .5rem auto Highlight;
-      outline: -webkit-focus-ring-color auto 1px;
-      outline-offset: 4px;
-    }
-
-    + label {
-      display: grid;
-      align-items: center;
-      grid-template-columns: 1fr max-content;
-      cursor: pointer;
-      margin-top: 1rem;
-      width: fit-content;
-
-      &::before {
-        content: "";
-        border-radius: 16px;
-        box-shadow: 0 2px 4px 0 rgba(0 0 0 / 10%);
-        display: block;
-        grid-column: 2;
-        grid-row: 1;
-        width: 22px;
-        height: 22px;
-        background-color: var(--color-text-on-primary);
-        position: relative;
-        transform: translateX(2px);
-        transition: all .2s ease-in-out;
-        z-index: 1;
-      }
-
-      &::after {
-        content: "";
-        background-color: var(--color-text-disabled);
-        border-radius: 20px;
-        cursor: pointer;
-        display: block;
-        grid-column: 2;
-        grid-row: 1;
-        position: relative;
-        height: 26px;
-        width: 42px;
-        transition: background-color .2s ease-in-out;
-      }
-    }
-  }
-
   .stepper {
     display: inline-grid;
     grid-template-columns: 39px 1fr 39px;
@@ -717,6 +652,20 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     transition: 0.2s;
     padding: 1rem;
     margin-bottom: 1rem;
+
+    &.enabled {
+      line-height: 1rem;
+      margin: 1rem 0;
+      height: auto;
+      max-height: 8rem;
+    }
+
+    &.inert {
+      display: block;
+      max-height: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
     &.notification {
       background-color:#078A14;
