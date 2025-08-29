@@ -6,6 +6,8 @@ How to test a scrolling container
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test a scrolling container
+
 1. Test keyboard only, then screen reader + keyboard actions
    - Tab: Focus visibly moves to container
    - Arrow-keys: Browses the container
@@ -22,6 +24,8 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/scrolling](/web-cr
 ## Gherkin
 
 ### #a11y - Web Accessibility Acceptance Criteria
+
+How to test a scrolling container
 
 GIVEN THAT I am on a page with a scrolling container
 

@@ -1,4 +1,6 @@
 export const Icons = {
+  magenta11yLogoDT: "magenta11yLogoDT",
+  magenta11yLogoSm: "magenta11yLogoSm",
   abcOutlined: "abcOutlined",
   acPlugFilled: "acPlugFilled",
   acPlugOffFilled: "acPlugOffFilled",

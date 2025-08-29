@@ -6,7 +6,7 @@ How to test a figure, map, chart, and other complex graphics
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a header
+How to test a figure, map, chart, and other complex graphics
 
 1. Test keyboard only, then screen reader + keyboard actions
 
@@ -34,7 +34,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/complex-
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a header
+How to test a figure, map, chart, and other complex graphics
 
 GIVEN THAT I am on a page with a header landmark
 
@@ -70,11 +70,3 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/complex-
 ### Name
 
 - Typically doesn’t have a name or description since there must be only one instance per page.
-
-## Videos
-
-- Videos go here
-<video controls>
-  <source src="media/video/native/button/buttonIosVoiceover.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>

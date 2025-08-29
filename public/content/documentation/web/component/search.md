@@ -6,6 +6,9 @@ How to test a search input
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
+How to test a search input
+
+
 1. Test keyboard only, then screen reader + keyboard actions
 
    - Tab: Focus moves visibly to the search text input and search button
@@ -23,7 +26,6 @@ How to test a search input
    - Group: The form itself is discoverable with screenreader shortcuts as a search input
 
 Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](/web-criteria/component/search)
-
 
 ## Gherkin
 
@@ -131,8 +133,6 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](
 </form>
 ```
 
-<!-- TODO issues with focus when tabbing to search button -->
-<!-- TODO Something funky is up with the search button here and I can't figure it out. It is submitting on focus when not using VoiceOver.  -->
 <example>
    <form role="search">
       <label for="search" class="hidden-visually">

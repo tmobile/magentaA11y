@@ -1,6 +1,8 @@
 declare module "shared/icons-svg-exports" {
   import React from "react";
 
+  export const magenta11yLogoDT: React.FC<React.SVGProps<SVGSVGElement>>;
+  export const magenta11yLogoSm: React.FC<React.SVGProps<SVGSVGElement>>;
   export const abcOutlined: React.FC<React.SVGProps<SVGSVGElement>>;
   export const acPlugFilled: React.FC<React.SVGProps<SVGSVGElement>>;
   export const acPlugOffFilled: React.FC<React.SVGProps<SVGSVGElement>>;

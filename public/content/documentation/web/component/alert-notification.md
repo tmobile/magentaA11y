@@ -6,7 +6,7 @@ How to test an alert notification
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a alert notification
+How to test an alert notification
 
 1. Test keyboard only, then screen reader + keyboard actions
 
@@ -28,7 +28,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/alert-no
 
 ### #a11y - Web Accessibility Acceptance Criteria
 
-How to test a alert notification
+How to test an alert notification
 
 GIVEN THAT I am on a page with a alert notification
 
@@ -88,7 +88,7 @@ An alert is dynamic content that is injected into the page when it changes and a
 ```html
 <div role="alert" 
      id="alert-notification" 
-     class="alert notification inert">
+     class="notification inert">
     <!--- Use JS to inject the alert here -->
 </div>
 
@@ -98,16 +98,16 @@ An alert is dynamic content that is injected into the page when it changes and a
 ```
 
 <example>
-<div id="alertSuccessExample"
-     role="alert" 
-     id="alert-notification" 
-     class="alert notification inert">
-    <!--- Use JS to inject the alert here -->
-</div>
+   <div id="alertSuccessExample"
+      role="alert" 
+      id="alert-notification" 
+      class="notification inert">
+      <!--- Use JS to inject the alert here -->
+   </div>
 
-<button data-fn="alertSuccess" id="show-alert-notification">
-  Save my settings
-</button>
+   <button data-fn="alertSuccess" id="show-alert-notification" class="Magentaa11y-button Magentaa11y-button--primary">
+   Save my settings
+   </button>
 </example>
 
 ### Error alert from an input field
@@ -127,7 +127,7 @@ An alert is dynamic content that is injected into the page when it changes and a
 
 <div role="alert" 
      id="favorite-character-alert" 
-     class="alert inert">
+     class="inert">
   <!--- Do not reference this alert element
         directly with aria-describedby -->
   <div id="favorite-character-error-example">
@@ -145,33 +145,33 @@ An alert is dynamic content that is injected into the page when it changes and a
 ```
 
 <example>
-<label for="favorite-sesame-street-character">
-  What is your favorite Sesame Street character?
-  <span>Required</span>
-</label>
+   <label for="favorite-sesame-street-character">
+      What is your favorite Sesame Street character?
+   <span>Required</span>
+   </label>
 
-<input type="text"
-       id="favorite-sesame-street-character"
-       aria-describedby="favorite-character-error favorite-character-hint"
-       required>
+   <input type="text"
+         id="favorite-sesame-street-character"
+         aria-describedby="favorite-character-error favorite-character-hint"
+         required>
 
-<div role="alert" 
-     id="favorite-character-alert" 
-     class="alert inert">
-  <!--- Do not reference this alert element
-        directly with aria-describedby -->
-  <div id="favorite-character-error">
-    <!--- Use JS to inject the alert here -->
-  </div>     
-</div>
+   <div role="alert" 
+      id="favorite-character-alert" 
+      class="inert">
+      <!--- Do not reference this alert element
+            directly with aria-describedby -->
+      <div id="favorite-character-error" class="warning">
+         <!--- Use JS to inject the alert here -->
+      </div>     
+   </div>
 
-<div class="hint" id="favorite-character-hint">
-  Example: Elmo, Big Bird, Cookie Monster
-</div>
+   <div class="hint" id="favorite-character-hint">
+      Example: Elmo, Big Bird, Cookie Monster
+   </div>
 
-<button data-fn="alertWarning" id="show-error">
-  Toggle error
-</button>
+   <button data-fn="alertWarning" id="show-error" class="Magentaa11y-button Magentaa11y-button--primary">
+   Toggle error
+   </button>
 </example>
 
 ## Further reading
