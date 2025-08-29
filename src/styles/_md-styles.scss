@@ -704,5 +704,338 @@ input.star:focus-visible + label {
     color: #e20074;
 }
 
+/* styling for progress indicator web demo */
+.progress {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  width: 100%;
+  height: 20px;
+  border-radius: 999px;
+  overflow: hidden;
+
+  // Track styles
+  &::-webkit-progress-bar {
+    background: linear-gradient(
+      to right,
+      #cfcfcf 0%,   // light gray left
+      #e4e2e2 60%, // mid gray
+      #b3b3b3 100% // darker gray right
+    );
+    border-radius: 999px;
+  }
+
+  // Fill styles (Chrome/Safari/Edge)
+  &::-webkit-progress-value {
+    background-color: #e20074;
+    border-radius: 999px;
+  }
+
+  // Firefox track fallback
+  &::-moz-progress-bar {
+    background-color: #e20074;
+    border-radius: 999px;
+  }
+}
+
+/* styling for progress spinner/loader web demo */
+.progress-spinner {
+  /* Tweakables */
+  --size:        112px;         /* overall size */
+  --thickness:   0.5px;          /* ring thickness */
+  --gap:         10deg;         /* size of the missing wedge */
+  --magenta:     #e20074;       /* T-Mobile magenta */
+  --magenta-mid: #ff2a93;       /* brighter mid */
+  --magenta-lit: #ffd6ea;       /* light tint highlight */
+
+  display: grid;          /* ensure it can be auto-centered */
+  margin-inline: auto;     /* horizontal center */
+  inline-size: var(--size);
+  block-size: var(--size);
+  position: relative;
+  place-items: center;
+
+  /* Visual spinner */
+  &::before {
+    content: "";
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 50%;
+
+    /* Magenta sweep with a small gap */
+    background:
+      conic-gradient(
+        from -30deg,
+        var(--magenta-lit) 0deg,
+        var(--magenta-mid) 110deg,
+        var(--magenta)     220deg,
+        var(--magenta-mid) calc(360deg - var(--gap) - 8deg),
+        var(--magenta-lit) calc(360deg - var(--gap)),
+        transparent        calc(360deg - var(--gap)) 360deg
+      );
+
+    /* Punch the hole to make a ring */
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(75% - var(--thickness)), #000 0);
+            mask: radial-gradient(farthest-side, transparent calc(75% - var(--thickness)), #000 0);
+    animation: magenta-spin 1.5s linear infinite;
+
+    /* Optional subtle depth like your screenshot */
+    filter: drop-shadow(0 0 0.5px rgb(0 0 0 / 25%));
+  }
+
+
+  /* Keep the native <progress> for SRs but hide it visually */
+  > progress {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    appearance: none; -webkit-appearance: none;
+
+    &::-webkit-progress-bar,
+    &::-webkit-progress-value { background: transparent; }
+    &::-moz-progress-bar { background: transparent; }
+  }
+}
+
+/* Optional size modifiers */
+.progress-spinner--sm {
+  --size: 72px;
+  --thickness: 9px;
+}
+
+.progress-spinner--lg {
+  --size: 144px;
+  --thickness: 14px;
+}
+
+/* Motion & HC fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  .progress-spinner::before {
+    animation: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .progress-spinner::before {
+    background: transparent;
+    -webkit-mask: none; mask: none;
+    border: var(--thickness) solid GrayText;
+    border-top-color: CanvasText;
+    border-radius: 50%;
+    animation: magenta-spin 1.5s linear infinite;
+  }
+}
+
+@keyframes magenta-spin { to { transform: rotate(1turn); } }
+
+/* Root hook works for native <dialog> and ARIA fallback */
+.dialog {
+  /* Hidden by default (covers ARIA case too) */
+  display: none;
+  position: fixed;
+  inset: 0;
+  border: 0;
+  padding: clamp(16px, 4vw, 32px);
+  background: transparent;
+  color-scheme: light dark;
+
+  /* Open states */
+  &:where(dialog)[open],
+  &:where(dialog):modal,
+  &[role="dialog"][aria-modal="true"].is-open {
+    display: grid;
+    place-items: center;
+  }
+
+  /* Native backdrop for showModal() */
+  &:where(dialog)::backdrop {
+    background: rgb(0 0 0 / 55%);
+  }
+
+  /* ARIA backdrop helper */
+  &[role="dialog"][aria-modal="true"].is-open::before {
+    content: "";
+    position: fixed; inset: 0;
+    background: rgb(0 0 0 / 55%);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  /* The rounded content surface */
+  > .dialog__content,
+  > section { 
+    position: relative;
+    box-sizing: border-box;
+    inline-size: fit-content;
+    max-inline-size: min(92vw, 760px);
+    max-block-size: calc(100dvh - 64px);
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-wrap: anywhere;
+    background: #fff;
+    color: #111;
+    border-radius: 28px;
+    box-shadow: 0 24px 72px -12px rgb(0 0 0 / 35%);
+    padding: clamp(20px, 4vw, 44px);
+    outline: none;
+  }
+
+  /* Media won't force content wider */
+  .dialog__content :where(img, video, canvas, svg) {
+    max-inline-size: 100%;
+    height: auto;
+  }
+
+  /* Code blocks scroll horizontally without stretching */
+  .dialog__content pre {
+    max-inline-size: 100%;
+    overflow-x: auto;
+  }
+
+ /* Remove UA outline on the dialog itself (native) */
+&:where(dialog):focus { outline: none; }
+&:where(dialog):focus-visible { outline: none; }
+
+  /* Show a focus ring ON THE CONTENT when the dialog has focus */
+  &:where(dialog):focus > .dialog__content,
+  &:where(dialog):focus-visible > .dialog__content,
+  /* ARIA fallback: when anything inside has focus */
+  &.is-open:focus-within > .dialog__content {
+    outline: 3px auto;
+    outline-offset: 3px;
+  }
+
+  /* High-contrast fallback */
+  @media (forced-colors: active) {
+    &:where(dialog):focus > .dialog__content,
+    &:where(dialog):focus-visible > .dialog__content,
+    &.is-open:focus-within > .dialog__content {
+      outline: 2px solid CanvasText;
+      outline-offset: 2px;
+      box-shadow: none;
+    }
+  }
+
+  /* Close button inside the content */
+  .dialog__content > button.close {
+    position: absolute;
+    inset-block-start: 1rem;
+    inset-inline-end: 1rem;
+    inline-size: 2rem;
+    block-size: 2rem;
+    display: grid;
+    place-items: center;
+    background-color: #000;
+    background-image: url("data:image/svg+xml,%0A%3Csvg height='100px' width='100px' fill='white' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M93.24268,6.75732a6.00078,6.00078,0,0,0-8.48536,0L50,41.51465,15.24268,6.75732a6.00006,6.00006,0,0,0-8.48536,8.48536L41.51465,50,6.75732,84.75732a6.00006,6.00006,0,0,0,8.48536,8.48536L50,58.48535,84.75732,93.24268a6.00006,6.00006,0,0,0,8.48536-8.48536L58.48535,50,93.24268,15.24268A5.99989,5.99989,0,0,0,93.24268,6.75732Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50% 50%;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity .2s ease;
+    z-index: 2;
+  }
+}
+
+/* Native-only: hide when not open */
+:where(dialog).dialog:not([open]) { 
+  display: none !important; 
+}
+
+/* Close button focus ring – visible in light/dark modes */
+.dialog .dialog__content > button.close:focus,
+.dialog .dialog__content > button.close:focus-visible {
+  outline: 3px auto;                       
+  outline-color: -webkit-focus-ring-color; 
+  outline-offset: 3px;                      
+
+}
+
+@media (prefers-color-scheme: dark) {
+  /* backdrop a bit darker */
+  .dialog:where(dialog)::backdrop {
+    background: rgb(0 0 0 / 65%);
+  }
+
+  /* content surface flips to dark with light text */
+  .dialog > .dialog__content,
+  .dialog > section {
+    background: #111;           /* dark surface */
+    color: #f5f5f5;             /* light text */
+    box-shadow: 0 24px 72px -12px rgb(0 0 0 / 60%);
+  }
+
+  /* invert the close button so it's visible on dark surfaces */
+  .dialog .dialog__content > button.close {
+    background-color: #fff;
+
+    /* same glyph, but black fill for contrast on white button */
+    background-image: url("data:image/svg+xml,%3Csvg height='100px' width='100px' fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M93.24268,6.75732a6.00078,6.00078,0,0,0-8.48536,0L50,41.51465,15.24268,6.75732a6.00006,6.00006,0,0,0-8.48536,8.48536L41.51465,50,6.75732,84.75732a6.00006,6.00006,0,0,0,8.48536,8.48536L50,58.48535,84.75732,93.24268a6.00006,6.00006,0,0,0,8.48536-8.48536L58.48535,50,93.24268,15.24268A5.99989,5.99989,0,0,0,93.24268,6.75732Z'/%3E%3C/svg%3E");
+  }
+}
+
+// Progress indicator chip styling
+#slow-app { 
+  display: inline-flex; 
+  align-items: center; gap: .75rem; 
+}
+
+.progress-chip {
+  display: inline-grid; place-items: center;
+  min-width: 4rem; height: 4rem; padding: 0 .5rem;
+  border-radius: 9999px;
+  background: #222; color: #fff; font-weight: 600;
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: -0.5rem;
+  transform: translate(50%, -50%);   /* anchor */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* pulse chip while busy */
+@keyframes chip-pulse {
+  0% {
+    transform: translate(50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 18%);
+  }
+
+  50% {
+    transform: translate(50%, -50%) scale(1.06);
+    box-shadow: 0 0 0 .45rem rgb(0 0 0 / 0%);
+  }
+
+  100% {
+    transform: translate(50%, -50%) scale(1);
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 0%);
+  }
+}
+
+.progress-chip.is-busy {
+  animation: chip-pulse 1000ms ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-chip.is-busy { animation: none; }
+}
+
+.btn-with-chip { 
+  position: relative; 
+  display: inline-block; 
+}
+
+/* respect the hidden attribute */
+.progress-chip[hidden] { 
+  display: none !important; 
+}
 
 /* stylelint-enable no-descending-specificity */
