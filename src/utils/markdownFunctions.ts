@@ -200,4 +200,26 @@ export const getMarkdownFunctionMap = (
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
+
+  toggleExpander: (event) => {
+    // define variables
+    const toggleButton = document.getElementById('expanderToggle');
+    const contentToToggle = document.getElementById('expanderContent');
+
+    // check to see if there are any accordions at all
+    if (!toggleButton || !contentToToggle) {
+      console.warn('Expander elements not found.');
+      return;
+    }
+
+    // Get current state
+    const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    
+    // Toggle the state - use only aria-expanded attribute 
+    const newExpandedState = !isExpanded;
+          toggleButton.setAttribute('aria-expanded', String(newExpandedState));
+    
+  },
+
+
 });
