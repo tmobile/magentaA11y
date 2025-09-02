@@ -130,9 +130,6 @@ const MyCriteria: React.FC = () => {
     <div className="MagentaA11y__my-criteria">
       <div className="MagentaA11y__my-criteria__heading-wrapper">
         <h1 className="MagentaA11y__my-criteria__heading">My Criteria</h1>
-        <p className="MagentaA11y__my-criteria__headline">
-          Lorem ipsum about this
-        </p>
       </div>
       <Divider orientation={OrientationEnum.HORIZONTAL} />
       <div className="MagentaA11y__my-criteria__actions">
