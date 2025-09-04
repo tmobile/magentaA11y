@@ -1,10 +1,3 @@
-/* stylelint-disable no-descending-specificity */
-
-/* TODO: Temporarily disabled the "no-descending-specificity" rule to save time. 
-   Error received: 
-   "Expected selector '.MagentaA11y-chip__label' to come before selector '.MagentaA11y-chip-container input[type="checkbox"]:checked + .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg .MagentaA11y-chip__label'"
-   When we have time, reorder the selectors to resolve the issue properly. */
-
 %magenta-a11y-visually-hidden {
   position: absolute;
   width: 1px;
@@ -49,7 +42,7 @@
       fill: var(--icon-color);
       visibility: visible;
 
-      @if is-null($svg-size) {
+      @if $svg-size {
         width: $svg-size;
         height: $svg-size;
       }
@@ -260,11 +253,11 @@
 // Without the styles below, it won't be possible to distinguish a selected chip from an unselected one in High Contrast Mode
 @media (forced-colors: active) {
   .MagentaA11y-chip-container {
-    input[type="checkbox"]:checked
+    svg,
+    button > .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg,
+    input[type="checkbox"]:checked,
       + .MagentaA11y-chip
-      .MagentaA11y-chip__label--wrapper
-      svg,
-    button > .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg {
+      .MagentaA11y-chip__label--wrapper {
       fill: fieldtext;
     }
 
