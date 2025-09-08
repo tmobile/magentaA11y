@@ -98,7 +98,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 
 <div role="alert" 
      id="favorite-sesame-street-character-alert" 
-     class="alert inert">
+     class="inert">
   <!--- Do not reference this alert element
         directly with aria-describedby -->
   <div id="favorite-sesame-street-character-error">
@@ -128,7 +128,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 
 <div role="alert" 
      id="favorite-sesame-street-character-alert" 
-     class="alert inert">
+     class="inert">
   <!--- Do not reference this alert element
         directly with aria-describedby -->
   <div id="hint-help-error-alert"><!--- Use JS to inject the alert here --></div>     
