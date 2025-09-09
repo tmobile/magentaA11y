@@ -215,7 +215,7 @@ const AccessibleDemo: React.FC = () => {
             </details>
         </section>
 
-        <section className="container">
+        <section className="container accessible-radio">
             <h2 id="favorites" className="h-bravo">
                 Survey: Which is your favorite screen reader
             </h2>
@@ -226,20 +226,30 @@ const AccessibleDemo: React.FC = () => {
                         Choose your favorite screen reader
                     </legend>
 
-                    <input type="radio" name="nato" id="alphaRadio" className="radio"/>
-                    <label htmlFor="alphaRadio">VoiceOver for iOS</label>
+                    <div className="radio-container">
+                        <input type="radio" name="nato" id="alphaRadio" className="radio"/>
+                        <label htmlFor="alphaRadio">VoiceOver for iOS</label>
+                    </div>
 
-                    <input type="radio" name="nato" id="bravoRadio" />
-                    <label htmlFor="bravoRadio">Talkback for Android</label>
-
-                    <input type="radio" name="nato" id="charlieRadio" />
-                    <label htmlFor="charlieRadio">NVDA for Windows</label>
-
-                    <input type="radio" name="nato" id="deltaRadio" />
-                    <label htmlFor="deltaRadio">JAWS for Windows</label>
-
-                    <input type="radio" name="nato" id="echoRadio" />
-                    <label htmlFor="echoRadio">VoiceOver for MacOS</label>
+                    <div className="radio-container">
+                        <input type="radio" name="nato" id="bravoRadio" />
+                        <label htmlFor="bravoRadio">Talkback for Android</label>
+                    </div>
+                    
+                    <div className="radio-container">
+                        <input type="radio" name="nato" id="charlieRadio" />
+                        <label htmlFor="charlieRadio">NVDA for Windows</label>
+                    </div>
+                    
+                    <div className="radio-container">
+                        <input type="radio" name="nato" id="deltaRadio" />
+                        <label htmlFor="deltaRadio">JAWS for Windows</label>
+                    </div>
+                    
+                    <div className="radio-container">
+                        <input type="radio" name="nato" id="echoRadio" />
+                        <label htmlFor="echoRadio">VoiceOver for MacOS</label>
+                    </div>
                 </fieldset>
 
                 <div role="alert" className="alert inert">

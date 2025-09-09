@@ -724,11 +724,43 @@ input.star:focus-visible + label {
 }
 
 section.container {
+  border-bottom: 1px solid var(--magentaa11y-color-brand-grayscale-400);
   margin: 2rem 0 4rem;
+  padding-bottom: 3rem;
 }
 
-.accessible-summary details {
+// add sufficient touch target size to summary and button elements
+.accessible-summary details summary,
+a.button {
   padding: 1rem 0;
+}
+
+details {
+  margin-bottom: 1rem
+}
+
+.accessible-radio {
+  form {
+    margin: 2rem 0;
+  }
+
+  fieldset {
+    margin-bottom: 2rem;
+  }
+
+  legend {
+    font-size: var(--magentaa11y-font-size-18);
+    font-weight: var(--magentaa11y-font-weight-semibold);
+  }  
+
+  .radio-container {
+    margin: 1rem 0;
+  }
+  
+  input[type="radio"] {
+    margin-right: 0.5rem;
+  }
+
 }
 
 
