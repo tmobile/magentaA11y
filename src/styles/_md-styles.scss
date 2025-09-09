@@ -736,7 +736,8 @@ a.button {
 }
 
 details {
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  max-width: 800px;
 }
 
 .accessible-radio {
@@ -756,7 +757,7 @@ details {
   .radio-container {
     margin: 1rem 0;
   }
-  
+
   input[type="radio"] {
     margin-right: 0.5rem;
   }
