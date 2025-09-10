@@ -707,29 +707,102 @@ input.star:focus-visible + label {
 }
 
 // accessible web page demo styles
-.h-alpha {
-  font-size: var(--magentaa11y-font-size-60);
-  margin: 0 0 1rem;
-}
-
-.h-bravo {
-  font-size: var(--magentaa11y-font-size-48);
-  margin: 2rem 0 1rem;
-}
-
-
-.h-delta {
-  font-size: var(--magentaa11y-font-size-32);
-  margin: 2rem 0 1rem;
-}
-
 section.container {
   border-bottom: 1px solid var(--magentaa11y-color-brand-grayscale-400);
-  margin: 2rem 0 4rem;
-  padding-bottom: 3rem;
+  margin: 3rem auto;
+  padding: 0 2rem 3rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+
+}
+
+.flex-row {
+  display: flex;
+  column-gap: 2rem;
+  margin: 0 auto;
+  max-width: 960px;
+
+      @media (max-width: 960px) {
+        flex-direction: column;
+      }
 }
 
 // add sufficient touch target size to summary and button elements
+.hero {
+  background: url("../../public/content/assets/media/images/how-to-test/assistive-technology-bg.png") no-repeat center center;
+  background-size: cover !important;
+  padding: 3rem 2rem;
+  width: 100%;
+
+    .flex-row {
+      margin: 0 auto;
+      max-width: 960px;
+    }
+
+    h1, h2, h3 {
+      color: white;
+    }
+
+    .h-alpha {
+      font-size: var(--magentaa11y-font-size-40);
+      margin: 0 0 1rem;
+    }
+
+    .h-bravo {
+      font-size: var(--magentaa11y-font-size-48);
+      margin: 2rem 0 1rem;
+    }
+
+
+    .h-delta {
+      font-size: var(--magentaa11y-font-size-20);
+      margin: 2rem 0 1rem;
+      line-height: 1.2;
+    }
+}
+
+.h-bravo {
+  font-size: 1.875rem;
+  margin-bottom: 2rem;
+}
+
+.h-charlie {
+  font-size: 1.25rem;
+}
+
+.h-delta {
+  font-size: 1.125rem;
+  font-weight: var( --magentaa11y-font-weight-extrabold);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.icon {
+    height: 2rem;
+    width: 2rem;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: .25rem;
+}
+
+.icon-large {
+    height: 64px;
+    width: 64px;
+}
+
+.questions-survey-container {
+  margin: 0 auto;
+}
+
 .accessible-summary details summary,
 a.button {
   padding: 1rem 0;
@@ -737,7 +810,7 @@ a.button {
 
 details {
   margin-bottom: 1rem;
-  max-width: 800px;
+  max-width: 38rem;
 }
 
 .accessible-radio {
