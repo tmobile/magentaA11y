@@ -706,23 +706,28 @@ input.star:focus-visible + label {
     color: #e20074;
 }
 
+a.button {
+  padding: 1rem;
+}
+
 // accessible web page demo styles
 section.container {
   border-bottom: 1px solid var(--magentaa11y-color-brand-grayscale-400);
   margin: 3rem auto;
   padding: 0 2rem 3rem;
+  width: 100%;
 }
 
+// utlitiy to create flex column
 .flex-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-
-
 }
 
+// utlitiy to create flex row
 .flex-row {
   display: flex;
   column-gap: 2rem;
@@ -732,6 +737,11 @@ section.container {
       @media (max-width: 960px) {
         flex-direction: column;
       }
+}
+
+// creates four equal columns
+.flex-row--fourth {
+  flex-basis: 25%
 }
 
 // add sufficient touch target size to summary and button elements
@@ -787,32 +797,118 @@ section.container {
 }
 
 .icon {
-    height: 2rem;
-    width: 2rem;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: .25rem;
+  height: 2rem;
+  width: 2rem;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: .25rem;
 }
 
 .icon-large {
-    height: 64px;
-    width: 64px;
+  height: 64px;
+  width: 64px;
 }
+
+  /* stylelint-disable no-duplicate-selectors */
+  @media (prefers-color-scheme: dark) {
+    .icon {
+      filter: invert(100%) hue-rotate(180deg);
+    }
+  }
 
 .questions-survey-container {
   margin: 0 auto;
-}
-
-.accessible-summary details summary,
-a.button {
-  padding: 1rem 0;
-}
-
-details {
-  margin-bottom: 1rem;
   max-width: 38rem;
+
 }
 
+.accessible-summary {
+  details {
+    background: var(--color-text-on-primary);
+    border: 1px solid var(--magentaa11y-color-brand-grayscale-400);
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0 0 0 / 10%);;  
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  summary  {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details summary {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    padding: 1rem .5rem 1rem 0;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    line-height: 1rem;
+    cursor: pointer;
+  }
+
+  details summary::before {
+    content:'';
+    background: url("../assets/svgs/chevron-down.svg") no-repeat center center;
+    display: block;
+    position: relative;
+    justify-self: center;
+    width: 2.125rem;
+    height: 2.125rem;
+    border-radius: 2rem;
+    background-color: var(--color-text-on-primary);
+    opacity: 1;
+    background-size: 1.25rem 1.25rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.1s ease-in-out;
+  }
+
+  details summary:hover::before, 
+  details summary:focus-visible::before {
+    border: 2px solid var(--color-primary);
+  }
+
+  details[open] summary::before {
+    content: '';
+    background-position: center center;
+    transform: rotate(-180deg);
+  }
+
+  details[open] summary {
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid var(--color-text-disabled);
+    margin-bottom: 1rem;
+    background-position: 10% center;
+    transition: background 0.1s;
+  }
+
+  details:not([open]) summary:active, 
+  details[open] summary:active {
+    background-color: var(--color-background-tertiary);
+    background-size: 100%;
+    transition: all 0.1s;
+  }
+
+  th, td {
+    text-align: center;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    details summary::before, 
+    details summary::before {
+      background-color: var(--color-text-primary);
+    }
+  }
+}
+
+// add radio styles here when they are completed on radio criteria page
 .accessible-radio {
   form {
     margin: 2rem 0;

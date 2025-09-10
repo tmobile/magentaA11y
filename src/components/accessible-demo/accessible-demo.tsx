@@ -26,8 +26,8 @@ const AccessibleDemo: React.FC = () => {
         </div>
 
         <div  className="">
-            <section className="container text-center">
-                <h2 className="h-bravo">Broad categories of disabilities</h2>
+            <section className="container">
+                <h2 className="h-bravo text-center">Broad categories of disabilities</h2>
 
                 <div className="section flex-row">
                     <div className="">
@@ -111,71 +111,71 @@ const AccessibleDemo: React.FC = () => {
                             <tbody>
                                 <tr>
                                     <th scope="row">
-                                        <img src="/assets/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
                                         iOS
                                     </th>
                                     <td>
-                                        <img src="/assets/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
                                         VoiceOver
                                     </td>
                                     <td>
-                                        <img src="/assets/images/icons/logo-safari.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" role="img" alt="Apple" className="icon" />
                                         Safari
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="/assets/images/icons/logo-android.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-android.svg" role="img" alt="" className="icon" />
                                         Android
                                     </th>
                                     <td>
-                                        <img src="/assets/images/icons/logo-talkback.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-talkback.svg" role="img" alt="" className="icon" />
                                         Talkback
                                     </td>
                                     <td>
-                                        <img src="/assets/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
                                         Chrome
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="/assets/images/icons/logo-windows.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-windows.svg" role="img" alt="" className="icon" />
                                         Windows
                                     </th>
                                     <td>
-                                        <img src="/assets/images/icons/logo-jaws.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-jaws.svg" role="img" alt="" className="icon" />
                                         JAWS
                                     </td>
                                     <td>
-                                        <img src="/assets/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
                                         Chrome
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="/assets/images/icons/logo-windows.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-windows.svg" role="img" alt="" className="icon" />
                                         Windows
                                     </th>
                                     <td>
-                                        <img src="/assets/images/icons/logo-nvda.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-nvda.svg" role="img" alt="" className="icon" />
                                         NVDA
                                     </td>
                                     <td>
-                                        <img src="/assets/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
                                         Chrome
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="/assets/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
                                         MacOS
                                     </th>
                                     <td>
-                                        <img src="/assets/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
                                         VoiceOver
                                     </td>
                                     <td>
-                                        <img src="/assets/images/icons/logo-safari.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" role="img" alt="Apple" className="icon" />
                                         Safari
                                     </td>
                                 </tr>
