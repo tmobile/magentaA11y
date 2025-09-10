@@ -17,7 +17,7 @@ const cardContent = [
   {
     "title": "How to test components",
     "description": "Learn how to test for accessibility",
-    "link": "/how-to-test-criteria/components/overview"
+    "link": "/how-to-test-criteria/type/overview"
   },
   {
     "title": "Start adding criteria",
