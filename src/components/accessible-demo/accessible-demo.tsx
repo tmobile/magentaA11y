@@ -32,7 +32,7 @@ const AccessibleDemo: React.FC = () => {
                 <div className="section flex-row">
                     <div className="">
                         <h3 className="h-delta text-center">
-                            <img src="../../content/assets/media/images/icons/icon-pointer.svg" role="img" alt="" className="icon icon-large" />
+                            <img src="../../content/assets/media/images/icons/icon-pointer.svg" alt="" className="icon icon-large" />
                             Motor
                         </h3>
                         <p>Not everyone uses a mouse or taps their screen. Some people exclusively use a keyboard or custom switch input devices.</p>
@@ -40,7 +40,7 @@ const AccessibleDemo: React.FC = () => {
 
                     <div className="">
                         <h3 className="h-delta text-center">
-                        <img src="../../content/assets/media/images/icons/icon-vision.svg" role="img" alt="" className="icon icon-large" />
+                        <img src="../../content/assets/media/images/icons/icon-vision.svg" alt="" className="icon icon-large" />
                         Vision
                         </h3>
                         <p>People who are blind or low vision use the internet using a screen reader or extreme zoom tools.</p>
@@ -48,7 +48,7 @@ const AccessibleDemo: React.FC = () => {
 
                     <div className="">
                         <h3 className="h-delta text-center">
-                        <img src="../../content/assets/media/images/icons/icon-hearing.svg" role="img" alt="" className="icon icon-large" />
+                        <img src="../../content/assets/media/images/icons/icon-hearing.svg" alt="" className="icon icon-large" />
                         Hearing
                         </h3>
                         <p>Some people rely on captions or transcripts to consume audio or video.
@@ -57,7 +57,7 @@ const AccessibleDemo: React.FC = () => {
 
                     <div className="">
                         <h3 className="h-delta text-center">
-                        <img src="../../content/assets/media/images/icons/icon-brain.svg" role="img" alt="" className="icon icon-large" />Cognitive
+                        <img src="../../content/assets/media/images/icons/icon-brain.svg" alt="" className="icon icon-large" />Cognitive
                         </h3>
                         <p>There is a wide range of cognitive differences that can be accommodated by design and code.
                         </p>
@@ -111,71 +111,71 @@ const AccessibleDemo: React.FC = () => {
                             <tbody>
                                 <tr>
                                     <th scope="row">
-                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
                                         iOS
                                     </th>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
                                         VoiceOver
                                     </td>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="" className="icon" />
                                         Safari
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="../../content/assets/media/images/icons/logo-android.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-android.svg" alt="" className="icon" />
                                         Android
                                     </th>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-talkback.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-talkback.svg" alt="" className="icon" />
                                         Talkback
                                     </td>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
                                         Chrome
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="../../content/assets/media/images/icons/logo-windows.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-windows.svg" alt="" className="icon" />
                                         Windows
                                     </th>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-jaws.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-jaws.svg" alt="" className="icon" />
                                         JAWS
                                     </td>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
                                         Chrome
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="../../content/assets/media/images/icons/logo-windows.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-windows.svg" alt="" className="icon" />
                                         Windows
                                     </th>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-nvda.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-nvda.svg" alt="" className="icon" />
                                         NVDA
                                     </td>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" role="img" alt="" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
                                         Chrome
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="Apple" className="icon" />
                                         MacOS
                                     </th>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="Apple" className="icon" />
                                         VoiceOver
                                     </td>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" role="img" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="Apple" className="icon" />
                                         Safari
                                     </td>
                                 </tr>
@@ -194,27 +194,27 @@ const AccessibleDemo: React.FC = () => {
                         <legend>Choose your favorite screen reader</legend>
 
                         <div className="radio-container">
-                            <input type="radio" name="nato" id="alphaRadio" className="radio"/>
+                            <input type="radio" name="favorite" id="alphaRadio" className="radio"/>
                             <label htmlFor="alphaRadio">VoiceOver for iOS</label>
                         </div>
 
                         <div className="radio-container">
-                            <input type="radio" name="nato" id="bravoRadio" />
+                            <input type="radio" name="favorite" id="bravoRadio" />
                             <label htmlFor="bravoRadio">Talkback for Android</label>
                         </div>
                         
                         <div className="radio-container">
-                            <input type="radio" name="nato" id="charlieRadio" />
+                            <input type="radio" name="favorite" id="charlieRadio" />
                             <label htmlFor="charlieRadio">NVDA for Windows</label>
                         </div>
                         
                         <div className="radio-container">
-                            <input type="radio" name="nato" id="deltaRadio" />
+                            <input type="radio" name="favorite" id="deltaRadio" />
                             <label htmlFor="deltaRadio">JAWS for Windows</label>
                         </div>
                         
                         <div className="radio-container">
-                            <input type="radio" name="nato" id="echoRadio" />
+                            <input type="radio" name="favorite" id="echoRadio" />
                             <label htmlFor="echoRadio">VoiceOver for MacOS</label>
                         </div>
                     </fieldset>
