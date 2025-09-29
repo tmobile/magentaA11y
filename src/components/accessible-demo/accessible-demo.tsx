@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 
 const AccessibleDemo: React.FC = () => {
+
+  useEffect(() => {
+    const button = document.getElementById('submit-response');
+    const errorMsg = document.getElementById('response-message');
+    const alertBox = errorMsg?.parentElement;
+
+    const handleClick = () => {
+      if (!errorMsg || !alertBox) return;
+
+      // Check if any radio button is selected
+      const selectedRadio = document.querySelector('input[name="favorite"]:checked');
+
+      if (!selectedRadio) {
+        errorMsg.innerHTML = '<p class="alert warning">Error: Please select a screen reader.</p>';
+        alertBox.classList.remove('inert');
+      } else {
+        errorMsg.innerHTML = '';
+        alertBox.classList.add('inert');
+      }
+    };
+
+    button?.addEventListener('click', handleClick);
+
+    // Cleanup on unmount
+    return () => {
+      button?.removeEventListener('click', handleClick);
+    };
+  }, []);
+
   return (
     <>
     <div className="flex-col">
