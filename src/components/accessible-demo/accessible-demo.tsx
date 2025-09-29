@@ -15,7 +15,7 @@ const AccessibleDemo: React.FC = () => {
       const selectedRadio = document.querySelector('input[name="favorite"]:checked');
 
       if (!selectedRadio) {
-        errorMsg.innerHTML = '<p class="alert warning">Error: Please select a screen reader.</p>';
+        errorMsg.innerHTML = '<p class="error">Error: Please select a screen reader.</p>';
         alertBox.classList.remove('inert');
       } else {
         errorMsg.innerHTML = '';
@@ -249,7 +249,7 @@ const AccessibleDemo: React.FC = () => {
                         </div>
                     </fieldset>
 
-                    <div role="alert" className="alert inert">
+                    <div role="alert" className="">
                         <div id="response-message"></div>
                     </div>
 
