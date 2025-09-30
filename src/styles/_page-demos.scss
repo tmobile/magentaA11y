@@ -203,7 +203,7 @@ section.container {
   }
 
   fieldset {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   legend {
@@ -223,4 +223,10 @@ section.container {
 
 .error {
     color: var(--color-text-error);
+    
+    svg {
+        fill: var(--color-text-error);
+        margin-right: 0.5rem;
+        vertical-align: middle;
+    }
 }
