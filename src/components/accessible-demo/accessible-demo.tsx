@@ -197,15 +197,15 @@ const AccessibleDemo: React.FC = () => {
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
                                         MacOS
                                     </th>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
                                         VoiceOver
                                     </td>
                                     <td>
-                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="Apple" className="icon" />
+                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="" className="icon" />
                                         Safari
                                     </td>
                                 </tr>
