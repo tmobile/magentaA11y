@@ -1,5 +1,6 @@
 .MagentaA11y-about {
   width: 100%;
+  padding: 0 var(--magentaa11y-spacing-size-20);
 
   &__hero-container {
     padding-top: var(--magentaa11y-spacing-size-80);
@@ -7,7 +8,7 @@
     max-width: 950px;
 
     h1 {
-      line-height: 0.5;
+      line-height: 0.7;
 
       @media (min-width: 768px) {
         line-height: 1.2;
@@ -34,7 +35,16 @@
 
   &__title-highlight {
     text-align: left;
-    font: var(--magentaa11y-typeset-display-4xl-strong);;
+    font-size: var(--magentaa11y-font-size-48);
+    white-space: nowrap;
+
+    @media (min-width: 375px) {
+      font-size: var(--magentaa11y-font-size-68);
+    }
+
+    @media (min-width: 768px) {
+      font: var(--magentaa11y-typeset-display-4xl-strong);
+    }
   }
 
   &__hero-image {
@@ -47,7 +57,7 @@
 
   &__info-container {
     margin: 0 auto;
-    max-width: 950px;
+    max-width: 800px;
     display: flex;
     padding: var(--magentaa11y-spacing-size-40) var(--magentaa11y-spacing-size-20) 0;
     justify-content: space-between;
@@ -63,7 +73,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-top: 1px solid var(--color-on-tertiary);
+    border-top: 1px solid #fff;
     padding-top: var(--magentaa11y-spacing-size-8);
     margin-bottom: var(--magentaa11y-spacing-size-40);
 
@@ -78,6 +88,7 @@
 
   &__info-title {
     margin-bottom: var(--magentaa11y-spacing-size-8);
+    font-weight: var(--magentaa11y-font-weight-extrabold);
   }
 
   &__info-text {
@@ -91,7 +102,20 @@
     padding: var(--magentaa11y-spacing-size-40) 0;
   }
 
-  &__contact-title {
+  &__contribute-title {
     font: var(--magentaa11y-typeset-display-sm-strong);
+  }
+
+  &__contribute-message {
+    padding-bottom: var(--magentaa11y-spacing-size-24);
+  }
+
+  &__contact-title {
+    font-weight: var(--magentaa11y-font-weight-extrabold);
+  }
+
+  &__contact-message {
+    padding: 0;
+    margin: 0;
   }
 }
