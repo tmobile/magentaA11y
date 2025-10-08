@@ -88,7 +88,7 @@ It is important to change or disable animations when device reduce motion settin
 
 This can be accomplished via CSS media query.
 
-<!-- TODO: the colors displaying CSS code snippet needs updated styles to pass color contrast
+<!-- TODO: the colors displaying CSS code snippet needs updated styles to pass color contrast -->
 
 ```CSS
 @keyframes bounce {
@@ -121,23 +121,26 @@ This can be accomplished via CSS media query.
 <div class="animation">Animated element</div>
 ```
 
-TODO: the below bouncy box should do what our example demo suggests
+<!--TODO: the below bouncy box should do what our example demo suggests
 
 ### Bouncy box
 If your device is set to reduce motion, the animation will softly fade from one color to the next instead of bounce; otherwise it will bounce.
 
+
 <example>
 <div class="animation">Animated element</div>
-</example> -->
+</example> 
+-->
 
-<!-- TODO: Javascript for code snippet needs supporting
+<!-- TODO: Javascript for code snippet needs supporting -->
 
  ### Detecting with JavaScript
 ```____
 const pref = 
   window.matchMedia(
     '(prefers-reduced-motion: reduce)'
-  );``` -->
+  );
+  ```
 
 ## Further Reading
 - [WCAG 2.2.1 Timing Adjustable (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable)
