@@ -86,7 +86,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 **Note:** The alert must be structured as below to function properly in VoiceOver, with the alert text nested inside the `role="alert"` element.
 
 ```html
-<label for="favorite-sesame-street-character-letter">
+<label for="favorite-sesame-street-character">
   What is your Sesame Street character?
   <span>Required</span>
 </label>
@@ -116,7 +116,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 ```
 
 <example>
-<label for="favorite-sesame-street-character-letter">
+<label for="favorite-sesame-street-character">
   What is your favorite Sesame Street character?
   <span>Required</span>
 </label>
