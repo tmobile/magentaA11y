@@ -161,7 +161,7 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
           aria-modal="true"
           aria-label="progress spinner">
     <div class="dialog__content">
-   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close"></button>
+   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close">X</button>
       <div class="progress-spinner">
         <progress role="progressbar" 
                   id="modal-title" 
