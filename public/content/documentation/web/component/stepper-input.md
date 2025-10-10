@@ -107,14 +107,14 @@ The stepper input component is useful for *small range increments*. If the max c
          <option value="11">11</option>
       </select>
       <button class="button plus" 
-      aria-label="Increase Quantity"></button>
+                  aria-label="Increase Quantity"></button>
    </div>
   <!-- live container where "Quantity updated, [number]" will be dynamically updated -->
   <div aria-live="polite" class="hidden" id="stepper-status-target"></div>
 </div>
 ```
 
-<!-- TODO disabling buttons -->
+<!-- TODO disabling buttons - both when minimum and maximum are hit -->
 <example>
    <div>
       <label for="stepper">
@@ -178,7 +178,7 @@ The stepper input component is useful for *small range increments*. If the max c
 </div>
 ```
 
-<!-- TODO disabling buttons -->
+<!-- TODO disabling button - decrement button should be disabled when at 0 -->
 <example>
    <div class="stepper">
       <button id="decrement-button" 
