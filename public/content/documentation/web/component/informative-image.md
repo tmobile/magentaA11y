@@ -53,7 +53,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/informat
 
 ## Is this image decorative or informative?
 
-If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. If the image is included for purely stylistic purposes and doesn't impart any meaning to the rest of the content on the page, then the image is likely decorative. In this case, check out the [decorative image checklist](/web-criteria/component/decorative-image) item instead. 
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. If the image is included for purely stylistic purposes and doesn't impart any meaning to the rest of the content on the page, then the image is likely decorative. In this case, check out the <a href="https://www.magentaa11y.com/#/web-criteria/component/decorative-image">decorative image checklist</a> item instead. 
 
 
 If your image contains text inside it, it should not! This is a violation of [WCAG AA 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG21/Understanding/images-of-text.html). Exceptions exist for logos.
