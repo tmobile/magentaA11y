@@ -81,7 +81,7 @@
   a {
     @include base-inline-link;
     
-    color: var(--color-primary);
+    color: var(--color-text-link);
     position: relative;
     font-size: var(--magentaa11y-font-size-16);
     margin-right: 24px;
