@@ -86,7 +86,9 @@ The stepper input component is useful for *small range increments*. If the max c
     Quantity
   </label>
   <div class="stepper">
-      <button class="button minus" aria-label="Decrease Quantity" aria-disabled="true"></button>
+      <button class="button minus" 
+               aria-label="Decrease Quantity" 
+               aria-disabled="true"></button>
       <select id="stepper"
                name="stepper-input"
                min="1"
@@ -104,7 +106,8 @@ The stepper input component is useful for *small range increments*. If the max c
          <option value="10">10</option>
          <option value="11">11</option>
       </select>
-      <button class="button plus" aria-label="Increase Quantity"></button>
+      <button class="button plus" 
+      aria-label="Increase Quantity"></button>
    </div>
   <!-- live container where "Quantity updated, [number]" will be dynamically updated -->
   <div aria-live="polite" class="hidden" id="stepper-status-target"></div>
@@ -118,12 +121,16 @@ The stepper input component is useful for *small range increments*. If the max c
          Quantity
       </label>
       <div class="stepper">
-            <button data-fn="decreaseSelectStepper" data-icon="minus" class="button minus" aria-label="Decrease Quantity" aria-disabled="true"></button>
+            <button data-fn="decreaseSelectStepper" 
+                  data-icon="minus" 
+                  class="button minus" 
+                  aria-label="Decrease Quantity" 
+                  aria-disabled="true"></button>
             <select id="stepper"
-                     name="stepper-input"
-                     min="1"
-                     max="11"
-                     data-selected="1">
+                  name="stepper-input"
+                  min="1"
+                  max="11"
+                  data-selected="1">
                <option value="1" selected>1</option>
                <option value="2">2</option>
                <option value="3">3</option>
@@ -136,7 +143,10 @@ The stepper input component is useful for *small range increments*. If the max c
                <option value="10">10</option>
                <option value="11">11</option>
             </select>
-            <button data-fn="increaseSelectStepper" data-icon="plus" class="button plus" aria-label="Increase Quantity"></button>
+            <button data-fn="increaseSelectStepper" 
+                  data-icon="plus" 
+                  class="button plus" 
+                  aria-label="Increase Quantity"></button>
          </div>
       <!-- live container where "Quantity updated, [number]" will be dynamically updated -->
       <div aria-live="polite" class="hidden" id="stepper-status-target-1"></div>
@@ -151,9 +161,18 @@ The stepper input component is useful for *small range increments*. If the max c
 
 ```html
 <div class="stepper">
-   <button id="decrement-button" data-fn="decreaseNumber" data-icon="minus" class="button minus" aria-label="Decrease Quantity" aria-disabled="true"></button>
+   <button id="decrement-button" 
+               data-fn="decreaseNumber" 
+               data-icon="minus" 
+               class="button minus" 
+               aria-label="Decrease Quantity" 
+               aria-disabled="true">
+   </button>
    <span id="step-number">0</span>
-   <button data-icon="plus"  data-fn="increaseNumber" class="button plus" aria-label="Increase Quantity"></button>
+   <button data-icon="plus" 
+               data-fn="increaseNumber" 
+               class="button plus" 
+               aria-label="Increase Quantity"></button>
    <!-- live container where "Quantity updated, [number]" will be dynamically updated -->
    <div aria-live="polite" class="hidden" id="stepper-status-target"></div>
 </div>
@@ -162,9 +181,17 @@ The stepper input component is useful for *small range increments*. If the max c
 <!-- TODO disabling buttons -->
 <example>
    <div class="stepper">
-      <button id="decrement-button" data-fn="decreaseNumber" data-icon="minus" class="button minus" aria-label="Decrease Quantity" aria-disabled="true"></button>
+      <button id="decrement-button" 
+            data-fn="decreaseNumber" 
+            data-icon="minus" 
+            class="button minus" 
+            aria-label="Decrease Quantity" 
+            aria-disabled="true"></button>
       <span id="step-number">0</span>
-      <button data-icon="plus"  data-fn="increaseNumber" class="button plus" aria-label="Increase Quantity"></button>
+      <button data-icon="plus" 
+            data-fn="increaseNumber" 
+            class="button plus" 
+            aria-label="Increase Quantity"></button>
       <!-- live container where "Quantity updated, [number]" will be dynamically updated -->
       <div aria-live="polite" class="hidden" id="stepper-status-target"></div>
    </div>
