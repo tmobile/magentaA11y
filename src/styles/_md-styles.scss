@@ -1029,23 +1029,23 @@ input.star:focus-visible + label {
 
 @keyframes magenta-spin { to { transform: rotate(1turn); } }
 
-/* Root hook works for native <dialog> and ARIA fallback */
 .dialog {
   /* Hidden by default (covers ARIA case too) */
   display: none;
   position: fixed;
-  inset: 0;
-  border: 0;
-  padding: clamp(16px, 4vw, 32px);
-  background: transparent;
-  color-scheme: light dark;
+  width: 200px;
+  height: 200px;
+  border-radius: 2rem;
+  background-color: #fff;
+  outline: 0 solid rgba(#fff,.7);
+  border: none;
+  transition: .2s;
 
-  /* Open states */
-  &:where(dialog)[open],
-  &:where(dialog):modal,
-  &[role="dialog"][aria-modal="true"].is-open {
+  /* Open state */
+  &[open],
+  &[role="dialog"][aria-modal="true"].is-open { // is this relevant?
     display: grid;
-    place-items: center;
+    place-content: center;
   }
 
   /* Native backdrop for showModal() */
@@ -1053,127 +1053,41 @@ input.star:focus-visible + label {
     background: rgb(0 0 0 / 55%);
   }
 
-  /* ARIA backdrop helper */
-  &[role="dialog"][aria-modal="true"].is-open::before {
+  /* Backdrop  */
+  &[open]::before {
     content: "";
-    position: fixed; inset: 0;
+    position: fixed;
     background: rgb(0 0 0 / 55%);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
   }
 
-  /* The rounded content surface */
-  > .dialog__content,
-  > section { 
+  .dialog__content { 
     position: relative;
-    box-sizing: border-box;
-    inline-size: fit-content;
-    max-inline-size: min(92vw, 760px);
-    max-block-size: calc(100dvh - 64px);
-    overflow: auto;
-    overflow-x: hidden;
-    overflow-wrap: anywhere;
-    background: #fff;
-    color: #111;
-    border-radius: 28px;
-    box-shadow: 0 24px 72px -12px rgb(0 0 0 / 35%);
-    padding: clamp(20px, 4vw, 44px);
-    outline: none;
+    padding: 2rem;
+    border-radius: 0;
+    z-index: -1;
+    background-color: #fff;
+    transform: translateZ(0);
+    overflow: hidden;
   }
 
-  /* Media won't force content wider */
-  .dialog__content :where(img, video, canvas, svg) {
-    max-inline-size: 100%;
-    height: auto;
-  }
-
-  /* Code blocks scroll horizontally without stretching */
-  .dialog__content pre {
-    max-inline-size: 100%;
-    overflow-x: auto;
-  }
-
- /* Remove UA outline on the dialog itself (native) */
-&:where(dialog):focus { outline: none; }
-&:where(dialog):focus-visible { outline: none; }
-
-  /* Show a focus ring ON THE CONTENT when the dialog has focus */
-  &:where(dialog):focus > .dialog__content,
-  &:where(dialog):focus-visible > .dialog__content,
-  /* ARIA fallback: when anything inside has focus */
-  &.is-open:focus-within > .dialog__content {
-    outline: 3px auto;
-    outline-offset: 3px;
-  }
-
-  /* High-contrast fallback */
-  @media (forced-colors: active) {
-    &:where(dialog):focus > .dialog__content,
-    &:where(dialog):focus-visible > .dialog__content,
-    &.is-open:focus-within > .dialog__content {
-      outline: 2px solid CanvasText;
-      outline-offset: 2px;
-      box-shadow: none;
-    }
-  }
-
-  /* Close button inside the content */
-  .dialog__content > button.close {
+  .close {
     position: absolute;
-    inset-block-start: 1rem;
-    inset-inline-end: 1rem;
-    inline-size: 2rem;
-    block-size: 2rem;
-    display: grid;
-    place-items: center;
+    top: 0.5rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
     background-color: #000;
     background-image: url("data:image/svg+xml,%0A%3Csvg height='100px' width='100px' fill='white' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M93.24268,6.75732a6.00078,6.00078,0,0,0-8.48536,0L50,41.51465,15.24268,6.75732a6.00006,6.00006,0,0,0-8.48536,8.48536L41.51465,50,6.75732,84.75732a6.00006,6.00006,0,0,0,8.48536,8.48536L50,58.48535,84.75732,93.24268a6.00006,6.00006,0,0,0,8.48536-8.48536L58.48535,50,93.24268,15.24268A5.99989,5.99989,0,0,0,93.24268,6.75732Z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50% 50%;
     border: 1px solid transparent;
-    border-radius: 9999px;
+    border-radius: 50%;
     padding: 0;
     cursor: pointer;
-    transition: opacity .2s ease;
     z-index: 2;
-  }
-}
-
-/* Native-only: hide when not open */
-:where(dialog).dialog:not([open]) { 
-  display: none !important; 
-}
-
-/* Close button focus ring – visible in light/dark modes */
-.dialog .dialog__content > button.close:focus,
-.dialog .dialog__content > button.close:focus-visible {
-  outline: 3px auto;                       
-  outline-color: -webkit-focus-ring-color; 
-  outline-offset: 3px;                      
-
-}
-
-@media (prefers-color-scheme: dark) {
-  /* backdrop a bit darker */
-  .dialog:where(dialog)::backdrop {
-    background: rgb(0 0 0 / 65%);
-  }
-
-  /* content surface flips to dark with light text */
-  .dialog > .dialog__content,
-  .dialog > section {
-    background: #111;           /* dark surface */
-    color: #f5f5f5;             /* light text */
-    box-shadow: 0 24px 72px -12px rgb(0 0 0 / 60%);
-  }
-
-  /* invert the close button so it's visible on dark surfaces */
-  .dialog .dialog__content > button.close {
-    background-color: #fff;
-
-    /* same glyph, but black fill for contrast on white button */
-    background-image: url("data:image/svg+xml,%3Csvg height='100px' width='100px' fill='black' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M93.24268,6.75732a6.00078,6.00078,0,0,0-8.48536,0L50,41.51465,15.24268,6.75732a6.00006,6.00006,0,0,0-8.48536,8.48536L41.51465,50,6.75732,84.75732a6.00006,6.00006,0,0,0,8.48536,8.48536L50,58.48535,84.75732,93.24268a6.00006,6.00006,0,0,0,8.48536-8.48536L58.48535,50,93.24268,15.24268A5.99989,5.99989,0,0,0,93.24268,6.75732Z'/%3E%3C/svg%3E");
   }
 }
 
