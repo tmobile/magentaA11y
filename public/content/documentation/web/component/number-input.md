@@ -122,8 +122,8 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
   The Security ID number will expire after 1 hour
 </div>
 ```
-<!-- TODO need to preventDefault / make it appear disabled, also this is allowing letters AND numbers despite pattern -->
-<!-- <example>
+
+<example>
    <label for="security-id">
    Security ID number
    </label>
@@ -136,7 +136,7 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
    <div id="security-id-hint" class="hint">
    The Security ID number will expire after 1 hour
    </div>
-</example> -->
+</example>
 
 ### Fully disabled number input (avoid)
 
