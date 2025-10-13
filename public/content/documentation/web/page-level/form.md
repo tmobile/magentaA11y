@@ -70,8 +70,8 @@ Use `fieldset` and `legend` to group related fields, such as:
 
 ### Error handling
 
-- Individual inputs must have [programmatically described errors](https://www.magentaa11y.com/checklist-web/hint-help-error/) read by the screen reader on focus.
-- For long forms, list all errors in an [alert](https://www.magentaa11y.com/checklist-web/alert/) with links back to each invalid input on submission attempts.
+- Individual inputs must have <a href="https://www.magentaa11y.com/#/web-criteria/component/help-hint-error">programmatically described errors</a> read by the screen reader on focus.
+- For long forms, list all errors in an <a href="https://www.magentaa11y.com/#/web-criteria/component/alert-notification">alert</a> with links back to each invalid input on submission attempts.
 
 ## UX guidance
 
@@ -95,7 +95,7 @@ Do not put forms in multiple columns.
 
 
 ### Why we use autocomplete
-- Utilizing [autocomplete](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete) allows users automated assistance in filling out form field values.
+- Utilizing <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete">autocomplete</a> allows users automated assistance in filling out form field values.
 - Autocomplete is helpful for all customers leading to a speedier conversion
 - For those with motor disabilities, it eliminates the need to laboriously enter information
 
@@ -620,5 +620,5 @@ Use `fieldset` and `legend` to group related fields, such as:
 ```
 
 ## Further Reading
-- [WebAIM Accessible Form validation and error recovery](https://webaim.org/techniques/formvalidation/)
+- <a href="https://webaim.org/techniques/formvalidation/">WebAIM Accessible Form validation and error recovery</a>
 
