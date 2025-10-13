@@ -151,13 +151,13 @@ Use `fieldset` and `legend` to group related fields, such as:
       </button>
         
       <input type="text" 
-              name="cardnumber" 
-              id="card-number" 
-              autocomplete="cc-number"
-              inputmode="numeric"
-              pattern="[0-9]*"
-              aria-describedby="description-card-number"
-              required>
+                name="cardnumber" 
+                id="card-number" 
+                autocomplete="cc-number"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                aria-describedby="description-card-number"
+                required>
 
       <div id="description-card-number" class="hint secure-icon">
         Secure form protected by 8 bit encryption
@@ -172,23 +172,23 @@ Use `fieldset` and `legend` to group related fields, such as:
           
         <label class="hidden-visually" for="cc-exp-month">Expiration Month (MM)</label>
         <input type="text"
-              maxlength="2"  
-              name="ccmonth" 
-              id="cc-exp-month"
-              inputmode="numeric"
-              autocomplete="cc-exp-month"
-              pattern="[0-9]*"
-              required>
+                    maxlength="2"  
+                    name="ccmonth" 
+                    id="cc-exp-month"
+                    inputmode="numeric"
+                    autocomplete="cc-exp-month"
+                    pattern="[0-9]*"
+                    required>
           
         <label class="hidden-visually" for="cc-exp-year">Expiration Year (YY)</span></label>
         <input type="text"
-              maxlength="2"  
-              name="ccyear" 
-              id="cc-exp-year"
-              inputmode="numeric"
-              autocomplete="cc-exp-year"
-              pattern="[0-9]*"
-              required>
+                    maxlength="2"  
+                    name="ccyear" 
+                    id="cc-exp-year"
+                    inputmode="numeric"
+                    autocomplete="cc-exp-year"
+                    pattern="[0-9]*"
+                    required>
       </div>
     </fieldset>
 
@@ -609,12 +609,12 @@ Use `fieldset` and `legend` to group related fields, such as:
     
     <label for="result">Total</label>
     <input 
-      readonly 
-      type="text"
-      id="result"
-      inputmode="numeric" 
-      value="3000" 
-      maxlength="6">
+          readonly 
+          type="text"
+          id="result"
+          inputmode="numeric" 
+          value="3000" 
+          maxlength="6">
   </fieldset>
 </form>
 ```
