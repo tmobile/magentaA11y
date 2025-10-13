@@ -90,7 +90,6 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
   The pin number will expire after 1 hour
 </div>
 ```
-<!-- TODO for all examples, this is allowing letters AND numbers despite pattern -->
 <example>
    <label for="pin">
    Pin number
@@ -123,7 +122,6 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
   The Security ID number will expire after 1 hour
 </div>
 ```
-
 <!-- TODO need to preventDefault / make it appear disabled, also this is allowing letters AND numbers despite pattern -->
 <!-- <example>
    <label for="security-id">
@@ -168,7 +166,7 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 
 ### Telephone number input
 
-- Setting type="tel" changes the keyboard for mobile app users
+- Setting `type="tel"` changes the keyboard for mobile app users
 
 ```html
 <label for="phone">
@@ -184,7 +182,6 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 </div>
 ```
 
-<!-- TODO this is allowing letters -->
 <example>
    <label for="phone">
    Phone number
@@ -202,7 +199,7 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 ## Developer notes
 
 - [Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
-- [Stepper/counter input example](/web-criteria/component/stepper-input)
+- <a href="https://www.magentaa11y.com/#/web-criteria/component/stepper-input">Stepper/counter input example</a>
 
 ### Name
 - Include `for="input-id` in each `<label>` label to associate it with the input
@@ -212,10 +209,9 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 ### Role
 - Identifies as a text input
 
-
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input
-- Use `<fieldset>` and `<legend>` to name a group of inputs.
+- Use `<fieldset>` and `<legend>` to name a group of inputs
 
 ### Focus
 - Focus must be visible
