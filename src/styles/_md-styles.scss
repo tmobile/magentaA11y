@@ -668,8 +668,8 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     }
 
     &.notification {
-      background-color:#078A14;
-      color:#fff;
+      background-color: var(--color-on-success-container);
+      color: var(--magentaa11y-color-brand-grayscale-white);
 
       &::before {
         background-image:var(--icon-check-white)

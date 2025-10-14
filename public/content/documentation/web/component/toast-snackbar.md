@@ -74,6 +74,18 @@ Toast snackbars might seem like an easy way to provide feedback, but they’re o
    - Inline Feedback: Inject a success message _in proximity_ to the updated control
    - Accessible Undo/Redo Options: Place these buttons in clear, easy-to-navigate locations.
    - Thoughtful Confirmations: Use a confirmation screen for critical actions or when users are exiting an important flow.
+```html
+<fieldset class="switch">
+    <legend>Marketing preferences</legend>
+    <input class="hidden-visually" data-fn="openToast" type="checkbox" role="switch" id="spam">
+    <label for="spam">  Send me constant spam</label>
+    <div id="hint-spam" role="alert" class="alert notification inert">
+        <div id="hint-spam-message">
+            Spam preferences saved
+        </div>
+    </div>
+</fieldset>
+```
 
 <example>
 <fieldset class="switch">
