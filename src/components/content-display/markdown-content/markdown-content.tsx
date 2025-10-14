@@ -13,6 +13,13 @@ import { MarkdownContentProps, MediaProps } from './markdown-content.types';
 
 import './markdown-content.scss';
 
+// Helper to safely invoke mapped markdown functions with an event
+const   fnHandler = (fn: unknown, e: unknown): void => {
+  if (typeof fn === 'function') {
+    (fn as (ev: unknown) => void)(e);
+  }
+};
+
 const MarkdownContent: React.FC<MarkdownContentProps> = ({
   content,
   assetBasePath,
@@ -209,7 +216,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                     {...props}
                     onClick={(e) => {
                       // Call the mapped function; event type differs but is safe to pass along
-                      (fn as unknown as (ev: unknown) => void)(e);
+                        fnHandler(fn, e);
                     }}
                   />
                 );
@@ -218,7 +225,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                   <input
                     {...props}
                     onInput={(e) => {
-                      (fn as unknown as (ev: unknown) => void)(e);
+                        fnHandler(fn, e);
                     }}
                   />
                 );
@@ -228,7 +235,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                   <input
                     {...props}
                     onChange={(e) => {
-                      (fn as unknown as (ev: unknown) => void)(e);
+                        fnHandler(fn, e);
                     }}
                   />
                 );

@@ -201,17 +201,14 @@ export const getMarkdownFunctionMap = (
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
-  openToast: ()=> {
+  openToast: () => {
     const toast = document.getElementById('hint-spam');
 
     /* setTimeout is to simulate a delay in the toast opening */
     setTimeout(() => {
-      if(toast?.classList.contains('inert')){
-        toast?.classList.remove('inert');
-        toast?.classList.add('enabled');
-      } else {
-        toast?.classList.remove('enabled');
-        toast?.classList.add('inert');
+      if(toast){
+        toast.classList.toggle('inert');
+        toast.classList.toggle('enabled');
       }
     }, 500)
   }
