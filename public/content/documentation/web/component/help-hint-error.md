@@ -68,8 +68,6 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 </div>
 ```
 
-<!-- TODO: needs JS added to ensure it functions well -->
-
 <example>
 <label for="best-sesame-street-character">
   The best Sesame Street character is:
@@ -100,7 +98,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 
 <div role="alert" 
      id="favorite-sesame-street-character-alert" 
-     class="alert inert">
+     class="inert">
   <!--- Do not reference this alert element
         directly with aria-describedby -->
   <div id="favorite-sesame-street-character-error">
@@ -117,8 +115,6 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 </button>
 ```
 
-<!-- TODO: needs JS added to ensure it functions well -->
-
 <example>
 <label for="favorite-sesame-street-character-letter">
   What is your favorite Sesame Street character?
@@ -132,19 +128,17 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/help-hin
 
 <div role="alert" 
      id="favorite-sesame-street-character-alert" 
-     class="alert inert">
+     class="inert">
   <!--- Do not reference this alert element
         directly with aria-describedby -->
-  <div id="favorite-sesame-street-character-error">
-    <!--- Use JS to inject the alert here -->
-  </div>     
+  <div id="hint-help-error-alert"><!--- Use JS to inject the alert here --></div>     
 </div>
 
 <div class="hint" id="favorite-sesame-street-character-hint">
   Example: Elmo, Big Bird, Cookie Monster, Grover, Oscar the Grouch
 </div>
 
-<button id="show-error">
+<button id="show-error" data-fn="hintHelpErrorAlertDemo" class="Magentaa11y-button Magentaa11y-button--primary">
   Toggle error
 </button>
 </example>

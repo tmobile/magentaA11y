@@ -4,7 +4,12 @@ How to test an animation
 
 ## Videos
 
-<!-- TODO: add in an iOS example! -->
+### iOS Voiceover
+
+<video controls>
+  <source src="media/video/native/animation/animation_iOSVoiceOver.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
 
 ### Android Talkback
 

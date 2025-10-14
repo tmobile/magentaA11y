@@ -74,7 +74,14 @@ export const getMarkdownFunctionMap = (
   alertSuccess: () => {
     const alertDiv = document.getElementById('alertSuccessExample');
     if (alertDiv) {
-      alertDiv.innerHTML.length === 0 ? alertDiv.innerHTML = '<p class="alert success">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
+      alertDiv.innerHTML === '' ? alertDiv.innerHTML = '<p class="alert success">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
+    }
+  },
+
+  hintHelpErrorAlertDemo: () => {
+    const warningDiv = document.getElementById('hint-help-error-alert');
+    if (warningDiv) {
+      warningDiv.innerHTML.length === 0 ? warningDiv.innerHTML = '<p class="alert warning">Warning: The correct answer is Cookie Monster!</p>' : warningDiv.innerHTML = '';
     }
   },
 
@@ -200,6 +207,28 @@ export const getMarkdownFunctionMap = (
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
+
+  toggleExpander: (event) => {
+    // define variables
+    const toggleButton = document.getElementById('expanderToggle');
+    const contentToToggle = document.getElementById('expanderContent');
+
+    // check to see if there are any accordions at all
+    if (!toggleButton || !contentToToggle) {
+      console.warn('Expander elements not found.');
+      return;
+    }
+
+    // Get current state
+    const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+    // Toggle the state - use only aria-expanded attribute
+    const newExpandedState = !isExpanded;
+          toggleButton.setAttribute('aria-expanded', String(newExpandedState));
+
+  },
+
+
 
   openToast: () => {
     const toast = document.getElementById('hint-spam');
