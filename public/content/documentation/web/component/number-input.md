@@ -106,7 +106,9 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 
 ### Disabled and focusable number input (preferred)
 
-- Using the `aria-disabled` attribute will allow the input to be focusable and more discoverable
+- There may be times that it is advantageous for the input to be disabled but still focusable
+- Use `readonly` to prevent editing
+- Using the `aria-disabled` attribute will allow the input to be focusable and more discoverable. Fully disabled inputs are not focusable and will not be as discoverable in a form. 
 
 ```html
 <label for="security-id">
@@ -117,7 +119,8 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
        aria-describedby="security-id-hint"
        inputmode="numeric"
        pattern="[0-9]*"
-       aria-disabled="true">
+       aria-disabled="true"
+       readonly>
 <div id="security-id-hint" class="hint">
   The Security ID number will expire after 1 hour
 </div>
@@ -132,7 +135,8 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
          aria-describedby="security-id-hint"
          inputmode="numeric"
          pattern="[0-9]*"
-         aria-disabled="true">
+         aria-disabled="true"
+         readonly>
    <div id="security-id-hint" class="hint">
    The Security ID number will expire after 1 hour
    </div>
