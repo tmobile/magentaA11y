@@ -112,8 +112,6 @@ This radio group uses CSS to reverse the visual order of the radio inputs while 
 </fieldset>
 ```
 
-<!-- TODO - come back and work on why the order is reversed plus work on styling -->
-
 <example>
   <fieldset>
     <legend>
@@ -162,10 +160,13 @@ The element must clearly express the rating and scale.
 
 <example>
 <p class="stars">
-    <span class="scale">
-    </span>
-    <span class="rating">
-    </span>
+    <!-- <span class="scale">
+    </span> -->
+    <span class="star-filled"></span>
+    <span class="star-filled"></span>
+    <span class="star-filled"></span>
+    <span class="star-filled"></span>
+    <span class="star-outline"></span>
     <span class="hidden-visually">
       Rating: 4 out of 5 stars
     </span>
