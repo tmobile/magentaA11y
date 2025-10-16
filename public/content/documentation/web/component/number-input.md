@@ -90,7 +90,6 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
   The pin number will expire after 1 hour
 </div>
 ```
-<!-- TODO for all examples, this is allowing letters AND numbers despite pattern -->
 <example>
    <label for="pin">
    Pin number
@@ -107,7 +106,9 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 
 ### Disabled and focusable number input (preferred)
 
-- Using the `aria-disabled` attribute will allow the input to be focusable and more discoverable
+- There may be times that it is advantageous for the input to be disabled but still focusable
+- Use `readonly` to prevent editing
+- Using the `aria-disabled` attribute will allow the input to be focusable and more discoverable. Fully disabled inputs are not focusable and will not be as discoverable in a form. 
 
 ```html
 <label for="security-id">
@@ -118,14 +119,14 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
        aria-describedby="security-id-hint"
        inputmode="numeric"
        pattern="[0-9]*"
-       aria-disabled="true">
+       aria-disabled="true"
+       readonly>
 <div id="security-id-hint" class="hint">
   The Security ID number will expire after 1 hour
 </div>
 ```
 
-<!-- TODO need to preventDefault / make it appear disabled, also this is allowing letters AND numbers despite pattern -->
-<!-- <example>
+<example>
    <label for="security-id">
    Security ID number
    </label>
@@ -134,11 +135,12 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
          aria-describedby="security-id-hint"
          inputmode="numeric"
          pattern="[0-9]*"
-         aria-disabled="true">
+         aria-disabled="true"
+         readonly>
    <div id="security-id-hint" class="hint">
    The Security ID number will expire after 1 hour
    </div>
-</example> -->
+</example>
 
 ### Fully disabled number input (avoid)
 
@@ -168,7 +170,7 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 
 ### Telephone number input
 
-- Setting type="tel" changes the keyboard for mobile app users
+- Setting `type="tel"` changes the keyboard for mobile app users
 
 ```html
 <label for="phone">
@@ -184,7 +186,6 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 </div>
 ```
 
-<!-- TODO this is allowing letters -->
 <example>
    <label for="phone">
    Phone number
@@ -202,7 +203,7 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 ## Developer notes
 
 - [Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
-- [Stepper/counter input example](/web-criteria/component/stepper-input)
+- <a href="https://www.magentaa11y.com/#/web-criteria/component/stepper-input">Stepper/counter input example</a>
 
 ### Name
 - Include `for="input-id` in each `<label>` label to associate it with the input
@@ -212,10 +213,9 @@ Use `type=text` with `inputmode="numeric"` with an input pattern and JavaScript 
 ### Role
 - Identifies as a text input
 
-
 ### Group
 - Include `for="input-id` in each `<label>` label to associate it with the input
-- Use `<fieldset>` and `<legend>` to name a group of inputs.
+- Use `<fieldset>` and `<legend>` to name a group of inputs
 
 ### Focus
 - Focus must be visible

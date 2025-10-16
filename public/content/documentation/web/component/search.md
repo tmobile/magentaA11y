@@ -105,8 +105,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](
 
 ### Search with autocomplete suggestions
 
-- For search autocomplete see [Autocomplete input with listbox](/checklist-web/listbox-autocomplete/) 
-<!-- TODO update link above -->
+- For search autocomplete see <a href="https://www.magentaa11y.com/#/web-criteria/component/autocomplete">Autocomplete input with listbox</a>
 
 ```html
 <form role="search">
