@@ -682,6 +682,8 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
 }
 
+// end example styles
+
 .bad-example {
   color: var(--color-error-container);
 
@@ -889,6 +891,10 @@ input.star:focus-visible + label {
 /* styling for example of a button with bad color contrast on hover for How to Test Color Contrast */
 .bad-contrast-button:hover {
     color: #e20074;
+}
+
+a.button {
+  padding: 1rem;
 }
 
 
