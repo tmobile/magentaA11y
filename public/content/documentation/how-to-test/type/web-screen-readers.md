@@ -1,182 +1,369 @@
 ## General Notes
 
-Learn the basics of testing websites with mobile and desktop screen readers.
+Learn the basics of testing websites with mobile and desktop screen readers. 
+
 
 ## Developer Notes
+Screen readers are an assistive technology tool, often used by people with vision impairments or reading disorders, that convert text, buttons, images, tables, and other screen elements into speech. **Manually testing with a screen reader is essential** to find accessibility issues that may not be caught by automated testing tools. 
 
-1. ## Test with desktop screen readers
-   ### Using the tab key
+Screen readers are all slightly different and all offer a slightly different experience. **Not having all screen readers available doesn't mean you can't test for accessibility**. 
 
-   The tab key is not the only key the screen readers use to browse content. Before you test, learn the difference between **interactive elements that should receive focus** with the tab key and **content that should not**.
+1. ## Basics of testing with desktop screen readers
+   Screen reader users may navigate line by line through the page or they may jump around or "scan" using the rotor or elements list (mentioned below in the keyboard shortcuts). 
+   
+   **Do not use a mouse** during screen reader testing. Instead, use a keyboard to navigate. 
 
-   - Arrow keys browse content for reading
-   - The tab key focuses interactive controls
-   - screen readers can also consume content automatically, starting reading at the top with no keyboard interaction
+   Utilize the testing scenarios here on MagentaA11y component and pattern pages for UI expected behavior. 
 
-   ### Do not use a mouse
+2. ## Screen reader options
+   According to the <a href="https://webaim.org/projects/screenreadersurvey10/">WebAIM screen reader user survey</a>, the overwhelming **majority of screen reader users are on Windows** such as: <a href="https://www.freedomscientific.com/Products/software/JAWS/">JAWS (Job Access With Speech)</a> and <a href="https://www.nvaccess.org/">NVDA (NonVisual Desktop Access)</a>. They are followed in popularity by **Apple's built-in screen reader, VoiceOver**.
 
-   - **Do not use the mouse** for screen reader testing.
-2. ## Test with mobile screen readers
+   Some browsers work best with certain screen readers and are specifically suggested by operating systems. 
 
-   Because many websites have crossed the threshold to a majority of visits being from mobile devices this may be higher priority than desktop testing.
 
-   - Follow the mobile gesture test instructions (swipe, tap, doubletap, etc.) described in MagentaA11y testing criteria.
-   - **Do not tap** on elements to navigate, you must swipe to browse the content in a linear and logical pattern.
+   ### NVDA
+   NVDA is a free screen reader available for download for Windows computers. For NVDA the recommended browsers are **Chrome, Firefox, or Edge**.Below is a quick-start guide of keyboard shortcuts. If needed, check out this more <a href="https://webaim.org/resources/shortcuts/nvda">expansive list of NVDA keyboard shortcuts from WebAIM</a>.
 
-   ### Devices
+   #### Getting Started
+   Disable “Automatic Say All on page load” in NVDA Settings: Browse Mode. This will increase the conformance of NVDA.
 
-   - Test in both Android and iOS devices
-   - After testing using mobile gestures, test with a mobile device 
+   #### NVDA differences
+   - NVDA has 2 modes with different keyboard shortcuts.
+      --  Browse (Red focus indicator)
+         - Arrow keys will browse from element to element
+      - Focus (Blue focus indicator)
+         -  Arrow keys will only interact with the interactive element in focus
+   - Only reads ~120 characters at at time
+   - Reads “clickable” when it detects a click event listener on an element, even when it’s not clickable. (Note: If the element is not intended to be clickable, this is a defect to be remediated)
+   - Will read a button with aria-haspopup="true" as “menu submenu”
+   - Any element in focus like a dialog or section will be read in its entirety
 
-   ### Browsers
-
-   Follow the [screen reader browser pairings table](#screen-readers-are-all-slightly-different)
-
-## About screen readers
-<!-- {: .divider } -->
-
-### Screen readers are all slightly different
-
-- Screen readers all offer a slightly different experience.
-- Not having all 5 screen readers available doesn't mean you can't test for accessibility.
-- Most of the major accessibility defects you're likely to encounter will show up in any screen reader.
-
-### NVDA + Windows
-
- <div class="MagentaA11y-accordion">
-   <h2 class="MagentaA11y-accordion__heading">
-      <button
-      class="MagentaA11y-accordion__headline"
-      aria-expanded="false"
-      data-fn="toggleAccordionState"
-      aria-controls="sr">
-      <span class="MagentaA11y-accordion__headline--text">More details</span>
-      </button>
-   </h2>
-   <div class="MagentaA11y-accordion__body" id="sr">
-      <table >
-         <caption class="text-left">
-         NVDA Basics
-         </caption>
-         <thead>
-         <tr>
-            <th scope="col">
-               Key
-            </th>
-            <th scope="col">
-               Action
-            </th>
-         </tr>
-         </thead>
-         <tbody>
-         <tr>
-            <th scope="row">
-               <span >Arrows</span>
-            </th>
-            <td>
-               Should scroll the screen or interact with form fields
-            </td>
-         </tr>
-         <tr>
-            <th scope="row">
-               <span >Tab</span>
-            </th>
-            <td>
-               Moves through the interface focusing on elements that are focusable. For example, buttons and links.
-            </td>
-         </tr>
-         <tr>
-            <th scope="row">
-               <span >Shift + Tab</span>
-            </th>
-            <td>
-               Moves in reverse through the interface focusing on elements that are focusable.
-            </td>
-         </tr>
-         <tr>
-            <th scope="row">
-               <span >Enter</span>
-            </th>
-            <td>
-               Activates links and buttons
-            </td>
-         </tr>
-         <tr>
-            <th scope="row">
-               <span >Spacebar</span>
-            </th>
-            <td>
-               Activates buttons and interacts with form elements
-            </td>
-         </tr>
-         <tr>
-            <th scope="row">
-               <span >Escape</span>
-            </th>
-            <td>
-               Should close or dismiss widgets like dialogs
-            </td>
-         </tr>  
-         </tbody>
-      </table>
-   </div>
-</div>
-
-3. **Informative Images**
-   - Check that the image owns an `alt` attribute.
-   - Ensure that the `alt` attribute is present and not empty.
-   - The `alt` attribute value / description of the image should be accurate and succinct. The image alternative should not consist of information that duplicates nearby text content.
-   ```html
-   <svg role="img" aria-label="I am the alt text">...</svg>
-   ```
-4. **Decorative Images**
-   - Ensure that the `alt` attribute is present and owns an empty or null value: `alt=""`.
-   - **Note:** `aria-hidden="true"` is not needed if an image has `alt=""`.
-   ```html
-   <img alt="" src="../some-image.png" ... />
-   ```
-5. **Functional Images**
-   - Ensure the `alt` attribute is present and owns a value that includes **all** of the text found in the image.
-   - Functional images are typically links or buttons so the alt text should define the purpose of the link instead of describing the image.
-   - **Note:** Functional images can have `alt=""` if the text alternative is conveyed in the parent control's label, e.g. `aria-label="Download on the Apple App Store"`.
-   ```html
-   <button aria-label="Download on the Apple App Store">
-     <img src="apple.png" alt="" />
-   </button>
-   ```
-6. **Images of Text**
-   - Ensure the `alt` attribute includes **all** of the text in the image.
-   - Consider logging a defect for [WCAG 1.4.5 Images of Text](https://www.w3.org/WAI/WCAG22/Understanding/images-of-text.html) if HTML/CSS text could be used instead.
-   ```html
-   <img src="apple-iphone-15-pro.png" alt="Titanium Apple iPhone 15 Pro" />
-   ```
-7. **Complex Images**
-   - Ensure the image has an `alt` attribute that conveys general purpose.
-   - If more detail is needed, provide supporting text nearby or downloadable files (e.g., Excel, HTML table).
-
-8. **What to test for**
-   <div class="how-to-test-checklist-item">
-   <h3>✓ Ensure meaningful images have alt text</h3>
-   <p><strong>Note:</strong> The passing example has alt text that matches the image content. The failing example uses a meaningless filename as alt text.</p>
-   <table>
-       <thead>
-           <tr>
-               <th scope="col">Pass</th>
-               <th scope="col">Fail</th>
-           </tr>
-       </thead>
-       <tbody>
-           <tr>
-               <td>
-                   <img src="media/images/how-to-test/how-to-test-example-iphone.png" alt="Titanium Apple iPhone 15 Pro"/>
-               </td>
-               <td>
-                   <img src="media/images/how-to-test/how-to-test-example-iphone.png" alt="234@@4-JWKK##KK4442221-11-phone-apple-prod.png"/>
-               </td>
-           </tr>
-       </tbody>
+   <table >
+      <caption class="text-left">NVDA Basic Keyboard Shortcuts</caption>
+      <thead>
+      <tr>
+         <th scope="col">
+            Key
+         </th>
+         <th scope="col">
+            Action
+         </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+         <th scope="row">
+            <span>Control + Alt + N</span>
+         </th>
+         <td>
+            Turn NVDA on
+         </td>
+      </tr>  
+      <tr>
+         <th scope="row">
+            <span>Insert + Q</span>
+         </th>
+         <td>
+            Turn NVDA off
+         </td>
+      </tr>                   
+      <tr>
+         <th scope="row">
+            <span>Arrows</span>
+         </th>
+         <td>
+            Read next or previous item
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Tab</span>
+         </th>
+         <td>
+            Moves through the interface focusing on elements that are focusable. For example, buttons and links.
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Shift + Tab</span>
+         </th>
+         <td>
+            Moves in reverse through the interface focusing on elements that are focusable.
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Enter</span>
+         </th>
+         <td>
+            Activates links and buttons
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Spacebar</span>
+         </th>
+         <td>
+            Activates buttons and interacts with form elements
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Escape</span>
+         </th>
+         <td>
+            Should close or dismiss widgets like dialogs
+         </td>
+      </tr>  
+      <tr>
+         <th scope="row">
+            <span>H</span>
+         </th>
+         <td>
+            Go to next heading
+         </td>
+      </tr>          
+      <tr>
+         <th scope="row">
+            <span>Insert + F7</span>
+         </th>
+         <td>
+            Show list of all links, headings, form fields, buttons, and landmarks
+         </td>
+      </tr>           
+      </tbody>
    </table>
-   </div>
+
+---
+
+   ### JAWS
+   JAWS is not free and works well with **Chrome, Edge, Firefox, and Internet Explorer**. Below is a quick-start guide of keyboard shortcuts. If needed, check out this more <a href="https://webaim.org/resources/shortcuts/jaws">expansive list of JAWS keyboard shortcuts from WebAIM</a>.
+
+   #### JAWS Differences
+   - JAWS has 2 modes with different keyboard shortcuts
+      - Browse
+         - Arrow keys will browse from element to element
+      - Forms
+         - Arrow keys will only interact with the interactive element in focus
+   - Can fake click events on elements, meaning it may work with the screen reader but not just the keyboard
+
+   <table>
+      <caption class="text-left">JAWS Basic Keyboard Shortcuts</caption>
+      <thead>
+      <tr>
+         <th scope="col">
+            Key
+         </th>
+         <th scope="col">
+            Action
+         </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+         <th scope="row">
+            <span>(Select from application list)</span>
+         </th>
+         <td>
+            Turn JAWS on
+         </td>
+      </tr>  
+      <tr>
+         <th scope="row">
+            <span>Insert + F4</span>
+         </th>
+         <td>
+            Turn NVDA off
+         </td>
+      </tr>                   
+      <tr>
+         <th scope="row">
+            <span>Arrows</span>
+         </th>
+         <td>
+            Read next or previous item
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Tab</span>
+         </th>
+         <td>
+            Moves through the interface focusing on elements that are focusable. For example, buttons and links.
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Shift + Tab</span>
+         </th>
+         <td>
+            Moves in reverse through the interface focusing on elements that are focusable.
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Enter</span>
+         </th>
+         <td>
+            Activates links and buttons
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Spacebar</span>
+         </th>
+         <td>
+            Activates buttons and interacts with form elements
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Escape</span>
+         </th>
+         <td>
+            Should close or dismiss widgets like dialogs
+         </td>
+      </tr>  
+      <tr>
+         <th scope="row">
+            <span>H</span>
+         </th>
+         <td>
+            Go to next heading
+         </td>
+      </tr>          
+      <tr>
+         <th scope="row">
+            <span>Insert + F3</span>
+         </th>
+         <td>
+            Show list of all links, headings, form fields, buttons, and landmarks
+         </td>
+      </tr>           
+      </tbody>
+   </table>
+
+---
+
+   ### VoiceOver
+   VoiceOver is the built-in screenreader on Apple operating systems and works best with **Safari**. Below is a quick-start guide of keyboard shortcuts. If needed, check out this more <a href="https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts">expansive list of VoiceOver keyboard shortcuts from Deque</a>.
+
+   #### VoiceOver Differences
+   - Does not have multiple modes like NVDA or JAWS
+   - Voiceover will say “dimmed” instead of “disabled”
+   - It may say things in a different order than NVDA or JAWS but the core acceptance criteria are the same.
+
+   <table>
+      <caption class="text-left">VoiceOver Basic Keyboard Shortcuts</caption>
+      <thead>
+      <tr>
+         <th scope="col">
+            Key
+         </th>
+         <th scope="col">
+            Action
+         </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+         <th scope="row">
+            <span>CAPS or Control+Option</span>
+         </th>
+         <td>
+               VoiceOver (VO) key
+         </td>
+      </tr> 
+      <tr>
+         <th scope="row">
+            <span>Command+F5</span>
+         </th>
+         <td>
+            Turn VoiceOver on/off
+         </td>
+      </tr>                   
+      <tr>
+         <th scope="row">
+            <span>VO+ Right/Left Arrows</span>
+         </th>
+         <td>
+            Read next or previous item
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Tab</span>
+         </th>
+         <td>
+            Moves through the interface focusing on elements that are focusable. For example, buttons and links.
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Shift + Tab</span>
+         </th>
+         <td>
+            Moves in reverse through the interface focusing on elements that are focusable.
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Enter or VO + Space Bar</span>
+         </th>
+         <td>
+            Activates links and buttons
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Spacebar</span>
+         </th>
+         <td>
+            Activates buttons and interacts with form elements
+         </td>
+      </tr>
+      <tr>
+         <th scope="row">
+            <span>Escape</span>
+         </th>
+         <td>
+            Should close or dismiss widgets like dialogs
+         </td>
+      </tr>  
+      <tr>
+         <th scope="row">
+            <span>VO + Command + H</span>
+         </th>
+         <td>
+            Go to next heading
+         </td>
+      </tr>          
+      <tr>
+         <th scope="row">
+            <span>VO + U</span>
+         </th>
+         <td>
+            Show list of all links, headings, form fields, buttons, and landmarks (called the "rotor" in VoiceOver)
+         </td>
+      </tr>           
+      </tbody>
+   </table>
+
+
+
+   <!-- 2. ## Test with mobile screen readers
+
+      Because many websites have crossed the threshold to a majority of visits being from mobile devices this may be higher priority than desktop testing.
+
+      - Follow the mobile gesture test instructions (swipe, tap, doubletap, etc.) described in MagentaA11y testing criteria.
+      - **Do not tap** on elements to navigate, you must swipe to browse the content in a linear and logical pattern.
+
+      ### Devices
+
+      - Test in both Android and iOS devices
+      - After testing using mobile gestures, test with a mobile device's built-in screen reader: VoiceOver for iOS and Talkback for Android. -->
+
+
 ## Related WCAG
 - 1.1.1 Non-text Content
 - 1.4.5 Images of Text
