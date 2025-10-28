@@ -1,32 +1,75 @@
 .MagentaA11y-about {
   width: 100%;
-  padding: 0 var(--magentaa11y-spacing-size-20);
+
+  p {
+    font: var(--magentaa11y-typeset-body-xl-normal);
+    max-width: 800px;
+  }
+
+  &__hero-container,
+  &__info-section,
+  &__contact-section {
+    padding-left: var(--magentaa11y-spacing-size-40);
+    padding-right: var(--magentaa11y-spacing-size-40);
+
+    @media (min-width: 1000px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__info-section,
+  &__contact-section {
+    padding-top: var(--magentaa11y-spacing-size-32);
+    padding-bottom: var(--magentaa11y-spacing-size-32);
+
+    @media (min-width: 768px) {
+      padding-top: var(--magentaa11y-spacing-size-48);
+      padding-bottom: var(--magentaa11y-spacing-size-48);
+    }
+  }
 
   &__hero-container {
     padding-top: var(--magentaa11y-spacing-size-80);
     margin: 0 auto;
     max-width: 950px;
+  }
 
-    h1 {
-      line-height: 0.7;
-
-      @media (min-width: 768px) {
-        line-height: 1.2;
-        margin-bottom: var(--magentaa11y-spacing-size-24);
-      }
-    }
+  &__hero-image {
+    max-height: 450px;
+    object-fit: cover;
+    width: 100%;
   }
 
   &__highlight {
     color: var(--color-primary);
     display: flex;
     flex-direction: column;
-    gap: var(--magentaa11y-spacing-size-12);
+    font: var(--magentaa11y-typeset-headline-sm-xtrastrong);
+
+    @media (min-width: 768px) {
+      gap: var(--magentaa11y-spacing-size-12);
+      margin-bottom: var(--magentaa11y-spacing-size-24);
+      font: var(--magentaa11y-typeset-headline-lg-xtrastrong);
+    }
   }
 
-  &__tagline,
+  &__tagline {
+     font: var(--magentaa11y-typeset-body-xl-normal);
+     margin-bottom: var(--magentaa11y-spacing-size-24);
+
+     @media (min-width: 768px) {
+        font: var(--magentaa11y-typeset-body-xxl-normal);
+        margin-bottom: var(--magentaa11y-spacing-size-48);
+     }
+  }
+
   &__description {
-    margin-bottom: var(--magentaa11y-spacing-size-48);
+    margin: var(--magentaa11y-spacing-size-24) 0 var(--magentaa11y-spacing-size-48);
+
+    @media (min-width: 768px) {
+        margin-bottom: var(--magentaa11y-spacing-size-48);
+     }
 
     span {
       font-weight: var(--magentaa11y-font-weight-extrabold);
@@ -35,20 +78,16 @@
 
   &__title-highlight {
     text-align: left;
-    font-size: var(--magentaa11y-font-size-48);
-    white-space: nowrap;
+    font: var(--magentaa11y-typeset-headline-xl-xtrastrong);
+    line-height: var(--magentaa11y-font-size-48);
 
-    @media (min-width: 450px) {
-      font-size: var(--magentaa11y-font-size-68);
+    @media (min-width: 530px) {
+      font: var(--magentaa11y-typeset-display-lg-xtrastrong);
     }
 
     @media (min-width: 768px) {
       font: var(--magentaa11y-typeset-display-4xl-strong);
     }
-  }
-
-  &__hero-image {
-    width: 100%;
   }
 
   &__info-section {
@@ -57,32 +96,39 @@
 
   &__info-container {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 950px;
     display: flex;
-    padding: var(--magentaa11y-spacing-size-40) var(--magentaa11y-spacing-size-20) 0;
     justify-content: space-between;
     flex-direction: column;
 
     @media (min-width: 768px) {
       flex-direction: row;
-      padding: var(--magentaa11y-spacing-size-40) 0 0;
+      padding: 0;
     }
   }
 
   &__info-item {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    border-top: 1px solid #fff;
     padding-top: var(--magentaa11y-spacing-size-8);
-    margin-bottom: var(--magentaa11y-spacing-size-40);
 
     @media (min-width: 768px) {
       width: 50%;
+      margin: 0;
     }
 
     &:first-child {
-      margin-right: var(--magentaa11y-spacing-size-40);
+      border-top: 0;
+      padding-bottom: var(--magentaa11y-spacing-size-40);
+
+      @media (min-width: 768px) {
+        border-top: 1px solid var(--color-on-tertiary);
+        margin-right: var(--magentaa11y-spacing-size-48);
+      }
+    }
+
+    &:last-child {
+      border-top: 1px solid var(--color-on-tertiary);
+      padding-bottom: 0;
     }
   }
 
@@ -99,11 +145,14 @@
   &__contact-section {
     margin: 0 auto;
     max-width: 950px;
-    padding: var(--magentaa11y-spacing-size-40) 0;
   }
 
   &__contribute-title {
-    font: var(--magentaa11y-typeset-display-sm-strong);
+    font: var(--magentaa11y-typeset-headline-xl-xtrastrong);
+
+    @media (min-width: 768px) {
+      font: var(--magentaa11y-typeset-display-sm-xtrastrong);
+    }
   }
 
   &__contribute-message {

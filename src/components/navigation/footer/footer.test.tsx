@@ -77,10 +77,10 @@ describe("Footer Component - Content Tests", () => {
   test("renders the About Us section", () => {
     renderWithRouter(<Footer />);
     expect(
-      screen.getByRole("heading", { name: "About Us" }),
+      screen.getByRole("heading", { name: "About" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Contact Us" }),
+      screen.getByRole("link", { name: "About Us & How to Contribute" }),
     ).toBeInTheDocument();
   });
 });

@@ -35,11 +35,11 @@ const Footer: React.FC = () => {
           </div>
         ))}
         <div className="MagentaA11y--footer__nav-list">
-          <h2>About Us</h2>
+          <h2>About</h2>
           <Divider orientation={OrientationEnum.HORIZONTAL} />
           <ul role="list">
             <li role="listitem">
-              <NavLink to={`/about-us`}>Contact Us</NavLink>
+              <NavLink to={`/about-us`}>About Us & How to Contribute</NavLink>
             </li>
           </ul>
         </div>
