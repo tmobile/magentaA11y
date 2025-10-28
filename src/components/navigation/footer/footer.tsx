@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
           <Divider orientation={OrientationEnum.HORIZONTAL} />
           <ul role="list">
             <li role="listitem">
-              <NavLink to={`/about-us`}>About Us & How to Contribute</NavLink>
+              <NavLink to={`/about-us`}>About MagentaA11y</NavLink>
             </li>
           </ul>
         </div>

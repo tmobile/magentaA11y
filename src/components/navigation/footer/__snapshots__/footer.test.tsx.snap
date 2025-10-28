@@ -141,7 +141,7 @@ exports[`Footer Component - Snapshot Test matches the snapshot 1`] = `
               class=""
               href="/about-us"
             >
-              About Us & How to Contribute
+              About MagentaA11y
             </a>
           </li>
         </ul>

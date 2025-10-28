@@ -80,7 +80,7 @@ describe("Footer Component - Content Tests", () => {
       screen.getByRole("heading", { name: "About" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "About Us & How to Contribute" }),
+      screen.getByRole("link", { name: "About MagentaA11y" }),
     ).toBeInTheDocument();
   });
 });
