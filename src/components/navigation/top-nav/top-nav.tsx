@@ -92,7 +92,7 @@ const TopNav: React.FC<TopNavProps> = ({ navItems }) => {
         <NavLink
           to="/home"
           className="MagentaA11y__brand--name"
-          aria-label="Magenta A11y - Home" />
+          aria-label="Magenta A11y by T-Mobile - Home" />
       </div>
 
       {viewportContext.isLargeTablet && (

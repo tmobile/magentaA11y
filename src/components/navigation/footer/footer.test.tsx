@@ -8,7 +8,7 @@ import Footer from "./footer";
 // Custom render function with MemoryRouter
 const renderWithRouter = (
   ui: React.ReactElement,
-  { initialEntries = ["/"] } = {}
+  { initialEntries = ["/"] } = {},
 ) => {
   return render(
     <MemoryRouter
@@ -16,7 +16,7 @@ const renderWithRouter = (
       future={{ v7_relativeSplatPath: true, v7_startTransition: true }}
     >
       {ui}
-    </MemoryRouter>
+    </MemoryRouter>,
   );
 };
 
@@ -60,7 +60,7 @@ describe("Footer Component - Content Tests", () => {
       expect(
         screen.getByRole("heading", {
           name: expectedHeading,
-        })
+        }),
       ).toBeInTheDocument();
     });
   });
@@ -74,13 +74,13 @@ describe("Footer Component - Content Tests", () => {
     });
   });
 
-  test.skip("renders the About Us section", () => {
+  test("renders the About Us section", () => {
     renderWithRouter(<Footer />);
     expect(
-      screen.getByRole("heading", { name: "About Us" })
+      screen.getByRole("heading", { name: "About" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Contact Us" })
+      screen.getByRole("link", { name: "About MagentaA11y" }),
     ).toBeInTheDocument();
   });
 });
