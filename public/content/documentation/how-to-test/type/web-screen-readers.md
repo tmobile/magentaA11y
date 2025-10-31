@@ -38,14 +38,15 @@ Screen readers are all slightly different and all offer a slightly different exp
    - Will read a button with aria-haspopup="true" as “menu submenu”
    - Any element in focus like a dialog or section will be read in its entirety
 
+   #### NVDA Basic Keyboard Shortcuts
    <table >
-      <caption class="text-left">NVDA Basic Keyboard Shortcuts</caption>
+      <caption class="hidden-visually ">NVDA Basic Keyboard Shortcuts</caption>
       <thead>
       <tr>
-         <th scope="col">
+         <th scope="col" class="text-left">
             Key
          </th>
-         <th scope="col">
+         <th scope="col" class="text-left">
             Action
          </th>
       </tr>
@@ -147,14 +148,15 @@ Screen readers are all slightly different and all offer a slightly different exp
          - Arrow keys will only interact with the interactive element in focus
    - Can fake click events on elements, meaning it may work with the screen reader but not just the keyboard
 
+   #### JAWS Basic Keyboard Shortcuts
    <table>
-      <caption class="text-left">JAWS Basic Keyboard Shortcuts</caption>
+      <caption class="hidden-visually ">JAWS Basic Keyboard Shortcuts</caption>
       <thead>
       <tr>
-         <th scope="col">
+         <th scope="col" class="text-left">
             Key
          </th>
-         <th scope="col">
+         <th scope="col" class="text-left">
             Action
          </th>
       </tr>
@@ -253,14 +255,15 @@ Screen readers are all slightly different and all offer a slightly different exp
    - Voiceover will say “dimmed” instead of “disabled”
    - It may say things in a different order than NVDA or JAWS but the core acceptance criteria are the same.
 
+   #### VoiceOver Basic Keyboard Shortcuts
    <table>
-      <caption class="text-left">VoiceOver Basic Keyboard Shortcuts</caption>
+      <caption class="hidden-visually">VoiceOver Basic Keyboard Shortcuts</caption>
       <thead>
       <tr>
-         <th scope="col">
+         <th scope="col" class="text-left">
             Key
          </th>
-         <th scope="col">
+         <th scope="col" class="text-left">
             Action
          </th>
       </tr>
@@ -348,20 +351,6 @@ Screen readers are all slightly different and all offer a slightly different exp
       </tr>           
       </tbody>
    </table>
-
-
-
-   <!-- 2. ## Test with mobile screen readers
-
-      Because many websites have crossed the threshold to a majority of visits being from mobile devices this may be higher priority than desktop testing.
-
-      - Follow the mobile gesture test instructions (swipe, tap, doubletap, etc.) described in MagentaA11y testing criteria.
-      - **Do not tap** on elements to navigate, you must swipe to browse the content in a linear and logical pattern.
-
-      ### Devices
-
-      - Test in both Android and iOS devices
-      - After testing using mobile gestures, test with a mobile device's built-in screen reader: VoiceOver for iOS and Talkback for Android. -->
 
 
 ## Related WCAG
