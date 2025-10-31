@@ -1,6 +1,6 @@
 ## General Notes
 
-When conducting accessibility testing, testers may come across barriers that could be accessibility-related issues, or they could be unrelated. If you're unsure whether the problem you've identified is a genuine accessibility issue, the following steps can help you verify it.
+While testing for accessibility you may encounter barriers which could be related or unrelated to accessibility. If unsure, the following steps can help verify it.
 
 ## Developer Notes
 
