@@ -680,6 +680,14 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       }
   }
 
+  .pagination li {
+    display: inline;
+    
+    a {
+      font-weight: var(--magentaa11y-font-weight-semibold);
+      color: var(--color-text-primary);
+    }
+  }
 }
 
 .bad-example {
