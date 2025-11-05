@@ -76,9 +76,9 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/stepper-
 ## Code examples
 
 ### Speciality stepper integer input
-Before using this pattern, consider if using a plain <a href="https://www.magentaa11y.com/#/web-criteria/component/select-dropdown">Select Dropdown</a> might be more clear and simple for all users. A `<select>` does everything that the stepper input does, and with less code. Additionally, a `<select>` is a native HTML component and inherently accessible.
+Before using this pattern, consider if using a plain [Select Dropdown](/web-criteria/component/select-dropdown) might be more clear and simple for all users. A `<select>` does everything that the stepper input does, and with less code. Additionally, a `<select>` is a native HTML component and inherently accessible.
 
-The stepper input component is useful for *small range increments*. If the max character count is more than 20, consider use of a <a href="https://www.magentaa11y.com/#/web-criteria/component/text-input">Text Input</a> field as this component will be cumbersome for people using a mouse.
+The stepper input component is useful for *small range increments*. If the max character count is more than 20, consider use of a [Text Input](/web-criteria/component/text-input) field as this component will be cumbersome for people using a mouse.
 
 ```html
 <div>
@@ -209,4 +209,4 @@ The stepper input component is useful for *small range increments*. If the max c
 
    - The buttons will need `aria-disabled="true"` applied when either end of the range is reached.
 
-   - Related alternative patterns: <a href="https://www.magentaa11y.com/#/web-criteria/component/select-dropdown">Select Dropdown</a> or an [WAI-ARIA Spin Button](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).
+   - Related alternative patterns: [Select Dropdown](/web-criteria/component/select-dropdown) or an [WAI-ARIA Spin Button](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).
