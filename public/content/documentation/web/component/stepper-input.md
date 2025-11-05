@@ -181,8 +181,7 @@ The stepper input component is useful for *small range increments*. If the max c
 <!-- TODO disabling buttons - both when minimum and maximum are hit -->
 <example>
    <div class="stepper">
-      <button id="decrement-button" 
-            data-fn="decreaseNumber" 
+      <button data-fn="decreaseNumber" 
             data-icon="minus" 
             class="button minus" 
             aria-label="Decrease Quantity" 

@@ -95,8 +95,9 @@ export const getMarkdownFunctionMap = (
   increaseNumber: (event) => {
     const stepNumber = document.getElementById('step-number');
     const liveRegion = document.getElementById('stepper-status-target');
-    const decreaseButton = document.getElementById('decrement-button');
     const increaseButton = event.currentTarget as HTMLButtonElement;
+    const stepper = increaseButton.closest('.stepper');
+    const decreaseButton = stepper?.querySelector('[data-fn="decreaseNumber"]') as HTMLButtonElement;
 
     if (stepNumber) {
       let currentNumber = parseInt(stepNumber.innerHTML);
