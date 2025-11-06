@@ -54,14 +54,16 @@ const IconButton = forwardRef<HTMLButtonElement, TMOIconButton>(
 
     const IconComponent = icon ? getIcon(icon) : null;
 
-    // Convert ariaDisabled to the proper type React expects
-    // Priority: explicit ariaDisabled prop, then fall back to disabled prop
-    const ariaDisabledAttr = 
-      ariaDisabled === 'true' || ariaDisabled === true 
-        ? true 
-        : ariaDisabled === undefined && disabled 
-          ? true 
-          : undefined;
+    /* 
+      Set aria-disabled when explicitly provided as true. We check both string 'true' 
+      and boolean true because markdown parsing can convert boolean values to strings.
+    */
+    let ariaDisabledAttr;
+    if (ariaDisabled === 'true' || ariaDisabled === true) {
+      ariaDisabledAttr = true;
+    } else {
+      ariaDisabledAttr = undefined;
+    }
 
     return (
       <button
