@@ -6,36 +6,36 @@ Learn the basics of testing websites with mobile and desktop screen readers.
 ## Developer Notes
 Screen readers are an assistive technology tool, often used by people with vision impairments or reading disorders, that convert text, buttons, images, tables, and other screen elements into speech. **Manually testing with a screen reader is essential** to find accessibility issues that may not be caught by automated testing tools. 
 
-Screen readers are all slightly different and all offer a slightly different experience. **Not having all screen readers available doesn't mean you can't test for accessibility**. 
+Screen readers are all slightly different and all offer a slightly different experience. **To test for accessibility, you don't need all screen reader softwares &mdash; you can make do with the technology you have.**. 
 
 1. ## Basics of testing with desktop screen readers
    Screen reader users may navigate line by line through the page or they may jump around or "scan" using the rotor or elements list (mentioned below in the keyboard shortcuts). 
    
    **Do not use a mouse** during screen reader testing. Instead, use a keyboard to navigate. 
 
-   Utilize the testing scenarios here on MagentaA11y component and pattern pages for UI expected behavior. 
+   Utilize the accessibility testing scenarios here on MagentaA11y component and pattern pages for UI expected behavior. 
 
 2. ## Screen reader options
-   According to the <a href="https://webaim.org/projects/screenreadersurvey10/">WebAIM screen reader user survey</a>, the overwhelming **majority of screen reader users are on Windows** such as: <a href="https://www.freedomscientific.com/Products/software/JAWS/">JAWS (Job Access With Speech)</a> and <a href="https://www.nvaccess.org/">NVDA (NonVisual Desktop Access)</a>. They are followed in popularity by **Apple's built-in screen reader, VoiceOver**.
+   According to the <a href="https://webaim.org/projects/screenreadersurvey10/">WebAIM screen reader user survey</a>, the overwhelming **majority of screen reader users are on Windows** machines using software such as: <a href="https://www.freedomscientific.com/Products/software/JAWS/">JAWS (Job Access With Speech)</a> and <a href="https://www.nvaccess.org/">NVDA (NonVisual Desktop Access)</a>. They are followed in popularity by **Apple's built-in screen reader, VoiceOver**.
 
    Some browsers work best with certain screen readers and are specifically suggested by operating systems. 
 
 
    ### NVDA
-   NVDA is a free screen reader available for download for Windows computers. For NVDA the recommended browsers are **Chrome, Firefox, or Edge**.Below is a quick-start guide of keyboard shortcuts. If needed, check out this more <a href="https://webaim.org/resources/shortcuts/nvda">expansive list of NVDA keyboard shortcuts from WebAIM</a>.
+   NVDA is a free screen reader available for download on Windows computers. For NVDA the recommended browsers are **Chrome, Firefox, or Edge**. Below is a quick-start guide of keyboard shortcuts. If needed, check out this more <a href="https://webaim.org/resources/shortcuts/nvda">expansive list of NVDA keyboard shortcuts from WebAIM</a>.
 
    #### Getting Started
    Disable “Automatic Say All on page load” in NVDA Settings: Browse Mode. This will increase the conformance of NVDA.
 
    #### NVDA differences
    - NVDA has 2 modes with different keyboard shortcuts.
-      --  Browse (Red focus indicator)
+      - Browse (Red focus indicator)
          - Arrow keys will browse from element to element
       - Focus (Blue focus indicator)
          -  Arrow keys will only interact with the interactive element in focus
    - Only reads ~120 characters at at time
    - Reads “clickable” when it detects a click event listener on an element, even when it’s not clickable. (Note: If the element is not intended to be clickable, this is a defect to be remediated)
-   - Will read a button with aria-haspopup="true" as “menu submenu”
+   - Will read a button with `aria-haspopup="true"` as “menu submenu”
    - Any element in focus like a dialog or section will be read in its entirety
 
    #### NVDA Basic Keyboard Shortcuts
@@ -135,7 +135,7 @@ Screen readers are all slightly different and all offer a slightly different exp
       </tbody>
    </table>
 
----
+   <hr aria-hidden="true">
 
    ### JAWS
    JAWS is not free and works well with **Chrome, Edge, Firefox, and Internet Explorer**. Below is a quick-start guide of keyboard shortcuts. If needed, check out this more <a href="https://webaim.org/resources/shortcuts/jaws">expansive list of JAWS keyboard shortcuts from WebAIM</a>.
@@ -245,14 +245,14 @@ Screen readers are all slightly different and all offer a slightly different exp
       </tbody>
    </table>
 
----
+   <hr aria-hidden="true">
 
    ### VoiceOver
    VoiceOver is the built-in screenreader on Apple operating systems and works best with **Safari**. Below is a quick-start guide of keyboard shortcuts. If needed, check out this more <a href="https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts">expansive list of VoiceOver keyboard shortcuts from Deque</a>.
 
    #### VoiceOver Differences
    - Does not have multiple modes like NVDA or JAWS
-   - Voiceover will say “dimmed” instead of “disabled”
+   - VoiceOver will say “dimmed” instead of “disabled”
    - It may say things in a different order than NVDA or JAWS but the core acceptance criteria are the same.
 
    #### VoiceOver Basic Keyboard Shortcuts
