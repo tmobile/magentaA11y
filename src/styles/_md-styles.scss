@@ -910,33 +910,32 @@ input.star:focus-visible + label {
   }
 
   .animation-example {
-    background-color: green;
-    animation: bounce 2s linear infinite both;
-    width: 100px;
-    height: 100px;
-    border-radius: 1em;
-    margin-top: 1em;
-  
-    /* detect user preference for reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      animation-name: dissolve;
-    }
-  
-    /* basic bounce animation */
-    @keyframes bounce {
+    background-color: #e20074;
+   animation: bounce 2s linear infinite both;
+   width: 100px;
+   height: 100px;
+   border-radius: 1em;
+
+   /* detect user preference for reduced motion */
+   @media (prefers-reduced-motion: reduce) {
+      animation: dissolve 4s linear infinite both;
+   }
+
+   /* basic bounce animation */
+   @keyframes bounce {
       0% { transform: scale(1); }
       25% { transform: scale(.9); }
       50% { transform: scale(1); }
       75% { transform: scale(1.1); }
       100% { transform: scale(1); }
-    }
-    
-    /* dissolve animation for reduced motion */
-    @keyframes dissolve {
-      0% { background-color: green; }
-      50% { background-color: darkgreen; }
-      100% { background-color: green; }
-    }
+   }
+
+   /* dissolve animation for reduced motion */
+   @keyframes dissolve {
+      0% { background-color: #e20074; }
+      50% { background-color: #000; }
+      100% { background-color: #e20074; }
+   }
   
   } // .animation-example
 } // .animation-example-wrapper

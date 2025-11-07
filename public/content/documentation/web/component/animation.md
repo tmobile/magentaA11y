@@ -88,11 +88,9 @@ It is important to change or disable animations when device reduce motion settin
 
 This can be accomplished via CSS media query.
 
-<!-- TODO: the colors displaying CSS code snippet needs updated styles to pass color contrast -->
-
 ```CSS
 .animation-example {
-   background-color: green;
+   background-color: #e20074;
    animation: bounce 2s linear infinite both;
    width: 100px;
    height: 100px;
@@ -100,7 +98,7 @@ This can be accomplished via CSS media query.
 
    /* detect user preference for reduced motion */
    @media (prefers-reduced-motion: reduce) {
-      animation-name: dissolve;
+      animation: dissolve 4s linear infinite both;
    }
 
    /* basic bounce animation */
@@ -114,9 +112,9 @@ This can be accomplished via CSS media query.
 
    /* dissolve animation for reduced motion */
    @keyframes dissolve {
-      0% { background-color: green; }
-      50% { background-color: darkgreen; }
-      100% { background-color: green; }
+      0% { background-color: #e20074; }
+      50% { background-color: #000; }
+      100% { background-color: #e20074; }
    }
 }
 ``` 
