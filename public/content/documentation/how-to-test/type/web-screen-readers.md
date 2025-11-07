@@ -6,7 +6,7 @@ Learn the basics of testing websites with mobile and desktop screen readers.
 ## Developer Notes
 Screen readers are an assistive technology tool, often used by people with vision impairments or reading disorders, that convert text, buttons, images, tables, and other screen elements into speech. **Manually testing with a screen reader is essential** to find accessibility issues that may not be caught by automated testing tools. 
 
-Screen readers are all slightly different and all offer a slightly different experience. **To test for accessibility, you don't need all screen reader softwares &mdash; you can make do with the technology you have.**. 
+Screen readers are all slightly different and all offer a slightly different experience. **To test for accessibility, you don't need all screen reader softwares &mdash; you can make do with the technology you have**. 
 
 1. ## Basics of testing with desktop screen readers
    Screen reader users may navigate line by line through the page or they may jump around or "scan" using the rotor or elements list (mentioned below in the keyboard shortcuts). 
