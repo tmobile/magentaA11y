@@ -105,6 +105,36 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             if (!href) {
               return <a {...props}>{children}</a>;
             }
+            
+            /*
+              Same-page links:
+              Handle same-page anchor links (e.g., #ref-alpha, #ref-alpha-link)
+              Detect anchor link, add event listener, manage keyboard focus
+            */
+
+            // Check if the link is an internal anchor link
+            const isInternalAnchor = href.startsWith('#');
+
+            // If the link is an internal anchor link, render a special link with a click event handler and move focus to the target element
+            if (isInternalAnchor) {
+              return (
+                <a
+                  {...props}
+                  href={href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const targetId = href.substring(1); // Strip the '#'
+                    const targetElement = document.getElementById(targetId); // grab target to send focus to
+                    if (targetElement) {
+                      // Focus the element for keyboard/screen reader users
+                      targetElement.focus();
+                    }
+                  }}
+                >
+                  {children}
+                </a>
+              );
+            }
 
             const isExternal = (() => {
               try {
