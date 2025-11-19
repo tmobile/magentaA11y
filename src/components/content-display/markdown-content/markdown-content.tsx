@@ -57,20 +57,18 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             return <source src={resolvedSrc} type={type} />;
           },
           input: (props) => {
-            const type = (props as any)?.type;
+            const type = (props)?.type;
 
             if (type !== 'range') {
               return <input {...props} />;
             }
 
-            const fnKey = (props as any)['data-fn'] as string | undefined;
-            const eventType = (props as any)['data-event'] || 'onInput';
+            const fnKey = (props)['data-fn'];
+            const eventType = (props)['data-event'] || 'onInput';
             const fn = fnKey && markdownFunctionMap[fnKey];
-            const min = (props as any).min ?? 0;
-            const max = (props as any).max ?? 100;
-            const step = (props as any).step ?? 1;
-            const ariaLabel =
-                (props as any)['aria-label'] || (props as any).ariaLabel || 'Range slider';
+            const min = (props).min ?? 0;
+            const max = (props).max ?? 100;
+            const step = (props).step ?? 1;
 
             const userOnInput =
               typeof fn === 'function' && (eventType === 'onInput' || !eventType)
@@ -110,7 +108,6 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                 min={min}
                 max={max}
                 step={step}
-                aria-label={ariaLabel}
                 onInput={onInput}
                 onChange={onChange}
               />
