@@ -116,14 +116,9 @@ While there is a native HTML range input, it is **difficult to style reliably** 
 </div>
 ```
 
-<!-- TODO: styling and js? need to be added to help this demo function! 
-
 <example>
 <div class="range-group">
-  Input hidden from the screen reader (comment out later)
-    and keyboard to avoid repetition (comment out later)
-  <input tabindex="-1" 
-          value="10" 
+  <input tabindex="-1"
           aria-hidden="true"
           class="range-value" 
           id="cowbell-range-value">
@@ -136,8 +131,7 @@ While there is a native HTML range input, it is **difficult to style reliably** 
       name="cowbell"
       min="0"
       max="11"
-      value="10"
       step="1">
   </div>
 </div>
-</example> -->
+</example>

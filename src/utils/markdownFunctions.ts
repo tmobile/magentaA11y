@@ -1,4 +1,5 @@
 import { NavigateFunction } from 'react-router-dom';
+import type { SyntheticEvent } from 'react';
 
 /**
  * A map of callable functions that can be referenced inside Markdown files rendered as HTML.
@@ -21,7 +22,7 @@ import { NavigateFunction } from 'react-router-dom';
  */
 export const getMarkdownFunctionMap = (
   navigate: NavigateFunction
-): Record<string, (event: React.MouseEvent<Element>) => void> => ({
+): Record<string, (event: SyntheticEvent<Element>) => void> => ({
   showAlert: () => alert('This works with a keyboard and a mouse!'),
   showAlertWhenDisabled: () =>
     alert('This disabled button is still actionable for mouse and screen readers users!'),
@@ -156,16 +157,16 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex + 1;
-  
+
     if (nextIndex < stepperSelect.options.length) {
       stepperSelect.selectedIndex = nextIndex;
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${nextIndex+1}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -180,10 +181,10 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex - 1;
-  
+
     if (currentIndex===0) {
       return; // do nothing if at 0
     } else if (nextIndex < stepperSelect.options.length) {
@@ -191,7 +192,7 @@ export const getMarkdownFunctionMap = (
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${currentIndex}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -221,11 +222,11 @@ export const getMarkdownFunctionMap = (
 
     // Get current state
     const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-    
-    // Toggle the state - use only aria-expanded attribute 
+
+    // Toggle the state - use only aria-expanded attribute
     const newExpandedState = !isExpanded;
           toggleButton.setAttribute('aria-expanded', String(newExpandedState));
-    
+
   },
 
 

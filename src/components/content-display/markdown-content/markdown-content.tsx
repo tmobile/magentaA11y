@@ -56,6 +56,47 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               : `${assetBasePath}/${src}`;
             return <source src={resolvedSrc} type={type} />;
           },
+          input: (props) => {
+            const type = (props as any)?.type;
+
+            // Only customize range sliders; fall back to native input otherwise
+            if (type !== 'range') {
+              return <input {...props} />;
+            }
+
+            const fnKey = (props as any)['data-fn'] as string | undefined;
+            const eventType = (props as any)['data-event'] || 'onInput';
+            const fn = fnKey && markdownFunctionMap[fnKey];
+
+            // Handlers: pass event so downstream can read current value
+            const onInput =
+              typeof fn === 'function' && (eventType === 'onInput' || !eventType)
+                ? (event: React.FormEvent<HTMLInputElement>) => fn(event)
+                : undefined;
+            const onChange =
+              typeof fn === 'function' && eventType === 'onChange'
+                ? (event: React.ChangeEvent<HTMLInputElement>) => fn(event)
+                : undefined;
+
+            const min = (props as any).min ?? 0;
+            const max = (props as any).max ?? 100;
+            const step = (props as any).step ?? 1;
+            const ariaLabel =
+              (props as any)['aria-label'] || (props as any).ariaLabel || 'Range slider';
+
+            return (
+              <input
+                {...props}
+                type="range"
+                min={min}
+                max={max}
+                step={step}
+                aria-label={ariaLabel}
+                onInput={onInput}
+                onChange={onChange}
+              />
+            );
+          },
           a: (props) => {
             const fnKey = (props as any)['data-fn'];
             const eventType = (props as any)['data-event'] || 'onClick';
