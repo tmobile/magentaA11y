@@ -69,11 +69,11 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             const fn = fnKey && markdownFunctionMap[fnKey];
 
             // Handlers: pass event so downstream can read current value
-            const onInput =
+            const userOnInput =
               typeof fn === 'function' && (eventType === 'onInput' || !eventType)
                 ? (event: React.FormEvent<HTMLInputElement>) => fn(event)
                 : undefined;
-            const onChange =
+            const userOnChange =
               typeof fn === 'function' && eventType === 'onChange'
                 ? (event: React.ChangeEvent<HTMLInputElement>) => fn(event)
                 : undefined;
@@ -83,6 +83,29 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             const step = (props as any).step ?? 1;
             const ariaLabel =
               (props as any)['aria-label'] || (props as any).ariaLabel || 'Range slider';
+
+            const syncInputValue = (event: React.SyntheticEvent<HTMLInputElement>) => {
+              const target = event.currentTarget as HTMLInputElement | null;
+              if (!target) return;
+              const group = (target as HTMLElement).closest('.range-group');
+              if (!group) return;
+              const valueInput = group.querySelector('input.range-value') as
+                | HTMLInputElement
+                | null;
+              if (!valueInput) return;
+              valueInput.value = target.value;
+              valueInput.setAttribute('value', target.value);
+            };
+
+            const onInput = (e: React.FormEvent<HTMLInputElement>) => {
+              syncInputValue(e);
+              if (userOnInput) userOnInput(e);
+            };
+
+            const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+              syncInputValue(e);
+              if (userOnChange) userOnChange(e);
+            };
 
             return (
               <input

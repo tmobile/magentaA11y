@@ -118,10 +118,7 @@ While there is a native HTML range input, it is **difficult to style reliably** 
 
 <example>
 <div class="range-group">
-  <input tabindex="-1"
-          aria-hidden="true"
-          class="range-value" 
-          id="cowbell-range-value">
+<input tabindex="-1" aria-hidden="true" class="range-value" id="cowbell-range-value">
   <div>
     <label for="cowbell-range">
       How much cowbell?
