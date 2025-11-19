@@ -66,6 +66,11 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             const fnKey = (props as any)['data-fn'] as string | undefined;
             const eventType = (props as any)['data-event'] || 'onInput';
             const fn = fnKey && markdownFunctionMap[fnKey];
+            const min = (props as any).min ?? 0;
+            const max = (props as any).max ?? 100;
+            const step = (props as any).step ?? 1;
+            const ariaLabel =
+                (props as any)['aria-label'] || (props as any).ariaLabel || 'Range slider';
 
             const userOnInput =
               typeof fn === 'function' && (eventType === 'onInput' || !eventType)
@@ -75,12 +80,6 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               typeof fn === 'function' && eventType === 'onChange'
                 ? (event: React.ChangeEvent<HTMLInputElement>) => fn(event)
                 : undefined;
-
-            const min = (props as any).min ?? 0;
-            const max = (props as any).max ?? 100;
-            const step = (props as any).step ?? 1;
-            const ariaLabel =
-              (props as any)['aria-label'] || (props as any).ariaLabel || 'Range slider';
 
             const syncInputValue = (event: React.SyntheticEvent<HTMLInputElement>) => {
               const target = event.currentTarget as HTMLInputElement | null;
