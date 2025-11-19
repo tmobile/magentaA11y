@@ -58,6 +58,23 @@ To push your work:
 - `git commit -m "fix: x message with updates"` // add commit message
 - `git push origin ARC101--criteria-button`
 
+Rebasing:
+
+- `git fetch`
+- `git rebase origin/main`// fix merge conflicts if they exist-- AND SAVE!
+- `git add .`// adding merge changes, BUT DO NOT DO THIS IF USING VSCODE MERGE CONFLICT EDITOR\
+// now you have to do VIM\
+// :wq + ENTER
+
+- `git rebase --continue`
+
+might have to do this again:\
+// fix merge conflicts if they exist-- AND SAVE!
+
+- `git add .`// adding merge changes
+-  `git push origin {branch name}` OR `git push origin {branch name} --force-with-lease`
+
+
 ## Available Scripts
 
 ### Development
