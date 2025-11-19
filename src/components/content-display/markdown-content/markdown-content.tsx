@@ -59,7 +59,6 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           input: (props) => {
             const type = (props as any)?.type;
 
-            // Only customize range sliders; fall back to native input otherwise
             if (type !== 'range') {
               return <input {...props} />;
             }
@@ -68,7 +67,6 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             const eventType = (props as any)['data-event'] || 'onInput';
             const fn = fnKey && markdownFunctionMap[fnKey];
 
-            // Handlers: pass event so downstream can read current value
             const userOnInput =
               typeof fn === 'function' && (eventType === 'onInput' || !eventType)
                 ? (event: React.FormEvent<HTMLInputElement>) => fn(event)
@@ -89,12 +87,11 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               if (!target) return;
               const group = (target as HTMLElement).closest('.range-group');
               if (!group) return;
-              const valueInput = group.querySelector('input.range-value') as
-                | HTMLInputElement
-                | null;
-              if (!valueInput) return;
-              valueInput.value = target.value;
-              valueInput.setAttribute('value', target.value);
+              const valueEl = group.querySelector('.range-value') as HTMLElement | null;
+              if (!valueEl) return;
+
+              valueEl.textContent = target.value;
+              valueEl.setAttribute('data-value', target.value);
             };
 
             const onInput = (e: React.FormEvent<HTMLInputElement>) => {
