@@ -63,8 +63,8 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               return <input {...props} />;
             }
 
-            const fnKey = (props)['data-fn'];
-            const eventType = (props)['data-event'] || 'onInput';
+            const fnKey = (props as any)['data-fn'];
+            const eventType = (props as any)['data-event'] || 'onInput';
             const fn = fnKey && markdownFunctionMap[fnKey];
             const min = (props).min ?? 0;
             const max = (props).max ?? 100;
