@@ -5,9 +5,7 @@
 - [Getting Started](#getting-started)
 - [Creating a PR](#creating-a-pr)
 - [Available Scripts](#available-scripts)
-- [Key Features](#key-features)
 - [Deployment](#deployment)
-- [Optimize Video Assets](#optimize-video-assets)
 
 ---
 
@@ -58,7 +56,7 @@ To push your work:
 - `git commit -m "fix: x message with updates"` // add commit message
 - `git push origin ARC101--criteria-button`
 
-Rebasing:
+### Rebasing
 
 - `git fetch`
 - `git rebase origin/main`// fix merge conflicts if they exist-- AND SAVE!
