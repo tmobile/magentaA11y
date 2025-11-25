@@ -225,6 +225,32 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           },
 
           input: (props) => {
+            // Handle toggle switches first
+            if (props.role === 'switch') {
+              // Convert "checked" to "defaultChecked" so switches work as
+              // uncontrolled components and can toggle freely in the browser
+              const { checked, ...restProps } = props as any;
+              
+              // Build the input props, adding defaultChecked if checked was present
+              const inputProps = { ...restProps };
+              if (checked !== undefined) {
+                inputProps.defaultChecked = checked;
+              }
+
+              // Prevent toggling switches with aria-disabled="true"
+              if ((props as any)['aria-disabled'] === 'true') {
+                return (
+                  <input
+                    {...inputProps}
+                    onClick={(e) => e.preventDefault()}
+                  />
+                );
+              }
+
+              return <input {...inputProps} />;
+            }
+
+            // Handle inputs with data-fn attribute
             const fnKey = (props as Record<string, unknown>)?.['data-fn'] as
               | string
               | undefined;
