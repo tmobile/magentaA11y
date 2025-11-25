@@ -193,6 +193,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
         display: none;
       }
     }
+
   }
   
   input[aria-disabled="true"],
@@ -898,6 +899,46 @@ input.star:focus-visible + label {
 .bad-contrast-button:hover {
     color: #e20074;
 }
+
+// Animation example styles
+// /web-criteria/component/animation
+.animation-example-wrapper {
+  // handles checkbox for pausing animation
+  // If checked the sibling .animation-example will have its animation disabled
+  label:has(input#reduce-motion:checked) ~ .animation-example {
+    animation: none;
+  }
+
+  .animation-example {
+    background-color: #e20074;
+   animation: bounce 2s linear infinite both;
+   width: 100px;
+   height: 100px;
+   border-radius: 1em;
+
+   /* detect user preference for reduced motion */
+   @media (prefers-reduced-motion: reduce) {
+      animation: dissolve 4s linear infinite both;
+   }
+
+   /* basic bounce animation */
+   @keyframes bounce {
+      0% { transform: scale(1); }
+      25% { transform: scale(.9); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+   }
+
+   /* dissolve animation for reduced motion */
+   @keyframes dissolve {
+      0% { background-color: #e20074; }
+      50% { background-color: #000; }
+      100% { background-color: #e20074; }
+   }
+  
+  } // .animation-example
+} // .animation-example-wrapper
 
 
 
