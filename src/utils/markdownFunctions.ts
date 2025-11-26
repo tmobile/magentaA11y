@@ -156,16 +156,16 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex + 1;
-  
+
     if (nextIndex < stepperSelect.options.length) {
       stepperSelect.selectedIndex = nextIndex;
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${nextIndex+1}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -180,10 +180,10 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex - 1;
-  
+
     if (currentIndex===0) {
       return; // do nothing if at 0
     } else if (nextIndex < stepperSelect.options.length) {
@@ -191,7 +191,7 @@ export const getMarkdownFunctionMap = (
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${currentIndex}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -221,12 +221,23 @@ export const getMarkdownFunctionMap = (
 
     // Get current state
     const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-    
-    // Toggle the state - use only aria-expanded attribute 
+
+    // Toggle the state - use only aria-expanded attribute
     const newExpandedState = !isExpanded;
           toggleButton.setAttribute('aria-expanded', String(newExpandedState));
-    
+
   },
 
 
+  openToast: ()=> {
+    const toast = document.getElementById('hint-spam');
+
+    /* setTimeout is to simulate a delay in the toast opening */
+    setTimeout(() => {
+      if(toast){
+        toast.classList.toggle('inert');
+        toast.classList.toggle('enabled');
+      }
+    }, 500)
+  }
 });

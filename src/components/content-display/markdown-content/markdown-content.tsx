@@ -13,6 +13,13 @@ import { MarkdownContentProps, MediaProps } from './markdown-content.types';
 
 import './markdown-content.scss';
 
+// Helper to safely invoke mapped markdown functions with an event
+const   fnHandler = (fn: unknown, e: unknown): void => {
+  if (typeof fn === 'function') {
+    (fn as (ev: unknown) => void)(e);
+  }
+};
+
 const MarkdownContent: React.FC<MarkdownContentProps> = ({
   content,
   assetBasePath,
@@ -215,6 +222,54 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
 
             // ✅ Fallback to plain <button>
             return <button {...props}>{children}</button>;
+          },
+
+          input: (props) => {
+            const fnKey = (props as Record<string, unknown>)?.['data-fn'] as
+              | string
+              | undefined;
+            const eventType =
+              ((props as Record<string, unknown>)?.['data-event'] as string) ||
+              'onChange';
+            const fn = fnKey && markdownFunctionMap[fnKey];
+
+            if (!fnKey || typeof fn !== 'function') {
+              return <input {...props} />;
+            }
+
+            // For inputs (checkboxes, radios, text), prefer onChange.
+            // Do NOT prevent default so the control state updates naturally.
+            switch (eventType) {
+              case 'onClick':
+                return (
+                  <input
+                    {...props}
+                    onClick={(e) => {
+                      // Call the mapped function; event type differs but is safe to pass along
+                        fnHandler(fn, e);
+                    }}
+                  />
+                );
+              case 'onInput':
+                return (
+                  <input
+                    {...props}
+                    onInput={(e) => {
+                        fnHandler(fn, e);
+                    }}
+                  />
+                );
+              case 'onChange':
+              default:
+                return (
+                  <input
+                    {...props}
+                    onChange={(e) => {
+                        fnHandler(fn, e);
+                    }}
+                  />
+                );
+            }
           },
 
           div: (props) => {
