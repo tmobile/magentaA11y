@@ -94,13 +94,8 @@ While there is a native HTML range input, it is **difficult to style reliably** 
 
 ```html
 <div class="range-group">
-  <!-- Input hidden from the screen reader 
-    and keyboard to avoid repetition -->
-  <input tabindex="-1" 
-          value="10" 
-          aria-hidden="true"
-          class="range-value" 
-          id="cowbell-range-value">
+  <!-- Value display hidden from assistive tech to avoid repetition -->
+  <span aria-hidden="true" class="range-value" id="cowbell-range-value">10</span>
   <div>
     <label for="cowbell-range">
       How much cowbell?
@@ -113,20 +108,13 @@ While there is a native HTML range input, it is **difficult to style reliably** 
       value="10"
       step="1">
   </div>
+  
 </div>
 ```
 
-<!-- TODO: styling and js? need to be added to help this demo function! 
-
 <example>
 <div class="range-group">
-  Input hidden from the screen reader (comment out later)
-    and keyboard to avoid repetition (comment out later)
-  <input tabindex="-1" 
-          value="10" 
-          aria-hidden="true"
-          class="range-value" 
-          id="cowbell-range-value">
+  <span aria-hidden="true" class="range-value" id="cowbell-range-value">10</span>
   <div>
     <label for="cowbell-range">
       How much cowbell?
@@ -135,9 +123,8 @@ While there is a native HTML range input, it is **difficult to style reliably** 
       id="cowbell-range"
       name="cowbell"
       min="0"
-      max="11"
-      value="10"
+      max="10"
       step="1">
   </div>
 </div>
-</example> -->
+</example>

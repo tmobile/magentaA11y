@@ -63,6 +63,63 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               : `${assetBasePath}/${src}`;
             return <source src={resolvedSrc} type={type} />;
           },
+          input: (props) => {
+            const type = (props)?.type;
+
+            if (type !== 'range') {
+              return <input {...props} />;
+            }
+
+            const fnKey = (props as any)['data-fn'];
+            const eventType = (props as any)['data-event'] || 'onInput';
+            const fn = fnKey && markdownFunctionMap[fnKey];
+            const min = (props).min ?? 0;
+            const max = (props).max ?? 100;
+            const step = (props).step ?? 1;
+
+            const userOnInput =
+              typeof fn === 'function' && (eventType === 'onInput' || !eventType)
+                ? (event: React.FormEvent<HTMLInputElement>) => fn(event)
+                : undefined;
+            const userOnChange =
+              typeof fn === 'function' && eventType === 'onChange'
+                ? (event: React.ChangeEvent<HTMLInputElement>) => fn(event)
+                : undefined;
+
+            const syncInputValue = (event: React.SyntheticEvent<HTMLInputElement>) => {
+              const target = event.currentTarget as HTMLInputElement | null;
+              if (!target) return;
+              const group = (target as HTMLElement).closest('.range-group');
+              if (!group) return;
+              const valueEl = group.querySelector('.range-value') as HTMLElement | null;
+              if (!valueEl) return;
+
+              valueEl.textContent = target.value;
+              valueEl.setAttribute('data-value', target.value);
+            };
+
+            const onInput = (e: React.FormEvent<HTMLInputElement>) => {
+              syncInputValue(e);
+              if (userOnInput) userOnInput(e);
+            };
+
+            const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+              syncInputValue(e);
+              if (userOnChange) userOnChange(e);
+            };
+
+            return (
+              <input
+                {...props}
+                type="range"
+                min={min}
+                max={max}
+                step={step}
+                onInput={onInput}
+                onChange={onChange}
+              />
+            );
+          },
           a: (props) => {
             const fnKey = (props as any)['data-fn'];
             const eventType = (props as any)['data-event'] || 'onClick';

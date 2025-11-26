@@ -1,5 +1,5 @@
 import { NavigateFunction } from 'react-router-dom';
-
+import React from 'react';
 /**
  * A map of callable functions that can be referenced inside Markdown files rendered as HTML.
  *
@@ -21,7 +21,7 @@ import { NavigateFunction } from 'react-router-dom';
  */
 export const getMarkdownFunctionMap = (
   navigate: NavigateFunction
-): Record<string, (event: React.MouseEvent<Element>) => void> => ({
+): Record<string, (event: React.SyntheticEvent) => void> => ({
   showAlert: () => alert('This works with a keyboard and a mouse!'),
   showAlertWhenDisabled: () =>
     alert('This disabled button is still actionable for mouse and screen readers users!'),
