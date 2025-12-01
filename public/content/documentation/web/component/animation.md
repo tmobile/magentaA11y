@@ -88,58 +88,73 @@ It is important to change or disable animations when device reduce motion settin
 
 This can be accomplished via CSS media query.
 
-<!-- TODO: the colors displaying CSS code snippet needs updated styles to pass color contrast
-
 ```CSS
-@keyframes bounce {
-  0% { transform: scale(1); }
-  25% { transform: scale(.9); }
-  50% { transform: scale(1); }
-  75% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
+.animation-example {
+   background-color: #e20074;
+   animation: bounce 2s linear infinite both;
+   width: 100px;
+   height: 100px;
+   border-radius: 1em;
 
-@keyframes dissolve {
-  0% { background-color: green; }
-  50% { background-color: darkgreen; }
-  100% { background-color: green; }
-}
+   /* detect user preference for reduced motion */
+   @media (prefers-reduced-motion: reduce) {
+      animation: dissolve 4s linear infinite both;
+   }
 
-.animation {
-  background-color: green;
-  animation: bounce 2s linear infinite both;
-}
+   /* basic bounce animation */
+   @keyframes bounce {
+      0% { transform: scale(1); }
+      25% { transform: scale(.9); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+   }
 
-@media (prefers-reduced-motion) {
-  .animation {
-    animation-name: dissolve;
-  }
+   /* dissolve animation for reduced motion */
+   @keyframes dissolve {
+      0% { background-color: #e20074; }
+      50% { background-color: #000; }
+      100% { background-color: #e20074; }
+   }
 }
 ``` 
 
 ```html
-<div class="animation">Animated element</div>
+<div class="animation-example">
+   <span class="hidden-visually">Animated element</span>
+</div>
 ```
-
-TODO: the below bouncy box should do what our example demo suggests
 
 ### Bouncy box
 If your device is set to reduce motion, the animation will softly fade from one color to the next instead of bounce; otherwise it will bounce.
 
 <example>
-<div class="animation">Animated element</div>
-</example> -->
-
-<!-- TODO: Javascript for code snippet needs supporting
+   <div class="animation-example-wrapper">
+      <label for="reduce-motion">
+         <input type="checkbox" id="reduce-motion"> Pause animation
+      </label>
+      <div class="animation-example">
+         <span class="hidden-visually">Animated element</span>
+      </div>
+   </div>
+</example> 
 
  ### Detecting with JavaScript
-```____
-const pref = 
-  window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  );``` -->
+ User preferences for reduced motion can also be detected with JavaScript by using the `matchMedia` method. The method returns a `MediaQueryList` object that can be used to check for the user's preference for reduced motion.
+
+```javascript
+const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (isReduced) {
+   // The user has requested reduced motion
+} else {
+   // The user has not requested reduced motion
+}
+```
 
 ## Further Reading
+- [MDN - matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
+- [MDN - prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion)
 - [WCAG 2.2.1 Timing Adjustable (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable)
 - [WCAG 2.2.2 Pause, Stop, Hide (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html)
 - [WCAG 2.3.1 Three Flashes or Below Threshold (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes-or-below-threshold)

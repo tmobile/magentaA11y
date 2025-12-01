@@ -1,10 +1,3 @@
-/* stylelint-disable no-descending-specificity */
-
-/* TODO: Temporarily disabled the "no-descending-specificity" rule to save time. 
-   Error received: 
-   "Expected selector '.MagentaA11y-chip__label' to come before selector '.MagentaA11y-chip-container input[type="checkbox"]:checked + .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg .MagentaA11y-chip__label'"
-   When we have time, reorder the selectors to resolve the issue properly. */
-
 %magenta-a11y-visually-hidden {
   position: absolute;
   width: 1px;
@@ -30,7 +23,7 @@
   --icon-color: var(--magentaa11y-color-fill-chips-icon-selected);
   --background-color: var(--magentaa11y-color-fill-chips-selected);
   --border: var(--magentaa11y-border-weight-size-2) solid
-    var(--magentaa11y-color-fill-chips-selected);
+  var(--magentaa11y-color-fill-chips-selected);
 }
 
 @mixin svg-styles(
@@ -49,7 +42,7 @@
       fill: var(--icon-color);
       visibility: visible;
 
-      @if is-null($svg-size) {
+      @if $svg-size {
         width: $svg-size;
         height: $svg-size;
       }
@@ -83,10 +76,10 @@
         .MagentaA11y-chip__label--wrapper {
           @include selected-chip-styles;
           @include svg-styles(
-            end,
-            var(--magentaa11y-spacing-size-8),
-            true,
-            var(--svg-size)
+                          end,
+                          var(--magentaa11y-spacing-size-8),
+                          true,
+                          var(--svg-size)
           );
         }
       }
@@ -95,10 +88,10 @@
 
   button {
     @include svg-styles(
-      start,
-      var(--magentaa11y-spacing-size-8),
-      true,
-      var(--svg-size)
+                    start,
+                    var(--magentaa11y-spacing-size-8),
+                    true,
+                    var(--svg-size)
     );
 
     &:active {
@@ -127,7 +120,7 @@
   --chip-font-weight: var(--magentaa11y-typeset-body-md-strong);
   --label-line-height: var(--magentaa11y-line-height-24);
   --label-padding: var(--magentaa11y-spacing-size-4)
-    var(--magentaa11y-spacing-size-16);
+  var(--magentaa11y-spacing-size-16);
   --strikethrough-width: 55px;
 
   display: flex;
@@ -155,7 +148,7 @@
       --text-color: var(--magentaa11y-color-text-chips-default);
       --background-color: transparent;
       --border: var(--magentaa11y-border-weight-size-2) solid
-        var(--magentaa11y-color-border-chips-default);
+      var(--magentaa11y-color-border-chips-default);
 
       border-radius: var(--magentaa11y-border-radius-size-24);
       margin-block: 2px;
@@ -174,7 +167,7 @@
       &::before {
         content: "";
         border-bottom: var(--magentaa11y-border-weight-size-2) solid
-          var(--text-color);
+        var(--text-color);
         width: var(--strikethrough-width);
         position: absolute;
         transform: rotate(45deg);
@@ -194,7 +187,7 @@
       .MagentaA11y-chip__label--wrapper {
         --background-color: var(--magentaa11y-color-fill-chips-hover);
         --border: var(--magentaa11y-border-weight-size-2) solid
-          var(--background-color);
+        var(--background-color);
         --text-color: var(--magentaa11y-color-text-chips-hover);
         --icon-color: var(--magentaa11y-color-fill-chips-icon-hover);
       }
@@ -228,7 +221,7 @@
       --chip-font-weight: var(--magentaa11y-typeset-body-xs-strong);
       --label-line-height: 12px;
       --label-padding: var(--magentaa11y-spacing-size-4)
-        var(--magentaa11y-spacing-size-12);
+      var(--magentaa11y-spacing-size-12);
     }
 
     .MagentaA11y-chip-container {
@@ -260,11 +253,11 @@
 // Without the styles below, it won't be possible to distinguish a selected chip from an unselected one in High Contrast Mode
 @media (forced-colors: active) {
   .MagentaA11y-chip-container {
-    input[type="checkbox"]:checked
-      + .MagentaA11y-chip
-      .MagentaA11y-chip__label--wrapper
-      svg,
-    button > .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg {
+    svg,
+    button > .MagentaA11y-chip .MagentaA11y-chip__label--wrapper svg,
+    input[type="checkbox"]:checked,
+    + .MagentaA11y-chip
+    .MagentaA11y-chip__label--wrapper {
       fill: fieldtext;
     }
 

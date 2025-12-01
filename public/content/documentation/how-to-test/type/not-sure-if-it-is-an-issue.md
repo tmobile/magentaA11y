@@ -1,6 +1,6 @@
 ## General Notes
 
-When conducting accessibility testing, testers may come across barriers that could be accessibility-related issues, or they could be unrelated. If you're unsure whether the problem you've identified is a genuine accessibility issue, the following steps can help you verify it.
+While testing for accessibility you may encounter barriers which could be related or unrelated to accessibility. If unsure, the following steps can help verify it.
 
 ## Developer Notes
 
@@ -16,12 +16,8 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Toggle Switch</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Toggle Switch</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -29,7 +25,7 @@ By combining both approaches, we can identify and address accessibility barriers
       On the web page you are testing you encounter a toggle switch that does not work with the left and right arrow keys like you believe it should.
 
       <h3>What to do</h3>
-      To verify if arrow key support is expected for toggles on the web, you can first check MagentaA11y. Locate the <a href="https://www.magentaa11y.com/#/web-criteria/component/toggle-switch">Toggle Switch</a> component page and review the How to test section. Arrow key support is not mentioned so this is not a requirement for toggle Switch components and so this is not an accessibility issue. 
+      To verify if arrow key support is expected for toggles on the web, you can first check MagentaA11y. Locate the <a href="https://www.magentaa11y.com/web-criteria/component/toggle-switch">Toggle Switch</a> component page and review the How to test section. Arrow key support is not mentioned so this is not a requirement for toggle Switch components and so this is not an accessibility issue. 
       </div>
       </div>
 
@@ -39,12 +35,8 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Interactive Table</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Interactive Table</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -62,12 +54,8 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Nested Buttons</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Nested Buttons</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -82,7 +70,6 @@ By combining both approaches, we can identify and address accessibility barriers
         <button>Click Me</button>
       </div>
       ```
-
       </div>
       </div>
 
@@ -92,12 +79,8 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Nested Dialogs</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Nested Dialogs</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -115,12 +98,8 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Label not announced</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Label not announced</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -134,18 +113,12 @@ By combining both approaches, we can identify and address accessibility barriers
 
 6. ## Verify you are correctly using the screen reader or keyboard
 
-      <!-- TODO: When the folder structure for "how to test" is updated, these two links will need to be updated -->
-
-      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test [Keyboard & focus](/how-to-test-criteria/type/keyboard-&-focus) and [Screen readers](/how-to-test-criteria/type/screen-readers) for guidance on system settings and methodology. 
+      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test <a href="https://www.magentaa11y.com/#/how-to-test-criteria/type/keyboard-&-focus">Keyboard & focus</a> and <a href="https://www.magentaa11y.com/#/how-to-test-criteria/type/screen-readers">Screen readers</a> for guidance on system settings and methodology. 
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Unable to navigate with Tab</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Unable to navigate with Tab</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -163,12 +136,8 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Accordion not annoucing as expanded</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Accordion not annoucing as expanded</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -186,12 +155,8 @@ By combining both approaches, we can identify and address accessibility barriers
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
-      <button
-        class="MagentaA11y-accordion__headline"
-        aria-expanded="false"
-        data-fn="toggleAccordionState"
-        aria-controls="list">
-        <span class="MagentaA11y-accordion__headline--text">Example: Image not announcing</span>
+      <button class="MagentaA11y-accordion__headline" aria-expanded="false" data-fn="toggleAccordionState" aria-controls="list">
+      <span class="MagentaA11y-accordion__headline--text">Example: Image not announcing</span>
       </button>
       </h2>
       <div class="MagentaA11y-accordion__body" id="list">
@@ -202,13 +167,13 @@ By combining both approaches, we can identify and address accessibility barriers
       You want to clearly capture the exact steps to recreate the issue in your organizations bug tracking system:
 
       <ul>
-        <li>The URL where the image is located</li>
-        <li>A description of the image and its location on the page</li>
-        <li>The accessibility concern (ex: "missing <code>alt</code> attribute")</li>
-        <li>Who it impacts - which users are impacted by the barrier and why</li>
-        <li>A snippet of the corresponding code</li>
-        <li>Screenshots of the images (ensure the screenshot has context - don't crop too tight)</li>
-        <li>A good/fixed snippet of the corresponding code</li>
+      <li>The URL where the image is located</li>
+      <li>A description of the image and its location on the page</li>
+      <li>The accessibility concern (ex: "missing <code>alt</code> attribute")</li>
+      <li>Who it impacts - which users are impacted by the barrier and why</li>
+      <li>A snippet of the corresponding code</li>
+      <li>Screenshots of the images (ensure the screenshot has context - don't crop too tight)</li>
+      <li>A good/fixed snippet of the corresponding code</li>
       </ul>
 
       While it is always helpful to provide screenshots, your issue should be written clear enough that they are not needed by someone reading the details of the bug.

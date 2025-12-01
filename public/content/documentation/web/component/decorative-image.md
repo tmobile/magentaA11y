@@ -49,7 +49,7 @@ There are times that images shouldn't be read because it would be repetitive or 
 
 ## Is this image decorative or informative?
 
-If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. In this case, check out the [informative image checklist](/checklist-web/image) item instead.
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. In this case, check out the <a href="https://www.magentaa11y.com/#/web-criteria/component/informative-image">informative image checklist</a> item instead.
 
 ## Decorative images still require an alt attribute
 

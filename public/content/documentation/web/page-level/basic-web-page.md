@@ -78,11 +78,10 @@ People with low vision need the ability to enlarge the page on mobile and deskto
 Landmarks give structure to the page for the screenreader user to be able to navigate the page by major sections.
 
 Each page must include:
-
-- [Header](/web-criteria/page-level/header-landmark)
-- [Nav](/web-criteria/page-level/navigation-landmark) 
-- [Main](/web-criteria/page-level/main-landmark) 
-- [Footer](/web-criteria/page-level/footer-landmark)
+   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/header-landmark">Header</a>
+   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/navigation-landmark">Nav</a>
+   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/main-landmark">Main</a>
+   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/footer-landmark">Footer</a>
 
 ```html
 <header>

@@ -74,7 +74,14 @@ export const getMarkdownFunctionMap = (
   alertSuccess: () => {
     const alertDiv = document.getElementById('alertSuccessExample');
     if (alertDiv) {
-      alertDiv.innerHTML.length === 0 ? alertDiv.innerHTML = '<p class="alert success">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
+      alertDiv.innerHTML === '' ? alertDiv.innerHTML = '<p class="alert success">Success: Your account has been updated!</p>' : alertDiv.innerHTML = '';
+    }
+  },
+
+  hintHelpErrorAlertDemo: () => {
+    const warningDiv = document.getElementById('hint-help-error-alert');
+    if (warningDiv) {
+      warningDiv.innerHTML.length === 0 ? warningDiv.innerHTML = '<p class="alert warning">Warning: The correct answer is Cookie Monster!</p>' : warningDiv.innerHTML = '';
     }
   },
 
@@ -149,16 +156,16 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex + 1;
-  
+
     if (nextIndex < stepperSelect.options.length) {
       stepperSelect.selectedIndex = nextIndex;
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${nextIndex+1}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -173,10 +180,10 @@ export const getMarkdownFunctionMap = (
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
     }
-  
+
     let currentIndex = stepperSelect.selectedIndex;
     let nextIndex = currentIndex - 1;
-  
+
     if (currentIndex===0) {
       return; // do nothing if at 0
     } else if (nextIndex < stepperSelect.options.length) {
@@ -184,7 +191,7 @@ export const getMarkdownFunctionMap = (
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${currentIndex}`;
-  
+
         setTimeout(() => {
           liveRegion.innerHTML = '';
         }, 2000);
@@ -200,4 +207,37 @@ export const getMarkdownFunctionMap = (
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
+
+  toggleExpander: (event) => {
+    // define variables
+    const toggleButton = document.getElementById('expanderToggle');
+    const contentToToggle = document.getElementById('expanderContent');
+
+    // check to see if there are any accordions at all
+    if (!toggleButton || !contentToToggle) {
+      console.warn('Expander elements not found.');
+      return;
+    }
+
+    // Get current state
+    const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+
+    // Toggle the state - use only aria-expanded attribute
+    const newExpandedState = !isExpanded;
+          toggleButton.setAttribute('aria-expanded', String(newExpandedState));
+
+  },
+
+
+  openToast: ()=> {
+    const toast = document.getElementById('hint-spam');
+
+    /* setTimeout is to simulate a delay in the toast opening */
+    setTimeout(() => {
+      if(toast){
+        toast.classList.toggle('inert');
+        toast.classList.toggle('enabled');
+      }
+    }, 500)
+  }
 });

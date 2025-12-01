@@ -135,7 +135,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/webvie
    - A common use for webviews is if the content changes often
    - Sometimes the container that includes the webview may announce seperately, which is usually ok 
    - A “Link” announcement in webviews usually navigates the user to a new screen. In a native app “link” usually means the action will open a browser on your phone
-   - External Blue Tooth keyboard testing can be erratic and inconsistent on webviews
+   - External Blue Tooth keyboard testing can be erratic and inconsistent on webviews, which is a known issue
    - Enlarging text from Accessibility settings does not work on the webview sections of the screen
 
 ### Role

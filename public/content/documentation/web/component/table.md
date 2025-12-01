@@ -52,9 +52,7 @@ GIVEN THAT I am on a page with a table
       - I HEAR it identifies itself as a table
       - I HEAR column headers and row headers are identified with screenreader shortcuts
 
-
 Full information: [https://www.magentaa11y.com/#/web-criteria/component/table](/web-criteria/component/table)
-
 
 ## Code examples
 ### Use semantic HTML
@@ -70,32 +68,32 @@ Optional: The table is wrapped in a `<figure>` to indicate author and source.
    <thead>
       <tr>
          <th scope="row">
-         Letter
+            Letter
          </th>
          <th scope="col">
-         E
+            E
          </th>
          <th scope="col">
-         B
+            B
          </th>
          <th scope="col">
-         C
+            C
          </th>
       </tr>
    </thead>
    <tbody>
       <tr>
          <th scope="row">
-         Name
+            Name
          </th>
          <td>
-         Elmo
+            Elmo
          </td>
          <td>
-         Big Bird
+            Big Bird
          </td>
          <td>
-         Cookie Monster
+            Cookie Monster
          </td>
       </tr>
    </tbody>
@@ -111,32 +109,32 @@ Optional: The table is wrapped in a `<figure>` to indicate author and source.
          <thead>
             <tr>
                <th scope="row">
-               Letter
+                  Letter
                </th>
                <th scope="col">
-               E
+                  E
                </th>
                <th scope="col">
-               B
+                  B
                </th>
                <th scope="col">
-               C
+                  C
                </th>
             </tr>
          </thead>
          <tbody>
             <tr>
                <th scope="row">
-               Name
+                  Name
                </th>
                <td>
-               Elmo
+                  Elmo
                </td>
                <td>
-               Big Bird
+                  Big Bird
                </td>
                <td>
-               Cookie Monster
+                  Cookie Monster
                </td>
             </tr>
          </tbody>
@@ -144,7 +142,6 @@ Optional: The table is wrapped in a `<figure>` to indicate author and source.
    </div>
 </example>
 
-<!-- TODO broken image references -->
 <example class="example example--contains-icon">
    <div class="table-wrapper">
       <table class="comparison text-center">
@@ -248,22 +245,38 @@ If it’s required to display tabular data without using a `<table>` element, at
   </div>
   <div role="rowgroup">
     <div role="row">
-      <span role="columnheader">Letter</span>
-      <span role="columnheader">Name</span>
+      <span role="columnheader">
+         Letter
+      </span>
+      <span role="columnheader">
+         Name
+      </span>
     </div>
   </div>
   <div role="rowgroup">
     <div role="row">
-      <span role="cell">E</span>
-      <span role="cell">Elmo</span>
+      <span role="cell">
+         E
+      </span>
+      <span role="cell">
+         Elmo
+      </span>
     </div>
     <div role="row">
-      <span role="cell">B</span>
-      <span role="cell">Big Bird</span>
+      <span role="cell">
+         B
+      </span>
+      <span role="cell">
+         Big Bird
+      </span>
     </div>
     <div role="row">
-      <span role="cell">C</span>
-      <span role="cell">Cookie Monster</span>
+      <span role="cell">
+         C
+      </span>
+      <span role="cell">
+         Cookie Monster
+      </span>
     </div>
   </div>
 </div>
@@ -279,7 +292,7 @@ Don't use tables purely for layout. Only use tables to structure tabular data.
 - Semantic `<table>` structures identify headers appropriately and honors screen reader keyboard shortcuts.
 
 ### Group
-- Wrapping a table in a [`<figure>` element](/OpenA11yEngineer/checklist-web/figure/) can be used to build a relationship to `<figcaption>` and `<cite>`
+- Wrapping a table in a <a href="https://www.magentaa11y.com/web-criteria/component/figure">`<figure>` element</a> can be used to build a relationship to `<figcaption>` and `<cite>`
 
 ### State
 - Sortable tables can use `aria-sort` to indicate state.

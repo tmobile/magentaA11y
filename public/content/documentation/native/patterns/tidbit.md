@@ -114,7 +114,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/tidbit
 
 ### Role
 
-   - Please use guidance for the [Button control](/native-criteria/control/button) if a CTA is applicable
+   - Please use guidance for the <a href="https://www.magentaa11y.com/#/native-criteria/controls/button">Button control</a> if a CTA is applicable
 
 ### Groupings
 
@@ -201,7 +201,7 @@ Enter information for iOS Focus using SwiftUI, update below with appropriate det
 
 ### Role
 
-   - Please use guidance for the [Button control](/native-criteria/control/button) if a CTA is applicable
+   - Please use guidance for the <a href="https://www.magentaa11y.com/#/native-criteria/controls/button">Button control</a> if a CTA is applicable
 
 ### Groupings
 

@@ -119,6 +119,33 @@ exports[`Footer Component - Snapshot Test matches the snapshot 1`] = `
           </li>
         </ul>
       </div>
+      <div
+        class="MagentaA11y--footer__nav-list"
+      >
+        <h2>
+          About
+        </h2>
+        <div
+          aria-hidden="true"
+          class="MagentaA11y-divider"
+          data-orientation="horizontal"
+          role="separator"
+        />
+        <ul
+          role="list"
+        >
+          <li
+            role="listitem"
+          >
+            <a
+              class=""
+              href="/about-us"
+            >
+              About MagentaA11y
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <p
       class="date"

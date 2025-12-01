@@ -26,7 +26,11 @@ How to test a carousel/slideshow
    - Group: The number of slides and current position in the carousel is indicated
 
 4. Device OS settings
-   - Reduced motion: Carousel does not auto-advance, motion transitions are disabled
+   - Reduced motion: Carousel does not auto-advance, motion transitions are disabled 
+   - Reflow/zoom: At a viewport width equivalent to 320 CSS pixels (for example, 1280 px wide at 400% zoom), content reflows without loss of information or functionality and does not require horizontal scrolling. Controls and slide content remain operable.
+   - Horizontal scrolling content: At a height equivalent to 256 CSS pixels, content does not require vertical scrolling.
+   - Exception: Two-dimensional scrolling is allowed only for parts of the content that require it for usage or meaning (e.g., complex data visualizations).
+
 
 
 Full information: [https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow](/web-criteria/component/carousel-slideshow)
@@ -63,6 +67,10 @@ GIVEN THAT I am on a page with a carousel/slideshow
 4. Device OS settings
 
    - WHEN I use reduced motion THEN I see Carousel does not auto-advance, motion transitions are disabled
+   - WHEN I zoom to 400% (or set the viewport to a width equivalent to 320 CSS pixels) THEN I SEE the carousel content and controls reflow without loss of information or functionality and I do not need to scroll in two dimensions
+   - AND WHEN content scrolls horizontally, THEN at a height equivalent to 256 CSS pixels I do not need to scroll vertically
+   - EXCEPT FOR parts of the content that require two-dimensional layout for usage or meaning
+
 
 
 Full information: [https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow](/web-criteria/component/carousel-slideshow)
@@ -109,18 +117,32 @@ This is one example of an accessible carousel that uses HTML semantics and ARIA:
 
   <div class="flex">
       <div>
-         <button class="Magentaa11y-button Magentaa11y-button--primary button-control button-control--left"><span aria-hidden="true">&lt;&lt;</span>
+         <button class="Magentaa11y-button Magentaa11y-button--primary button-control button-control--left">
+            <span aria-hidden="true">&lt;&lt;</span>
             <span class="hidden-visually">Previous 3 slides</span>
          </button>
-         <button class="Magentaa11y-button Magentaa11y-button--primary button-control button-control--right"><span aria-hidden="true">&gt;&gt;</span>
+         <button class="Magentaa11y-button Magentaa11y-button--primary button-control button-control--right">
+            <span aria-hidden="true">&gt;&gt;</span>
             <span class="hidden-visually">Next 3 slides</span>
          </button>
       </div>
     <ol class="list" role="list"> 
 <!--  Need role="list" because of weird Voiceover bug: https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html      -->
-      <li><img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGlwaG9uZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="iPhone 14" /></li>
-      <li><img src="https://images.unsplash.com/photo-1583574333311-3a86605c76b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2068&q=80" alt="Samsung Galaxy phone" /></li>
-      <li><img src="https://images.unsplash.com/photo-1612442443556-09b5b309e637?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Google Pixel phone" /></li>
+      <li>
+         <img 
+                           src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGlwaG9uZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" 
+                           alt="iPhone 14" />
+      </li>
+      <li>
+         <img 
+                           src="https://images.unsplash.com/photo-1583574333311-3a86605c76b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2068&q=80" 
+                           alt="Samsung Galaxy phone" />
+      </li>
+      <li>
+         <img 
+                           src="https://images.unsplash.com/photo-1612442443556-09b5b309e637?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" 
+                           alt="Google Pixel phone" />
+      </li>
     </ol>
   </div>
 </section>
@@ -150,6 +172,7 @@ This is one example of an accessible carousel that uses HTML semantics and ARIA:
 
 ## Related WCAG
 - [WCAG 1.3.1 Info and Relationships (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships)
+- [WCAG 1.4.10 Reflow (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html)
 - [WCAG 2.1.1 Keyboard (Level A)](https://www.w3.org/WAI/WCAG21/Understanding/keyboard.html)
 - [WCAG 2.2.2 Pause, Stop, Hide (Level A)](https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide.html)
 - [WCAG 4.1.2 Name, Role, Value (Level A)](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value)
