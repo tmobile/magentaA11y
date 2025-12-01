@@ -112,6 +112,7 @@ const AccessibleDemo: React.FC = () => {
                     Over 1/4 of the US population has a disability that requires assistive technology or accommodation.
                 </details>
 
+                {/* eslint-disable jsx-a11y/no-redundant-roles */}
                 <details>
                     <summary>How do we test our products?</summary>
                     <ol role="list">
@@ -124,6 +125,7 @@ const AccessibleDemo: React.FC = () => {
                         </li>
                     </ol>
                 </details>
+                 {/* eslint-enable jsx-a11y/no-redundant-roles */}
 
                 <details>
                     <summary>What screen reader should I use to test?</summary>
