@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import './accessible-demo.scss';
 
 
 const AccessibleDemo: React.FC = () => {

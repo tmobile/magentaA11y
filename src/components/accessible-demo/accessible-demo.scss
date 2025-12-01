@@ -48,7 +48,7 @@ section.container {
 
 // add sufficient touch target size to summary and button elements
 .hero {
-  background: url("../../public/content/assets/media/images/how-to-test/assistive-technology-bg.png") no-repeat center center;
+  background: url("../../../public/content/assets/media/images/how-to-test/assistive-technology-bg.png") no-repeat center center;
   background-size: cover !important;
   padding: 3rem 2rem;
   width: 100%;
@@ -143,7 +143,7 @@ section.container {
 
   details summary::before {
     content:'';
-    background: url("../assets/svgs/chevron-down.svg") no-repeat center center;
+    background: url("../../assets/svgs/chevron-down.svg") no-repeat center center;
     display: block;
     position: relative;
     justify-self: center;

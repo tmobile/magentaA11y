@@ -1,7 +1,6 @@
 @use "./styles/root" as *;
 @use "./styles/utilities" as *;
 @use "./styles/md-styles" as *;
-@use "./styles/page-demos" as *;
 
 html {
   background-color: var(--color-background);
