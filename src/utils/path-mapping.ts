@@ -28,7 +28,7 @@ export const explicitPathMappings: PathMap = {
   "/checklist-web/single-page-application": "/web-criteria/page-level/single-page-application",
   "/checklist-web/skip-link": "/web-criteria/page-level/skip-link",
   "/checklist-web/nav": "/web-criteria/page-level/navigation-landmark",
-  "/demos/basic-accessible-webpage/": "/basic-accessible-webpage",
+  "/checklist-web/html": "/web-criteria/page-level/basic-web-page",
   "/checklist-web/alert": "/web-criteria/component/alert-notification",
   "/checklist-web/animation": "/web-criteria/component/animation",
   "/checklist-web/listbox-autocomplete": "/web-criteria/component/autocomplete",
@@ -114,12 +114,13 @@ export const explicitPathMappings: PathMap = {
   "/checklist-native/tidbit": "/native-criteria/patterns/tidbit",
   "/checklist-native/webviews": "/native-criteria/patterns/webview",
   "/how-to-test/keyboard-focus": "/how-to-test-criteria/type/keyboard-&-focus",
-  "/how-to-test/form": "/how-to-test-criteria/type/keyboard-&-focus",
+  "/how-to-test/form": "/how-to-test-criteria/type/forms-&-inputs",
   "/how-to-test/images": "/how-to-test-criteria/type/images",
-  // "/how-to-test/screen-readers": "/how-to-test-criteria/type/screen-readers",
+  "/how-to-test/screen-readers": "/how-to-test-criteria/type/web-screen-readers",
   "/how-to-test/link-button": "/how-to-test-criteria/type/links-&-buttons",
   "/how-to-test/color-contrast": "/how-to-test-criteria/type/color-contrast",
   "/how-to-test/not-sure-if-it-is-an-issue": "/how-to-test-criteria/type/not-sure-if-it-is-an-issue",
+  "/demos/basic-accessible-webpage/": "/basic-accessible-webpage"
 };
 
 export function getRedirectPath(path: string): string | null {
