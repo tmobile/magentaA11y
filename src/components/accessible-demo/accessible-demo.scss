@@ -222,10 +222,10 @@ section.container {
 }
 
 .error {
-    color: var(--color-text-error);
+    color: var(--color-error-container);
     
     svg {
-        fill: var(--color-text-error);
+        fill: var(--color-error-container);
         margin-right: 0.5rem;
         vertical-align: middle;
     }
