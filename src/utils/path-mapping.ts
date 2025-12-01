@@ -120,7 +120,7 @@ export const explicitPathMappings: PathMap = {
   "/how-to-test/link-button": "/how-to-test-criteria/type/links-&-buttons",
   "/how-to-test/color-contrast": "/how-to-test-criteria/type/color-contrast",
   "/how-to-test/not-sure-if-it-is-an-issue": "/how-to-test-criteria/type/not-sure-if-it-is-an-issue",
-  "/demos/basic-accessible-webpage/": "/basic-accessible-webpage"
+  "/demos/basic-accessible-webpage/": "/basic-accessible-webpage",
 };
 
 export function getRedirectPath(path: string): string | null {
