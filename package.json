@@ -39,6 +39,7 @@
     "parse-md-files": "npx tsx src/scripts/parseMDFiles.ts",
     "generate-icons": "npx tsx src/scripts/generateIcons.ts",
     "create-md": "bash src/scripts/createMarkdown.sh",
+    "content:watch": "concurrently \"chokidar 'public/content/documentation/**/*.md' -c 'npm run parse-md-files'\" \"npm start\"",
     "start": "npm run parse-md-files && npm run generate-icons && react-scripts start",
     "build": "npm run lint && npm run generate-faveicons && npm run parse-md-files && react-scripts build",
     "predeploy": "npm run build",
@@ -72,6 +73,7 @@
   "devDependencies": {
     "@types/favicons": "^7.0.2",
     "@types/node": "^22.9.3",
+    "chokidar-cli": "^3.0.0",
     "concurrently": "^9.1.0",
     "favicons": "^7.2.0",
     "gh-pages": "^6.2.0",

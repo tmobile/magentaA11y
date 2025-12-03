@@ -85,6 +85,13 @@ might have to do this again:
   - Automatically generates navigation buttons and icons.
   - Accessible at [http://localhost:3000](http://localhost:3000).
 
+- **`npm run content:watch`**: Starts the app in development mode with automatic markdown file watching.
+
+  - Ideal for content authors editing markdown files in `public/content/documentation/`
+  - Automatically re-parses markdown files when saved
+  - Triggers browser reload to show changes immediately
+  - No need to manually run `parse-md-files` after each edit
+
 ### Building and Deployment
 
 - **`npm run build`**: Builds the app for production, optimizing all assets.
