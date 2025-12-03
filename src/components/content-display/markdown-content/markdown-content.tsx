@@ -20,6 +20,27 @@ const   fnHandler = (fn: unknown, e: unknown): void => {
   }
 };
 
+// Prevent non-numeric entry for inputs that declare inputMode="numeric"
+const getNumericGuards = (
+  originalHandlers?: {
+    onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
+  }
+) => {
+
+    // The only guard for now is keyDown, but we may add more in the future. (ex. Paste guard)
+  const onKeyDown: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
+
+    // Allow digits 0-9
+    if (e.key >= '0' && e.key <= '9') {
+      originalHandlers?.onKeyDown?.(e);
+      return;
+    }
+    // Block everything else (no minus/decimal since numeric inputmode implies digits only)
+    e.preventDefault();
+  };
+  return { onKeyDown };
+};
+
 const MarkdownContent: React.FC<MarkdownContentProps> = ({
   content,
   assetBasePath,
@@ -112,7 +133,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             if (!href) {
               return <a {...props}>{children}</a>;
             }
-            
+
             /*
               Same-page links:
               Handle same-page anchor links (e.g., #ref-alpha, #ref-alpha-link)
@@ -233,8 +254,17 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               'onChange';
             const fn = fnKey && markdownFunctionMap[fnKey];
 
+            // Compute numeric guards once and reuse below
+            const numericGuards =
+              (props as any)?.inputMode === 'numeric'
+                ? getNumericGuards({
+                    onKeyDown: (props as any).onKeyDown,
+                  })
+                : {};
+
             if (!fnKey || typeof fn !== 'function') {
-              return <input {...props} />;
+              // Even when no mapped fn, still enforce numeric guards when inputMode="numeric"
+              return <input {...props} {...numericGuards} />;
             }
 
             // For inputs (checkboxes, radios, text), prefer onChange.
@@ -244,6 +274,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                 return (
                   <input
                     {...props}
+                    {...numericGuards}
                     onClick={(e) => {
                       // Call the mapped function; event type differs but is safe to pass along
                         fnHandler(fn, e);
@@ -254,6 +285,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                 return (
                   <input
                     {...props}
+                    {...numericGuards}
                     onInput={(e) => {
                         fnHandler(fn, e);
                     }}
@@ -264,6 +296,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                 return (
                   <input
                     {...props}
+                    {...numericGuards}
                     onChange={(e) => {
                         fnHandler(fn, e);
                     }}
