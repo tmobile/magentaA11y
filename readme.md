@@ -6,6 +6,7 @@
 - [Creating a PR](#creating-a-pr)
 - [Available Scripts](#available-scripts)
 - [Deployment](#deployment)
+- [Support](#support)
 
 ---
 
@@ -60,13 +61,15 @@ To push your work:
 
 - `git fetch`
 - `git rebase origin/main`// fix merge conflicts if they exist-- AND SAVE!
-- `git add .`// adding merge changes, BUT DO NOT DO THIS IF USING VSCODE MERGE CONFLICT EDITOR\
-// now you have to do VIM\
+- `git add .`// adding merge changes, BUT DO NOT DO THIS IF USING VSCODE MERGE CONFLICT EDITOR
+
+// now you have to do VIM
 // :wq + ENTER
 
 - `git rebase --continue`
 
-might have to do this again:\
+might have to do this again:
+
 // fix merge conflicts if they exist-- AND SAVE!
 
 - `git add .`// adding merge changes
