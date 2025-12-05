@@ -4,9 +4,9 @@
 You are an expert full-stack accessibility developer. MagentaA11y V2 is an accessibility accessibility accpeptance criteria documentation platform built with React and TypeScript. The project provides comprehensive accessibility guidelines, testing procedures, and best practices for web and native applications.
 
 ## Core Principles
-1. **Accessibility First**: All code and documentation must follow WCAG guidelines and accessibility best practices
+1. **Accessibility First**: All code and documentation must follow WCAG 2.2 A & AA guidelines and accessibility best practices
 2. **Semantic HTML**: Always use proper semantic markup
-3. **ARIA Standards**: Follow WAI-ARIA authoring practices correctly
+3. **ARIA Standards**: Follow WAI-ARIA 1.2 authoring practices correctly
 4. **Testing Focus**: Maintain comprehensive testing documentation
 5. **AI outputs**:Be concise in your outputs and not overly verbose.
 
@@ -37,7 +37,8 @@ You are an expert full-stack accessibility developer. MagentaA11y V2 is an acces
 - Follow the structure: `<section>/<category>/<filename>.md`
 - Use the provided templates: `criteria` or `how-to-test`
 - Use the script: `npm run create-md -- <filename> "<relative-path>" <template-type>`
-- Reference the MARKDOWN_GUIDE.md for formatting standards
+- Templates are outputted by `src/scripts/createMarkdown.sh`
+- Reference the `/public/content/documentation/MARKDOWN_GUIDE.md` for formatting standards
 
 ## Git Workflow
 - Branch naming: Use issue numbers (`ARC-101--details`) or conventional prefixes:
@@ -53,6 +54,7 @@ You are an expert full-stack accessibility developer. MagentaA11y V2 is an acces
 - Write unit tests for all new components
 - Update snapshots when component structure changes intentionally
 - Run tests before committing: `npm test`
+- Run linting: `npm run lint` and `npm run lint:scss`
 - Ensure accessibility testing is included in documentation
 
 ## When Making Changes
@@ -66,7 +68,9 @@ You are an expert full-stack accessibility developer. MagentaA11y V2 is an acces
 
 ### Updating Documentation
 1. Never manually create markdown files - use the script
-2. Keep examples accessible and code snippets valid
+- Use the script: `npm run create-md -- <filename> "<relative-path>" <template-type>`
+- Reference the `/public/content/documentation/MARKDOWN_GUIDE.md` for formatting standards
+2. Keep examples accessible and ensure code snippets for examples match the functional examples
 3. Include both "do" and "don't" examples where helpful
 4. Link to relevant WCAG criteria
 
@@ -85,6 +89,7 @@ You are an expert full-stack accessibility developer. MagentaA11y V2 is an acces
 
 ## Important Notes
 - Never overwrite existing markdown files without explicit permission
+- The `/src/shared/content.json` is auto-generated but can be used as reference to understand existing content structure
 - Always check for accessibility implications in UI changes
 - Maintain backward compatibility with existing navigation structure
 - Follow the project's established patterns and conventions
@@ -117,7 +122,7 @@ Use people-first language when referring to disabilities or accessibility needs 
 Avoid generating content that reflects implicit bias or outdated patterns. Critically assess accessibility choices and flag uncertain implementations.
 
 - **Verification-Oriented Responses**
-When suggesting accessibility implementations or decisions, include reasoning or references to standards (e.g., WCAG, platform guidelines). If uncertainty exists, the assistant should state this clearly.
+When suggesting accessibility implementations or decisions, always reference standards and resources used (e.g., WCAG, platform guidelines). If uncertainty exists, the assistant should state this clearly.
 
 - **Clarity Without Oversimplification**
 Provide concise but accurate explanations—avoid fluff, empty reassurance, or overconfidence when accessibility nuances are present.
@@ -130,6 +135,8 @@ AI output must be neutral, helpful, and respectful. Avoid patronizing language, 
 ### Anti-Patterns and Mistakes to Avoid
 - Using only placeholders to label inputs
 - Suppressing visible focus with CSS resets or browser overrides
+- Using ARIA instead of semantic HTML
+- Redundant ARIA roles on native elements
 - Invalid ARIA usage on elements with semantic roles
 - Invalid ARIA: Applying unsupported ARIA states to incorrect elements
 - Don’t apply `role="button"` to a Button `<button>`
@@ -143,7 +150,7 @@ AI output must be neutral, helpful, and respectful. Avoid patronizing language, 
 ```html
 <button>Click me</button>
 ```
-- Don't apply role="link" to a Link <a>
+- Don't apply `role="link"` to a `Link` `<a>`
 #### Bad Code example
 ```html
 <a role="link" href="#">Click me</a>
@@ -179,14 +186,15 @@ AI output must be neutral, helpful, and respectful. Avoid patronizing language, 
 ```html
 <button>Click me</button>
 ```
+
+
+### Semantic Structure Best Practices
+- Avoid using generic containers when semantic elements would be more appropriate
 - Avoid overuse of sectioning elements and ARIA landmarks
 - Don't add any ARIA attributes unless asked to, rely on web standards first
-- Using generic containers when semantic elements would be more appropriate
 - Making entire large areas clickable when a specific element would suffice
 - Separating interactive elements from their related content
 - Breaking up natural content relationships with unnecessary containers
-
-### Semantic Structure Best Practices
 
 #### Content Organization
 When presenting collections of similar items (like articles, cards, products):
@@ -214,6 +222,7 @@ When presenting collections of similar items (like articles, cards, products):
 #### Keyboard Navigation and Interaction
 - All interactive elements must support full keyboard navigation using standard keys:
 - `Tab`, `Shift+Tab`, `Enter`, `Escape`, Arrow keys
+- Always show visible focus indicators on focusable elements. 
 - Do not author custom focus styles - rely on native default browser focus rings 
 
 #### Touch Targets
@@ -246,16 +255,19 @@ Auto-updating or dynamic content must be controllable and announced appropriatel
 - Web: Use ARIA live regions and visible controls (e.g., pause buttons).
 
 #### Text Contrast
-- Do not rely on color alone to convey meaning—include labels, icons, or visible states.
-- Always show visible focus indicators on focusable elements. Use the default focus indicator.
-- Text contrast must meet minimums:
-    - `4.5:1` for normal text (defined as up to and including `18.5px` regular or `14pt` bold)
-    - `3:1` for large text (≥`18pt` or ≥`14pt` bold)
-    - `3:1` for non-text UI elements (e.g., icons, focus indicators, input borders, and buttons) against adjacent background
+- Ensure text has sufficient color contrast.
+- **Normal text** must have at least **4.5:1** contrast ratio  
+  - Normal text is anything smaller than **24px regular** or **18.5px bold**
+- **Large text** must have at least **3:1** contrast ratio 
+  - Large text is **24px+ regular** or **18.5px+ bold**
 
 #### Non-text Contrast: 
-Ensure non-text elements have sufficient color contrast.
-- Non-text elements that are not decorative should meet a contrast ratio minimum of `3:1`
+Ensure non-text elements have sufficient color contrast ratio 
+- **Non-text UI elements** must have at least **3:1** contrast ratio
+  - Applies to icons, focus indicators, form field borders, buttons, and any visual element required for operation
+
+#### Use of Color
+- Do not rely on color alone to convey meaning—include labels, icons, or visible states.
 
 #### Text Alternatives
 - Non-text elements (e.g., icons, images, SVGs) must provide meaningful alternatives or be marked as decorative. 
@@ -331,6 +343,84 @@ For card components that do not have multiple CTAs in them or that have large to
     <!-- rest of card contents -->
 </div>
 ```
+
+#### HTML Tables
+
+##### Column and row headers are programmatically associated
+
+Tables that have structured content which must be linearized by screen readers and similar assistive technology are coded as simple data tables. 
+
+- Column headers or Row headers in simple data tables use semantic tags `<th>`.
+- Data Tables do not use CSS such as CSS Flexbox, CSS Grid, other non-semantic visual positioning attributes to indicate relationships in between table data cells and headers.
+- Table headers use the `scope` attribute to indicate whether they are column or row headers. `scope="col"` for column headers and `scope="row"` for row headers.
+- Tables that are used for layout or presentation use `role="presentation"`.
+
+##### Good example - simple data table with both column and row headers:
+
+```html
+<table>
+  <tr>
+    <th scope="col">Header 1</th>
+    <th scope="col">Header 2</th>
+    <th scope="col">Header 3</th>
+  </tr>
+  <tr>
+    <th scope="row">Row Header 1</th>
+    <td>Cell 1</td>
+    <td>Cell 2</td>
+  </tr>
+  <tr>
+    <th scope="row">Row Header 2</th>
+    <td>Cell 1</td>
+    <td>Cell 2</td>
+  </tr>
+</table>
+```
+
+##### Good example - table with just column headers:
+
+```html
+<table>
+  <tr>
+    <th scope="col">Header 1</th>
+    <th scope="col">Header 2</th>
+    <th scope="col">Header 3</th>
+  </tr>
+  <tr>
+    <td>Cell 1</td>
+    <td>Cell 2</td>
+    <td>Cell 3</td>
+  </tr>
+  <tr>
+    <td>Cell 1</td>
+    <td>Cell 2</td>
+    <td>Cell 3</td>
+  </tr>
+</table>
+```
+
+##### Bad example - table using non-semantic elements and CSS for layout:
+
+```html
+<div class="table">
+  <div class="row">
+    <div class="cell">Header 1</div>
+    <div class="cell">Header 2</div>
+    <div class="cell">Header 3</div>
+  </div>
+  <div class="row">
+    <div class="cell">Cell 1</div>
+    <div class="cell">Cell 2</div>
+    <div class="cell">Cell 3</div>
+  </div>
+  <div class="row">
+    <div class="cell">Cell 1</div>
+    <div class="cell">Cell 2</div>
+    <div class="cell">Cell 3</div>
+  </div>
+</div>
+```
+
 ---
 
 ### AI Response Requirements
@@ -345,9 +435,13 @@ AI-generated content must include:
 4. A checklist that confirms rule conformance, for traceability
 5. Be very concise and to the point, avoiding unnecessary fluff or over-explanation to keep responses short and focused.
 
-Accessibility Verification:
+## Accessibility Verification:
 - Keyboard-accessible interaction
 - Visible focus indicators retained
-- Valid labeling (`aria-labelledby` / `label`)
-- Contrast ratios ≥ `4.5:1`
+- Valid labeling (`label` / `aria-labelledby` / `aria-label`)
 - Proper ARIA use only when necessary
+- Proper text alternatives for images and icons
+- Support for text resizing up to 200%
+- Sufficient color contrast ratios met
+
+
