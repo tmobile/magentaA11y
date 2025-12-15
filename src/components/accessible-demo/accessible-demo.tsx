@@ -138,8 +138,8 @@ const AccessibleDemo: React.FC = () => {
                             </li>
                         </ol>
                     </details>
-                        {/* eslint-enable jsx-a11y/no-redundant-roles */}
-
+                    
+                    {/* eslint-enable jsx-a11y/no-redundant-roles */}
                     <details>
                         <summary>What screen reader should I use to test?</summary>
                             <table className="comparison">
