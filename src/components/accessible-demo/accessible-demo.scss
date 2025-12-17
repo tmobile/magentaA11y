@@ -25,7 +25,7 @@
 }
 
 // accessible web page demo styles
-section.container {
+.container {
   border-bottom: 1px solid var(--magentaa11y-color-brand-grayscale-400);
   margin: 3rem auto;
   padding: 0 2rem 3rem;
@@ -39,6 +39,7 @@ section.container {
 
 .h-charlie {
   font-size: 1.25rem;
+  font-weight: var( --magentaa11y-font-weight-extrabold);
 }
 
 .h-delta {
@@ -58,12 +59,14 @@ section.container {
       max-width: 960px;
     }
 
-    h1, h2, h3 {
-      color: white;
+    .h-alpha, .h-bravo, .h-delta, .MagentaA11y__nav-display__subtitle {
+      color: var(--footer-text-color);
+      font-weight: bold;
     }
 
     .h-alpha {
       font-size: var(--magentaa11y-font-size-40);
+      line-height: 50px;
       margin: 0 0 1rem;
     }
 
@@ -196,33 +199,107 @@ section.container {
   }
 }
 
-// add radio styles here when they are completed on radio criteria page
-.accessible-radio {
-  form {
-    margin: 2rem 0;
-  }
+// form styles
+form {
+  border-radius: 1rem;
+  background: var(--color-background);
+  box-shadow: 0 0.5rem 0.75rem 0 var(--color-background-secondary), 0 0 1rem 0 var(--color-background-tertiary);  
+  margin: 2rem 0;
+}
 
-  fieldset {
-    margin-bottom: 1rem;
-  }
+.legend {
+    border-bottom: 1px dotted var(--color-surface-container-high);
+    font-family: teleneo-xtra-bold, sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    position: relative;
+    padding: 1.5rem 1rem;
+    width: 100%;
+}
 
-  legend {
-    font-size: var(--magentaa11y-font-size-18);
-    font-weight: var(--magentaa11y-font-weight-semibold);
-  }  
+fieldset {
+  margin-bottom: 1rem;
+}
 
-  .radio-container {
-    margin: 1rem 0;
-  }
+.fieldset {
+    border: none;
+    padding: 0;    
+    position: relative;
+    transition: .8s;
 
-  input[type="radio"] {
-    margin-right: 0.5rem;
-  }
+    & .Magentaa11y-button {
+      margin: 1rem 1rem 2rem;
+    }
+}
 
+input[type="radio"] {
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 40px;
+  line-height: 40px;
+  clip: rect(1px, 1px, 1px, 1px);
+  margin: 0 0 0 0%;
+  padding: 0 0 0 0%;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+  border-width: 0 !important;
+  border-style: initial !important;
+  border-color: initial !important;
+  border-image: initial !important;
+}
+
+.radio+.label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  justify-self: center;
+  background: var(--color-background-secondary);
+  transition: .4s;
+  box-shadow: inset 0 0 0 0.25rem var(--color-on-tertiary), inset 0 0 0 0.5rem transparent, 0 0 0 0.5rem var(--color-background);
+}
+
+.radio+.label{
+  align-items: center;
+  background-position: 10% center;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  line-height: 1;
+  margin: 0;
+  padding: 1rem .5rem 1rem 0;
+  position: relative;
+  transition: background .8s;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+ }
+
+ .radio:checked + .label {
+  background-color: var(--color-background-secondary); /* Light selection background */
+  border: 2px solid var(--color-on-surface-variant);
+}
+
+.radio:checked + .label::before {
+    background-color:var(--color-primary);
+    box-shadow: var(--color-primary) 0 0 0 0.25rem inset, var(--color-text-on-primary) 0 0 0 0.5rem inset, var(--color-background-tertiary) 0 0 0 0;
+    transition: all;
+}
+
+/* adding back focus, making up for the input being hidden */
+.radio:focus + .label {
+  box-shadow: 0 0 0 3px #4a90e2, 
+              0 0 0 5px var(--color-text-on-primary);
 }
 
 .error {
     color: var(--color-error-container);
+    padding-left: 1rem;
     
     svg {
         fill: var(--color-error-container);
