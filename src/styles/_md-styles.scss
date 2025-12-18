@@ -959,9 +959,42 @@ input.star:focus-visible + label {
       50% { background-color: #000; }
       100% { background-color: #e20074; }
    }
-  
+
   } // .animation-example
 } // .animation-example-wrapper
 
 
 /* stylelint-enable no-descending-specificity */
+.cards {
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.cards .card.interactive {
+  cursor: pointer;
+  position: relative;
+}
+
+
+.cards .card {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: #fff;
+  border-radius: 1rem;
+  transition: .8s;
+  box-shadow: 0 0.5rem 0.75rem 0 rgb(0 0 0 / 4%), 0 0 1rem 0 rgb(204 204 204 / 8%);
+}
+
+.cards .card.interactive:hover {
+  box-shadow: 0 0 0 0.5rem rgb(34 34 34 / 40%);
+  outline-offset: .25rem;
+  transition: .2s;
+}

@@ -118,7 +118,7 @@
     background: var(--color-text-on-primary);
     border: 1px solid var(--magentaa11y-color-brand-grayscale-400);
     border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0 0 0 / 10%);;  
+    box-shadow: 0 10px 15px -3px rgba(0 0 0 / 10%);;
     margin-bottom: 1rem;
     padding: 1rem;
     text-align: left;
@@ -161,7 +161,7 @@
     transition: all 0.1s ease-in-out;
   }
 
-  details summary:hover::before, 
+  details summary:hover::before,
   details summary:focus-visible::before {
     border: 2px solid var(--color-primary);
   }
@@ -180,7 +180,7 @@
     transition: background 0.1s;
   }
 
-  details:not([open]) summary:active, 
+  details:not([open]) summary:active,
   details[open] summary:active {
     background-color: var(--color-background-tertiary);
     background-size: 100%;
@@ -192,7 +192,7 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    details summary::before, 
+    details summary::before,
     details summary::before {
       background-color: var(--color-text-primary);
     }
@@ -203,7 +203,7 @@
 form {
   border-radius: 1rem;
   background: var(--color-background);
-  box-shadow: 0 0.5rem 0.75rem 0 var(--color-background-secondary), 0 0 1rem 0 var(--color-background-tertiary);  
+  box-shadow: 0 0.5rem 0.75rem 0 var(--color-background-secondary), 0 0 1rem 0 var(--color-background-tertiary);
   margin: 2rem 0;
 }
 
@@ -223,7 +223,7 @@ fieldset {
 
 .fieldset {
     border: none;
-    padding: 0;    
+    padding: 0;
     position: relative;
     transition: .8s;
 
@@ -261,7 +261,7 @@ input[type="radio"] {
   justify-self: center;
   background: var(--color-background-secondary);
   transition: .4s;
-  box-shadow: inset 0 0 0 0.25rem var(--color-on-tertiary), inset 0 0 0 0.5rem transparent, 0 0 0 0.5rem var(--color-background);
+  box-shadow: inset 0 0 0 0.25rem var(--color-on-tertiary), inset 0 0 0 0.5rem transparent, 0 0 0 0.5rem transparent;
 }
 
 .radio+.label{
@@ -293,14 +293,14 @@ input[type="radio"] {
 
 /* adding back focus, making up for the input being hidden */
 .radio:focus + .label {
-  box-shadow: 0 0 0 3px #4a90e2, 
+  box-shadow: 0 0 0 3px #4a90e2,
               0 0 0 5px var(--color-text-on-primary);
 }
 
 .error {
     color: var(--color-error-container);
     padding-left: 1rem;
-    
+
     svg {
         fill: var(--color-error-container);
         margin-right: 0.5rem;

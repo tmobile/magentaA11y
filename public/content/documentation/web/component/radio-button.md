@@ -104,25 +104,20 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button]
 </fieldset>
 ```
 
-<!-- TODO: get radio examples styled and working as expected
 <example>
 <fieldset>
-  <legend>
+    <legend>
     Choose your favorite NATO letter
-  </legend>
-
-  <input type="radio" name="nato" id="alphaRadio">
-  <label for="alphaRadio">Alpha</label>
-
-  <input type="radio" name="nato" id="bravoRadio">
-  <label for="bravoRadio">Bravo</label>
-
-  <input type="radio" name="nato" id="charlieRadio" aria-describedby="hint-charlie" checked>
-  <label for="charlieRadio">Charlie</label>
-  <div class="hint" id="hint-charlie">This is the third NATO letter</div>
+    </legend>
+        <input class="radio" type="radio" name="nato" id="alphaRadio">
+        <label class="label" for="alphaRadio">Alpha</label>
+        <input class="radio" type="radio" name="nato" id="bravoRadio">
+        <label class="label" for="bravoRadio">Bravo</label>
+        <input class="radio" type="radio" name="nato" id="charlieRadio" aria-describedby="hint-charlie" checked>
+        <label class="label" for="charlieRadio">Charlie</label>
+    <div class="hint" id="hint-charlie">This is the third NATO letter</div>
 </fieldset>
 </example>
--->
 
 ### Disabled and focusable radio inputs (preferred)
 
@@ -146,28 +141,26 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button]
 </fieldset>
 ```
 
-<!-- TODO: get radio examples styled and working as expected
 <example>
 <fieldset>
   <legend>
     Choose your favorite dance
   </legend>
 
-  <input type="radio" name="dance" id="carltonRadio" aria-disabled="true">
-  <label for="carltonRadio">Carlton</label>
+  <input class="radio" type="radio" name="dance" id="carltonRadio" aria-disabled="true">
+  <label class="label" for="carltonRadio">Carlton</label>
 
-  <input type="radio" name="dance" id="foxtrotRadio">
-  <label for="foxtrotRadio">Foxtrot</label>
+  <input class="radio" type="radio" name="dance" id="foxtrotRadio">
+  <label class="label" for="foxtrotRadio">Foxtrot</label>
 
-  <input type="radio" name="dance" id="tangoRadio" checked>
-  <label for="tangoRadio">Tango</label>
+  <input class="radio" type="radio" name="dance" id="tangoRadio" checked>
+  <label class="label" for="tangoRadio">Tango</label>
 </fieldset>
 </example>
--->
 
 ### Required radio inputs
 
-Ensuring all screenreaders indicate radio inputs as being required requires some aria and reinforcement.
+Ensuring all screenreaders indicate radio inputs as being required. Requires some aria and reinforcement.
 
 - Use `aria-required="true"` to indicate the group is required
 - Use `aria-invalid="true/false"` to indicate an error state
@@ -193,7 +186,6 @@ Ensuring all screenreaders indicate radio inputs as being required requires some
 </fieldset>
 ```
 
-<!-- TODO: get radio examples styled and working as expected
 <example>
 <fieldset aria-required="true" 
           aria-invalid="true" 
@@ -202,17 +194,16 @@ Ensuring all screenreaders indicate radio inputs as being required requires some
     Choose your second favorite NATO letter <span>Required</span>
   </legend>
 
-  <input type="radio" name="natoReq" id="deltaRadioReq">
-  <label for="deltaRadioReq">Delta</label>
+  <input class="radio" type="radio" name="natoReq" id="deltaRadioReq">
+  <label class="label" for="deltaRadioReq">Delta</label>
 
-  <input type="radio" name="natoReq" id="echoRadioReq">
-  <label for="echoRadioReq">Echo</label>
+  <input class="radio" type="radio" name="natoReq" id="echoRadioReq">
+  <label class="label" for="echoRadioReq">Echo</label>
 
-  <input type="radio" name="natoReq" id="foxtrotRadioReq">
-  <label for="foxtrotRadioReq">Foxtrot</label>
+  <input class="radio" type="radio" name="natoReq" id="foxtrotRadioReq">
+  <label class="label" for="foxtrotRadioReq">Foxtrot</label>
 </fieldset>
 </example>
--->
 
 ### Radio button cards
 
@@ -246,16 +237,15 @@ Ensuring all screenreaders indicate radio inputs as being required requires some
   </li>
 </ul>
 ```
-
-<!-- TODO: get radio examples styled and working as expected
 <example>
-<ul class="cards">
+<ul class="cards" style="list-style: none">
   <li class="card interactive">
     <input type="radio"
+           class="radio"
            name="radioCards"
            id="deltaRadioCard"
            aria-describedby="hint-deltaRadioCard" >
-    <label for="deltaRadioCard">
+    <label class="label" for="deltaRadioCard">
       Delta
     </label>
     <div class="extended-description"
@@ -266,10 +256,11 @@ Ensuring all screenreaders indicate radio inputs as being required requires some
   </li>
   <li class="card interactive">
     <input type="radio"
+           class="radio"
            name="radioCards"
            id="echoRadioCard"
            aria-describedby="hint-echoRadioCard">
-    <label for="echoRadioCard">Echo</label>
+    <label class="label" for="echoRadioCard">Echo</label>
     <div class="extended-description"
          id="hint-echoRadioCard">
       Echo (prounounced: <strong>eck</strong>-oh)
@@ -278,8 +269,6 @@ Ensuring all screenreaders indicate radio inputs as being required requires some
   </li>
 </ul>
 </example>
--->
-
 
 ### When you can't use semantic HTML
 

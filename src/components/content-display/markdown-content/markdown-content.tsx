@@ -112,7 +112,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             if (!href) {
               return <a {...props}>{children}</a>;
             }
-            
+
             /*
               Same-page links:
               Handle same-page anchor links (e.g., #ref-alpha, #ref-alpha-link)
@@ -225,17 +225,23 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           },
 
           input: (props) => {
-            const fnKey = (props as Record<string, unknown>)?.['data-fn'] as
-              | string
-              | undefined;
-            const eventType =
-              ((props as Record<string, unknown>)?.['data-event'] as string) ||
-              'onChange';
-            const fn = fnKey && markdownFunctionMap[fnKey];
+              const { type, checked, ...rest } = props;
+              const fnKey = (props as Record<string, unknown>)?.['data-fn'] as
+                  | string
+                  | undefined;
+              const eventType =
+                  ((props as Record<string, unknown>)?.['data-event'] as string) ||
+                  'onChange';
+              const fn = fnKey && markdownFunctionMap[fnKey];
 
-            if (!fnKey || typeof fn !== 'function') {
-              return <input {...props} />;
-            }
+              if (!fnKey || typeof fn !== 'function') {
+                  // If it's a radio, use defaultChecked instead of checked
+                  // This prevents React from locking the state as a "controlled" component
+                  if (type === 'radio') {
+                      return <input type={type} defaultChecked={checked} {...rest} />;
+                  }
+                  return <input type={type} {...rest} />;
+              }
 
             // For inputs (checkboxes, radios, text), prefer onChange.
             // Do NOT prevent default so the control state updates naturally.
