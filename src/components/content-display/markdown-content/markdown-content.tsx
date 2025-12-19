@@ -37,6 +37,64 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
         remarkPlugins={[remarkGfm]}
         components={{
+          li: (props) => {
+            const className = (props as any)?.className as string | undefined;
+
+            // Only enhance the special cards used in docs examples
+            const isInteractiveCard =
+              typeof className === 'string' &&
+              className.includes('card') &&
+              className.includes('interactive');
+
+            if (!isInteractiveCard) {
+              return <li {...(props as any)}>{(props as any).children}</li>;
+            }
+
+            const onCardActivate = (rootEl: HTMLElement) => {
+              // Prefer first enabled radio/checkbox inside the card
+              const input = (rootEl.querySelector(
+                'input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), input:not([disabled])'
+              ) as HTMLInputElement | null);
+
+              if (!input) return;
+
+              // If there is a label associated, click the label to leverage native behavior
+              const label = input.id
+                ? (rootEl.querySelector(
+                    `label[for="${CSS.escape(input.id)}"]`
+                  ) as HTMLElement | null)
+                : null;
+
+              if (label) {
+                label.click();
+              } else {
+                // Fallback: focus then click the input
+                input.focus();
+                input.click();
+              }
+            };
+
+            const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
+              // Ignore if the click originated on an interactive control inside
+              const target = e.target as Element;
+              if (
+                target &&
+                target.closest('input, label, button, a, select, textarea, summary')
+              ) {
+                return;
+              }
+              const current = e.currentTarget as unknown as HTMLElement;
+              onCardActivate(current);
+            };
+
+            // Do not add keyboard handlers or roles/tabIndex here to avoid adding extra tab stops.
+            // The goal is mouse/touch activation by clicking the card area.
+            return (
+              <li {...(props as any)} onClick={handleClick}>
+                {(props as any).children}
+              </li>
+            );
+          },
           img: ({ src, alt }: MediaProps) => {
             const resolvedSrc = src?.startsWith('http')
               ? src
