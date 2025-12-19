@@ -1005,6 +1005,53 @@ input.star:focus-visible + label {
   }
 }
 
+.checkbox-radio-group {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+
+  button {
+    text-decoration: none;
+    background-color: transparent;
+    color: #323234;
+    background-position: center center;
+    transition: background 1s;
+    padding-left: 0;
+    border: none;
+    font: var(--content-details-label-font);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-color: currentcolor;
+      -webkit-mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      order: 1;
+      margin-left: 0.5rem;
+    }
+
+    &::after {
+      content: none;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-color: currentcolor;
+      -webkit-mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      order: 2;
+      margin-left: -0.25rem;
+      transition: all 0.2s;
+    }
+
+    &:hover::after {
+      content: "";
+    }
+  }
+}
 
 
 

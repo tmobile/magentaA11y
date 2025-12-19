@@ -338,7 +338,6 @@ This custom button requires extra scripting work for roving tabindex and event l
   </button>
 </fieldset>
 ```
-<!-- TODO: get radio examples styled and working as expected
 <example>
 <fieldset class="checkbox-radio-group" aria-describedby="styled-radio-group-helper-text">
   <legend>Choose your payment method:</legend>
@@ -348,7 +347,7 @@ This custom button requires extra scripting work for roving tabindex and event l
     Edit controls are available which follow each radio button
   </span>
   <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioAlpha2" checked>
-  <label for="checkboxRadioAlpha2">
+  <label class="label" for="checkboxRadioAlpha2">
     Alpha
   </label>
   <button type="button" class="tertiary" aria-describedby="checkboxRadioAlpha2">
@@ -356,7 +355,7 @@ This custom button requires extra scripting work for roving tabindex and event l
   </button>
 
   <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioBravo2">
-  <label for="checkboxRadioBravo2">
+  <label class="label" for="checkboxRadioBravo2">
     Bravo
   </label>
   <button type="button" class="tertiary" aria-describedby="checkboxRadioBravo2">
@@ -364,7 +363,7 @@ This custom button requires extra scripting work for roving tabindex and event l
   </button>
 
   <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioCharlie3">
-  <label for="checkboxRadioCharlie3">
+  <label class="label" for="checkboxRadioCharlie3">
     Charlie
   </label>
   <button type="button" class="tertiary" aria-describedby="checkboxRadioCharlie3">
@@ -372,7 +371,6 @@ This custom button requires extra scripting work for roving tabindex and event l
   </button>
 </fieldset>
 </example>
--->
 
 ## Developer notes
 
