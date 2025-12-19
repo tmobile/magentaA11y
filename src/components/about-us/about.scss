@@ -164,6 +164,7 @@
 
   &__contribute-title, &__legal-title {
     font: var(--magentaa11y-typeset-headline-xl-xtrastrong);
+    padding-bottom: var(--magentaa11y-spacing-size-24);
 
     @media (min-width: 768px) {
       font: var(--magentaa11y-typeset-display-sm-xtrastrong);
