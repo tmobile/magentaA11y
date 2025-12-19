@@ -299,15 +299,6 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                 return <div {...commonProps} onClick={handler} />;
             }
           },
-
-          select: (props) => {
-            return (
-              <div className="select-wrapper">
-                <select {...props} />
-                <span className="select-chevron" aria-hidden="true" />
-              </div>
-            );
-          },
         }}>
         {content || ''}
       </ReactMarkdown>

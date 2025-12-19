@@ -319,6 +319,29 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     width: fit-content;
     min-width: 250px;
 
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--color-text-primary);
+      -webkit-mask-image: url("../assets/svgs/chevron-down.svg");
+      mask-image: url("../assets/svgs/chevron-down.svg");
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    &:has(select:disabled)::after,
+    &:has(select[aria-disabled="true"])::after {
+      background-color: var(--color-text-disabled);
+    }
+
     select {
       appearance: none;
       background-color: var(--color-background);
@@ -340,28 +363,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
         @media (prefers-color-scheme: dark) {
           color: var(--color-text-disabled);
         }
-
-        & + .select-chevron {
-          background-color: var(--color-text-disabled);
-        }
       }
-    }
-
-    .select-chevron {
-      position: absolute;
-      right: 0.75rem;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1rem;
-      height: 1rem;
-      background-color: var(--color-text-primary);
-      -webkit-mask-image: url("../assets/svgs/chevron-down.svg");
-      mask-image: url("../assets/svgs/chevron-down.svg");
-      -webkit-mask-size: contain;
-      mask-size: contain;
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
-      pointer-events: none;
     }
   }
 
