@@ -346,6 +346,7 @@ This custom button requires extra scripting work for roving tabindex and event l
   <span class="hidden" id="styled-radio-group-helper-text">
     Edit controls are available which follow each radio button
   </span>
+
   <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioAlpha2" checked>
   <label class="label" for="checkboxRadioAlpha2">
     Alpha

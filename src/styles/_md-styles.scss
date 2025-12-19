@@ -1009,10 +1009,15 @@ input.star:focus-visible + label {
   display: grid;
   grid-template-columns: 1fr 8rem;
 
+  .radio:checked + .label {
+    background-color: transparent;
+    border: none;
+  }
+
   button {
     text-decoration: none;
     background-color: transparent;
-    color: #323234;
+    color: var(--color-text-primary);
     background-position: center center;
     transition: background 1s;
     padding-left: 0;
@@ -1048,7 +1053,7 @@ input.star:focus-visible + label {
       opacity: 0;
     }
 
-    &:hover::after {
+    &:hover::after, &:focus::after  {
       margin-left: -0.25rem;
       opacity: 1;
     }
