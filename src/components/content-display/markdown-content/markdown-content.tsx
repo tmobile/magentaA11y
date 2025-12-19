@@ -112,7 +112,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             if (!href) {
               return <a {...props}>{children}</a>;
             }
-            
+
             /*
               Same-page links:
               Handle same-page anchor links (e.g., #ref-alpha, #ref-alpha-link)
@@ -298,6 +298,15 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               default:
                 return <div {...commonProps} onClick={handler} />;
             }
+          },
+
+          select: (props) => {
+            return (
+              <div className="select-wrapper">
+                <select {...props} />
+                <span className="select-chevron" aria-hidden="true" />
+              </div>
+            );
           },
         }}>
         {content || ''}
