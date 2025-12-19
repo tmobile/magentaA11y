@@ -38,7 +38,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
         remarkPlugins={[remarkGfm]}
         components={{
           li: (props) => {
-            const className = (props as any)?.className as string | undefined;
+            const { className, children, ...rest } = props as any;
 
             // Only enhance the special cards used in docs examples
             const isInteractiveCard =
@@ -47,20 +47,22 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               className.includes('interactive');
 
             if (!isInteractiveCard) {
-              return <li {...(props as any)}>{(props as any).children}</li>;
+              return <li {...props as any}>{children}</li>;
             }
 
-            const onCardActivate = (rootEl: HTMLElement) => {
+            const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
+              const currentTarget = e.currentTarget as HTMLElement;
+
               // Prefer first enabled radio/checkbox inside the card
-              const input = (rootEl.querySelector(
+              const input = currentTarget.querySelector(
                 'input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), input:not([disabled])'
-              ) as HTMLInputElement | null);
+              ) as HTMLInputElement | null;
 
               if (!input) return;
 
               // If there is a label associated, click the label to leverage native behavior
               const label = input.id
-                ? (rootEl.querySelector(
+                ? (currentTarget.querySelector(
                     `label[for="${CSS.escape(input.id)}"]`
                   ) as HTMLElement | null)
                 : null;
@@ -74,24 +76,9 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               }
             };
 
-            const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
-              // Ignore if the click originated on an interactive control inside
-              const target = e.target as Element;
-              if (
-                target &&
-                target.closest('input, label, button, a, select, textarea, summary')
-              ) {
-                return;
-              }
-              const current = e.currentTarget as unknown as HTMLElement;
-              onCardActivate(current);
-            };
-
-            // Do not add keyboard handlers or roles/tabIndex here to avoid adding extra tab stops.
-            // The goal is mouse/touch activation by clicking the card area.
             return (
-              <li {...(props as any)} onClick={handleClick}>
-                {(props as any).children}
+              <li className={className} onClick={handleClick} {...rest}>
+                {children}
               </li>
             );
           },
