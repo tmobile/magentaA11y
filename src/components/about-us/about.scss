@@ -18,16 +18,19 @@
     }
   }
 
-  &__info-section,
-  &__contact-section {
+  &__info-section{
     padding-top: var(--magentaa11y-spacing-size-32);
     padding-bottom: var(--magentaa11y-spacing-size-32);
+    background-color: var(--color-background-secondary);
 
     @media (min-width: 768px) {
       padding-top: var(--magentaa11y-spacing-size-48);
       padding-bottom: var(--magentaa11y-spacing-size-48);
     }
+    
   }
+   
+
 
   &__hero-container {
     padding-top: var(--magentaa11y-spacing-size-80);
@@ -90,10 +93,6 @@
     }
   }
 
-  &__info-section {
-    background-color: var(--color-background-secondary);
-  }
-
   &__info-container {
     margin: 0 auto;
     max-width: 950px;
@@ -118,7 +117,7 @@
 
     &:first-child {
       border-top: 0;
-      padding-bottom: var(--magentaa11y-spacing-size-40);
+      padding-bottom: var(--magentaa11y-spacing-size-48);
 
       @media (min-width: 768px) {
         border-top: 1px solid var(--color-on-tertiary);
@@ -142,12 +141,28 @@
     margin: 0;
   }
 
-  &__contact-section {
+  &__legal-section{
     margin: 0 auto;
     max-width: 950px;
+    padding: var(--magentaa11y-spacing-size-48);
+
+    @media (min-width: 768px) {
+      padding-top: var(--magentaa11y-spacing-size-48);
+    }
+
+    @media (min-width: 1050px) {
+      padding-left: var(--magentaa11y-spacing-size-12);
+      padding-right: var(--magentaa11y-spacing-size-12);
+    }
+
+    p {
+      font: var(--magentaa11y-typeset-body-xl-normal);
+      max-width: 950px;
+      margin: 0;
+    }
   }
 
-  &__contribute-title {
+  &__contribute-title, &__legal-title {
     font: var(--magentaa11y-typeset-headline-xl-xtrastrong);
 
     @media (min-width: 768px) {
@@ -155,16 +170,19 @@
     }
   }
 
-  &__contribute-message {
+  &__contribute-message, &__legal-message {
     padding-bottom: var(--magentaa11y-spacing-size-24);
   }
 
   &__contact-title {
     font-weight: var(--magentaa11y-font-weight-extrabold);
+    padding-top: var(--magentaa11y-spacing-size-16);
   }
 
-  &__contact-message {
-    padding: 0;
+ &__legal-message {
+    padding: var(--magentaa11y-spacing-size-12);
     margin: 0;
   }
+
+
 }
