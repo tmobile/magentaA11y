@@ -313,6 +313,33 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     }
   }
 
+  select {
+    appearance: none;
+    background: url("../assets/svgs/chevron-down.svg") no-repeat right 0.75rem center;
+    background-size: 1rem;
+    background-color: var(--color-background);
+    border: 2px solid var(--color-on-background);
+    border-radius: 4px;
+    color: var(--color-text-primary);
+    display: block;
+    font-size: 1.125rem;
+    padding: 0.75rem 3rem 0.75rem 0.75rem;
+    width: auto;
+    min-width: 100px;
+    cursor: pointer;
+
+    &:disabled,
+    &[aria-disabled="true"] {
+      background-color: var(--color-background-secondary);
+      cursor: not-allowed;
+      opacity: 0.6;
+
+      @media (prefers-color-scheme: dark) {
+        color: var(--color-text-disabled);
+      }
+    }
+  }
+
   label {
     display: block;
     font: var(--content-details-label-font);
@@ -959,7 +986,7 @@ input.star:focus-visible + label {
       50% { background-color: #000; }
       100% { background-color: #e20074; }
    }
-  
+
   } // .animation-example
 } // .animation-example-wrapper
 
