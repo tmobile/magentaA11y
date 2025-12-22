@@ -196,6 +196,15 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
   }
 
+  // global example form styles
+  form {
+    border-radius: 1rem;
+    background: var(--color-background);
+    box-shadow: 0 0.5rem 0.75rem 0 var(--color-background-secondary), 0 0 1rem 0 var(--color-background-tertiary);  
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+
   input[aria-disabled="true"],
   input[disabled] {
     background: var(--color-background-secondary);
@@ -779,19 +788,14 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     }
   }
 
-  /* Show password input Toggle Button Text Visibility */
+  // Password input show/hide styles
+  // Show password input Toggle Button Text Visibility
   .button-variant[data-show-password="false"] .hide-pass {
     display: none;
   }
 
   .button-variant[data-show-password="true"] .show-pass {
     display: none;
-  }
-
-  .button-variant[data-show-password="true"] .hide-pass {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
   }
 
 }

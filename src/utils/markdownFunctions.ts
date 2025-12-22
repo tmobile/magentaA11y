@@ -241,6 +241,7 @@ export const getMarkdownFunctionMap = (
     }, 500)
   }, 
 
+  // two password input examples
   // first password show/hide example
   togglePasswordVisibility: (event: React.MouseEvent<Element>) => {
     // 1. The checkbox is the currentTarget
