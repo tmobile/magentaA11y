@@ -239,5 +239,61 @@ export const getMarkdownFunctionMap = (
         toast.classList.toggle('enabled');
       }
     }, 500)
+  }, 
+
+  // two password input examples
+  // first password show/hide example
+  togglePasswordVisibility: (event: React.MouseEvent<Element>) => {
+    // 1. The checkbox is the currentTarget
+    const checkbox = event.currentTarget as HTMLInputElement;
+    
+    // 2. Find the container relative to this checkbox
+    const container = checkbox.closest('.js-password-group') as HTMLElement;
+    
+    if (container) {
+      // 3. Find the specific input in this group
+      const passwordInput = container.querySelector('.js-password-input') as HTMLInputElement;
+      
+      if (passwordInput) {
+        // 4. Toggle the type based on whether the checkbox is checked
+        passwordInput.type = checkbox.checked ? 'text' : 'password';
+      }
+    }
+  },
+
+  // second password show/hide example
+  togglePasswordButton: (event: React.MouseEvent<Element>) => {
+  const button = event.currentTarget as HTMLButtonElement;
+  const container = button.closest('.js-password-group') as HTMLElement;
+  const liveRegion = container?.querySelector('#password-state-status');
+  
+  if (container) {
+    const passwordInput = container.querySelector('.js-password-input') as HTMLInputElement;
+    
+    // 1. Check current state via the data attribute on the container
+    const isCurrentlyShowing = container.getAttribute('data-show-password') === 'true';
+    const newState = !isCurrentlyShowing;
+
+    if (passwordInput) {
+      // 2. Toggle Input Type
+      passwordInput.type = newState ? 'text' : 'password';
+      
+      // 3. Update Data Attribute (for CSS to toggle icons)
+      container.setAttribute('data-show-password', String(newState));
+      
+      // 4. Update Button Aria-Label for Accessibility
+      button.setAttribute('aria-label', newState ? 'Hide password' : 'Show password');
+
+      // 5. Update Live Region for Screen Readers
+      if (liveRegion) {
+        liveRegion.innerHTML = newState ? 'Password shown.' : 'Password hidden.';
+        
+        // Clear it after a delay so it's ready for the next toggle
+        setTimeout(() => {
+          liveRegion.innerHTML = '';
+        }, 1000);
+      }
+    }
   }
+},
 });
