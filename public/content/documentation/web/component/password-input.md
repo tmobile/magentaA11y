@@ -67,7 +67,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 ```html
 <form class="password-container">
   <label for="show-password-1">
-    Password
+    Password:
     <span>
       Required
     </span>
@@ -92,7 +92,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 <example>
   <form class="password-container js-password-group">
     <label for="password-1">
-      Password
+      Password:
       <span>Required</span>
     </label>
     <div class="password-toggle">
@@ -124,9 +124,9 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 ```html
 <form class="password-container button-variant" data-show-password="false" onsubmit="return false;">
     <label for="password-b">
-      Password
+      Password:
       <span>
-        Required
+         Required
       </span>
     </label>
     <div class="password-wrapper">
@@ -162,7 +162,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 <example>
   <form class="password-container button-variant js-password-group" data-show-password="false" onsubmit="return false;">
     <label for="password-b">
-      Password <span>Required</span>
+      Password: <span>Required</span>
     </label>
     <div class="password-wrapper">
         <div class="password-toggle">
