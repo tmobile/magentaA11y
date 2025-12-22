@@ -147,7 +147,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button]
     Choose your favorite dance
   </legend>
 
-  <input class="radio" type="radio" name="dance" id="carltonRadio" aria-disabled="true">
+  <input class="radio" type="radio" name="dance" id="carltonRadio" aria-disabled="true" disabled>
   <label class="label" for="carltonRadio">Carlton</label>
 
   <input class="radio" type="radio" name="dance" id="foxtrotRadio">

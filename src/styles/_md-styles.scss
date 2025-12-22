@@ -1005,6 +1005,15 @@ input.star:focus-visible + label {
   }
 }
 
+.radio:disabled + .label {
+  color: var(--color-text-disabled);
+
+  &::before {
+    border-color: var(--color-text-disabled);
+    box-shadow: inset 0 0 0 4px var(--color-text-disabled);
+  }
+}
+
 .checkbox-radio-group {
   display: grid;
   grid-template-columns: 1fr 8rem;

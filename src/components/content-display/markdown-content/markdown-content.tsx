@@ -280,34 +280,62 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               const fn = fnKey && markdownFunctionMap[fnKey];
 
               if (!fnKey || typeof fn !== 'function') {
+                  // If aria-disabled="true", prevent activation.
+                  const isAriaDisabled =
+                    (props as Record<string, unknown>)?.['aria-disabled'] === 'true' ||
+                    (props as Record<string, unknown>)?.['aria-disabled'] === true;
+                  const commonProps: any = { ...rest, type };
+                  if (isAriaDisabled) {
+                    commonProps.onClick = (e: React.MouseEvent) => e.preventDefault();
+                    commonProps.onChange = (e: React.ChangeEvent) => e.preventDefault();
+                    commonProps.onKeyDown = (e: React.KeyboardEvent) => {
+                      if (e.key === ' ' || e.key === 'Enter') {
+                        e.preventDefault();
+                      }
+                    };
+                  }
+
                   // If it's a radio, use defaultChecked instead of checked
                   // This prevents React from locking the state as a "controlled" component
                   if (type === 'radio') {
-                      return <input type={type} defaultChecked={checked} {...rest} />;
+                      return <input defaultChecked={checked} {...commonProps} />;
                   }
-                  return <input type={type} {...rest} />;
+                  return <input {...commonProps} />;
               }
 
             // For inputs (checkboxes, radios, text), prefer onChange.
             // Do NOT prevent default so the control state updates naturally.
+            // If aria-disabled="true", prevent activation.
+            const isAriaDisabled =
+              (props as Record<string, unknown>)?.['aria-disabled'] === 'true' ||
+              (props as Record<string, unknown>)?.['aria-disabled'] === true;
+
+            const wrapHandler = (handler: (e: any) => void) => (e: any) => {
+              if (isAriaDisabled) {
+                e.preventDefault();
+                return;
+              }
+              handler(e);
+            };
+
             switch (eventType) {
               case 'onClick':
                 return (
                   <input
                     {...props}
-                    onClick={(e) => {
+                    onClick={wrapHandler((e) => {
                       // Call the mapped function; event type differs but is safe to pass along
-                        fnHandler(fn, e);
-                    }}
+                      fnHandler(fn, e);
+                    })}
                   />
                 );
               case 'onInput':
                 return (
                   <input
                     {...props}
-                    onInput={(e) => {
-                        fnHandler(fn, e);
-                    }}
+                    onInput={wrapHandler((e) => {
+                      fnHandler(fn, e);
+                    })}
                   />
                 );
               case 'onChange':
@@ -315,9 +343,9 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                 return (
                   <input
                     {...props}
-                    onChange={(e) => {
-                        fnHandler(fn, e);
-                    }}
+                    onChange={wrapHandler((e) => {
+                      fnHandler(fn, e);
+                    })}
                   />
                 );
             }
