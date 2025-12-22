@@ -66,9 +66,9 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 
 ```html
 <form class="password-container">
-  <label for="password">
+  <label for="show-password-1">
     Password
-    <span class="helper" aria-hidden="true">
+    <span>
       Required
     </span>
   </label>
@@ -89,12 +89,11 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 </form>
 ```
 
-<!-- (TODO The show/hide button does not hide the password.) -->
 <example>
   <form class="password-container js-password-group">
     <label for="password-1">
       Password
-      <span class="helper" aria-hidden="true">Required</span>
+      <span>Required</span>
     </label>
     <div class="password-toggle">
       <input type="checkbox" 
@@ -126,7 +125,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 <form class="password-container button-variant" data-show-password="false" onsubmit="return false;">
     <label for="password-b">
       Password
-      <span class="helper" aria-hidden="true">
+      <span>
         Required
       </span>
     </label>
@@ -163,7 +162,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 <example>
 <form class="password-container button-variant js-password-group" data-show-password="false" onsubmit="return false;">
     <label for="password-b">
-      Password <span class="helper" aria-hidden="true">Required</span>
+      Password <span>Required</span>
     </label>
     <div class="password-wrapper">
         <div class="password-toggle">

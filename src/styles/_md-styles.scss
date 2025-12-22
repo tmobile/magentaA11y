@@ -214,6 +214,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     border-radius: 2px;
     display: block;
     font-size: 1.125rem;
+    margin: 1rem 0;
     padding: .75rem .5rem;
     width: auto;
   }
@@ -226,6 +227,17 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       color: var(--color-text-disabled);
     }
   }
+
+  input[type="checkbox"] {
+    margin: rem 0;
+
+    +label {
+    display: inline;
+    margin: 0.5rem 1rem 1rem 0
+    }
+  }
+
+
 
   // search input example
   form[role="search"] {
