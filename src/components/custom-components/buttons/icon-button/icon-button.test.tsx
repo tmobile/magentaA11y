@@ -32,8 +32,22 @@ describe('IconButton Component - Accessibility & ARIA Attributes', () => {
     );
 
     const button = screen.getByRole('button', { name: 'Disabled Button' });
-    expect(button).toHaveAttribute('aria-disabled', 'true');
     expect(button).toBeDisabled();
+  });
+
+  test('sets the aria-disabled attribute when ariaDisabled is true', () => {
+    render(
+      <IconButton
+        a11yLabel="ARIA Disabled Button"
+        icon={Icons.abcOutlined}
+        size={ButtonSize.large}
+        type={ButtonType.button}
+        ariaDisabled={true}
+      />
+    );
+
+    const button = screen.getByRole('button', { name: 'ARIA Disabled Button' });
+    expect(button).toHaveAttribute('aria-disabled', 'true');
   });
 
   test('sets aria-haspopup when provided', () => {
