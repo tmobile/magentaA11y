@@ -160,7 +160,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
 ```
 
 <example>
-<form class="password-container button-variant js-password-group" data-show-password="false" onsubmit="return false;">
+  <form class="password-container button-variant js-password-group" data-show-password="false" onsubmit="return false;">
     <label for="password-b">
       Password <span>Required</span>
     </label>
@@ -188,8 +188,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/password
     <div id="password-hint" class="hint">
       Use any length of characters including emojis.
     </div>
-<!-- TODO: Below is a comment. Remember to include this when unhiding the component.
-this is dynamically announced by the screen reader when updated but content is removed after a pause so it can't be discovered  -->
+<!-- this is dynamically announced by the screen reader when updated but content is removed after a pause so it can't be discovered  -->
     <div class="password-live-region hidden-visually" role="status">
         <div id="password-state-status"></div>
     </div>
