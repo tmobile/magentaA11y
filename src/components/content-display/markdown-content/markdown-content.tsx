@@ -37,6 +37,51 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
         remarkPlugins={[remarkGfm]}
         components={{
+          li: (props) => {
+            const { className, children, ...rest } = props as any;
+
+            // Only enhance the special cards used in docs examples
+            const isInteractiveCard =
+              typeof className === 'string' &&
+              className.includes('card') &&
+              className.includes('interactive');
+
+            if (!isInteractiveCard) {
+              return <li {...props as any}>{children}</li>;
+            }
+
+            const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
+              const currentTarget = e.currentTarget as HTMLElement;
+
+              // Prefer first enabled radio/checkbox inside the card
+              const input = currentTarget.querySelector(
+                'input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), input:not([disabled])'
+              ) as HTMLInputElement | null;
+
+              if (!input) return;
+
+              // If there is a label associated, click the label to leverage native behavior
+              const label = input.id
+                ? (currentTarget.querySelector(
+                    `label[for="${CSS.escape(input.id)}"]`
+                  ) as HTMLElement | null)
+                : null;
+
+              if (label) {
+                label.click();
+              } else {
+                // Fallback: focus then click the input
+                input.focus();
+                input.click();
+              }
+            };
+
+            return (
+              <li className={className} onClick={handleClick} {...rest}>
+                {children}
+              </li>
+            );
+          },
           img: ({ src, alt }: MediaProps) => {
             const resolvedSrc = src?.startsWith('http')
               ? src
@@ -225,17 +270,23 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           },
 
           input: (props) => {
-            const fnKey = (props as Record<string, unknown>)?.['data-fn'] as
-              | string
-              | undefined;
-            const eventType =
-              ((props as Record<string, unknown>)?.['data-event'] as string) ||
-              'onChange';
-            const fn = fnKey && markdownFunctionMap[fnKey];
+              const { type, checked, ...rest } = props;
+              const fnKey = (props as Record<string, unknown>)?.['data-fn'] as
+                  | string
+                  | undefined;
+              const eventType =
+                  ((props as Record<string, unknown>)?.['data-event'] as string) ||
+                  'onChange';
+              const fn = fnKey && markdownFunctionMap[fnKey];
 
-            if (!fnKey || typeof fn !== 'function') {
-              return <input {...props} />;
-            }
+              if (!fnKey || typeof fn !== 'function') {
+                  // If it's a radio, use defaultChecked instead of checked
+                  // This prevents React from locking the state as a "controlled" component
+                  if (type === 'radio') {
+                      return <input type={type} defaultChecked={checked} {...rest} />;
+                  }
+                  return <input type={type} {...rest} />;
+              }
 
             // For inputs (checkboxes, radios, text), prefer onChange.
             // Do NOT prevent default so the control state updates naturally.
