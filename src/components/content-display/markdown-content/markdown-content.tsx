@@ -112,7 +112,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             if (!href) {
               return <a {...props}>{children}</a>;
             }
-            
+
             /*
               Same-page links:
               Handle same-page anchor links (e.g., #ref-alpha, #ref-alpha-link)

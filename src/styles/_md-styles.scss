@@ -325,6 +325,60 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     }
   }
 
+  .select-wrapper {
+    position: relative;
+    display: block;
+    width: fit-content;
+    min-width: 250px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--color-text-primary);
+      -webkit-mask-image: url("../assets/svgs/chevron-down.svg");
+      mask-image: url("../assets/svgs/chevron-down.svg");
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    &:has(select:disabled)::after,
+    &:has(select[aria-disabled="true"])::after {
+      background-color: var(--color-text-disabled);
+    }
+
+    select {
+      appearance: none;
+      background-color: var(--color-background);
+      border: 2px solid var(--color-on-background);
+      border-radius: 4px;
+      color: var(--color-text-primary);
+      display: block;
+      font-size: 1.125rem;
+      padding: 0.75rem 3rem 0.75rem 0.75rem;
+      width: 100%;
+      cursor: pointer;
+
+      &:disabled,
+      &[aria-disabled="true"] {
+        background-color: var(--color-background-secondary);
+        cursor: not-allowed;
+        opacity: 0.6;
+
+        @media (prefers-color-scheme: dark) {
+          color: var(--color-text-disabled);
+        }
+      }
+    }
+  }
+
   label {
     display: block;
     font: var(--content-details-label-font);
@@ -987,7 +1041,7 @@ input.star:focus-visible + label {
       50% { background-color: #000; }
       100% { background-color: #e20074; }
    }
-  
+
   } // .animation-example
 } // .animation-example-wrapper
 
