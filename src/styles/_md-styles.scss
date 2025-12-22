@@ -238,7 +238,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
   }
 
   input[type="checkbox"] {
-    margin: rem 0;
+    margin: 0.5rem 0;
 
     +label {
     display: inline;
