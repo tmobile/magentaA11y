@@ -90,6 +90,7 @@
 
     p {
       font: var(--title-first-headline-font);
+
     }
 
     &--beige {
@@ -100,6 +101,12 @@
       padding: var(--magentaa11y-spacing-size-24)
         var(--magentaa11y-spacing-size-40);
     }
+  }
+
+  &__text--wrapper{
+    margin:0 auto;
+    max-width: 950px;
+    line-height: var(--magentaa11y-line-height-24);
   }
 
   @media (max-width: 768px) {
