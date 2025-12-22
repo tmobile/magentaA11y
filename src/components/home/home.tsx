@@ -33,14 +33,14 @@ const Home: React.FC = () => {
         <div className="MagentaA11y--home-page__header--wrapper">
           <h1 className="MagentaA11y--home-page__header--title">
             <span>MagentaA11y</span>
-            <span>T-Mobile's accessibility toolkit, empowering developers, designers, and testers to build for everyone.</span>
+            <span>An innovative open-source tool empowering product teams to master the craft of creating accessible digital experiences for all.</span>
           </h1>
         </div>
       </div>
       <div className="MagentaA11y--home-page__content MagentaA11y--home-page__content--beige">
-        <div className='text-center'>
-          <h2 className="MagentaA11y--home-page__content--header">Get Started</h2>
-          <p>Select the tech stack you’re working with, choose your component, and copy and paste accessibility criteria into your user stories. </p>
+        <div className="MagentaA11y--home-page__text--wrapper">
+          <h2 className="MagentaA11y--home-page__content--header text-center ">Get Started</h2>
+          <p className="MagentaA11y--home-page__content--description">Choose your tech stack and component to instantly receive tailored accessibility criteria - complete with code samples, testing steps, and practical guidance. Whether you're writing user stories, coding, or auditing, MagentaA11y equips you with the clarity and confidence to build accessible experiences from the start.</p>
         </div>
         <Cards items={cardContent} />
       </div>
