@@ -347,7 +347,7 @@ This custom button requires extra scripting work for roving tabindex and event l
     Edit controls are available which follow each radio button
   </span>
 
-  <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioAlpha2" checked>
+  <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioAlpha2" checked />
   <label class="label" for="checkboxRadioAlpha2">
     Alpha
   </label>
@@ -355,7 +355,7 @@ This custom button requires extra scripting work for roving tabindex and event l
     Edit
   </button>
 
-  <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioBravo2">
+  <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioBravo2" />
   <label class="label" for="checkboxRadioBravo2">
     Bravo
   </label>
@@ -363,7 +363,7 @@ This custom button requires extra scripting work for roving tabindex and event l
     Edit
   </button>
 
-  <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioCharlie3">
+  <input class="radio" type="radio" name="checkboxRadioGroup2" id="checkboxRadioCharlie3" />
   <label class="label" for="checkboxRadioCharlie3">
     Charlie
   </label>
