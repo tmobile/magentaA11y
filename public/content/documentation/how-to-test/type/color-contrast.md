@@ -230,6 +230,3 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
     ## Resources
     
     - [WebAIM Color Contrast](https://webaim.org/articles/contrast/evaluating)
-
-
-
