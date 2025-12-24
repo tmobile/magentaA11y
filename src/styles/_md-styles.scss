@@ -200,7 +200,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
   form {
     border-radius: 1rem;
     background: var(--color-background);
-    box-shadow: 0 0.5rem 0.75rem 0 var(--color-background-secondary), 0 0 1rem 0 var(--color-background-tertiary);  
+    box-shadow: 0 0.5rem 0.75rem 0 var(--color-background-secondary), 0 0 1rem 0 var(--color-background-tertiary);
     margin: 2rem 0;
     padding: 1rem;
   }
@@ -989,6 +989,7 @@ input.star:focus-visible + label {
   overflow: auto;
 }
 
+.star-rating input.star:checked + label::before,
 .star-rating input.star:checked ~ label::before {
   background: url("../assets/svgs/star-filled.svg") no-repeat center center;
 
@@ -998,11 +999,11 @@ input.star:focus-visible + label {
 }
 
 /* Reverse the visual order of the labels */
-.star-rating input.star#star-1 + label { order: 5; }
-.star-rating input.star#star-2 + label { order: 4; }
+.star-rating input.star#star-1 + label { order: 1; }
+.star-rating input.star#star-2 + label { order: 2; }
 .star-rating input.star#star-3 + label { order: 3; }
-.star-rating input.star#star-4 + label { order: 2; }
-.star-rating input.star#star-5 + label { order: 1; }
+.star-rating input.star#star-4 + label { order: 4; }
+.star-rating input.star#star-5 + label { order: 5; }
 
 /* styling for example of a button with bad color contrast on hover for How to Test Color Contrast */
 .bad-contrast-button:hover {
