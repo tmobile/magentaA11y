@@ -298,6 +298,5 @@ best practices.
 
     ## Resources
 
-    [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/)
-
-    [WebAIM: Buttons](https://webaim.org/techniques/forms/controls#button)
+    - [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/)
+    - [WebAIM: Buttons](https://webaim.org/techniques/forms/controls#button)
