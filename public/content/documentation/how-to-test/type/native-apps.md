@@ -7,7 +7,7 @@ Testing in Native Apps is essential to ensuring the app is accessible and functi
 Contains developer-specific information, including expected behaviors, implementation details, and
 best practices.
 
-1. **How to test with your screen reader**
+1. ## How to test with your screen reader
 
    ### Test with your screen reader
 
@@ -74,7 +74,7 @@ best practices.
    - Do not disable scrolling
    - Use preferred fonts for the platform when possible (designers will give the developers the font styles and sizes)
 
-2. **How to test with your BlueTooth External keyboard**
+2. ## How to test with your BlueTooth External keyboard
 
    ### Test with BlueTooth External keyboard
 
@@ -120,7 +120,7 @@ best practices.
    - Test the issue on computer in a web page to verify that the bug is also on the web. If it is ok on the web, do not log as a defect in the app. App screen readers trying to interpret web code do not always get it right.
    - Know issue on both platforms: Not being able to tab or arrow into the main part of a hybrid screen in a native app.
 
-2. **How to test for links**
+2. ## How to test for links
 
    ### How to test links
 
@@ -202,7 +202,7 @@ best practices.
    </p>
    </div>
 
-3. **What's the difference between a link and a button**
+3. ## What's the difference between a link and a button
 
    ### If it opens a browser (ie: outside the app), it's a link.
    - A link can look like a big shiny button but it must be coded as a link.
