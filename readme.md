@@ -80,13 +80,9 @@ might have to do this again:
 
 ### Development
 
-- **`npm start`**: Starts the app in development mode.
-
+- **`npm start`**: Starts the app in development mode with automatic markdown file watching.
   - Automatically generates navigation buttons and icons.
   - Accessible at [http://localhost:3000](http://localhost:3000).
-
-- **`npm run content:watch`**: Starts the app in development mode with automatic markdown file watching.
-
   - Ideal for content authors editing markdown files in `public/content/documentation/`
   - Automatically re-parses markdown files when saved
   - Triggers browser reload to show changes immediately
