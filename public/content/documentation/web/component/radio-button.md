@@ -84,7 +84,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button]
 ### Use semantic HTML
 
 - This semantic HTML contains all accessibility features by default.
-- It uses [CSS pseudo attributes](https://github.com/tmobile/magentaA11y/blob/main/_sass/modules/_input-radio.scss) to create the radio indicator, no Javascript.
+- It uses CSS pseudo attributes to create the radio indicator, no Javascript.
 
 ```html
 <fieldset>
