@@ -342,7 +342,7 @@ This custom button requires extra scripting work for roving tabindex and event l
 <fieldset class="checkbox-radio-group" aria-describedby="styled-radio-group-helper-text">
   <legend>Choose your payment method:</legend>
   <!-- Visually hidden helper text describing fieldset -->
-  <!-- This text should only be present in the DOM if the radio group has nested controls. Hiding it with CSS display: none; is not enough to hide it from screen readers. Ensure aria-describedby on the fieldset does not point to an ID that is not in the DOM -- ADD CLOSING COMMENT HERE
+  <!-- This text should only be present in the DOM if the radio group has nested controls. Hiding it with CSS display: none; is not enough to hide it from screen readers. Ensure aria-describedby on the fieldset does not point to an ID that is not in the DOM -- ADD CLOSING COMMENT HERE -->
   <span class="hidden" id="styled-radio-group-helper-text">
     Edit controls are available which follow each radio button
   </span>
