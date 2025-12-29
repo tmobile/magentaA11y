@@ -945,6 +945,21 @@ example, /* stylelint-disable-line selector-type-no-unknown */
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  &:hover {
+    label:hover::before,
+    label:hover ~ label::before {
+      background: url("../assets/svgs/star-filled.svg") no-repeat center center;
+
+
+    }
+
+    label:not(:hover, :hover ~ label)::before {
+      background: url("../assets/svgs/star-outlined.svg") no-repeat center center;
+
+
+    }
+  }
 }
 
 .star-rating input.star {
@@ -964,10 +979,6 @@ input.star:focus-visible + label {
   height: 4rem;
   width: fit-content;
   cursor: pointer;
-
-  &:hover {
-    opacity: .5;
-  }
 
   &::before {
     content: "";
