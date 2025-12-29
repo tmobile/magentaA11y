@@ -221,12 +221,10 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
       </table>
     </div>
 
-    ## Related WCAG
+## Related WCAG
+- 1.4.3 Contrast
+- 1.4.11 Non-text Contrast
+- 1.4.1 Use of Color
 
-    - 1.4.3 Contrast
-    - 1.4.11 Non-text Contrast
-    - 1.4.1 Use of Color
-
-    ## Resources
-    
-    - [WebAIM Color Contrast](https://webaim.org/articles/contrast/evaluating)
+## Resources
+- [WebAIM Color Contrast](https://webaim.org/articles/contrast/evaluating)
