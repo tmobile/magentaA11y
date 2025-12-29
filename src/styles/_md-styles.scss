@@ -1061,5 +1061,112 @@ input.star:focus-visible + label {
   } // .animation-example
 } // .animation-example-wrapper
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+
+  .card {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background: var(--color-background);
+    border-radius: 1rem;
+    transition: .8s;
+    box-shadow: 0 0.5rem 0.75rem 0 rgb(0 0 0 / 4%), 0 0 1rem 0 rgb(204 204 204 / 8%);
+
+    &.interactive {
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        box-shadow: 0 0 0 0.5rem rgb(34 34 34 / 40%);
+        outline-offset: .25rem;
+        transition: .2s;
+      }
+
+      .label {
+        border: none;
+        color: var(--color-text-primary);
+      }
+
+      .extended-description {
+        color: var(--color-text-primary);
+        padding: 0 1rem 1rem;
+        z-index: 99;
+        position: relative;
+      }
+    }
+  }
+}
+
+.radio:disabled + .label {
+  color: var(--color-text-disabled);
+
+  &::before {
+    border-color: var(--color-text-disabled);
+    box-shadow: inset 0 0 0 4px var(--color-text-disabled);
+  }
+}
+
+.checkbox-radio-group {
+  display: grid;
+  grid-template-columns: 1fr 8rem;
+
+  .radio:checked + .label {
+    background-color: transparent;
+    border: none;
+  }
+
+  button {
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--color-text-primary);
+    background-position: center center;
+    transition: background 1s;
+    padding-left: 0;
+    border: none;
+    font: var(--content-details-label-font);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-color: currentcolor;
+      -webkit-mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      order: 1;
+      margin-left: 0.5rem;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-color: currentcolor;
+      -webkit-mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      mask: url("../assets/svgs/chevron-right.svg") no-repeat center / contain;
+      order: 2;
+      margin-left: -1rem;
+      transition: margin-left 0.2s ease-in-out, opacity 0.2s ease-in-out;
+      opacity: 0;
+    }
+
+    &:hover::after, &:focus::after  {
+      margin-left: -0.25rem;
+      opacity: 1;
+    }
+  }
+}
+
+
 
 /* stylelint-enable no-descending-specificity */
