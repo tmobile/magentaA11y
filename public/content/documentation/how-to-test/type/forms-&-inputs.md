@@ -42,17 +42,17 @@
    Radio buttons allow users to select a single option from a list. Only one radio button in a group should be be selectable at a time. Keyboard and screen reader users should be able to focus on the group of radio buttons using the tab key. Arrow keys move focus between each radio option. Options can be automatically selected as they receive focus with the arrow keys, or they can be selected using the space key. Pressing tab navigates aways from the radio group.
 
    <example>
-      <fieldset>
-        <legend>
-          Choose a fruit
-        </legend>
-        <input type="radio" name="fruit" id="appleRadio">
-        <label for="appleRadio">Apple</label>
-        <input type="radio" name="fruit" id="bananaRadio">
-        <label for="bananaRadio">Banana</label>
-        <input type="radio" name="fruit" id="cherryRadio" checked="">
-        <label for="cherryRadio">Cherry</label>
+    <form>
+      <fieldset className="fieldset">
+      <legend className="legend h-charlie">Choose a fruit</legend>
+        <input type="radio" name="fruit" id="appleRadio" className="radio">
+        <label for="appleRadio" className="label">Apple</label>
+        <input type="radio" name="fruit" id="bananaRadio" className="radio">
+        <label for="bananaRadio" className="label">Banana</label>
+        <input type="radio" name="fruit" id="cherryRadio" className="radio">
+        <label for="cherryRadio" className="label">Cherry</label>
       </fieldset>
+    </form>
    </example>
 
 4. **Select Fields**

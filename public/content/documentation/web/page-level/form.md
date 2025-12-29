@@ -544,16 +544,16 @@ Use `fieldset` and `legend` to group related fields, such as:
 ```
 <example>
     <form aria-label="Contact us">
-          <fieldset>
-            <legend>
+          <fieldset className="fieldset">
+            <legend className="legend h-charlie">
               Preferred contact method
             </legend>
-            <input type="radio" name="method" id="contact-email" checked>
-            <label for="contact-email">Email</label>
-            <input type="radio" name="method" id="contact-sms">
-            <label for="contact-sms">SMS text</label>
-            <input type="radio" name="method" id="contact-phone">
-            <label for="contact-phone">Phone</label>
+            <input type="radio" name="method" id="contact-email" className="radio">
+            <label for="contact-email" className="label">Email</label>
+            <input type="radio" name="method" id="contact-sms" className="radio">
+            <label for="contact-sms" className="label">SMS text</label>
+            <input type="radio" name="method" id="contact-phone" className="radio">
+            <label for="contact-phone" className="label">Phone</label>
           </fieldset>
           <fieldset>
             <legend>
