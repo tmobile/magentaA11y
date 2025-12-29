@@ -89,5 +89,5 @@ best practices.
 
 ## Resources
 
-  [WebAIM: Keyboard Accessibility](https://webaim.org/techniques/keyboard/)
+- [WebAIM: Keyboard Accessibility](https://webaim.org/techniques/keyboard/)
 

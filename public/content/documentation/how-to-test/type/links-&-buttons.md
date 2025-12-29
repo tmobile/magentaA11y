@@ -289,15 +289,13 @@ best practices.
       - Expand details
     - A button can look like a link, but it must be coded as a `<button>`
 
-    ## Related WCAG
+## Related WCAG
 
-    - 2.4.4 Link Purpose (In Context)
-    - 2.5.3 Label in Name
-    - 3.2.4 Consistent Identification
-    - 4.1.2 Name, Role, Value
+- 2.4.4 Link Purpose (In Context)
+- 2.5.3 Label in Name
+- 3.2.4 Consistent Identification
+- 4.1.2 Name, Role, Value
 
-    ## Resources
-
-    [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/)
-
-    [WebAIM: Buttons](https://webaim.org/techniques/forms/controls#button)
+## Resources
+- [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/)
+- [WebAIM: Buttons](https://webaim.org/techniques/forms/controls#button)

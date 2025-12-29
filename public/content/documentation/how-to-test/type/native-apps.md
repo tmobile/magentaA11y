@@ -237,16 +237,14 @@ best practices.
    </div>
    </div>
 
-   ## Related WCAG
+## Related WCAG
+- 2.4.4 Link Purpose (In Context)
+- 2.5.3 Label in Name
+- 3.2.4 Consistent Identification
+- 4.1.2 Name, Role, Value
 
-   - 2.4.4 Link Purpose (In Context)
-   - 2.5.3 Label in Name
-   - 3.2.4 Consistent Identification
-   - 4.1.2 Name, Role, Value
-
-   ## Resources
-
-   - [Apple Developer SwiftUI - Link](https://developer.apple.com/documentation/swiftui/link)
-   - [Apple Developer SwiftUI - Button](https://developer.apple.com/documentation/swiftui/button)
-   - [Android Developer Button](https://developer.android.com/reference/android/widget/Button)
-   - [Android Developer App Links](https://developer.android.com/training/app-links)
+## Resources
+- [Apple Developer SwiftUI - Link](https://developer.apple.com/documentation/swiftui/link)
+- [Apple Developer SwiftUI - Button](https://developer.apple.com/documentation/swiftui/button)
+- [Android Developer Button](https://developer.android.com/reference/android/widget/Button)
+- [Android Developer App Links](https://developer.android.com/training/app-links)
