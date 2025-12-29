@@ -196,6 +196,15 @@ example, /* stylelint-disable-line selector-type-no-unknown */
 
   }
 
+  // global example form styles
+  form {
+    border-radius: 1rem;
+    background: var(--color-background);
+    box-shadow: 0 0.5rem 0.75rem 0 var(--color-background-secondary), 0 0 1rem 0 var(--color-background-tertiary);
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+
   input[aria-disabled="true"],
   input[disabled] {
     background: var(--color-background-secondary);
@@ -214,6 +223,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     border-radius: 2px;
     display: block;
     font-size: 1.125rem;
+    margin: 1rem 0;
     padding: .75rem .5rem;
     width: auto;
   }
@@ -226,6 +236,17 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       color: var(--color-text-disabled);
     }
   }
+
+  input[type="checkbox"] {
+    margin: 0.5rem 0;
+
+    +label {
+    display: inline;
+    margin: 0.5rem 1rem 1rem 0
+    }
+  }
+
+
 
   // search input example
   form[role="search"] {
@@ -310,6 +331,60 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     a {
       text-decoration: underline;
       color: var(--color-on-tertiary);
+    }
+  }
+
+  .select-wrapper {
+    position: relative;
+    display: block;
+    width: fit-content;
+    min-width: 250px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--color-text-primary);
+      -webkit-mask-image: url("../assets/svgs/chevron-down.svg");
+      mask-image: url("../assets/svgs/chevron-down.svg");
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      pointer-events: none;
+    }
+
+    &:has(select:disabled)::after,
+    &:has(select[aria-disabled="true"])::after {
+      background-color: var(--color-text-disabled);
+    }
+
+    select {
+      appearance: none;
+      background-color: var(--color-background);
+      border: 2px solid var(--color-on-background);
+      border-radius: 4px;
+      color: var(--color-text-primary);
+      display: block;
+      font-size: 1.125rem;
+      padding: 0.75rem 3rem 0.75rem 0.75rem;
+      width: 100%;
+      cursor: pointer;
+
+      &:disabled,
+      &[aria-disabled="true"] {
+        background-color: var(--color-background-secondary);
+        cursor: not-allowed;
+        opacity: 0.6;
+
+        @media (prefers-color-scheme: dark) {
+          color: var(--color-text-disabled);
+        }
+      }
     }
   }
 
@@ -712,6 +787,17 @@ example, /* stylelint-disable-line selector-type-no-unknown */
       color: var(--color-text-primary);
     }
   }
+
+  // Password input show/hide styles
+  // Show password input Toggle Button Text Visibility
+  .button-variant[data-show-password="false"] .hide-pass {
+    display: none;
+  }
+
+  .button-variant[data-show-password="true"] .show-pass {
+    display: none;
+  }
+
 }
 
 .bad-example {
@@ -859,6 +945,21 @@ example, /* stylelint-disable-line selector-type-no-unknown */
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  &:hover {
+    label:hover::before,
+    label:hover ~ label::before {
+      background: url("../assets/svgs/star-filled.svg") no-repeat center center;
+
+
+    }
+
+    label:not(:hover, :hover ~ label)::before {
+      background: url("../assets/svgs/star-outlined.svg") no-repeat center center;
+
+
+    }
+  }
 }
 
 .star-rating input.star {
@@ -878,10 +979,6 @@ input.star:focus-visible + label {
   height: 4rem;
   width: fit-content;
   cursor: pointer;
-
-  &:hover {
-    opacity: .5;
-  }
 
   &::before {
     content: "";
@@ -903,6 +1000,7 @@ input.star:focus-visible + label {
   overflow: auto;
 }
 
+.star-rating input.star:checked + label::before,
 .star-rating input.star:checked ~ label::before {
   background: url("../assets/svgs/star-filled.svg") no-repeat center center;
 
@@ -912,11 +1010,11 @@ input.star:focus-visible + label {
 }
 
 /* Reverse the visual order of the labels */
-.star-rating input.star#star-1 + label { order: 5; }
-.star-rating input.star#star-2 + label { order: 4; }
+.star-rating input.star#star-1 + label { order: 1; }
+.star-rating input.star#star-2 + label { order: 2; }
 .star-rating input.star#star-3 + label { order: 3; }
-.star-rating input.star#star-4 + label { order: 2; }
-.star-rating input.star#star-5 + label { order: 1; }
+.star-rating input.star#star-4 + label { order: 4; }
+.star-rating input.star#star-5 + label { order: 5; }
 
 /* styling for example of a button with bad color contrast on hover for How to Test Color Contrast */
 .bad-contrast-button:hover {

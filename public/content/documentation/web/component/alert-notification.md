@@ -169,4 +169,4 @@ An alert is dynamic content that is injected into the page when it changes and a
 </example>
 
 ## Further reading
-[WCAG 4.1.3 Status Messages (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html)
+- [WCAG 4.1.3 Status Messages (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html)
