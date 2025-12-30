@@ -113,7 +113,7 @@ By combining both approaches, we can identify and address accessibility barriers
 
 6. ## Verify you are correctly using the screen reader or keyboard
 
-      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test <a href="https://www.magentaa11y.com/#/how-to-test-criteria/type/keyboard-&-focus">Keyboard & focus</a> and <a href="https://www.magentaa11y.com/#/how-to-test-criteria/type/screen-readers">Screen readers</a> for guidance on system settings and methodology. 
+      Before you log an issue, make sure that you have tested it correctly. Refer to the MagentaAlly sections on How to test <a href="https://www.magentaa11y.com/#/how-to-test-criteria/test-type/keyboard-&-focus">Keyboard & focus</a> and <a href="https://www.magentaa11y.com/#/how-to-test-criteria/test-type/web-screen-readers">Screen readers</a> for guidance on system settings and methodology. 
 
       <div class="MagentaA11y-accordion">
       <h2 class="MagentaA11y-accordion__heading">
