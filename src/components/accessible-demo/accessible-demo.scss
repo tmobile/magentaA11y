@@ -128,12 +128,10 @@
     text-align: left;
   }
 
-  .summary,
   summary  {
     list-style: none;
   }
 
-  .summary::-webkit-details-marke,
   summary::-webkit-details-marker {
     display: none;
   }

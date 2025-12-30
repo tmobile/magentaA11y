@@ -23,8 +23,8 @@
     transition: all;
 }
 
-.expander-group .expander-content {
-    display: none;
+.expander-content {
+    display: none; /* Hidden by default */
     background: var(--color-on-primary);
     padding: 1rem;
     border-top: none;
@@ -32,6 +32,7 @@
     margin-top: -0.675rem;
 }
 
-.expander-group .expander-content[aria-hidden="false"] {
+/* Only toggle the display property based on the sibling's state */
+.expander-toggle[aria-expanded="true"] ~ .expander-content {
     display: block;
 }

@@ -228,6 +228,17 @@ export const getMarkdownFunctionMap = (
 
   },
 
+  // inaccessible web page demo accordion
+  toggleExpanderFail: (event: React.MouseEvent<Element>): void => {
+    const toggleElement = event.currentTarget as HTMLElement;
+    if (!toggleElement) return;
+
+    const isExpanded = toggleElement.getAttribute('aria-expanded') === 'true';
+    const newExpandedState = !isExpanded;
+
+    // This attribute change triggers the CSS sibling selector (~)
+    toggleElement.setAttribute('aria-expanded', String(newExpandedState));
+  },
 
   openToast: ()=> {
     const toast = document.getElementById('hint-spam');
