@@ -108,18 +108,18 @@ const InaccessibleDemo: React.FC = () => {
                            
                            <div className="expander-group details">
                                 <div data-fn="toggleExpanderFail" className="expander-toggle summary" aria-expanded="false" role="application">Are all projects in scope?</div>
-                                <div id="expanderContent" className="expander-content">Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible. This includes customer and employee facing applications.
+                                <div className="expander-content">Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible. This includes customer and employee facing applications.
                                 </div>
                             </div>
 
                             <div className="expander-group details">
                                 <div className="expander-toggle summary" aria-expanded="false" data-fn="toggleExpanderFail" role="application">Who does this really affect?</div>
-                                <div id="expanderContent" className="expander-content">Over 1/4 of the US population has a disability that requires assistive technology or accommodation.</div>
+                                <div className="expander-content">Over 1/4 of the US population has a disability that requires assistive technology or accommodation.</div>
                             </div>
 
                             <div className="expander-group details">
                                 <div  className="expander-toggle summary" aria-expanded="false" data-fn="toggleExpanderFail" role="application">How do we test our products?</div>
-                                <div id="expanderContent" className="expander-content">
+                                <div className="expander-content">
                                     <ol>
                                         <li>Test with the keyboard only</li>
                                         <li>Test with the mobile screenreader</li>
@@ -129,7 +129,7 @@ const InaccessibleDemo: React.FC = () => {
                             </div>
                             <div className="expander-group details">
                                 <div className="expander-toggle summary" aria-expanded="false" data-fn="toggleExpanderFail" role="application">What screen reader should I use to test?</div>
-                                <div id="expanderContent" className="expander-content">
+                                <div className="expander-content">
                                     <img src="../../content/assets/media/images/how-to-test/screenreader-browser-pairing.png" alt="image of screenreader browser pairings" />
                                 </div>  
                             </div>
