@@ -94,6 +94,11 @@ pre {
   width: -webkit-fill-available;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 video {
   aspect-ratio: 3/2;
   width: 70%;

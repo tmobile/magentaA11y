@@ -22,3 +22,16 @@
     box-shadow: var(--color-primary) 0 0 0 0.25rem inset, var(--color-on-primary) 0 0 0 0.5rem inset, var(--color-on-tertiary-container) 0 0 0 0;
     transition: all;
 }
+
+.expander-group .expander-content {
+    display: none;
+    background: var(--color-on-primary);
+    padding: 1rem;
+    border-top: none;
+    border-radius: 0 0 1rem 1rem;
+    margin-top: -0.675rem;
+}
+
+.expander-group .expander-content[aria-hidden="false"] {
+    display: block;
+}
