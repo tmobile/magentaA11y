@@ -32,9 +32,9 @@ const Home: React.FC = () => {
       <div className="MagentaA11y--home-page__header">
         <div className="MagentaA11y--home-page__header--wrapper">
           <h1 className="MagentaA11y--home-page__header--title">
-            <span>MagentaA11y</span>
-            <span>An innovative open-source tool empowering product teams to master the craft of creating accessible digital experiences for all.</span>
+            MagentaA11y
           </h1>
+          <p className='MagentaA11y--home-page__header--subtitle'>An innovative open-source tool empowering product teams to master the craft of creating accessible digital experiences for all.</p>
         </div>
       </div>
       <div className="MagentaA11y--home-page__content MagentaA11y--home-page__content--beige">

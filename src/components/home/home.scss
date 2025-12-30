@@ -29,11 +29,11 @@
 
     &--wrapper {
       display: flex;
-      flex-direction: var(--header-flex-direction);
+      flex-direction: column;
       padding: var(--magentaa11y-spacing-size-48)
         var(--magentaa11y-spacing-size-40);
       max-height: 250px;
-      max-width: 950px;
+      max-width: 900px;
       margin: 0 auto;
       width: 100%;
       height: var(--logo-max-height);
@@ -46,37 +46,31 @@
     }
 
     &--title {
-      flex-basis: 75%;
+      flex-basis: 35%;
       display: flex;
       flex-direction: column;
       gap: var(--magentaa11y-spacing-size-16);
-
-      span {
         color: var(--magentaa11y-color-brand-grayscale-white);
         word-break: keep-all;
         text-align: center;
-      }
-
-      :first-child {
-        font: var(--magentaa11y-typeset-display-4xl-strong);;
-        
-      }
-
-      :nth-child(2) {
-        font: var(--magentaa11y-typeset-headline-md-strong);
-      }
+        font: var(--magentaa11y-typeset-display-4xl-strong);
 
       @media (max-width: 768px) {
-        :first-child {
-          font: var(--magentaa11y-typeset-display-lg-xtrastrong);
-          
-        }
-
-        :nth-child(2) {
-          font: var(--magentaa11y-typeset-headline-sm-strong);
-        }
+        font: var(--magentaa11y-typeset-display-lg-xtrastrong);
       }
     }
+
+    &--subtitle {
+    color: var(--magentaa11y-color-brand-grayscale-white);
+    font: var(--magentaa11y-typeset-headline-sm-strong);
+    text-align: center;
+    margin-top: var(--magentaa11y-spacing-size-8);
+    max-width: 70%;
+
+    @media (max-width: 768px) {
+    font: var(--magentaa11y-typeset-body-md-regular);
+    max-width: 90%;}
+  }
   }
 
   &__content {
@@ -111,10 +105,7 @@
 
   @media (max-width: 768px) {
     --header-flex-direction: column;
-    --title-first-headline-font: var(--magentaa11y-typeset-headline-xs-strong);
-    --title-second-headline-font: var(
-      --magentaa11y-typeset-display-sm-xtrastrong
-    );
+    --title-first-headline-font: var(--magentaa11y-typeset-headline-xs-strong); 
     --header-gradient: linear-gradient(
       to top,
       var(--magentaa11y-color-brand-primary-400) 0,
