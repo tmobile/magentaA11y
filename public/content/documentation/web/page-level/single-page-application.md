@@ -77,9 +77,9 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/single-p
 
 This is one example of a dynamic content region. It is similar to the carousel example.
 
-<!-- TODO mention how SPA works for our routing on current site -->
+On this site, we use a hidden `aria-live` region combined with focus management to handle page transitions. When a user navigates, we programmatically move focus to a visually hidden heading that contains a "Navigated to: [Page Name]" message. Using `aria-live="polite"` and `aria-atomic="true"` ensures the screen reader announces the new page location immediately, while resetting the focus point to the top of the document for a consistent keyboard and screen reader experience.
 
-- It is not the only way to build a dynamic region, but it meets all the critieria:
+It is not the only way to build a dynamic region, but it meets all the critieria:
   - New content is announced
   - Focus is consistently placed at the top of the content
 
