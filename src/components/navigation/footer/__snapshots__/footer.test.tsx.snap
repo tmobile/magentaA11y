@@ -150,7 +150,7 @@ exports[`Footer Component - Snapshot Test matches the snapshot 1`] = `
     <p
       class="date"
     >
-      © 2025 T-Mobile USA, Inc.
+      © 2026 T-Mobile USA, Inc.
     </p>
   </footer>
 </DocumentFragment>

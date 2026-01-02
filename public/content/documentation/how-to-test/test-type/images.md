@@ -217,7 +217,7 @@
     </table>
     </div>
 
-### Related WCAG
+## Related WCAG
 
 - 1.1.1 Non-text Content
 - 1.4.5 Images of Text
@@ -225,7 +225,7 @@
 - 2.5.3 Label in Name
 - 4.1.2 Name, Role, Value
 
-### Resources
+## Resources
 
 - [W3C Images Tutorial](https://www.w3.org/WAI/tutorials/images/)
 - [WebAIM Alternative Text](https://webaim.org/techniques/alttext/)
