@@ -164,7 +164,7 @@ If it's helpful for screenreaders to perceive a disabled toggle, use `aria-disab
 
 </fieldset>
 ```
-<!-- TODO need to preventDefaut for aria-disabed and figure out why checked state cannot be changed -->
+
 <example>
    <fieldset class="switch">
       <legend>Choose your cookies</legend>

@@ -237,7 +237,7 @@ example, /* stylelint-disable-line selector-type-no-unknown */
     }
   }
 
-  input[type="checkbox"] {
+  input[type="checkbox"]:not([role="switch"]) {
     margin: 0.5rem 0;
 
     +label {

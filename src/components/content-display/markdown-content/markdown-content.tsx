@@ -295,9 +295,9 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                     };
                   }
 
-                  // If it's a radio, use defaultChecked instead of checked
+                  // If it's a radio or toggle switch, use defaultChecked instead of checked
                   // This prevents React from locking the state as a "controlled" component
-                  if (type === 'radio') {
+                  if (type === 'radio' || (props as any).role === 'switch') {
                       return <input defaultChecked={checked} {...commonProps} />;
                   }
                   return <input {...commonProps} />;
