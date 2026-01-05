@@ -223,7 +223,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               | undefined;
             const fn = fnKey && markdownFunctionMap[fnKey];
 
-            const { type: nativeType, ...rest } = props;
+            const { type: nativeType } = props;
 
             const iconName = (props as Record<string, unknown>)['data-icon'] as
               | Icon
@@ -231,6 +231,15 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             const a11yLabel = (props as Record<string, unknown>)[
               'aria-label'
             ] as string | undefined;
+            const ariaDisabled = (props as Record<string, unknown>)[
+              'aria-disabled'
+            ] as string | boolean | undefined;
+            const dataFn = (props as Record<string, unknown>)['data-fn'] as
+              | string
+              | undefined;
+            const dataIcon = (props as Record<string, unknown>)['data-icon'] as
+              | string
+              | undefined;
 
             // ✅ Pass the event so the function can use event.currentTarget
             const onClick =
@@ -244,6 +253,9 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                   icon={iconName}
                   onClick={onClick}
                   a11yLabel={a11yLabel || ''}
+                  ariaDisabled={ariaDisabled}
+                  dataFn={dataFn}
+                  dataIcon={dataIcon}
                   type={
                     nativeType === ButtonType.button ||
                     nativeType === ButtonType.submit ||
@@ -251,7 +263,6 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
                       ? (nativeType as ButtonType)
                       : undefined
                   }
-                  {...rest}
                 />
               );
             }

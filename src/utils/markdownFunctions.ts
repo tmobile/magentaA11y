@@ -92,29 +92,39 @@ export const getMarkdownFunctionMap = (
     }
   },
 
-  increaseNumber: () => {
+  increaseNumber: (event) => {
     const stepNumber = document.getElementById('step-number');
     const liveRegion = document.getElementById('stepper-status-target');
-    const decreaseButton = document.getElementById('decrement-button');
+    const increaseButton = event.currentTarget as HTMLButtonElement;
+    const stepper = increaseButton.closest('.stepper');
+    const decreaseButton = stepper?.querySelector('[data-fn="decreaseNumber"]') as HTMLButtonElement;
 
     if (stepNumber) {
       let currentNumber = parseInt(stepNumber.innerHTML);
-      stepNumber.innerHTML = `${currentNumber + 1}`;
+      
+      if (currentNumber < 11) {
+        let newNumber = currentNumber + 1;
+        stepNumber.innerHTML = `${newNumber}`;
 
-      if (decreaseButton) {
-        if (currentNumber===1) {
-          decreaseButton.removeAttribute('aria-disabled');
-        } else if (currentNumber===0) {
-          decreaseButton.setAttribute('aria-disabled', 'true');
+        if (decreaseButton) {
+          if (newNumber > 1) {
+            decreaseButton.removeAttribute('aria-disabled');
+          }
         }
-      }
 
-      if (liveRegion) {
-        liveRegion.innerHTML = `Quantity updated, ${currentNumber + 1}`;
+        if (increaseButton) {
+          if (newNumber === 11) {
+            increaseButton.setAttribute('aria-disabled', 'true');
+          }
+        }
 
-        setTimeout(() => {
-          liveRegion.innerHTML = '';
-        }, 2000);
+        if (liveRegion) {
+          liveRegion.innerHTML = `Quantity updated, ${newNumber}`;
+
+          setTimeout(() => {
+            liveRegion.innerHTML = '';
+          }, 2000);
+        }
       }
     }
   },
@@ -122,36 +132,46 @@ export const getMarkdownFunctionMap = (
   decreaseNumber: (event) => {
     const stepNumber = document.getElementById('step-number');
     const liveRegion = document.getElementById('stepper-status-target');
-    // const decreaseButton = event.currentTarget as HTMLButtonElement;
+    const decreaseButton = event.currentTarget as HTMLButtonElement;
+    const stepper = decreaseButton.closest('.stepper');
+    const increaseButton = stepper?.querySelector('[data-fn="increaseNumber"]') as HTMLButtonElement;
 
     if (stepNumber) {
       let currentNumber = parseInt(stepNumber.innerHTML);
 
-      if (currentNumber > 0) {
-        stepNumber.innerHTML = `${currentNumber - 1}`;
-      }
+      if (currentNumber > 1) {
+        let newNumber = currentNumber - 1;
+        stepNumber.innerHTML = `${newNumber}`;
 
-      // if (decreaseButton) {
-      //   if (currentNumber==1) {
-      //     decreaseButton.removeAttribute('aria-disabled');
-      //   } else if (currentNumber==0) {
-      //     decreaseButton.setAttribute('aria-disabled', 'true');
-      //   }
-      // }
+        if (decreaseButton) {
+          if (newNumber === 1) {
+            decreaseButton.setAttribute('aria-disabled', 'true');
+          }
+        }
 
-      if (liveRegion) {
-        liveRegion.innerHTML = `Quantity updated, ${currentNumber + 1}`;
+        if (increaseButton) {
+          if (newNumber < 11) {
+            increaseButton.removeAttribute('aria-disabled');
+          }
+        }
 
-        setTimeout(() => {
-          liveRegion.innerHTML = '';
-        }, 2000);
+        if (liveRegion) {
+          liveRegion.innerHTML = `Quantity updated, ${newNumber}`;
+
+          setTimeout(() => {
+            liveRegion.innerHTML = '';
+          }, 2000);
+        }
       }
     }
   },
 
-  increaseSelectStepper: () => {
+  increaseSelectStepper: (event) => {
     const liveRegion = document.getElementById('stepper-status-target-1');
     const stepperSelect = document.getElementById('stepper') as HTMLSelectElement;
+    const increaseButton = event.currentTarget as HTMLButtonElement;
+    const stepper = increaseButton.closest('.stepper');
+    const decreaseButton = stepper?.querySelector('[data-fn="decreaseSelectStepper"]') as HTMLButtonElement;
 
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
@@ -163,6 +183,18 @@ export const getMarkdownFunctionMap = (
     if (nextIndex < stepperSelect.options.length) {
       stepperSelect.selectedIndex = nextIndex;
 
+      if (decreaseButton) {
+        if (nextIndex > 0) {
+          decreaseButton.removeAttribute('aria-disabled');
+        }
+      }
+
+      if (increaseButton) {
+        if (nextIndex === 10) {
+          increaseButton.setAttribute('aria-disabled', 'true');
+        }
+      }
+
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${nextIndex+1}`;
 
@@ -173,9 +205,12 @@ export const getMarkdownFunctionMap = (
     }
   },
 
-  decreaseSelectStepper: () => {
+  decreaseSelectStepper: (event) => {
     const liveRegion = document.getElementById('stepper-status-target-1');
     const stepperSelect = document.getElementById('stepper') as HTMLSelectElement;
+    const decreaseButton = event.currentTarget as HTMLButtonElement;
+    const stepper = decreaseButton.closest('.stepper');
+    const increaseButton = stepper?.querySelector('[data-fn="increaseSelectStepper"]') as HTMLButtonElement;
 
     if (!stepperSelect || stepperSelect.tagName.toLowerCase() !== 'select') {
       return; // Exit if the provided element is not a select element
@@ -186,8 +221,20 @@ export const getMarkdownFunctionMap = (
 
     if (currentIndex===0) {
       return; // do nothing if at 0
-    } else if (nextIndex < stepperSelect.options.length) {
+    } else if (nextIndex >= 0) {
       stepperSelect.selectedIndex = nextIndex;
+
+      if (decreaseButton) {
+        if (nextIndex === 0) {
+          decreaseButton.setAttribute('aria-disabled', 'true');
+        }
+      }
+
+      if (increaseButton) {
+        if (nextIndex < 10) {
+          increaseButton.removeAttribute('aria-disabled');
+        }
+      }
 
       if (liveRegion) {
         liveRegion.innerHTML = `Quantity updated, ${currentIndex}`;
