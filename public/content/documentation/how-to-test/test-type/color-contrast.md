@@ -4,7 +4,7 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
 
 ## Developer Notes
 
-1. **General requirements**
+1. ## General requirements
 
     The Web Content Accessibility Guidelines (WCAG) provide very specific color contrast requirements:
 
@@ -13,7 +13,7 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
     - Meaningful graphics, user interface components and their various states, as well as focus indicators must have a contrast ratio of at least 3:1 with the background color.
     - **Exceptions:** Logos, incidental or decorative text and graphics, and disabled controls do not need to meet color contrast requirements.
 
-2. **How to test**
+2. ## How to test
 
     ### Automated scanning
 
@@ -87,7 +87,7 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
 
     - Any major browser (Chrome, Safari, Firefox) is acceptable for color contrast testing.
 
-3. **What to test for**
+3. ## What to test for
 
     <div class="how-to-test-checklist-item">
       <h3>✓ Ensure text has sufficient contrast to the background color</h3>

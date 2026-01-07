@@ -1,6 +1,6 @@
 ## Developer Notes
 
-1. **Types of images**
+1. ## Types of images
 
     There are many types of images. The type of image can be determined by the context of the page being tested. These different types of images have different testing steps.
 
@@ -15,7 +15,7 @@
     -  **Complex Images such as Graphs and Diagrams:** When using images to present complex data or detailed information, it's crucial to provide a comprehensive text description that conveys all the data and details found in the image. This allows individuals who cannot see the image to still access and understand its content.
 
 
-2. **How to test**
+2. ## How to test
 
     ### Automated Testing
 
@@ -32,7 +32,7 @@
     - Open Chrome DevTools in your browser window <span class="keyboard-key">F12</span>
     - Right-click and select "Inspect" on the image in the page you want to test.
 
-3. **Informative Images**
+3. ## Informative Images
 
     - Check that the image owns an <code>alt</code> attribute.
     - Ensure that the <code>alt</code> attribute is present is not empty.
@@ -57,7 +57,7 @@
     <svg role="img" aria-label="I am the alt text">...</svg>
     ```
 
-4. **Decorative Images**
+4. ## Decorative Images
 
     - Ensure that the <code>alt</code> attribute is present and owns an empty or null value. <code>alt=""</code>.
     - <strong>Note:</strong> <code>aria-hidden="true"</code> is not needed if an image has an empty or null alt attribute value <code>alt=""</code>.
@@ -68,7 +68,7 @@
     <img alt="" src="../some-image.png" ...>
     ```
 
-4. **Functional Images**
+4. ## Functional Images
 
     - Ensure the <code>alt</code> attribute is present and owns a value that includes <strong>all</strong> of the text found in the image.
     - Functional images are typically links or buttons so the alt text should define the purpose of the link instead of describing the image.
@@ -83,7 +83,7 @@
     </button>
     ```
 
-5. **Images of Text**
+5. ## Images of Text
 
     - Sometimes text can't be easily created with HTML and CSS and an image must contain text. In this case, ensure the <code>alt</code> attribute is present and owns a value that includes <strong>all</strong> of the text found in the image. 
     - Typically, the text is the most important part of the image. There is no need for the image itself to be described unless it adds value to the content of the page. 
@@ -94,7 +94,7 @@
     ```html
     <img src="apple-iphone-15-pro.png" alt="Titanium Apple iPhone 15 Pro">
     ```
-6. **Complex Images**
+6. ## Complex Images
 
     - Data visualizations, charts, and graphs can be very difficult to author alternative text for. Some features like charts and graphs may not be accessible themselves but there can be text alternatives nearby that can act as an accessible alternative.
     - For complex images that are <code>img</code> elements, ensure that the image has an <code>alt</code> attribute and that its value communicates the general purpose of the image. This alt text does not need to contain all of the visual information as that may be too long for an appropriate alt text value. If the alt text does not describe all content in the image ensure there is content nearby, or linked to, that does contain all of the visual information in text form. 
@@ -121,7 +121,7 @@
     </table>
     ```
 
-7. **What to test for**
+7. ## What to test for
 
     <div class="how-to-test-checklist-item">
     <h3>✓ Ensure meaningful images have alt text</h3>
@@ -217,7 +217,7 @@
     </table>
     </div>
 
-### Related WCAG
+## Related WCAG
 
 - 1.1.1 Non-text Content
 - 1.4.5 Images of Text
@@ -225,7 +225,7 @@
 - 2.5.3 Label in Name
 - 4.1.2 Name, Role, Value
 
-### Resources
+## Resources
 
 - [W3C Images Tutorial](https://www.w3.org/WAI/tutorials/images/)
 - [WebAIM Alternative Text](https://webaim.org/techniques/alttext/)
