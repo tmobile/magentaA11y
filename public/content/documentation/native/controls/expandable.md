@@ -6,7 +6,7 @@ How to test an expandable region
 
 ### iOS Voiceover
 <video controls>
-  <source src="media/video/native/expandable/expandable-iOSVoiceOver.webm" type="video/webm">
+  <source src="media/video/native/expandable/expandable-iOSVoiceover.webm" type="video/webm">
   Your browser does not support the video tag.
 </video>
 
