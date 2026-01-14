@@ -8,12 +8,14 @@ How to test an expandable region
 <video controls>
   <source src="media/video/native/expandable/expandable-iOSVoiceover.webm" type="video/webm">
   <track kind="captions" src="media/video/native/expandable/expandable-iOSVoiceover-en-US.vtt" srclang="en" label="English">
+  <track kind="captions" src="media/video/native/expandable/expandable-iOSVoiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### Android Talkback
 <video controls>
   <source src="media/video/native/expandable/expandable-AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/expandable/expandable-AndroidTalkback-en-US.vtt" srclang="en" label="English">
   <track kind="captions" src="media/video/native/expandable/expandable-AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>

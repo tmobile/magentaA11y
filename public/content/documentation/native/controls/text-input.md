@@ -15,6 +15,7 @@ How to test a text input
 
 <video controls>
   <source src="media/video/native/text-input/text-input_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/text-input/text-input_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

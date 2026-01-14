@@ -79,6 +79,7 @@ Full information: https://www.magentaa11y.com/#/native-criteria/controls/button
 <video controls>
   <source src="media/video/native/button/buttonIosVoiceover.webm" type="video/webm">
   <track kind="captions" src="media/video/native/button/buttonIosVoiceover-en-US.vtt" srclang="en" label="English">
+  <track kind="captions" src="media/video/native/button/buttonIosVoiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -86,6 +87,7 @@ Full information: https://www.magentaa11y.com/#/native-criteria/controls/button
 
 <video controls>
   <source src="media/video/native/button/buttonAndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/button/buttonAndroidTalkback-en-US.vtt" srclang="en" label="English">
   <track kind="captions" src="media/video/native/button/buttonAndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>

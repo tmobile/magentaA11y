@@ -7,12 +7,14 @@ How to test a checkbox
 ### iOS VoiceOver
 <video controls>
   <source src="media/video/native/checkbox/checkboxVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/checkbox/checkboxVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### Andriod Talkback
 <video controls>
   <source src="media/video/native/checkbox/checkboxTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/checkbox/checkboxTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
