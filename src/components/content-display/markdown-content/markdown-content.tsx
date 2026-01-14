@@ -108,6 +108,12 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
               : `${assetBasePath}/${src}`;
             return <source src={resolvedSrc} type={type} />;
           },
+          track: ({ src, kind, srcLang, label }: MediaProps) => {
+            const resolvedSrc = src?.startsWith('http')
+              ? src
+              : `${assetBasePath}/${src}`;
+            return <track src={resolvedSrc} kind={kind} srcLang={srcLang} label={label} />;
+          },
           a: (props) => {
             const fnKey = (props as any)['data-fn'];
             const eventType = (props as any)['data-event'] || 'onClick';
