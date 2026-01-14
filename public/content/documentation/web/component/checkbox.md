@@ -314,6 +314,7 @@ Sometimes a design may call for a card-type checkbox.
 
 <video controls>
   <source src="media/video/web/checkbox/checkbox_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/checkbox/checkbox_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -321,6 +322,7 @@ Sometimes a design may call for a card-type checkbox.
 
 <video controls>
   <source src="media/video/web/checkbox/checkbox_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/checkbox/checkbox_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -328,6 +330,7 @@ Sometimes a design may call for a card-type checkbox.
 
 <video controls>
   <source src="media/video/web/checkbox/checkbox_WindowsJawsChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/checkbox/checkbox_WindowsJawsChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -335,6 +338,7 @@ Sometimes a design may call for a card-type checkbox.
 
 <video controls>
   <source src="media/video/web/checkbox/checkbox_WindowsNvdaChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/checkbox/checkbox_WindowsNvdaChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -342,5 +346,6 @@ Sometimes a design may call for a card-type checkbox.
 
 <video controls>
   <source src="media/video/web/checkbox/checkbox_MacOsVoiceOverSafari.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/checkbox/checkbox_MacOsVoiceOverSafari-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>

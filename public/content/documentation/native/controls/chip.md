@@ -7,6 +7,7 @@ How to test a chip
 ### Andriod Talkback
 <video controls>
   <source src="media/video/native/chip/chip-AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/chip/chip-AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

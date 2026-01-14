@@ -67,6 +67,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/button](
 
 <video controls>
   <source src="media/video/web/button/buttonTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/button/buttonTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -74,6 +75,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/button](
 
 <video controls>
   <source src="media/video/web/button/buttonVoiceover.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/button/buttonVoiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -81,6 +83,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/button](
 
 <video controls>
   <source src="media/video/web/button/buttonNVDA.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/button/buttonNVDA-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -88,6 +91,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/button](
 
 <video controls>
   <source src="media/video/web/button/buttonJaws.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/button/buttonJaws-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

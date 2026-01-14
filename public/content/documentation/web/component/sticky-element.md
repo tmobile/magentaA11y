@@ -63,18 +63,21 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/sticky-e
 ### Android Talkback
 <video controls>
   <source src="media/video/web/sticky/Android Talkback-sticky-content.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/sticky/Android Talkback-sticky-content-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### iOS Voiceover
 <video controls>
   <source src="media/video/web/sticky/iOS Voiceover-sticky-content.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/sticky/iOS Voiceover-sticky-content-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### MacOS Voiceover Safari
 <video controls>
   <source src="media/video/web/sticky/MacOS-Voiceover-Safari-sticky-content.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/sticky/MacOS-Voiceover-Safari-sticky-content-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

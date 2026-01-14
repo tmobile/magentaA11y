@@ -429,6 +429,7 @@ This custom button requires extra scripting work for roving tabindex and event l
 
 <video controls>
   <source src="media/video/web/radio/radioiOSVoiceover.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/radio/radioiOSVoiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -436,6 +437,7 @@ This custom button requires extra scripting work for roving tabindex and event l
 
 <video controls>
   <source src="media/video/web/radio/radioAndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/radio/radioAndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -443,5 +445,6 @@ This custom button requires extra scripting work for roving tabindex and event l
 
 <video controls>
   <source src="media/video/web/radio/radioMacOSVoiceoverSafari.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/radio/radioMacOSVoiceoverSafari-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
