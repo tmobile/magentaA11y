@@ -1,0 +1,41 @@
+WEBVTT
+
+9a64b375-089b-4f1d-beca-cfbc4624d276-0
+00:00:01.000 --> 00:00:05.604
+Voiceover on Safari QA testing examples
+window frame zero at select heading level
+
+9a64b375-089b-4f1d-beca-cfbc4624d276-1
+00:00:05.604 --> 00:00:07.120
+one select styled with CSS.
+
+018335b2-fba7-4d6d-bb90-a3403b07baab-0
+00:00:07.200 --> 00:00:10.471
+They select uses minimal extra markup and
+CSS to create the stylized select with
+
+018335b2-fba7-4d6d-bb90-a3403b07baab-1
+00:00:10.471 --> 00:00:11.400
+hover and focus states.
+
+ac0e16be-439b-4b0b-adc4-ba7862783916-0
+00:00:11.440 --> 00:00:13.280
+Select an AO phonetic letter None.
+
+85b07536-fa97-4055-a4d7-ac4f1b68f090-0
+00:00:13.360 --> 00:00:16.440
+Select an AO phonetic letter Pop up
+button visited link.
+
+ec134e1a-c6c5-46ac-bfec-0d409b0d9b81-0
+00:00:16.600 --> 00:00:18.960
+All components link back to top of page.
+
+54ba32e2-24f6-405d-a79c-82dda6ba5a52-0
+00:00:19.560 --> 00:00:20.600
+You are currently on a link.
+
+39d51a09-a750-4707-ab52-40d23b71ece8-0
+00:00:20.800 --> 00:00:23.160
+To click this link,
+press Control option Space.
