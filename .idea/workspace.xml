@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1429071-2113-4d8e-aff6-e1db260d1b4d" name="Changes" comment="refactor: Use SCSS variables for range slider styles and correct aria-valuemax in documentation" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="1057" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="main" />
+    <option name="OPTIONS">
+      <set>
+        <option value="INTERACTIVE" />
+      </set>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;MyLightIsOn&quot;
+    },
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOFgRA9M6cIWKr&quot;,
+        &quot;number&quot;: 261
+      },
+      &quot;lastSeen&quot;: 1751475708321
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOFgRA9M6bt8-t&quot;,
+        &quot;number&quot;: 248
+      },
+      &quot;lastSeen&quot;: 1752686495790
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOFgRA9M6ejw1d&quot;,
+        &quot;number&quot;: 267
+      },
+      &quot;lastSeen&quot;: 1752690260887
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOFgRA9M6tiCki&quot;,
+        &quot;number&quot;: 323
+      },
+      &quot;lastSeen&quot;: 1760550045004
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOFgRA9M61fnBQ&quot;,
+        &quot;number&quot;: 353
+      },
+      &quot;lastSeen&quot;: 1764112687598
+    },
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOFgRA9M652Y_w&quot;,
+        &quot;number&quot;: 366
+      },
+      &quot;lastSeen&quot;: 1766440351702
+    }
+  ]
+}</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="onto" value="49fbcda7b0b76b2247728f8b58908fb0051e9356" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tmobile/magentaA11y.git&quot;,
+    &quot;accountId&quot;: &quot;16cb9232-3afd-4aff-9ddc-26782c1cead2&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="AISelfReview" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2zKMrJuLF3Spea1tDcfc6nhPHsO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Jest.Footer Component - Content Tests.renders the About Us section.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;MGA11Y-16-markdown-refactor&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lawrence/dev/magentaA11y&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;/Users/lawrence/dev/magentaA11y/node_modules/stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/lawrence/dev/magentaA11y/node_modules/react-scripts&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.create-md -- &amp;lt;filename&amp;gt; &amp;quot;&amp;lt;relative-path&amp;gt;&amp;quot; &amp;lt;template-type&amp;gt;.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint:scss.executor&quot;: &quot;Run&quot;,
+    &quot;npm.parse-md-files.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/lawrence/.nvm/versions/node/v25.2.1/lib/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/lawrence/dev/magentaA11y/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/about-us" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.parse-md-files">
+    <configuration name="Footer Component - Content Tests.renders the About Us section" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/navigation/footer/footer.test.tsx" />
+      <test-names>
+        <test-name value="Footer Component - Content Tests" />
+        <test-name value="renders the About Us section" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="create-md -- &amp;lt;filename&amp;gt; &amp;quot;&amp;lt;relative-path&amp;gt;&amp;quot; &amp;lt;template-type&amp;gt;" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="create-md" />
+      </scripts>
+      <arguments value="-- &amp;lt;filename&amp;gt; &amp;quot;&amp;lt;relative-path&amp;gt;&amp;quot; &amp;lt;template-type&amp;gt;" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="parse-md-files" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="parse-md-files" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.parse-md-files" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.create-md -- &amp;lt;filename&amp;gt; &amp;quot;&amp;lt;relative-path&amp;gt;&amp;quot; &amp;lt;template-type&amp;gt;" />
+        <item itemvalue="Jest.Footer Component - Content Tests.renders the About Us section" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1429071-2113-4d8e-aff6-e1db260d1b4d" name="Changes" comment="" />
+      <created>1751475509334</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751475509334</updated>
+      <workItem from="1751475510823" duration="2698000" />
+      <workItem from="1752685995243" duration="2799000" />
+      <workItem from="1753295895931" duration="777000" />
+      <workItem from="1753302857180" duration="194000" />
+      <workItem from="1753303098624" duration="2844000" />
+      <workItem from="1753385123867" duration="5370000" />
+      <workItem from="1753463690566" duration="3576000" />
+      <workItem from="1753722777101" duration="1400000" />
+      <workItem from="1753804863757" duration="4183000" />
+      <workItem from="1754411714801" duration="590000" />
+      <workItem from="1754506454376" duration="1405000" />
+      <workItem from="1754511193008" duration="862000" />
+      <workItem from="1754517881102" duration="3383000" />
+      <workItem from="1755713420817" duration="1969000" />
+      <workItem from="1756140691495" duration="4189000" />
+      <workItem from="1756234176699" duration="517000" />
+      <workItem from="1756238391168" duration="8139000" />
+      <workItem from="1756307436909" duration="4764000" />
+      <workItem from="1756495946042" duration="375000" />
+      <workItem from="1756831646905" duration="986000" />
+      <workItem from="1757345688605" duration="2719000" />
+      <workItem from="1757528099923" duration="116000" />
+      <workItem from="1758007396599" duration="24000" />
+      <workItem from="1759858728272" duration="3652000" />
+      <workItem from="1759943883837" duration="3743000" />
+      <workItem from="1760031056791" duration="1591000" />
+      <workItem from="1760473177691" duration="2658000" />
+      <workItem from="1760548298787" duration="3586000" />
+      <workItem from="1762280976254" duration="274000" />
+      <workItem from="1762360994671" duration="4099000" />
+      <workItem from="1762465511281" duration="1957000" />
+      <workItem from="1762979841754" duration="447000" />
+      <workItem from="1763162429594" duration="137000" />
+      <workItem from="1763162577450" duration="2598000" />
+      <workItem from="1763509102491" duration="4051000" />
+      <workItem from="1763560573801" duration="1818000" />
+      <workItem from="1763563027112" duration="1410000" />
+      <workItem from="1764111420899" duration="1352000" />
+      <workItem from="1764177106862" duration="3119000" />
+      <workItem from="1764698220806" duration="702000" />
+      <workItem from="1764771365491" duration="1742000" />
+      <workItem from="1764801088097" duration="1251000" />
+      <workItem from="1764881036033" duration="16000" />
+      <workItem from="1765406777999" duration="2171000" />
+      <workItem from="1765467624011" duration="2476000" />
+      <workItem from="1765560293570" duration="115000" />
+      <workItem from="1765560436140" duration="2748000" />
+      <workItem from="1765816075630" duration="1188000" />
+      <workItem from="1765991749224" duration="9992000" />
+      <workItem from="1766077543431" duration="1748000" />
+      <workItem from="1766154387186" duration="7956000" />
+      <workItem from="1766428040964" duration="754000" />
+      <workItem from="1766437235768" duration="4616000" />
+      <workItem from="1767028712860" duration="4676000" />
+      <workItem from="1767207168007" duration="2858000" />
+      <workItem from="1767384886378" duration="1205000" />
+      <workItem from="1767810820889" duration="357000" />
+      <workItem from="1768344713692" duration="6460000" />
+      <workItem from="1768410647361" duration="3017000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: Carousel 1.4.10 Reflow accessibility updates (#258)&#10;&#10;* Added guidance for reflow, zoom, and scrolling exceptions in carousel&#10;* Linked WCAG 1.4.10 Reflow criteria">
+      <option name="closed" value="true" />
+      <created>1756148152960</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1756148152960</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add accessible styling for toggle switch elements&#10;&#10;- Introduced new SASS styles for toggle switches, including focus-visible, disabled, and checked states.&#10;- Updated example usage in content files for better alignment with accessibility standards.">
+      <option name="closed" value="true" />
+      <created>1756249647293</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756249647293</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Refactor toast snackbar behavior and styles&#10;&#10;- Updated `openToast` function to include inert and enabled state toggling with a delay.&#10;- Added new styles for toast snackbar states (`enabled`, `inert`).&#10;- Adjusted example usage in content files to reflect the updated implementation.">
+      <option name="closed" value="true" />
+      <created>1756317802640</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756317802640</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: update link for test criteria overview">
+      <option name="closed" value="true" />
+      <created>1757357832534</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1757357832534</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: enforce numeric input restrictions in markdown content rendering&#10;&#10;- Added `getNumericGuards` utility to block non-numeric entry for inputs with `inputMode=&quot;numeric&quot;`.&#10;- Integrated numeric guards into rendered `&lt;input&gt;` elements in `markdown-content.tsx`.">
+      <option name="closed" value="true" />
+      <created>1764185676295</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764185676295</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: Clean up SCSS and update radio button examples&#10;&#10;- Changed _md-styles.scss rgba values to use percents to fix the style lint errors.&#10;&#10;- Updated radio button examples to include proper class names and improve styling consistency.&#10;&#10;- Adjusted Markdown rendering logic to use `defaultChecked` for radio inputs to prevent React-controlled component issues.&#10;&#10;- Introduced new styles for `.cards` to enable grid-based layouts and interactive states for card components.">
+      <option name="closed" value="true" />
+      <created>1766077817434</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1766077817434</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Enhance star rating hover styles and clean up unused SCSS&#10;&#10;- Added hover-specific styles for the star rating component, including theme-aware filled and outlined star icons.&#10;- Removed redundant hover opacity styles for `.star-rating label`.&#10;- Simplified dark mode filter implementation for better consistency.">
+      <option name="closed" value="true" />
+      <created>1767031163237</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1767031163237</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor: Simplify and enhance input handling in Markdown renderer&#10;&#10;- Consolidated `input` element handling logic into a streamlined implementation.&#10;- Change input max range to 10">
+      <option name="closed" value="true" />
+      <created>1768346514844</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1768346514844</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor: Update event type in password toggle functions to use React.SyntheticEvent">
+      <option name="closed" value="true" />
+      <created>1768346822049</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1768346822049</updated>
+    </task>
+    <task id="LOCAL-00010" summary="style: Add custom styles for range slider component and include in Markdown content">
+      <option name="closed" value="true" />
+      <created>1768353267710</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1768353267710</updated>
+    </task>
+    <task id="LOCAL-00011" summary="refactor: Use SCSS variables for range slider styles and correct aria-valuemax in documentation">
+      <option name="closed" value="true" />
+      <created>1768411177545</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1768411177545</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/shared/icons-svg-exports.d.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: ARC-621--update footer and add about page layout adjustments" />
+    <MESSAGE value="Feat: how to test native apps page (#275)&#10;&#10;* First draft of the how to test native apps page&#10;&#10;* Updating screen reader links - both android and iOS&#10;&#10;* Updating some headings, character spacing, and line spacing&#10;&#10;* Updated screen reader steps, keyboard setps, large text steps, needs more review and re-ordering eventually&#10;&#10;* Updating steps to start with SR set up on both devices and BlueTooth KB, as well as large text from internal doc" />
+    <MESSAGE value="feat: Carousel 1.4.10 Reflow accessibility updates (#258)&#10;&#10;* Added guidance for reflow, zoom, and scrolling exceptions in carousel&#10;* Linked WCAG 1.4.10 Reflow criteria" />
+    <MESSAGE value="Added input actions in markdown rendering for checkboxes, radios, text and elements that prefer onChange" />
+    <MESSAGE value="Add accessible styling for toggle switch elements&#10;&#10;- Introduced new SASS styles for toggle switches, including focus-visible, disabled, and checked states.&#10;- Updated example usage in content files for better alignment with accessibility standards." />
+    <MESSAGE value="Refactor toast snackbar behavior and styles&#10;&#10;- Updated `openToast` function to include inert and enabled state toggling with a delay.&#10;- Added new styles for toast snackbar states (`enabled`, `inert`).&#10;- Adjusted example usage in content files to reflect the updated implementation." />
+    <MESSAGE value="fix: update link for test criteria overview" />
+    <MESSAGE value="fix: remove unused stylelint rule and adjust chip styles for high contrast mode" />
+    <MESSAGE value="Refactor markdown event handling and toast snackbar behavior  &#10;&#10;- Introduced `fnHandler` utility for safe event invocation in Markdown rendering.  &#10;- Updated `openToast` to simplify inert/enabled state toggling logic.  &#10;- Added accessible styles and variables for toast snackbar success states.  &#10;- Updated documentation and examples for enhanced clarity." />
+    <MESSAGE value="feat: improve range slider demo and enhance customization options&#10;&#10;- Removed outdated comments and unused code in range slider documentation.&#10;- Refined `range-slider.md` demo for better clarity and functionality.&#10;- Added custom handling for range inputs in `markdown-content.tsx`.&#10;- Expanded markdown function map to support more events.&#10;- General code cleanup for consistency and readability." />
+    <MESSAGE value="feat: enforce numeric input restrictions in markdown content rendering&#10;&#10;- Added `getNumericGuards` utility to block non-numeric entry for inputs with `inputMode=&quot;numeric&quot;`.&#10;- Integrated numeric guards into rendered `&lt;input&gt;` elements in `markdown-content.tsx`." />
+    <MESSAGE value="chore: clean up SCSS formatting and update radio button documentation examples&#10;&#10;- Changed radio label psuedo boxshadow to transparent to keep it from making a black background in the md examples.&#10;&#10;- Uncommented the first few examples" />
+    <MESSAGE value="chore: Clean up SCSS formatting and improve radio button example styling&#10;&#10;chore: clean up SCSS formatting and update radio button documentation examples&#10;&#10;- Changed radio label psuedo boxshadow to transparent to keep it from making a black background in the md examples.&#10;&#10;- Uncommented the first few examples&#10;&#10;- Introduced new styles for `.cards` grid layout and interactive hover state.&#10;&#10;- Updated markdown-content.tsx to accommodate radio inputs as controlled elements." />
+    <MESSAGE value="refactor: Clean up SCSS and update radio button examples&#10;&#10;- Changed _md-styles.scss rgba values to use percents to fix the style lint errors.&#10;&#10;- Updated radio button examples to include proper class names and improve styling consistency.&#10;&#10;- Adjusted Markdown rendering logic to use `defaultChecked` for radio inputs to prevent React-controlled component issues.&#10;&#10;- Introduced new styles for `.cards` to enable grid-based layouts and interactive states for card components." />
+    <MESSAGE value="Enhance star rating hover styles and clean up unused SCSS&#10;&#10;- Added hover-specific styles for the star rating component, including theme-aware filled and outlined star icons.&#10;- Removed redundant hover opacity styles for `.star-rating label`.&#10;- Simplified dark mode filter implementation for better consistency." />
+    <MESSAGE value="feat: Add extensive ReactMarkdown element overrides and utilities&#10;&#10;- Introduced modular overrides for markdown elements: `a`, `div`, `button`, `li`, `img`, `input`, `video`, `source`.&#10;- Enhanced interactivity and accessibility support, including ARIA roles, keyboard navigation, and `aria-disabled` handling.&#10;- Added `markdownFunctionMap` support for linking user-defined functions to element events (`data-fn`, `data-event`).&#10;- Implemented utilities for asset path resolution, link classification (internal vs external), and internal anchor navigation.&#10;- Improved code maintainability by abstracting shared logic into helper utilities." />
+    <MESSAGE value="feat: Add reusable helpers and element overrides for Markdown rendering&#10;&#10;- Introduced modular helpers for link handling, ARIA utilities, and asset resolution to enhance markdown functionality.&#10;- Added reusable overrides for Markdown elements (e.g., `&lt;a&gt;`, `&lt;img&gt;`, `&lt;li&gt;`, `&lt;button&gt;`, `&lt;input&gt;`).&#10;- Centralized link, event, and ARIA handling to improve code maintainability and accessibility.&#10;- Updated MarkdownContent to use the new helpers and streamlined overrides to reduce logic duplication." />
+    <MESSAGE value="feat: Add reusable Markdown content overrides and helper utilities&#10;&#10;- Introduced modular overrides for `li`, `img`, `video`, `source`, `a`, `button`, `input`, and `div` elements to enhance Markdown rendering.&#10;- Added helper utilities for event handling, ARIA support, link management, and asset path resolution.&#10;- Refactored `MarkdownContent` to use the modular override system, improving reusability and maintainability.&#10;- Enhanced accessibility and interactivity for Markdown-rendered content." />
+    <MESSAGE value="refactor: Simplify and enhance input handling in Markdown renderer&#10;&#10;- Consolidated `input` element handling logic into a streamlined implementation.&#10;- Change input max range to 10" />
+    <MESSAGE value="refactor: Update event type in password toggle functions to use React.SyntheticEvent" />
+    <MESSAGE value="style: Add custom styles for range slider component and include in Markdown content" />
+    <MESSAGE value="refactor: Use SCSS variables for range slider styles and correct aria-valuemax in documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Use SCSS variables for range slider styles and correct aria-valuemax in documentation" />
+  </component>
+</project>
