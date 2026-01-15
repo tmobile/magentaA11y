@@ -2,8 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MarkdownLinkProps } from './markdown-link.types';
 
+/**
+ * Checks if a URL is an internal anchor link (starts with #).
+ */
 const isInternalAnchor = (href: string): boolean => href.startsWith('#');
 
+/**
+ * Checks if a URL is external to the current origin.
+ */
 const isExternalUrl = (href: string): boolean => {
   try {
     const url = new URL(href, window.location.href);
@@ -13,6 +19,9 @@ const isExternalUrl = (href: string): boolean => {
   }
 };
 
+/**
+ * Handles clicks on internal anchor links by scrolling to and focusing the target element.
+ */
 const handleInternalAnchorClick = (e: React.MouseEvent, href: string) => {
   e.preventDefault();
   const targetId = href.substring(1);
@@ -22,6 +31,14 @@ const handleInternalAnchorClick = (e: React.MouseEvent, href: string) => {
   }
 };
 
+/**
+ * Component for rendering links within markdown content.
+ * Handles:
+ * 1. Function-mapped links (via data-fn)
+ * 2. Internal anchor links (#anchor)
+ * 3. External links (opens in new tab with icon)
+ * 4. Internal route links (via react-router-dom)
+ */
 export const MarkdownLink: React.FC<MarkdownLinkProps> = ({
   href,
   children,
@@ -32,7 +49,7 @@ export const MarkdownLink: React.FC<MarkdownLinkProps> = ({
 }) => {
   const handler = fnKey && markdownFunctionMap[fnKey];
 
-  // Function-mapped link
+  // Case 1: Function-mapped link
   if (fnKey && handler) {
     const eventProps = {
       onClick: eventType === 'onClick' ? (e: React.MouseEvent) => { e.preventDefault(); handler(e); } : undefined,
@@ -43,11 +60,12 @@ export const MarkdownLink: React.FC<MarkdownLinkProps> = ({
     return <a {...props} {...eventProps}>{children}</a>;
   }
 
+  // Fallback for missing href
   if (!href) {
     return <a {...props}>{children}</a>;
   }
 
-  // Internal anchor link
+  // Case 2: Internal anchor link
   if (isInternalAnchor(href)) {
     return (
       <a
@@ -60,7 +78,7 @@ export const MarkdownLink: React.FC<MarkdownLinkProps> = ({
     );
   }
 
-  // External link
+  // Case 3: External link
   if (isExternalUrl(href)) {
     return (
       <a {...props} href={href} target="_blank" rel="noopener noreferrer">
@@ -80,6 +98,6 @@ export const MarkdownLink: React.FC<MarkdownLinkProps> = ({
     );
   }
 
-  // Internal route link
+  // Case 4: Internal route link
   return <Link to={href}>{children}</Link>;
 };

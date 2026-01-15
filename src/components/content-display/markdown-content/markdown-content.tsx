@@ -18,11 +18,17 @@ import { MarkdownDiv } from './elements/markdown-div/markdown-div';
 
 import './markdown-content.scss';
 
+/**
+ * Component that renders markdown content using ReactMarkdown.
+ * It uses custom components to override default HTML element rendering,
+ * enabling special features like asset URL resolution and custom function mapping.
+ */
 const MarkdownContent: React.FC<MarkdownContentProps> = ({
   content,
   assetBasePath,
 }) => {
   const navigate = useNavigate();
+  // Initialize the function map for custom markdown interactions
   const markdownFunctionMap = getMarkdownFunctionMap(navigate);
 
   if (!content.length) {
@@ -35,6 +41,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
         rehypePlugins={[rehypeHighlight, rehypeRaw]}
         remarkPlugins={[remarkGfm]}
         components={{
+          // Custom overrides for standard markdown elements
           li: (props) => <MarkdownListItem {...props} />,
           img: (props) => <MarkdownImage {...props} assetBasePath={assetBasePath} />,
           video: (props) => <MarkdownVideo {...props} assetBasePath={assetBasePath} />,

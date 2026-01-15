@@ -4,10 +4,21 @@ import IconButton from 'components/custom-components/buttons/icon-button/icon-bu
 import { Icon } from 'shared/Icons';
 import { MarkdownButtonProps } from './markdown-button.types';
 
+/**
+ * Checks if the provided type is a valid HTML button type.
+ */
 const isValidButtonType = (type: ButtonType | string | undefined): type is ButtonType => {
   return type === ButtonType.button || type === ButtonType.submit || type === ButtonType.reset;
 };
 
+/**
+ * Component for rendering button elements within markdown content.
+ * Supports:
+ * 1. Icon buttons (using IconButton custom component).
+ * 2. Function-mapped buttons (via data-fn).
+ * 3. Plain buttons.
+ * Handles aria-disabled state for all variants.
+ */
 export const MarkdownButton: React.FC<MarkdownButtonProps> = ({
   children,
   markdownFunctionMap,
@@ -23,10 +34,10 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({
     ? (event: React.MouseEvent) => fn(event)
     : undefined;
 
-  /*
-    Set aria-disabled when explicitly provided as true. We check both string 'true'
-    and boolean true because markdown parsing can convert boolean values to strings.
-  */
+  /**
+   * Set aria-disabled when explicitly provided as true. We check both string 'true'
+   * and boolean true because markdown parsing can convert boolean values to strings.
+   */
   let ariaDisabledAttr;
   if (ariaDisabled === 'true' || ariaDisabled === true) {
     ariaDisabledAttr = true;
@@ -34,7 +45,7 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({
     ariaDisabledAttr = undefined;
   }
 
-  // Icon button variant
+  // Variant 1: Icon button
   if (iconName) {
     return (
       <IconButton
@@ -49,7 +60,7 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({
     );
   }
 
-  // Function-mapped button
+  // Variant 2: Function-mapped button
   if (onClick) {
     return (
       <button onClick={onClick} aria-disabled={ariaDisabledAttr} {...props}>
@@ -58,6 +69,6 @@ export const MarkdownButton: React.FC<MarkdownButtonProps> = ({
     );
   }
 
-  // Plain button
+  // Variant 3: Plain button
   return <button aria-disabled={ariaDisabledAttr} {...props}>{children}</button>;
 };

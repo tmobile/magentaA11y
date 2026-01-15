@@ -2,10 +2,16 @@ import React from 'react';
 import { MarkdownInputProps } from './markdown-input.types';
 import { invokeMappedFunction, wrapWithAriaDisabledCheck } from '../utils';
 
+/**
+ * Determines if defaultChecked should be used instead of checked for specific input types.
+ */
 const shouldUseDefaultChecked = (type?: string, role?: string): boolean => {
   return type === 'radio' || role === 'switch';
 };
 
+/**
+ * Creates event handlers that prevent default actions for aria-disabled inputs.
+ */
 const createAriaDisabledProps = () => ({
   onClick: (e: React.MouseEvent) => e.preventDefault(),
   onChange: (e: React.ChangeEvent) => e.preventDefault(),
@@ -16,6 +22,13 @@ const createAriaDisabledProps = () => ({
   },
 });
 
+/**
+ * Component for rendering input elements within markdown content.
+ * Supports:
+ * 1. Function-mapped inputs (via data-fn) with event handling.
+ * 2. Static inputs.
+ * 3. Proper aria-disabled handling by preventing interactions.
+ */
 export const MarkdownInput: React.FC<MarkdownInputProps> = ({
   type,
   checked,
@@ -32,7 +45,7 @@ export const MarkdownInput: React.FC<MarkdownInputProps> = ({
   // Convert aria-disabled to proper boolean for native input
   const ariaDisabledAttr = disabled ? true : undefined;
 
-  // No function mapped - static input
+  // Case 1: Static input (No function mapped)
   if (!fnKey || typeof fn !== 'function') {
     const commonProps: any = { ...rest, type, 'aria-disabled': ariaDisabledAttr };
 
@@ -46,7 +59,7 @@ export const MarkdownInput: React.FC<MarkdownInputProps> = ({
     return <input {...commonProps} />;
   }
 
-  // Function-mapped input with event handling
+  // Case 2: Function-mapped input with event handling
   const wrapHandler = (handler: (e: any) => void) =>
     wrapWithAriaDisabledCheck(handler, disabled);
 
