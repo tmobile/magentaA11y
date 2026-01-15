@@ -105,7 +105,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           source: ({ src, type }: MediaProps) => {
             const resolvedSrc = src?.startsWith('http')
               ? src
-              : `${assetBasePath}/${src}`;
+              : `${assetBasePath}/${src}#t=0.1`;
             return <source src={resolvedSrc} type={type} />;
           },
           track: ({ src, kind, srcLang, label }: MediaProps) => {
