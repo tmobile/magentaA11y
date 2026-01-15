@@ -82,6 +82,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/link](
 
 <video controls>
   <source src="media/video/native/link/linkIosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/link/linkIosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -89,6 +90,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/link](
 
 <video controls>
   <source src="media/video/native/link/linkAndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/link/linkAndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
