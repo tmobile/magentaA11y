@@ -93,11 +93,11 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             );
           },
           video: ({ poster, children }: MediaProps) => {
-            let posterPath = poster
+            const posterPath = poster
               ? `${assetBasePath}/${poster}`
-              : 'movie.svg';
+              : undefined;
             return (
-              <video controls preload="none" poster={posterPath}>
+              <video controls preload="metadata" poster={posterPath}>
                 {children}
               </video>
             );
