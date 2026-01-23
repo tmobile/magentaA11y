@@ -47,7 +47,7 @@ export const MarkdownInput: React.FC<MarkdownInputProps> = ({
 
   // Case 1: Static input (No function mapped)
   if (!fnKey || typeof fn !== 'function') {
-    const commonProps: any = { ...rest, type, 'aria-disabled': ariaDisabledAttr };
+    const commonProps: any = { ...rest, type, role, 'aria-disabled': ariaDisabledAttr };
 
     if (disabled) {
       Object.assign(commonProps, createAriaDisabledProps());
@@ -75,5 +75,5 @@ export const MarkdownInput: React.FC<MarkdownInputProps> = ({
       : undefined,
   };
 
-  return <input type={type} checked={checked} aria-disabled={ariaDisabledAttr} {...rest} {...eventHandlers} />;
+  return <input type={type} checked={checked} role={role} aria-disabled={ariaDisabledAttr} {...rest} {...eventHandlers} />;
 };
