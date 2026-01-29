@@ -1,0 +1,49 @@
+example, /* stylelint-disable-line selector-type-no-unknown */
+.example {
+  .tidbit {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-content: start;
+    max-width: 600px;
+    padding: 1em;
+    background: var(--color-text-on-primary);
+    border-left: 4px solid var(--color-on-tertiary);
+
+    &.error {
+      border-color: var(--color-error-container);
+      background-color: var(--color-on-error-container);
+
+      svg {
+        fill: var(--color-error-container);
+      }
+    }
+
+    &.caution {
+      border-color: var(--color-on-caution);
+      background-color: var(--color-on-caution-container);
+
+      svg {
+        fill: var(--color-on-caution);
+      }
+    }
+
+    &.success {
+      border-color: var(--color-success);
+      background-color: var(--color-on-success-container);
+
+      svg {
+        fill: var(--color-success);
+      }
+    }
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: underline;
+      color: var(--color-on-tertiary);
+    }
+  }
+}

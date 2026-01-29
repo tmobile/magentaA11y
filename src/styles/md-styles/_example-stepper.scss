@@ -1,0 +1,17 @@
+example, /* stylelint-disable-line selector-type-no-unknown */
+.example {
+  .stepper {
+    display: inline-grid;
+    grid-template-columns: 39px 1fr 39px;
+    grid-template-rows: 38px;
+    -moz-column-gap: var(--magentaa11y-spacing-size-4);
+    column-gap: var(--magentaa11y-spacing-size-4);
+    border-radius: var(--magentaa11y-border-radius-size-24);
+    border: var(--magentaa11y-border-weight-size-1) solid var(--color-input-border);
+    place-items: center;
+    height: var(--magentaa11y-spacing-size-40);
+    width: 120px;
+    position: relative;
+    background-color: var(--color-on-primary);
+  }
+}

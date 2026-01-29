@@ -8,6 +8,7 @@
     "custom-property-pattern": null,
     "value-no-vendor-prefix": null,
     "property-no-vendor-prefix": null ,
-    "media-feature-range-notation": "prefix"
+    "media-feature-range-notation": "prefix",
+    "no-descending-specificity": null
   }
 }

@@ -1,0 +1,169 @@
+// stars
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--color-on-primary);
+  font-size: 2rem;
+  letter-spacing: .25rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 5px 1px rgba(var(--color-on-tertiary), .1);
+  position: relative;
+
+  .star-filled {
+    &::before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      border: none;
+      background: url("../../assets/svgs/star-filled.svg") no-repeat center center;
+      transition: background-color .2s;
+
+        @media (prefers-color-scheme: dark) {
+          filter: invert(1);
+        }
+    }
+  }
+
+  .star-outline {
+    &::before {
+      content: "";
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      border: none;
+      background: url("../../assets/svgs/star-outlined.svg") no-repeat center center;
+      transition: background-color .2s;
+
+        @media (prefers-color-scheme: dark) {
+          filter: invert(1);
+        }
+    }
+  }
+
+  .scale {
+    // position: relative;
+    // display: block;
+    // height: 2rem;
+    // width: 10rem;
+    // z-index: 0;
+    // background-image: url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                   url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                   url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                   url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                   url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='%23ffffff' stroke='black' stroke-width='8' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: 0, 2rem 0, 4rem 0, 6rem 0, 8rem 0;
+
+    //     @media (prefers-color-scheme: dark) {
+    //       background-image: url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                             url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                             url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                             url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    //                             url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='gray' stroke-width='8' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
+    // }
+  }
+
+  .rating {
+    // position: absolute;
+    // top: 1rem;
+    // z-index: 1;
+    // display: block;
+    // height: 2rem;
+    // width: 8rem;
+    // background-repeat: no-repeat;
+    // background-image: url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    // url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    // url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    // url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E"),
+    // url("data:image/svg+xml,%3Csvg height='16px' width='16px' fill='black' stroke='black' stroke-width='6' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 100 100' version='1.1' x='0px' y='0px'%3E%3Cg fill-rule='evenodd'%3E%3Cpolygon points='50 75.846128 25.1872654 89.258398 29.926076 60.8507543 9.85215201 40.7323494 37.5936327 36.58773 50 10.741602 62.4063673 36.58773 90.147848 40.7323494 70.073924 60.8507543 74.8127346 89.258398'%3E%3C/polygon%3E%3C/g%3E%3C/svg%3E");
+    // background-size: contain;
+    // background-position: 0, 2rem 0, 4rem 0, 6rem 0, 8rem 0;
+
+    // @media (prefers-color-scheme: dark) {
+    //   filter: invert(1);
+    // }
+  }
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &:hover {
+    label:hover::before,
+    label:hover ~ label::before {
+      background: url("../../assets/svgs/star-filled.svg") no-repeat center center;
+
+
+    }
+
+    label:not(:hover, :hover ~ label)::before {
+      background: url("../../assets/svgs/star-outlined.svg") no-repeat center center;
+
+
+    }
+  }
+}
+
+.star-rating input.star {
+  position: absolute; /* Keep radio buttons off-screen */
+  opacity: 0;
+}
+
+input.star:focus + label,
+input.star:focus-visible + label {
+  outline: .5rem auto Highlight;
+  outline: -webkit-focus-ring-color auto 1px;
+  outline-offset: 4px;
+}
+
+.star-rating input.star + label {
+  padding: 1rem 0;
+  height: 4rem;
+  width: fit-content;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    background: url("../../assets/svgs/star-outlined.svg") no-repeat center center;
+    transition: background-color .2s;
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1);
+    }
+  }
+}
+
+.scrolling-container {
+  height: 250px;
+  overflow: auto;
+}
+
+.star-rating input.star:checked + label::before,
+.star-rating input.star:checked ~ label::before {
+  background: url("../../assets/svgs/star-filled.svg") no-repeat center center;
+
+    @media (prefers-color-scheme: dark) {
+      filter: invert(1);
+    }
+}
+
+/* Reverse the visual order of the labels */
+.star-rating input.star#star-1 + label { order: 1; }
+.star-rating input.star#star-2 + label { order: 2; }
+.star-rating input.star#star-3 + label { order: 3; }
+.star-rating input.star#star-4 + label { order: 4; }
+.star-rating input.star#star-5 + label { order: 5; }
+
+/* styling for example of a button with bad color contrast on hover for How to Test Color Contrast */
+.bad-contrast-button:hover {
+    color: #e20074;
+}

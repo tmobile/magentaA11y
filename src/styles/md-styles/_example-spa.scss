@@ -1,0 +1,21 @@
+example, /* stylelint-disable-line selector-type-no-unknown */
+.example {
+  .spa {
+    .slide-list {
+      margin: 0;
+      padding: 0;
+    }
+
+    .slide {
+      list-style: none;
+      background: var(--color-on-primary);
+      padding: 1rem;
+      margin-top: 1rem;
+
+      &:not(.visible) {
+        display: none;
+      }
+    }
+
+  }
+}
