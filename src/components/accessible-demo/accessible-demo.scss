@@ -102,7 +102,7 @@
 
   /* stylelint-disable no-duplicate-selectors */
   @media (prefers-color-scheme: dark) {
-    .icon {
+    .demo-page .icon {
       filter: invert(100%) hue-rotate(180deg);
     }
   }
