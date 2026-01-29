@@ -9,6 +9,7 @@
     "value-no-vendor-prefix": null,
     "property-no-vendor-prefix": null ,
     "media-feature-range-notation": "prefix",
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "selector-type-no-unknown": null
   }
 }
