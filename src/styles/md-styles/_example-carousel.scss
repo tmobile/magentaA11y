@@ -1,0 +1,55 @@
+example,
+.example {
+  .carousel {
+    margin-top: 1rem;
+
+    button {
+      min-width: 50px;
+      margin-left:1rem;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: row-reverse;
+
+      @media (max-width: 936px) {
+        align-items: center;
+        flex-direction: column-reverse;
+      }
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 200px;
+      column-gap: 2rem;
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style-type: none;
+        padding-left: 0;
+
+        &::before {
+          content: "";
+          position: relative;
+          background: none;
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 2px black solid;
+    }
+  }
+}

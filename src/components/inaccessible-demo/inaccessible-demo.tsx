@@ -50,7 +50,7 @@ const InaccessibleDemo: React.FC = () => {
 
   return (
     <>
-    <div className="flex-col">
+    <div className="demo-page flex-col">
         <div className="hero">
             <div className="">
                 <div className="flex-row">

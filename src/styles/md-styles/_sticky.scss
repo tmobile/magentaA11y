@@ -1,0 +1,42 @@
+// sticky content example
+.promo-bar {
+  background: #fff;
+  padding: 1rem 0 1rem 1rem;
+  border-radius: var(--magentaa11y-border-weight-size-2);
+  box-shadow: 0 0 3px 1px var(--color-on-tertiary);
+
+  * {
+    margin: 0 !important;
+    display: inline-block;
+  }
+
+  p {
+    padding: 0 0 0 1rem;
+  }
+}
+
+.sticky-wrapper {
+  position: relative;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 80vh;
+}
+
+.vertical-spacer {
+  height: 100vh;
+  padding: 2rem;
+  background: var(--color-background-secondary);
+
+  &--less {
+    height: 50vh;
+  }
+}
+
+.sticky {
+  position: sticky;
+  bottom: 0;
+
+  &.top {
+    top: 0;
+  }
+}

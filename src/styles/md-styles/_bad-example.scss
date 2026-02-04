@@ -1,0 +1,7 @@
+.bad-example {
+  color: var(--color-error-container);
+
+    + pre {
+        border: var(--magentaa11y-border-weight-size-2) solid var(--color-error-container);
+    }
+}
