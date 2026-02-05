@@ -7,6 +7,7 @@ How to test a field error
 ### iOS Voiceover
 <video controls>
   <source src="media/video/native/field-errors/field-errors-iOS-Voiceover.mp4" type="video/mp4">
+  <track kind="captions" src="media/video/native/field-errors/field-errors-iOS-Voiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

@@ -8,6 +8,7 @@ How to test a time picker
 
 <video controls>
   <source src="media/video/native/time-picker/time-picker_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/time-picker/time-picker_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -15,6 +16,7 @@ How to test a time picker
 
 <video controls>
   <source src="media/video/native/time-picker/time-picker_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/time-picker/time-picker_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

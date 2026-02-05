@@ -1,0 +1,35 @@
+WEBVTT
+
+71f181e8-65cf-4fe8-bfc7-4758d9f12587-0
+00:00:03.360 --> 00:00:08.713
+Heading Level 1 Search Input A search
+input must identify its name and role and
+
+71f181e8-65cf-4fe8-bfc7-4758d9f12587-1
+00:00:08.713 --> 00:00:10.320
+include a search button.
+
+691db7ee-40fb-4d12-8e7b-9b5655725fd7-0
+00:00:11.040 --> 00:00:15.280
+We start by letting the screen reader
+read on its own.
+
+7875b3f7-3568-4ebc-b3d7-eef78b80d9a9-0
+00:00:16.000 --> 00:00:21.956
+Then we'll start at the top,
+manually Search, Landmark,
+
+7875b3f7-3568-4ebc-b3d7-eef78b80d9a9-1
+00:00:21.956 --> 00:00:30.572
+search this website, Edit Search button,
+search visited link back to top of page
+
+7875b3f7-3568-4ebc-b3d7-eef78b80d9a9-2
+00:00:30.572 --> 00:00:39.294
+search in the search landmark search this
+website and it has auto complete search
+
+7875b3f7-3568-4ebc-b3d7-eef78b80d9a9-3
+00:00:39.294 --> 00:00:44.400
+blank focus rectangle one of one search
+button.

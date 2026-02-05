@@ -93,11 +93,11 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
             );
           },
           video: ({ poster, children }: MediaProps) => {
-            let posterPath = poster
+            const posterPath = poster
               ? `${assetBasePath}/${poster}`
-              : 'movie.svg';
+              : undefined;
             return (
-              <video controls preload="none" poster={posterPath}>
+              <video controls preload="metadata" poster={posterPath}>
                 {children}
               </video>
             );
@@ -105,8 +105,14 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           source: ({ src, type }: MediaProps) => {
             const resolvedSrc = src?.startsWith('http')
               ? src
-              : `${assetBasePath}/${src}`;
+              : `${assetBasePath}/${src}#t=0.1`;
             return <source src={resolvedSrc} type={type} />;
+          },
+          track: ({ src, kind, srcLang, label }: MediaProps) => {
+            const resolvedSrc = src?.startsWith('http')
+              ? src
+              : `${assetBasePath}/${src}`;
+            return <track src={resolvedSrc} kind={kind} srcLang={srcLang} label={label} />;
           },
           a: (props) => {
             const fnKey = (props as any)['data-fn'];
