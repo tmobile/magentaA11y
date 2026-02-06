@@ -22,22 +22,46 @@ import { NavigateFunction } from 'react-router-dom';
 export const getMarkdownFunctionMap = (
   navigate: NavigateFunction
 ): Record<string, (event: React.MouseEvent<Element>) => void> => ({
+  /**
+   * Shows a generic alert.
+   */
   showAlert: () => alert('This works with a keyboard and a mouse!'),
+
+  /**
+   * Shows an alert indicating the button is actionable despite being disabled.
+   */
   showAlertWhenDisabled: () =>
     alert('This disabled button is still actionable for mouse and screen readers users!'),
+
+  /**
+   * Shows an alert that only works with mouse clicks.
+   */
   showMouseAlert: () => alert('This only works with a mouse'),
+
+  /**
+   * Navigates to the home page.
+   */
   goToHome: () => navigate('/home'),
 
+  /**
+   * Toggles the aria-expanded state of an accordion button.
+   */
   toggleAccordionState: (event) => {
     const targetButton = event.currentTarget as HTMLButtonElement;
     const expanded = targetButton.getAttribute('aria-expanded') === 'true';
     targetButton.setAttribute('aria-expanded', String(!expanded));
   },
 
+  /**
+   * Smoothly scrolls to the top of the window.
+   */
   scrollToTopOnly: () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
+  /**
+   * Scrolls to and focuses the element with ID 'destination'.
+   */
   scrollToHref: () => {
     const dest = document.getElementById('destination');
     if (dest) {
@@ -45,6 +69,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Cycles through list items in a slide-list, showing the next one and focusing the destination.
+   */
   goToNext: () => {
     const dest = document.getElementById('destination');
     const list = document.querySelector('.slide-list'); // Select the ul element
@@ -71,6 +98,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Toggles a success alert message in the 'alertSuccessExample' div.
+   */
   alertSuccess: () => {
     const alertDiv = document.getElementById('alertSuccessExample');
     if (alertDiv) {
@@ -78,6 +108,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Toggles a warning alert message in the 'hint-help-error-alert' div.
+   */
   hintHelpErrorAlertDemo: () => {
     const warningDiv = document.getElementById('hint-help-error-alert');
     if (warningDiv) {
@@ -85,6 +118,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Toggles a warning alert message in the 'favorite-character-error' div.
+   */
   alertWarning: () => {
     const warningDiv = document.getElementById('favorite-character-error');
     if (warningDiv) {
@@ -92,6 +128,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Increases a number in a stepper component, updating live regions and button states.
+   */
   increaseNumber: (event) => {
     const stepNumber = document.getElementById('step-number');
     const liveRegion = document.getElementById('stepper-status-target');
@@ -129,6 +168,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Decreases a number in a stepper component, updating live regions and button states.
+   */
   decreaseNumber: (event) => {
     const stepNumber = document.getElementById('step-number');
     const liveRegion = document.getElementById('stepper-status-target');
@@ -166,6 +208,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Increases the selection in a select stepper, updating live regions and button states.
+   */
   increaseSelectStepper: (event) => {
     const liveRegion = document.getElementById('stepper-status-target-1');
     const stepperSelect = document.getElementById('stepper') as HTMLSelectElement;
@@ -205,6 +250,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Decreases the selection in a select stepper, updating live regions and button states.
+   */
   decreaseSelectStepper: (event) => {
     const liveRegion = document.getElementById('stepper-status-target-1');
     const stepperSelect = document.getElementById('stepper') as HTMLSelectElement;
@@ -246,6 +294,9 @@ export const getMarkdownFunctionMap = (
     }
   },
 
+  /**
+   * Scrolls to and focuses the main element.
+   */
   scrollAndFocusMain: () => {
     const main = document.querySelector('main');
     if (main) {
@@ -255,6 +306,9 @@ export const getMarkdownFunctionMap = (
     window.scrollTo({ top: 0, behavior: 'smooth' });
   },
 
+  /**
+   * Toggles the visibility and aria-expanded state of an expander component.
+   */
   toggleExpander: (event) => {
     // define variables
     const toggleButton = document.getElementById('expanderToggle');
@@ -276,6 +330,9 @@ export const getMarkdownFunctionMap = (
   },
 
 
+  /**
+   * Opens a toast message after a delay.
+   */
   openToast: ()=> {
     const toast = document.getElementById('hint-spam');
 
@@ -290,6 +347,9 @@ export const getMarkdownFunctionMap = (
 
   // two password input examples
   // first password show/hide example
+  /**
+   * Toggles the visibility of a password input based on checkbox state.
+   */
   togglePasswordVisibility: (event: React.MouseEvent<Element>) => {
     // 1. The checkbox is the currentTarget
     const checkbox = event.currentTarget as HTMLInputElement;
@@ -309,6 +369,9 @@ export const getMarkdownFunctionMap = (
   },
 
   // second password show/hide example
+  /**
+   * Toggles the visibility of a password input using a button, including updating its pressed state and live region.
+   */
   togglePasswordButton: (event: React.MouseEvent<Element>) => {
   const button = event.currentTarget as HTMLButtonElement;
   const container = button.closest('.js-password-group') as HTMLElement;
