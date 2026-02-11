@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5c8b5367.css",
+    "main.js": "/static/js/main.3759b821.js",
+    "static/js/453.286fe475.chunk.js": "/static/js/453.286fe475.chunk.js",
+    "static/media/assistive-technology-bg.png": "/static/media/assistive-technology-bg.0356876b68162de119f7.png",
+    "static/media/arc-team-2024.jpeg": "/static/media/arc-team-2024.24ff9b564197644af9c6.jpeg",
+    "static/media/teleneoweb-bold.woff2": "/static/media/teleneoweb-bold.1b7fe473df0f87cc56a5.woff2",
+    "static/media/teleneoweb-regular.woff2": "/static/media/teleneoweb-regular.003938824a945c247da6.woff2",
+    "static/media/teleneoweb-extrabold.woff2": "/static/media/teleneoweb-extrabold.cc806106975453c2028b.woff2",
+    "static/media/Magenta11yLogoSm.svg": "/static/media/Magenta11yLogoSm.0ef92b5c280a2b1f5ef3.svg",
+    "static/media/Magenta11yLogoDT.svg": "/static/media/Magenta11yLogoDT.e980ba2f0a570af9ed84.svg",
+    "index.html": "/index.html",
+    "static/media/warning-filled.svg": "/static/media/warning-filled.3512e574a260ffd88dac.svg",
+    "static/media/star-outlined.svg": "/static/media/star-outlined.ea81ad4276736adce200.svg",
+    "static/media/star-filled.svg": "/static/media/star-filled.7b5d5cfa6f74b7a13a5c.svg",
+    "static/media/chevron-down.svg": "/static/media/chevron-down.9683ff47cfce0b97f2e8.svg",
+    "static/media/chevron-right.svg": "/static/media/chevron-right.c7465c5cc689e553be2b.svg",
+    "static/media/bookmark-outlined.svg": "/static/media/bookmark-outlined.92bcfcdd1a5a462820989e78674011f8.svg",
+    "static/media/checkmark.svg": "/static/media/checkmark.f03a23ae04be7ef5dc34.svg",
+    "main.5c8b5367.css.map": "/static/css/main.5c8b5367.css.map",
+    "main.3759b821.js.map": "/static/js/main.3759b821.js.map",
+    "453.286fe475.chunk.js.map": "/static/js/453.286fe475.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c8b5367.css",
+    "static/js/main.3759b821.js"
+  ]
+}
