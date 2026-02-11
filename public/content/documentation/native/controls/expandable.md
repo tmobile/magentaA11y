@@ -25,24 +25,26 @@ How to test an expandable region
 
 ### #a11y - Native Accessibility Acceptance Criteria
 
-How to test an expandable region
+How to test a button that toggles an expandable region
+
 
 1. Test keyboard only, then screen reader + keyboard actions
 
-   - Tab, arrow keys or ctl+tab: Focus visibly moves to the expandable region
+   - Tab, arrow keys or ctl+tab: Focus visibly moves to the expandable button on Android
+   - Tab or arrow keys: Focus visibly moves to the expandable button on iOS
    - Spacebar: Activates on iOS and Android
    - Enter: Activates on Android
 
 2. Test mobile screenreader gestures
 
    - Swipe: Focus moves to the element, expresses its name, role (state, if applicable)
-   - Doubletap: Activates the expandable region
+   - Doubletap: Toggles the expandable button (and focus remains on the expandable button)
 
 3. Listen to screenreader output on all devices
 
    - Name: Purpose is clear and matches visible label
-   - Role: Identifies as an expandable region in iOS and expandable region or "double tap to activate" in Android
-   - Group: Visible label is grouped or associated with the expandable region in a single swipe
+   - Role: Identifies as an expandable button in iOS, and an expandable button or "double tap to activate" or "double tap to collapse” in Android
+   - Group: Visible label is grouped or associated with the expandable button in a single swipe
    - State: Expresses its state (expanded/collapsed)
 
 4. Test device settings

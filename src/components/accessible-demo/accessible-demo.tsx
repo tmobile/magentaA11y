@@ -49,7 +49,7 @@ const AccessibleDemo: React.FC = () => {
 
   return (
     <>
-    <div className="flex-col">
+    <div className="demo-page flex-col">
         <div className="hero">
             <section className="">
                 <div className="flex-row">

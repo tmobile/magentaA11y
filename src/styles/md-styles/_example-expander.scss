@@ -1,0 +1,122 @@
+example,
+.example {
+  // expander accordion styles
+  .expander-toggle {
+    background: var(--color-text-on-primary);
+    border: none;
+    border-radius: var(--magentaa11y-border-radius-size-2);
+    display: block;
+    font-size: 1.25rem;
+    padding: 1.5rem 1rem;
+    line-height: .875rem;
+    margin: 0;
+    position: relative;
+    transition: .2s;
+    text-align: left;
+    width: 100%;
+  }
+
+  .expander-content {
+    display: none;
+    background: var(--color-on-primary);
+    padding: 1rem;
+    border-top: none;
+    border-radius: 0 0 1rem 1rem;
+    margin-top: -.675rem;
+  }
+
+  .expander-toggle[aria-expanded="true"]::before  {
+    transform: rotate(180deg);
+  }
+
+  .expander-toggle[aria-expanded="true"] ~ .expander-content {
+    display: block;
+  }
+
+  details {
+    background: var(--color-text-on-primary);
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: .8s;
+    text-align: left;
+    width: 100%;
+  }
+
+  summary  {
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details summary,
+  .expander-toggle {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    padding: 1rem .5rem 1rem 0;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    line-height: 1rem;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  details summary::before,
+  .expander-toggle::before {
+    content:'';
+    background: url("../../assets/svgs/chevron-down.svg") no-repeat center center;
+    display: block;
+    position: relative;
+    justify-self: center;
+    width: 2.125rem;
+    height: 2.125rem;
+    border-radius: 2rem;
+    background-color: var(--color-text-on-primary);
+    opacity: 1;
+    background-size: 1.25rem 1.25rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 0.1s ease-in-out;
+  }
+
+  details summary:hover::before,
+  details summary:focus-visible::before,
+  .expander-toggle:hover::before {
+    border: 2px solid var(--color-primary);
+  }
+
+  details[open] summary::before {
+    content: '';
+    background-position: center center;
+    transform: rotate(-180deg);
+  }
+
+  details[open] summary {
+    border-radius: 1rem 1rem 0 0;
+    border-bottom: 1px solid var(--color-text-disabled);
+    margin-bottom: 1rem;
+    background-position: 10% center;
+    transition: background 0.1s;
+  }
+
+  details:not([open]) summary:active,
+  details[open] summary:active {
+    background-color: var(--color-background-tertiary);
+    background-size: 100%;
+    transition: all 0.1s;
+  }
+
+  /* stylelint-disable no-duplicate-selectors */
+  @media (prefers-color-scheme: dark) {
+    details summary::before,
+    .expander-toggle::before,
+    details summary::before,
+    .expander-toggle::before {
+      background-color: var(--color-text-primary);
+    }
+  }
+}
