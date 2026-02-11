@@ -11,11 +11,11 @@ export const MarkdownVideo: React.FC<MarkdownVideoProps> = ({
   children,
   assetBasePath
 }) => {
-  // Resolve the poster URL using the base path, default to movie.svg if not found
-  const posterPath = resolveAssetUrl(poster, assetBasePath) ?? 'movie.svg';
+  // Resolve the poster URL using the base path
+  const posterPath = resolveAssetUrl(poster, assetBasePath);
 
   return (
-    <video controls preload="none" poster={posterPath}>
+    <video controls preload="metadata" poster={posterPath}>
       {children}
     </video>
   );
