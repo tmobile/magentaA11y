@@ -15,6 +15,7 @@ import { MarkdownLink } from './elements/markdown-link/markdown-link';
 import { MarkdownButton } from './elements/markdown-button/markdown-button';
 import { MarkdownInput } from './elements/markdown-input/markdown-input';
 import { MarkdownDiv } from './elements/markdown-div/markdown-div';
+import { MarkdownTrack } from './elements/markdown-track/markdown-track';
 
 import './markdown-content.scss';
 
@@ -46,6 +47,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           img: (props) => <MarkdownImage {...props} assetBasePath={assetBasePath} />,
           video: (props) => <MarkdownVideo {...props} assetBasePath={assetBasePath} />,
           source: (props) => <MarkdownSource {...props} assetBasePath={assetBasePath} />,
+          track: (props) => <MarkdownTrack {...props} assetBasePath={assetBasePath} />,
           a: (props) => <MarkdownLink {...props} markdownFunctionMap={markdownFunctionMap} />,
           button: (props) => <MarkdownButton {...props} markdownFunctionMap={markdownFunctionMap} />,
           input: (props) => <MarkdownInput {...props} markdownFunctionMap={markdownFunctionMap} />,

@@ -7,6 +7,7 @@ How to test a slider
 ### iOS Voiceover
 <video controls>
   <source src="media/video/native/slider/slider-iOSVoiceover.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/slider/slider-iOSVoiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -14,6 +15,7 @@ How to test a slider
 ### Android Talkback
 <video controls>
   <source src="media/video/native/slider/slider-AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/slider/slider-AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

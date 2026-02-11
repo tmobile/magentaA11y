@@ -8,6 +8,7 @@ How to test a modal
 
 <video controls>
   <source src="media/video/native/modal/modal_IosVoiceOver.mp4" type="video/mp4">
+  <track kind="captions" src="media/video/native/modal/modal_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -15,6 +16,7 @@ How to test a modal
 
 <video controls>
   <source src="media/video/native/modal/modal_AndroidTalkback.mp4" type="video/mp4">
+  <track kind="captions" src="media/video/native/modal/modal_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

@@ -4,6 +4,9 @@ export interface MediaProps {
   type?: string;
   children?: React.ReactNode;
   poster?: string;
+  kind?: string;
+  srcLang?: string;
+  label?: string;
 }
 
 export enum Criteria {

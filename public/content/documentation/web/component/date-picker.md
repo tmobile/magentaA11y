@@ -115,6 +115,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/
 
 <video controls>
   <source src="media/video/web/date-picker/date-picker_iOSVoiceover.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/date-picker/date-picker_iOSVoiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -122,6 +123,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/
 
 <video controls>
   <source src="media/video/web/date-picker/date-picker_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/date-picker/date-picker_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -129,6 +131,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/
 
 <video controls>
   <source src="media/video/web/date-picker/date-picker_WindowsJawsChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/date-picker/date-picker_WindowsJawsChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -136,6 +139,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/
 
 <video controls>
   <source src="media/video/web/date-picker/date-picker_WindowsNvdaChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/date-picker/date-picker_WindowsNvdaChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -143,5 +147,6 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/web/date-picker](/
 
 <video controls>
   <source src="media/video/web/date-picker/date-picker_MacOsVoiceOverSafari.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/date-picker/date-picker_MacOsVoiceOverSafari-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>

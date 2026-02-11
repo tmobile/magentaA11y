@@ -8,6 +8,7 @@ How to test a heading
 
 <video controls>
   <source src="media/video/native/headings/headings_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/headings/headings_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -15,6 +16,7 @@ How to test a heading
 
 <video controls>
   <source src="media/video/native/headings/headings_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/headings/headings_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

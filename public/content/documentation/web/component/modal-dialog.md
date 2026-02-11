@@ -201,6 +201,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 <video controls>
   <source src="media/video/web/modal-dialog/modalDialog_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/modal-dialog/modalDialog_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -208,6 +209,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 <video controls>
   <source src="media/video/web/modal-dialog/modalDialog_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/modal-dialog/modalDialog_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -215,6 +217,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 <video controls>
   <source src="media/video/web/modal-dialog/modalDialog_WindowsJawsChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/modal-dialog/modalDialog_WindowsJawsChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -222,6 +225,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 <video controls>
   <source src="media/video/web/modal-dialog/modalDialog_WindowsNvdaChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/modal-dialog/modalDialog_WindowsNvdaChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -229,5 +233,6 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 <video controls>
   <source src="media/video/web/modal-dialog/modalDialog_MacOsVoiceOverSafari.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/modal-dialog/modalDialog_MacOsVoiceOverSafari-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>

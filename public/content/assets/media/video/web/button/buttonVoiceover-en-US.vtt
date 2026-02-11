@@ -1,0 +1,37 @@
+WEBVTT
+
+1119e76d-ca32-4f08-9d6f-3a96d93a7190-0
+00:00:00.120 --> 00:00:01.840
+Buttons Heading level 1.
+
+c8c98bde-3d26-419c-988c-1c50c8b43dcf-0
+00:00:03.160 --> 00:00:08.290
+Normal button Heading level 2A Button
+must identify its purpose and role as
+
+c8c98bde-3d26-419c-988c-1c50c8b43dcf-1
+00:00:08.290 --> 00:00:09.640
+button when focused.
+
+a3b6c883-9fdb-47ce-b332-4e7d21b93e39-0
+00:00:10.680 --> 00:00:12.040
+Get started button.
+
+17efc176-6a73-480e-88ef-665f1299495f-0
+00:00:13.480 --> 00:00:15.520
+Disable Button Heading level 2.
+
+b937637c-4778-49be-9ea1-68372d800c44-0
+00:00:16.720 --> 00:00:19.670
+Disabled elements are not focusable or
+interactive,
+
+b937637c-4778-49be-9ea1-68372d800c44-1
+00:00:19.670 --> 00:00:22.280
+but the screenwriter can still discover
+them.
+
+36c122e2-67c7-400f-aa41-e8bbd6cfb418-0
+00:00:23.080 --> 00:00:29.720
+Continue dimmed button back to top of
+page in Page link buttons.

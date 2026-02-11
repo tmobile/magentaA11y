@@ -307,6 +307,7 @@ Don't use tables purely for layout. Only use tables to structure tabular data.
 
 <video controls>
   <source src="media/video/web/table/table_android.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/table/table_android-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -314,6 +315,7 @@ Don't use tables purely for layout. Only use tables to structure tabular data.
 
 <video controls>
   <source src="media/video/web/table/table_ios.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/table/table_ios-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -321,6 +323,7 @@ Don't use tables purely for layout. Only use tables to structure tabular data.
 
 <video controls>
   <source src="media/video/web/table/table_nvda.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/table/table_nvda-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -328,5 +331,6 @@ Don't use tables purely for layout. Only use tables to structure tabular data.
 
 <video controls>
   <source src="media/video/web/table/table_macos.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/table/table_macos-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>

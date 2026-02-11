@@ -8,6 +8,7 @@ How to test a reorder data row
 
 <video controls>
   <source src="media/video/native/reorder-data-row/reorder-data-row_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/reorder-data-row/reorder-data-row_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -15,6 +16,7 @@ How to test a reorder data row
 
 <video controls>
   <source src="media/video/native/reorder-data-row/reorder-data-row_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/reorder-data-row/reorder-data-row_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

@@ -69,6 +69,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](
 
 <video controls>
   <source src="media/video/web/search/search-android.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/search/search-android-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -76,24 +77,28 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](
 
 <video controls>
   <source src="media/video/web/search/search-ios.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/search/search-ios-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### Windows Jaws Chrome
 <video controls>
   <source src="media/video/web/search/search-JAWS.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/search/search-JAWS-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### Windows NVDA Chrome
 <video controls>
   <source src="media/video/web/search/search-NVDA.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/search/search-NVDA-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### MacOS Voiceover Safari
 <video controls>
   <source src="media/video/web/search/search-desktop-safari.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/search/search-desktop-safari-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

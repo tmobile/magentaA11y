@@ -78,12 +78,14 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/radio-
 
 <video controls>
   <source src="media/video/native/radio-button/radioButtonIosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/radio-button/radioButtonIosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### Android Talkback
 <video controls>
   <source src="media/video/native/radio-button/radioButtonAndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/radio-button/radioButtonAndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
