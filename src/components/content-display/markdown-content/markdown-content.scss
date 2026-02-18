@@ -91,10 +91,14 @@
   }
 
   img {
-    width: -webkit-fill-available;
+    height: auto;
     object-fit: contain;
     max-width: 100%;
-    height: auto;
+    width: -webkit-fill-available;
+  }
+
+  .img-prefers-dark {
+    filter: var(--img-svgs);
   }
 
   @media (max-width: 768px) {

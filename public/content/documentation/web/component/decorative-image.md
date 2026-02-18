@@ -59,11 +59,11 @@ If the image conveys important meaning, and there's no other text on the page wh
 
 <example class="example example--contains-icon">
   <h3 class="h-charlie decorated">
-    <img src="media/images/icons/icon-info.svg" alt=""> 
+    <img src="media/images/icons/icon-info.svg" alt="" className="img-prefers-dark"> 
     Note: Your plan might be changing soon.
   </h3>
   <a href="tel:8888888888" className="decorated">
-    <img src="media/images/icons/icon-phone.svg" class="icon" alt="">
+    <img src="media/images/icons/icon-phone.svg" class="icon img-prefers-dark" alt="">
       Call us: 888-888-8888
   </a>
 </example>

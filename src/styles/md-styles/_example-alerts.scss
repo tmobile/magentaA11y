@@ -38,6 +38,10 @@ example,
           width: 1.25rem;
           height: auto;
           margin-right: .5rem;
+
+          @media (prefers-color-scheme: dark) {
+            filter: invert(100%);
+          }          
         }
       }
 
@@ -52,6 +56,10 @@ example,
             width: 1.25rem;
             height: auto;
             margin-right: .5rem;
+
+            @media (prefers-color-scheme: dark) {
+              filter: none;
+            }
         }
       }
   }
