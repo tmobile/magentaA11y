@@ -58,7 +58,7 @@ example,
             margin-right: .5rem;
 
             @media (prefers-color-scheme: dark) {
-              filter: none;
+              filter: brightness(0) saturate(100%) invert(16%) sepia(82%) saturate(5002%) hue-rotate(141deg) brightness(95%) contrast(101%);
             }
         }
       }

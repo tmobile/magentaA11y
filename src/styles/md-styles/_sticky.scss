@@ -1,6 +1,6 @@
 // sticky content example
 .promo-bar {
-  background: #fff;
+  background: var(--color-text-on-primary);
   padding: 1rem 0 1rem 1rem;
   border-radius: var(--magentaa11y-border-weight-size-2);
   box-shadow: 0 0 3px 1px var(--color-on-tertiary);

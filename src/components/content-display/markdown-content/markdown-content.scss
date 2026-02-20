@@ -97,8 +97,10 @@
     width: -webkit-fill-available;
   }
 
-  .img-prefers-dark {
-    filter: var(--img-svgs);
+  @media (prefers-color-scheme: dark) {
+    .img-prefers-dark img {
+        filter: var(--img-svgs);
+      }
   }
 
   @media (max-width: 768px) {

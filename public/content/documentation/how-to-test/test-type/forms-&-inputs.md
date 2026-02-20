@@ -143,7 +143,7 @@
          </td>
          <td>
            <label style="margin-right:8px" for="failContrast">My border fails contrast</label>
-           <input style="border:1px solid #00BD1F" type="text" id="failContrast">
+           <input style="border:1px solid type="text" id="failContrast" class="input-fail-contrast">
          </td>
        </tr>
        </tbody>

@@ -13,5 +13,10 @@ example,
     width: 120px;
     position: relative;
     background-color: var(--color-on-primary);
+
+    select {
+      background-color: var(--color-background);
+      color: var(--color-text-primary);
+    }
   }
 }

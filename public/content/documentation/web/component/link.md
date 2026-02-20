@@ -240,7 +240,9 @@ Sometimes the design will call for multiple links with the same text label. In a
          </a>
          </h3>
          <div class="product-image-container">
-         <img class="product-image" src="media/images/mobile-phone.png" alt="mPhone Universe Max Extra Phabulous"/>
+           <div className="img-prefers-dark">
+              <img class="product-image" src="media/images/mobile-phone.png" alt="mPhone Universe Max Extra Phabulous"/>
+            </div>
          </div>
          <ul id="meta" class="product-meta">
          <li class="rating">4.8 Stars</li>
@@ -302,7 +304,9 @@ Sometimes the design will call for multiple links with the same text label. In a
                </span>
          </h3>
          <div class="product-image-container">
-            <img class="product-image" src="media/images/mobile-phone.png" alt=""/>
+            <div className="img-prefers-dark">
+              <img class="product-image" src="media/images/mobile-phone.png" alt=""/>
+            </div>
          </div>
          <ul id="meta" class="product-meta">
             <li class="rating" id="prod-0-meta-rating">4.8 Stars</li>
