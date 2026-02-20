@@ -91,10 +91,16 @@
   }
 
   img {
-    width: -webkit-fill-available;
+    height: auto;
     object-fit: contain;
     max-width: 100%;
-    height: auto;
+    width: -webkit-fill-available;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .img-prefers-dark img {
+        filter: var(--img-svgs);
+      }
   }
 
   @media (max-width: 768px) {

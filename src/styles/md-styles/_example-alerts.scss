@@ -38,6 +38,10 @@ example,
           width: 1.25rem;
           height: auto;
           margin-right: .5rem;
+
+          @media (prefers-color-scheme: dark) {
+            filter: invert(100%);
+          }          
         }
       }
 
@@ -52,6 +56,10 @@ example,
             width: 1.25rem;
             height: auto;
             margin-right: .5rem;
+
+            @media (prefers-color-scheme: dark) {
+              filter: brightness(0) saturate(100%) invert(16%) sepia(82%) saturate(5002%) hue-rotate(141deg) brightness(95%) contrast(101%);
+            }
         }
       }
   }

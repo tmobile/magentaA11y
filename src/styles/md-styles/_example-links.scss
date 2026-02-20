@@ -39,7 +39,7 @@ example,
     display: grid;
     grid-row: 1;
     justify-content: center;
-    background: var(--magentaa11y-color-brand-grayscale-200);
+    background: var(--color-surface);
     margin-bottom: 0;
     aspect-ratio: 1;
   }
@@ -132,7 +132,7 @@ example,
       border-radius: var(--magentaa11y-border-radius-size-4);
 
       &.rating {
-        background: var(--magentaa11y-color-brand-grayscale-400);
+        background: var(--color-background-tertiary);
         font-weight: var(--magentaa11y-font-weight-bold);
       }
 
