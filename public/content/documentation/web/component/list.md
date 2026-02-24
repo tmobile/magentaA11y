@@ -15,6 +15,11 @@ How to test a list
 
 2. Test mobile screenreader gestures
 
+Mobile Screen Reader Setup:
+   - Android: Settings > Accessibility > TalkBack > Settings > Verbosity > Speak text formatting (enable)
+   - iOS: Settings > VoiceOver > Verbosity > List Position > Speak (enable)
+
+Test:
    - Swipe: The screenreader reads the list content
 
 3. Listen to screenreader output on all devices
@@ -47,6 +52,7 @@ GIVEN THAT I am on a page with a list
 
 3. Mobile screenreader
 
+   - WHEN I have mobile screenreader verbosity settings enabled to Speak text formatting and list position AND 
    - WHEN I use a mobile screenreader (Talkback, VoiceOver) AND
    - I swipe to browse a list
       - I HEAR it identifies itself as a list
