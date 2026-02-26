@@ -131,7 +131,9 @@ If you have a figure that can’t be described by `alt` text, place the content 
 
 <example>
 <figure>
-  <img src="/media/images/web/figure/pie-chart.png" alt="2020 sales by item">
+  <div className="img-prefers-dark">
+    <img src="/media/images/web/figure/pie-chart.png" alt="2020 sales by items">
+  </div>
 
   <details>
     <summary>

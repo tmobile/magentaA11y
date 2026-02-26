@@ -27,12 +27,32 @@ example,
       }
     }
 
+    @media (prefers-color-scheme: dark) {
+      &.caution {
+          border-color: var(--color-caution-container);
+
+          svg {
+            fill: var(--color-caution-container);
+          }
+        }
+    }
+
     &.success {
       border-color: var(--color-success);
       background-color: var(--color-on-success-container);
 
+      @media (prefers-color-scheme: dark) {
+        &.success {
+          border-color: var(--magentaa11y-color-brand-status-positive-300);
+        }
+    }
+
       svg {
         fill: var(--color-success);
+        
+          @media (prefers-color-scheme: dark) {
+            fill: var(--magentaa11y-color-brand-status-positive-300);
+          }
       }
     }
 
