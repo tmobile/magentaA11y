@@ -49,6 +49,12 @@ example,
         background: var(--color-success);
         color: var(--color-text-on-primary);
 
+          @media (prefers-color-scheme: dark) {
+            background: var(--color-on-success-container);
+            color: var(--color-text-primary);
+
+          }        
+
           &::before {
             content:'';
             background: url("../../assets/svgs/checkmark.svg") no-repeat center center;
