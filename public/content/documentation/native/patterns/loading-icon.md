@@ -8,6 +8,7 @@ How to test a loading icon
 
 <video controls>
   <source src="media/video/native/loading-icon/loading-icon_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/loading-icon/loading-icon_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

@@ -11,6 +11,10 @@ export const MarkdownSource: React.FC<MarkdownSourceProps> = ({
   type,
   assetBasePath
 }) => {
-  const resolvedSrc = resolveAssetUrl(src, assetBasePath);
+  let resolvedSrc = resolveAssetUrl(src, assetBasePath);
+  // Append #t=0.1 to local sources so Safari preloads the first frame
+  if (resolvedSrc && !resolvedSrc.startsWith('http')) {
+    resolvedSrc = `${resolvedSrc}#t=0.1`;
+  }
   return <source src={resolvedSrc} type={type} />;
 };
