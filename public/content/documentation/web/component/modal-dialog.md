@@ -152,7 +152,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
       <button type="submit">
          Continue
       </button>
-   </section>
+   </div>
    </dialog>
 ```
 
@@ -168,10 +168,9 @@ Some browsers require additional scripting. This simple example works in Chrome,
          tabindex="-1"
          aria-modal="true"
          aria-labelledby="dialog-title">
-         <div class="dialog__content">
-   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close">
+   <button data-icon="closeCircleFilled" aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close">
    </button>
-   <div class="dialog-content">
+   <div class="dialog__content">
       <h2 id="dialog-title" class="h-bravo">
          Things you should know
       </h2>
@@ -185,10 +184,9 @@ Some browsers require additional scripting. This simple example works in Chrome,
          <li>The modal's title is announced on launch.</li>
          <li>The screen reader cannot read content behind the dialog.</li>
       </ul>
-      <button class="Magentaa11y-button Magentaa11y-button--primary" type="submit" data-fn="closeModal">
+      <button aria-label="Continue" class="Magentaa11y-button Magentaa11y-button--primary" type="submit" data-fn="closeModal">
          Continue
       </button>
-   </div>
    </dialog>
 </example> 
 
