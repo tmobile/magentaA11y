@@ -90,7 +90,7 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
 <progress role="progressbar"
           id="progress"
           tabindex="0"
-          class="progress"
+          class="progress-bar"
           aria-label="File upload"
           value="50"
           aria-valuemin="0"
@@ -103,7 +103,7 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
 <progress role="progressbar"
           id="progress"
           tabindex="0"
-          class="progress"
+          class="progress-bar"
           aria-label="File upload"
           value="50"
           aria-valuemin="0"
@@ -130,7 +130,13 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
 <div id="really-slow-app" 
      aria-live="polite" 
      aria-busy="false">
-     
+   <button class="Magentaa11y-button Magentaa11y-button--primary" 
+           data-fn="showModal" 
+           id="showSpinnerModal" 
+           data-target="spinner-modal" 
+           data-auto-close="10000">
+    Launch spinner
+  </button>   
   <dialog role="dialog"
           class="dialog"
           id="spinner-modal"
@@ -138,22 +144,32 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
           aria-modal="true"
           aria-label="progress spinner">
     <div class="dialog__content">
-   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close"></button>
-      <div class="progress-spinner">
-        <progress role="progressbar" 
-                  id="modal-title" 
-                  aria-label="Loading"></progress>
-      </div>
+      <button data-icon="closeCircleFilled" 
+           aria-label="close" 
+           type="button" 
+           data-fn="closeModal" 
+           id="closeModal" 
+           class="close">
+      </button>
+         <div class="progress-spinner">
+            <progress role="progressbar" 
+                      id="modal-title" 
+                      tabindex="0"
+                      aria-label="Loading">
+            </progress>
+         </div>
     </div>
   </dialog>
 </div>
 ```
 
 <example>
-  <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showModal" id="showSpinnerModal" data-target="spinner-modal">
+<div id="really-slow-app" 
+     aria-live="polite" 
+     aria-busy="false">
+  <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showModal" id="showSpinnerModal" data-target="spinner-modal" data-auto-close="10000">
     Launch spinner
   </button>
-
   <dialog role="dialog"
           class="dialog"
           id="spinner-modal"
@@ -161,11 +177,12 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
           aria-modal="true"
           aria-label="progress spinner">
     <div class="dialog__content">
-   <button aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close">X</button>
-      <div class="progress-spinner">
+   <button data-icon="closeCircleFilled" aria-label="close" type="button" data-fn="closeModal" id="closeModal" class="close"></button>
+      <div>
         <progress role="progressbar" 
                   id="modal-title" 
-                  aria-label="Loading"></progress>
+                  tabindex="0"
+                  aria-label="Loading" class="progress-spinner"></progress>
       </div>
     </div>
   </dialog>
@@ -176,43 +193,41 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
 
 This example dynamically injects progress updates that will be read by a screen reader:
    - `aria-busy="true"` indicates that the region is busy
-   - `aria-describedby` allows the current progress to be read when the button is focused
    - `aria-disabled` reinforces that the save action is incomplete
    - `role="status"` has an implicit `aria-live="polite"` and `aria-atomic="true"`, meaning the entire content of the status will be read on each update
 
 ```html
-<div id="slow-app">
-   <span class="btn-with-chip">
+<div id="slow-app" aria-busy="false">
       <button class="Magentaa11y-button Magentaa11y-button--primary"
          id="trigger-progressbar"
          type="button"
          data-fn="startProgress"
-         data-chip="#progress-chip"     
-         aria-describedby="progress-busy"
+         data-chip="#progress-chip"    
          aria-disabled="false">
             Save
       </button>
       <span id="progress-chip" 
          class="progress-chip" 
          role="status" 
-         hidden>0%</span>
-   </span>
+         hidden>
+      </span>
 </div>
 ```
 <example>
-<div id="slow-app">
-   <span class="btn-with-chip">
+<div id="slow-app" aria-busy="false">
       <button
       class="Magentaa11y-button Magentaa11y-button--primary"
-    id="trigger-progressbar"
-    type="button"
-    data-fn="startProgress"
-    data-chip="#progress-chip"     
-    aria-describedby="progress-busy"
-    aria-disabled="false">
-    Save
+      id="trigger-progressbar"
+      type="button"
+      data-fn="startProgress"
+      data-chip="#progress-chip"   
+      aria-disabled="false">
+      Save
       </button>
-      <span id="progress-chip" class="progress-chip" role="status" hidden>0%</span>
+      <span id="progress-chip" 
+      class="progress-chip" 
+      role="status" 
+      hidden>
       </span>
 </div>
 </example>
