@@ -6,13 +6,15 @@ How to test a dropdown
 
 ### iOS Voiceover
 <video controls>
-  <source src="media/video/native/dropdown/dropdown-iOSVoiceOver.webm" type="video/webm">
+  <source src="media/video/native/dropdown/dropdown-iOSVoiceover.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/dropdown/dropdown-iOSVoiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### Android Talkback
 <video controls>
   <source src="media/video/native/dropdown/dropdown-AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/dropdown/dropdown-AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

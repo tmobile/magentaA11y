@@ -8,6 +8,7 @@ How to test a select dropdown
 
 <video controls>
   <source src="media/video/web/select/select-ios.mp4" type="video/webm">
+  <track kind="captions" src="media/video/web/select/select-ios-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -15,6 +16,7 @@ How to test a select dropdown
 
 <video controls>
   <source src="media/video/web/select/select-android.mp4" type="video/webm">
+  <track kind="captions" src="media/video/web/select/select-android-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -22,6 +24,7 @@ How to test a select dropdown
 
 <video controls>
   <source src="media/video/web/select/select-jaws.mp4" type="video/webm">
+  <track kind="captions" src="media/video/web/select/select-jaws-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -29,6 +32,7 @@ How to test a select dropdown
 
 <video controls>
   <source src="media/video/web/select/select-nvda.mp4" type="video/webm">
+  <track kind="captions" src="media/video/web/select/select-nvda-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -36,6 +40,7 @@ How to test a select dropdown
 
 <video controls>
   <source src="media/video/web/select/select-macOS.mp4" type="video/webm">
+  <track kind="captions" src="media/video/web/select/select-macOS-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

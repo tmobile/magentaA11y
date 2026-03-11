@@ -111,6 +111,7 @@ If you are using a `<use />` element, add `aria-hidden="true"` to it.
 
 <video controls>
   <source src="media/video/web/informative-image/Android-Talkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/informative-image/Android-Talkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -119,6 +120,7 @@ If you are using a `<use />` element, add `aria-hidden="true"` to it.
 
 <video controls>
   <source src="media/video/web/informative-image/info-image_iOS-Voiceover.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/informative-image/info-image_iOS-Voiceover-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -126,6 +128,7 @@ If you are using a `<use />` element, add `aria-hidden="true"` to it.
 
 <video controls>
   <source src="media/video/web/informative-image/Windows-JAWS-Chrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/informative-image/Windows-JAWS-Chrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -133,13 +136,22 @@ If you are using a `<use />` element, add `aria-hidden="true"` to it.
 
 <video controls>
   <source src="media/video/web/informative-image/Windows-NVDA-Chrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/informative-image/Windows-NVDA-Chrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
-### MacOS Voiceover Safari 
-
+### Android Talkback
 <video controls>
   <source src="media/video/web/informative-image/Android-Talkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/informative-image/Android-Talkback-en-US.vtt" srclang="en" label="English">
+  Your browser does not support the video tag.
+</video>
+
+
+### MacOS VoiceOver Safari 
+<video controls>
+  <source src="media/video/web/informative-image/MacOS-VoiceOver-Safari.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/informative-image/MacOS-VoiceOver-Safari-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

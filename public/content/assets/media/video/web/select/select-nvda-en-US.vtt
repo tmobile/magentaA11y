@@ -1,0 +1,37 @@
+WEBVTT
+
+49b55e53-8098-482d-a4f7-da123c303aa5-0
+00:00:07.120 --> 00:00:09.160
+Select select styled with CSSA.
+
+0f3aea2f-e780-485f-95f0-76afd66a4287-0
+00:00:09.160 --> 00:00:13.280
+Selects must identify its name, role,
+and option state.
+
+7272147b-e7f4-4330-82ed-958dee636ff0-0
+00:00:14.000 --> 00:00:16.760
+We start by letting the screen reader
+read on its own.
+
+49b8b490-5ea1-4ab4-a777-55196d550853-0
+00:00:17.520 --> 00:00:22.435
+Then we'll interact with elements from
+the top manually select a NATO Phonetic
+
+49b8b490-5ea1-4ab4-a777-55196d550853-1
+00:00:22.435 --> 00:00:23.680
+letter None section.
+
+55fe58d1-e723-4649-9369-b59f3123a408-0
+00:00:28.720 --> 00:00:31.080
+Select a NATO phonetic letter combo box.
+
+934cafa1-e572-4498-88b3-b8a39125a982-0
+00:00:31.080 --> 00:00:36.040
+Non collapsed expanded A2 of B3C Four of
+five.
+
+82b15a67-21bd-4fc4-8cd1-af59deae9d2b-0
+00:00:36.560 --> 00:00:38.840
+Select a NATO phonetic letter combo box.

@@ -150,6 +150,7 @@ This custom heading requires extra attributes.
 
 <video controls>
   <source src="media/video/web/heading/headingNVDA.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/heading/headingNVDA-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -157,6 +158,7 @@ This custom heading requires extra attributes.
 
 <video controls>
   <source src="media/video/web/heading/headingJAWS.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/heading/headingJAWS-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -164,6 +166,7 @@ This custom heading requires extra attributes.
 
 <video controls>
   <source src="media/video/web/heading/headingMacOS.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/heading/headingMacOS-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -171,6 +174,7 @@ This custom heading requires extra attributes.
 
 <video controls>
   <source src="media/video/web/heading/headingAndroid.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/heading/headingAndroid-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -178,6 +182,7 @@ This custom heading requires extra attributes.
 
 <video controls>
   <source src="media/video/web/heading/headingiOS.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/heading/headingiOS-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

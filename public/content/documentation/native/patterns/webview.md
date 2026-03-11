@@ -8,6 +8,7 @@ How to test a webview
 
 <video controls>
   <source src="media/video/native/webview/webview_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/webview/webview_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -15,6 +16,7 @@ How to test a webview
 
 <video controls>
   <source src="media/video/native/webview/webview_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/webview/webview_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

@@ -8,6 +8,7 @@ How to test a segemented control / tabs
 
 <video controls>
   <source src="media/video/native/segmented-control/segmented-control_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/segmented-control/segmented-control_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -15,6 +16,7 @@ How to test a segemented control / tabs
 
 <video controls>
   <source src="media/video/native/segmented-control/segmented-control_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/segmented-control/segmented-control_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

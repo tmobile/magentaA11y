@@ -1,0 +1,34 @@
+WEBVTT
+
+ce0cb816-0e02-4208-8341-d252f316b059-0
+00:00:01.320 --> 00:00:03.535
+Text containing multiple links may work
+for sided touchscreen users,
+
+ce0cb816-0e02-4208-8341-d252f316b059-1
+00:00:03.535 --> 00:00:06.135
+but links beyond the first will not be
+accessible to voice over or full keyboard
+
+ce0cb816-0e02-4208-8341-d252f316b059-2
+00:00:06.135 --> 00:00:06.360
+access.
+
+b1481705-d980-4d0d-8d4f-4620786367b7-0
+00:00:06.560 --> 00:00:09.119
+To display multiple inline links,
+split text into paragraphs and use
+
+b1481705-d980-4d0d-8d4f-4620786367b7-1
+00:00:09.119 --> 00:00:10.640
+multiple instances of the component link.
+
+16acbd8b-9b02-4283-a058-9bb9067eb1bd-0
+00:00:12.800 --> 00:00:15.160
+This is text that is entirely a link for
+verifying activation and tests.
+
+b93fb593-e0f6-4504-874f-b633c3ef4724-0
+00:00:15.280 --> 00:00:23.400
+Link Safari Apple heading level one voice
+over off.
