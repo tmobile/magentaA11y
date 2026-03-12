@@ -1,11 +1,5 @@
 import React from 'react';
-import { FunctionMappedProps } from '../types';
-
-interface MarkdownTextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-          FunctionMappedProps {
-  markdownFunctionMap: Record<string, (event: React.MouseEvent<Element>) => void>;
-}
+import { MarkdownTextareaProps } from './markdown-textarea.types';
 
 export const MarkdownTextarea: React.FC<MarkdownTextareaProps> = ({
   markdownFunctionMap,
