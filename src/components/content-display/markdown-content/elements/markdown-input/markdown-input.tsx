@@ -45,6 +45,47 @@ export const MarkdownInput: React.FC<MarkdownInputProps> = ({
   // Convert aria-disabled to proper boolean for native input
   const ariaDisabledAttr = disabled ? true : undefined;
 
+  // Range slider: sync value to .range-value element in parent .range-group
+  if (type === 'range') {
+    // Use defaultValue so the slider is uncontrolled — a controlled range input
+    // with no state update would snap back to the original value on re-render.
+    const { value, ...rangeRest } = rest as any;
+
+    const syncInputValue = (event: React.SyntheticEvent<HTMLInputElement>) => {
+      const target = event.currentTarget as HTMLInputElement | null;
+      if (!target) return;
+      const group = target.closest('.range-group');
+      if (!group) return;
+      const valueEl = group.querySelector('.range-value') as HTMLElement | null;
+      if (!valueEl) return;
+      valueEl.textContent = target.value;
+      valueEl.setAttribute('data-value', target.value);
+    };
+
+    const userFn = typeof fn === 'function' ? fn : undefined;
+
+    const onInput = (e: React.FormEvent<HTMLInputElement>) => {
+      syncInputValue(e);
+      if (userFn && (eventType === 'onInput' || !eventType)) userFn(e as any);
+    };
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      syncInputValue(e);
+      if (userFn && eventType === 'onChange') userFn(e as any);
+    };
+
+    return (
+      <input
+        {...rangeRest}
+        type="range"
+        defaultValue={value}
+        aria-disabled={ariaDisabledAttr}
+        onInput={onInput}
+        onChange={onChange}
+      />
+    );
+  }
+
   // Case 1: Static input (No function mapped)
   if (!fnKey || typeof fn !== 'function') {
     const commonProps: any = { ...rest, type, role, 'aria-disabled': ariaDisabledAttr };
