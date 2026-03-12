@@ -141,12 +141,14 @@ This native select contains all the accessibility criteria for free.
 <label for="nato">
   Select a Nato phonetic Letter
 </label>
+<div class="select-wrapper">
 <select id="nato">
   <option value="None" selected disabled>Select a letter</option>
   <option value="A">Alpha</option>
   <option value="B">Bravo</option>
   <option value="C">Charlie</option>
 </select>
+</div>
 </example>
 
 
@@ -170,12 +172,14 @@ This select is focusable with all options disabled.
 <label for="nato-disabled-focusable">
   Select a Nato phonetic Letter
 </label>
+<div class="select-wrapper">
 <select id="nato-disabled-focusable" aria-disabled="true">
   <option value="None" disabled>None</option>
   <option value="A" disabled selected>Alpha</option>
   <option value="B" disabled>Bravo</option>
   <option value="C" disabled>Charlie</option>
 </select>
+</div>
 </example>
 
 
@@ -199,12 +203,14 @@ This select is completely disabled and not focusable, making it harder to discov
 <label for="nato-disabled">
   Select a Nato phonetic Letter
 </label>
+<div class="select-wrapper">
 <select id="nato-disabled" disabled>
   <option value="None">None</option>
   <option value="A">Alpha</option>
   <option value="B" selected>Bravo</option>
   <option value="C">Charlie</option>
 </select>
+</div>
 </example>
 
 ### Avoid custom select dropdown elements:

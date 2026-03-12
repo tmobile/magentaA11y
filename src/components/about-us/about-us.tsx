@@ -24,6 +24,8 @@ function AboutUs() {
             <p className="MagentaA11y-about__info-text">
               We are a passionate, multi-disciplinary team of accessibility professionals with deep expertise in universal design, inclusive development, and digital equity. Our mission is to empower teams across T-Mobile and beyond to create accessible solutions that work for everyone, helping remove barriers and opening opportunities through technology.
             </p>
+            <h3 className="MagentaA11y-about__contact-title">Get in touch with us!</h3>
+        <p>If you have any questions or comments about MagentaA11y, you can reach us at <a href="mailto:magentaa11y@t-mobile.com" className="MagentaA11y-about__contact-email">magentaa11y@t-mobile.com</a>.</p>
           </div>
           <div className="MagentaA11y-about__info-item">
             <h2 className="MagentaA11y-about__info-title">Why Magenta A11y</h2>
@@ -34,11 +36,15 @@ function AboutUs() {
           </div>
         </div>
       </div>
-      <div className="MagentaA11y-about__contact-section">
+      <div className="MagentaA11y-about__legal-section">
+        <h2 className="MagentaA11y-about__legal-title">Legal Notice:</h2>
+        <p className="MagentaA11y-about__contribute-message">All information, guidelines, data, content, resulting content or output, or advice (“MagentaA11y Content”) accessed, used, received, or provided through MagentaA11y.com, including subdomains, is provided “AS-IS,” “AS AVAILABLE,” and may contain faults, bugs, or similar; the information and guidelines offered are intended as helpful resources to support digital accessibility awareness and best practices, but they do not represent a comprehensive list of all WCAG success criteria or techniques required for compliance and should not be relied upon as such, and adherence to them does not guarantee that any digital asset will be free from accessibility issues or complaints. Any and all express or implied warranties, to the greatest extent provided or not prevented by law, are disclaimed. In no event shall T-Mobile USA, or any affiliates, employees, directors, executives, subsidiaries, contractors, vendors, parent organizations, or any related party to T-Mobile USA be liable for any direct, indirect, incidental, special, exemplary, consequential, or any other damages, however caused, and on any theory of liability, whether in contract, strict liability, or tort arising in any way out of the access or use of MagentaA11y.com or MagentaA11y Content.</p>
+
+  
         <h2 className="MagentaA11y-about__contribute-title">Contribute:</h2>
         <p className="MagentaA11y-about__contribute-message">As an open source tool, we encourage everyone to participate in contributing to MagentaA11y. Whether you're a content designer, product manager, developer, or anyone passionate about accessibility, your contributions can make a difference. You can contribute to <a href={"https://github.com/tmobile/magentaA11y"}>MagentaA11y on GitHub</a>.</p>
-        <h3 className="MagentaA11y-about__contact-title">Get in touch with us!</h3>
-        <p>If you have any questions or comments about MagentaA11y, you can reach us at <a href="mailto:magentaa11y@t-mobile.com" className="MagentaA11y-about__contact-email">magentaa11y@t-mobile.com</a>.</p>
+     
+        
       </div>
     </div>
   );

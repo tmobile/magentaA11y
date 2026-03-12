@@ -74,23 +74,31 @@ Toast snackbars might seem like an easy way to provide feedback, but they’re o
    - Inline Feedback: Inject a success message _in proximity_ to the updated control
    - Accessible Undo/Redo Options: Place these buttons in clear, easy-to-navigate locations.
    - Thoughtful Confirmations: Use a confirmation screen for critical actions or when users are exiting an important flow.
-
-<!-- TODO: Needs JS support to activate the toast!
+```html
+<fieldset class="switch">
+    <legend>Marketing preferences</legend>
+    <input class="hidden-visually" data-fn="openToast" type="checkbox" role="switch" id="spam">
+    <label for="spam">  Send me constant spam</label>
+    <div id="hint-spam" role="alert" class="alert notification inert">
+        <div id="hint-spam-message">
+            Spam preferences saved
+        </div>
+    </div>
+</fieldset>
+```
 
 <example>
-<fieldset>
+<fieldset class="switch">
   <legend>Marketing preferences</legend>
-  <input type="checkbox" role="switch" id="spam" aria-describedby="hint-spam-message" checked="">
-  <label for="spam">
-   Send me constant spam
-   </label>
+ <input class="hidden-visually" data-fn="openToast" type="checkbox" role="switch" id="spam">
+  <label for="spam">  Send me constant spam</label>
   <div id="hint-spam" role="alert" class="alert notification inert">
     <div id="hint-spam-message">
-      - Use JS to inject the alert here (comment out in the future)
+      Spam preferences saved
     </div>     
   </div>
 </fieldset>
-</example> -->
+</example>
 
 ### When Toast Snackbars Don’t Work:
 There are certain scenarios where snackbars simply aren’t the right tool:

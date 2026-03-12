@@ -9,6 +9,14 @@ pre {
   color: var(--color-on-tertiary); /* Adapts to theme */
 }
 
+/* stylelint-disable no-duplicate-selectors */
+@media (prefers-color-scheme: dark) {
+  pre {
+    background-color: var(--color-on-primary); /* Dark mode background */
+    border: 1px solid var(--color-outline);
+  }
+}
+
 code {
   font-family: monospace;
   color: var(--color-text-secondary);
@@ -42,19 +50,22 @@ code {
 }
 
 /* Tag attributes (e.g., id, class) */
-.hljs-attr {
-  color: var(--color-info); /* Tertiary color for attributes */
+.hljs-attr,
+.hljs-title,
+.hljs-variable, {
+  color: var(--color-info);
 }
 
 /* Attribute values (e.g., "example-header") */
-.hljs-string {
-  color: var(--color-error-container); /* Light color for attribute values */
+.hljs-string,
+.hljs-literal {
+  color: var(--color-critical); /* Light color for attribute values */
   font-weight: normal;
 }
 
 /* Comments */
 .hljs-comment {
-  color: var(--color-success); /* Muted color for comments */
+  color: var(--color-caution); /* Muted color for comments */
 
 }
 
@@ -64,21 +75,21 @@ code {
 }
 
 /* Operators, such as `=` */
-.hljs-operator {
-  color: var(--color-error); /* Error color for operators */
-}
+//  {
+//   color: var(--color-error); /* Error color for operators */
+// }
 
 /* Keywords */
-.hljs-keyword {
-  /* Accent color for keywords */
+.hljs-keyword,
+.hljs-type {
   color: var(--color-on-primary-container); 
-  font-weight: bold;
 }
 
 /* HTML entity or URL */
 .hljs-entity,
-.hljs-url {
-  color: var(--color-link); /* Link color for entities and URLs */
+.hljs-url,
+.hljs-operator{
+  color: var(--color-primary); /* Link color for entities and URLs */
 }
 
 /* Functions and properties */
@@ -88,6 +99,7 @@ code {
 }
 
 /* Numbers */
-.hljs-number {
+.hljs-number,
+.hljs-meta {
   color: var(--color-info); /* Secondary color for numbers */
 }
