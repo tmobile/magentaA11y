@@ -124,6 +124,7 @@ While there is a native HTML range input, it is **difficult to style reliably** 
       name="cowbell"
       min="0"
       max="10"
+      value="10"
       step="1">
   </div>
 </div>

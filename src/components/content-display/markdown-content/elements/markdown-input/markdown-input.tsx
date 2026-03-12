@@ -47,6 +47,10 @@ export const MarkdownInput: React.FC<MarkdownInputProps> = ({
 
   // Range slider: sync value to .range-value element in parent .range-group
   if (type === 'range') {
+    // Use defaultValue so the slider is uncontrolled — a controlled range input
+    // with no state update would snap back to the original value on re-render.
+    const { value, ...rangeRest } = rest as any;
+
     const syncInputValue = (event: React.SyntheticEvent<HTMLInputElement>) => {
       const target = event.currentTarget as HTMLInputElement | null;
       if (!target) return;
@@ -70,7 +74,16 @@ export const MarkdownInput: React.FC<MarkdownInputProps> = ({
       if (userFn && eventType === 'onChange') userFn(e as any);
     };
 
-    return <input {...rest} type="range" onInput={onInput} onChange={onChange} />;
+    return (
+      <input
+        {...rangeRest}
+        type="range"
+        defaultValue={value}
+        aria-disabled={ariaDisabledAttr}
+        onInput={onInput}
+        onChange={onChange}
+      />
+    );
   }
 
   // Case 1: Static input (No function mapped)
