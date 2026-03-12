@@ -15,6 +15,7 @@ import { MarkdownLink } from './elements/markdown-link/markdown-link';
 import { MarkdownButton } from './elements/markdown-button/markdown-button';
 import { MarkdownInput } from './elements/markdown-input/markdown-input';
 import { MarkdownDiv } from './elements/markdown-div/markdown-div';
+import { MarkdownTextarea } from './elements/markdown-textarea/markdown-textarea';
 
 import './markdown-content.scss';
 
@@ -50,6 +51,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({
           button: (props) => <MarkdownButton {...props} markdownFunctionMap={markdownFunctionMap} />,
           input: (props) => <MarkdownInput {...props} markdownFunctionMap={markdownFunctionMap} />,
           div: (props) => <MarkdownDiv {...props} markdownFunctionMap={markdownFunctionMap} />,
+          textarea: (props) => <MarkdownTextarea {...props} markdownFunctionMap={markdownFunctionMap} />,
         }}
       >
         {content || ''}

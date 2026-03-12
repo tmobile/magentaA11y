@@ -116,25 +116,25 @@ if(textarea) {
   </div>
 </div>
 ```
-<!-- TODO JS for countdown of characters -->
 <example>
-   <label for="message">
-   Your message
-   </label>
-   <textarea 
-   id="message"
-   maxlength="50"
-   aria-describedby="charcounter">
-   </textarea>
-   <div role="status">
-   <!-- Do not reference the status element with aria-describedby 
-         Doing so will not work in VoiceOver -->
-   <div id="charcounter" class="hint">
-      <span id="currentChars">50</span> 
-      of 50
-      <span class="hidden">
-         characters remaining
-      </span>
-   </div>
-   </div>
+  <label for="message">
+    Your message
+  </label>
+  <textarea
+    id="message"
+    maxlength="50"
+    aria-describedby="charcounter"
+    data-fn="charCounter"
+    data-event="onInput">
+  </textarea>
+  <div id="charcounter" class="hint" aria-hidden="true">
+    <span id="currentChars">50</span>
+    of 50 characters remaining
+  </div>
+  <div role="status" class="hidden">
+    <!-- Visually hidden live region — updated after delay so screen reader
+         does not interrupt announcement of the typed character -->
+    <span id="sr-counter-target"></span>
+    of 50 characters remaining
+  </div>
 </example>

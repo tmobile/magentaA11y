@@ -406,4 +406,28 @@ export const getMarkdownFunctionMap = (
     }
   }
 },
+
+  /**
+   * Updates a character counter display tied to a textarea with a maxlength attribute.
+   * Updates the visible counter (#currentChars) immediately and the screen reader
+   * live region (#sr-counter-target) after a 1000ms delay to avoid interrupting
+   * the screen reader's announcement of the typed character.
+   */
+  charCounter: (event) => {
+    const textarea = event.currentTarget as HTMLTextAreaElement;
+    const maxLength = parseInt(textarea.getAttribute('maxlength') || '0', 10);
+    const remaining = maxLength - textarea.value.length;
+
+    const visibleCounter = document.getElementById('currentChars');
+    if (visibleCounter) {
+      visibleCounter.innerHTML = String(remaining);
+    }
+
+    setTimeout(() => {
+      const srTarget = document.getElementById('sr-counter-target');
+      if (srTarget) {
+        srTarget.innerHTML = String(remaining);
+      }
+    }, 1000);
+  },
 });
