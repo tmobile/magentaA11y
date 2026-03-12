@@ -82,7 +82,7 @@ This is one of the exceedingly rare instances where a custom element makes a lot
        tabindex="0"
        aria-valuemin="0"
        aria-valuenow="10"
-       aria-valuemax="11"
+       aria-valuemax="10"
        aria-labelledby="range-label">
   </div>
 </div>
@@ -104,7 +104,7 @@ While there is a native HTML range input, it is **difficult to style reliably** 
       id="cowbell-range"
       name="cowbell"
       min="0"
-      max="11"
+      max="10"
       value="10"
       step="1">
   </div>
