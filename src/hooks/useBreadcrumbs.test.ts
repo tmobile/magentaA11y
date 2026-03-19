@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import React from 'react';
 import contentData from 'shared/content.json';
 import { DocumentationCategory } from 'shared/types/shared-types';
+import { SideNavItem } from 'components/navigation/nav.types';
 import { useBreadcrumbs } from './useBreadcrumbs';
 
 const wrapper =
@@ -14,9 +15,9 @@ const wrapper =
       children
     );
 
-const webItems = contentData[DocumentationCategory.WEB];
-const nativeItems = contentData[DocumentationCategory.NATIVE];
-const howToTestItems = contentData[DocumentationCategory.HOW_TO_TEST];
+const webItems = contentData[DocumentationCategory.WEB] as SideNavItem[];
+const nativeItems = contentData[DocumentationCategory.NATIVE] as SideNavItem[];
+const howToTestItems = contentData[DocumentationCategory.HOW_TO_TEST] as SideNavItem[];
 
 describe('useBreadcrumbs', () => {
   describe('web criteria - item page', () => {
