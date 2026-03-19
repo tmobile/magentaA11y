@@ -17,6 +17,8 @@ import { SideNavItem } from '../navigation/nav.types';
 import MarkdownContent from './markdown-content/markdown-content';
 import { Criteria } from './markdown-content/markdown-content.types';
 
+import Breadcrumb from '../breadcrumb/breadcrumb';
+import { useBreadcrumbs } from 'hooks/useBreadcrumbs';
 import '../../styles/_code-blocks.scss';
 import './content-display.scss';
 
@@ -47,6 +49,8 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
     tabs,
     activeTab
   );
+
+  const breadcrumbs = useBreadcrumbs(documentation, items);
 
   useEffect(() => {
     if (!tabs.length) return;
@@ -112,6 +116,8 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
 
   return (
     <div className="MagentaA11y__nav-display">
+      <Breadcrumb items={breadcrumbs} />
+
       <div className="MagentaA11y__nav-display__intro">
         <h1 className="MagentaA11y__nav-display__title">{label}</h1>
 
