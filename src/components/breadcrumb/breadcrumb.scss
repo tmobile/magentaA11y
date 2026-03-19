@@ -1,4 +1,6 @@
 .MagentaA11y__breadcrumb {
+  font: var(--magentaa11y-typeset-body-sm-regular);
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +8,6 @@
     margin: 0;
     padding: 0;
     gap: var(--magentaa11y-spacing-size-8);
-    font: var(--magentaa11y-typeset-body-sm-regular);
   }
 
   &__item {
@@ -21,7 +22,6 @@
 
     &[aria-current='page'] {
       color: var(--color-text-primary);
-      font: var(--magentaa11y-typeset-body-sm-strong);
     }
   }
 

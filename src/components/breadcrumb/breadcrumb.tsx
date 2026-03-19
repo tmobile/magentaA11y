@@ -25,7 +25,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
                   {item.label}
                 </Link>
               ) : (
-                item.label
+                <span className="MagentaA11y__breadcrumb__item">{item.label}</span>
               )}
             </li>
           );
