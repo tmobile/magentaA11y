@@ -1,0 +1,37 @@
+.MagentaA11y__breadcrumb {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--magentaa11y-spacing-size-8);
+    font: var(--magentaa11y-typeset-body-sm-regular);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    color: var(--color-text-secondary);
+
+    &:not(:last-child)::after {
+      content: '/';
+      margin-left: var(--magentaa11y-spacing-size-8);
+    }
+
+    &[aria-current='page'] {
+      color: var(--color-text-primary);
+      font: var(--magentaa11y-typeset-body-sm-strong);
+    }
+  }
+
+  &__link {
+    color: var(--color-text-link);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
