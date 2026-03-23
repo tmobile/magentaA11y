@@ -1,5 +1,5 @@
 import { NavigateFunction } from 'react-router-dom';
-
+import React from 'react';
 /**
  * A map of callable functions that can be referenced inside Markdown files rendered as HTML.
  *

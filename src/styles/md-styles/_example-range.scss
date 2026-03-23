@@ -1,0 +1,67 @@
+
+example,
+.example {
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 200px;
+    border: none;
+
+    // Track — webkit (Chrome, Safari, Edge)
+    &::-webkit-slider-runnable-track {
+      background: var(--magentaa11y-color-brand-grayscale-black);
+      border-radius: 2px;
+      height: 4px;
+      margin: 0 -6px;
+    }
+
+    // Track — Firefox
+    &::-moz-range-track {
+      background: var(--magentaa11y-color-brand-grayscale-black);
+      border-radius: 2px;
+      height: 4px;
+      margin: 0 -6px;
+    }
+
+    // Thumb — webkit
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      background: var(--color-primary);
+      border: none;
+      border-radius: 50%;
+      height: 24px;
+      margin-top: -10px; // center on 4px track: -((24 - 4) / 2)
+      width: 24px;
+      position: relative;
+    }
+
+    // Thumb — Firefox
+    &::-moz-range-thumb {
+      background: var(--color-primary);
+      border: none;
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+    }
+
+    // Focus indicator
+    &:focus-visible {
+      outline: 3px solid var(--color-primary);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      &::-webkit-slider-runnable-track {
+        background: var(--magentaa11y-color-brand-grayscale-white);
+      }
+
+      &::-moz-range-track {
+        background: var(--magentaa11y-color-brand-grayscale-white);
+      }
+    }
+  }
+}
