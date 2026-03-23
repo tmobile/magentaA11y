@@ -83,7 +83,7 @@ const SideNav = forwardRef(({ documentation, testId }: SideNavProps, ref) => {
                 <Accordion
                   title={item.label}
                   id={`${item.name}-list`}
-                  isOpened={itemActive}
+                  isOpened={true}
                 >
                   {item.children && item.children.length > 0 ? (
                     <ul className="MagentaA11y__side-nav--sub-list">
