@@ -31,7 +31,7 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in desktop view 
               class="MagentaA11y-accordion__heading"
             >
               <button
-                aria-expanded="false"
+                aria-expanded="true"
                 class="MagentaA11y-accordion__headline"
                 type="button"
               >
@@ -42,6 +42,454 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in desktop view 
                 </span>
               </button>
             </h3>
+            <div
+              class="MagentaA11y-accordion__body"
+            >
+              <ul
+                class="MagentaA11y__side-nav--sub-list"
+              >
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/overview"
+                  >
+                    Overview
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/alert-notification"
+                  >
+                    Alert Notification
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/animation"
+                  >
+                    Animation
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/autocomplete"
+                  >
+                    Autocomplete
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/breadcrumbs"
+                  >
+                    Breadcrumbs
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/button"
+                  >
+                    Button
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/carousel-slideshow"
+                  >
+                    Carousel Slideshow
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/checkbox"
+                  >
+                    Checkbox
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/complex-graphics"
+                  >
+                    Complex Graphics
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/date-picker"
+                  >
+                    Date Picker
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/decorative-image"
+                  >
+                    Decorative Image
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/expander-accordion"
+                  >
+                    Expander Accordion
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/figure"
+                  >
+                    Figure
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/footnote"
+                  >
+                    Footnote
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/heading"
+                  >
+                    Heading
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/help-hint-error"
+                  >
+                    Help Hint Error
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/iframe"
+                  >
+                    Iframe
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/informative-image"
+                  >
+                    Informative Image
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/link"
+                  >
+                    Link
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/list"
+                  >
+                    List
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/modal-dialog"
+                  >
+                    Modal Dialog
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/number-input"
+                  >
+                    Number Input
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/pagination-nav"
+                  >
+                    Pagination Nav
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/password-input"
+                  >
+                    Password Input
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/progress-indicator"
+                  >
+                    Progress Indicator
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/radio-button"
+                  >
+                    Radio Button
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/range-slider"
+                  >
+                    Range Slider
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/scrolling-container"
+                  >
+                    Scrolling Container
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/search"
+                  >
+                    Search
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/select-dropdown"
+                  >
+                    Select Dropdown
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/separator-horizontal-rule"
+                  >
+                    Separator Horizontal Rule
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/star-rating"
+                  >
+                    Star Rating
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/stepper-input"
+                  >
+                    Stepper Input
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/sticky-element"
+                  >
+                    Sticky Element
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/strikethrough-content"
+                  >
+                    Strikethrough Content
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/table"
+                  >
+                    Table
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/tabs"
+                  >
+                    Tabs
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/text-input"
+                  >
+                    Text Input
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/textarea-multiline-input"
+                  >
+                    Textarea Multiline Input
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/tidbit"
+                  >
+                    Tidbit
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/toast-snackbar"
+                  >
+                    Toast Snackbar
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/toggle-switch"
+                  >
+                    Toggle Switch
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/tooltip"
+                  >
+                    Tooltip
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/component/video-audio-player"
+                  >
+                    Video Audio Player
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </li>
         <li
@@ -54,7 +502,7 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in desktop view 
               class="MagentaA11y-accordion__heading"
             >
               <button
-                aria-expanded="false"
+                aria-expanded="true"
                 class="MagentaA11y-accordion__headline"
                 type="button"
               >
@@ -65,6 +513,104 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in desktop view 
                 </span>
               </button>
             </h3>
+            <div
+              class="MagentaA11y-accordion__body"
+            >
+              <ul
+                class="MagentaA11y__side-nav--sub-list"
+              >
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/overview"
+                  >
+                    Overview
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/basic-web-page"
+                  >
+                    Basic Web Page
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/footer-landmark"
+                  >
+                    Footer Landmark
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/form"
+                  >
+                    Form
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/header-landmark"
+                  >
+                    Header Landmark
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/main-landmark"
+                  >
+                    Main Landmark
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/navigation-landmark"
+                  >
+                    Navigation Landmark
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/single-page-application"
+                  >
+                    Single Page Application
+                  </a>
+                </li>
+                <li
+                  class="MagentaA11y__side-nav--sub-item"
+                >
+                  <a
+                    class="MagentaA11y__side-nav--link"
+                    href="/web-criteria/page-level/skip-link"
+                  >
+                    Skip Link
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </li>
       </ul>
@@ -129,7 +675,7 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in mobile view 1
                 class="MagentaA11y-accordion__heading"
               >
                 <button
-                  aria-expanded="false"
+                  aria-expanded="true"
                   class="MagentaA11y-accordion__headline"
                   type="button"
                 >
@@ -140,6 +686,454 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in mobile view 1
                   </span>
                 </button>
               </h3>
+              <div
+                class="MagentaA11y-accordion__body"
+              >
+                <ul
+                  class="MagentaA11y__side-nav--sub-list"
+                >
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/overview"
+                    >
+                      Overview
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/alert-notification"
+                    >
+                      Alert Notification
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/animation"
+                    >
+                      Animation
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/autocomplete"
+                    >
+                      Autocomplete
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/breadcrumbs"
+                    >
+                      Breadcrumbs
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/button"
+                    >
+                      Button
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/carousel-slideshow"
+                    >
+                      Carousel Slideshow
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/checkbox"
+                    >
+                      Checkbox
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/complex-graphics"
+                    >
+                      Complex Graphics
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/date-picker"
+                    >
+                      Date Picker
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/decorative-image"
+                    >
+                      Decorative Image
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/expander-accordion"
+                    >
+                      Expander Accordion
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/figure"
+                    >
+                      Figure
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/footnote"
+                    >
+                      Footnote
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/heading"
+                    >
+                      Heading
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/help-hint-error"
+                    >
+                      Help Hint Error
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/iframe"
+                    >
+                      Iframe
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/informative-image"
+                    >
+                      Informative Image
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/link"
+                    >
+                      Link
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/list"
+                    >
+                      List
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/modal-dialog"
+                    >
+                      Modal Dialog
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/number-input"
+                    >
+                      Number Input
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/pagination-nav"
+                    >
+                      Pagination Nav
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/password-input"
+                    >
+                      Password Input
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/progress-indicator"
+                    >
+                      Progress Indicator
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/radio-button"
+                    >
+                      Radio Button
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/range-slider"
+                    >
+                      Range Slider
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/scrolling-container"
+                    >
+                      Scrolling Container
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/search"
+                    >
+                      Search
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/select-dropdown"
+                    >
+                      Select Dropdown
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/separator-horizontal-rule"
+                    >
+                      Separator Horizontal Rule
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/star-rating"
+                    >
+                      Star Rating
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/stepper-input"
+                    >
+                      Stepper Input
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/sticky-element"
+                    >
+                      Sticky Element
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/strikethrough-content"
+                    >
+                      Strikethrough Content
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/table"
+                    >
+                      Table
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/tabs"
+                    >
+                      Tabs
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/text-input"
+                    >
+                      Text Input
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/textarea-multiline-input"
+                    >
+                      Textarea Multiline Input
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/tidbit"
+                    >
+                      Tidbit
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/toast-snackbar"
+                    >
+                      Toast Snackbar
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/toggle-switch"
+                    >
+                      Toggle Switch
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/tooltip"
+                    >
+                      Tooltip
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/component/video-audio-player"
+                    >
+                      Video Audio Player
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
           <li
@@ -152,7 +1146,7 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in mobile view 1
                 class="MagentaA11y-accordion__heading"
               >
                 <button
-                  aria-expanded="false"
+                  aria-expanded="true"
                   class="MagentaA11y-accordion__headline"
                   type="button"
                 >
@@ -163,6 +1157,104 @@ exports[`SideNav Component - Snapshot Test matches the snapshot in mobile view 1
                   </span>
                 </button>
               </h3>
+              <div
+                class="MagentaA11y-accordion__body"
+              >
+                <ul
+                  class="MagentaA11y__side-nav--sub-list"
+                >
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/overview"
+                    >
+                      Overview
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/basic-web-page"
+                    >
+                      Basic Web Page
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/footer-landmark"
+                    >
+                      Footer Landmark
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/form"
+                    >
+                      Form
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/header-landmark"
+                    >
+                      Header Landmark
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/main-landmark"
+                    >
+                      Main Landmark
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/navigation-landmark"
+                    >
+                      Navigation Landmark
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/single-page-application"
+                    >
+                      Single Page Application
+                    </a>
+                  </li>
+                  <li
+                    class="MagentaA11y__side-nav--sub-item"
+                  >
+                    <a
+                      class="MagentaA11y__side-nav--link"
+                      href="/web-criteria/page-level/skip-link"
+                    >
+                      Skip Link
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </li>
         </ul>
