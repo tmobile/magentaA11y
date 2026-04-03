@@ -38,10 +38,15 @@ export const useBreadcrumbs = (
   if (!categoryItem) return [];
 
   const basePath = `/${documentation}-criteria`;
+  const categoryHref = `${basePath}/${categorySegment}/overview`;
+  const sectionHref = getFirstOverviewLink(documentation);
 
   const crumbs: BreadcrumbItem[] = [
     { label: 'Home', href: '/' },
-    { label: SECTION_LABELS[documentation], href: getFirstOverviewLink(documentation) },
+    {
+      label: SECTION_LABELS[documentation],
+      href: sectionHref === categoryHref ? undefined : sectionHref,
+    },
   ];
 
   if (isItemPage) {
