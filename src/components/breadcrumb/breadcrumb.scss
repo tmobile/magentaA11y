@@ -16,7 +16,7 @@
     color: var(--color-text-secondary);
 
     &:not(:last-child)::after {
-      content: '/';
+      content: '/' / '';
       margin-left: var(--magentaa11y-spacing-size-8);
     }
 
