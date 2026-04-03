@@ -131,7 +131,7 @@ if(textarea) {
     <span id="currentChars">50</span>
     of 50 characters remaining
   </div>
-  <div role="status" class="hidden">
+  <div role="status" class="hidden-visually">
     <!-- Visually hidden live region — updated after delay so screen reader
          does not interrupt announcement of the typed character -->
     <span id="sr-counter-target"></span>
