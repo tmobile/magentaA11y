@@ -17,7 +17,7 @@ example,
       display: block;
 
       &::backdrop {
-        background-color: rgba(#000, .7);
+        background-color: rgb(0 0 0 / 70%);
       }
     }
 

@@ -184,9 +184,10 @@ Some browsers require additional scripting. This simple example works in Chrome,
          <li>The modal's title is announced on launch.</li>
          <li>The screen reader cannot read content behind the dialog.</li>
       </ul>
-      <button aria-label="Continue" class="Magentaa11y-button Magentaa11y-button--primary" type="submit" data-fn="closeModal">
+      <button class="Magentaa11y-button Magentaa11y-button--primary" type="submit" data-fn="closeModal">
          Continue
       </button>
+   </div>
    </dialog>
 </example> 
 
