@@ -2,10 +2,27 @@
 // Styles for markdown file examples and demos
 // Order matters for cascade - do not reorder
 
-.keyboard-key {
-  padding: 3px 6px;
-  background: #eee;
-  border-radius: 3px;
-  outline: 1px solid #ddd;
-  color: black;
-}
+@use './md-styles/tables' as *;
+@use './md-styles/keyboard' as *;
+@use './md-styles/example-base' as *;
+@use './md-styles/example-carousel' as *;
+@use './md-styles/example-switch' as *;
+@use './md-styles/example-stepper' as *;
+@use './md-styles/example-spa' as *;
+@use './md-styles/example-forms' as *;
+@use './md-styles/example-range' as *;
+@use './md-styles/example-tidbit' as *;
+@use './md-styles/example-select' as *;
+@use './md-styles/example-links' as *;
+@use './md-styles/example-expander' as *;
+@use './md-styles/example-alerts' as *;
+@use './md-styles/example-password' as *;
+@use './md-styles/bad-example' as *;
+@use './md-styles/sticky' as *;
+@use './md-styles/stars' as *;
+@use './md-styles/animation' as *;
+@use './md-styles/cards' as *;
+@use './md-styles/example-footnote' as *;
+@use './md-styles/how-to-test-color-contrast' as *;
+@use './md-styles/example-modal-dialog' as *;
+@use './md-styles/example-progress-indicator' as *;
