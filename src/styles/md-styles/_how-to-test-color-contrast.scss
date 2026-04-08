@@ -1,0 +1,36 @@
+
+.contrast-fail-1 {
+    color:#0FE000;
+    
+    @media (prefers-color-scheme: dark) {
+        color: var(--color-tertiary-container);
+    }
+}
+
+
+.contrast-fail-2 {
+    color:#099; 
+    font-size: 18pt;
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--color-caution-container);
+    }
+}
+
+
+.contrast-fail-3 {
+    color:#099;
+    
+    @media (prefers-color-scheme: dark) {
+        color: var(--color-caution-container);
+    }
+}
+
+.contrast-fail-4 {
+    color: #0FE000;
+    font-size:54px;
+    
+    @media (prefers-color-scheme: dark) {
+        color: var(--color-tertiary-container);
+    }
+}

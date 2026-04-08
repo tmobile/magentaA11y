@@ -69,6 +69,15 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/single-p
 - To force the screenreader to read all contents even if it did not change within the element, add `aria-atomic="true"`
 - **Rarely** must you use `aria-live="assertive"` as it will override every other message from the screenreader
 
+## How MagentaA11y handles SPA focus management and live regions
+On this site, we use a hidden `aria-live` region combined with focus management to handle SPA page transitions.
+
+More details:
+
+- When a user is routed to a new path or page, we programmatically move focus to a visually hidden heading (h2) at the top of the page that contains dynamic text of "Navigated to: {Page Name}" message. 
+- Resetting the focus point to this h2 at the top of the document allows for a consistent keyboard and screen reader experience.
+- We use `aria-live="polite"` and `aria-atomic="true"` on the h2 to ensure that a screen reader announces the new page location whenever the live region text changes.
+
 ## About alerts
 
 - _By default_ an element using `role="alert"` has `aria-live="assertive"`
@@ -77,9 +86,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/single-p
 
 This is one example of a dynamic content region. It is similar to the carousel example.
 
-<!-- TODO mention how SPA works for our routing on current site -->
-
-- It is not the only way to build a dynamic region, but it meets all the critieria:
+It is not the only way to build a dynamic region, but it meets all the critieria:
   - New content is announced
   - Focus is consistently placed at the top of the content
 

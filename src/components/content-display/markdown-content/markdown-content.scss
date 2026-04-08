@@ -84,14 +84,23 @@
     color: var(--color-text-link);
     position: relative;
     font-size: var(--magentaa11y-font-size-16);
-    margin-right: 24px;
+    
+    &[target="_blank"] {
+      margin-right: 24px;
+    }
   }
 
   img {
-    width: -webkit-fill-available;
+    height: auto;
     object-fit: contain;
     max-width: 100%;
-    height: auto;
+    width: -webkit-fill-available;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .img-prefers-dark img {
+        filter: var(--img-svgs);
+      }
   }
 
   @media (max-width: 768px) {

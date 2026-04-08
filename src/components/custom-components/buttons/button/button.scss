@@ -55,6 +55,8 @@
       --button--text-color: var(--button-disabled-text);
       --icon-color: var(--button-disabled-text);
       --button--cursor: not-allowed;
+      
+      border:1px solid var(--button-disabled-text);
     }
   }
 

@@ -8,19 +8,19 @@ users.
 Contains developer-specific information, including expected behaviors, implementation details, and
 best practices.
 
-1.  **How to test**
+1.  ## How to test
 
-    **Test with your keyboard first**
+    ### Test with your keyboard first
 
     Navigate through the page using only the tab and shift + tab keys on your keyboard to reach all
     links and buttons.
 
-    **Test with screen readers second**
+    ### Test with screen readers second
 
     Use a screen reader, such as NVDA (for Windows) or VoiceOver (for macOS) and browse the page
     using your arrow keys to reach all links and buttons.
 
-2.  **What to test for**
+2.  ## What to test for
 
       <div class="how-to-test-checklist-item">
         <h3>✓ Ensure each link and button receives focus and has a visible focus indicator</h3>
@@ -270,7 +270,7 @@ best practices.
         </div>
       </div>
 
-3.  **What's the difference between a link and a button**
+3.  ## What's the difference between a link and a button
 
     ### If it goes somewhere, it's `<a>` link.
 
@@ -289,15 +289,13 @@ best practices.
       - Expand details
     - A button can look like a link, but it must be coded as a `<button>`
 
-    ## Related WCAG
+## Related WCAG
 
-    - 2.4.4 Link Purpose (In Context)
-    - 2.5.3 Label in Name
-    - 3.2.4 Consistent Identification
-    - 4.1.2 Name, Role, Value
+- 2.4.4 Link Purpose (In Context)
+- 2.5.3 Label in Name
+- 3.2.4 Consistent Identification
+- 4.1.2 Name, Role, Value
 
-    ## Resources
-
-    [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/)
-
-    [WebAIM: Buttons](https://webaim.org/techniques/forms/controls#button)
+## Resources
+- [WebAIM: Links and Hypertext](https://webaim.org/techniques/hypertext/)
+- [WebAIM: Buttons](https://webaim.org/techniques/forms/controls#button)

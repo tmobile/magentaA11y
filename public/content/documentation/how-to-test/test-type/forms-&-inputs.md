@@ -2,7 +2,7 @@
 
   There are several types of HTML form fields and ensuring each type is accessible is crucial to enabling all users to fully engage with a site.
 
-1. **Input Fields**
+1. ## Input Fields
 
    Input fields allow users to provide information such as text, numbers, and passwords. Keyboard and screen reader users should be able focus on each input field with their tab key, enter the relevant information, and tab away.
 
@@ -18,7 +18,7 @@
    </example>
 
 
-2. **Checkboxes**
+2. ## Checkboxes
 
    Checkboxes allow users to select one or more options from a list. Keyboard and screen reader users should be able to focus on each checkbox field with their tab key and use the enter or space keys to select or unselect the item.
 
@@ -37,25 +37,25 @@
    </fieldset>
    </example>
 
-3. **Radio Buttons**
+3. ## Radio Buttons
 
    Radio buttons allow users to select a single option from a list. Only one radio button in a group should be be selectable at a time. Keyboard and screen reader users should be able to focus on the group of radio buttons using the tab key. Arrow keys move focus between each radio option. Options can be automatically selected as they receive focus with the arrow keys, or they can be selected using the space key. Pressing tab navigates aways from the radio group.
 
    <example>
-      <fieldset>
-        <legend>
-          Choose a fruit
-        </legend>
-        <input type="radio" name="fruit" id="appleRadio">
-        <label for="appleRadio">Apple</label>
-        <input type="radio" name="fruit" id="bananaRadio">
-        <label for="bananaRadio">Banana</label>
-        <input type="radio" name="fruit" id="cherryRadio" checked="">
-        <label for="cherryRadio">Cherry</label>
+    <form>
+      <fieldset className="fieldset">
+      <legend className="legend h-charlie">Choose a fruit</legend>
+        <input type="radio" name="fruit" id="appleRadio" className="radio">
+        <label for="appleRadio" className="label">Apple</label>
+        <input type="radio" name="fruit" id="bananaRadio" className="radio">
+        <label for="bananaRadio" className="label">Banana</label>
+        <input type="radio" name="fruit" id="cherryRadio" className="radio">
+        <label for="cherryRadio" className="label">Cherry</label>
       </fieldset>
+    </form>
    </example>
 
-4. **Select Fields**
+4. ## Select Fields
 
    Select fields allow users to select one or more options from an expandable list of options. Keyboard and screen reader users should be able to focus on the select using their tab key. The space key expands the list of options, the arrow keys traverse the options, and the space or enter keys make a selection. Escape collapses the list.
 
@@ -71,7 +71,7 @@
       </select>
    </example>
 
-5. **What to test for**
+5. ## What to test for
 
    <div class="how-to-test-checklist-item">
      <h3>✓ Ensure forms have persistent visible labels</h3>
@@ -143,7 +143,7 @@
          </td>
          <td>
            <label style="margin-right:8px" for="failContrast">My border fails contrast</label>
-           <input style="border:1px solid #00BD1F" type="text" id="failContrast">
+           <input style="border:1px solid type="text" id="failContrast" class="input-fail-contrast">
          </td>
        </tr>
        </tbody>
@@ -342,14 +342,14 @@
    </div>
 
 
-### Related WCAG
+## Related WCAG
 - 1.1.1 Non-text Content
 - 1.4.5 Images of Text
 - 2.4.4 Link Purpose
 - 2.5.3 Label in Name
 - 4.1.2 Name, Role, Value
 
-### Resources
+## Resources
 - [W3C Images Tutorial](https://www.w3.org/WAI/tutorials/images/)
 - [WebAIM Alternative Text](https://webaim.org/techniques/alttext/)
 

@@ -57,13 +57,18 @@ If the image conveys important meaning, and there's no other text on the page wh
   - When the `alt` attribute is empty, the screen reader ignores it (and will not read anything).
   - When the `alt` attribute is missing, the screen reader will read the `src` name or filename of the image which is a very poor user experience.
 
-<example class="example example--contains-icon">
-  <h3 class="h-charlie decorated">
-    <img src="media/images/icons/icon-info.svg" alt=""> 
+<example className="example example--contains-icon">
+
+  <h3 className="h-charlie decorated">
+  <div className="img-prefers-dark">
+    <img src="media/images/icons/icon-info.svg" alt="" /> 
+  </div>
     Note: Your plan might be changing soon.
   </h3>
   <a href="tel:8888888888" className="decorated">
-    <img src="media/images/icons/icon-phone.svg" class="icon" alt="">
+  <div className="img-prefers-dark">
+    <img src="media/images/icons/icon-phone.svg"  alt="" />
+  </div>
       Call us: 888-888-8888
   </a>
 </example>

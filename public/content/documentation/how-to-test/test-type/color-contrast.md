@@ -4,7 +4,7 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
 
 ## Developer Notes
 
-1. **General requirements**
+1. ## General requirements
 
     The Web Content Accessibility Guidelines (WCAG) provide very specific color contrast requirements:
 
@@ -13,7 +13,7 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
     - Meaningful graphics, user interface components and their various states, as well as focus indicators must have a contrast ratio of at least 3:1 with the background color.
     - **Exceptions:** Logos, incidental or decorative text and graphics, and disabled controls do not need to meet color contrast requirements.
 
-2. **How to test**
+2. ## How to test
 
     ### Automated scanning
 
@@ -87,7 +87,7 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
 
     - Any major browser (Chrome, Safari, Firefox) is acceptable for color contrast testing.
 
-3. **What to test for**
+3. ## What to test for
 
     <div class="how-to-test-checklist-item">
       <h3>✓ Ensure text has sufficient contrast to the background color</h3>
@@ -101,11 +101,11 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
         <tbody>
           <tr>
             <td><p>This text passes contrast</p></td>
-            <td><p style="color:#0FE000">This text does NOT pass contrast</p></td>
+            <td><p class="contrast-fail-1">This text does NOT pass contrast</p></td>
           </tr>
           <tr>
-            <td><p style="color:#009999; font-size: 18pt">This text is large enough that it only has to meet a 3:1 color ratio</p></td>
-            <td><p style="color:#009999">This text is the same color but smaller, and fails to meet a 4.5:1 color ratio</p></td>
+            <td><p class="contrast-fail-2">This text is large enough that it only has to meet a 3:1 color ratio</p></td>
+            <td><p class="contrast-fail-3">This text is the same color but smaller, and fails to meet a 4.5:1 color ratio</p></td>
           </tr>
         </tbody>
       </table>
@@ -187,7 +187,7 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
               <span role="img" aria-label="black refresh icon" style="font-size:54px;">↻</span>
             </td>
             <td>
-              <span role="img" aria-label="green refresh icon" style="color:#0FE000; font-size:54px;">↻</span>
+              <span role="img" aria-label="green refresh icon" class="contrast-fail-4">↻</span>
             </td>
           </tr>
         </tbody>
@@ -221,15 +221,10 @@ Testing color contrast is a simple yet crucial step in ensuring content is perce
       </table>
     </div>
 
-    ## Related WCAG
+## Related WCAG
+- 1.4.3 Contrast
+- 1.4.11 Non-text Contrast
+- 1.4.1 Use of Color
 
-    - 1.4.3 Contrast
-    - 1.4.11 Non-text Contrast
-    - 1.4.1 Use of Color
-
-    ## Resources
-    
-    - [WebAIM Color Contrast](https://webaim.org/articles/contrast/evaluating)
-
-
-
+## Resources
+- [WebAIM Color Contrast](https://webaim.org/articles/contrast/evaluating)

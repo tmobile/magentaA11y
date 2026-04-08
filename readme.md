@@ -5,9 +5,8 @@
 - [Getting Started](#getting-started)
 - [Creating a PR](#creating-a-pr)
 - [Available Scripts](#available-scripts)
-- [Key Features](#key-features)
 - [Deployment](#deployment)
-- [Optimize Video Assets](#optimize-video-assets)
+- [Support](#support)
 
 ---
 
@@ -58,14 +57,36 @@ To push your work:
 - `git commit -m "fix: x message with updates"` // add commit message
 - `git push origin ARC101--criteria-button`
 
+### Rebasing
+
+- `git fetch`
+- `git rebase origin/main`// fix merge conflicts if they exist-- AND SAVE!
+- `git add .`// adding merge changes, BUT DO NOT DO THIS IF USING VSCODE MERGE CONFLICT EDITOR
+
+// now you have to do VIM
+// :wq + ENTER
+
+- `git rebase --continue`
+
+might have to do this again:
+
+// fix merge conflicts if they exist-- AND SAVE!
+
+- `git add .`// adding merge changes
+-  `git push origin {branch name}` OR `git push origin {branch name} --force-with-lease`
+
+
 ## Available Scripts
 
 ### Development
 
-- **`npm start`**: Starts the app in development mode.
-
+- **`npm start`**: Starts the app in development mode with automatic markdown file watching.
   - Automatically generates navigation buttons and icons.
   - Accessible at [http://localhost:3000](http://localhost:3000).
+  - Ideal for content authors editing markdown files in `public/content/documentation/`
+  - Automatically re-parses markdown files when saved
+  - Triggers browser reload to show changes immediately
+  - No need to manually run `parse-md-files` after each edit
 
 ### Building and Deployment
 

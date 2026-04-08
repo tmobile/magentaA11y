@@ -76,9 +76,9 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/stepper-
 ## Code examples
 
 ### Speciality stepper integer input
-Before using this pattern, consider if using a plain <a href="https://www.magentaa11y.com/#/web-criteria/component/select-dropdown">Select Dropdown</a> might be more clear and simple for all users. A `<select>` does everything that the stepper input does, and with less code. Additionally, a `<select>` is a native HTML component and inherently accessible.
+Before using this pattern, consider if using a plain [Select Dropdown](/web-criteria/component/select-dropdown) might be more clear and simple for all users. A `<select>` does everything that the stepper input does, and with less code. Additionally, a `<select>` is a native HTML component and inherently accessible.
 
-The stepper input component is useful for *small range increments*. If the max character count is more than 20, consider use of a <a href="https://www.magentaa11y.com/#/web-criteria/component/text-input">Text Input</a> field as this component will be cumbersome for people using a mouse.
+The stepper input component is useful for *small range increments*. If the max character count is more than 20, consider use of a [Text Input](/web-criteria/component/text-input) field as this component will be cumbersome for people using a mouse.
 
 ```html
 <div>
@@ -114,7 +114,6 @@ The stepper input component is useful for *small range increments*. If the max c
 </div>
 ```
 
-<!-- TODO disabling buttons - both when minimum and maximum are hit -->
 <example>
    <div>
       <label for="stepper">
@@ -168,7 +167,7 @@ The stepper input component is useful for *small range increments*. If the max c
                aria-label="Decrease Quantity" 
                aria-disabled="true">
    </button>
-   <span id="step-number">0</span>
+   <span id="step-number">1</span>
    <button data-icon="plus" 
                data-fn="increaseNumber" 
                class="button plus" 
@@ -177,17 +176,14 @@ The stepper input component is useful for *small range increments*. If the max c
    <div aria-live="polite" class="hidden" id="stepper-status-target"></div>
 </div>
 ```
-
-<!-- TODO disabling button - decrement button should be disabled when at 0 -->
 <example>
    <div class="stepper">
-      <button id="decrement-button" 
-            data-fn="decreaseNumber" 
+      <button data-fn="decreaseNumber" 
             data-icon="minus" 
             class="button minus" 
             aria-label="Decrease Quantity" 
             aria-disabled="true"></button>
-      <span id="step-number">0</span>
+      <span id="step-number">1</span>
       <button data-icon="plus" 
             data-fn="increaseNumber" 
             class="button plus" 
@@ -209,4 +205,4 @@ The stepper input component is useful for *small range increments*. If the max c
 
    - The buttons will need `aria-disabled="true"` applied when either end of the range is reached.
 
-   - Related alternative patterns: <a href="https://www.magentaa11y.com/#/web-criteria/component/select-dropdown">Select Dropdown</a> or an [WAI-ARIA Spin Button](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).
+   - Related alternative patterns: [Select Dropdown](/web-criteria/component/select-dropdown) or an [WAI-ARIA Spin Button](https://www.w3.org/WAI/ARIA/apg/patterns/spinbutton/examples/datepicker-spinbuttons/).

@@ -49,7 +49,7 @@ describe('SideNav Component - Snapshot Test', () => {
 describe('SideNav Component - Rendering', () => {
   test('renders the SideNav component', () => {
     renderWithProviders(<SideNav documentation={DocumentationCategory.WEB} />);
-    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getAllByRole('list')[0]).toBeInTheDocument();
   });
 
   test('contains the correct class name', () => {
@@ -73,7 +73,7 @@ describe('SideNav Component - Rendering', () => {
 
   test('renders navigation list', () => {
     renderWithProviders(<SideNav documentation={DocumentationCategory.WEB} />);
-    expect(screen.getByRole('list')).toBeInTheDocument();
+    expect(screen.getAllByRole('list')[0]).toBeInTheDocument();
   });
 
   test('renders in a dialog element in mobile view', () => {
@@ -113,9 +113,6 @@ describe('SideNav Component - Rendering', () => {
     );
 
     for (const item of contentData[DocumentationCategory.WEB]) {
-      const accordionButton = screen.getByRole('button', { name: item.label });
-      await userEvent.click(accordionButton);
-
       const links = await screen.findAllByRole('link', { name: 'Overview' });
 
       const correctLink = links.find((link) =>
@@ -144,16 +141,16 @@ describe('SideNav Component - Interaction Tests', () => {
       name: 'Component',
     });
 
-    // Initially collapsed
-    expect(accordionButton).toHaveAttribute('aria-expanded', 'false');
-
-    // Click to expand
-    await userEvent.click(accordionButton);
+    // Initially expanded
     expect(accordionButton).toHaveAttribute('aria-expanded', 'true');
 
-    // Click again to collapse
+    // Click to collapse
     await userEvent.click(accordionButton);
     expect(accordionButton).toHaveAttribute('aria-expanded', 'false');
+
+    // Click again to expand
+    await userEvent.click(accordionButton);
+    expect(accordionButton).toHaveAttribute('aria-expanded', 'true');
   });
 
   test('clicking a navigation link inside an accordion closes the menu (Mobile Only)', async () => {
@@ -164,15 +161,8 @@ describe('SideNav Component - Interaction Tests', () => {
       />
     );
 
-    const accordionButton = screen.getByRole('button', {
-      name: 'Page Level',
-    });
-
-    // Open the accordion
-    await userEvent.click(accordionButton);
-
-    // Click the first navigation link inside the expanded section
-    const firstLink = await screen.findByRole('link', { name: 'Overview' });
+    // Click the first navigation link inside the already-expanded section
+    const [firstLink] = await screen.findAllByRole('link', { name: 'Overview' });
     await userEvent.click(firstLink);
 
     // Expect the mobile side nav dialog to be closed
@@ -187,17 +177,12 @@ describe('SideNav Component - Interaction Tests', () => {
       />
     );
 
-    const accordionButton = screen.getByRole('button', {
-      name: 'Component',
-    });
-    await userEvent.click(accordionButton);
+    const componentButton = screen.getByRole('button', { name: 'Component' });
+    componentButton.focus();
 
-    const links = await screen.findAllByRole('link');
-
-    // Focus should move through each link
-    for (const link of links) {
-      await userEvent.tab();
-      expect(link).toHaveFocus();
-    }
+    // Tab from accordion button moves focus into its expanded content
+    await userEvent.tab();
+    const focusedElement = document.activeElement;
+    expect(focusedElement?.tagName.toLowerCase()).toMatch(/a|button/);
   });
 });

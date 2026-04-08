@@ -1,0 +1,24 @@
+.MagentaA11y__nav-display__subtitle, .h-delta {
+    font-family: var(--magentaa11y-font-family-header);
+}
+
+.MagentaA11y__nav-display__subtitle {
+    font-size: 24px;
+}
+
+.section {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Style when the React state sets the .is-selected class on the container */
+.radio-container.is-selected {
+    background-color: var(--color-surface-dim); 
+}
+
+/* Style the fake radio circle when the container is selected */
+.is-selected .radio + .label::before {
+    background-color: var(--color-primary);
+    box-shadow: var(--color-primary) 0 0 0 0.25rem inset, var(--color-on-primary) 0 0 0 0.5rem inset, var(--color-on-tertiary-container) 0 0 0 0;
+    transition: all;
+}

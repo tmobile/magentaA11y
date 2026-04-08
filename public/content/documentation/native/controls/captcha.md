@@ -71,16 +71,15 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
 
 ## iOS Developer Notes
 
-- Here are just a few experiences for Captcha:  
-    1. A non-interactive image in a table row, where the whole table row acts like a button.  
+- Here are a few experiences for Captcha: 
+    1. A non-interactive image in a table row, where the whole table row acts like a button. 
     2. A single interactive element, like an image button
     3. An audio challenge as an equivalent experience to the image challenge
 - When selecting the type of Captcha, do not limit the options to only <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html#dfn-cognitive-function-test">cognitive function tests</a> (e.g. remembering or transcribing a word, or recognizing a picture the website provided). When possible, leverage <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html#examples">recommended techniques recommended by the W3C</a> such as email link authentication, 3rd party authentication, or 2 factor authentication.
 - Captcha is not common in native apps, as there are other options for authentication
 
 ### Name
-
-- Experiences (refer to number above):  
+- Experiences (refer to number above): 
     1. Alt text on the image that describes its purpose.
     2. Name describes the purpose of the control and matches any visible text in image
     3. Programmatic name of each interactive component in audio challenge is announced
@@ -93,14 +92,13 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
     - To do this in Interface Builder, set the label using the Identity Inspector
 - To hide labels from VoiceOver programmatically, set the label's `isAccessibilityElement` property to `false`
 - To hide labels from VoiceOver using Interface Builder, uncheck `Accessibility Enabled` in the Identity Inspector
-    
+
 #### **SwiftUI**
 - If no visible label, use view modifier `accessibilityLabel(_:)`
 - If button has icon(s), hide the icon(s) from VoiceOver by using view modifier `accessibilityHidden(true)`
 
 ### Role
-
-- Experiences (refer to number above):  
+- Experiences (refer to number above): 
     1. Identifies as an image
     2. Identifies as an image button
     3. Each interactive component in audio challenge identifies as a button or text field
@@ -128,13 +126,12 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
 - Use view modifier `accessibilityElement(children: .combine)` to merge the child accessibility element’s properties into the new accessibilityElement.
 
 ### State
-
-- Experiences (refer to number above):  
+- Experiences (refer to number above): 
     1. If grouped in table row, it's possible for the whole row to have a dimmed/disabled state, or the captcha button disabled separately
     2. Image button can have a disabled state (dimmed)
     3. Buttons in audio challenge can have a disabled state (dimmed)
 
-#### **UIKit**  
+#### **UIKit** 
 - For enabled: Set `isEnabled` to `true`.
 - For disabled: Set `isEnabled` to `false`. Announcement for disabled is "Dimmed".
     - If necessary, you may change the accessibility trait of the button to `notEnabled`, but this may overwrite the current accessibility role of the button.
@@ -144,8 +141,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
 - For disabled, use view modifier `disabled()`
 
 ### Focus
-
-- Experiences (refer to number above):  
+- Experiences (refer to number above): 
     1. Focus is on the whole table row. There should be no focus on any single element, if the whole table row is grouped together, as long as there is only one interactive element per row.
     2. The image button receives focus by swipe or touch
     3. Each element in audio challenge receives focus by swipe or touch. User is confined inside a modal, if presented
@@ -168,27 +164,25 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
 - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ## Android Developer Notes
-
-- There are several experiences for Captcha:  
-    1. A non-interactive image in a table row, where the whole table row acts like a button.  
+- Here are a few experiences for Captcha: 
+    1. A non-interactive image in a table row, where the whole table row acts like a button. 
     2. A single interactive element, like an image button
     3. An audio challenge as an equivalent experience to the image challenge
 - When selecting the type of Captcha, do not limit the options to only <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html#dfn-cognitive-function-test"> cognitive function tests</a> (e.g. remembering or transcribing a word, or recognizing a picture the website provided). When possible, leverage <a href="https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-enhanced.html#examples"> recommended techniques recommended by the W3C</a> such as email link authentication, 3rd party authentication, or 2 factor authentication.
-- Captcha is not common in apps, as there are other options for authentication
-  
-### Name  
+- Captcha is not common in native apps, as there are other options for authentication
 
-- Experiences (refer to number above):  
+### Name 
+- Experiences (refer to number above): 
     1. Alt text on the image that describes its purpose.
     2. Name describes the purpose of the control and matches any visible text in image
     3. Programmatic name of each interactive component in audio challenge is announced
 
-#### **Android Views**  
+#### **Android Views** 
 - `android:text` XML attribute
 - Optional: use `contentDescription` for a more descriptive name, depending on type of view and for elements (icons) without a visible label
 - `contentDescription` overrides `android:text`
 - Use `labelFor` attribute to associate any visible label with the control
-    
+
 #### **Jetpack Compose**
 - Compose uses semantics properties to pass information to accessibility services.
 - The built-in Button composable will fill the semantics properties with information inferred from the composable by default.
@@ -196,7 +190,6 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
 - Example specification of contentDescription in compose: `modifier = Modifier.semantics { contentDescription = "" }`
 
 ### Role
-
 - Experiences (refer to number above):
     1. Identifies as an image
     2. Identifies as an image button
@@ -214,13 +207,13 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
 #### **Android Views**
 - `ViewGroup`
 - Set the container object's `android:screenReaderFocusable` attribute to true, and each inner object's `android:focusable` attribute to false. In doing so, accessibility services can present the inner elements' `contentDescription` or names, one after the other, in a single announcement.
+
 #### **Jetpack Compose**
 - `Modifier.semantics(mergeDescendants = true) {}` is equivalent to `importantForAccessibility` when compared to android views
 - `FocusRequester.createRefs()` helps to request focus to inner elements with in the group
 
 ### State
-
-- Experiences (refer to number above):  
+- Experiences (refer to number above): 
     1. If grouped in table row, it's possible for the whole row to have a disabled state, or the captcha button disabled separately
     2. Image button can have a disabled state (disabled)
     3. Buttons in audio challenge can have a disabled state (disabled)
@@ -236,8 +229,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
 - Use `modifier = Modifier.semantics { stateDescription = "" }` to have a customized state announcement
 
 ### Focus
-
-- Experiences (refer to number above):  
+- Experiences (refer to number above): 
     1. Focus is on the whole table row. There should be no focus on any single element, if the whole table row is grouped together, as long as there is only one interactive element per row.
     2. The image button receives focus by swipe or touch
     3. Each element in audio challenge receives focus by swipe or touch. User is confined inside a modal, if presented
@@ -272,7 +264,6 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/controls/captch
     - step 3: use `second.requestFocus()` to gain focus
 
 ### Custom Accessibility Action
-
 - When UI elements are customized and coded to look like a specific component say button, to ensure that name, role, state and action are all intact might need to update accessibility service and semantics.
 - Disclaimer: This customization would not be needed unless it is required to modify/add gestures or actions.
 - The Button class by default supplies all the necessary semantics to make it fully accessible.
