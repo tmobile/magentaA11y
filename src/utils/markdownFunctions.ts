@@ -413,21 +413,33 @@ export const getMarkdownFunctionMap = (
    * live region (#sr-counter-target) after a 1000ms delay to avoid interrupting
    * the screen reader's announcement of the typed character.
    */
-  charCounter: (event) => {
-    const textarea = event.currentTarget as HTMLTextAreaElement;
-    const maxLength = parseInt(textarea.getAttribute('maxlength') || '0', 10);
-    const remaining = maxLength - textarea.value.length;
+  charCounter: (() => {
+    // Tracks the pending SR announcement timeout so rapid keystrokes
+    // can cancel the previous one — only the final value after the
+    // user stops typing gets announced.
+    let srTimeout: ReturnType<typeof setTimeout> | null = null;
 
-    const visibleCounter = document.getElementById('currentChars');
-    if (visibleCounter) {
-      visibleCounter.innerHTML = String(remaining);
-    }
+    return (event: React.MouseEvent<Element>) => {
+      const textarea = event.currentTarget as HTMLTextAreaElement;
+      const maxLength = parseInt(textarea.getAttribute('maxlength') || '0', 10);
+      const remaining = maxLength - textarea.value.length;
 
-    setTimeout(() => {
-      const srTarget = document.getElementById('sr-counter-target');
-      if (srTarget) {
-        srTarget.innerHTML = String(remaining);
+      // Update the visible counter immediately on every keystroke.
+      const visibleCounter = document.getElementById('currentChars');
+      if (visibleCounter) {
+        visibleCounter.innerHTML = String(remaining);
       }
-    }, 1000);
-  },
+
+      // Debounce the SR live region update. The 1000ms delay gives the
+      // screen reader time to finish announcing the typed character before
+      // the counter value is read out.
+      if (srTimeout) clearTimeout(srTimeout);
+      srTimeout = setTimeout(() => {
+        const srTarget = document.getElementById('sr-counter-target');
+        if (srTarget) {
+          srTarget.innerHTML = String(remaining);
+        }
+      }, 1000);
+    };
+  })(),
 });

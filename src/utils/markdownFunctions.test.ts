@@ -26,6 +26,25 @@ describe('charCounter', () => {
     expect(document.getElementById('currentChars')!.innerHTML).toBe('45');
   });
 
+  test('debounces sr-counter-target — only announces after typing stops', () => {
+    const textarea = document.getElementById('message') as HTMLTextAreaElement;
+
+    textarea.value = 'hi';
+    functionMap.charCounter({ currentTarget: textarea } as any);
+
+    textarea.value = 'hel';
+    functionMap.charCounter({ currentTarget: textarea } as any);
+
+    textarea.value = 'hello';
+    functionMap.charCounter({ currentTarget: textarea } as any);
+
+    jest.advanceTimersByTime(999);
+    expect(document.getElementById('sr-counter-target')!.innerHTML).toBe('');
+
+    jest.advanceTimersByTime(1);
+    expect(document.getElementById('sr-counter-target')!.innerHTML).toBe('45');
+  });
+
   test('updates sr-counter-target after 1000ms delay', () => {
     const textarea = document.getElementById('message') as HTMLTextAreaElement;
     textarea.value = 'hello world';
