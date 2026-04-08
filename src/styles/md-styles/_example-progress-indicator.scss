@@ -38,6 +38,32 @@ example,
     }
   }
 
+  // Inline progress chip styles
+  .progress-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--color-inverse-surface);
+    color: var(--color-inverse-on-surface);
+    font-size: .875rem;
+    font-weight: 600;
+    margin-left: -1rem;
+    vertical-align: middle;
+    animation: pulse 1s ease-in-out infinite alternate;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+  }
+
   // Spinner example styles
   .progress-spinner {
     display: grid;

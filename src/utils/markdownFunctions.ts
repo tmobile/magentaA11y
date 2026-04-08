@@ -44,6 +44,77 @@ export const getMarkdownFunctionMap = (
   goToHome: () => navigate('/home'),
 
   /**
+   * Opens a modal dialog identified by the button's data-target attribute.
+   * Supports auto-close via data-auto-close (milliseconds).
+   */
+  showModal: (event) => {
+    const button = event.currentTarget as HTMLButtonElement;
+    const targetId = button.getAttribute('data-target');
+    if (!targetId) return;
+    const dialog = document.getElementById(targetId) as HTMLDialogElement;
+    if (!dialog) return;
+    dialog.showModal();
+    const autoClose = button.getAttribute('data-auto-close');
+    if (autoClose) {
+      setTimeout(() => {
+        if (dialog.open) {
+          dialog.close();
+          button.focus();
+        }
+      }, parseInt(autoClose));
+    }
+  },
+
+  /**
+   * Closes the nearest ancestor dialog and returns focus to its trigger button.
+   */
+  closeModal: (event) => {
+    const button = event.currentTarget as HTMLButtonElement;
+    const dialog = button.closest('dialog') as HTMLDialogElement;
+    if (!dialog) return;
+    dialog.close();
+    const trigger = document.querySelector(`[data-target="${dialog.id}"]`) as HTMLElement;
+    if (trigger) trigger.focus();
+  },
+
+  /**
+   * Simulates a progress operation: disables the button, shows status updates
+   * in the chip element identified by data-chip, then re-enables when done.
+   */
+  startProgress: (event) => {
+    const button = event.currentTarget as HTMLButtonElement;
+    if (button.getAttribute('aria-disabled') === 'true') return;
+    const chipSelector = button.getAttribute('data-chip');
+    if (!chipSelector) return;
+    const chip = document.querySelector(chipSelector) as HTMLElement;
+    if (!chip) return;
+    const container = button.closest('[aria-busy]') as HTMLElement;
+
+    button.setAttribute('aria-disabled', 'true');
+    if (container) container.setAttribute('aria-busy', 'true');
+    chip.removeAttribute('hidden');
+
+    const steps: Array<[string, number]> = [
+      ['0%', 0],
+      ['51%', 2100],
+      ['78%', 3500],
+      ['99%', 7000],
+      ['Done', 9000],
+    ];
+
+    steps.forEach(([label, delay]) => {
+      setTimeout(() => { chip.textContent = label; }, delay);
+    });
+
+    setTimeout(() => {
+      chip.setAttribute('hidden', '');
+      chip.textContent = '';
+      button.setAttribute('aria-disabled', 'false');
+      if (container) container.setAttribute('aria-busy', 'false');
+    }, 10000);
+  },
+
+  /**
    * Toggles the aria-expanded state of an accordion button.
    */
   toggleAccordionState: (event) => {
@@ -140,7 +211,7 @@ export const getMarkdownFunctionMap = (
 
     if (stepNumber) {
       let currentNumber = parseInt(stepNumber.innerHTML);
-      
+
       if (currentNumber < 11) {
         let newNumber = currentNumber + 1;
         stepNumber.innerHTML = `${newNumber}`;
@@ -343,7 +414,7 @@ export const getMarkdownFunctionMap = (
         toast.classList.toggle('enabled');
       }
     }, 500)
-  }, 
+  },
 
   // two password input examples
   // first password show/hide example
@@ -353,14 +424,14 @@ export const getMarkdownFunctionMap = (
   togglePasswordVisibility: (event: React.MouseEvent<Element>) => {
     // 1. The checkbox is the currentTarget
     const checkbox = event.currentTarget as HTMLInputElement;
-    
+
     // 2. Find the container relative to this checkbox
     const container = checkbox.closest('.js-password-group') as HTMLElement;
-    
+
     if (container) {
       // 3. Find the specific input in this group
       const passwordInput = container.querySelector('.js-password-input') as HTMLInputElement;
-      
+
       if (passwordInput) {
         // 4. Toggle the type based on whether the checkbox is checked
         passwordInput.type = checkbox.checked ? 'text' : 'password';
@@ -376,10 +447,10 @@ export const getMarkdownFunctionMap = (
   const button = event.currentTarget as HTMLButtonElement;
   const container = button.closest('.js-password-group') as HTMLElement;
   const liveRegion = container?.querySelector('#password-state-status');
-  
+
   if (container) {
     const passwordInput = container.querySelector('.js-password-input') as HTMLInputElement;
-    
+
     // 1. Check current state via the data attribute on the container
     const isCurrentlyShowing = container.getAttribute('data-show-password') === 'true';
     const newState = !isCurrentlyShowing;
@@ -387,17 +458,17 @@ export const getMarkdownFunctionMap = (
     if (passwordInput) {
       // 2. Toggle Input Type
       passwordInput.type = newState ? 'text' : 'password';
-      
+
       // 3. Update Data Attribute (for CSS to toggle icons)
       container.setAttribute('data-show-password', String(newState));
-      
+
       // 4. Update Button Aria-Label for Accessibility
       button.setAttribute('aria-label', newState ? 'Hide password' : 'Show password');
 
       // 5. Update Live Region for Screen Readers
       if (liveRegion) {
         liveRegion.innerHTML = newState ? 'Password shown.' : 'Password hidden.';
-        
+
         // Clear it after a delay so it's ready for the next toggle
         setTimeout(() => {
           liveRegion.innerHTML = '';
