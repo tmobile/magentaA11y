@@ -1,9 +1,8 @@
 import IconButton from "components/custom-components/buttons/icon-button/icon-button";
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Icons } from "shared/Icons";
 import { DocumentationCategory } from "shared/types/shared-types";
-import { isPathActive } from "utils/navigation-helpers";
 import contentData from "../../../shared/content.json";
 import { useViewport } from "../../../shared/contexts/viewport-context";
 import Accordion from "../../custom-components/accordion/accordion";
@@ -24,7 +23,6 @@ interface SideNavProps {
 
 const SideNav = forwardRef(({ documentation, testId }: SideNavProps, ref) => {
   const viewportContext = useViewport();
-  const location = useLocation();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -76,7 +74,6 @@ const SideNav = forwardRef(({ documentation, testId }: SideNavProps, ref) => {
         <ul className="MagentaA11y__side-nav--list">
           {items.map((item) => {
             const fullPath = `${parentPath}/${item.name}`;
-            const itemActive = isPathActive(fullPath, location);
 
             return (
               <li key={item.name} className="MagentaA11y__side-nav--item">

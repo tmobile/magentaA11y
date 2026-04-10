@@ -4,6 +4,9 @@ import { MarkdownInput } from './markdown-input';
 
 const emptyFunctionMap = {};
 
+/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/no-container */
+
 describe('MarkdownInput - range slider', () => {
   test('slider value stays at new position after change (uncontrolled behavior)', () => {
     // Bug: if value is passed as a controlled React prop with no state update,
@@ -62,3 +65,5 @@ describe('MarkdownInput - range slider', () => {
     expect(valueEl.textContent).toBe('8');
   });
 });
+/* eslint-enable testing-library/no-node-access */
+/* eslint-enable testing-library/no-container */

@@ -169,6 +169,7 @@ describe('SideNav Component - Interaction Tests', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
+  /* eslint-disable testing-library/no-node-access */
   test('keyboard navigation with Tab key cycles through elements correctly', async () => {
     renderWithProviders(
       <SideNav
@@ -185,4 +186,5 @@ describe('SideNav Component - Interaction Tests', () => {
     const focusedElement = document.activeElement;
     expect(focusedElement?.tagName.toLowerCase()).toMatch(/a|button/);
   });
+  /* eslint-enable testing-library/no-node-access */
 });
