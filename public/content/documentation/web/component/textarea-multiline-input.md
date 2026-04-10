@@ -87,7 +87,7 @@ if(textarea) {
         chars.innerHTML = maxLength - currentLength;
         // update the visually hidden counter text
         setTimeout(function() {
-            srOutputTarget.innerHTML = maxLength - currentLength;
+            srOutputTarget.innerHTML = `${maxLength - currentLength} of ${maxLength} characters remaining`;
         },1000);
     });
 }
@@ -135,6 +135,5 @@ if(textarea) {
     <!-- Visually hidden live region — updated after delay so screen reader
          does not interrupt announcement of the typed character -->
     <span id="sr-counter-target"></span>
-    of 50 characters remaining
   </div>
 </example>

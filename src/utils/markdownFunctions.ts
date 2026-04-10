@@ -437,7 +437,7 @@ export const getMarkdownFunctionMap = (
       srTimeout = setTimeout(() => {
         const srTarget = document.getElementById('sr-counter-target');
         if (srTarget) {
-          srTarget.innerHTML = String(remaining);
+          srTarget.innerHTML = `${remaining} of ${maxLength} characters remaining`;
         }
       }, 1000);
     };

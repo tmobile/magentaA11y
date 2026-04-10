@@ -42,7 +42,7 @@ describe('charCounter', () => {
     expect(document.getElementById('sr-counter-target')!.innerHTML).toBe('');
 
     jest.advanceTimersByTime(1);
-    expect(document.getElementById('sr-counter-target')!.innerHTML).toBe('45');
+    expect(document.getElementById('sr-counter-target')!.innerHTML).toBe('45 of 50 characters remaining');
   });
 
   test('updates sr-counter-target after 1000ms delay', () => {
@@ -55,6 +55,6 @@ describe('charCounter', () => {
 
     jest.advanceTimersByTime(1000);
 
-    expect(document.getElementById('sr-counter-target')!.innerHTML).toBe('39');
+    expect(document.getElementById('sr-counter-target')!.innerHTML).toBe('39 of 50 characters remaining');
   });
 });
