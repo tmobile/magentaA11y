@@ -406,4 +406,40 @@ export const getMarkdownFunctionMap = (
     }
   }
 },
+
+  /**
+   * Updates a character counter display tied to a textarea with a maxlength attribute.
+   * Updates the visible counter (#currentChars) immediately and the screen reader
+   * live region (#sr-counter-target) after a 1000ms delay to avoid interrupting
+   * the screen reader's announcement of the typed character.
+   */
+  charCounter: (() => {
+    // Tracks the pending SR announcement timeout so rapid keystrokes
+    // can cancel the previous one — only the final value after the
+    // user stops typing gets announced.
+    let srTimeout: ReturnType<typeof setTimeout> | null = null;
+
+    return (event: React.MouseEvent<Element>) => {
+      const textarea = event.currentTarget as HTMLTextAreaElement;
+      const maxLength = parseInt(textarea.getAttribute('maxlength') || '0', 10);
+      const remaining = maxLength - textarea.value.length;
+
+      // Update the visible counter immediately on every keystroke.
+      const visibleCounter = document.getElementById('currentChars');
+      if (visibleCounter) {
+        visibleCounter.innerHTML = String(remaining);
+      }
+
+      // Debounce the SR live region update. The 1000ms delay gives the
+      // screen reader time to finish announcing the typed character before
+      // the counter value is read out.
+      if (srTimeout) clearTimeout(srTimeout);
+      srTimeout = setTimeout(() => {
+        const srTarget = document.getElementById('sr-counter-target');
+        if (srTarget) {
+          srTarget.innerHTML = `${remaining} of ${maxLength} characters remaining`;
+        }
+      }, 1000);
+    };
+  })(),
 });

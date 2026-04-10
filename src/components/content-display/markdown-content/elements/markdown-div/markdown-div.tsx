@@ -19,7 +19,7 @@ export const MarkdownDiv: React.FC<MarkdownDivProps> = ({
 
   // If no function mapping is provided, render a plain div
   if (!fnKey || !handler) {
-    return <div {...props}>{children}</div>;
+    return <div role={role} {...props}>{children}</div>;
   }
 
   // Interactive div configuration
