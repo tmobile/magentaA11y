@@ -79,12 +79,14 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/tidbit
 
 <video controls>
   <source src="media/video/native/tidbit/tidbit_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/tidbit/tidbit_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
 ### Android Talkback
 <video controls>
   <source src="media/video/native/tidbit/tidbit_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/tidbit/tidbit_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

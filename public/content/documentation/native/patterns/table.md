@@ -8,6 +8,7 @@ How to test a table
 
 <video controls>
   <source src="media/video/native/table/table_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/native/table/table_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 

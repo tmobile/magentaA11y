@@ -310,6 +310,7 @@ After the screenreader focuses on each input, it will read the group name "Enter
 
 <video controls>
   <source src="media/video/web/text-input/text-input_IosVoiceOver.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/text-input/text-input_IosVoiceOver-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -317,6 +318,7 @@ After the screenreader focuses on each input, it will read the group name "Enter
 
 <video controls>
   <source src="media/video/web/text-input/text-input_AndroidTalkback.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/text-input/text-input_AndroidTalkback-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -324,6 +326,7 @@ After the screenreader focuses on each input, it will read the group name "Enter
 
 <video controls>
   <source src="media/video/web/text-input/text-input_WindowsJawsChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/text-input/text-input_WindowsJawsChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -331,6 +334,7 @@ After the screenreader focuses on each input, it will read the group name "Enter
 
 <video controls>
   <source src="media/video/web/text-input/text-input_WindowsNvdaChrome.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/text-input/text-input_WindowsNvdaChrome-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
 
@@ -338,5 +342,6 @@ After the screenreader focuses on each input, it will read the group name "Enter
 
 <video controls>
   <source src="media/video/web/text-input/text-input_MacOSVoiceOverSafari.webm" type="video/webm">
+  <track kind="captions" src="media/video/web/text-input/text-input_MacOSVoiceOverSafari-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
 </video>
