@@ -15,11 +15,8 @@ import { MarkdownLink } from './elements/markdown-link/markdown-link';
 import { MarkdownButton } from './elements/markdown-button/markdown-button';
 import { MarkdownInput } from './elements/markdown-input/markdown-input';
 import { MarkdownDiv } from './elements/markdown-div/markdown-div';
-<<<<<<< HEAD
 import { MarkdownTextarea } from './elements/markdown-textarea/markdown-textarea';
-=======
 import { MarkdownTrack } from './elements/markdown-track/markdown-track';
->>>>>>> 09c0612 (Migrate video caption support to refactored component structure)
 
 import './markdown-content.scss';
 
