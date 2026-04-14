@@ -4,6 +4,8 @@ import React from 'react';
 import Breadcrumb from './breadcrumb';
 import { BreadcrumbItem } from 'hooks/useBreadcrumbs';
 
+/* eslint-disable testing-library/no-node-access */
+
 const crumbs: BreadcrumbItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Web Criteria', href: '/web-criteria/component/overview' },
@@ -66,3 +68,5 @@ describe('Breadcrumb', () => {
     expect(homeItem).not.toHaveAttribute('aria-current');
   });
 });
+
+/* eslint-enable testing-library/no-node-access */

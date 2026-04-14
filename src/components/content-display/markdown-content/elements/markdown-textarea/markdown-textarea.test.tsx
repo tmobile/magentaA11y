@@ -3,6 +3,9 @@ import { MarkdownTextarea } from './markdown-textarea';
 
 const emptyFunctionMap = {};
 
+/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/no-container */
+
 describe('MarkdownTextarea', () => {
   test('renders a textarea element', () => {
     const { container } = render(
@@ -31,4 +34,8 @@ describe('MarkdownTextarea', () => {
       render(<MarkdownTextarea markdownFunctionMap={emptyFunctionMap} />)
     ).not.toThrow();
   });
+
+  /* eslint-enable testing-library/no-node-access */
+  /* eslint-enable testing-library/no-container */
 });
+
