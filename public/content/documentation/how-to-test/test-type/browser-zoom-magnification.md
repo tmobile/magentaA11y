@@ -1,38 +1,37 @@
-Learn how to test Browser Zoom, Text Resize, 
-and Magnification 
-through Desktop Operating System settings.
+## General Notes
 
+Testing browser zoom and magnification is essential for ensuring that content and controls are perceivable and functional for users with low vision.
 
-Developer Notes
-General requirements
+## Developer Notes
+1. ## General requirements
 
 Users may enlarge content for improved readability in the following basic ways. Verification of successful magnification through browser zoom or operating system settings also requires manual visual verification of the interface to confirm that there is no loss of content or functionality when enabling:
 
-200 percent browser (or text doubled to roughly twice the default font size)
-400 percent browser zoom
-Magnify screen features through desktop Operating System (OS) settings.
+    - 200 percent browser (or text doubled to roughly twice the default font size)
+    - 400 percent browser zoom
+    - Magnify screen features through desktop Operating System (OS) settings.
 
 
 The Web Content Accessibility Guidelines (WCAG) provides requirements on what outcomes must be avoided when content is magnified or zoomed:
-•	Loss of content
-•	Loss of controls
-•	cut off or visually clipped content
-•	truncated content
-•	overlapping content
-•	horizontal scrollbar scrolling to access non-two-dimensional content
+    - Loss of content
+    - Loss of controls
+    - cut off or visually clipped content
+    - truncated content
+    - overlapping content
+    - horizontal scrollbar scrolling to access non-two-dimensional content
 
 
 Exceptions: Content in two-dimensional layouts which does not need to meet these magnification requirements includes:
-maps
-diagrams
-video
-games or interactive puzzles
-persistent toolbars
-presentations
-data tables
+    - maps
+    - diagrams
+    - video
+    - games or interactive puzzles
+    - persistent toolbars
+    - presentations
+    - data tables
 
 
-How to test
+2. ## How to test
 
 Browsers
 •	Any major browser (Chrome, Safari, Firefox, or Edge) is acceptable for browser zoom testing.
@@ -42,32 +41,54 @@ Browser zoom testing must be complemented with visual inspection of the content 
 Getting started
 
 Text Resize at 200 percent browser zoom
-•	Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
-•	Select the Settings button. Then change the browser Zoom setting to 200%. 
-•	Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality.
-•	In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom.
+    - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
+    - Select the Settings button. Then change the browser Zoom setting to 200%. 
+    - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality.
+    - In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom.
 Reflow at 400 percent browser zoom
-•	Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
-•	Select the Settings button. Then change the browser Zoom setting to 400%. 
-•	Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows content into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
-•	In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
-•	Also check that horizontal scrolling is not required to bring essential content or functionality into view.
+    - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
+    - Select the Settings button. Then change the browser Zoom setting to 400%. 
+    - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows content into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
+    - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
+    - Also check that horizontal scrolling is not required to bring essential content or functionality into view.
 
 
 
-What to test for
+3. ## What to test for
 
-•	Content or interactive elements disappear entirely after reflow (i.e., the content or interactive elements do shift into a single column layout).
-•	Labels above text inputs are hidden and replaced by placeholder text after reflow, without a technique showing dedicated labels when focusing the fields.
-•	One or more sections of content text completely disappear after reflow, without being available through a disclosure widget or another expand/collapse responsive view.)
-•	Content images or graphics become cutoff or illegible after reflow, without the ability to link to or fully view an equivalent alternative.
-•	A global search field disappears after reflow, without an icon or menu option to reveal a search function or reach an equivalent search page.
+    - Content or interactive elements disappear entirely after reflow (i.e., the content or interactive elements do shift into a single column layout).
+    - Labels above text inputs are hidden and replaced by placeholder text after reflow, without a technique showing dedicated labels when focusing the fields.
+    - One or more sections of content text completely disappear after reflow, without being available through a disclosure widget or another expand/collapse responsive view.)
+    - Content images or graphics become cutoff or illegible after reflow, without the ability to link to or fully view an equivalent alternative.
+    - A global search field disappears after reflow, without an icon or menu option to reveal a search function or reach an equivalent search page.
 
 
 ✓ Ensure text content remains legible when scaled to 200 percent browser zoom
 Note: This requirement is only for Web page text such as headings, body text, link text, button text labels, form field labels, and text inside form inputs, etc. (and excludes captions and images of text).
 Pass	Fail
-	
+
+	    <div class="how-to-test-checklist-item">
+      <h3>✓ Ensure text content remains legible when scaled to 200 percent browser zoom
+Note: This requirement is only for Web page text such as headings, body text, link text, button text labels, form field labels, and text inside form inputs, etc. (and excludes captions and images of text).</h3>
+      <table class="column-2">
+        <thead>
+          <tr>
+            <th scope="col">Pass</th>
+            <th scope="col">Fail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><p></p></td>
+            <td><p class="contrast-fail-1"></p></td>
+          </tr>
+          <tr>
+            <td><p class="contrast-fail-2"></p></td>
+            <td><p class="contrast-fail-3"></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 ✓ Ensure that text content does not truncate when scaled to 200 percent browser zoom
 Pass	Fail
@@ -153,15 +174,15 @@ Exceptions
 
 Content exempt from 200 percent and 400 percent browser zoom requirements includes content in two-dimensional layouts such as maps, diagrams, video, games, persistent toolbars, presentations, and data tables.
 
-Related WCAG
-•	1.4.4 Resize text
-•	1.4.10 Reflow
+## Related WCAG
+- 1.4.4 Resize text
+- 1.4.10 Reflow
 
 
-Resources
-•	Responsive Design and Reflow
-•	Zoom in on your Mac screen (Mac OS)  
-•	Magnifier keyboard shortcuts and touch gestures (Windows OS) 
+## Resources
+- [Responsive Design and Reflow] (https://webaim.org/techniques/reflow/)
+- [Zoom in on your Mac screen (Mac OS)] (https://support.apple.com/guide/mac-help/zoom-in-on-your-mac-screen-mchl779716b8/mac) 
+- [Magnifier keyboard shortcuts and touch gestures (Windows OS)] (https://support.microsoft.com/en-us/windows/magnifier-keyboard-shortcuts-and-touch-gestures-6d7c3095-75ec-258f-6f5b-3b0bc19a18e7)
 
 
 
