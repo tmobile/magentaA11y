@@ -1,0 +1,52 @@
+example,
+.example {
+  // Modal dialog styles
+  .dialog {
+    inset: 3rem 1rem 0;
+    position: fixed;
+    margin: 0 auto;
+    width: calc(100% - 2rem);
+    max-width: 640px;
+    border-radius: 2rem;
+    background-color: var(--color-background);
+    border: .5px solid var(--color-on-tertiary);
+    transition: .2s;
+
+    // Backdrop styles
+    &[open] {
+      display: block;
+
+      &::backdrop {
+        background-color: rgb(0 0 0 / 70%);
+      }
+    }
+
+    // Modal content styles
+    .dialog__content {
+      position: relative;
+      padding: 2rem;
+      border-radius: 0;
+      z-index: -1;
+      background-color: var(--color-background);
+      transform: translateZ(0);
+      overflow: hidden;
+    }
+
+    // Close button styles
+    button[data-icon="closeCircleFilled"] {
+      display: block;
+      position: absolute;
+      padding: 0;
+      top: 1rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+
+      &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
