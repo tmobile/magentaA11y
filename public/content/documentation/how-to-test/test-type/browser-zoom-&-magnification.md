@@ -50,7 +50,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
 - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality.
 - In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom.
 	
-#### Reflow at 400 percent browser zoom
+##### Reflow at 400 percent browser zoom
 
 - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
 - Select the Settings button. Then change the browser Zoom setting to 400%. 
@@ -110,9 +110,9 @@ Exceptions: Content in content in two-dimensional layouts such as maps, diagrams
 Pass	Fail
 	
 ## Additional Magnification Tests: 
-## Adjusting Desktop Operating System Settings (Optional)
+### Adjusting Desktop Operating System Settings (Optional)
 
-### Mac OS Basic Keyboard Shortcuts
+#### Mac OS Basic Keyboard Shortcuts
 
 Key	Action
 Option + Command + Plus Sign (+)	Zoom In
@@ -121,7 +121,7 @@ Option + Command + Minus Sign (+)	Zoom Out
 Option + Command + 8	Toggle Zoom On/Off
 
 
-### Windows OS Basic Keyboard Shortcuts
+#### Windows OS Basic Keyboard Shortcuts
 
 Key	Action
 Windows key + Plus Sign (+)	Zoom In
