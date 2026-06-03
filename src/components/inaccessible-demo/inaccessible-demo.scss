@@ -11,6 +11,19 @@
     margin-bottom: 2rem;
 }
 
+// show fake accordion content
+.details {
+    &__content {
+        display: none;
+    }
+
+    &--open {
+        .details__content {
+            display: block;
+        }
+    }
+}
+
 /* Style when the React state sets the .is-selected class on the container */
 .radio-container.is-selected {
     background-color: var(--color-surface-dim); 
