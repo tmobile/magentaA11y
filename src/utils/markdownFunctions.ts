@@ -478,139 +478,33 @@ export const getMarkdownFunctionMap = (
   }
 },
 
- /**
-   * Open a dialog and move focus inside it.
-   * Auto-closes after delay if `data-auto-close` is set (loading spinner example).
-   */
-  showModal: (event: React.MouseEvent<Element>) => {
-  // Get trigger button and target dialog id from data attributes
-  const trigger = event.currentTarget as HTMLElement;
-  const targetId = trigger.getAttribute('data-target') || '';
-  const autoCloseMs = trigger.getAttribute('data-auto-close');
-  const dialog = document.getElementById(targetId) as HTMLDialogElement | null;
-  if (!dialog) return;
+charCounter: (() => {
+    // Tracks the pending SR announcement timeout so rapid keystrokes
+    // can cancel the previous one — only the final value after the
+    // user stops typing gets announced.
+    let srTimeout: ReturnType<typeof setTimeout> | null = null;
 
-  // Toggle aria-busy for the spinner modal scenario.
-  const busyRegion =
-    targetId === 'spinner-modal'
-      ? (document.getElementById('really-slow-app') as HTMLElement | null)
-      : null;
+    return (event: React.MouseEvent<Element>) => {
+      const textarea = event.currentTarget as HTMLTextAreaElement;
+      const maxLength = parseInt(textarea.getAttribute('maxlength') || '0', 10);
+      const remaining = maxLength - textarea.value.length;
 
-  // Set aria-busy to true when spinner modal opens.
-  if (busyRegion) busyRegion.setAttribute('aria-busy', 'true');
+      // Update the visible counter immediately on every keystroke.
+      const visibleCounter = document.getElementById('currentChars');
+      if (visibleCounter) {
+        visibleCounter.innerHTML = String(remaining);
+      }
 
-  // Store trigger id so we can return focus when dialog closes
-  if (trigger.id) dialog.dataset.returnFocus = trigger.id;
-
-  // Open dialog using native <dialog> API
-  if ('showModal' in dialog) {
-    dialog.showModal();
-  }
-  dialog.focus();
-
-  // Set up auto-close timeout if specified
-  if (autoCloseMs) {
-    const timeoutId = setTimeout(() => {
-      if ('close' in dialog) dialog.close();
-      delete dialog.dataset.autoCloseTimeout;
-    }, parseInt(autoCloseMs, 10));
-
-    dialog.dataset.autoCloseTimeout = String(timeoutId);
-  }
-
-  // Handle all dialog close scenarios (Escape, manual close, auto-close)
-  const handleClose = () => {
-    // Cancel pending auto-close timeout
-    const timeoutId = dialog.dataset.autoCloseTimeout;
-    if (timeoutId) {
-      clearTimeout(Number(timeoutId));
-      delete dialog.dataset.autoCloseTimeout;
-    }
-
-   // Set aria-busy to false when spinner modal closes.
-    if (busyRegion) busyRegion.setAttribute('aria-busy', 'false');
-
-    // Return focus to trigger button
-    const openerId = dialog.dataset.returnFocus;
-    if (openerId) document.getElementById(openerId)?.focus();
-
-    // Clean up listener to prevent memory leaks
-    dialog.removeEventListener('close', handleClose);
-  };
-
-  dialog.addEventListener('close', handleClose);
-},
-
-/**
- * Close dialog and return focus to the trigger.
- */
-closeModal: (event: React.MouseEvent<Element>) => {
-  const dialog = (event.currentTarget as HTMLElement).closest('dialog') as HTMLDialogElement | null;
-  if (!dialog) return;
-
-  // Cancel any pending auto-close timeout
-  const timeoutId = dialog.dataset.autoCloseTimeout;
-  if (timeoutId) {
-    clearTimeout(Number(timeoutId));
-    delete dialog.dataset.autoCloseTimeout;
-  }
-
-  // Close the dialog
-  if ('close' in dialog) dialog.close();
-},
-
- /**
-   * Starts a "heartbeat" progress indicator on a button and auto-updates the element with progress.
-   */
-  startProgress: (event: React.MouseEvent<Element>) => {
-  const button = event.currentTarget as HTMLButtonElement;
-  const chipId = button.getAttribute('data-chip');
-  if (!chipId) return;
-
-  const chip = document.querySelector(chipId) as HTMLElement | null;
-  if (!chip) return;
-
- // Set the region for adjusting aria-busy
- const busyRegion = document.getElementById('slow-app') as HTMLElement | null;
-
-  // Disable button and show initial progress
-  button.setAttribute('aria-disabled', 'true');
-  chip.hidden = false;
-  chip.classList.add('heartbeat');
-
- // Set aria-busy to true while progress is visible
-if (busyRegion) busyRegion.setAttribute('aria-busy', 'true');
-
-  // Update progress at intervals
-  setTimeout(() => {
-  chip.textContent = '0%';
-  }, 50);
-
-  setTimeout(() => { 
-    chip.textContent = '51%';
-  }, 3000);
-  
-  setTimeout(() => { 
-    chip.textContent = '78%';
-  }, 5000);
-  
-  setTimeout(() => { 
-    chip.textContent = '99%';
-  }, 8000);
-  
-  setTimeout(() => { 
-    chip.textContent = 'Done';
-  }, 9000);
-
-  // Reset: hide chip and enable button after completion
-  setTimeout(() => {
-    chip.textContent = '';
-    chip.hidden = true;
-    chip.classList.remove('heartbeat');
-    button.setAttribute('aria-disabled', 'false');
-    // Reset aria-busy to false once the chip is hidden
-    if (busyRegion) busyRegion.setAttribute('aria-busy', 'false');
-  }, 10000);
-},
-
+      // Debounce the SR live region update. The 1000ms delay gives the
+      // screen reader time to finish announcing the typed character before
+      // the counter value is read out.
+      if (srTimeout) clearTimeout(srTimeout);
+      srTimeout = setTimeout(() => {
+        const srTarget = document.getElementById('sr-counter-target');
+        if (srTarget) {
+          srTarget.innerHTML = `${remaining} of ${maxLength} characters remaining`;
+        }
+      }, 1000);
+    };
+  })(),
 });
