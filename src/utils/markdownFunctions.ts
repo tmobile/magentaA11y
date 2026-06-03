@@ -45,24 +45,14 @@ export const getMarkdownFunctionMap = (
 
   /**
    * Opens a modal dialog identified by the button's data-target attribute.
-   * Supports auto-close via data-auto-close (milliseconds).
    */
-  showModal: (event) => {
+  showDialog: (event) => {
     const button = event.currentTarget as HTMLButtonElement;
     const targetId = button.getAttribute('data-target');
     if (!targetId) return;
     const dialog = document.getElementById(targetId) as HTMLDialogElement;
     if (!dialog) return;
     dialog.showModal();
-    const autoClose = button.getAttribute('data-auto-close');
-    if (autoClose) {
-      setTimeout(() => {
-        if (dialog.open) {
-          dialog.close();
-          button.focus();
-        }
-      }, parseInt(autoClose));
-    }
   },
 
   /**

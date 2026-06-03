@@ -117,7 +117,7 @@ Since browser support for `<dialog>` is incomplete, if you plan to use the `<dia
 Some browsers require additional scripting. This simple example works in Chrome, but [may not work correctly in all browsers](https://caniuse.com/?search=dialog) such as Safari and Firefox.
 
 ```html
-   <button data-fn="showModal" 
+   <button data-fn="showDialog" 
          data-target="dialog-example-modal" 
          id="showModal">
    Things you should know
@@ -158,7 +158,7 @@ Some browsers require additional scripting. This simple example works in Chrome,
 
 
 <example>
-   <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showModal" data-target="dialog-example-modal" id="showModal">
+   <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showDialog" data-target="dialog-example-modal" id="showModal">
    Things you should know
    </button>
 

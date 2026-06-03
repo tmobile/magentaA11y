@@ -80,15 +80,15 @@ example,
     appearance: none;
     box-shadow: none !important;
     outline-offset: .25rem;
-    animation: spin 2s linear infinite;
+    animation: spin 2s linear 2;
     background: conic-gradient(var(--color-background), var(--magentaa11y-color-brand-primary-200), var(--color-primary), var(--color-primary));
 
     &::after {
       content: '';
       display: block;
       background-color: var(--color-background);
-      width: calc(100px);
-      height: calc(100px);
+      width: 100px;
+      height: 100px;
       border: none;
       border-radius: 50%;
     }

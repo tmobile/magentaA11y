@@ -131,10 +131,9 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
      aria-live="polite" 
      aria-busy="false">
    <button class="Magentaa11y-button Magentaa11y-button--primary" 
-           data-fn="showModal" 
+           data-fn="showDialog" 
            id="showSpinnerModal" 
-           data-target="spinner-modal" 
-           data-auto-close="10000">
+           data-target="spinner-modal">
     Launch spinner
   </button>   
   <dialog role="dialog"
@@ -167,7 +166,7 @@ Support varies by screen reader. It's recommended to add full ARIA attributes, e
 <div id="really-slow-app" 
      aria-live="polite" 
      aria-busy="false">
-  <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showModal" id="showSpinnerModal" data-target="spinner-modal" data-auto-close="10000">
+  <button class="Magentaa11y-button Magentaa11y-button--primary" data-fn="showDialog" id="showSpinnerModal" data-target="spinner-modal">
     Launch spinner
   </button>
   <dialog role="dialog"
