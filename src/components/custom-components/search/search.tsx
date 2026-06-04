@@ -11,14 +11,14 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ controlsId, resultCount, query, onQueryChange }) => {
   return (
     <div className="searchbar">
-      <label htmlFor="search1" className="searchbar__label">
+      <label htmlFor="criteriaSearch" className="searchbar__label">
           Search to filter the cards:
       </label>
       <input
         className="searchbar__input"
         role="combobox"
         aria-autocomplete="list"
-        id="search1"
+        id="criteriaSearch"
         type="search"
         value={query}
         onChange={(e) => onQueryChange(e.target.value)}
