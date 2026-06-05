@@ -9,7 +9,7 @@ interface ContentItem {
 }
 
 export const useSearch = (items: ContentItem[]) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(''); // start with query being ''
 
   const fuse = useMemo(
     () =>

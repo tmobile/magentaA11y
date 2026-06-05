@@ -5,7 +5,7 @@ interface SearchBarProps {
   controlsId: string;
   resultCount: number;
   query: string;
-  onQueryChange: (query: string) => void;
+  onQueryChange: (q: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ controlsId, resultCount, query, onQueryChange }) => {
@@ -21,7 +21,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ controlsId, resultCount, query, o
         id="criteriaSearch"
         type="search"
         value={query}
-        onChange={(e) => onQueryChange(e.target.value)}
+        onChange={(e) => onQueryChange(e.target.value)} // returns new value to setQuery in hook
         aria-controls={controlsId}
         aria-expanded="false"
         aria-haspopup="false"
