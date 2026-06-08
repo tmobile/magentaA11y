@@ -114,20 +114,20 @@ Pass	Fail
 
 #### Mac OS Basic Keyboard Shortcuts
 
-Key	Action
-Option + Command + Plus Sign (+)	Zoom In
-
-Option + Command + Minus Sign (+)	Zoom Out
-Option + Command + 8	Toggle Zoom On/Off
-
+| Key         | Action                                              |
+|-------------|-----------------------------------------------------|
+| Option + Command + Plus Sign (+) | Zoom In |
+| Option + Command + Minus Sign (+) | Zoom Out |
+| Option + Command + 8	| Toggle Zoom On/Off |
+	
 
 #### Windows OS Basic Keyboard Shortcuts
 
-Key	Action
-Windows key + Plus Sign (+)	Zoom In
-
-Windows key + Minus Sign (+)	Zoom Out
-Windows key + Esc	Exit Magnifier
+| Key         | Action                                              |
+|-------------|-----------------------------------------------------|
+| Windows key + Plus Sign (+) | Zoom In |
+| Windows key + Minus Sign (-) | Zoom Out |
+| Windows key + Esc	| Exit Magnifier |
 
 ## Related WCAG
 - 1.4.4 Resize text
