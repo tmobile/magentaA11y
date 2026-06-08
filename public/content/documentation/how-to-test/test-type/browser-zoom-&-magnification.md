@@ -54,7 +54,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
 
 - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
 - Select the Settings button. Then change the browser Zoom setting to 400%. 
-- Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows content into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
+- Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
 - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
 - Also check that horizontal scrolling is not required to bring essential content or functionality into view.
 
@@ -105,7 +105,7 @@ Pass	Fail
 	
 ✓ Ensure horizontal scroll bar scrolling is not required to access essential content and functionality
 
-Exceptions: Content in content in two-dimensional layouts such as maps, diagrams, video, games, persistent toolbars, presentations, and data tables. 
+Exceptions: Content in two-dimensional layouts such as maps, diagrams, video, games, persistent toolbars, presentations, and data tables. 
 
 Pass	Fail
 	
