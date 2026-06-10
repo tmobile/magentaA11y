@@ -16,7 +16,7 @@ export const useSearch = (items: ContentItem[]) => {
       new Fuse(items, {
         keys: ['label', 'developerNotes', 'generalNotes'],
         threshold: 0.2,
-        useTokenSearch: true, // can remove for fuzzier search, but it's kind of nice
+        // useTokenSearch: true, // can add in fuzzier search .. or perhaps toggle this at some point for pro folks who want to search "card" or "aria-busy" etc
         includeScore: true,
       }),
     [items]
