@@ -1,0 +1,40 @@
+WEBVTT
+
+0530b349-c802-4a3d-83ce-6f1216649b08-0
+00:00:01.000 --> 00:00:06.520
+Boiso Safari dimmed Search input heading
+level 1A.
+
+317b1ad3-ef3e-4244-a628-0973595ac34a-0
+00:00:06.520 --> 00:00:09.880
+Search input must identify its name and
+role and include a search button.
+
+d0f3df2d-fdd5-4824-867a-3ba859f8e9f3-0
+00:00:10.160 --> 00:00:12.440
+We start by letting the screenwriter read
+on its own.
+
+a5fb90cf-2dac-4d71-9366-3c7fecfc108a-0
+00:00:12.760 --> 00:00:18.310
+Then we'll start at the top,
+manually search this website,
+
+a5fb90cf-2dac-4d71-9366-3c7fecfc108a-1
+00:00:18.310 --> 00:00:24.049
+search search field,
+search button and search back to top of
+
+a5fb90cf-2dac-4d71-9366-3c7fecfc108a-2
+00:00:24.049 --> 00:00:24.520
+page.
+
+24aaca00-5d33-484f-87e5-f3431bcdecf4-0
+00:00:24.720 --> 00:00:31.483
+In Page link search input heading level 1,
+assert search this website,
+
+24aaca00-5d33-484f-87e5-f3431bcdecf4-1
+00:00:31.483 --> 00:00:35.960
+search search button and search voiceover
+off.
