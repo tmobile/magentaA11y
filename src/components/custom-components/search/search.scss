@@ -1,0 +1,19 @@
+.searchbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__label {
+        margin-right: 1rem;
+        font: var(--magentaa11y-typeset-body-xl-strong);
+    }
+
+    &__input {
+        height: 50px;
+        flex-grow: 1;
+        border-color: var(--color-text-link);
+        border-radius: 25px;
+        font: var(--magentaa11y-typeset-body-lg-normal);
+        padding: 0 1rem;
+    }
+}

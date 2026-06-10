@@ -11,11 +11,12 @@ interface Card {
 
 interface CardsProps {
   items: Card[];
+  id?: string;
 }
 
-const Cards: React.FC<CardsProps> = ({ items }) => {
+const Cards: React.FC<CardsProps> = ({ items, id }) => {
   return (
-    <ul className="MagentaA11y__card" role="list">
+    <ul className="MagentaA11y__card" role="list" id={id}>
       {items.map((item) => (
         <li key={item.link} className="MagentaA11y__card__item" role="listitem">
           <NavLink to={item.link} className="MagentaA11y__card__link">
