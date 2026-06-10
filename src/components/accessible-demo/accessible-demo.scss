@@ -114,7 +114,8 @@
 }
 
 .accessible-summary {
-  details {
+  details,
+  .details {
     background: var(--color-text-on-primary);
     border: 1px solid var(--magentaa11y-color-brand-grayscale-400);
     border-radius: 1rem;
@@ -124,15 +125,16 @@
     text-align: left;
   }
 
-  summary  {
+  summary {
     list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
   }
 
-  summary::-webkit-details-marker {
-    display: none;
-  }
-
-  details summary {
+  details summary,
+  .details summary {
     position: relative;
     display: grid;
     grid-template-columns: 4rem 1fr;
@@ -142,42 +144,43 @@
     font-size: 1.25rem;
     line-height: 1.2;
     cursor: pointer;
+
+    &::before {
+      content:'';
+      background: url("../../assets/svgs/chevron-down.svg") no-repeat center center;
+      display: block;
+      position: relative;
+      justify-self: center;
+      width: 2.125rem;
+      height: 2.125rem;
+      border-radius: 2rem;
+      background-color: var(--color-text-on-primary);
+      opacity: 1;
+      background-size: 1.25rem 1.25rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &:hover::before,
+    &:focus-visible::before {
+      border: 2px solid var(--color-primary);
+    }
   }
 
-  details summary::before {
-    content:'';
-    background: url("../../assets/svgs/chevron-down.svg") no-repeat center center;
-    display: block;
-    position: relative;
-    justify-self: center;
-    width: 2.125rem;
-    height: 2.125rem;
-    border-radius: 2rem;
-    background-color: var(--color-text-on-primary);
-    opacity: 1;
-    background-size: 1.25rem 1.25rem;
-    background-position: center center;
-    background-repeat: no-repeat;
-    transition: all 0.1s ease-in-out;
-  }
-
-  details summary:hover::before,
-  details summary:focus-visible::before {
-    border: 2px solid var(--color-primary);
-  }
-
-  details[open] summary::before {
-    content: '';
-    background-position: center center;
-    transform: rotate(-180deg);
-  }
-
-  details[open] summary {
+  details[open] summary,
+  .details--open summary {
     border-radius: 1rem 1rem 0 0;
     border-bottom: 1px solid var(--color-text-disabled);
     margin-bottom: 1rem;
     background-position: 10% center;
     transition: background 0.1s;
+
+    &::before {
+      content: '';
+      background-position: center center;
+      transform: rotate(-180deg);
+    }
   }
 
   details:not([open]) summary:active,
