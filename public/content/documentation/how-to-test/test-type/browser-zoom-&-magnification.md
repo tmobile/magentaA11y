@@ -33,81 +33,53 @@ Testing browser zoom and magnification is essential for ensuring that content an
 
 2. ## How to test
 
-### Browsers
+    ### Browsers
 
-- Any major browser such as Chrome, Safari, Firefox, or Edge is acceptable for browser zoom testing.
+    - Any major browser such as Chrome, Safari, Firefox, or Edge is acceptable for browser zoom testing.
 
-### Manual testing
+    ### Manual testing
 
-- Browser zoom testing must be complemented with visual inspection of the content and manual checks of retained page functionality after zoom settings have been changed on the Web page.
+    - Browser zoom testing must be complemented with visual inspection of the content and manual checks of retained page
+      functionality after zoom settings have been changed on the Web page.
 
-#### Getting started
+    #### Getting started
 
-##### Text Resize at 200 percent browser zoom
+    ##### Text Resize at 200 percent browser zoom
 
-- Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
-- Select the Settings button. Then change the browser Zoom setting to 200%. 
-- Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality.
-- In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom.
+    - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
+    - Select the Settings button. Then change the browser Zoom setting to 200%. 
+    - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality.
+    - In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom.
 	
-##### Reflow at 400 percent browser zoom
+    ##### Reflow at 400 percent browser zoom
 
-- Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
-- Select the Settings button. Then change the browser Zoom setting to 400%. 
-- Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
-- In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
-- Also check that horizontal scrolling is not required to bring essential content or functionality into view.
+    - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
+    - Select the Settings button. Then change the browser Zoom setting to 400%. 
+    - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
+    - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
+    - Also check that horizontal scrolling is not required to bring essential content or functionality into view.
 
-3. ## What to test for
+3.    ## What to test for
 
-✓ Ensure text content remains legible when scaled to 200 percent browser zoom
-Note: This requirement is only for Web page text such as headings, body text, link text, button text labels, form field labels, and text inside form inputs, etc. (and excludes captions and images of text).
-
-Pass	Fail
-
-✓ Ensure that text content does not truncate when scaled to 200 percent browser zoom
-
-Pass	Fail
-
-✓ Ensure Web page content and text in form controls is not partially cut off at 200 percent browser zoom (e.g., partially cutoff from complete access or view on either the left or right side of the page.)
-
-Pass	Fail
-
-✓ Ensure that text content does not overlap when scaled to 200 percent browser zoom
-
-Pass	Fail
-	
-✓ Ensure that text content and form elements do not completely disappear when browser zoom is set to 200 percent.
-
-Pass	Fail
-	
-✓ Ensure that text content does not truncate when scaled to 400 percent browser zoom
-
-Pass	Fail
-	
-✓ Ensure that text content does not overlap when scaled to 400 percent browser zoom
-
-Pass	Fail
-	
-✓ Ensure Web page content and form controls are not partially cut off at 400 percent browser zoom (e.g., partially cutoff from complete access or view on the left or right side of the page)
-
-Pass	Fail
-	
-✓ Ensure Web page content and form controls reflow to remain available at 400 percent browser zoom
-
-Note: Content and functionality are allowed to collapse behind menus or expand/collapse disclosure elements as long as the content or functionality is equivalent to what is offered at the default 100 percent browser zoom.
-
-Pass	Fail
-	
-✓ Ensure that no text content, form elements, or controls completely disappear when browser zoom is set to 400 percent (e.g., no loss of content)
-
-Pass	Fail
-	
-✓ Ensure horizontal scroll bar scrolling is not required to access essential content and functionality
-
-Exceptions: Content in two-dimensional layouts such as maps, diagrams, video, games, persistent toolbars, presentations, and data tables. 
-
-Pass	Fail
+	- Ensure text content remains legible when scaled to 200 percent browser zoom
+	Note: This requirement is only for Web page text such as headings, body text, link text, button text labels, 			form field labels, and text inside form inputs, etc. (and excludes captions and images of text).
+	- Ensure that text content does not truncate when scaled to 200 percent browser zoom
+	- Ensure Web page content and text in form controls is not partially cut off at 200 percent browser zoom (e.g., 
+	partially cutoff from complete access or view on either the left or right side of the page.)
+	- Ensure that text content does not overlap when scaled to 200 percent browser zoom
+	- Ensure that text content and form elements do not completely disappear when browser zoom is set to 200 percent.
+	- Ensure that text content does not truncate when scaled to 400 percent browser zoom
+	- Ensure that text content does not overlap when scaled to 400 percent browser zoom
+	- Ensure Web page content and form controls are not partially cut off at 400 percent browser zoom (e.g., 
+	partially cutoff from complete access or view on the left or right side of the page)
+	- Ensure Web page content and form controls reflow to remain available at 400 percent browser zoom
+	Note: Content and functionality are allowed to collapse behind menus or expand/collapse disclosure elements as long 
+	as the content or functionality is equivalent to what is offered at the default 100 percent browser zoom.	
+	- Ensure that no text content, form elements, or controls completely disappear when browser zoom is set to 400 
+	percent (e.g., no loss of content)
+	- Ensure horizontal scroll bar scrolling is not required to access essential content and functionality
+	- Exceptions: Content in two-dimensional layouts such as maps, diagrams, video, games, persistent toolbars,		
+	presentations, and data tables. 
 	
 ## Additional Magnification Tests: 
 ### Adjusting Desktop Operating System Settings (Optional)
