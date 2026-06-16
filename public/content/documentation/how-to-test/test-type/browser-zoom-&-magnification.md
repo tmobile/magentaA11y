@@ -14,7 +14,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
     - 400 percent browser zoom
     - Magnify screen features through desktop Operating System (OS) settings.
 
-	The Web Content Accessibility Guidelines (WCAG) provides requirements on what outcomes 		must be avoided when content is magnified or zoomed:
+	The Web Content Accessibility Guidelines (WCAG) provides requirements on what outcomes must be avoided when content is magnified or zoomed:
 
     - Loss of content
     - Loss of controls
