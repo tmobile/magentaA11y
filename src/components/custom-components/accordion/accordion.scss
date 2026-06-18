@@ -25,7 +25,6 @@
     }
 
     &::after {
-      content: "";
       -webkit-mask: var(--headline-caret-icon);
       mask: var(--headline-caret-icon);
       -webkit-mask-position: center center;
