@@ -61,6 +61,8 @@ Testing browser zoom and magnification is essential for ensuring that content an
 
 3.    ## What to test for
 
+<div class="how-to-test-checklist-item" node="[object Object]"><h3>✓ Ensure text content remains legible when scaled to 200 percent browser zoom</h3><table class="column-2"><thead><tr><th scope="col">Pass</th><th scope="col">Fail</th></tr></thead><tbody><tr><td><p>Content scales and remains legible</p></td><td><p class="contrast-fail-1">Content is NOT legible</p></td></tr><tr><td><p class="contrast-fail-2">Screenshot placeholder</p></td><td><p class="contrast-fail-3">Screenshot placeholder</p></td></tr></tbody></table></div>
+
 	- Ensure text content remains legible when scaled to 200 percent browser zoom
 	Note: This requirement is only for Web page text such as headings, body text, link text, button text labels, 			form field labels, and text inside form inputs, etc. (and excludes captions and images of text).
 	- Ensure that text content does not truncate when scaled to 200 percent browser zoom
