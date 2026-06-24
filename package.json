@@ -81,6 +81,6 @@
     "stylelint": "^16.19.1",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-scss": "^6.11.1",
-    "tsx": "^4.19.2"
+    "tsx": "^4.22.4"
   }
 }
