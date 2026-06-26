@@ -213,7 +213,7 @@ Sometimes a design may call for a card-type checkbox.
 
 ```html
 <ul class="cards">
-  <li class="card interactive">
+  <li class="card interactive checkbox-card">
     <input type="checkbox"
            id="oscarCheckboxCard"
            aria-describedby="descriptionOscar" >
@@ -226,7 +226,7 @@ Sometimes a design may call for a card-type checkbox.
       nose, and lives in a trash can.
     </div>
   </li>
-  <li class="card interactive">
+  <li class="card interactive checkbox-card">
     <input type="checkbox"
            id="groverCheckboxCard"
            aria-describedby="descriptionGrover" >
