@@ -58,6 +58,14 @@ Testing browser zoom and magnification is essential for ensuring that content an
     - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
     - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
     - Also check that horizontal scrolling is not required to bring essential content or functionality into view.
+  
+   ##### Reflow for mobile at 320 pixel width viewport
+
+    - Display the web page in a browser or user agent capable of 400% zoom, and set the viewport dimensions (in CSS pixels) to 1280 wide and 1024 high.
+    - Then change the browser Zoom setting to 400%. 
+    - For content read horizontally, check that all content and functionality is available without horizontal scrolling.
+    - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
+    - For content read vertically, check that all content and functionality is available without vertical scrolling.
 
 3.    ## What to test for
 
