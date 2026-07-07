@@ -22,7 +22,7 @@ const InaccessibleDemo: React.FC = () => {
   // 2. State for controlling only the error message visibility and content
   const [errorMessage, setErrorMessage] = useState<string>('');
 
-  // Handler to update state when a "radio" div is clicked
+  // Handler to update state when a "radio" div is clicked ONLY with mouse
   const handleRadioClick = (value: ScreenReaderValue) => {
     setSelectedReader(value);
     
@@ -107,110 +107,122 @@ const InaccessibleDemo: React.FC = () => {
                         <div className="container section accessible-summary">
                             <div className="h-bravo">Common questions</div>
 
-                            <details>
+                            <div onPointerDown={(e) => e.currentTarget.classList.toggle('details--open')}
+                                className="details">
                                 <summary>Are all projects in scope?</summary>
-                                Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible. This includes customer and employee facing applications.
+                                <div className="details__content">
+                                    Any digital space falls under the requirements of the Americans with Disabilities Act (ADA) and must be accessible. This includes customer and employee facing applications.
+                                </div>
 
-                            </details>
+                            </div>
 
-                            <details>
-                            <summary>Who does this really affect?</summary>
-                            Over 1/4 of the US population has a disability that requires assistive technology or accommodation.
-                            </details>
+                            <div onPointerDown={(e) => e.currentTarget.classList.toggle('details--open')}
+                                className="details">
+                                <summary>Who does this really affect?</summary>
+                                <div className="details__content">
+                                    Over 1/4 of the US population has a disability that requires assistive technology or accommodation.
+                                </div>
+                            </div>
 
                             {/* eslint-disable jsx-a11y/no-redundant-roles */}
-                            <details>
+                            <div onPointerDown={(e) => e.currentTarget.classList.toggle('details--open')}
+                                className="details">
                                 <summary>How do we test our products?</summary>
-                                <ol>
-                                <li>Test with the keyboard only</li>
-                                <li>Test with the mobile screenreader</li>
-                                <li>Test with the desktop screenreader</li>
-                                </ol>
-                            </details>
+                                <div className="details__content">
+                                    <ol>
+                                    <li>Test with the keyboard only</li>
+                                    <li>Test with the mobile screenreader</li>
+                                    <li>Test with the desktop screenreader</li>
+                                    </ol>
+                                </div>
+                            </div>
 
                             {/* eslint-enable jsx-a11y/no-redundant-roles */}
-                            <details>
+                            <div onPointerDown={(e) => e.currentTarget.classList.toggle('details--open')}
+                                className="details">
                                 <summary>What screen reader should I use to test?</summary>
-                                <table className="comparison">
-                                    <caption className="center-text h-charlie">Screen reader and browser pairings</caption>
-                                    <thead>
-                                        <tr>
-                                            <th>Platform</th>
-                                            <th>Screenreader</th>
-                                            <th>Browser</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>
-                                                <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="../../content/assets/media/images/icons/logo-apple.svg" className="icon" />iOS
-                                            </th>
+                                <div className="details__content">
+                                    <table className="comparison">
+                                        <caption className="center-text h-charlie">Screen reader and browser pairings</caption>
+                                        <thead>
+                                            <tr>
+                                                <th>Platform</th>
+                                                <th>Screenreader</th>
+                                                <th>Browser</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>
+                                                    <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="../../content/assets/media/images/icons/logo-apple.svg" className="icon" />iOS
+                                                </th>
+                                                    <td>
+                                                        <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="../../content/assets/media/images/icons/logo-apple.svg" className="icon" />VoiceOver
+                                                    </td>
+                                                    <td>
+                                                        <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="browser" className="icon" />Safari
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <img src="../../content/assets/media/images/icons/logo-android.svg" alt="" className="icon" />
+                                                    Android
+                                                </th>
                                                 <td>
-                                                    <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="../../content/assets/media/images/icons/logo-apple.svg" className="icon" />VoiceOver
+                                                    <img src="../../content/assets/media/images/icons/logo-talkback.svg" alt="" className="icon" />
+                                                    Talkback
                                                 </td>
                                                 <td>
-                                                    <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="browser" className="icon" />Safari
+                                                    <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
+                                                    Chrome
                                                 </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img src="../../content/assets/media/images/icons/logo-android.svg" alt="" className="icon" />
-                                                Android
-                                            </th>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-talkback.svg" alt="" className="icon" />
-                                                Talkback
-                                            </td>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
-                                                Chrome
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img src="../../content/assets/media/images/icons/logo-windows.svg" alt="" className="icon" />
-                                                Windows
-                                            </th>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-jaws.svg" alt="" className="icon" />
-                                                JAWS
-                                            </td>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
-                                                Chrome
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img src="../../content/assets/media/images/icons/logo-windows.svg" alt="_windows_" className="icon" />
-                                                Windows
-                                            </th>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-nvda.svg" alt="" className="icon" />
-                                                NVDA
-                                            </td>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
-                                                Chrome
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>
-                                                <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
-                                                MacOS
-                                            </th>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
-                                                VoiceOver
-                                            </td>
-                                            <td>
-                                                <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="icon" className="icon" />
-                                                Safari
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </details>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <img src="../../content/assets/media/images/icons/logo-windows.svg" alt="" className="icon" />
+                                                    Windows
+                                                </th>
+                                                <td>
+                                                    <img src="../../content/assets/media/images/icons/logo-jaws.svg" alt="" className="icon" />
+                                                    JAWS
+                                                </td>
+                                                <td>
+                                                    <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
+                                                    Chrome
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <img src="../../content/assets/media/images/icons/logo-windows.svg" alt="_windows_" className="icon" />
+                                                    Windows
+                                                </th>
+                                                <td>
+                                                    <img src="../../content/assets/media/images/icons/logo-nvda.svg" alt="" className="icon" />
+                                                    NVDA
+                                                </td>
+                                                <td>
+                                                    <img src="../../content/assets/media/images/icons/logo-chrome.svg" alt="" className="icon" />
+                                                    Chrome
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
+                                                    MacOS
+                                                </th>
+                                                <td>
+                                                    <img src="../../content/assets/media/images/icons/logo-apple.svg" alt="" className="icon" />
+                                                    VoiceOver
+                                                </td>
+                                                <td>
+                                                    <img src="../../content/assets/media/images/icons/logo-safari.svg" alt="icon" className="icon" />
+                                                    Safari
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
 
                     <div className="container accessible-radio">
@@ -227,12 +239,7 @@ const InaccessibleDemo: React.FC = () => {
                                         key={reader.id} 
                                         // Apply 'is-selected' class for visual feedback
                                         className={selectedReader === reader.value ? 'radio-container is-selected' : 'radio-container'} 
-                                        onClick={() => handleRadioClick(reader.value)}
-                                        // Add keyboard focus handling for better mouse/keyboard experience on these fake divs
-                                        tabIndex={0} 
-                                        onKeyDown={(e) => {
-                                            if (e.key === 'Enter' || e.key === ' ') handleRadioClick(reader.value);
-                                        }}
+                                        onPointerDown={() => handleRadioClick(reader.value)}
                                     >
                                         <div id={reader.id} className="radio" />
                                         <div className="label">{reader.label}</div>
