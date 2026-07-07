@@ -196,7 +196,7 @@
 
   @media (prefers-color-scheme: dark) {
     details summary::before,
-    details summary::before {
+    .details summary::before {
       background-color: var(--color-text-primary);
     }
   }
