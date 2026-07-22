@@ -38,6 +38,12 @@
     md-tabs {
       width: fit-content;
     }
+
+    // Remove Material's custom animated magenta focus ring on tabs;
+    // rely on the default browser focus ring instead (see src/index.scss).
+    md-primary-tab::part(focus-ring) {
+      display: none;
+    }
   }
 
   &__tab-container {
