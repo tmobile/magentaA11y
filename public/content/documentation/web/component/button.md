@@ -190,10 +190,10 @@ Sometimes the design will call for multiple buttons with the same text label. In
 ```html
 <button aria-label="Edit payment date">
   Edit
-</div>
+</button>
 <button aria-label="Edit payment amount">
   Edit
-</div>
+</button>
 ```
 
 ## Developer notes
