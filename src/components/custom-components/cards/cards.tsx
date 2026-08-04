@@ -17,7 +17,11 @@ interface CardsProps {
 const Cards: React.FC<CardsProps> = ({ items, id }) => {
   return (
     <ul className="MagentaA11y__card" role="list" id={id}>
-      {items.map((item) => (
+      {items.map((item) => {
+        if (item.link === '/how-to-test-criteria/test-type/no-results') return (
+          <h2>No results found.</h2>
+        );
+        return (
         <li key={item.link} className="MagentaA11y__card__item" role="listitem">
           <NavLink to={item.link} className="MagentaA11y__card__link">
             <h2 className="MagentaA11y__card__title">{item.title}</h2>
@@ -29,6 +33,8 @@ const Cards: React.FC<CardsProps> = ({ items, id }) => {
             <svg
               width="24"
               height="24"
+              aria-hidden="true"
+              focusable="false"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +45,8 @@ const Cards: React.FC<CardsProps> = ({ items, id }) => {
             </svg>
           </NavLink>
         </li>
-      ))}
+        );
+      })}
     </ul>
   );
 };
