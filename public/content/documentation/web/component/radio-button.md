@@ -122,7 +122,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/form/radio-button]
 ### Disabled and focusable radio inputs (preferred)
 
 - An input using `aria-disabled="true"` will be focusable with the tab key
-- Use JS to preventDefault()
+- Use JS to `preventDefault()`
 
 ```html
 <fieldset>

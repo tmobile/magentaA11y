@@ -99,3 +99,6 @@
     transform: translateY(0);
   }
 }
+
+#example-expanding-nav .MagentaA11y-accordion__headline::after {   
+  display: none; } 
