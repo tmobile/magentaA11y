@@ -18,7 +18,7 @@ const Cards: React.FC<CardsProps> = ({ items, id }) => {
   return (
     <ul className="MagentaA11y__card" role="list" id={id}>
       {items.map((item) => {
-        if (item.link === '/how-to-test-criteria/test-type/no-results') return (
+        if (item.link.includes('no-results')) return (
           <h2>No results found.</h2>
         );
         return (
