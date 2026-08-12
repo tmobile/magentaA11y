@@ -170,7 +170,7 @@ There is no native expandable or accordion element for iOS.  The notes below are
   - If necessary, use property wrapper `@AccessibilityFocusState` to assign identifiers to specific views to manually shift focus from one view to another as the user interacts with the screen with VoiceOver on.
 
 ### Announcement examples
-- “Amenities, 2 Hotel amenities selected, collapsed, double tap to activate”  (Label, data, state, role/action)
+- “Amenities, 2 Hotel amenities selected, collapsed, button”  (Label, data, state, role/action)
 
 ## Android Developer Notes
 ### General Notes
