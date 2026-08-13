@@ -49,7 +49,7 @@ How to test a menu
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/menu](/native-criteria/controls/menu)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/menu](/native-criteria/controls/menu)
 
 ## Gherkin
 
@@ -92,7 +92,7 @@ GIVEN THAT I am on a screen with a menu
    - WHEN I adjust the device text resize setting to 200%
       - THEN the text within the menu should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/menu](/native-criteria/controls/menu)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/menu](/native-criteria/controls/menu)
 
 ## iOS Developer Notes
 ### General Notes

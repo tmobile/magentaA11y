@@ -26,7 +26,7 @@ How to test a tooltip
    - Tooltip: The tooltip content is read aloud (via `aria-describedby` or role="tooltip").
    - Action: It is clear whether the button performs an action or is static.
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/tooltip](https://www.magentaa11y.com/#/web-criteria/component/tooltip)
+Full information: [https://www.magentaa11y.com/web-criteria/component/tooltip](https://www.magentaa11y.com/web-criteria/component/tooltip)
 
 ## Gherkin
 
@@ -65,7 +65,7 @@ GIVEN THAT I am on a page with a tooltip button
      I HEAR the intended action occurs (if applicable)
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/tooltip](https://www.magentaa11y.com/#/web-criteria/component/tooltip)
+Full information: [https://www.magentaa11y.com/web-criteria/component/tooltip](https://www.magentaa11y.com/web-criteria/component/tooltip)
 
 ## Developer Notes
 

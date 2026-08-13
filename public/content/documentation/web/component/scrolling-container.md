@@ -19,7 +19,7 @@ How to test a scrolling container
    - Name: Its purpose is clear
    - Role: It identifies its role as region
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/scrolling](/web-criteria/scrolling)
+Full information: [https://www.magentaa11y.com/web-criteria/scrolling](/web-criteria/scrolling)
 
 ## Gherkin
 
@@ -46,7 +46,7 @@ GIVEN THAT I am on a page with a scrolling container
    - THEN when I swipe move browse to the content I HEAR the content is read
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/scrolling](/web-criteria/scrolling)
+Full information: [https://www.magentaa11y.com/web-criteria/scrolling](/web-criteria/scrolling)
 
 ## Code Examples
 

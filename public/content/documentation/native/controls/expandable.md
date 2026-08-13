@@ -49,7 +49,7 @@ How to test a button that toggles an expandable region
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/expandable](/native-criteria/controls/expandable)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/expandable](/native-criteria/controls/expandable)
 
 ## Gherkin
 
@@ -87,7 +87,7 @@ GIVEN THAT I am on a screen with an expandable region
    - WHEN I adjust the device text resize setting to 200%
       - THEN the text on the expandable region should resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/expandable](/native-criteria/controls/expandable)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/expandable](/native-criteria/controls/expandable)
 
 
 ## iOS Developer Notes

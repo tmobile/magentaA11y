@@ -46,7 +46,7 @@ How to test a dropdown
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/dropdown](/native-criteria/controls/dropdown)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/dropdown](/native-criteria/controls/dropdown)
 
 ## Gherkin
 
@@ -89,7 +89,7 @@ GIVEN THAT I am on a screen with a dropdown
    - WHEN I adjust the device text resize setting to 200%
       - THEN the text on the dropdown should resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/dropdown](/native-criteria/controls/dropdown)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/dropdown](/native-criteria/controls/dropdown)
 
 ## iOS Developer Notes
 There is no native dropdown element for iOS.  The notes below are suggestions and accessibility guidance.

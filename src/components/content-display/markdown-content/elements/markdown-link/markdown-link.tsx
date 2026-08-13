@@ -23,7 +23,10 @@ const isExternalUrl = (href: string): boolean => {
  * Handles clicks on internal anchor links by scrolling to and focusing the target element.
  */
 const handleInternalAnchorClick = (e: React.MouseEvent, href: string) => {
-  e.preventDefault();
+  // The browser handles the jump and writes the fragment to the address bar,
+  // which is what makes these links shareable. We only add focus management,
+  // because browsers scroll to an anchor but do not reliably move keyboard
+  // and screen reader focus there.
   const targetId = href.substring(1);
   const targetElement = document.getElementById(targetId);
   if (targetElement) {

@@ -25,7 +25,7 @@ How to test a search input
    - Role: It identifies itself as a search input
    - Group: The form itself is discoverable with screenreader shortcuts as a search input
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](/web-criteria/component/search)
+Full information: [https://www.magentaa11y.com/web-criteria/component/search](/web-criteria/component/search)
 
 ## Gherkin
 
@@ -60,7 +60,7 @@ GIVEN THAT I am on a page with a search input
       - I HEAR the form itself is discoverable with screenreader
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](/web-criteria/component/search)
+Full information: [https://www.magentaa11y.com/web-criteria/component/search](/web-criteria/component/search)
 
 
 ## Videos
@@ -110,7 +110,7 @@ Full information: [https://www.magentaa11y.com/#/web-criteria/component/search](
 
 ### Search with autocomplete suggestions
 
-- For search autocomplete see <a href="https://www.magentaa11y.com/#/web-criteria/component/autocomplete">Autocomplete input with listbox</a>
+- For search autocomplete see <a href="https://www.magentaa11y.com/web-criteria/component/autocomplete">Autocomplete input with listbox</a>
 
 ```html
 <form role="search">

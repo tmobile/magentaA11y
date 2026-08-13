@@ -32,7 +32,7 @@ GIVEN THAT I am on a page with a basic web page
 4. Device OS settings
    - WHEN I use zoom/pinch THEN I see text can resize up to 200% without losing information
 
-Full information: https://www.magentaa11y.com/#/web-criteria/page-level/basic-web-page
+Full information: https://www.magentaa11y.com/web-criteria/page-level/basic-web-page
 
 ## Validate your code
 Use [HTML validation](https://validator.w3.org/nu/) as the foundation for ensuring your page works for everyone.
@@ -78,10 +78,10 @@ People with low vision need the ability to enlarge the page on mobile and deskto
 Landmarks give structure to the page for the screenreader user to be able to navigate the page by major sections.
 
 Each page must include:
-   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/header-landmark">Header</a>
-   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/navigation-landmark">Nav</a>
-   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/main-landmark">Main</a>
-   - <a href="https://www.magentaa11y.com/#/web-criteria/page-level/footer-landmark">Footer</a>
+   - <a href="https://www.magentaa11y.com/web-criteria/page-level/header-landmark">Header</a>
+   - <a href="https://www.magentaa11y.com/web-criteria/page-level/navigation-landmark">Nav</a>
+   - <a href="https://www.magentaa11y.com/web-criteria/page-level/main-landmark">Main</a>
+   - <a href="https://www.magentaa11y.com/web-criteria/page-level/footer-landmark">Footer</a>
 
 ```html
 <header>
@@ -124,4 +124,4 @@ How to test a basic web page
 
     - Zoom/pinch: text can resize up to 200% without losing information
 
-Full information: https://www.magentaa11y.com/#/web-criteria/page-level/basic-web-page
+Full information: https://www.magentaa11y.com/web-criteria/page-level/basic-web-page
