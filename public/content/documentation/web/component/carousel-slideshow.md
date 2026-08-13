@@ -33,7 +33,7 @@ How to test a carousel/slideshow
 
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow](/web-criteria/component/carousel-slideshow)
+Full information: [https://www.magentaa11y.com/web-criteria/component/carousel-slideshow](/web-criteria/component/carousel-slideshow)
 
 ## Gherkin
 
@@ -73,7 +73,7 @@ GIVEN THAT I am on a page with a carousel/slideshow
 
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/carousel-slideshow](/web-criteria/component/carousel-slideshow)
+Full information: [https://www.magentaa11y.com/web-criteria/component/carousel-slideshow](/web-criteria/component/carousel-slideshow)
 
 ## Our General Advice
 

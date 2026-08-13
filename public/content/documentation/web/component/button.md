@@ -25,7 +25,7 @@ How to test a button
    - Group: It indicates if it has popup for listbox or menus
    - State: It expresses its state if applicable (pressed, expanded, disabled/dimmed/unavailable)
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/button](/web-criteria/component/button)
+Full information: [https://www.magentaa11y.com/web-criteria/component/button](/web-criteria/component/button)
 
 ## Gherkin
 
@@ -59,7 +59,7 @@ GIVEN THAT I am on a page with a button
    - THEN when I doubletap with the button in focus I HEAR the intended action occurs
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/button](/web-criteria/component/button)
+Full information: [https://www.magentaa11y.com/web-criteria/component/button](/web-criteria/component/button)
 
 ## Videos
 

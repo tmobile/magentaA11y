@@ -48,7 +48,7 @@ How to test a slider
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/slider](/native-criteria/controls/slider)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/slider](/native-criteria/controls/slider)
 
 ## Gherkin
 
@@ -90,7 +90,7 @@ GIVEN THAT I am on a screen with a slider
    - WHEN I adjust the device text resize setting to 200%
       - THEN the text label should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/controls/slider](/native-criteria/controls/slider)
+Full information: [https://www.magentaa11y.com/native-criteria/controls/slider](/native-criteria/controls/slider)
 
 ## iOS Developer Notes
 ### General Notes

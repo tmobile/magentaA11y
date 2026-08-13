@@ -21,7 +21,7 @@ How to test a header landmark
    - Role: It is discoverable with screenreader shortcuts as header/banner landmark
    - Group: It typically contains the name and primary navigation of the website
 
-Full information: https://www.magentaa11y.com/#/web-criteria/page-level/header-landmark
+Full information: https://www.magentaa11y.com/web-criteria/page-level/header-landmark
 
 ## Gherkin
 
@@ -45,7 +45,7 @@ GIVEN THAT I am on a page with a header landmark
        - I HEAR It is discoverable with screenreader shortcuts as header/banner landmark
        - I HEAR It typically contains the name and primary navigation of the website
 
-Full information: https://www.magentaa11y.com/#/web-criteria/page-level/header-landmark
+Full information: https://www.magentaa11y.com/web-criteria/page-level/header-landmark
 
 ## General
 * There must only be a singular header/banner element on the page. 

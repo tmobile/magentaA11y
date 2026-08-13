@@ -33,7 +33,7 @@ How to test a field error
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/field-errors](/native-criteria/patterns/field-errors)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/field-errors](/native-criteria/patterns/field-errors)
 
 ## Gherkin
 
@@ -66,7 +66,7 @@ GIVEN THAT I am on a screen with a field error
    - WHEN I have increased text size up to 200% in the device settings   
       - THEN the text should resize without losing information   
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/field-errors](/native-criteria/patterns/field-errors)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/field-errors](/native-criteria/patterns/field-errors)
 
 ## iOS Developer Notes
 ### General Notes

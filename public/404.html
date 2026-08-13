@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting...</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MagentaA11y</title>
     <script>
-      // Get the current path (excluding domain, including leading slash)
-      const currentPath = window.location.pathname;
+      /*
+        Single Page Apps for GitHub Pages
+        https://github.com/rafgraph/spa-github-pages
 
-      if (!window.location.hash) {
-        // Check if MagentaA11yV2 is in the path
-        if (currentPath.includes("MagentaA11yV2")) {
-          // Split the path at MagentaA11yV2
-          const pathParts = currentPath.split("MagentaA11yV2");
-          // Take everything after MagentaA11yV2 as the hash route
-          const hashPath = pathParts[1] || "/";
+        GitHub Pages serves this file for any path that is not a real file.
+        It encodes the requested path into a query string and redirects to the
+        site root, where the decoder in index.html restores the real URL.
 
-          // Redirect to MagentaA11yV2 with the rest as hash
-          window.location.replace("/MagentaA11yV2/#" + hashPath);
-        } else {
-          // If MagentaA11yV2 is not in the path, use the standard redirect
-          window.location.replace("/#" + currentPath);
-        }
-      }
+        pathSegmentsToKeep must be 0 because the site is served from the domain
+        root. Any other value silently breaks every deep link, and the symptom
+        is the homepage rather than an error.
+
+        The ~and~ substitution protects routes containing a literal &, for
+        example /how-to-test-criteria/test-type/keyboard-&-focus. Without it the
+        & is read as a query separator and the path is truncated.
+      */
+      var pathSegmentsToKeep = 0;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
     </script>
   </head>
   <body>
-    <h1>Redirecting...</h1>
-    <p>
-      If you're not redirected automatically,
-      <a href="/MagentaA11yV2/#/">click here</a>.
-    </p>
+    <p>Redirecting to <a href="/">MagentaA11y</a>.</p>
   </body>
 </html>

@@ -19,7 +19,7 @@ How to test a navigation landmark
    - **Name**: It indicates its role AND IF multiple navigations are present (ex: Main navigation, Site map, Breadcrumbs), the name of the navigation
    - **Role**: It is discoverable with screenreader shortcuts as a navigation landmark
 
-Full information: https://www.magentaa11y.com/#/web-criteria/page-level/navigation-landmark
+Full information: https://www.magentaa11y.com/web-criteria/page-level/navigation-landmark
 
 ## Gherkin
 
@@ -44,7 +44,7 @@ GIVEN THAT I am on a page with a navigation landmark
      - I HEAR It indicates its role AND IF multiple navigations are present (ex: Main navigation, Site map, Breadcrumbs), the name of the navigation
      - I HEAR It is discoverable with screenreader shortcuts as a navigation landmark.
 
-Full information: https://www.magentaa11y.com/#/web-criteria/page-level/navigation-landmark
+Full information: https://www.magentaa11y.com/web-criteria/page-level/navigation-landmark
 
 ## Code Examples
 

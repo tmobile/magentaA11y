@@ -23,7 +23,7 @@ How to test a figure: maps, charts, and graphics
    - Role: It identifies as a common HTML element (image, list, table)
    - Group: An alternative method of consumption or interaction is available
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/figure](/web-criteria/component/figure)
+Full information: [https://www.magentaa11y.com/web-criteria/component/figure](/web-criteria/component/figure)
 
 ## Gherkin
 
@@ -56,7 +56,7 @@ GIVEN THAT I am on a page with a figure: maps, charts, and graphics
      - I HEAR an alternative method of consumption or interaction is available
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/figure](/web-criteria/component/figure)
+Full information: [https://www.magentaa11y.com/web-criteria/component/figure](/web-criteria/component/figure)
 
 ## Developer Notes
 

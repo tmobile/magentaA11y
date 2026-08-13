@@ -24,7 +24,7 @@ How to test a web form
    - Instructions: Presented before the form or inline, announced in order.
    - Errors: Errors are announced when inputs are invalid.
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/form](/web-criteria/page-level/form)
+Full information: [https://www.magentaa11y.com/web-criteria/page-level/form](/web-criteria/page-level/form)
 
 ## Gherkin
 
@@ -53,7 +53,7 @@ GIVEN THAT I am on a page with a web form
      - I HEAR It is discoverable with screenreader shortcuts as a form landmark along with its name
      - I HEAR the screenreader switch from browse shortcuts to forms shortcuts
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/page-level/form](/web-criteria/page-level/form)
+Full information: [https://www.magentaa11y.com/web-criteria/page-level/form](/web-criteria/page-level/form)
 
 ## Building accessible forms
 
@@ -70,8 +70,8 @@ Use `fieldset` and `legend` to group related fields, such as:
 
 ### Error handling
 
-- Individual inputs must have <a href="https://www.magentaa11y.com/#/web-criteria/component/help-hint-error">programmatically described errors</a> read by the screen reader on focus.
-- For long forms, list all errors in an <a href="https://www.magentaa11y.com/#/web-criteria/component/alert-notification">alert</a> with links back to each invalid input on submission attempts.
+- Individual inputs must have <a href="https://www.magentaa11y.com/web-criteria/component/help-hint-error">programmatically described errors</a> read by the screen reader on focus.
+- For long forms, list all errors in an <a href="https://www.magentaa11y.com/web-criteria/component/alert-notification">alert</a> with links back to each invalid input on submission attempts.
 
 ## UX guidance
 
