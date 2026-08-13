@@ -7,6 +7,7 @@ import Button from 'components/custom-components/buttons/button/button';
 import { useClipboard } from 'hooks/useClipboard';
 import { useContentTabs } from 'hooks/useContentTabs';
 import { useCriteriaManager } from 'hooks/useCriteriaManager';
+import { useSearch } from 'hooks/useSearch';
 import React, { useEffect, useRef } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Icons } from 'shared/Icons';
@@ -16,7 +17,7 @@ import Cards from '../custom-components/cards/cards';
 import { SideNavItem } from '../navigation/nav.types';
 import MarkdownContent from './markdown-content/markdown-content';
 import { Criteria } from './markdown-content/markdown-content.types';
-
+import SearchBar from '../custom-components/search/search';
 import Breadcrumb from '../breadcrumb/breadcrumb';
 import { useBreadcrumbs } from 'hooks/useBreadcrumbs';
 import '../../styles/_code-blocks.scss';
@@ -35,7 +36,7 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
   items,
   onToggleSideNav,
 }) => {
-  const [searchParams] = useSearchParams();
+  const [pageParams] = useSearchParams();
   const navigate = useNavigate();
   const location = useLocation();
   const tabsRef = useRef<HTMLElement>(null);
@@ -52,10 +53,12 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
 
   const breadcrumbs = useBreadcrumbs(documentation, items);
 
+  const { query, setQuery, results } = useSearch(currentItem?.children ?? []);
+
   useEffect(() => {
     if (!tabs.length) return;
 
-    const tabFromURL = searchParams.get('tab');
+    const tabFromURL = pageParams.get('tab');
     if (tabFromURL) {
       const tabIndex = parseInt(tabFromURL, 10);
       if (!isNaN(tabIndex) && tabIndex >= 0 && tabIndex < tabs.length) {
@@ -64,10 +67,10 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
     } else {
       setActiveTab(0);
     }
-  }, [searchParams, setActiveTab, tabs.length]);
+  }, [pageParams, setActiveTab, tabs.length]);
 
   useEffect(() => {
-    const tabFromURL = searchParams.get('tab');
+    const tabFromURL = pageParams.get('tab');
     if (tabFromURL) {
       const tabIndex = parseInt(tabFromURL, 10);
       if (!isNaN(tabIndex) && tabIndex >= 0 && tabIndex < tabs.length) {
@@ -76,7 +79,7 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
     } else {
       setActiveTab(0);
     }
-  }, [searchParams, setActiveTab, tabs.length]);
+  }, [pageParams, setActiveTab, tabs.length]);
 
   // Track active tab changes
   useEffect(() => {
@@ -106,6 +109,8 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
   if (!currentItem) return <div>No content available</div>;
 
   const { label, generalNotes, children } = currentItem;
+  const cardItems = results ?? children; // content to render in overview cards
+  const cardsListId = `overviewCard-${label}`;
 
   let actionsButtonsVisible = Object.values(Criteria).some(
     (criteria) => criteria === tabs[activeTab]?.label
@@ -135,16 +140,20 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
           id="criteria-button"></Button>
       </div>
 
-      {isOverviewRoute && children && children.length > 0 && (
-        <Cards
-          items={children.map((child) => ({
-            title: child.label,
-            description: child.generalNotes || undefined,
-            link: `${location.pathname.replace(/\/overview$/, '')}/${
-              child.name
-            }`,
-          }))}
-        />
+      {isOverviewRoute && cardItems && cardItems.length > 0 && (
+        <>
+          <SearchBar controlsId={cardsListId} resultCount={cardItems.length} query={query} onQueryChange={setQuery} />
+          <Cards
+            id={cardsListId}
+            items={cardItems.map((child) => ({
+              title: child.label,
+              description: child.generalNotes || undefined,
+              link: `${location.pathname.replace(/\/overview$/, '')}/${
+                child.name
+              }`,
+            }))}
+          />
+        </>
       )}
 
       {!isOverviewRoute && tabs.length > 0 && (

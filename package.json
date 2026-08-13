@@ -14,6 +14,7 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "classnames": "^2.5.1",
+    "fuse.js": "^7.4.1",
     "graphql": "^16.9.0",
     "highlight.js": "^11.10.0",
     "lit": "^3.2.1",
