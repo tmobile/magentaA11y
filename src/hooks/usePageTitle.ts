@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+// Must match public/CNAME exactly, including the www subdomain. A mismatch
+// here recreates the duplicate-hostname problem the canonical tag prevents.
+const SITE_ORIGIN = 'https://www.magentaa11y.com';
+
 export const usePageTitle = () => {
   const location = useLocation();
 
@@ -38,6 +42,30 @@ export const usePageTitle = () => {
     const ogTitleMeta = document.querySelector('meta[property="og:title"]');
     if (ogTitleMeta) {
       ogTitleMeta.setAttribute('content', pageTitle);
+    }
+
+    // Canonical URL for the current route.
+    // pathname only: the query string is deliberately excluded, because
+    // ?tab=1 is a view of the same page rather than a separate page. Including
+    // it would signal that every tab is its own page and split the ranking.
+    const canonicalHref = SITE_ORIGIN + location.pathname;
+
+    let canonicalLink = document.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]'
+    );
+
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+
+    canonicalLink.setAttribute('href', canonicalHref);
+
+    // Keep og:url in step with the page being viewed
+    const ogUrlMeta = document.querySelector('meta[property="og:url"]');
+    if (ogUrlMeta) {
+      ogUrlMeta.setAttribute('content', canonicalHref);
     }
   }, [location]);
 };

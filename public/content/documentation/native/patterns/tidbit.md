@@ -30,7 +30,7 @@ How to test a tidbit
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/tidbit](/native-criteria/patterns/tidbit)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/tidbit](/native-criteria/patterns/tidbit)
 
 ## Gherkin
 
@@ -71,7 +71,7 @@ GIVEN THAT I am on a screen with a tidbit
    - WHEN I have increased text size up to 200% in the device settings
         - THEN text should resize up to 200% without losing information 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/tidbit](/native-criteria/patterns/tidbit)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/tidbit](/native-criteria/patterns/tidbit)
 
 ## Videos
 
@@ -116,7 +116,7 @@ Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/tidbit
 
 ### Role
 
-   - Please use guidance for the <a href="https://www.magentaa11y.com/#/native-criteria/controls/button">Button control</a> if a CTA is applicable
+   - Please use guidance for the <a href="https://www.magentaa11y.com/native-criteria/controls/button">Button control</a> if a CTA is applicable
 
 ### Groupings
 
@@ -203,7 +203,7 @@ Enter information for iOS Focus using SwiftUI, update below with appropriate det
 
 ### Role
 
-   - Please use guidance for the <a href="https://www.magentaa11y.com/#/native-criteria/controls/button">Button control</a> if a CTA is applicable
+   - Please use guidance for the <a href="https://www.magentaa11y.com/native-criteria/controls/button">Button control</a> if a CTA is applicable
 
 ### Groupings
 

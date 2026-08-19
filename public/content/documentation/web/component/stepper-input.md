@@ -32,7 +32,7 @@ How to test a stepper input
    - Group: Its label is read with the input.
    - State: It indicates when the select is expanded/collapsed, indicates which option is selected.
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/stepper-input](/web-criteria/component/stepper-input)
+Full information: [https://www.magentaa11y.com/web-criteria/component/stepper-input](/web-criteria/component/stepper-input)
 
 ## Gherkin
 
@@ -71,7 +71,7 @@ GIVEN THAT I am on a page with a stepper input
    - THEN when I doubletap with the select in focus I HEAR the picker/spinner opens
    - THEN when I doubletap with the button in focus I HEAR the value is incremented or decremented
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/stepper-input](/web-criteria/component/stepper-input)
+Full information: [https://www.magentaa11y.com/web-criteria/component/stepper-input](/web-criteria/component/stepper-input)
 
 ## Code examples
 

@@ -34,7 +34,7 @@ How to test a loading icon
 
    - Text resize: N/A
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/loading-icon](/native-criteria/patterns/loading-icon)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/loading-icon](/native-criteria/patterns/loading-icon)
 
 ## Gherkin
 
@@ -65,7 +65,7 @@ GIVEN THAT I am on a screen with a loading icon
    - WHEN I have increased text size in device settings
       - THEN text resize interaction is N/A 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/loading-icon](/native-criteria/patterns/loading-icon)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/loading-icon](/native-criteria/patterns/loading-icon)
 
 ## iOS Developer Notes
 ### General Notes

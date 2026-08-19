@@ -16,7 +16,10 @@
     <meta property="og:image" content="%PUBLIC_URL%/app-assets/MagentaA11ySEOCard.svg">
     <meta property="og:image:width" content="1200" >
     <meta property="og:image:height" content="630" >
-    <meta property="og:url" content="https://magentaa11y.com/">
+    <meta property="og:url" content="https://www.magentaa11y.com/">
+    <!-- Fallback canonical. usePageTitle overwrites this per route on load;
+         this value is what a crawler sees if JavaScript does not run. -->
+    <link rel="canonical" href="https://www.magentaa11y.com/" />
     <meta property="og:image:alt" content="MagentaA11y by T-Mobile" >
     <meta property="og:description" content="An innovative open-source tool empowering product teams to master the craft of creating accessible digital experiences for all.">
     <meta name="publisher" content="T-Mobile Accessibility Resource Center">
@@ -24,11 +27,44 @@
     <meta name="twitter:image:alt" content="MagentaA11y by T-Mobile">
         <meta name="twitter:image" content="%PUBLIC_URL%/app-assets/MagentaA11ySEOCard.svg">
 
+    <!--
+      Routing support scripts. Both run before the app bundle and before
+      analytics, so the URL is correct by the time anything reads it.
+      Order matters: decoder first, then the legacy hash shim.
+    -->
     <script>
-      if (!window.location.hash && window.location.pathname !== '/') {
-        let path = window.location.pathname;
-        window.location.replace(window.location.origin + '/#' + path);
-      }
+      // 1. Decodes the ?/ path written by 404.html and restores the real URL.
+      //    See https://github.com/rafgraph/spa-github-pages
+      (function () {
+        try {
+          var l = window.location;
+          if (l.search[1] === '/') {
+            var decoded = l.search.slice(1).split('&').map(function (s) {
+              return s.replace(/~and~/g, '&');
+            }).join('?');
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash);
+          }
+        } catch (e) {
+          /* Never block boot. */
+        }
+      })();
+
+      // 2. Rescues legacy hash URLs already in circulation:
+      //    /#/web-criteria/component/button -> /web-criteria/component/button
+      (function () {
+        try {
+          var h = window.location.hash;
+          if (h.indexOf('#/') !== 0) return; // leave real #anchors alone
+          var rest = h.slice(1);
+          var parts = rest.split('?');
+          var path = parts[0];
+          var query = parts[1] ? '?' + parts[1] : window.location.search;
+          window.history.replaceState(null, null, path + query);
+        } catch (e) {
+          /* Never block boot. */
+        }
+      })();
     </script>
 
     <script
@@ -50,7 +86,6 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="MagentaA11y" />
-    <meta property="og:title" content="" />
 
     <!-- Apple Touch Icon -->
     <link
