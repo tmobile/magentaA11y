@@ -49,7 +49,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
     - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
     - Select the Settings button. Then change the browser Zoom setting to 200%. 
     - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality.
-    - In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom. This includes ensuring that the focus outline or focus highlight for a currently focused interactive element is at least partially visible.
+    - In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom. This includes ensuring that the keyboard focus outline or focus highlight for a currently keyboard focused interactive element is at least partially visible.
 
 	
     ##### Reflow at 400 percent browser zoom
@@ -58,7 +58,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
     - Select the Settings button. Then change the browser Zoom setting to 400%. 
     - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
     - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
-    - Also check that horizontal scrolling is not required to bring essential content or functionality into view. This includes ensuring that the focus outline or focus highlight for a currently focused interactive element is at least partially visible.
+    - Also check that horizontal scrolling is not required to bring essential content or functionality into view. This includes ensuring that the keyboard focus outline or focus highlight for a currently keyboard focused interactive element is at least partially visible.
 
   
    ##### Reflow for mobile at 320 pixel width viewport
@@ -66,7 +66,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
     - Display the web page in a browser or user agent capable of 400% zoom, and set the viewport dimensions (in CSS pixels) to 1280 wide and 1024 high.
     - Then change the browser Zoom setting to 400%. 
     - For content read horizontally, check that all content and functionality is available without horizontal scrolling.
-    - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom. This includes ensuring that the focus outline or focus highlight for a currently focused interactive element is at least partially visible.
+    - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom. This includes ensuring that the keyboard focus outline or focus highlight for a currently keyboard focused interactive element is at least partially visible.
     - For content read vertically, check that all content and functionality is available without vertical scrolling.
 
 3.    ## What to test for
@@ -94,6 +94,8 @@ Testing browser zoom and magnification is essential for ensuring that content an
 <div class="how-to-test-checklist-item" node="[object Object]"><h3>✓ Ensure that no text content, form elements, or controls completely disappear when browser zoom is set to 400 percent (e.g., no loss of content)</h3><p><strong>Note:</strong> Content and functionality are allowed to collapse behind menus or expand/collapse disclosure elements as long as the content or functionality is equivalent to what is offered at the default 100 percent browser zoom.</p><table class="column-2"><thead><tr><th scope="col">Pass</th><th scope="col">Fail</th></tr></thead><tbody><tr><td><p>Content and form controls remain available</p></td><td><p class="contrast-fail-1">Content or form controls completely disappear</p></td></tr></tbody></table></div>
 
 <div class="how-to-test-checklist-item" node="[object Object]"><h3>✓ Ensure horizontal scroll bar scrolling is not required to access essential content and functionality</h3><p><strong>Exceptions:</strong> Content in two-dimensional layouts such as maps, diagrams, video, games, persistent toolbars, presentations, and data tables.</p><table class="column-2"><thead><tr><th scope="col">Pass</th><th scope="col">Fail</th></tr></thead><tbody><tr><td><p>Content and form controls can be accessed without horizontal scroll bars</p></td><td><p class="contrast-fail-1">Content or form controls can only be viewed or accessed by scrolling into view with horizontal scroll bars</p></td></tr></tbody></table></div>
+
+### Video Example
 	
 ## Additional Magnification Tests: 
 ### Adjusting Desktop Operating System Settings (Optional)
@@ -114,6 +116,8 @@ Testing browser zoom and magnification is essential for ensuring that content an
 | Windows key + Plus Sign (+) | Zoom In |
 | Windows key + Minus Sign (-) | Zoom Out |
 | Windows key + Esc	| Exit Magnifier |
+
+### Video Example
 
 ## Related WCAG
 - 1.4.4 Resize text
