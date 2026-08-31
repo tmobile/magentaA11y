@@ -49,7 +49,8 @@ Testing browser zoom and magnification is essential for ensuring that content an
     - Open the Web page that you are testing in a browser (Chrome, Safari, Firefox, or Edge). Locate the Settings button near the browser toolbar area (often styled as an “ellipsis” icon button). Alternatively, navigate to the browser horizontal context menu and select View > Zoom.
     - Select the Settings button. Then change the browser Zoom setting to 200%. 
     - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality.
-    - In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom.
+    - In addition, check that all interactive functionality is still available (whether in direct view or behind menus or disclosures) and remains intact at 200 percent zoom. This includes ensuring that the focus outline or focus highlight for a currently focused interactive element is at least partially visible.
+
 	
     ##### Reflow at 400 percent browser zoom
 
@@ -57,14 +58,15 @@ Testing browser zoom and magnification is essential for ensuring that content an
     - Select the Settings button. Then change the browser Zoom setting to 400%. 
     - Observe if there is any truncation, text overlap, partially cut off content, or complete loss of content or functionality. Note: Content that reflows into a responsive layout such as collapsing into a  single or multi-column display is allowed and encouraged.
     - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
-    - Also check that horizontal scrolling is not required to bring essential content or functionality into view.
+    - Also check that horizontal scrolling is not required to bring essential content or functionality into view. This includes ensuring that the focus outline or focus highlight for a currently focused interactive element is at least partially visible.
+
   
    ##### Reflow for mobile at 320 pixel width viewport
 
     - Display the web page in a browser or user agent capable of 400% zoom, and set the viewport dimensions (in CSS pixels) to 1280 wide and 1024 high.
     - Then change the browser Zoom setting to 400%. 
     - For content read horizontally, check that all content and functionality is available without horizontal scrolling.
-    - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom.
+    - In addition, check that all interactive functionality is available (whether in direct view or behind menus or disclosures) and remains intact at 400 percent zoom. This includes ensuring that the focus outline or focus highlight for a currently focused interactive element is at least partially visible.
     - For content read vertically, check that all content and functionality is available without vertical scrolling.
 
 3.    ## What to test for
@@ -116,6 +118,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
 ## Related WCAG
 - 1.4.4 Resize text
 - 1.4.10 Reflow
+- 2.4.11 Focus Not Obscured
 
 ## Resources
 - [Responsive Design and Reflow](https://webaim.org/techniques/reflow/)
