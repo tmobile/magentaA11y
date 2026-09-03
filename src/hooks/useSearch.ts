@@ -23,9 +23,7 @@ export const useSearch = (items: ContentItem[]) => {
   );
 
   const matches = query ? fuse.search(query).map((r) => r.item) : null;
-  const results = matches && matches.length === 0
-    ? [{ label: 'No results found', name: 'no-results', generalNotes: "No criteria matches this search."}]
-    : matches;
+  const results = matches;
 
   return { query, setQuery, results };
 };

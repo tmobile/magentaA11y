@@ -15,5 +15,9 @@
         border-radius: 25px;
         font: var(--magentaa11y-typeset-body-lg-normal);
         padding: 0 1rem;
+
+        &:focus-visible {
+           outline-offset: -5px;
+        }
     }
 }

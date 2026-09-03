@@ -140,7 +140,7 @@ const ContentDisplay: React.FC<ContentDisplayProps> = ({
           id="criteria-button"></Button>
       </div>
 
-      {isOverviewRoute && cardItems && cardItems.length > 0 && (
+      {isOverviewRoute && cardItems && (
         <>
           <SearchBar controlsId={cardsListId} resultCount={cardItems.length} query={query} onQueryChange={setQuery} />
           <Cards
