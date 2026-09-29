@@ -1,0 +1,35 @@
+WEBVTT
+
+5aa6f4b6-64a0-4232-8110-8ac5a0e7eb3a-0
+00:00:00.040 --> 00:00:06.382
+Webpage Heading Heading Level 1 Buttons
+Heading level 2 Normal button A button
+
+5aa6f4b6-64a0-4232-8110-8ac5a0e7eb3a-1
+00:00:06.382 --> 00:00:11.120
+must identify its purpose and role as
+button when focused.
+
+d054573c-f5c9-418d-b50a-6c18c0f14c73-0
+00:00:11.640 --> 00:00:17.200
+Button Get started Heading level 2
+disabled Button disabled.
+
+ea748b29-ed11-4460-8095-7c66e71265ae-0
+00:00:17.200 --> 00:00:21.919
+Elements are not focusable or interactive,
+but the screen reader can still discover
+
+ea748b29-ed11-4460-8095-7c66e71265ae-1
+00:00:21.919 --> 00:00:22.200
+them.
+
+fe0ef738-88a2-4b27-9158-450523fcecdd-0
+00:00:22.560 --> 00:00:28.411
+Button unavailable Continue visited Link
+back to top of page Buttons heading level
+
+fe0ef738-88a2-4b27-9158-450523fcecdd-1
+00:00:28.411 --> 00:00:33.840
+1 Normal button heading Get Started
+button back to top of page visited link.

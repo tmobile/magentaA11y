@@ -1,0 +1,48 @@
+WEBVTT
+
+e74e2d49-e3fe-4552-9104-6fe49c89b633-0
+00:00:00.200 --> 00:00:01.160
+Heading Level 1.
+
+7a1b31fc-541a-41ae-9518-3700cbefec8f-0
+00:00:03.080 --> 00:00:08.065
+Heading level 2 Normal button A button
+must identify its purpose and roll as
+
+7a1b31fc-541a-41ae-9518-3700cbefec8f-1
+00:00:08.065 --> 00:00:09.360
+button when focused.
+
+80e837af-8838-4a34-a338-5818534090c0-0
+00:00:10.160 --> 00:00:11.200
+Get started button.
+
+91559084-f878-43c0-b4e1-b6db7c923787-0
+00:00:12.440 --> 00:00:15.600
+Heading Level 2 Disabled Button disabled.
+
+6358f4c8-08ab-42e6-bfb8-7543fea03b78-0
+00:00:15.600 --> 00:00:19.299
+Elements are not focusable or interactive,
+but the screen reader can still discover
+
+6358f4c8-08ab-42e6-bfb8-7543fea03b78-1
+00:00:19.299 --> 00:00:19.520
+them.
+
+9e4aa931-5bc2-4e4c-a3a2-61547f95061c-0
+00:00:20.240 --> 00:00:24.961
+Continue Button unavailable Content
+Visited same page Link back to top of
+
+9e4aa931-5bc2-4e4c-a3a2-61547f95061c-1
+00:00:24.961 --> 00:00:25.280
+page.
+
+f2319280-02a3-412f-b3e8-e158caa5e46c-0
+00:00:25.520 --> 00:00:26.840
+Enter Visited same page.
+
+a997d228-97aa-4631-99f9-08790139a48d-0
+00:00:26.840 --> 00:00:28.040
+Link back to top of page.
