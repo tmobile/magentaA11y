@@ -1,0 +1,85 @@
+.MagentaA11y {
+  &__awards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    list-style: none;
+    margin: 0 auto;
+    padding: var(--magentaa11y-spacing-size-24) 0;
+    max-width: 950px;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      padding: var(--magentaa11y-spacing-size-20);
+      height: 100%;
+    }
+
+    &__image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+    }
+
+    &__image {
+      width: auto;
+      height: 100%;
+      max-width: 220px;
+      object-fit: contain;
+      filter: grayscale(1);
+    }
+
+    &__link {
+      display: inline-flex;
+      border-radius: 12px;
+
+      &:focus-visible {
+        outline: 2px solid var(--color-focus-outline, currentColor);
+        outline-offset: 2px;
+      }
+    }
+
+    &__text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+      font: 600 14px / 20px var(--magentaa11y-font-family-body);
+      color: var(--color-text-link);
+      text-decoration: underline;
+
+      .Magenta-icon {
+        flex-shrink: 0;
+        width: 16px;
+        height: 16px;
+        fill: var(--color-text-link);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--color-focus-outline, currentColor);
+        outline-offset: 2px;
+      }
+    }
+
+    &__title {
+      font: 800 20px / 26px var(--magentaa11y-font-family-display);
+      color: var(--color-text-heading);
+      margin: 0;
+    }
+
+    &__description {
+      font: normal 14px / 24px var(--magentaa11y-font-family-body);
+      color: var(--color-on-surface);
+      margin: 0;
+      max-width: 320px;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

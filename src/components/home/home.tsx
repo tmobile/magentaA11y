@@ -1,6 +1,7 @@
 import React from 'react';
 // import TmoLogo from '../../assets/svgs/t-digit-logo.svg';
 import Cards from "../custom-components/cards/cards";
+import Awards from "../custom-components/awards/awards";
 import './home.scss';
 
 const cardContent = [
@@ -44,12 +45,12 @@ const Home: React.FC = () => {
         </div>
         <Cards items={cardContent} />
       </div>
-      {/* <div className="MagentaA11y--home-page__content MagentaA11y--home-page__content--white">
-        <div className='text-center'>
-          <h2 className="MagentaA11y--home-page__content--header">ARC Summit 2025</h2>
-          <p>Starts May 1, 2025.</p>
+      <div className="MagentaA11y--home-page__content MagentaA11y--home-page__content--white">
+        <div className="MagentaA11y--home-page__text--wrapper">
+          <h2 className="MagentaA11y--home-page__content--header text-center">Awards</h2>
         </div>
-      </div> */}
+        <Awards />
+      </div>
     </div>
   );
 };
