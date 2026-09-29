@@ -104,8 +104,9 @@
   }
 
   &__ai-tools-list {
+    list-style: none;
     margin: var(--magentaa11y-spacing-size-16) 0 0;
-    padding: 0 0 0 var(--magentaa11y-spacing-size-24);
+    padding: 0;
   }
 
   &__content--external-link {
