@@ -103,6 +103,27 @@
     line-height: var(--magentaa11y-line-height-24);
   }
 
+  &__ai-tools-list {
+    margin: var(--magentaa11y-spacing-size-16) 0 0;
+    padding: 0 0 0 var(--magentaa11y-spacing-size-24);
+  }
+
+  &__content--external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-text-link);
+    font-weight: 700;
+    text-decoration: underline;
+
+    .Magenta-icon {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      fill: var(--color-text-link);
+    }
+  }
+
   @media (max-width: 768px) {
     --header-flex-direction: column;
     --title-first-headline-font: var(--magentaa11y-typeset-headline-xs-strong); 
