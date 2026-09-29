@@ -11,6 +11,7 @@ interface Award {
   imageSrc: string;
   link: string;
   linkLabel: string;
+  invertOnLight?: boolean;
 }
 
 const awardsContent: Award[] = [
@@ -22,6 +23,7 @@ const awardsContent: Award[] = [
     imageSrc: gaadAwardLogo,
     link: 'https://gaad.foundation/what-we-do/gaadys/winners',
     linkLabel: 'GAADY 2025 Winners',
+    invertOnLight: true,
   },
   {
     title: 'Helen Keller Achievement Award',
@@ -47,7 +49,7 @@ const Awards: React.FC = () => {
           >
             <span className="MagentaA11y__awards__image-wrapper">
               <img
-                className="MagentaA11y__awards__image"
+                className={`MagentaA11y__awards__image${award.invertOnLight ? ' MagentaA11y__awards__image--invert-on-light' : ''}`}
                 src={award.imageSrc}
                 alt={award.imageAlt}
               />
