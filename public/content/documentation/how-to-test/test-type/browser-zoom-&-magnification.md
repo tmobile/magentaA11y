@@ -96,6 +96,12 @@ Testing browser zoom and magnification is essential for ensuring that content an
 <div class="how-to-test-checklist-item" node="[object Object]"><h3>✓ Ensure horizontal scroll bar scrolling is not required to access essential content and functionality</h3><p><strong>Exceptions:</strong> Content in two-dimensional layouts such as maps, diagrams, video, games, persistent toolbars, presentations, and data tables.</p><table class="column-2"><thead><tr><th scope="col">Pass</th><th scope="col">Fail</th></tr></thead><tbody><tr><td><p>Content and form controls can be accessed without horizontal scroll bars</p></td><td><p class="contrast-fail-1">Content or form controls can only be viewed or accessed by scrolling into view with horizontal scroll bars</p></td></tr></tbody></table></div>
 
 ### Video Example
+
+<video controls>
+  <source src="media/video/how-to-test/how-to-browser-zoom.webm" type="video/webm">
+  <track kind="captions" src="media/video/how-to-test/how-to-browser-zoom-en-US.vtt" srclang="en" label="English">
+  Your browser does not support the video tag.
+</video>
 	
 ## Additional Magnification Tests: 
 ### Adjusting Desktop Operating System Settings (Optional)
@@ -116,8 +122,6 @@ Testing browser zoom and magnification is essential for ensuring that content an
 | Windows key + Plus Sign (+) | Zoom In |
 | Windows key + Minus Sign (-) | Zoom Out |
 | Windows key + Esc	| Exit Magnifier |
-
-### Video Example
 
 ## Related WCAG
 - 1.4.4 Resize text
