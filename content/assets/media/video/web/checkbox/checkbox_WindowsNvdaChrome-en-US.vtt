@@ -1,0 +1,49 @@
+WEBVTT
+
+fee07afe-caee-4c99-8063-0df5ca566099-0
+00:00:03.760 --> 00:00:10.678
+Check heading heading Level 1 checkboxes
+Checkbox inputs must identify its name,
+
+fee07afe-caee-4c99-8063-0df5ca566099-1
+00:00:10.678 --> 00:00:11.960
+role and state.
+
+602a019f-efc0-4d50-ace2-aebd2d157652-0
+00:00:12.680 --> 00:00:17.760
+We start by letting the screen reader
+read on its own.
+
+a1d45c4d-7c54-44ac-817f-443734595316-0
+00:00:18.480 --> 00:00:22.080
+Then we'll start at the top,
+manually grouping.
+
+0d04de26-3ee7-4848-baa9-bd01a4be0cfe-0
+00:00:22.080 --> 00:00:23.360
+Choose your favourites.
+
+e3f96f13-acbd-48fd-82fc-a93cd41c5698-0
+00:00:25.880 --> 00:00:27.080
+Checkbox not checked.
+
+5e8ad995-d115-44c2-949d-d7878708ff39-0
+00:00:27.080 --> 00:00:32.920
+Alpha checkbox not checked.
+
+12d6a8d5-8c68-471b-8c67-e2ecd3f1151d-0
+00:00:32.920 --> 00:00:36.400
+Bravo checkbox not checked.
+
+06d10759-0975-4934-b2fd-e67cc581f26f-0
+00:00:36.400 --> 00:00:43.360
+Charlie out of grouping visited link back
+checkbox Alpha checkbox not checked.
+
+804a5929-5ffb-4de0-b2db-f9ffe8a473a9-0
+00:00:43.560 --> 00:00:46.720
+Checked Bravo Checkbox not checked.
+
+e1266565-ba0b-4004-b595-a453365d2b5b-0
+00:00:46.880 --> 00:00:47.680
+Not checked.
