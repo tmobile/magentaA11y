@@ -25,7 +25,10 @@ How to test a checkbox
    - Group: Hints or errors are read after the label and related inputs include a group name (ex: Account settings)
    - State: It expresses its state (checked/unchecked, disabled)
 
-Full information: [https://www.magentaa11y.com/web-criteria/component/checkbox](/web-criteria/component/checkbox)
+Full information https: [https://www.magentaa11y.com/web-criteria/component/checkbox](https://www.magentaa11y.com/web-criteria/component/checkbox)
+
+Full information no MD: https://www.magentaa11y.com/web-criteria/component/checkbox
+
 
 ## Gherkin
 
