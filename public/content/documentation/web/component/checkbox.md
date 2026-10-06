@@ -27,9 +27,6 @@ How to test a checkbox
 
 Full information https: [https://www.magentaa11y.com/web-criteria/component/checkbox](https://www.magentaa11y.com/web-criteria/component/checkbox)
 
-Full information no MD: https://www.magentaa11y.com/web-criteria/component/checkbox
-
-
 ## Gherkin
 
 ### #a11y - Web Accessibility Acceptance Criteria
@@ -63,7 +60,7 @@ GIVEN THAT I am on a page with a checkbox
       - I HEAR it expresses its state (checked/unchecked, disabled)
    - THEN when I doubletap with the checkbox in focus I HEAR the state is changed
 
-Full information: [https://www.magentaa11y.com/web-criteria/component/checkbox](/web-criteria/component/checkbox)
+Full information: [https://www.magentaa11y.com/web-criteria/component/checkbox](https://www.magentaa11y.com/web-criteria/component/checkbox)
 
 ## Code examples
 
