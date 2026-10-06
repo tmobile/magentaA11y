@@ -74,7 +74,7 @@ How to test a select dropdown
 
       - State: It indicates which option is selected and if disabled/dimmed/unavailable
 
-Full information: [https://www.magentaa11y.com/web-criteria/component/select-dropdown](/web-criteria/component/select-dropdown)
+Full information: [https://www.magentaa11y.com/web-criteria/component/select-dropdown](https://www.magentaa11y.com/web-criteria/component/select-dropdown)
 
 ## Gherkin
 
