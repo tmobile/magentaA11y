@@ -42,7 +42,7 @@ How to test a heading
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/headings](/native-criteria/patterns/headings)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/headings](/native-criteria/patterns/headings)
 
 ## Gherkin
 
@@ -75,7 +75,7 @@ GIVEN THAT I am on a screen with a heading
    - WHEN text resizing settings are adjusted on the device 
       - THEN all previously noted functionality must be focusable and announced 
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/headings](/native-criteria/patterns/headings)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/headings](/native-criteria/patterns/headings)
 
 ## iOS Developer Notes
 ### General Notes

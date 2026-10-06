@@ -22,7 +22,7 @@ How to test a password input
    - Group: Hints or errors are read after the label (Ex: Password formatting)
    - State: It expresses if the password is being shown and if applicable: required, disabled / dimmed / unavailable
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/password-input](/web-criteria/component/password-input)
+Full information: [https://www.magentaa11y.com/web-criteria/component/password-input](/web-criteria/component/password-input)
 
 ## Gherkin
 
@@ -55,7 +55,7 @@ GIVEN THAT I am on a page with a password input
      - I HEAR it expresses if the password is being shown and if applicable: required, disabled / dimmed / unavailable
 
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/password-input](/web-criteria/component/password-input)
+Full information: [https://www.magentaa11y.com/web-criteria/component/password-input](/web-criteria/component/password-input)
 
 ## Code Examples
 

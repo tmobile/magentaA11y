@@ -17,7 +17,7 @@ How to test a decorative image
 3. Listen to screenreader output on all devices
     - Role: The image is ignored
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/decorative-image](/web-criteria/component/decorative-image)
+Full information: [https://www.magentaa11y.com/web-criteria/component/decorative-image](/web-criteria/component/decorative-image)
 
 ## Gherkin
 
@@ -41,7 +41,7 @@ GIVEN THAT I am on a page with a decorative image
     - I swipe to browse to an image
       - I HEAR The image is ignored
 
-Full information: [https://www.magentaa11y.com/#/web-criteria/component/decorative-image](/web-criteria/component/decorative-image)
+Full information: [https://www.magentaa11y.com/web-criteria/component/decorative-image](/web-criteria/component/decorative-image)
 
 ## Decorative images
 
@@ -49,7 +49,7 @@ There are times that images shouldn't be read because it would be repetitive or 
 
 ## Is this image decorative or informative?
 
-If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. In this case, check out the <a href="https://www.magentaa11y.com/#/web-criteria/component/informative-image">informative image checklist</a> item instead.
+If the image conveys important meaning, and there's no other text on the page which explains the concept within it, then the image is likely informative. In this case, check out the <a href="https://www.magentaa11y.com/web-criteria/component/informative-image">informative image checklist</a> item instead.
 
 ## Decorative images still require an alt attribute
 

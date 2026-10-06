@@ -40,7 +40,7 @@ How to test a table
 
    - Text resize: Text can resize up to 200% without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/table](/native-criteria/patterns/table)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/table](/native-criteria/patterns/table)
 
 ## Gherkin
 
@@ -77,7 +77,7 @@ GIVEN THAT I am on a screen with a table
    - WHEN I have increased text size up to 200% in the device settings 
       - THEN all text should resize without losing information
 
-Full information: [https://www.magentaa11y.com/#/native-criteria/patterns/table](/native-criteria/patterns/table)
+Full information: [https://www.magentaa11y.com/native-criteria/patterns/table](/native-criteria/patterns/table)
 
 ## iOS Developer Notes
 ### General Notes
