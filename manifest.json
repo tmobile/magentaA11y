@@ -1,0 +1,96 @@
+{
+  "name": "MagentaA11y",
+  "short_name": "MagentaA11y",
+  "description": "MagentaA11y is a tool built to simplify the process of accessibility testing.",
+  "dir": "auto",
+  "lang": "en-US",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "/MagentaA11yV2#/",
+  "background_color": "#FFFFFF",
+  "theme_color": "#f6288f",
+  "icons": [
+    {
+      "src": "app-assets/android-chrome-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-assets/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "id": "/MagentaA11yV2",
+  "screenshots": [
+    {
+      "src": "app-assets/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "app-assets/screenshot-mobile.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "launch_handler": {
+    "route_to": "existing-client",
+    "navigate_existing_client": "if-needed"
+  },
+  "categories": [
+    "utilities",
+    "developer-tools",
+    "productivity",
+    "education",
+    "business",
+    "reference",
+    "accessibility"
+  ]
+}
