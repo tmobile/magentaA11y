@@ -97,7 +97,7 @@ Testing browser zoom and magnification is essential for ensuring that content an
 
 ### Video Example
 
-<video controls>
+<video controls="" preload="metadata">
   <source src="media/video/how-to-test/how-to-browser-zoom.webm" type="video/webm">
   <track kind="captions" src="media/video/how-to-test/how-to-browser-zoom-en-US.vtt" srclang="en" label="English">
   Your browser does not support the video tag.
