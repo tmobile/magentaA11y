@@ -1,0 +1,72 @@
+WEBVTT
+
+1d5469c8-31d8-45d5-b571-d30d1660659a-0
+00:00:03.200 --> 00:00:04.080
+Heading level 1.
+
+1b955684-ca37-4f2d-8426-932cebd5520f-0
+00:00:04.080 --> 00:00:05.160
+Toggle switches.
+
+e7f2a5d9-e7b5-4e05-a2e0-4ca02fb80221-0
+00:00:06.160 --> 00:00:09.840
+Switch inputs must identify its name,
+role, and state.
+
+d70b0727-91bb-4eb2-a73e-42366fdad56a-0
+00:00:10.560 --> 00:00:13.960
+We start by letting the screen reader
+read on its own.
+
+afd036c5-12b5-40a1-b613-76ed03351e23-0
+00:00:14.680 --> 00:00:16.080
+Then we'll start at the top.
+
+c2973dd7-c48d-4391-b3aa-a48d51994c1d-0
+00:00:16.080 --> 00:00:18.200
+Manually grouping.
+
+8baa8881-b3f9-4c0e-a5a6-f25b044221a0-0
+00:00:18.200 --> 00:00:19.400
+Toggle your options.
+
+a04e7fca-886d-47a8-ba51-18f57fc5b7cc-0
+00:00:20.160 --> 00:00:21.360
+Checkbox not checked.
+
+e3615b89-fb48-46fb-8cec-d369a2de03c4-0
+00:00:21.360 --> 00:00:22.880
+Alpha off.
+
+b987d308-aaab-4493-9bc1-7f86e9dbcd40-0
+00:00:24.320 --> 00:00:27.280
+Alpha Checkbox not checked.
+
+f77e73cd-2265-4aae-bb87-333b56d7a741-0
+00:00:27.280 --> 00:00:28.640
+Bravo off.
+
+75b06a29-f4da-457b-8906-4ee614b0dafa-0
+00:00:29.480 --> 00:00:32.120
+Bravo checkbox not checked.
+
+82c191c9-da9c-41dc-8f94-94e1f7e4c696-0
+00:00:32.120 --> 00:00:33.800
+Charlie off.
+
+75ae57ce-97ee-401e-ba03-80186eb8dffe-0
+00:00:33.920 --> 00:00:37.949
+Charlie out of grouping,
+visited link back to toggles Alpha
+
+75ae57ce-97ee-401e-ba03-80186eb8dffe-1
+00:00:37.949 --> 00:00:39.360
+checkbox not checked.
+
+a644e8ac-1591-4970-a5bb-289b4852cdbb-0
+00:00:39.680 --> 00:00:40.240
+Checked.
+
+8a1da73d-c130-40b1-92dd-9cfc314dc422-0
+00:00:42.600 --> 00:00:44.680
+Bravo checked, not checked.

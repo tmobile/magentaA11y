@@ -1,0 +1,55 @@
+WEBVTT
+
+98df91eb-9c8c-4ac4-84b7-61e4e3f2ee1d-0
+00:00:02.080 --> 00:00:06.098
+Voiceover on Safari QA testing examples
+window Search this website Search text
+
+98df91eb-9c8c-4ac4-84b7-61e4e3f2ee1d-1
+00:00:06.098 --> 00:00:06.760
+field search.
+
+800d491b-ca3b-485f-a1e0-ca9c8d213b9c-0
+00:00:07.360 --> 00:00:08.440
+You are heading level 1.
+
+caa4d216-e7db-4a7b-8225-ad23baf77402-0
+00:00:08.480 --> 00:00:11.720
+Search Input A search input must identify
+its name and role and include a search
+
+caa4d216-e7db-4a7b-8225-ad23baf77402-1
+00:00:11.720 --> 00:00:12.000
+button.
+
+8ee2ebe6-fdbe-44e0-8d39-f05292ceedd4-0
+00:00:12.040 --> 00:00:13.960
+We start by letting the screen reader
+read on its own.
+
+46868d4c-fd96-4c79-b1b3-b09c6ead4564-0
+00:00:14.040 --> 00:00:18.231
+Then we'll start at the top manually
+Search this website Search this website
+
+46868d4c-fd96-4c79-b1b3-b09c6ead4564-1
+00:00:18.231 --> 00:00:22.586
+search text field search Search button
+visited link All components link back to
+
+46868d4c-fd96-4c79-b1b3-b09c6ead4564-2
+00:00:22.586 --> 00:00:23.240
+top of page.
+
+bd99be55-986c-4f4d-9b50-91801da61446-0
+00:00:23.800 --> 00:00:24.840
+You are currently on a link.
+
+33381bf3-9875-4a68-bcd3-d661dfbf772e-0
+00:00:25.080 --> 00:00:31.016
+To click this link,
+press Control option Space Voice Over off
+
+33381bf3-9875-4a68-bcd3-d661dfbf772e-1
+00:00:31.016 --> 00:00:31.400
+RAW.

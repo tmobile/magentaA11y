@@ -1,0 +1,192 @@
+WEBVTT
+
+0d071035-e867-4931-a66e-df33902fbb1a-0
+00:00:00.320 --> 00:00:02.840
+Let's test this page for keyboard
+accessibility.
+
+52aaece0-8030-4a8b-9ea5-a3550b3c05d5-0
+00:00:03.240 --> 00:00:08.546
+The first thing I'm going to do when the
+page loads is hit the tab key,
+
+52aaece0-8030-4a8b-9ea5-a3550b3c05d5-1
+00:00:08.546 --> 00:00:12.378
+and I can use tab to move forward in the
+interface,
+
+52aaece0-8030-4a8b-9ea5-a3550b3c05d5-2
+00:00:12.378 --> 00:00:16.800
+and I can use Shift tab to move backwards
+in the interface.
+
+69252ee5-4a6a-4e00-81d4-c9fe329dee58-0
+00:00:18.440 --> 00:00:23.040
+As I tab around this main navigation,
+you may notice that there's a highly
+
+69252ee5-4a6a-4e00-81d4-c9fe329dee58-1
+00:00:23.040 --> 00:00:25.800
+visible visual indication of keyboard
+focus.
+
+12f76f13-8f0e-4a84-a811-36f16f839cda-0
+00:00:25.800 --> 00:00:27.200
+It's pretty clear where I'm at.
+
+d5ad6c7a-b366-44b2-8648-cfd40d72a47e-0
+00:00:27.400 --> 00:00:29.560
+That's what we want to see on all
+controls.
+
+5ff042c8-ce93-46ed-8bd6-284957acdfda-0
+00:00:29.880 --> 00:00:33.760
+Needs to be pretty obvious where I'm at
+in this interface at all times.
+
+9a984532-d4bb-4f8a-864e-e79f810d0fdb-0
+00:00:36.160 --> 00:00:39.800
+One of the first things that we sent
+focus to here was called the skip link.
+
+9e95d6e5-fbb8-48bf-a12b-4fbb20ebb2e7-0
+00:00:39.840 --> 00:00:44.505
+We want to see those too when interfaces
+have large chunks of content that should
+
+9e95d6e5-fbb8-48bf-a12b-4fbb20ebb2e7-1
+00:00:44.505 --> 00:00:46.440
+be skipped over by keyboard users.
+
+16fbe8a8-e2a0-44c2-8dc3-d592c4766281-0
+00:00:46.440 --> 00:00:49.773
+In this case,
+I can activate this Skip to site map link
+
+16fbe8a8-e2a0-44c2-8dc3-d592c4766281-1
+00:00:49.773 --> 00:00:54.534
+and jump all the way down to the bottom
+of the page and navigate the content in
+
+16fbe8a8-e2a0-44c2-8dc3-d592c4766281-2
+00:00:54.534 --> 00:00:58.880
+the footer without having to tab through
+all of the content in the page.
+
+8c1d8ace-0e10-4991-b4b7-a2f9975fdf87-0
+00:00:59.120 --> 00:01:00.240
+That's very helpful.
+
+6c9d0d50-dac3-40bb-96d9-fb6182f7449f-0
+00:01:00.880 --> 00:01:04.396
+And as I tab around,
+I'm able to move through the experience
+
+6c9d0d50-dac3-40bb-96d9-fb6182f7449f-1
+00:01:04.396 --> 00:01:06.760
+because my keyboard focus is not trapped.
+
+032c9148-03d1-47a5-b925-8929fe76dae1-0
+00:01:07.000 --> 00:01:07.960
+That's important too.
+
+95db55dc-ff9d-4429-b932-6e5316fccfb2-0
+00:01:07.960 --> 00:01:10.080
+We never want to be trapped in one spot.
+
+13bd5115-0962-4225-8838-ff7147cd15a8-0
+00:01:10.480 --> 00:01:17.156
+As we tab around the interface, we also,
+while we're doing keyboard testing,
+
+13bd5115-0962-4225-8838-ff7147cd15a8-1
+00:01:17.156 --> 00:01:24.005
+why not identify all functionality that
+is present for mouse users or users of
+
+13bd5115-0962-4225-8838-ff7147cd15a8-2
+00:01:24.005 --> 00:01:25.999
+other pointing devices?
+
+2e0daba2-20ee-4f30-a6bb-05882450063c-0
+00:01:26.560 --> 00:01:28.960
+But those are there for keyboard users
+too.
+
+dece0b57-b679-49c4-b9b5-f199a7f006c1-0
+00:01:29.800 --> 00:01:32.560
+So let's take a look at the Click here
+button in the hero.
+
+bea2f5cc-60f0-49c8-9f02-bcb42d607af9-0
+00:01:32.960 --> 00:01:36.668
+If I click that,
+the page scrolls down to this form down
+
+bea2f5cc-60f0-49c8-9f02-bcb42d607af9-1
+00:01:36.668 --> 00:01:38.360
+at the bottom of the page.
+
+687b6a4c-a4aa-46d8-99b2-55fbf37e63ea-0
+00:01:38.960 --> 00:01:46.725
+So I would imagine if I tab to it and
+then hit enter that that functionality
+
+687b6a4c-a4aa-46d8-99b2-55fbf37e63ea-1
+00:01:46.725 --> 00:01:48.440
+would be present.
+
+a2197989-d680-42a7-8c31-0bbaed050ced-0
+00:01:48.440 --> 00:01:49.280
+So let's try that.
+
+ed084b8e-4899-4912-9abc-47fb774e9989-0
+00:01:49.280 --> 00:01:53.774
+I'm going to tab through the navigation
+and we would imagine that the next thing
+
+ed084b8e-4899-4912-9abc-47fb774e9989-1
+00:01:53.774 --> 00:01:57.880
+that I would tab to is the next focusable
+element, the click here button.
+
+92ad3cc3-bdd9-45a4-86b7-f17a804b3564-0
+00:01:58.240 --> 00:02:01.177
+And as I tab there,
+I actually skip all the way down to the
+
+92ad3cc3-bdd9-45a4-86b7-f17a804b3564-1
+00:02:01.177 --> 00:02:01.520
+footer.
+
+22d35d85-b15a-4ffb-98b4-d9ed34dbf2df-0
+00:02:02.360 --> 00:02:03.800
+Something's going on here.
+
+e716fb6a-e567-4c48-80b4-7ec9f9cc9cc7-0
+00:02:04.480 --> 00:02:07.520
+Why isn't this link keyboard accessible?
+
+0e3adc05-9003-415d-92ef-ce7f42ddd7f0-0
+00:02:08.000 --> 00:02:12.440
+So at this point I would dive into the
+code and figure out why this isn't
+
+0e3adc05-9003-415d-92ef-ce7f42ddd7f0-1
+00:02:12.440 --> 00:02:13.640
+keyboard accessible.
+
+c0e8f915-6dc7-4e7a-bf38-dd1972e420f1-0
+00:02:15.720 --> 00:02:20.455
+Another important consideration while
+doing keyboard testing is when we send
+
+c0e8f915-6dc7-4e7a-bf38-dd1972e420f1-1
+00:02:20.455 --> 00:02:25.620
+the keyboard focus to a focusable element
+that it just doesn't automatically reload
+
+c0e8f915-6dc7-4e7a-bf38-dd1972e420f1-2
+00:02:25.620 --> 00:02:28.880
+the page or submit a web form without
+warning users.
