@@ -1,0 +1,119 @@
+# MagentaA11y
+
+> Accessibility acceptance criteria (Gherkin and condensed), developer notes, and testing guides by T-Mobile's Accessibility Resource Center. Web and native criteria are separate records; native files include iOS and Android developer notes.
+
+## Web
+
+- [Alert notification](https://www.magentaa11y.com/content/documentation/web/component/alert-notification.md): Dynamic alert announcements, focus behavior, and screen reader quirks
+- [Animation](https://www.magentaa11y.com/content/documentation/web/component/animation.md): Reduced motion, animation controls, and CSS examples
+- [Autocomplete](https://www.magentaa11y.com/content/documentation/web/component/autocomplete.md): Custom listbox and native datalist autocomplete examples
+- [Breadcrumbs](https://www.magentaa11y.com/content/documentation/web/component/breadcrumbs.md): Breadcrumb navigation semantics and screen reader identification
+- [Button](https://www.magentaa11y.com/content/documentation/web/component/button.md): Button versus link behavior, accessible names, and disabled states
+- [Carousel slideshow](https://www.magentaa11y.com/content/documentation/web/component/carousel-slideshow.md): Carousel interaction criteria, usability pitfalls, and alternatives
+- [Checkbox](https://www.magentaa11y.com/content/documentation/web/component/checkbox.md): Checked states, labeling, disabled behavior, and custom checkbox examples
+- [Complex graphics](https://www.magentaa11y.com/content/documentation/web/component/complex-graphics.md): Text alternatives for complex graphics and equivalent information
+- [Date picker](https://www.magentaa11y.com/content/documentation/web/component/date-picker.md): Calendar dialog, date grid navigation, and picker control labeling
+- [Decorative image](https://www.magentaa11y.com/content/documentation/web/component/decorative-image.md): Decorative image decisions, empty alt attributes, and inline SVG
+- [Expander accordion](https://www.magentaa11y.com/content/documentation/web/component/expander-accordion.md): Expanded states, disclosure buttons, and native details/summary examples
+- [Figure](https://www.magentaa11y.com/content/documentation/web/component/figure.md): Chart alternatives, data access, and interactions with dynamic figures
+- [Footnote](https://www.magentaa11y.com/content/documentation/web/component/footnote.md): Footnote references, navigation, and alternative markup examples
+- [Heading](https://www.magentaa11y.com/content/documentation/web/component/heading.md): Heading semantics, complex headings, and screen reader navigation
+- [Help hint error](https://www.magentaa11y.com/content/documentation/web/component/help-hint-error.md): Associating hints and errors with inputs using aria-describedby
+- [Iframe](https://www.magentaa11y.com/content/documentation/web/component/iframe.md): Naming embedded content and handling iframes without content
+- [Informative image](https://www.magentaa11y.com/content/documentation/web/component/informative-image.md): Descriptive text alternatives, meaningful SVGs, and animated images
+- [Link](https://www.magentaa11y.com/content/documentation/web/component/link.md): Link purpose, button distinctions, repeated labels, and disabled links
+- [List](https://www.magentaa11y.com/content/documentation/web/component/list.md): Ordered and unordered lists, list continuity, and custom list semantics
+- [Modal dialog](https://www.magentaa11y.com/content/documentation/web/component/modal-dialog.md): Dialog naming, launch controls, focus management, and screen reader differences
+- [Number input](https://www.magentaa11y.com/content/documentation/web/component/number-input.md): Numeric text entry, input type choices, and telephone input examples
+- [Pagination nav](https://www.magentaa11y.com/content/documentation/web/component/pagination-nav.md): Pagination navigation, accessible names, and current page state
+- [Password input](https://www.magentaa11y.com/content/documentation/web/component/password-input.md): Password visibility controls using checkbox and button variants
+- [Progress indicator](https://www.magentaa11y.com/content/documentation/web/component/progress-indicator.md): Progress bars, loading takeovers, and inline loading announcements
+- [Radio button](https://www.magentaa11y.com/content/documentation/web/component/radio-button.md): Radio group labeling, keyboard selection, required states, and card variants
+- [Range slider](https://www.magentaa11y.com/content/documentation/web/component/range-slider.md): Keyboard value adjustment and native versus custom slider examples
+- [Scrolling container](https://www.magentaa11y.com/content/documentation/web/component/scrolling-container.md): Keyboard scrolling, focusability, and scroll region naming
+- [Search](https://www.magentaa11y.com/content/documentation/web/component/search.md): Search input labeling and autocomplete suggestion examples
+- [Select dropdown](https://www.magentaa11y.com/content/documentation/web/component/select-dropdown.md): Native select examples, option selection, and disabled states
+- [Separator horizontal rule](https://www.magentaa11y.com/content/documentation/web/component/separator-horizontal-rule.md): Horizontal rule semantics and inert separator behavior
+- [Star rating](https://www.magentaa11y.com/content/documentation/web/component/star-rating.md): Radio group rating inputs and alternatives for displaying ratings
+- [Stepper input](https://www.magentaa11y.com/content/documentation/web/component/stepper-input.md): Increment and decrement controls with select and button variants
+- [Sticky element](https://www.magentaa11y.com/content/documentation/web/component/sticky-element.md): Logical reading order, focus order, and sticky content pitfalls
+- [Strikethrough content](https://www.magentaa11y.com/content/documentation/web/component/strikethrough-content.md): Conveying the meaning of struck text in a logical reading order
+- [Table](https://www.magentaa11y.com/content/documentation/web/component/table.md): Table captions, row and column headers, and cell navigation
+- [Tabs](https://www.magentaa11y.com/content/documentation/web/component/tabs.md): Tab and panel navigation, automatic versus manual activation, and alternatives
+- [Text input](https://www.magentaa11y.com/content/documentation/web/component/text-input.md): Input labels, hints, errors, grouping, and required or disabled states
+- [Textarea multiline input](https://www.magentaa11y.com/content/documentation/web/component/textarea-multiline-input.md): Multiline entry, field descriptions, and character counter announcements
+- [Tidbit](https://www.magentaa11y.com/content/documentation/web/component/tidbit.md): Informational callouts, content order, optional links, and status variants
+- [Toast snackbar](https://www.magentaa11y.com/content/documentation/web/component/toast-snackbar.md): Toast announcements, dismissal, timing pitfalls, and inline alternatives
+- [Toggle switch](https://www.magentaa11y.com/content/documentation/web/component/toggle-switch.md): On/off state announcements, keyboard toggling, and disabled variants
+- [Tooltip](https://www.magentaa11y.com/content/documentation/web/component/tooltip.md): Tooltip triggers, descriptions, focus behavior, and mobile limitations
+- [Video audio player](https://www.magentaa11y.com/content/documentation/web/component/video-audio-player.md): Media control names, keyboard operation, and autoplay considerations
+- [Basic web page](https://www.magentaa11y.com/content/documentation/web/page-level/basic-web-page.md): Page language, unique titles, landmarks, zoom, and orientation
+- [Footer landmark](https://www.magentaa11y.com/content/documentation/web/page-level/footer-landmark.md): Contentinfo landmark discovery and navigation within the footer
+- [Form](https://www.magentaa11y.com/content/documentation/web/page-level/form.md): Form naming, field grouping, instructions, errors, and autocomplete
+- [Header landmark](https://www.magentaa11y.com/content/documentation/web/page-level/header-landmark.md): Banner landmark semantics and identification of site header content
+- [Main landmark](https://www.magentaa11y.com/content/documentation/web/page-level/main-landmark.md): Main content landmark discovery and skip link destinations
+- [Navigation landmark](https://www.magentaa11y.com/content/documentation/web/page-level/navigation-landmark.md): Navigation semantics, multiple landmark names, and menu simplicity
+- [Single page application](https://www.magentaa11y.com/content/documentation/web/page-level/single-page-application.md): Focus placement and content announcements after client-side navigation
+- [Skip link](https://www.magentaa11y.com/content/documentation/web/page-level/skip-link.md): Skip link visibility, activation, and focus transfer to target content
+
+## Native
+
+- [Button](https://www.magentaa11y.com/content/documentation/native/controls/button.md): Button activation, label grouping, and disabled state announcements
+- [Calendar date picker](https://www.magentaa11y.com/content/documentation/native/controls/calendar-date-picker.md): Opening calendar pickers and associating their visible labels
+- [Captcha](https://www.magentaa11y.com/content/documentation/native/controls/captcha.md): CAPTCHA control identification, keyboard activation, and screen reader interaction
+- [Carousel](https://www.magentaa11y.com/content/documentation/native/controls/carousel.md): Slide navigation gestures, custom actions, and item index announcements
+- [Checkbox](https://www.magentaa11y.com/content/documentation/native/controls/checkbox.md): Checkbox activation and checked, selected, or disabled announcements
+- [Chip](https://www.magentaa11y.com/content/documentation/native/controls/chip.md): Chip activation, label association, and selection state announcements
+- [Date time picker](https://www.magentaa11y.com/content/documentation/native/controls/date-time-picker.md): Opening date/time pickers and navigating adjustable picker values
+- [Dropdown](https://www.magentaa11y.com/content/documentation/native/controls/dropdown.md): Dropdown activation, label grouping, and expanded/collapsed announcements
+- [Expandable](https://www.magentaa11y.com/content/documentation/native/controls/expandable.md): Expandable region triggers, label grouping, and state announcements
+- [Link](https://www.magentaa11y.com/content/documentation/native/controls/link.md): Link destination names, activation gestures, and platform implementations
+- [Menu](https://www.magentaa11y.com/content/documentation/native/controls/menu.md): Menu focus confinement, item activation, dismissal, and focus return
+- [Pagination control](https://www.magentaa11y.com/content/documentation/native/controls/pagination-control.md): Page navigation gestures and page index announcements
+- [Progress indicator](https://www.magentaa11y.com/content/documentation/native/controls/progress-indicator.md): Progress control interaction and step position announcements
+- [Radio button](https://www.magentaa11y.com/content/documentation/native/controls/radio-button.md): Radio option activation, label association, and selection announcements
+- [Reorder data row](https://www.magentaa11y.com/content/documentation/native/controls/reorder-data-row.md): Row reordering gestures, custom actions, and keyboard limitations
+- [Search](https://www.magentaa11y.com/content/documentation/native/controls/search.md): Search field focus, activation, labeling, and disabled state
+- [Segmented control](https://www.magentaa11y.com/content/documentation/native/controls/segmented-control.md): Segment navigation, activation, and label association
+- [Sheet](https://www.magentaa11y.com/content/documentation/native/controls/sheet.md): Sheet focus, interactive content, and grabber expansion controls
+- [Sidebar menu](https://www.magentaa11y.com/content/documentation/native/controls/sidebar-menu.md): Sidebar navigation focus, item activation, and label grouping
+- [Slider](https://www.magentaa11y.com/content/documentation/native/controls/slider.md): Slider value adjustment, keyboard arrows, and label association
+- [Step indicator](https://www.magentaa11y.com/content/documentation/native/controls/step-indicator.md): Step navigation controls and current step position announcements
+- [Stepper](https://www.magentaa11y.com/content/documentation/native/controls/stepper.md): Increment/decrement button naming, activation, and disabled states
+- [Table row button](https://www.magentaa11y.com/content/documentation/native/controls/table-row-button.md): Interactive row activation and grouping row labels with controls
+- [Text input](https://www.magentaa11y.com/content/documentation/native/controls/text-input.md): Text editing, label association, placeholders, and value announcements
+- [Time picker](https://www.magentaa11y.com/content/documentation/native/controls/time-picker.md): Time picker activation, labeling, and platform implementation notes
+- [Timer](https://www.magentaa11y.com/content/documentation/native/controls/timer.md): Timer control focus, start/pause actions, and platform notes
+- [Toggle switch](https://www.magentaa11y.com/content/documentation/native/controls/toggle-switch.md): Switch activation, label grouping, and on/off state announcements
+- [Alert dialog](https://www.magentaa11y.com/content/documentation/native/notifications/alert-dialog.md): Alert focus confinement, dismissal, and return to the launching context
+- [Modal](https://www.magentaa11y.com/content/documentation/native/notifications/modal.md): Modal content navigation, close controls, and focus return
+- [Snackbar toast](https://www.magentaa11y.com/content/documentation/native/notifications/snackbar-toast.md): Dynamic message announcements and focus for snackbar actions
+- [Animation](https://www.magentaa11y.com/content/documentation/native/patterns/animation.md): Meaningful animation descriptions, focus, and device motion settings
+- [Field errors](https://www.magentaa11y.com/content/documentation/native/patterns/field-errors.md): Announcing field errors when entering the associated text field
+- [Focus](https://www.magentaa11y.com/content/documentation/native/patterns/focus.md): Initial focus placement, visible indicators, and logical navigation order
+- [Graphics visual elements](https://www.magentaa11y.com/content/documentation/native/patterns/graphics-visual-elements.md): Meaningful image descriptions, visible text, and interactive graphic controls
+- [Headings](https://www.magentaa11y.com/content/documentation/native/patterns/headings.md): Heading traits and navigation with VoiceOver and TalkBack
+- [Image decorative](https://www.magentaa11y.com/content/documentation/native/patterns/image-decorative.md): Excluding decorative images and icons from screen reader navigation
+- [Loading icon](https://www.magentaa11y.com/content/documentation/native/patterns/loading-icon.md): Dynamic loading announcements and screen reader focus behavior
+- [Loading spinner](https://www.magentaa11y.com/content/documentation/native/patterns/loading-spinner.md): Loading spinner announcements and platform implementation notes
+- [Strike through](https://www.magentaa11y.com/content/documentation/native/patterns/strike-through.md): Grouping previous and current values to convey struck text meaning
+- [Table](https://www.magentaa11y.com/content/documentation/native/patterns/table.md): Table reading order, interactive cells, and screen reader navigation
+- [Tidbit](https://www.magentaa11y.com/content/documentation/native/patterns/tidbit.md): Callout text, meaningful images, and optional call-to-action behavior
+- [Webview](https://www.magentaa11y.com/content/documentation/native/patterns/webview.md): Keyboard and screen reader navigation across embedded web content
+
+## How to Test
+
+- [Browser zoom & magnification](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/browser-zoom-%26-magnification.md): Test browser zoom, text enlargement, OS magnification, and content clipping
+- [Color contrast](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/color-contrast.md): Measure text, graphic, control, and focus indicator contrast
+- [Forms & inputs](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/forms-%26-inputs.md): Test text fields, checkboxes, radio groups, and other form controls
+- [Images](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/images.md): Evaluate text alternatives by image purpose and context
+- [Keyboard & focus](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/keyboard-%26-focus.md): Test keyboard navigation, control activation, and visible focus
+- [Links & buttons](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/links-%26-buttons.md): Check focus, activation keys, disabled behavior, and screen reader output
+- [Native apps](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/native-apps.md): Test iOS and Android apps with screen reader gestures
+- [Not sure if it is an issue](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/not-sure-if-it-is-an-issue.md): Investigate potential barriers using manual and automated testing
+- [Web pages](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/web-pages.md): Combine keyboard checks, screen reader testing, and automated scans
+- [Web screen readers](https://www.magentaa11y.com/content/documentation/how-to-test/test-type/web-screen-readers.md): Learn desktop and mobile screen reader navigation for web testing
+
+## Optional
+
+- [Markdown authoring guide](https://www.magentaa11y.com/content/documentation/MARKDOWN_GUIDE.md): Documentation file structure, supported sections, templates, and formatting conventions

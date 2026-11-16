@@ -94,6 +94,15 @@ The monolithic `_md-styles.scss` has been split into individual partials under `
 - Templates are outputted by `src/scripts/createMarkdown.sh`
 - Reference the `/public/content/documentation/MARKDOWN_GUIDE.md` for formatting standards
 
+### AI Documentation Index (`llms.txt`)
+
+- `/public/llms.txt` is the manually maintained index that helps AI agents find static Markdown documentation directly; it is published at `/llms.txt`.
+- Follow the [llms.txt proposal](https://llmstxt.org/): one project H1, a concise blockquote summary, and H2 sections containing Markdown links with brief, topic-specific descriptions.
+- When adding, renaming, moving, or deleting documentation, update the corresponding index entries. Revise descriptions when the topics covered change.
+- Include all Markdown files under `/public/content/documentation/`. Keep Web, Native, and How to Test separate, with the Markdown authoring guide under `Optional`.
+- Use absolute URLs starting with `https://www.magentaa11y.com/content/documentation/` and URL-encode special characters in paths (for example, `&` as `%26`). Verify each URL maps to an existing source file.
+- Verify live links return successful responses with actual Markdown content when available; distinguish new files awaiting deployment from broken existing links. React routes such as About Us and the How to Test overview currently lack static Markdown equivalents and must remain excluded unless those equivalents are added.
+
 ## Git Workflow
 - Branch naming: Use issue numbers (`ARC-101--details`) or conventional prefixes:
   - `feat--` or `feature--` - New features
